@@ -1,5 +1,5 @@
 <!doctype html>
-<%@page import="in.University.RegisterAdmin"%>
+
 <html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
