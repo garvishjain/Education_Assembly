@@ -1,0 +1,170 @@
+@charset "ISO-8859-1";
+
+        body
+        {
+            font-size: 15px !important;
+        }
+        input
+        {
+            width: 50%;
+            height: 28px;
+            border-color: #ccc;
+            border: 1px solid #ccc;
+            border-radius: 0px;
+        }
+        label
+        {
+            min-width: 115px;
+        }
+        select
+        {
+            height: 28px;
+            border-color: #ccc;
+        }
+        select:focus
+        {
+            outline: none;
+        }
+        .row
+        {
+            border: 1px solid;
+            margin-top: 10px;
+            padding-top: 5px;
+            border-right: 0px;
+            border-left: 0px;
+            border-color: #dcc0c0;
+            height: 30%;
+        }
+        input#chkbus
+        {
+            width: 50%;
+            height: 25px;
+        }
+        input#chkhostel
+        {
+            width: 50%;
+            height: 25px;
+        }
+        div#txtDOB_CalendarExtender_container
+        {
+            background-color: rgb(238, 238, 238);
+        }
+        
+        div#TxtContractDt2_CalendarExtender_container
+        {
+            background-color: #eee;
+        }
+        .mybut
+        {
+            margin-bottom: 10px;
+        }
+        
+        .addalign
+        {
+            vertical-align: top;
+        }
+        input:focus
+        {
+            text-decoration: none;
+            outline: none;
+        }
+        
+        .errormsg span
+        {
+            display: inline-block;
+            width: 100%;
+            font-size: 13px;
+        }
+        .addbtn
+        {
+            height: 30px;
+            margin: 28px 0px 0px 0px;
+            background-color: #f5bb01;
+            border: none;
+            color: #fff;
+            font-weight: 500;
+            width: 100%;
+        }
+        
+        @media (min-width: 320px) and (max-width: 360px)
+        {
+            body
+            {
+                font-size: 13px !important;
+            }
+            .entrancce
+            {
+                display: inline-flex;
+            }
+            .addbtn
+            {
+                margin: 5px 0px 0px -32px;
+                font-weight: 500;
+                width: 100%;
+            }
+        
+        }
+        
+        @media (min-width: 361px) and (max-width: 480px)
+        {
+            body
+            {
+                font-size: 13px !important;
+            }
+            .addbtn
+            {
+                margin: 5px 0px 25px 0px;
+                font-weight: 500;
+                width: 80%;
+            }
+            .entrancce
+            {
+                display: inline-flex;
+            }
+        
+        }
+        
+        @media (min-width: 481px) and (max-width: 577px)
+        {
+            body
+            {
+                font-size: 14px !important;
+            }
+            .addbtn
+            {
+                margin: 5px 0px 25px 0px;
+                font-weight: 500;
+                width: 80%;
+            }
+        
+        }
+        
+        @media (min-width: 578px) and (max-width: 767px)
+        {
+            .addbtn
+            {
+                margin: 5px 0px 25px 0px;
+                font-weight: 500;
+                width: 80% !important;
+            }
+        
+        }
+        
+        
+        
+        @media (min-width: 360px) and (max-width: 767px)
+        {
+            .btnsendotp
+            {
+                margin-bottom: 20px;
+            }
+        
+        
+        }
+        @media (min-width: 768px) and (max-width: 1024px)
+        {
+            body
+            {
+                font-size: 15px;
+            }
+        }
