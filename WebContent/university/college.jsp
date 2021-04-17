@@ -8,11 +8,7 @@
 <title>:: Ericsson :: Setting</title>
 
 <!-- Import package -->
-<%@ page import="java.sql.Connection"%>
-<%@ page import="java.sql.DriverManager"%>
-<%-- <%@ page import="java.sql.SQLException" %> --%>
-<%@ page import="java.sql.Statement"%>
-<%@ page import="java.sql.ResultSet"%>
+<%@ include file="inc/stdimport.jsp" %>  
 
 <!-- Bootstrap Core and vandor -->
 <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />

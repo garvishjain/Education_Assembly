@@ -14,11 +14,7 @@
     <meta name="author" content="Ansonika">
     <title>College  Registration </title>
     <!-- Import package -->
-<%@ page import="java.sql.Connection"%>
-<%@ page import="java.sql.DriverManager"%>
-<%-- <%@ page import="java.sql.SQLException" %> --%>
-<%@ page import="java.sql.Statement"%>
-<%@ page import="java.sql.ResultSet"%>
+<%@ include file="inc/stdimport.jsp" %>  
     
     
 
