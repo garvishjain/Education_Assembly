@@ -16,6 +16,16 @@
 <%@ page import="java.sql.Statement"%>
 <%@ page import="java.sql.ResultSet"%>
 
+
+
+<%
+Class.forName("com.mysql.jdbc.Driver");
+
+Connection con=null;
+Statement stmt=null;
+
+%>
+
 <!-- Bootstrap Core and vandor -->
 <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="../assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
@@ -1010,10 +1020,8 @@
                                 <tbody>
                                 <% 
 	                                try {
-										Class.forName("com.mysql.jdbc.Driver");
-										Connection con = DriverManager.getConnection(
-												"jdbc:mysql://sql178.main-hosting.eu:3306/u248334632_Hotel", "u248334632_Hotel", "CBCsumit@24");
-										Statement stmt = con.createStatement();
+										con = DriverManager.getConnection("jdbc:mysql://sql178.main-hosting.eu:3306/u248334632_Hotel", "u248334632_Hotel", "CBCsumit@24");
+										stmt = con.createStatement();
 										String query = "select * from professor";
 										//get Table data
 										ResultSet rs = stmt.executeQuery(query);
@@ -1229,10 +1237,6 @@
                                     <div class="card-body text-center">
                                     <%
                                     try {
-										Class.forName("com.mysql.jdbc.Driver");
-										Connection con = DriverManager.getConnection(
-												"jdbc:mysql://sql178.main-hosting.eu:3306/u248334632_Hotel", "u248334632_Hotel", "CBCsumit@24");
-										Statement stmt = con.createStatement();
 										String query = "select * from professor";
 										//get Table data
 										ResultSet rs = stmt.executeQuery(query);
@@ -1621,7 +1625,7 @@
                                             <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
                                         </div>
                                     </div>
-                                    <form action="../professors" method="post" >
+                                    <form action="../professors" method="post" enctype="multipart/form-data" >
                                     <div class="card-body">
                                         <div class="row clearfix">
                                             <div class="col-md-6 col-sm-12">
@@ -1657,10 +1661,6 @@
                                                     <option></option>
                                                     <%
 	                                                    try {
-	            											Class.forName("com.mysql.jdbc.Driver");
-	            											Connection con = DriverManager.getConnection(
-	            													"jdbc:mysql://sql178.main-hosting.eu:3306/u248334632_Hotel", "u248334632_Hotel", "CBCsumit@24");
-	            											Statement stmt = con.createStatement();
 	            											String query = "select * from department_name";
 	            											//get Table data
 	            											ResultSet rs = stmt.executeQuery(query);
@@ -1684,10 +1684,6 @@
                                                     <option></option>
                                                     <%
 	                                                    try {
-	            											Class.forName("com.mysql.jdbc.Driver");
-	            											Connection con = DriverManager.getConnection(
-	            													"jdbc:mysql://sql178.main-hosting.eu:3306/u248334632_Hotel", "u248334632_Hotel", "CBCsumit@24");
-	            											Statement stmt = con.createStatement();
 	            											String query = "select * from position";
 	            											//get Table data
 	            											ResultSet rs = stmt.executeQuery(query);

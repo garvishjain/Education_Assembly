@@ -16,6 +16,16 @@
 <%@ page import="java.sql.Statement"%>
 <%@ page import="java.sql.ResultSet"%>
 
+<!-- Connection  -->
+<%
+Class.forName("com.mysql.jdbc.Driver");
+
+Connection con=null;
+Statement stmt=null;
+
+%>
+
+
 <!-- Bootstrap Core and vandor -->
 <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
 <link rel="stylesheet" href="../assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
