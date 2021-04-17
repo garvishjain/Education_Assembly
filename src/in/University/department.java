@@ -43,7 +43,7 @@ public class department extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		try 
 		{
-			String deptname = request.getParameter("deptname")!= null ? request.getParameter("deptname") : "";
+			String department = request.getParameter("department")!= null ? request.getParameter("department") : "";
 			String headname = request.getParameter("headname")!= null ? request.getParameter("headname") : "";
 			String uname = request.getParameter("uname")!= null ? request.getParameter("uname") : "";
 			String phone = request.getParameter("phone")!= null ? request.getParameter("phone") : "";
@@ -70,7 +70,7 @@ public class department extends HttpServlet {
 		
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, u_id);
-			stmt.setString(2, deptname);
+			stmt.setString(2, department);
 			stmt.setString(3, headname);
 			stmt.setString(4, phone);
 			stmt.setString(5, email);

@@ -10,7 +10,16 @@
 <title>:: Ericsson :: Courses</title>
 
 <!-- Import package -->
-<%@ include file="inc/stdimport.jsp" %>  
+<%@page import="in.common.GetConnection"%>
+<%@ include file="inc/stdimport.jsp" %> 
+
+<!-- Connection -->
+<%
+GetConnection getConObj=new GetConnection();
+Connection con=getConObj.getCon();
+Statement stmt=con.createStatement();
+
+%> 
 
 <!-- Bootstrap Core and vandor -->
 <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
@@ -1283,10 +1292,6 @@
                                             	<option>---Course Duration Months---</option>
                                             	<%
                                                 try {
-        											Class.forName("com.mysql.jdbc.Driver");
-        											Connection con = DriverManager.getConnection(
-        													"jdbc:mysql://sql178.main-hosting.eu:3306/u248334632_Hotel", "u248334632_Hotel", "CBCsumit@24");
-        											Statement stmt = con.createStatement();
         											String query = "select * from duration";
         											//get Table data
         											ResultSet rs = stmt.executeQuery(query);

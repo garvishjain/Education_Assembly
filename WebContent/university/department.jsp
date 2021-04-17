@@ -1,6 +1,16 @@
 <%@ include file="inc/header.jsp" %>  
 <%@ include file="inc/stdimport.jsp" %>  
         
+ <!-- Import package -->
+<%@page import="in.common.GetConnection"%>
+<%@ include file="inc/stdimport.jsp" %>  
+
+<%
+GetConnection getConObj=new GetConnection();
+Connection con=getConObj.getCon();
+Statement stmt=con.createStatement();
+
+%>
 
 
         <!-- Start Page title and tab -->
@@ -42,10 +52,6 @@
                                     </thead>
                                     <%
 										try {
-											Class.forName("com.mysql.jdbc.Driver");
-											Connection con = DriverManager.getConnection(
-													"jdbc:mysql://sql178.main-hosting.eu:3306/u248334632_Hotel", "u248334632_Hotel", "CBCsumit@24");
-											Statement stmt = con.createStatement();
 											String query = "select * from department";
 											//get Table data
 											ResultSet rs = stmt.executeQuery(query);
@@ -125,17 +131,24 @@
 	                                        <div class="col-sm-6 col-sm-12">
 	                                            <div class="form-group">
 	                                            <label>Department Name</label>
-	                                                <select class="form-control show-tick" name="deptname" required="required">
-	                                                	<option value="">---Please Select Department Name---</option>
-	                                                	<option>Business</option>
-	                                                	<option>Economics</option>
-	                                                	<option>Computer Science</option>
-	                                                	<option>Education</option>
-	                                                	<option>Engineering</option>
-	                                                	<option>Liberal Arts</option>
-	                                                	<option>Science</option>
-	                                                	<option>Law</option>
-	                                                </select> 
+	                                                <select name="department" class="form-control">
+                                                    <option></option>
+                                                    <%
+	                                                    try {
+	            											String query = "select * from department_name";
+	            											//get Table data
+	            											ResultSet rs = stmt.executeQuery(query);
+	            											while (rs.next()) {
+                                                    %>
+                                                    	<option><%=rs.getString("department_name") %></option>
+                                                   	<%
+	            										}
+	                                                    }catch(Exception e)
+	                                                    {
+		                                                 	e.printStackTrace();   	
+	                                                    }
+                                                   	%>
+                                                    </select>
 	                                            </div>
 	                                        </div>
 	                                        <div class="col-sm-6 col-sm-12">
