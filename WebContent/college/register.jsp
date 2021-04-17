@@ -309,6 +309,12 @@
 
 </head>
 
+<%
+	String collegeCategory[]={"All Courses","Only Business Courses","Only Computer Science Courses","Only IT Courses"};
+	int i=0;
+	
+%>
+
 <body>
 
 <!--[if lte IE 8]>
@@ -470,7 +476,7 @@
                             	<div class="form-group">
                                 <label>College category</label> 
                                 <select class="form-control" name="ccategory" id="ccategory"required="required">
-                                                		<option value="">---Please Select---</option>
+                                                		<option value="" disabled selected>---Please Select---</option>
 														<%
 															try {
 																Class.forName("com.mysql.jdbc.Driver");
@@ -482,7 +488,7 @@
 																ResultSet rs = stmt.executeQuery(query);
 																while (rs.next()) {
 														%>
-														<option><%=rs.getString("details")%></option>
+														<option value="<%=rs.getString("details")%>"> <%=collegeCategory[i++] %></option>
 														<%
 															}
 															} catch (Exception e) {
