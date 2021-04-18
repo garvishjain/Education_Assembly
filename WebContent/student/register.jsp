@@ -27,9 +27,16 @@
       <script src="js/html5shiv.min.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
+   
+    
+    
 <style type="text/css">
 p{display: inline;
-width: 110px;
+		size: 120px;
+		text-align: center;
+		font-size: 16px;
+  float: right;
+  padding: 1px  2px;
 }
 </style>
 </head>
@@ -130,7 +137,7 @@ width: 110px;
   
            <div class="col-md-9">
                 	<div class="box_style_1">
-      <form action="apply_online.php" id="apply_online" method="POST">
+      <form action="../St_Register" id="apply_online" method="POST" enctype="multipart/form-data">
                    	<div class="indent_title_in">
                     <i class="pe-7s-user"></i>
 				<h3 style="text-decoration: underline;">Personal details</h3>
@@ -163,7 +170,7 @@ width: 110px;
         <div class="col-md-6">
 		                            	<div class="form-group">
 		                                <label>Aadhar Number</label>
-		                                <input type="text" class="form-control styled required" id="birth_apply" name="fnum"  placeholder="Enter 12 digit Aadhar Number">
+		                                <input type="text" class="form-control styled required" id="birth_apply" name="adhar"  maxlength="12" minlength="12" placeholder="Enter 12 digit Aadhar Number">
 		                              </div>
 		                            </div>
 	                                  
@@ -192,7 +199,7 @@ width: 110px;
 		                            <div class="col-md-6">
 		                            	<div class="form-group">
 		                                <label>Date of birth</label>
-		                                <input type="date" class="form-control styled required" id="birth_apply" name="dob"  placeholder="dd/mm/year">
+		                                <input type="date" class="form-control styled required" id="birth_apply" name="dob"  placeholder="Enter Your DOB">
 		                              </div>
 		                            </div>
 		   </div><!-- End row -->
@@ -205,7 +212,7 @@ width: 110px;
 	                                   <div class="col-md-6">
 		                            	<div class="form-group">
 		                                <label>Father's Name</label>
-		                                <input type="text" class="form-control styled required" id="email_apply" name="fname" placeholder="Enter Father Name">
+		                                <input type="text" class="form-control styled required" id="email_apply" name="f_name" placeholder="Enter Father Name">
 		                               </div>
 		                            </div>
 		                            
@@ -233,20 +240,7 @@ width: 110px;
 		                        	<div class="col-md-6">
 		                            	<div class="form-group">
 		                                <label>Religion</label>
-		                                <input type="text" class="form-control styled required" id="email_apply" name="fname" placeholder="Enter Father Name">
-		                               </div>
-		                            </div>
-		   </div><!-- End row -->
-       </div><!-- End row -->
-		                            
-		                         
-		         <div class="wrapper_indent">
-                        <div class="row">
-       
-		                            <div class="col-md-6">
-		                            	<div class="form-group">
-		                                <label>Caste</label>
-		                                	<select class="form-control styled required" >
+		                                <select class="form-control styled required" name="religion">
 		                                			<option value="null">-- select one --</option>
 												  <option value="Buddhism">Buddhism</option>
 												  <option value="Hindu">Hindu</option>
@@ -257,11 +251,16 @@ width: 110px;
 		                                	</select>
 		                               </div>
 		                            </div>
+		   </div><!-- End row -->
+       </div><!-- End row -->
 		                            
+		                         
+		         <div class="wrapper_indent">
+                        <div class="row">
 		                            <div class="col-md-6">
 		                            	<div class="form-group">
 		                                <label>Category</label>
-		                                <select class="form-control styled required">
+		                                <select class="form-control styled required" name="cast">
 		                                			<option value="null">-- select one --</option>
 												  <option value="sc">SC</option>
 												  <option value="st">ST</option>
@@ -272,24 +271,18 @@ width: 110px;
 		                              </div>
 		                            </div>
 		                            
-		                             
-		     </div><!-- End row -->
-       </div><!-- End row -->  	
-                    
-  <div class="wrapper_indent">
-                        <div class="row">
-       
-	                                  
-		                            
-		                            
 		                            <div class="col-md-6">
 		                            	<div class="form-group">
 		                                <label>Select Student Image</label>
 		                                <input type="file" class="form-control styled required" id="birth_apply" name="fnum"  accept="image/*">
 		                              </div>
 		                            </div>
-		   </div><!-- End row -->
-       </div><!-- End row -->
+		                            
+		                             
+		     </div><!-- End row -->
+       </div><!-- End row -->  	
+                    
+  
                      
                      
                       <hr class="styled_2">
@@ -303,13 +296,16 @@ width: 110px;
                         	<div class="col-md-6">
                             	<div class="form-group">
                                 <label>Address line</label>
-                            	<textarea class="form-control styled required"></textarea>
+                            	<textarea class="form-control styled required" placeholder="Enter Student Address" name="adrs"></textarea>
                             </div>
                             </div>
                             <div class="col-md-6">
                             	<div class="form-group">
                                 <label>State</label>
-                                <input type="text" class="form-control styled required" id="town_apply" name="town_apply" placeholder="Town">
+                                <select name="state" class="form-control styled required">
+                                			<option value="null">-- select city --</option>
+                                			<option value="gwl">gwl</option>
+                                </select>
                             </div>
                             </div>
                         </div><!-- End row -->
@@ -318,15 +314,16 @@ width: 110px;
                    	<div class="col-md-6">
                                 <label>City</label>
                                 <div class="styled-select">
-								<select class="form-control required" name="country_apply" id="country_apply" >
+								<select class="form-control required" name="city" id="country_apply" >
 										<option value="null">-- select city --</option>
+										<option value="mor">mor</option>
 								</select>
 							</div>
                             </div>
                             <div class="col-md-6">
                             <div class="form-group">
                                 <label>Pin Code</label>
-                                <input type="text" class="form-control styled required" id="postal_code_apply" name="postal_code_apply" placeholder="123456">
+                                <input type="text" class="form-control styled required" id="postal_code_apply" name="pincode" maxlength="6" minlength="6" placeholder="123456">
                             </div>
                            </div>
                    </div>
@@ -336,14 +333,58 @@ width: 110px;
                       <hr class="styled_2">
                       
                       
+                     
+           
+                       
+                        <div class="indent_title_in">
+								<h3 style="text-decoration: underline;">Education Detail</h3>
+						</div>
+                      <div class="wrapper_indent">
+                        <div class="row">
+		                        	
+		                            <div class="col-md-6">
+		                            	<div class="form-group">
+		                                <label>10th(%)</label> 
+		                                
+		                                <input type="text" class="form-control styled required" id="lastname_apply" name="high" placeholder="Enter 10 Percentage">
+		                           		 
+		                                   	
+		                           	 
+		                           	 </div>
+		                            </div>
+		                            
+		                           <div class="col-md-6">
+		                            	<div class="form-group">
+		                                <label>12th (%)</label> 
+		                                <input type="text" class="form-control styled required" id="lastname_apply" name="higher" placeholder="Enter 12 Percentage">
+		                           		 </div>
+		                            </div>
+		                            
+		                            <div class="col-md-6">
+		                            	<div class="form-group"  >
+		                                <label>Roll No. Of Last Exam</label>
+		                                <input type="text" class="form-control styled required" id="name_apply" name="roll"  placeholder="Enter Roll Number">
+		                            	</div>
+		                            </div>
+		                           <div class="col-md-6">
+		                            	<div class="form-group">
+		                                <label>School / College Name</label> 
+		                                <input type="text" class="form-control styled required" id="lastname_apply" name="school" placeholder="Enter School/CollegeName">
+		                           		 </div>
+		                            </div>
+                            
+                             <div class="col-md-6">
+		                            	<div class="form-group">
+		                                <label>Graduation(%)</label> 
+		                                <input type="text" class="form-control styled required" id="lastname_apply" name="graduation" placeholder="Enter Graduation Percentage">
+		                           		 </div>
+		                            </div>
+                   </div><!-- End row -->
+       </div><!-- End row -->
                       
+                      <hr class="styled_2">
                       
-                      
-                      
-                      
-                      
-                      
-            <div class="indent_title_in">
+                       <div class="indent_title_in">
 				<h3 style="text-decoration: underline;">Log-In Credential</h3>
 			</div>
             	<div class="wrapper_indent">
@@ -358,65 +399,22 @@ width: 110px;
                      					<div class="col-md-4">
 		                            	<div class="form-group">
 		                                <label>Password</label>
-		                                <input type="password" class="form-control styled required" id="birth_apply" name="fnum"  placeholder="Enter Password">
+		                                <input type="password" class="form-control styled required" id="birth_apply" name="pass"  placeholder="Enter Password">
 		                              </div>
 		                            </div>
 		                            
 		                            <div class="col-md-4">
 		                            	<div class="form-group">
 		                                <label>Confirm Password</label>
-		                                <input type="password" class="form-control styled required" id="birth_apply" name="fnum"  placeholder="Enter Confirm Password">
+		                                <input type="password" class="form-control styled required" id="birth_apply" name="cpass"  placeholder="Enter Confirm Password">
 		                              </div>
 		                            </div>
                     </div>
          </div>
-                       <hr class="styled_2">
-                        <div class="indent_title_in">
-								<h3 style="text-decoration: underline;">Education Detail</h3>
-						</div>
-                      <div class="wrapper_indent">
-                        <div class="row">
-		                        	
-		                            <div class="col-md-6">
-		                            	<div class="form-group">
-		                                <label>10th(%)</label> 
-		                                <input type="text" class="form-control styled required" id="lastname_apply" name="lname" placeholder="Enter Last Name">
-		                           		 </div>
-		                            </div>
-		                            
-		                           <div class="col-md-6">
-		                            	<div class="form-group">
-		                                <label>12th (%)</label> 
-		                                <input type="text" class="form-control styled required" id="lastname_apply" name="lname" placeholder="Enter Last Name">
-		                           		 </div>
-		                            </div>
-		                            
-		                            <div class="col-md-6">
-		                            	<div class="form-group"  >
-		                                <label>Roll No. Of Last Exam</label>
-		                                <input type="text" class="form-control styled required" id="name_apply" name="fname"  placeholder="Enter First Name">
-		                            	</div>
-		                            </div>
-		                           <div class="col-md-6">
-		                            	<div class="form-group">
-		                                <label>School / College Name</label> 
-		                                <input type="text" class="form-control styled required" id="lastname_apply" name="lname" placeholder="Enter Last Name">
-		                           		 </div>
-		                            </div>
-                            
-                             <div class="col-md-6">
-		                            	<div class="form-group">
-		                                <label>Graduation(%)</label> 
-		                                <input type="text" class="form-control styled required" id="lastname_apply" name="lname" placeholder="Enter Last Name">
-		                           		 </div>
-		                            </div>
-                   </div><!-- End row -->
-       </div><!-- End row -->
-                      
                       
                     
                       
-                      <div class="wrapper_indent" >
+                      <!-- <div class="wrapper_indent" >
 				                      <div class="form-group">
 									<input type="checkbox" name="policy_terms" id="policy_terms" class="required" value="Yes"><label>I accept <a href="#0">terms and conditions</a> and general policy.</label>
 								</div>
@@ -425,7 +423,21 @@ width: 110px;
 					 <p><button type="reset"   style="display:inline; " class="button">Clear</button></p>
                      <p><button type="submit"  style="display:inline; " class="button">Save&Next</button></p>
                      </div>
-                      		</div>
+                      		</div> -->
+                      		
+                      		
+              	<div class="wrapper_indent">
+                      <div class="row">
+       
+	                                   <div class="form-group">
+										<input type="checkbox" name="policy_terms" id="policy_terms" class="required" value="Yes"><label>I accept <a href="#0">terms and conditions</a> and general policy.</label>
+									</div>
+		                            
+		                            <a  href="home.jsp" ><p ><button type="button"  style="display:inline; "  href="home.jsp" class="button">Exit</button><p></a>
+									 <p><button type="reset"   style="display:inline; " class="button">Clear</button></p>
+				                     <p><button type="submit"  style="display:inline; " class="button">Save&Next</button></p>
+		   </div><!-- End row -->
+       </div><!-- End row -->
                       </form>
                     </div>
            </div>
