@@ -15,7 +15,7 @@
     <title>College  Registration </title>
     <!-- Import package -->
     <%@page import="in.common.GetConnection"%>
-	<%@ include file="INC/stdimport.jsp" %>    
+	<%@ include file="imp/stdimport.jsp" %>    
     
 <%
 GetConnection getConObj=new GetConnection();

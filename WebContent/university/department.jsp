@@ -11,8 +11,6 @@ Connection con=getConObj.getCon();
 Statement stmt=con.createStatement();
 
 %>
-
-
         <!-- Start Page title and tab -->
         <div class="section-body">
             <div class="container-fluid">
@@ -132,7 +130,7 @@ Statement stmt=con.createStatement();
 	                                            <div class="form-group">
 	                                            <label>Department Name</label>
 	                                                <select name="department" class="form-control">
-                                                    <option></option>
+                                                    <option>---Please Select Department---</option>
                                                     <%
 	                                                    try {
 	            											String query = "select * from department_name";

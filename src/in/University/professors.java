@@ -63,7 +63,7 @@ public class professors extends HttpServlet {
 			String phone = request.getParameter("phone");
 			String email = request.getParameter("email");
 			
-			Date parsedob = new SimpleDateFormat("MM-dd-yyyy").parse(dob);
+			Date parsedob = new SimpleDateFormat("dd--MM--yyyy").parse(dob);
 			java.sql.Date dobDate = new java.sql.Date(parsedob.getTime());
 			System.out.println(dobDate);
 			

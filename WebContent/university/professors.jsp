@@ -52,7 +52,6 @@ Statement stmt=con.createStatement();
 								{ 
 									String avatar=data.getFirstName().charAt(0) +""+ data.getLastName().charAt(0);
 								%>
-								
 								<tr>
                                         <td class="w60">
                                             <div class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">
@@ -73,10 +72,7 @@ Statement stmt=con.createStatement();
                                         	{%>
                                         		<span class="tag tag-warning">Part-time</span>
                                         	<%}
-                                        
                                         %>
-                                        
-                                        
                                         </td>
                                         <td>
                                             <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
@@ -84,10 +80,7 @@ Statement stmt=con.createStatement();
                                             <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
                                         </td>
                                     </tr>
-									
-								
 								<%}
-                                
                                 %>
 						       
                                 </tbody>
@@ -96,16 +89,11 @@ Statement stmt=con.createStatement();
                     </div>
                     <div class="tab-pane" id="pro-grid">
                         <div class="row">
-                        	
-                            
                              <%
-                                
                                 for(GetProfessorsDB data : records)
 								{ 
 									String avatar=data.getFirstName().charAt(0) +""+ data.getLastName().charAt(0);
 								%>
-                            
-                            
                             <div class="col-xl-3 col-lg-4 col-md-6">
                                 <div class="card">
                                     <div class="card-body text-center ribbon">
@@ -119,12 +107,9 @@ Statement stmt=con.createStatement();
                                 </div>
                             </div>
                             <%}
-                                
                                 %>
-                            
                         </div>
                     </div>
-                    
                     <div class="tab-pane" id="pro-add">
                         <div class="row clearfix">
                             <div class="col-md-12 col-lg-12">
@@ -199,8 +184,6 @@ Statement stmt=con.createStatement();
 	            											//get Table data
 	            											ResultSet rs = stmt.executeQuery(query);
 	            											while (rs.next()) {
-	            												
-	            											
                                                     %>
                                                     	<option><%=rs.getString("position") %></option>
                                                     <%
@@ -226,24 +209,12 @@ Statement stmt=con.createStatement();
                                                     <input type="email" name="email" class="form-control">
                                                 </div>
                                             </div>
-                                            <!-- <div class="col-md-4 col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Website URL</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div> -->
                                             <div class="col-sm-12">
                                                 <div class="form-group mt-2 mb-3">
                                                     <input type="file" name="image" class="dropify">
                                                     <small id="fileHelp" class="form-text text-muted">Upload professor profile picture.</small>
                                                 </div>
                                             </div>
-                                            <!-- <div class="col-sm-12">
-                                                <div class="form-group mt-3">
-                                                    <label>Messages</label>
-                                                    <textarea rows="4" class="form-control no-resize" placeholder="Please type what you want..."></textarea>
-                                                </div>
-                                            </div> -->
                                             <div class="col-sm-12">
                                                 <button type="submit" class="btn btn-primary">Submit</button>
                                                 <button type="submit" class="btn btn-outline-secondary">Cancel</button>
@@ -253,76 +224,6 @@ Statement stmt=con.createStatement();
                                     </form>
                                 </div>
                             </div>
-                            <!-- <div class="col-lg-4 col-md-12 col-sm-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3 class="card-title">Account Information</h3>
-                                        <div class="card-options ">
-                                            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
-                                            <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="row clearfix">
-                                            <div class="col-sm-12">
-                                                <div class="form-group">
-                                                    <label>User Name</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Password</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-6 col-sm-12">
-                                                <div class="form-group">
-                                                    <label>Confirm Password</label>
-                                                    <input type="text" class="form-control">
-                                                </div>
-                                            </div>
-                                            <div class="col-sm-12">
-                                                <button type="submit" class="btn btn-primary">Submit</button>
-                                                <button type="submit" class="btn btn-outline-secondary">Cancel</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3 class="card-title">Account Information</h3>
-                                        <div class="card-options ">
-                                            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
-                                            <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
-                                        </div>
-                                    </div>
-                                    <div class="card-body">
-                                        <div class="form-group">
-                                            <label>Facebook</label>
-                                            <input type="text" class="form-control" placeholder="Facebook">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Twitter</label>
-                                            <input type="text" class="form-control" placeholder="Twitter">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>LinkedIN</label>
-                                            <input type="text" class="form-control" placeholder="LinkedIN ">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Behance</label>
-                                            <input type="text" class="form-control" placeholder="Behance">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>dribbble</label>
-                                            <input type="text" class="form-control" placeholder="dribbble">
-                                        </div>
-                                        <button type="submit" class="btn btn-primary">Submit</button>
-                                        <button type="submit" class="btn btn-outline-secondary">Cancel</button>
-                                    </div>
-                                </div>
-                            </div> -->
                         </div>
                     </div>
                 </div>
