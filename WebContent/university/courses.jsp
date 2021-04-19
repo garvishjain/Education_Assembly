@@ -1273,21 +1273,24 @@ Statement stmt=con.createStatement();
                                     <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
                                 </div>
                             </div>
-                            <form action="../courses" method="post">
+                            <form action="../courses" method="post" enctype="multipart/form-data">
                             <div class="card-body">
                                 <div class="row clearfix">
                                 <div class="col-sm-6">
                                         <div class="form-group">
+                                        <label>Course Id</label>
                                             <input type="number" name="id" class="form-control" placeholder="Course Id">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
+                                        <label>Course Name</label>
                                             <input type="text" name="name" class="form-control" placeholder="Course Name ">
                                         </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
+                                        <label>Coures Duration</label>
                                             <select type="text" name="duration" class="form-control" placeholder="Course Duration Months">
                                             	<option>---Course Duration Months---</option>
                                             	<%
@@ -1310,20 +1313,27 @@ Statement stmt=con.createStatement();
                                     </div> 
                                      <div class="col-sm-6">
                                         <div class="form-group">
+                                        <label>Fees</label>
                                             <input type="number" name="fees" class="form-control" placeholder="Course Fees">
                                         </div>
                                     </div>
                                      <div class="col-sm-6">
                                         <div class="form-group">
+                                        <label>Seats</label>
                                             <input type="number" name="seats" class="form-control" placeholder="Course Student Seats">
                                         </div>
                                     </div>
                                      <div class="col-sm-12">
                                          <div class="form-group mt-2 mb-3">
-                                             <input type="file" name="image" class="dropify">
+                                         <label>Upload Course Picture</label>
+                                             <input type="file" id="image" name="image" class="dropify">
                                              <small id="fileHelp" class="form-text text-muted">Upload Course picture.</small>
                                          </div>
                                      </div>
+                                     <div class="col-sm-12">
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                        <button type="submit" class="btn btn-outline-secondary btn-default">Cancel</button>
+                                    </div>
                     </div>
                 </div>
             </div>
