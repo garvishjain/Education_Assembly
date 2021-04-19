@@ -81,7 +81,7 @@ public class St_Login extends HttpServlet {
 											{
 												request.setAttribute("status", "succesfull login");
 												//rd = request.getRequestDispatcher("university/index.jsp");
-												response.sendRedirect("student/index_1.jsp");
+												response.sendRedirect("student/home.jsp");
 												//rd.forward(request, response);
 											}
 									else

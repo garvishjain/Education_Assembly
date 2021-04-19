@@ -8,6 +8,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.util.Date;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -20,8 +24,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.Part;
 import javax.sql.DataSource;
 import javax.xml.bind.DatatypeConverter;
+
+import org.apache.commons.fileupload.disk.DiskFileItemFactory;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 /**
  * Servlet implementation class St_Register
@@ -30,20 +38,11 @@ import javax.xml.bind.DatatypeConverter;
 @MultipartConfig
 public class St_Register extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	private Connection con;
-	private PreparedStatement stmt;
-	private RequestDispatcher rd;
 	private String hashing;
+	private Connection con;
 	private String hashed;
-	private int res1;
-	private int res2;
 	private int fk_address;
 	private int fk_education;
-	private ResultSet rs1;
-	
-	
-	
-	
 	
 	private String getHash(byte[] passbyte,String algo) 
 				{
@@ -83,122 +82,154 @@ public class St_Register extends HttpServlet {
 		{
 			response.setContentType("text/html");
 			PrintWriter out = response.getWriter();
-			
+			ServletFileUpload sf = new ServletFileUpload(new DiskFileItemFactory());
 			
 			try {  
 				
 			/*Student Information*/
-						String fname = request.getParameter("fname");
-						String lname = request.getParameter("lname");
-						String adhar=request.getParameter("adhar");
-						String email=request.getParameter("email");
-						String num = request.getParameter("num");
-						String dob = request.getParameter("dob");
-						String f_name = request.getParameter("f_name");
-						String mname = request.getParameter("mname");
-						String fnum = request.getParameter("fnum");
-						String religion = request.getParameter("religion");
-						String cast = request.getParameter("cast");
-			/*Student Information*/
+						String fname = request.getParameter("fname")      	  !=null?request.getParameter("fname") : "";
+						String lname = request.getParameter("lname")           !=null?request.getParameter("lname") : "";
+						String adhar=request.getParameter("adhar")         	  !=null?request.getParameter("adhar") : "";
+						String email=request.getParameter("email")           	  !=null?request.getParameter("email") : "";
+						String num = request.getParameter("num")                !=null?request.getParameter("num") : "";
+						String dob = request.getParameter("dob")             	  !=null?request.getParameter("dob") : "";
+						String gender=request.getParameter("gender")         !=null?request.getParameter("gender") : "";
+						String f_name = request.getParameter("f_name")       !=null?request.getParameter("f_name") : "";
+						String m_name = request.getParameter("mname")     !=null?request.getParameter("mname") : "";
+						String f_num = request.getParameter("fnum")        	  !=null?request.getParameter("fnum") : "";
+						String religion = request.getParameter("religion")     !=null?request.getParameter("religion") : "";
+						String cast = request.getParameter("cast")          		  !=null?request.getParameter("cast") : "";
+						String uname= request.getParameter("uname")         !=null?request.getParameter("uname") : "";
+						String pass=request.getParameter("pass")             	  !=null?request.getParameter("pass") : "";
+			/*Student Information*/                                                              
+			/*StudentAddress*/		                                                             
+						String adrs=request.getParameter("adrs")              	 !=null?request.getParameter("adrs") : "";
+						String state = request.getParameter("state")         		 !=null?request.getParameter("state") : "";
+						String city=request.getParameter("city")             		 !=null?request.getParameter("city") : "";
+						String pincode=request.getParameter("pincode")     !=null?request.getParameter("pincode") : "";
+			/*StudentAddress*/	                                              
+						                                                       
+			/*Education Detail*/	                                           
+						String high = request.getParameter("high")           	  !=null?request.getParameter("high") : "";
+						String higher = request.getParameter("higher")          !=null?request.getParameter("higher") : "";
+						String roll=request.getParameter("roll")            			  !=null?request.getParameter("roll") : "";
+						String school=request.getParameter("school")        	  !=null?request.getParameter("school") : "";
+						String graduation = request.getParameter("graduation") !=null?request.getParameter("graduation") : "";
+			/*Education Detail*/                                           
+						                                                                                
+			/*Password hashing*/
+						byte[] passbyte = pass.getBytes();
+						hashed = getHash(passbyte,"SHA-256");
+		/*Password hashing*/		
 						
-			/*StudentAddress*/		
-						String adrs=request.getParameter("adrs");
-						String state = request.getParameter("state");
-						String city=request.getParameter("city");
-						String pincode=request.getParameter("pincode");
-			/*StudentAddress*/	
-						
-			/*Education Detail*/	
-						String high = request.getParameter("high");
-						String higher = request.getParameter("higher");
-						String roll=request.getParameter("roll");
-						String school=request.getParameter("school");
-						String graduation = request.getParameter("graduation");
-			/*Education Detail*/
-						
-			/*Login Credential*/
-						String uname= request.getParameter("uname");
-						String pass=request.getParameter("pass");
-	     	/*Login Credential*/			
-				
-		/*Password hashing*/
-					byte[] passbyte = pass.getBytes();
-					hashed = getHash(passbyte,"SHA-256");
-		/*Password hashing*/
-					
-					
+			/*Date Parse*/
+						 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd"); 
+						 Date startDate = sdf.parse(dob);
+						 String date = sdf.format(startDate);
+		 /*Date Parse*/		
+						 
+		 /* image upload*/
+						 Part part = request.getPart("image");
+						 String filename = part.getSubmittedFileName();
+						String s = filename+(LocalDateTime.now().toString().replace(":",""));
+						 String path="G:\\i\\"+s;
+						String finallocation = path +""+ filename;
+					   	part.write(finallocation );
+		 	/* image upload*/
+						 
+						 
+			/*Insert Data into student_address*/
 					String sql1="insert into student_address(address,state,city,pincode)values(?,?,?,?)";
-					stmt = con.prepareStatement(sql1);
+					PreparedStatement stmt = con.prepareStatement(sql1);
 					stmt.setString(1, adrs);
 					stmt.setString(2, state);
 					stmt.setString(3, city);
 					stmt.setString(4, pincode);
-					
 					int res= stmt.executeUpdate();
+					
 					if (res>0)
 					{
-						String s = "SELECT pk_id FROM student_address ORDER BY pk_id  DESC Limit 1" ;
-						stmt = con.prepareStatement(s);
-						ResultSet rs = stmt.executeQuery();
+						String sql = "SELECT pk_id FROM student_address ORDER BY pk_id  DESC Limit 1" ;
+						stmt = con.prepareStatement(sql);
+						 ResultSet rs = stmt.executeQuery();
 						fk_address = 0;
 						if(rs.next())
 						{
 							 fk_address=rs.getInt(1);
 						}
 					}	
+	/*Insert Data into student_address*/
 					
-						String sql2="insert into student_education(high,higher,graduation,roll_num,school_name)values(?,?,?,?,?)";
-						stmt = con.prepareStatement(sql1);
+	/*Insert Data into student_education*/
+						String sql2="insert into student_education(high,higher,grad_percentage,last_roll_no,school_name)"
+												+ "values(?,?,?,?,?)";
+						stmt = con.prepareStatement(sql2);
 						stmt.setString(1, high);
 						stmt.setString(2, higher);
 						stmt.setString(3, graduation);
 						stmt.setString(4, roll);
 						stmt.setString(5, school);
-						res1 = stmt.executeUpdate();
+						int res1 = stmt.executeUpdate();
 						if (res1>0)
 							{
 							String s1 = "SELECT pk_id FROM student_education ORDER BY pk_id  DESC Limit 1" ;
 							stmt = con.prepareStatement(s1);
-							rs1 = stmt.executeQuery();
+							ResultSet rs1 = stmt.executeQuery();
 							fk_education = 0;
 								if(rs1.next())
 								{
 									 fk_education=rs1.getInt(1);
 								}
 							}
-								String sql="insert into st_register(fname,lname,username,email,gender,contact,dob,password,fk_address,fk_education)values(?,?,?,?,?,?,?,?,?,?)";
+						
+	/*Insert Data into student_education*/
+						
+						
+		/*Insert Data into student_information*/
+						String sql="insert into student_information(first_name,last_name,email,gender,dob,religion,"
+										+ "category,s_contact,image,f_name,m_name,f_num,aadhar_number,username,password,fk_address,fk_education)"
+												+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 								stmt = con.prepareStatement(sql);
 								stmt.setString(1, fname);
 								stmt.setString(2, lname);
-								stmt.setString(3, uname);
-								stmt.setString(4, email);
-								stmt.setString(5, adhar);
-								stmt.setString(6, num);
-								stmt.setString(7, dob);
-								stmt.setString(8, hashed);
-								stmt.setInt(9, fk_address);
-								stmt.setInt(10, fk_education);
-								res2 = stmt.executeUpdate();
+								stmt.setString(3, email);
+								stmt.setString(4, gender);
+								stmt.setString(5, date);
+								stmt.setString(6, religion);
+								stmt.setString(7, cast);
+								stmt.setString(8, num);
+								stmt.setString(9, s);
+								stmt.setString(10, f_name);
+								stmt.setString(11, m_name);
+								stmt.setString(12, f_num);
+								stmt.setString(13, adhar);
+								stmt.setString(14, uname);
+								stmt.setString(15, hashed);
+								stmt.setInt(16, fk_address);
+								stmt.setInt(17, fk_education);
+								int res2 = stmt.executeUpdate();
 					
+								
+			
 					if(res>0&&res1>0&&res2>0)
 					{
+						out.println("<html><body><script>alert('Data Submitted');</script></body></html>");
 						
-						request.setAttribute("status","Successfull Registered");
-						rd = request.getRequestDispatcher("student/home.jsp");
-						rd.forward(request, response);
 					}
 					else
 					{
-						request.setAttribute("status","Failed to sign up...! please try again");
-						rd = request.getRequestDispatcher("student/register.jsp");
-						rd.forward(request, response);		
+						out.println("<html><body><script>alert('Data Not Submitted');</script></body></html>");	
 						
 					}
 			}
 			catch (SQLException e) 
 				{
 					e.printStackTrace();
-				}
+				} 
+			catch (ParseException e) 
+					{
+						e.printStackTrace();
+					}
 			
 		}
 }

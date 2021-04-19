@@ -8,7 +8,7 @@
     <meta name="keywords" content="college, campus, university, courses, school, educational">
     <meta name="description" content="ATENA - College, University and campus template">
     <meta name="author" content="Ansonika">
-    <title>College, University and campus</title>
+    <title>ATENA - College, University and campus template - SHARED ON THEMELOCK.COM</title>
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -27,18 +27,26 @@
       <script src="js/html5shiv.min.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
-   
-    
-    
-<style type="text/css">
-p{display: inline;
-		size: 120px;
-		text-align: center;
-		font-size: 16px;
-  float: right;
-  padding: 1px  2px;
-}
+     <%@page import="in.common.GetConnection"%>
+		 <%@ include file="inc/stdimport.jsp" %> 
+		<%
+		GetConnection getConObj=new GetConnection();
+		Connection con=getConObj.getCon();
+		Statement stmt=con.createStatement();
+		
+		%> 
+		<style type="text/css">
+			p			{
+						display: inline;
+						size: 120px;
+						text-align: center;
+						font-size: 16px;
+				  		
+				 		 padding: 1px  2px;
+						}
+			label{font-size: 18px;}
 </style>
+
 </head>
 
 <body>
@@ -52,7 +60,7 @@ p{display: inline;
 </div><!-- Pulse Preloader -->
 
     <!-- Header================================================== -->
-     <header>
+    <header>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-3">
@@ -126,18 +134,20 @@ p{display: inline;
        
         <div class="sub_header bg_1">
         	<div id="intro_txt">
-			<h1>Online <strong>Registration</strong>Form</h1>
+			<h1>Online <strong>Admission</strong>Form</h1>
             </div>
 		</div> <!--End sub_header -->
  
- 		<div  class="container_gray_bg">
-       
+ 		<div class="container_gray_bg">
+        <div id="position">
+    	
+    </div><!-- Position -->
         <div class="container margin_60">
  		<div class="row">
   
            <div class="col-md-9">
                 	<div class="box_style_1">
-      <form action="../St_Register" id="apply_online" method="POST" enctype="multipart/form-data">
+                      <form action="../St_Register" id="apply_online" method="POST" enctype="multipart/form-data">
                    	<div class="indent_title_in">
                     <i class="pe-7s-user"></i>
 				<h3 style="text-decoration: underline;">Personal details</h3>
@@ -167,21 +177,22 @@ p{display: inline;
        
         <div class="wrapper_indent">
                         <div class="row">
-        <div class="col-md-6">
-		                            	<div class="form-group">
-		                                <label>Aadhar Number</label>
-		                                <input type="text" class="form-control styled required" id="birth_apply" name="adhar"  maxlength="12" minlength="12" placeholder="Enter 12 digit Aadhar Number">
-		                              </div>
-		                            </div>
-	                                  
-                        
-				                       
+        					
 						                        	<div class="col-md-6">
 						                            	<div class="form-group">
 						                                <label>Email</label>
 						                                <input type="email" class="form-control styled required" id="email_apply" name="email" placeholder="youremail@gmail.com">
 						                               </div>
 						                            </div>
+						                            
+						                             <div class="col-md-6">
+		                            	<div class="form-group">
+		                                <label>Mobile Number</label>
+		                                <input type="text" class="form-control styled required" id="phone_apply" name="num" placeholder="Enter Your Number">
+		                               </div>
+		                            </div>
+						                           
+						                            
 		   </div><!-- End row -->
        </div><!-- End row -->
        
@@ -189,12 +200,7 @@ p{display: inline;
         <div class="wrapper_indent">
                         <div class="row">
        
-	                                     <div class="col-md-6">
-		                            	<div class="form-group">
-		                                <label>Mobile Number</label>
-		                                <input type="text" class="form-control styled required" id="phone_apply" name="num" placeholder="Enter Your Number">
-		                               </div>
-		                            </div>
+	                                    
 		                            
 		                            <div class="col-md-6">
 		                            	<div class="form-group">
@@ -202,11 +208,30 @@ p{display: inline;
 		                                <input type="date" class="form-control styled required" id="birth_apply" name="dob"  placeholder="Enter Your DOB">
 		                              </div>
 		                            </div>
+		                             <div class="col-md-6">
+		                            	<div class="form-group">
+		                                <label>Aadhar Number</label>
+		                                <input type="text" class="form-control styled required" id="birth_apply" name="adhar"  maxlength="12" minlength="12" placeholder="Enter 12 digit Aadhar Number">
+		                              </div>
+		                            </div>
+		                             <div class="col-md-6">
+                            	<div class="form-group">
+                                <label>Gender</label><br>
+                                    <div class="radio_inline">
+                                    <input type="radio" name="gender" id="gender_apply_male" class="required" value="Male"><label style="margin-right:20px;">Male</label>
+                                    <input type="radio" name="gender" id="gender_apply_female" class="required" value="Female"><label>Female</label>
+                                    </div>
+                            </div>
+                            </div>
+                            
+                            
+                            
+                            
 		   </div><!-- End row -->
        </div><!-- End row -->
        
        
-        <div class="wrapper_indent">
+       <div class="wrapper_indent">
                         <div class="row">
        
 	                                   <div class="col-md-6">
@@ -223,7 +248,7 @@ p{display: inline;
 		                               </div>
 		                            </div>
 		   </div><!-- End row -->
-       </div><!-- End row -->
+       </div>
        
        
         <div class="wrapper_indent">
@@ -251,10 +276,9 @@ p{display: inline;
 		                                	</select>
 		                               </div>
 		                            </div>
-		   </div><!-- End row -->
-       </div><!-- End row -->
+		   </div>
+       </div>
 		                            
-		                         
 		         <div class="wrapper_indent">
                         <div class="row">
 		                            <div class="col-md-6">
@@ -271,19 +295,20 @@ p{display: inline;
 		                              </div>
 		                            </div>
 		                            
-		                            <div class="col-md-6">
+		                            
+                     <div class="col-md-6">
 		                            	<div class="form-group">
-		                                <label>Select Student Image</label>
-		                                <input type="file" class="form-control styled required" id="birth_apply" name="fnum"  accept="image/*">
+		                                <label  >Select Student Image</label>
+		                                <input type="file" name="image"  class="form-control styled required">
 		                              </div>
 		                            </div>
 		                            
-		                             
-		     </div><!-- End row -->
-       </div><!-- End row -->  	
-                    
-  
-                     
+		                         
+		     </div>
+       </div>  	
+       
+         	
+                   
                      
                       <hr class="styled_2">
                       <div class="indent_title_in">
@@ -303,8 +328,21 @@ p{display: inline;
                             	<div class="form-group">
                                 <label>State</label>
                                 <select name="state" class="form-control styled required">
-                                			<option value="null">-- select city --</option>
-                                			<option value="gwl">gwl</option>
+                                			<option>---please Select---</option>
+														<%
+														try {
+															String query = "select * from state";
+															//get Table data
+															ResultSet rs = stmt.executeQuery(query);
+															while (rs.next()) {
+														%>
+														<option><%=rs.getString("state_name")%></option>
+														<%
+															}
+															} catch (Exception e) {
+	
+															}
+														%>
                                 </select>
                             </div>
                             </div>
@@ -314,9 +352,22 @@ p{display: inline;
                    	<div class="col-md-6">
                                 <label>City</label>
                                 <div class="styled-select">
-								<select class="form-control required" name="city" id="country_apply" >
-										<option value="null">-- select city --</option>
-										<option value="mor">mor</option>
+								<select  name="city" id="country_apply" >
+									<option>---Please Select---</option>
+														<%
+														try {
+															String query = "select * from city";
+															//get Table data
+															ResultSet rs = stmt.executeQuery(query);
+															while (rs.next()) {
+														%>
+														<option><%=rs.getString("city_name")%></option>
+														<%
+															}
+														} catch (Exception e) {
+
+														}
+														%>
 								</select>
 							</div>
                             </div>
@@ -337,6 +388,7 @@ p{display: inline;
            
                        
                         <div class="indent_title_in">
+                        <i class="pe-7s-study"></i>
 								<h3 style="text-decoration: underline;">Education Detail</h3>
 						</div>
                       <div class="wrapper_indent">
@@ -361,6 +413,12 @@ p{display: inline;
 		                            </div>
 		                            
 		                            <div class="col-md-6">
+		                            	<div class="form-group">
+		                                <label>Graduation(%)</label> 
+		                                <input type="text" class="form-control styled required" id="lastname_apply" name="graduation" placeholder="Enter Graduation Percentage">
+		                           		 </div>
+		                            </div>
+		                            <div class="col-md-6">
 		                            	<div class="form-group"  >
 		                                <label>Roll No. Of Last Exam</label>
 		                                <input type="text" class="form-control styled required" id="name_apply" name="roll"  placeholder="Enter Roll Number">
@@ -373,18 +431,15 @@ p{display: inline;
 		                           		 </div>
 		                            </div>
                             
-                             <div class="col-md-6">
-		                            	<div class="form-group">
-		                                <label>Graduation(%)</label> 
-		                                <input type="text" class="form-control styled required" id="lastname_apply" name="graduation" placeholder="Enter Graduation Percentage">
-		                           		 </div>
-		                            </div>
+                             
                    </div><!-- End row -->
        </div><!-- End row -->
                       
                       <hr class="styled_2">
                       
                        <div class="indent_title_in">
+                       
+                          <i class="pe-7s-users"></i>
 				<h3 style="text-decoration: underline;">Log-In Credential</h3>
 			</div>
             	<div class="wrapper_indent">
@@ -412,7 +467,7 @@ p{display: inline;
                     </div>
          </div>
                       
-                    
+                      <hr class="styled_2">
                       
                       <!-- <div class="wrapper_indent" >
 				                      <div class="form-group">
@@ -443,21 +498,33 @@ p{display: inline;
            </div>
            <div class="col-md-3">
            		
-                      <h4><strong>How to apply</strong></h4>
-                    <p>Zril causae ancillae sit ea. Dicam veritus mediocritatem sea ex, nec id agam eius. Te pri facete latine salutandi, scripta mediocrem et sed, cum.</p>
+                    <h4><strong>How to apply</strong></h4>
+                    <p>Step : College Selection<br>
+							Step : Filling the Application Form<br>
+							Step : Appearing for Entrance Exam<br>
+							Step : Taking Part in Counselling<br>
+							Step : Final Allocation of Seats<br>
+							Step : Final Admission</p>
                    
                     <div class="box_side"><h5>By Phone</h5> <i class="icon-phone"></i>
-                    <p> + 0043 848293 43<br><small>Monday to Friday 9.00am - 6.00pm</small></p>
+                    <p> + 000-1234567<br><small>Monday to Friday 9.00am - 5.00pm</small></p>
                     </div>
              
                     <div class="box_side"><h5>By Postal Mail</h5> <i class="icon_pencil-edit"></i>
-                    <p><a href="#0"><strong>Download the application form</strong></a>,<br> and send it to this address:<br><br><em>4 West 31st Street New York<br>
-10001 United States</em></p>
+                    <p><a href="#0"><strong>Download the application form</strong></a>,<br> and send it to this address:<br><br><em>Ground Floor,
+Pragati Maidan Metro Station,
+Pragati Maidan,
+New Delhi-110001<br>
+</em></p>
 </div>
  <hr class="styled">
-                    <div class="box_side"><h4>Plan a visit</h4> <i class="icon_pencil-edit"></i>
-                    <p>Per eu esse deleniti scripserit, sed ut nihil inimicus sadipscing. Eu iusto ignota officiis sit, nullam ullamcorper eam ut. </p>
+                 <!--    <div class="box_side"><h4>Plan a visit</h4> <i class="icon_pencil-edit"></i>
+                    <p>By filling out this form, you agree to allow your information to be shared with a consortium of colleges and universities  to contact you with more information. </p>
                     <a href="#0" class="button small">Plan a visit</a>
+</div> --><div class="box_side">
+                    <h5>Apply Online</h5> <i class="icon_desktop"></i>
+                    <p>By filling out this form, you agree to allow your information to be shared with a consortium of colleges and universities  to contact you with more information. </p>  
+                    <p><a href="register.jsp" class="button small">Apply online</a> </p>
 </div>
 
            </div>
@@ -466,8 +533,6 @@ p{display: inline;
         </div><!--End container_gray_bg -->
   
   		
-        
-	
 	
 	<footer>
         <div class="container">
@@ -504,8 +569,8 @@ p{display: inline;
                         <li><a href="#">Plan a visit</a></li>
                     </ul>
                     <ul id="contacts_footer">
-                        <li>Info line - <a href="tel://033284322">+0332 84322456</a></li>
-                        <li>Email - <a href="#">info@atena.com</a> / <a href="#">office@atena.com</a></li>
+                        <li>Info line - <a href="tel://033284322">+000-1234567</a></li>
+                        <li>Email - <a href="#">info@educationassembly.com</a> / <a href="#">office@educationassembly.com</a></li>
                     </ul>
                 </div>
             </div><!-- End row -->
@@ -513,7 +578,7 @@ p{display: inline;
         </footer><!-- End footer -->
         <div id="copy">
             <div class="container">
-                 © Atena 2015 - All rights reserved.
+                 © Education-Assembly 2021 .
             </div>
         </div><!-- End copy -->    
     
@@ -522,9 +587,9 @@ p{display: inline;
 		<div class="modal-dialog">
 			<div class="modal-content modal-popup">
 				<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-				<form action="#" class="popup-form" id="myLogin">
-					<input type="text" class="form-control form-white" placeholder="Username">
-					<input type="text" class="form-control form-white" placeholder="Password">
+				<form action="St_Login" method="post" class="popup-form" id="myLogin">
+					<input type="text" name="uname" class="form-control form-white" placeholder="Username">
+					<input type="text" name="pass" class="form-control form-white" placeholder="Password">
 					<div class="checkbox-holder text-left">
 						<div class="checkbox">
 							<input type="checkbox" value="accept_1" id="check_1" name="check_1" />
