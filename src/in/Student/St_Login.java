@@ -70,7 +70,7 @@ public class St_Login extends HttpServlet {
 						byte[] bytepass = pass.getBytes();
 						String Hashed = getHash(bytepass, "SHA-256");
 
-						String sql = "Select username,password from st_register where username ='" + uname + "' and password= '"+ Hashed + "' LIMIT 1";
+						String sql = "Select username,password from student_information where username ='" + uname + "' and password= '"+ Hashed + "' LIMIT 1";
 
 						ResultSet rs = stmt.executeQuery(sql);
 
