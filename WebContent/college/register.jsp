@@ -15,7 +15,7 @@
     <title>College  Registration </title>
     <!-- Import package -->
     <%@page import="in.common.GetConnection"%>
-	<%@ include file="imp/stdimport.jsp" %>    
+	<%@ include file="INC/stdimport.jsp" %>    
     
 <%
 GetConnection getConObj=new GetConnection();
@@ -54,11 +54,7 @@ Statement stmt=con.createStatement();
 
 </head>
 
-<%
-	String collegeCategory[]={"All Courses","Only Business Courses","Only Computer Science Courses","Only IT Courses"};
-	int i=0;
-	
-%>
+
 
 <body>
 
@@ -158,7 +154,7 @@ Statement stmt=con.createStatement();
   	<br><br><br>
            <div class="col-md-14">
                 	<div class="box_style_1">
-                    <form action="../St_Register"  onsubmit="return validate()" method="POST" >
+                    <form action="../collegeregistration"  onsubmit="return validate()" method="POST" >
                    	<div class="indent_title_in">
                     
 				<h2 class="reg">Registration Form</h2><i class="pe-7s-user"></i>
@@ -176,7 +172,24 @@ Statement stmt=con.createStatement();
                             <div class="col-md-6">
                             	<div class="form-group">
                                 <label>University name</label> 
-                                <input type="text" class="form-control styled " id="uniname" name="uniname" placeholder="Enter University name">
+                                 <select class="form-control"id="uniname" name="uniname" required="required">
+                                                		<option value="">---Please Select---</option>
+                                                		
+														<%
+															try {
+																String query = "select * from university";
+																//get Table data
+																ResultSet rs = stmt.executeQuery(query);
+																while (rs.next()) {
+														%>
+														<option><%=rs.getString("u_name")%></option>
+														<%
+															}
+															} catch (Exception e) {
+
+															}
+														%>
+                                                	</select>
                                 <span style="color:red" id="uninameerr"></span>
                             </div>
                             </div>

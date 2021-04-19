@@ -8,3 +8,8 @@
  <%@ page import="java.sql.SQLException" %> 
 <%@ page import="java.sql.Statement"%>
 <%@ page import="java.sql.ResultSet"%>
+<%
+	String collegeCategory[]={"All Courses","Only Business Courses","Only Computer Science Courses","Only IT Courses"};
+	int i=0;
+	
+%>
