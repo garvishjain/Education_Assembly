@@ -8,7 +8,7 @@
     <meta name="keywords" content="college, campus, university, courses, school, educational">
     <meta name="description" content="ATENA - College, University and campus template">
     <meta name="author" content="Ansonika">
-    <title>ATENA - College, University and campus template - SHARED ON THEMELOCK.COM</title>
+    <title>College, University and campus template</title>
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -147,7 +147,7 @@
   
            <div class="col-md-9">
                 	<div class="box_style_1">
-                      <form action="../St_Register" id="apply_online" method="POST" enctype="multipart/form-data">
+                      <form action="../St_Register" id="apply_online" method="post" enctype="multipart/form-data">
                    	<div class="indent_title_in">
                     <i class="pe-7s-user"></i>
 				<h3 style="text-decoration: underline;">Personal details</h3>

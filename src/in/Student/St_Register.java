@@ -31,6 +31,9 @@ import javax.xml.bind.DatatypeConverter;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
+import in.common.date;
+import in.common.img;
+
 /**
  * Servlet implementation class St_Register
  */
@@ -82,7 +85,7 @@ public class St_Register extends HttpServlet {
 		{
 			response.setContentType("text/html");
 			PrintWriter out = response.getWriter();
-			ServletFileUpload sf = new ServletFileUpload(new DiskFileItemFactory());
+			/*ServletFileUpload sf = new ServletFileUpload(new DiskFileItemFactory());*/
 			
 			try {  
 				
@@ -123,18 +126,22 @@ public class St_Register extends HttpServlet {
 		/*Password hashing*/		
 						
 			/*Date Parse*/
-						 SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd"); 
+						/* SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd"); 
 						 Date startDate = sdf.parse(dob);
-						 String date = sdf.format(startDate);
+						 String date = sdf.format(startDate);*/
+						date dt=new date();
+						String date =dt.Date(dob);
 		 /*Date Parse*/		
 						 
 		 /* image upload*/
 						 Part part = request.getPart("image");
 						 String filename = part.getSubmittedFileName();
-						String s = filename+(LocalDateTime.now().toString().replace(":",""));
+						/*String s = filename+(LocalDateTime.now().toString().replace(":",""));
 						 String path="G:\\i\\"+s;
 						String finallocation = path +""+ filename;
-					   	part.write(finallocation );
+					   	part.write(finallocation );*/
+						 img image = new img();
+						String img = image.image(filename, part);
 		 	/* image upload*/
 						 
 						 
@@ -198,7 +205,7 @@ public class St_Register extends HttpServlet {
 								stmt.setString(6, religion);
 								stmt.setString(7, cast);
 								stmt.setString(8, num);
-								stmt.setString(9, s);
+								stmt.setString(9, img);
 								stmt.setString(10, f_name);
 								stmt.setString(11, m_name);
 								stmt.setString(12, f_num);
@@ -226,10 +233,7 @@ public class St_Register extends HttpServlet {
 				{
 					e.printStackTrace();
 				} 
-			catch (ParseException e) 
-					{
-						e.printStackTrace();
-					}
+		
 			
 		}
 }
