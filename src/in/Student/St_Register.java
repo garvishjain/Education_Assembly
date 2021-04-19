@@ -136,12 +136,12 @@ public class St_Register extends HttpServlet {
 		 /* image upload*/
 						 Part part = request.getPart("image");
 						 String filename = part.getSubmittedFileName();
-						/*String s = filename+(LocalDateTime.now().toString().replace(":",""));
+						String s = filename+(LocalDateTime.now().toString().replace(":",""));
 						 String path="G:\\i\\"+s;
 						String finallocation = path +""+ filename;
-					   	part.write(finallocation );*/
-						 img image = new img();
-						String img = image.image(filename, part);
+					   	part.write(finallocation );
+						/* img image = new img();
+						String img = image.image(filename, part);*/
 		 	/* image upload*/
 						 
 						 
@@ -197,27 +197,24 @@ public class St_Register extends HttpServlet {
 										+ "category,s_contact,image,f_name,m_name,f_num,aadhar_number,username,password,fk_address,fk_education)"
 												+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 								stmt = con.prepareStatement(sql);
-								stmt.setString(1, fname);
-								stmt.setString(2, lname);
-								stmt.setString(3, email);
-								stmt.setString(4, gender);
-								stmt.setString(5, date);
-								stmt.setString(6, religion);
-								stmt.setString(7, cast);
-								stmt.setString(8, num);
-								stmt.setString(9, img);
-								stmt.setString(10, f_name);
-								stmt.setString(11, m_name);
-								stmt.setString(12, f_num);
-								stmt.setString(13, adhar);
-								stmt.setString(14, uname);
-								stmt.setString(15, hashed);
-								stmt.setInt(16, fk_address);
-								stmt.setInt(17, fk_education);
+								stmt.setString(1,fname);
+								stmt.setString(2,lname);
+								stmt.setString(3,email);
+								stmt.setString(4,gender);
+								stmt.setString(5,date);
+								stmt.setString(6,religion);
+								stmt.setString(7,cast);
+								stmt.setString(8,num);
+								stmt.setString(9,s);
+								stmt.setString(10,f_name);
+								stmt.setString(11,m_name);
+								stmt.setString(12,f_num);
+								stmt.setString(13,adhar);
+								stmt.setString(14,uname);
+								stmt.setString(15,hashed);
+								stmt.setInt(16,fk_address);
+								stmt.setInt(17,fk_education);
 								int res2 = stmt.executeUpdate();
-					
-								
-			
 					if(res>0&&res1>0&&res2>0)
 					{
 						out.println("<html><body><script>alert('Data Submitted');</script></body></html>");
