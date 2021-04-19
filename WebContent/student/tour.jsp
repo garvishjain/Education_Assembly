@@ -8,7 +8,7 @@
     <meta name="keywords" content="college, campus, university, courses, school, educational">
     <meta name="description" content="ATENA - College, University and campus template">
     <meta name="author" content="Ansonika">
-    <title>ATENA - College, University and campus template - SHARED ON THEMELOCK.COM</title>
+    <title>College, University and campus template</title>
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">

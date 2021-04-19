@@ -40,77 +40,10 @@
 	<div class="pulse"></div>
 </div><!-- Pulse Preloader -->
 
-    <!-- Header================================================== -->
-    <header>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3 col-sm-3 col-xs-3">
-                <div id="logo">
-                    <a href="index.html"><img src="img/logo.png" width="125" height="40" alt="Atena" data-retina="true"></a>
-                </div>
-            </div>
-            <nav class="col-md-9 col-sm-9 col-xs-9">
-            <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
-            <div class="main-menu">
-                <div id="header_menu">
-                    <img src="img/logo_mobile.png" width="125" height="40" alt="Atena" data-retina="true">
-                </div>
-                <a href="#" class="open_close" id="close_in"><i class="icon_close"></i></a>
-                <ul>
-                    <li class="submenu">
-                    <a href="home.jsp" >Home <i></i></a>
-                    
-                    </li>
-                    <li class="submenu">
-                    <a href="javascript:void(0);" class="show-submenu">Academic <i class="icon-down-open-mini"></i></a>
-                    <ul>
-                        <li><a href="diploma.jsp">Diploma courses</a></li>
-                        <li><a href="graduate.jsp">Graduate courses</a></li>
-                        <li><a href="master.jsp">Master courses</a></li>
-                        <li><a href="register.jsp">Apply online</a></li>
-                    </ul>
-                    </li>
-                    <li class="submenu">
-                    <a href="javascript:void(0);" class="show-submenu">About <i class="icon-down-open-mini"></i></a>
-                    <ul>
-                        <li><a href="about.jsp">About us</a></li>
-                        <li><a href="contacts.jsp">Plan a visit</a></li>
-                        <li><a href="gallery.jsp">Gallery</a></li>
-                    </ul>
-                    </li>
-                    <li class="megamenu submenu">
-                    <a href="javascript:void(0);" class="show-submenu-mega">Pages &amp; elements<i class="icon-down-open-mini"></i></a>
-                    <div class="menu-wrapper">
-                        <div class="col-md-4">
-                            <h3>Pages</h3>
-                            <ul>
-                                <li><a href="blog.jsp">Blog</a></li>
-                                <li><a href="contacts.jsp">Contacts</a></li>
-                                <li><a href="agenda_calendar.jsp">Agenda calendar</a></li>
-                                <li><a href="gallery.jsp">Gallery</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4">
-                            <h3>Pages</h3>
-                            <ul>
-                                <li><a href="#" data-toggle="modal" data-target="#login">Login</a></li>
-                                <li><a href="register.jsp" >Register</a></li>
-                                <li><a href="tour.jsp">Tour</a></li>
-                               
-                            </ul>
-                        </div>
-                    </div><!-- End menu-wrapper -->
-                    </li>
-                    <li><a href="tour.jsp">Tour</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#login">Login</a></li>
-                    <li><a href="#search" id="search_bt"><i class=" icon-search"></i><span>Search</span></a></li>
-                </ul>
-            </div>
-            <!-- End main-menu -->
-            </nav>
-        </div>
-    </div><!-- container -->
-    </header><!-- End Header -->
+   <!--Header File-->	
+	 <%@ include file="itc/header.jsp" %>
+		<!--Header File-->
+
         
         <div class="sub_header bg_1">
         	<div id="intro_txt">
@@ -119,15 +52,7 @@
             </div>
 		</div> <!--End sub_header -->
         
-        <div id="position">
-            <div class="container">
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Category</a></li>
-                    <li>Page active</li>
-                </ul>
-            </div>
-        </div><!-- Position -->
+       
  
  	<div class="container_gray_bg">
     	<div class="container margin_60">
@@ -275,68 +200,20 @@
 </div><!-- End container -->
     </div><!--End container_gray_bg -->
     
-     <div class=" container_gray_line" id="newsletter_container">
-        <div class="container margin_60">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center">
-                    <h3>Subscribe to our Newsletter for latest news.</h3>
-                    <div id="message-newsletter"></div>
-                    <form method="post" action="assets/newsletter.php" name="newsletter" id="newsletter" class="form-inline">
-                        <input name="email_newsletter" id="email_newsletter" type="email" value="" placeholder="Your Email" class="form-control">
-                        <button id="submit-newsletter" class="button"> Subscribe</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        </div><!-- End newsletter_container -->
-	
-     <footer>
-        <div class="container">
-            <div class="row ">
-                <div class="col-md-4 col-sm-6">
-                	<h3>About Us</h3>
-                    <p>Id pri consul aeterno petentium. Vivendo abhorreant et vim, et quot persecuti mel. Libris hendrerit ex sea. Duo legere evertitur an, pri hinc doctus definitiones an, vix id dicam putent. Ius ornatus instructior in.</p>
-       
-                </div>
-                <div class="col-md-3 col-md-offset-1 col-sm-3">
-                    <h3>Discover</h3>
-                    <ul>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">FAQ</a></li>
-                        <li><a href="#">Quotation</a></li>
-                        <li><a href="#">Contacts</a></li>
-                        <li><a href="#">Shop</a></li>
-                         <li><a href="#">Terms and condition</a></li>
-                    </ul>
-                </div>
-              <div class="col-md-4 col-sm-3" id="contact_bg">
-                <h3>Contacts</h3>
-                	<ul id="contact_details_footer">
-                    <li id="address_footer">4 West 31st Street New York, New York - 10001<br>United States</li>
-                    <li id="phone_footer"><a href="tel://004542344599">+45 423 445 99</a> / <a href="tel://004542344599">+45 423 445 99</a></li>
-                    <li id="email_footer"><a href="mailto:info@removals.com">info@removals.com</a></li>
-                    </ul>                   
-                 </div>
-            </div><!-- End row -->
-          
-             </div><!-- End container -->
-    </footer><!-- End footer -->
+  
+	 
+		<!--Footer File-->	 
+	<%@ include file="itc/footer.jsp" %>
+		<!--Footer File-->
     
-        <div id="copy">
-        	<div class="container">
-            	© Removals 2015 - All rights reserved.
-            </div>
-        </div><!-- End copy -->
-
-	
 <!-- Login modal -->   
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myLogin" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content modal-popup">
 				<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-				<form action="#" class="popup-form" id="myLogin">
-					<input type="text" class="form-control form-white" placeholder="Username">
-					<input type="text" class="form-control form-white" placeholder="Password">
+				<form action="../St_Login" method="post" class="popup-form" id="myLogin">
+					<input type="text" name="uname" class="form-control form-white" placeholder="Enter Username">
+					<input type="password" name="pass" class="form-control form-white" placeholder="Enter Password">
 					<div class="checkbox-holder text-left">
 						<div class="checkbox">
 							<input type="checkbox" value="accept_1" id="check_1" name="check_1" />

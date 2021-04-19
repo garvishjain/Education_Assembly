@@ -81,79 +81,10 @@ a:hover {
 	<div class="pulse"></div>
 </div><!-- Pulse Preloader -->
 
-    <!-- Header================================================== -->
-    <header>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3 col-sm-3 col-xs-3">
-                <div id="logo">
-                    <a href="index.html"><img src="img/logo.png" width="125" height="40" alt="Atena" data-retina="true"></a>
-                </div>
-            </div>
-            <nav class="col-md-9 col-sm-9 col-xs-9">
-            <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
-            <div class="main-menu">
-                <div id="header_menu">
-                    <img src="img/logo_mobile.png" width="125" height="40" alt="Atena" data-retina="true">
-                </div>
-                <a href="#" class="open_close" id="close_in"><i class="icon_close"></i></a>
-                <ul>
-                    <li class="submenu">
-                    <a href="home.jsp" >Home <i></i></a>
-                    
-                    </li>
-                    <li class="submenu">
-                    <a href="javascript:void(0);" class="show-submenu">Academic <i class="icon-down-open-mini"></i></a>
-                    <ul>
-                        <li><a href="diploma.jsp">Diploma courses</a></li>
-                        <li><a href="graduate.jsp">Graduate courses</a></li>
-                        <li><a href="master.jsp">Master courses</a></li>
-                        <li><a href="register.jsp">Apply online</a></li>
-                    
-                    </ul>
-                    </li>
-                    <li class="submenu">
-                    <a href="javascript:void(0);" class="show-submenu">About <i class="icon-down-open-mini"></i></a>
-                    <ul>
-                        <li><a href="about.jsp">About us</a></li>
-                        <li><a href="contacts.jsp">Plan a visit</a></li>
-                        <li><a href="gallery.jsp">Gallery</a></li>
-                    </ul>
-                    </li>
-                    <li class="megamenu submenu">
-                    <a href="javascript:void(0);" class="show-submenu-mega">Pages &amp; elements<i class="icon-down-open-mini"></i></a>
-                    <div class="menu-wrapper">
-                        <div class="col-md-4">
-                            <h3>Pages</h3>
-                            <ul>
-                            	
-                                <li><a href="blog.jsp">Blog</a></li>
-                                <li><a href="contacts.jsp">Contacts</a></li>
-                                <li><a href="agenda_calendar.jsp">Agenda calendar</a></li>
-                                <li><a href="gallery.jsp">Gallery</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4">
-                            <h3>Pages</h3>
-                            <ul>
-                                <li><a href="#" data-toggle="modal" data-target="#login">Login</a></li>
-                                <li><a href="register.jsp" >Register</a></li>
-                                <li><a href="tour.jsp">Tour</a></li>
-                               
-                            </ul>
-                        </div>
-                    </div><!-- End menu-wrapper -->
-                    </li>
-                    <li><a href="tour.jsp">Tour</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#login">Login</a></li>
-                    <li><a href="#search" id="search_bt"><i class=" icon-search"></i><span>Search</span></a></li>
-                </ul>
-            </div>
-            <!-- End main-menu -->
-            </nav>
-        </div>
-    </div><!-- container -->
-    </header><!-- End Header -->
+    <!--Header File-->	
+	 <%@ include file="itc/header.jsp" %>
+		<!--Header File-->
+
 
         <div class="sub_header bg_1">
         	<div id="intro_txt">
@@ -267,7 +198,7 @@ a:hover {
                     <div class="row">
                     		<h4 class="h">Diploma in Engineering Course Highlights</h4>
 			<p>Some of the major highlights of the Diploma in Engineering course is given in the table below:</p>
-			<table ><tbody><tr><td ><p >Level</p></td><td ><p >Diploma Level</p></td></tr><tr><td ><p >Duration</p></td><td ><p >3 years (6 semesters)</p></td></tr><tr><td ><p >Fee Structure</p></td><td ><p >INR 30K- 1 lakh</p></td></tr><tr><td ><p >Exam Type</p></td><td ><p >Per Semester</p></td></tr><tr><td ><p >Eligibility&nbsp;</p></td><td ><p >Must pass 10th or 12th in PCM from a recognised board</p></td></tr><tr><td ><p >Minimum Aggregate Required</p></td><td ><p >50%</p></td></tr><tr><td ><p >Admission Process</p></td><td ><p >Merit-Based, Entrance Exam</p></td></tr><tr><td ><p >Starting Salary</p></td><td ><p >INR 3 to 6 LPA</p></td></tr><tr><td ><p >Job Options</p></td><td ><p>Assistant Engineer, Junior Manager, Assistant Inventory Manager, Project Assistant, Junior Engineer, Professor, Consultant, etc.</p></td></tr></tbody></table></p></div><div >
+			<table ><tbody><tr><td ><p >Level</p></td><td ><p >Diploma Level</p></td></tr><tr><td ><p >Duration</p></td><td ><p >3 years (6 semesters)</p></td></tr><tr><td ><p >Exam Type</p></td><td ><p >Per Semester</p></td></tr><tr><td ><p >Eligibility&nbsp;</p></td><td ><p >Must pass 10th or 12th in PCM from a recognised board</p></td></tr><tr><td ><p >Minimum Aggregate Required</p></td><td ><p >50%</p></td></tr><tr><td ><p >Admission Process</p></td><td ><p >Merit-Based, Entrance Exam</p></td></tr><tr><td ><p >Starting Salary</p></td><td ><p >INR 3 to 6 LPA</p></td></tr><tr><td ><p >Job Options</p></td><td ><p>Assistant Engineer, Junior Manager, Assistant Inventory Manager, Project Assistant, Junior Engineer, Professor, Consultant, etc.</p></td></tr></tbody></table></p></div><div >
 	
                    </div>
                     </div>
@@ -291,127 +222,7 @@ a:hover {
                         
             
                     
-                      <hr class="styled_2">
-                    
-                    <div class="indent_title_in">
-                    <i class="pe-7s-clock"></i>
-				<h3>Time table</h3>
-				<p>Mussum ipsum cacilds, vidis litro abertis.</p>
-			</div>
-            	<div class="wrapper_indent">
-                    <p>Zril causae ancillae sit ea. Dicam veritus mediocritatem sea ex, nec id agam eius. Te pri facete latine salutandi, scripta mediocrem et sed, cum ne mundi vulputate. Ne his sint graeco detraxit, posse exerci volutpat has in.</p>
-                    	
-                        <table class="table table-striped cart-list add_bottom_30">
-                        <thead>
-                        <tr>
-                            <th>
-                                Day
-                            </th>
-                            <th>
-                                Lessons
-                            </th>
-                            <th>
-                                Workshops
-                            </th>
-                            <th>
-                               Group session
-                            </th>
-                            <th>
-                               Exams
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <td>
-                                Monday
-                            </td>
-                            <td>
-                                09.00am - 11.00am
-                            </td>
-                            <td>
-                               11.00am - 12.00am
-                            </td>
-                            <td>
-                               02.00pm - 04.00pm
-                            </td>
-                            <td>
-                                -
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Tuesday
-                            </td>
-                            <td>
-                               09.00am - 11.00am
-                            </td>
-                            <td>
-                               11.00am - 12.00am
-                            </td>
-                            <td>
-                               02.00pm - 04.00pm
-                            </td>
-                            <td>
-                                -
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Wednesday
-                            </td>
-                            <td>
-                               09.00am - 11.00am
-                            </td>
-                            <td>
-                               11.00am - 12.00am
-                            </td>
-                            <td>
-                              -
-                            </td>
-                            <td>
-                                 02.00pm - 04.00pm
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Thursday
-                            </td>
-                            <td>
-                                 09.00am - 11.00am
-                            </td>
-                            <td>
-                               11.00am - 12.00am
-                            </td>
-                            <td>
-                              02.00pm - 04.00pm
-                            </td>
-                            <td>
-                                -
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                Friday
-                            </td>
-                            <td>
-                               09.00am - 11.00am
-                            </td>
-                            <td>
-                                11.00am - 12.00am
-                            </td>
-                            <td>
-                               -
-                            </td>
-                            <td>
-                                02.00pm - 04.00pm
-                            </td>
-                        </tr>
-                        
-                        </tbody>
-                        </table>
-                    
-                    </div>
+                      
                     
                     </div>
            </div>
@@ -461,125 +272,21 @@ New Delhi-110001<br>
         </div><!--End container -->
         </div><!--End container_gray_bg -->
   
-  		<!-- <div class="container margin_60">
-         <div class="main_title">
-    <h2>Frequently questions</h2>
-    <p>Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset.</p>
-    </div>
-        	<div class="row">
-            <div class="col-md-4">
-            <div class="box_style_2">
-            	<h4>Et ius tota recusabo democritum?</h4>
-                 <p>Zril causae ancillae sit ea. Dicam veritus mediocritatem sea ex, nec id agam eius. Te pri facete latine salutandi, scripta mediocrem et sed, cum ne mundi vulputate. Ne his sint graeco detraxit, posse exerci volutpat has in.</p>
-             </div>
-            </div>
-            <div class="col-md-4">
-            <div class="box_style_2">
-            	<h4>Posse exerci volutpat has?</h4>
-                <p>Zril causae ancillae sit ea. Dicam veritus mediocritatem sea ex, nec id agam eius. Te pri facete latine salutandi, scripta mediocrem et sed, cum ne mundi vulputate. Ne his sint graeco detraxit, posse exerci volutpat has in.</p>
-             </div>
-            </div>
-            <div class="col-md-4">
-            <div class="box_style_2">
-            	<h4>Te pri facete latine salutandi?</h4>
-                <p>Zril causae ancillae sit ea. Dicam veritus mediocritatem sea ex, nec id agam eius. Te pri facete latine salutandi, scripta mediocrem et sed, cum ne mundi vulputate. Ne his sint graeco detraxit, posse exerci volutpat has in.</p>
-             </div>
-            </div>
-        </div>End row
-        <div class="row">
-            <div class="col-md-4">
-            <div class="box_style_2">
-            	<h4>Et ius tota recusabo democritum?</h4>
-                <p>Zril causae ancillae sit ea. Dicam veritus mediocritatem sea ex, nec id agam eius. Te pri facete latine salutandi, scripta mediocrem et sed, cum ne mundi vulputate. Ne his sint graeco detraxit, posse exerci volutpat has in.</p>
-             </div>
-            </div>
-            <div class="col-md-4">
-            <div class="box_style_2">
-            	<h4>Mediocritatem sea ex, nec id agam?</h4>
-                <p>Zril causae ancillae sit ea. Dicam veritus mediocritatem sea ex, nec id agam eius. Te pri facete latine salutandi, scripta mediocrem et sed, cum ne mundi vulputate. Ne his sint graeco detraxit, posse exerci volutpat has in.</p>
-             </div>
-            </div>
-            <div class="col-md-4">
-            <div class="box_style_2">
-            	<h4>Te pri facete latine salutandi?</h4>
-                <p>Zril causae ancillae sit ea. Dicam veritus mediocritatem sea ex, nec id agam eius. Te pri facete latine salutandi, scripta mediocrem et sed, cum ne mundi vulputate. Ne his sint graeco detraxit, posse exerci volutpat has in.</p>
-             </div>
-            </div>
-        </div>End row
-        </div>End container -->
-        
- 	<!-- <div class=" container_gray_line" id="newsletter_container">
-        <div class="container margin_60">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 text-center">
-                    <h3>Subscribe to our Newsletter for latest news.</h3>
-                    <div id="message-newsletter"></div>
-                    <form method="post" action="assets/newsletter.php" name="newsletter" id="newsletter" class="form-inline">
-                        <input name="email_newsletter" id="email_newsletter" type="email" value="" placeholder="Your Email" class="form-control">
-                        <button id="submit-newsletter" class="button"> Subscribe</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-        </div>End newsletter_container -->
+  	
 
-	
-	<footer>
-        <div class="container">
-            <div class="row ">
-                <div class="col-md-3 col-sm-3">
-                    <p id="logo_footer">
-                        <img src="img/logo.png" width="125" height="40" alt="Atena" data-retina="true">
-                    </p>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <h4>About</h4>
-                    <ul>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Login</a></li>
-                        <li><a href="#">Register</a></li>
-                        <li><a href="#">Terms and condition</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <h4>Academic</h4>
-                    <ul>
-                        <li><a href="#">Plans of study</a></li>
-                        <li><a href="#">Courses</a></li>
-                        <li><a href="#">Admissions</a></li>
-                        <li><a href="#">Staff</a></li>
-                        <li><a href="#">Students</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <h4>Contact us</h4>
-                    <ul>
-                        <li><a href="#">Contacts</a></li>
-                        <li><a href="#">Plan a visit</a></li>
-                    </ul>
-                    <ul id="contacts_footer">
-                        <li>Info line - <a href="tel://033284322">+0332 84322456</a></li>
-                        <li>Email - <a href="#">info@atena.com</a> / <a href="#">office@atena.com</a></li>
-                    </ul>
-                </div>
-            </div><!-- End row -->
-        </div><!-- End container -->
-        </footer><!-- End footer -->
-        <div id="copy">
-            <div class="container">
-                 © Atena 2015 - All rights reserved.
-            </div>
-        </div><!-- End copy -->
+	 
+		<!--Footer File-->	 
+	<%@ include file="itc/footer.jsp" %>
+		<!--Footer File-->
     
 <!-- Login modal -->   
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myLogin" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content modal-popup">
 				<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-				<form action="#" class="popup-form" id="myLogin">
-					<input type="text" class="form-control form-white" placeholder="Username">
-					<input type="text" class="form-control form-white" placeholder="Password">
+				<form action="../St_Login" method="post" class="popup-form" id="myLogin">
+					<input type="text" name="uname" class="form-control form-white" placeholder="Enter Username">
+					<input type="password" name="pass" class="form-control form-white" placeholder="Enter Password">
 					<div class="checkbox-holder text-left">
 						<div class="checkbox">
 							<input type="checkbox" value="accept_1" id="check_1" name="check_1" />

@@ -67,37 +67,33 @@ public class St_Login extends HttpServlet {
 				try {
 						String uname = request.getParameter("uname");
 						String pass = request.getParameter("pass");
+						
+					/*password hashing*/
 						byte[] bytepass = pass.getBytes();
 						String Hashed = getHash(bytepass, "SHA-256");
-
-						String sql = "Select username,password from student_information where username ='" + uname + "' and password= '"+ Hashed + "' LIMIT 1";
-
+							
+						
+						String sql = "Select username,password from student_information where username =' " + uname + " ' and password= '"+ Hashed + "' LIMIT 1";
+						
 						ResultSet rs = stmt.executeQuery(sql);
-
+						String u = rs.getString(1);
+						String p = rs.getString(2);
+						System.out.println(uname+"\n"+Hashed+"\n\n\n"+u+"\n"+p);
 						if (rs.next()) 
 								{
 									String password = rs.getString(2);
 									if (pass.equals(password))
 											{
-												request.setAttribute("status", "succesfull login");
-												//rd = request.getRequestDispatcher("university/index.jsp");
-												response.sendRedirect("student/home.jsp");
-												//rd.forward(request, response);
+										out.println("<html><body><script>alert('Data  Submitted');</script></body></html>");
 											}
 									else
 											{
-												request.setAttribute("status", "Failed to sign up...! please try again");
-												//rd = request.getRequestDispatcher("university/login.jsp");
-												response.sendRedirect("student/home.jsp");
-												//rd.forward(request, response);
+										out.println("<html><body><script>alert('Data Not Submitted');</script></body></html>");
 											}
 									} 
 						else
 								{
-									request.setAttribute("status", "Failed to sign up...! please try again");
-									//rd = request.getRequestDispatcher("university/login.jsp");
-									response.sendRedirect("student/home.jsp");
-									//rd.forward(request, response);
+							out.println("<html><body><script>alert('Data Not Submitted');</script></body></html>");
 								}
 			} 
 	catch (Exception e) {

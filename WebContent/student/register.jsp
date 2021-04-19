@@ -29,6 +29,7 @@
     <![endif]-->
      <%@page import="in.common.GetConnection"%>
 		 <%@ include file="inc/stdimport.jsp" %> 
+		 
 		<%
 		GetConnection getConObj=new GetConnection();
 		Connection con=getConObj.getCon();
@@ -45,6 +46,7 @@
 				 		 padding: 1px  2px;
 						}
 			label{font-size: 18px;}
+			
 </style>
 
 </head>
@@ -59,77 +61,11 @@
 	<div class="pulse"></div>
 </div><!-- Pulse Preloader -->
 
-    <!-- Header================================================== -->
-    <header>
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-3 col-sm-3 col-xs-3">
-                <div id="logo">
-                    <a ><img src="img/logo.png" width="125" height="40" alt="Atena" data-retina="true"></a>
-                </div>
-            </div>
-            <nav class="col-md-9 col-sm-9 col-xs-9">
-            <a class="cmn-toggle-switch cmn-toggle-switch__htx open_close" href="javascript:void(0);"><span>Menu mobile</span></a>
-            <div class="main-menu">
-                <div id="header_menu">
-                    <img src="img/logo_mobile.png" width="125" height="40" alt="Atena" data-retina="true">
-                </div>
-                <a href="#" class="open_close" id="close_in"><i class="icon_close"></i></a>
-               <ul>
-                    <li class="submenu">
-                    <a href="home.jsp" >Home <i></i></a>
-                    
-                    </li>
-                    <li class="submenu">
-                    <a href="javascript:void(0);" class="show-submenu">Academic <i class="icon-down-open-mini"></i></a>
-                    <ul>
-                        <li><a href="diploma.jsp">Diploma courses</a></li>
-                        <li><a href="graduate.jsp">Graduate courses</a></li>
-                        <li><a href="master.jsp">Master courses</a></li>
-                        <li><a href="register.jsp">Apply online</a></li>
-                        
-                    </ul>
-                    </li>
-                    <li class="submenu">
-                    <a href="javascript:void(0);" class="show-submenu">About <i class="icon-down-open-mini"></i></a>
-                    <ul>
-                        <li><a href="about.jsp">About us</a></li>
-                        <li><a href="contacts.jsp">Plan a visit</a></li>
-                        <li><a href="gallery.jsp">Gallery</a></li>
-                    </ul>
-                    </li>
-                    <li class="megamenu submenu">
-                    <a href="javascript:void(0);" class="show-submenu-mega">Pages &amp; elements<i class="icon-down-open-mini"></i></a>
-                    <div class="menu-wrapper">
-                        <div class="col-md-4">
-                            <h3>Pages</h3>
-                            <ul>
-                                <li><a href="blog.jsp">Blog</a></li>
-                                <li><a href="contacts.jsp">Contacts</a></li>
-                                <li><a href="agenda_calendar.jsp">Agenda calendar</a></li>
-                                <li><a href="gallery.jsp">Gallery</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-md-4">
-                            <h3>Pages</h3>
-                            <ul>
-                                <li><a href="#" data-toggle="modal" data-target="#login">Login</a></li>
-                                <li><a href="register.jsp" >Register</a></li>
-                                <li><a href="tour.jsp">Tour</a></li>
-                               
-                            </ul>
-                        </div>
-                    </div><!-- End menu-wrapper -->
-                    </li>
-                    <li><a href="tour.jsp">Tour</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#login">Login</a></li>
-                    <li><a href="#search" id="search_bt"><i class=" icon-search"></i><span>Search</span></a></li>
-                </ul>
-            </div><!-- End main-menu -->
-            </nav>
-        </div>
-    </div><!-- container -->
-    </header><!-- End Header -->
+   <!--Header File-->	
+	 <%@ include file="itc/header.jsp" %>
+		<!--Header File-->
+
+	 
 
        
         <div class="sub_header bg_1">
@@ -350,8 +286,8 @@
                         
                          <div class="row">
                    	<div class="col-md-6">
+                   		<div class="form-group">
                                 <label>City</label>
-                                <div class="styled-select">
 								<select  name="city" id="country_apply" >
 									<option>---Please Select---</option>
 														<%
@@ -534,62 +470,21 @@ New Delhi-110001<br>
   
   		
 	
-	<footer>
-        <div class="container">
-            <div class="row ">
-                <div class="col-md-3 col-sm-3">
-                    <p id="logo_footer">
-                        <img src="img/logo.png" width="125" height="40" alt="Atena" data-retina="true">
-                    </p>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <h4>About</h4>
-                    <ul>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Login</a></li>
-                        <li><a href="#">Register</a></li>
-                        <li><a href="#">Terms and condition</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <h4>Academic</h4>
-                    <ul>
-                        <li><a href="#">Plans of study</a></li>
-                        <li><a href="#">Courses</a></li>
-                        <li><a href="#">Admissions</a></li>
-                        <li><a href="#">Staff</a></li>
-                        <li><a href="#">Students</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-3 col-sm-3">
-                    <h4>Contact us</h4>
-                    <ul>
-                        <li><a href="#">Contacts</a></li>
-                        <li><a href="#">Plan a visit</a></li>
-                    </ul>
-                    <ul id="contacts_footer">
-                        <li>Info line - <a href="tel://033284322">+000-1234567</a></li>
-                        <li>Email - <a href="#">info@educationassembly.com</a> / <a href="#">office@educationassembly.com</a></li>
-                    </ul>
-                </div>
-            </div><!-- End row -->
-        </div><!-- End container -->
-        </footer><!-- End footer -->
-        <div id="copy">
-            <div class="container">
-                 © Education-Assembly 2021 .
-            </div>
-        </div><!-- End copy -->    
+	
+
+	 
+		<!--Footer File-->	 
+	<%@ include file="itc/footer.jsp" %>
+		<!--Footer File-->
     
 <!-- Login modal -->   
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myLogin" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content modal-popup">
 				<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-				<form action="St_Login" method="post" class="popup-form" id="myLogin">
-					<input type="text" name="uname" class="form-control form-white" placeholder="Username">
-					<input type="text" name="pass" class="form-control form-white" placeholder="Password">
+				<form action="../St_Login" method="post" class="popup-form" id="myLogin">
+					<input type="text" name="uname" class="form-control form-white" placeholder="Enter Username">
+					<input type="password" name="pass" class="form-control form-white" placeholder="Enter Password">
 					<div class="checkbox-holder text-left">
 						<div class="checkbox">
 							<input type="checkbox" value="accept_1" id="check_1" name="check_1" />
@@ -602,27 +497,7 @@ New Delhi-110001<br>
 		</div>
 	</div>  
     
-<!-- Register modal -->   
-<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myRegister" aria-hidden="true">
-		<div class="modal-dialog">
-			<div class="modal-content modal-popup">
-				<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-				<form action="#" class="popup-form" id="myRegister">
-					<input type="text" class="form-control form-white" placeholder="Name">
-					<input type="text" class="form-control form-white" placeholder="Last Name">
-                    <input type="email" class="form-control form-white" placeholder="Email">
-                    <input type="text" class="form-control form-white" placeholder="Password">
-					<div class="checkbox-holder text-left">
-						<div class="checkbox">
-							<input type="checkbox" value="accept_2" id="check_2" name="check_2" />
-							<label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
-						</div>
-					</div>
-					<button type="submit" class="btn btn-submit">Register</button>
-				</form>
-			</div>
-		</div>
-	</div>
+
     
 <!-- Search modal -->   
 <div id="search">
