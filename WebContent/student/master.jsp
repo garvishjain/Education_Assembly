@@ -65,7 +65,7 @@
             <div class="container margin_60">
                 <div class="row">
                     <div class="col-md-9">
-                    
+                    <br>
                         <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 col-sm-4">
@@ -293,7 +293,7 @@
                             </div>
                         </div><!--End strip -->
                     </div><!--End col-md-9 -->
-                    
+                    <br>
                     <aside class="col-md-3">
                   <!--   <div class="banner">
                         <i class=" iconcustom-school"></i>

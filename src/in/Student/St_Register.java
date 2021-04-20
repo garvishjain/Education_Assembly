@@ -92,12 +92,12 @@ public class St_Register extends HttpServlet {
 			/*Student Information*/
 						String fname = request.getParameter("fname")      	  !=null?request.getParameter("fname") : "";
 						String lname = request.getParameter("lname")           !=null?request.getParameter("lname") : "";
-						String adhar=request.getParameter("adhar")         	  !=null?request.getParameter("adhar") : "";
 						String email=request.getParameter("email")           	  !=null?request.getParameter("email") : "";
+						String adhar=request.getParameter("aadhar")         	  !=null?request.getParameter("aadhar") : "";
 						String num = request.getParameter("num")                !=null?request.getParameter("num") : "";
 						String dob = request.getParameter("dob")             	  !=null?request.getParameter("dob") : "";
 						String gender=request.getParameter("gender")         !=null?request.getParameter("gender") : "";
-						String f_name = request.getParameter("f_name")       !=null?request.getParameter("f_name") : "";
+						String f_name = request.getParameter("fname")       !=null?request.getParameter("f_name") : "";
 						String m_name = request.getParameter("mname")     !=null?request.getParameter("mname") : "";
 						String f_num = request.getParameter("fnum")        	  !=null?request.getParameter("fnum") : "";
 						String religion = request.getParameter("religion")     !=null?request.getParameter("religion") : "";
@@ -217,12 +217,12 @@ public class St_Register extends HttpServlet {
 								int res2 = stmt.executeUpdate();
 					if(res>0&&res1>0&&res2>0)
 					{
-						out.println("<html><body><script>alert('Data Submitted');</script></body></html>");
+						out.println("<html><body><h4>Data Submitted</h4></body></html>");
 						
 					}
 					else
 					{
-						out.println("<html><body><script>alert('Data Not Submitted');</script></body></html>");	
+						out.println("<html><body><h4>Data  not Submitted</h4></body></html>");
 						
 					}
 			}

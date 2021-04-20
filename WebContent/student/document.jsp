@@ -6,7 +6,7 @@
 	<title>College, University and campus</title>
       <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
       
-      
+       <link href="css/base.css" rel="stylesheet">
       <style type="text/css">
       .tab {
   float: left;
@@ -87,14 +87,17 @@
   			border: 2px solid gray;height: 80px; 
   			margin-top: 110px;
   }
-      
+    /*   .foot{background-color: #223038;
+    color: #fff;
+    padding: 30px 10px 10px 0;
+    margin-top: 400px;} */
       </style>
 </head>
 <body>
+			<div>
 						<%@ include file="itc/header.jsp" %>
-
-
-					<div class="myDiv">
+<div>
+						<div class="myDiv">
 				   <marquee direction = "left"><h2 class="tex"><strong>Please Upload Your Documents!!!</strong></h2></marquee>
 				</div>
 				
@@ -155,9 +158,11 @@
 				</div>
 				
 				
-			
+				
+			<br><br><br><br>
 					<script type="text/javascript" src="itc/document.js"></script>
+					<div class="foot">
 					<%@ include file="itc/footer.jsp" %>
-
+</div>
 </body>
 </html> 

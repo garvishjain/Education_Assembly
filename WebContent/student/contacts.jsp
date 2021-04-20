@@ -18,10 +18,12 @@
     <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
 
     <!-- BASE CSS -->
+     <link href="itc/document.css" rel="stylesheet">
     <link href="css/base.css" rel="stylesheet">
     
      <!-- SPECIFIC CSS -->
      <link href="css/date_time_picker.css" rel="stylesheet">
+    
 
     <!--[if lt IE 9]>
       <script src="js/html5shiv.min.js"></script>
@@ -53,7 +55,7 @@
             <div class="container margin_60">
                 <div class="row">
                     <div class="col-md-9">
-                        <div class="box_style_1">
+                        <div class="box_style">
                             <div class="indent_title_in">
                                 <i class="pe-7s-mail-open-file"></i>
                                 <h3>Contact us</h3>

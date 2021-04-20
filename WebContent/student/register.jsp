@@ -96,14 +96,14 @@
 		                        	<div class="col-md-6">
 		                            	<div class="form-group"  >
 		                                <label>First name</label>
-		                                <input type="text" class="form-control styled required" id="name_apply" name="fname"  placeholder="Enter First Name">
+		                                <input type="text" class="form-control styled required" id="fname" name="fname"  placeholder="Enter First Name">
 		                            	</div>
 		                            </div>
 		                            
 		                            <div class="col-md-6">
 		                            	<div class="form-group">
 		                                <label>Last name</label> 
-		                                <input type="text" class="form-control styled required" id="lastname_apply" name="lname" placeholder="Enter Last Name">
+		                                <input type="text" class="form-control styled required" id="lname" name="lname" placeholder="Enter Last Name">
 		                           		 </div>
 		                            </div>
                             
@@ -117,14 +117,14 @@
 						                        	<div class="col-md-6">
 						                            	<div class="form-group">
 						                                <label>Email</label>
-						                                <input type="email" class="form-control styled required" id="email_apply" name="email" placeholder="youremail@gmail.com">
+						                                <input type="email" class="form-control styled required" id="email" name="email" placeholder="youremail@gmail.com">
 						                               </div>
 						                            </div>
 						                            
 						                             <div class="col-md-6">
 		                            	<div class="form-group">
 		                                <label>Mobile Number</label>
-		                                <input type="text" class="form-control styled required" id="phone_apply" name="num" placeholder="Enter Your Number">
+		                                <input type="text" class="form-control styled required" id="num" name="num" placeholder="Enter Your Number">
 		                               </div>
 		                            </div>
 						                           
@@ -141,21 +141,21 @@
 		                            <div class="col-md-6">
 		                            	<div class="form-group">
 		                                <label>Date of birth</label>
-		                                <input type="date" class="form-control styled required" id="birth_apply" name="dob"  placeholder="Enter Your DOB">
+		                                <input type="date" class="form-control styled required" id="dob" name="dob"  placeholder="Enter Your DOB">
 		                              </div>
 		                            </div>
 		                             <div class="col-md-6">
 		                            	<div class="form-group">
 		                                <label>Aadhar Number</label>
-		                                <input type="text" class="form-control styled required" id="birth_apply" name="adhar"  maxlength="12" minlength="12" placeholder="Enter 12 digit Aadhar Number">
+		                                <input type="text" class="form-control styled required" id="aadhar" name="adhar"  maxlength="12" minlength="12" placeholder="Enter 12 digit Aadhar Number">
 		                              </div>
 		                            </div>
 		                             <div class="col-md-6">
                             	<div class="form-group">
                                 <label>Gender</label><br>
                                     <div class="radio_inline">
-                                    <input type="radio" name="gender" id="gender_apply_male" class="required" value="Male"><label style="margin-right:20px;">Male</label>
-                                    <input type="radio" name="gender" id="gender_apply_female" class="required" value="Female"><label>Female</label>
+                                    <input type="radio" name="gender" id="gender" class="required" value="Male"><label style="margin-right:20px;">Male</label>
+                                    <input type="radio" name="gender" id="gender" class="required" value="Female"><label>Female</label>
                                     </div>
                             </div>
                             </div>
@@ -173,14 +173,14 @@
 	                                   <div class="col-md-6">
 		                            	<div class="form-group">
 		                                <label>Father's Name</label>
-		                                <input type="text" class="form-control styled required" id="email_apply" name="f_name" placeholder="Enter Father Name">
+		                                <input type="text" class="form-control styled required" id="fname" name="f_name" placeholder="Enter Father Name">
 		                               </div>
 		                            </div>
 		                            
 		                            <div class="col-md-6">
 		                            	<div class="form-group">
 		                                <label>Mother's Name</label>
-		                                <input type="text" class="form-control styled required" id="phone_apply" name="mname" placeholder="Enter Mother Name">
+		                                <input type="text" class="form-control styled required" id="mname" name="mname" placeholder="Enter Mother Name">
 		                               </div>
 		                            </div>
 		   </div><!-- End row -->
@@ -193,7 +193,7 @@
 	                                   <div class="col-md-6">
 		                            	<div class="form-group">
 		                                <label>Father's Mobile</label>
-		                                <input type="text" class="form-control styled required" id="birth_apply" name="fnum"  placeholder="Enter Father's Number">
+		                                <input type="text" class="form-control styled required" id="fnum" name="fnum"  placeholder="Enter Father's Number">
 		                              </div>
 		                            </div>
                   
@@ -201,7 +201,7 @@
 		                        	<div class="col-md-6">
 		                            	<div class="form-group">
 		                                <label>Religion</label>
-		                                <select class="form-control styled required" name="religion">
+		                                <select class="form-control styled required" name="religion" id="religion">
 		                                			<option value="null">-- select one --</option>
 												  <option value="Buddhism">Buddhism</option>
 												  <option value="Hindu">Hindu</option>
@@ -220,7 +220,7 @@
 		                            <div class="col-md-6">
 		                            	<div class="form-group">
 		                                <label>Category</label>
-		                                <select class="form-control styled required" name="cast">
+		                                <select class="form-control styled required" name="cast" id="cast">
 		                                			<option value="null">-- select one --</option>
 												  <option value="sc">SC</option>
 												  <option value="st">ST</option>
@@ -235,7 +235,7 @@
                      <div class="col-md-6">
 		                            	<div class="form-group">
 		                                <label  >Select Student Image</label>
-		                                <input type="file" name="image"  class="form-control styled required">
+		                                <input type="file" name="image" id="image" class="form-control styled required">
 		                              </div>
 		                            </div>
 		                            
@@ -432,6 +432,7 @@
                       </form>
                     </div>
            </div>
+           <br>
            <div class="col-md-3">
            		
                     <h4><strong>How to apply</strong></h4>
@@ -507,6 +508,52 @@ New Delhi-110001<br>
         <button type="submit" class="button">Search</button>
     </form>
 </div>
+
+
+
+
+
+    <script type="text/javascript" src="js/lib/jquery-1.11.0.min.js"></script>
+     <script type="text/javascript">
+    
+   function jquery()
+    {
+    	var FirstName =$('#fname').val();
+    	var LastName =$('#lname').val();
+    	var E_Mail =$('#email').val();
+    	var Number =$('#num').val();
+    	var Dob =$('#dob').val();
+    	var Aadhar =$('#aadhar').val();
+    	var Gender =$('#gender').val();
+    	var Fname =$('#fname').val();
+    	var Mname =$('#mname').val();
+    	var Fnum =$('#fnum').val();
+    	var Religion =$('#religion').val();
+    	var Cast =$('#cast').val();
+    	var Image =$('#image').val();
+    	
+    	$.ajax({
+    		type:'POST',
+    		url:'Regis',
+    		data:{fname:FirstName,lname:LastName,email:E_Mail,num:Number,dob:Dob,aadhar:Aadhar,gender:Gender,fname:Fname,mname:Mname,fnum:Fnum,religion:Religion,cast:Cast,image:Image},
+    		success:function(result)
+    		{
+    			$('#showMsg').html(result);
+    			$('#name').val("");
+    			$('#user').val("");
+    			$('#email').val("");
+    			$('#pass').val("");
+    		}
+    	});
+    	
+    }
+    </script>
+
+
+
+
+
+
 
 <!-- Common scripts -->
 <script src="js/jquery-1.11.2.min.js"></script>

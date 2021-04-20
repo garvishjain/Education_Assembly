@@ -326,7 +326,7 @@ header#contacts{
 
 /* Footer  */
 footer{ 
-	background-color:white;
+	background-color:#223038;
 	color:#fff;
 	padding:50px 0 10px 0;
 	
@@ -655,7 +655,9 @@ video {
 }
 /*-------- 2.2 Accademics/single course page--------*/
 .box_style_1, a.box_style_1{
-	background-color:#ffffff;
+	background-color:white;
+	  margin-top:10px;
+	  margin-left: -120px;
 	-webkit-box-shadow: 0px 3px 0px 0px #f0f2f4; 
 	-moz-box-shadow: 0px 3px 0px 0px #f0f2f4; 
 	box-shadow: 0px 3px 0px 0px #f0f2f4;
@@ -2157,4 +2159,6 @@ a.banner_bt:hover {
 .tooltip-content a {
 	font-weight: bold;
 }
-
+.box_style{margin-top: 90px;
+background-color: white;
+margin-left: -50px;}
