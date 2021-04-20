@@ -141,7 +141,7 @@
                                     <div class="course_list_desc">
                                         <h3><strong>Bachelor of Computer Applications </strong></h3>
                                         <p>
-                                        The Bachelor of Science (B. Sc.) is a type undergraduate degree that focuses on combining theoretical knowledge with research practice. The Bachelor of Science is mainly awarded to students of Natural Sciences, Engineering& Technology, Mathematics, Computer Science& IT. The study duration of a Bachelor’s of Science programme is also <strong>four</strong> years.
+                                        The Bachelor of Science (B. Sc.) is a type undergraduate degree that focuses on combining theoretical knowledge with research practice. The Bachelor of Science is mainly awarded to students of Natural Sciences, Engineering& Technology, Mathematics, Computer Science& IT. 
                                         </p>
                                         <ul class="add_info">
                                            <!--  <li>
@@ -198,7 +198,7 @@
                                     <div class="course_list_desc">
                                         <h3><strong>Bachelor of Science</strong></h3>
                                         <p>
-                                        The Bachelor of Science (B. Sc.) is a type undergraduate degree that focuses on combining theoretical knowledge with research practice. The Bachelor of Science is mainly awarded to students of Natural Sciences, Engineering& Technology, Mathematics, Computer Science& IT. The study duration of a Bachelor  of Science programme is <strong>Three</strong> years.
+                                        The Bachelor of Science (B. Sc.) is a type undergraduate degree that focuses on combining theoretical knowledge with research practice. The Bachelor of Science is mainly awarded to students of Natural Sciences, Engineering& Technology, Mathematics, Computer Science& IT.
                                         </p>
                                         <ul class="add_info">
                                             <!-- <li>

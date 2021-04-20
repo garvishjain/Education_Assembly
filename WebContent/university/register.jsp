@@ -8,6 +8,7 @@
 
 <link rel="icon" href="favicon.ico" type="image/x-icon"/>
 
+
 <title>:: Epic :: Register</title>
 
 <!-- Bootstrap Core and vandor -->
