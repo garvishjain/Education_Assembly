@@ -26,7 +26,6 @@ import in.common.img;
 @WebServlet("/collegereg")
 public class collegereg extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
 	private int pk_city_id;
 	private Connection con;
 
@@ -40,17 +39,12 @@ public class collegereg extends HttpServlet {
     con=getConObj.getCon();
 	
 	}
-
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		
-		
-		
-			
- 
 		Random rnd = new Random();
         int number = rnd.nextInt(99999999);
         try 
@@ -110,6 +104,8 @@ public class collegereg extends HttpServlet {
 			
 			out.println("Data Not Found");
 		}
+		
+		
 		
 		
 		
@@ -285,7 +281,6 @@ public class collegereg extends HttpServlet {
 			e.printStackTrace();
 		}
 		
-	
 	}
 
 }
