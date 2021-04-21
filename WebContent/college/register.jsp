@@ -154,7 +154,7 @@ Statement stmt=con.createStatement();
   	<br><br><br>
            <div class="col-md-14">
                 	<div class="box_style_1">
-                    <form action="../collegeregistration"  onsubmit="return validate()" method="POST" enctype="multipart/form-data">
+                    <form action="../collegeregist"  onsubmit="return validate()" method="POST" enctype="multipart/form-data">
                    	<div class="indent_title_in">
                     
 				<h2 class="reg">Registration Form</h2><i class="pe-7s-user"></i>
