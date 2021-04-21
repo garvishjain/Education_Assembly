@@ -83,7 +83,7 @@
   
            <div class="col-md-9">
                 	<div class="box_style_1">
-                      <form action="../St_Register" id="apply_online" method="post" enctype="multipart/form-data">
+                      <!-- <form action="../St_Register" id="apply_online" method="post" enctype="multipart/form-data"> -->
                    	<div class="indent_title_in">
                     <i class="pe-7s-user"></i>
 				<h3 style="text-decoration: underline;">Personal details</h3>
@@ -257,13 +257,13 @@
                         	<div class="col-md-6">
                             	<div class="form-group">
                                 <label>Address line</label>
-                            	<textarea class="form-control styled required" placeholder="Enter Student Address" name="adrs"></textarea>
+                            	<textarea class="form-control styled required" id="adrs" placeholder="Enter Student Address" name="adrs"></textarea>
                             </div>
                             </div>
                             <div class="col-md-6">
                             	<div class="form-group">
                                 <label>State</label>
-                                <select name="state" class="form-control styled required">
+                                <select name="state" id="state" class="form-control styled required">
                                 			<option>---please Select---</option>
 														<%
 														try {
@@ -288,7 +288,7 @@
                    	<div class="col-md-6">
                    		<div class="form-group">
                                 <label>City</label>
-								<select  name="city" id="country_apply" >
+								<select  name="city" id="city" >
 									<option>---Please Select---</option>
 														<%
 														try {
@@ -310,7 +310,7 @@
                             <div class="col-md-6">
                             <div class="form-group">
                                 <label>Pin Code</label>
-                                <input type="text" class="form-control styled required" id="postal_code_apply" name="pincode" maxlength="6" minlength="6" placeholder="123456">
+                                <input type="text" class="form-control styled required" id="pincode" name="pincode" maxlength="6" minlength="6" placeholder="123456">
                             </div>
                            </div>
                    </div>
@@ -334,7 +334,7 @@
 		                            	<div class="form-group">
 		                                <label>10th(%)</label> 
 		                                
-		                                <input type="text" class="form-control styled required" id="lastname_apply" name="high" placeholder="Enter 10 Percentage">
+		                                <input type="text" class="form-control styled required" id="high" name="high" placeholder="Enter 10 Percentage">
 		                           		 
 		                                   	
 		                           	 
@@ -344,26 +344,26 @@
 		                           <div class="col-md-6">
 		                            	<div class="form-group">
 		                                <label>12th (%)</label> 
-		                                <input type="text" class="form-control styled required" id="lastname_apply" name="higher" placeholder="Enter 12 Percentage">
+		                                <input type="text" class="form-control styled required" id="higher" name="higher" placeholder="Enter 12 Percentage">
 		                           		 </div>
 		                            </div>
 		                            
 		                            <div class="col-md-6">
 		                            	<div class="form-group">
 		                                <label>Graduation(%)</label> 
-		                                <input type="text" class="form-control styled required" id="lastname_apply" name="graduation" placeholder="Enter Graduation Percentage">
+		                                <input type="text" class="form-control styled required" id="grad" name="graduation" placeholder="Enter Graduation Percentage">
 		                           		 </div>
 		                            </div>
 		                            <div class="col-md-6">
 		                            	<div class="form-group"  >
 		                                <label>Roll No. Of Last Exam</label>
-		                                <input type="text" class="form-control styled required" id="name_apply" name="roll"  placeholder="Enter Roll Number">
+		                                <input type="text" class="form-control styled required" id="roll" name="roll"  placeholder="Enter Roll Number">
 		                            	</div>
 		                            </div>
 		                           <div class="col-md-6">
 		                            	<div class="form-group">
 		                                <label>School / College Name</label> 
-		                                <input type="text" class="form-control styled required" id="lastname_apply" name="school" placeholder="Enter School/CollegeName">
+		                                <input type="text" class="form-control styled required" id="school" name="school" placeholder="Enter School/CollegeName">
 		                           		 </div>
 		                            </div>
                             
@@ -384,13 +384,13 @@
                      <div class="col-md-4">
 	                            			<div class="form-group">
 	                                			<label>User name</label> 
-	                                			<input type="text" class="form-control styled required" id="lastname_apply" name="uname" placeholder="Enter UserName">
+	                                			<input type="text" class="form-control styled required" id="user" name="uname" placeholder="Enter UserName">
 	                            			</div>
 	                           		 </div>
                      					<div class="col-md-4">
 		                            	<div class="form-group">
 		                                <label>Password</label>
-		                                <input type="password" class="form-control styled required" id="birth_apply" name="pass"  placeholder="Enter Password">
+		                                <input type="password" class="form-control styled required" id="pass" name="pass"  placeholder="Enter Password">
 		                              </div>
 		                            </div>
 		                            
@@ -426,10 +426,11 @@
 		                            
 		                            <a  href="home.jsp" ><p ><button type="button"  style="display:inline; "  href="home.jsp" class="button">Exit</button><p></a>
 									 <p><button type="reset"   style="display:inline; " class="button">Clear</button></p>
-				                     <p><button type="submit"  style="display:inline; " class="button">Save&Next</button></p>
+				                     <p>  <button  type="submit" onclick="jquery()">Register</button></p>
+                            				<span id="showMsg"></span>
 		   </div><!-- End row -->
        </div><!-- End row -->
-                      </form>
+                      <!-- </form> -->
                     </div>
            </div>
            <br>
@@ -470,10 +471,6 @@ New Delhi-110001<br>
         </div><!--End container_gray_bg -->
   
   		
-	
-	
-
-	 
 		<!--Footer File-->	 
 	<%@ include file="itc/footer.jsp" %>
 		<!--Footer File-->
@@ -518,6 +515,7 @@ New Delhi-110001<br>
     
    function jquery()
     {
+	   /* Student Info */
     	var FirstName =$('#fname').val();
     	var LastName =$('#lname').val();
     	var E_Mail =$('#email').val();
@@ -530,19 +528,56 @@ New Delhi-110001<br>
     	var Fnum =$('#fnum').val();
     	var Religion =$('#religion').val();
     	var Cast =$('#cast').val();
-    	var Image =$('#image').val();
     	
+    	
+    	/* Student Address */
+    	var Adrs =$('#adrs').val();
+    	var State =$('#state').val();
+    	var City =$('#city').val();
+    	var Pincode =$('#pincode').val();
+    	
+    	/* Student Education */
+    	var High =$('#high').val();
+    	var Higher =$('#Higher').val();
+    	var Grad =$('#grad').val();
+    	var Roll =$('#roll').val();
+    	var School =$('#school').val();
+    	var User =$('#user').val();
+    	var Pass =$('#pass').val();
     	$.ajax({
     		type:'POST',
     		url:'Regis',
-    		data:{fname:FirstName,lname:LastName,email:E_Mail,num:Number,dob:Dob,aadhar:Aadhar,gender:Gender,fname:Fname,mname:Mname,fnum:Fnum,religion:Religion,cast:Cast,image:Image},
+    		data:{fname:FirstName,lname:LastName,email:E_Mail,num:Number,dob:Dob,aadhar:Aadhar,gender:Gender,
+    				fname:Fname,mname:Mname,fnum:Fnum,religion:Religion,cast:Cast,image:Image,adrs:Adrs,state:State,
+    				city:City,pincode:Pincode,high:High,higher:Higher,grad:Grad,roll:Roll,school:School,user:User,pass:Pass},
     		success:function(result)
     		{
     			$('#showMsg').html(result);
-    			$('#name').val("");
-    			$('#user').val("");
+    			$('#fname').val("");
+    			$('#lname').val("");
     			$('#email').val("");
+    			$('#num').val("");
+    			$('#dob').val("");
+    			$('#aadhar').val("");
+    			$('#gender').val("");
+    			$('#fname').val("");
+    			$('#mname').val("");
+    			$('#fnum').val("");
+    			$('#religion').val("");
+    			$('#cast').val("");
+    			$('#image').val("");
+    			$('#adrs').val("");
+    			$('#state').val("");
+    			$('#city').val("");
+    			$('#pincode').val("");
+    			$('#high').val("");
+    			$('#higher').val("");
+    			$('#grad').val("");
+    			$('#roll').val("");
+    			$('#school').val("");
+    			$('#user').val("");
     			$('#pass').val("");
+    			
     		}
     	});
     	

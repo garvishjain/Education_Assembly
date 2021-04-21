@@ -97,12 +97,12 @@ public class St_Register extends HttpServlet {
 						String num = request.getParameter("num")                !=null?request.getParameter("num") : "";
 						String dob = request.getParameter("dob")             	  !=null?request.getParameter("dob") : "";
 						String gender=request.getParameter("gender")         !=null?request.getParameter("gender") : "";
-						String f_name = request.getParameter("fname")       !=null?request.getParameter("f_name") : "";
+						String f_name = request.getParameter("fname")       !=null?request.getParameter("fname") : "";
 						String m_name = request.getParameter("mname")     !=null?request.getParameter("mname") : "";
 						String f_num = request.getParameter("fnum")        	  !=null?request.getParameter("fnum") : "";
 						String religion = request.getParameter("religion")     !=null?request.getParameter("religion") : "";
 						String cast = request.getParameter("cast")          		  !=null?request.getParameter("cast") : "";
-						String uname= request.getParameter("uname")         !=null?request.getParameter("uname") : "";
+						String uname= request.getParameter("user")         !=null?request.getParameter("uname") : "";
 						String pass=request.getParameter("pass")             	  !=null?request.getParameter("pass") : "";
 			/*Student Information*/                                                              
 			/*StudentAddress*/		                                                             
@@ -117,7 +117,7 @@ public class St_Register extends HttpServlet {
 						String higher = request.getParameter("higher")          !=null?request.getParameter("higher") : "";
 						String roll=request.getParameter("roll")            			  !=null?request.getParameter("roll") : "";
 						String school=request.getParameter("school")        	  !=null?request.getParameter("school") : "";
-						String graduation = request.getParameter("graduation") !=null?request.getParameter("graduation") : "";
+						String graduation = request.getParameter("grad") !=null?request.getParameter("graduation") : "";
 			/*Education Detail*/                                           
 						                                                                                
 			/*Password hashing*/
