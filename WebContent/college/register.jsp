@@ -154,7 +154,7 @@ Statement stmt=con.createStatement();
   	<br><br><br>
            <div class="col-md-14">
                 	<div class="box_style_1">
-                    <form action="../collegeregistration"  onsubmit="return validate()" method="POST" >
+                    <form action="../collegeregistration"  onsubmit="return validate()" method="POST" enctype="multipart/form-data">
                    	<div class="indent_title_in">
                     
 				<h2 class="reg">Registration Form</h2><i class="pe-7s-user"></i>
@@ -182,7 +182,7 @@ Statement stmt=con.createStatement();
 																ResultSet rs = stmt.executeQuery(query);
 																while (rs.next()) {
 														%>
-														<option><%=rs.getString("u_name")%></option>
+														<option value=<%=rs.getInt("pk_id") %>><%=rs.getString("u_name")%></option>
 														<%
 															}
 															} catch (Exception e) {
@@ -215,7 +215,7 @@ Statement stmt=con.createStatement();
 																ResultSet rs = stmt.executeQuery(query);
 																while (rs.next()) {
 														%>
-														<option><%=rs.getString("details")%></option>
+														<option value="<%=rs.getInt("pk_id")%>"><%=rs.getString("details")%></option>
 														<%
 															}
 															} catch (Exception e) {
@@ -226,10 +226,20 @@ Statement stmt=con.createStatement();
                                   <span style="color:red" id="ctypeerr"></span>
                             </div>
                             </div>
+                            </div>
+                             <div class="row">
+                             <div class="col-md-6">
+                            	<div class="form-group">
+                                <label>Fax Number</label>
+                                <input type="text" class="form-control styled " id="cfax" name="cfax" placeholder="Enter Number" required=""> 
+                                <span style="color:red" id="cfaxerr"></span>
+                            </div>
+                            </div>
+                            
                              <div class="col-md-6">
                             	<div class="form-group">
                                 <label>College category</label> 
-                                <select class="form-control" name="ccategory" id="ccategory"required="required">
+                                <select class="form-control" name="ccategory" id="ccategory" required="required">
                                                 		<option value="" disabled selected>---Please Select---</option>
 														<%
 															try {
@@ -238,7 +248,7 @@ Statement stmt=con.createStatement();
 																ResultSet rs = stmt.executeQuery(query);
 																while (rs.next()) {
 														%>
-														<option value="<%=rs.getString("details")%>"> <%=collegeCategory[i++] %></option>
+														<option value="<%=rs.getInt("pk_id")%>"> <%=collegeCategory[i++] %></option>
 														<%
 															}
 															} catch (Exception e) {
@@ -249,8 +259,8 @@ Statement stmt=con.createStatement();
                                   <span style="color:red" id="ccategoryerr"></span>
                             </div>
                             </div>
-                        </div><!-- End row -->
-                        
+                        </div>
+                        <br>
                         <div class="row">
                         	<div class="col-md-6">
                             	<div class="form-group">
@@ -365,6 +375,7 @@ Statement stmt=con.createStatement();
 <hr class="styled_2">
 
 <div class="wrapper_indent">
+
                   
                    
                     <div class="row">

@@ -10,8 +10,9 @@ public class hashed {
 	public  String hashing;
 	
 
-	public  String getHash(String pass,String algo) 
+	public  String getHash(String pass) 
 	{
+		String algo ="SHA-256";
 		
 		byte[] passbyte = pass.getBytes();
 		
