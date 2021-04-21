@@ -31,7 +31,7 @@ import in.common.img;
 /**
  * Servlet implementation class collegeregistration
  */
-@WebServlet("/collegeregistration")
+@WebServlet("/collegeregist")
 @MultipartConfig()
 public class collegeregist extends HttpServlet {
 	private static final long serialVersionUID = 1L;

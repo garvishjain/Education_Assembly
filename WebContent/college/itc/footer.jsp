@@ -68,15 +68,16 @@
 		<div class="modal-dialog">
 			<div class="modal-content modal-popup">
 				<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-				<form action="#" class="popup-form" id="myLogin">
-					<input type="text" class="form-control form-white" placeholder="Username">
-					<input type="text" class="form-control form-white" placeholder="Password">
+				<form action="../collegelogin" class="popup-form" id="myLogin" method="post">
+					<input type="text" name="user" id="user"  class="form-control form-white" placeholder="Username">
+					<input type="text" name="pass" id="pass" class="form-control form-white" placeholder="Password">
 					<div class="checkbox-holder text-left">
 						<div class="checkbox">
 							<input type="checkbox" value="accept_1" id="check_1" name="check_1" />
 							<label for="check_1"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
 						</div>
 					</div>
+					<label name="forget" id="forget"><a href="#" data-toggle="modal" data-target="#register">forget password</a> </label>
 					<button type="submit" class="btn btn-submit">Submit</button>
 				</form>
 			</div>
@@ -88,18 +89,18 @@
 		<div class="modal-dialog">
 			<div class="modal-content modal-popup">
 				<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-				<form action="#" class="popup-form" id="myRegister">
+				<form action="#" class="popup-form" id="forgetpassword">
 					<input type="text" class="form-control form-white" placeholder="Name">
-					<input type="text" class="form-control form-white" placeholder="Last Name">
+					<input type="text" class="form-control form-white" placeholder="username">
                     <input type="email" class="form-control form-white" placeholder="Email">
-                    <input type="text" class="form-control form-white" placeholder="Password">
+<!--                     <input type="text" class="form-control form-white" placeholder=""> -->
 					<div class="checkbox-holder text-left">
 						<div class="checkbox">
 							<input type="checkbox" value="accept_2" id="check_2" name="check_2" />
 							<label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
 						</div>
 					</div>
-					<button type="submit" class="btn btn-submit">Register</button>
+					<button type="submit" class="btn btn-submit">`forget password</button>
 				</form>
 			</div>
 		</div>
