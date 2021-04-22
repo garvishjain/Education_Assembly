@@ -8,6 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
@@ -31,7 +32,9 @@ import javax.xml.bind.DatatypeConverter;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
+import in.common.GetConnection;
 import in.common.date;
+import in.common.hashed;
 import in.common.img;
 
 /**
@@ -46,40 +49,20 @@ public class St_Register extends HttpServlet {
 	private String hashed;
 	private int fk_address;
 	private int fk_education;
+	private Statement stmt;
 	
-	private String getHash(byte[] passbyte,String algo) 
-				{
-					try 
-						{
-							MessageDigest msgdigest = MessageDigest.getInstance(algo);
-							msgdigest.update(passbyte);
-							byte[] passdigest = msgdigest.digest();
-							hashing = DatatypeConverter.printHexBinary(passdigest).toLowerCase();
-						}
-					catch (NoSuchAlgorithmException e) 
-						{
-							e.printStackTrace();
-						}
-					return hashing;
-				}
-
-						
 	public void init(ServletConfig config) throws ServletException 
 				{
-					try 
-							{
-								Context cxt = new InitialContext();
-								DataSource ds = (DataSource) cxt.lookup("java:comp/env/myCon");
-								con = ds.getConnection();
-							}
-					catch (NamingException e) 
-							{
-								e.printStackTrace();
-							} 
+							try
+									{
+										GetConnection getConObj=new GetConnection();
+										 con=getConObj.getCon();
+										 stmt = con.createStatement();
+									} 
 					catch (SQLException e) 
-							{
-								e.printStackTrace();
-							}
+									{
+										e.printStackTrace();
+									}
 				}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 		{
@@ -121,8 +104,9 @@ public class St_Register extends HttpServlet {
 			/*Education Detail*/                                           
 						                                                                                
 			/*Password hashing*/
-						byte[] passbyte = pass.getBytes();
-						hashed = getHash(passbyte,"SHA-256");
+						/*password hashing*/
+						hashed gethash = new hashed();
+						String hashed = gethash.getHash(pass);
 		/*Password hashing*/		
 						
 			/*Date Parse*/
