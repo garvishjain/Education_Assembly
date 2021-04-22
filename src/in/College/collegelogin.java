@@ -69,7 +69,8 @@ public class collegelogin extends HttpServlet {
 		if(rs.next())
 			
 		{
-			out.println("data  found");
+			String n =rs.getString(2);
+		    out.println("data  found");
 					
 				}
 		else
