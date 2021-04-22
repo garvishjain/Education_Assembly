@@ -2162,3 +2162,17 @@ a.banner_bt:hover {
 .box_style{margin-top: 90px;
 background-color: white;
 margin-left: -50px;}
+
+.status{border: 2px solid #223038;
+    			width: 70%;
+    			height: 800px;;
+    			margin: auto; 
+    			margin-top: 120px;
+    			margin-bottom: 50px;
+    			background-color: white;}
+  
+.imf{border: 2px solid #223038;
+    					width:170px;
+    					height:200px;
+    					margin:auto;
+    					margin-top: 30px;}

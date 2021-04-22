@@ -73,6 +73,7 @@ public class professors extends HttpServlet {
 			for(FileItem img:image)
 			{
 				img.write(new File("F:\\myImage\\"+"CBC"+LocalDateTime.now().toString().replace(":","")+img.getName()));
+				out.println("<html><body><script>('Image Inserted');</script></body></html>");
 			}
 			
 			String sql="insert into professor(fname,lname,dob,gender,department,position,phone,email)value(?,?,?,?,?,?,?,?)";

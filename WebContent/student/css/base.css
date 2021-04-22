@@ -10,7 +10,7 @@
 @import url("edu_fonts/edu_fonts.min.css");				/* Icon pack */
 @import url("magnific-popup.css");						/* Lightbox & dialog script */
 @import url("custom.css");										/* Your custom css (We reccomend use it for a faster and simplified item updates) */
-
+@import url("custom/document.css");
 /*
 How to change colors
 1) uncomment one of the color variation below
