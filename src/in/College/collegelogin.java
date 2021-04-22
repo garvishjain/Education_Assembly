@@ -46,7 +46,7 @@ public class collegelogin extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		response.setContentType("text/html");
+		response.setContentType("text/plain");
 		PrintWriter out = response.getWriter();
 		
 		try
@@ -55,16 +55,11 @@ public class collegelogin extends HttpServlet {
 		
 		String uname = request.getParameter("user")!= null ? request.getParameter("user") : "";
 		String pass = request.getParameter("pass")!= null ? request.getParameter("pass") : "";
-		out.println(uname);
-		out.println(pass);
-		
+			
 		hashed hash = new hashed();
 		String Hashed = hash.getHash(pass);
-		out.println(Hashed);
-		String sql = "Select * from user where username ='"+uname+"' and password = '"+Hashed+"' LIMIT 1";
-		out.println(sql);
-		
-		stmt = con.prepareStatement(sql);
+			String sql = "Select * from user where username ='"+uname+"' and password = '"+Hashed+"' LIMIT 1";
+			stmt = con.prepareStatement(sql);
 		
 	   
 		
@@ -74,16 +69,12 @@ public class collegelogin extends HttpServlet {
 		if(rs.next())
 			
 		{
-			    request.setAttribute("error2", "data found");
-				rd = request.getRequestDispatcher("college/collegeregister.jsp");		
-	        	rd.forward(request, response);
-			
+			out.println("data  found");
+					
 				}
 		else
 		{
-			request.setAttribute("error2", "no user found");	
-			rd = request.getRequestDispatcher("college/collegeregister.jsp");	
-			rd.forward(request, response);
+			out.println("data not found");
 			}
 		
 		

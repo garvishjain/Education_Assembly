@@ -68,6 +68,14 @@
 		<div class="modal-dialog">
 			<div class="modal-content modal-popup">
 				<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+ 				
+ 				
+ 				
+ 				
+				
+				
+				
+				
 				<form action="../collegelogin" class="popup-form" id="myLogin" method="post">
 					<input type="text" name="user" id="user"  class="form-control form-white" placeholder="Username">
 					<input type="text" name="pass" id="pass" class="form-control form-white" placeholder="Password">
@@ -82,7 +90,7 @@
 						</div>
 					</div>
 					<label name="forget" id="forget"><a href="#" data-toggle="modal" data-target="#register">forget password</a> </label>
-					<button type="submit" class="btn btn-submit">Submit</button>
+					<button type="submit" class="btn btn-submit" id="button">Submit</button>
 				</form>
 			</div>
 		</div>

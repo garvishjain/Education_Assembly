@@ -48,9 +48,8 @@ Statement stmt=con.createStatement();
     </style>
 	
 	
-	<script type="text/javascript"> 
-   
-</script> 
+	
+				 
 
 </head>
 
@@ -62,7 +61,8 @@ Statement stmt=con.createStatement();
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
 <![endif]-->
 
-<div id="preloader" style="display: none;">
+
+
 	<div class="pulse" style="display: none;"></div>
 </div><!-- Pulse Preloader -->
 
@@ -80,10 +80,10 @@ Statement stmt=con.createStatement();
   	<br><br><br>
            <div class="col-md-14">
                 	<div class="box_style_1">
-                	<span style="color:red" >${error2}</span>
+                	<span style="color:red" id="error"></span>
                     <form action="../collegeregist"  onsubmit="return validate()" method="POST" enctype="multipart/form-data">
                    	<div class="indent_title_in">
-                    
+                    <span style="color:red" id="error"></span>
 				<h2 class="reg">Registration Form</h2><i class="pe-7s-user"></i>
 				
 			</div>
