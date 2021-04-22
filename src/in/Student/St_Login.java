@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -22,6 +23,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 import javax.xml.bind.DatatypeConverter;
 
+import in.common.GetConnection;
+
 /**
  * Servlet implementation class St_Login
  */
@@ -30,8 +33,8 @@ public class St_Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Connection con;
 	private String hashing;
-	private Statement stmt;
-	private RequestDispatcher rd;
+	private PreparedStatement stmt;
+	
 
 	private String getHash(byte[] passbyte, String algo) {
 		try {
@@ -47,17 +50,8 @@ public class St_Login extends HttpServlet {
 	}
 
 	public void init(ServletConfig config) throws ServletException {
-		try {
-			Context cxt = new InitialContext();
-			DataSource ds = (DataSource) cxt.lookup("java:comp/env/myCon");
-			con = ds.getConnection();
-			stmt = con.createStatement();
-
-		} catch (NamingException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		 GetConnection getConObj=new GetConnection();
+	     con = getConObj.getCon();
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
@@ -68,37 +62,39 @@ public class St_Login extends HttpServlet {
 						String uname = request.getParameter("uname");
 						String pass = request.getParameter("pass");
 						
+						
+						out.println(uname);
+						out.println(pass);
 					/*password hashing*/
 						byte[] bytepass = pass.getBytes();
 						String Hashed = getHash(bytepass, "SHA-256");
-							
+						out.println(Hashed);
 						
-						String sql = "Select username,password from student_information where username =' " + uname + " ' and password= '"+ Hashed + "' LIMIT 1";
+						String sql = "Select * from student_information where username =' " + uname + " ' and password= '"+ Hashed + "' LIMIT 1";
+						out.println(sql);
 						
-						ResultSet rs = stmt.executeQuery(sql);
-						String u = rs.getString(1);
-						String p = rs.getString(2);
-						System.out.println(uname+"\n"+Hashed+"\n\n\n"+u+"\n"+p);
+						
+						
+					     stmt = con.prepareStatement(sql);
+						
+						  ResultSet rs = stmt.executeQuery(sql);
+						 
 						if (rs.next()) 
+							       
 								{
-									String password = rs.getString(2);
-									if (pass.equals(password))
-											{
-										out.println("<html><body><script>alert('Data  Submitted');</script></body></html>");
-											}
-									else
-											{
-										out.println("<html><body><script>alert('Data Not Submitted');</script></body></html>");
-											}
+							
+							    out.println("<html><body><script>alert('Data  Submitted');</script></body></html>");
+							  
 									} 
 						else
 								{
 							out.println("<html><body><script>alert('Data Not Submitted');</script></body></html>");
 								}
 			} 
-	catch (Exception e) {
-				// TODO: handle exception
-			}
+				catch (SQLException e) 
+				{
+					e.printStackTrace();
+				} 
 		
 		
 	}
