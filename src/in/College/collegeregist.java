@@ -1,6 +1,7 @@
 package in.College;
 
 import java.io.IOException;
+import java.io.PrintStream;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,25 +9,33 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Random;
 
+import javax.naming.Context;
+import javax.naming.InitialContext;
+import javax.naming.NamingException;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
+import javax.sql.DataSource;
 
 import in.common.GetConnection;
 import in.common.hashed;
 import in.common.img;
 
-/**
- * Servlet implementation class collegereg
- */
-@WebServlet("/collegereg")
-public class collegereg extends HttpServlet {
-	private static final long serialVersionUID = 1L;
 
+/**
+ * Servlet implementation class collegeregistration
+ */
+@WebServlet("/collegeregist")
+@MultipartConfig()
+public class collegeregist extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	
 	private int pk_city_id;
 	private Connection con;
 
@@ -110,6 +119,8 @@ public class collegereg extends HttpServlet {
 			
 			out.println("Data Not Found");
 		}
+		
+		
 		
 		
 		

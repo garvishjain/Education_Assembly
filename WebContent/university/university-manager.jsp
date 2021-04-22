@@ -772,7 +772,7 @@
         <h5 class="brand-name">Ericsson<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h5>
         <ul class="nav nav-tabs">
             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-uni">University</a></li>
-            <!-- <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu-admin">Admin</a></li> -->
+            <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu-college">Colleges</a></li> 
         </ul>
         <div class="tab-content mt-3">
             <div class="tab-pane fade show active" id="menu-uni" role="tabpanel">
@@ -782,7 +782,7 @@
                         <li><a href="university-register.jsp"><i class="fa fa-graduation-cap brand-logo"></i><span>University Register</span></a></li>
                         <li><a href="professors.jsp"><i class="fa fa-black-tie"></i><span>Professors</span></a></li>
                         <li><a href="staff.jsp"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
-                        <li><a href="students.html"><i class="fa fa-users"></i><span>Students</span></a></li>
+                        <li><a href="students.jsp"><i class="fa fa-users"></i><span>Students</span></a></li>
                         <li><a href="department.jsp"><i class="fa fa-users"></i><span>Departments</span></a></li>
                         <li><a href="courses.jsp"><i class="fa fa-graduation-cap"></i><span>Courses</span></a></li>                        
                         <li><a href="library.html"><i class="fa fa-book"></i><span>Library</span></a></li>
@@ -797,20 +797,21 @@
                     </ul>
                 </nav>
             </div>
-            <!-- <div class="tab-pane fade" id="menu-admin" role="tabpanel">
+            <div class="tab-pane fade" id="menu-college" role="tabpanel">
                 <nav class="sidebar-nav">
                     <ul class="metismenu">
-                        <li><a href="payments.html"><i class="fa fa-credit-card"></i><span>Payments</span></a></li>
-                        <li><a href="noticeboard.html"><i class="fa fa-dashboard"></i><span>Noticeboard</span></a></li>
-                        <li><a href="taskboard.html"><i class="fa fa-list-ul"></i><span>Taskboard</span></a></li>
-                        <li><a href="hostel.html"><i class="fa fa-bed"></i><span>Hostel</span></a></li>
-                        <li><a href="transport.html"><i class="fa fa-truck"></i><span>Transport</span></a></li>
+                    	<li><a href="hostel.html"><i class="fa fa-bed"></i><span>College List</span></a></li>
+                        <li><a href="noticeboard.html"><i class="fa fa-dashboard"></i><span>Professors</span></a></li>
+                        <li><a href="taskboard.html"><i class="fa fa-list-ul"></i><span>Students</span></a></li>
+                        <li><a href="hostel.html"><i class="fa fa-bed"></i><span>Admission List</span></a></li>
+                        <li><a href="transport.html"><i class="fa fa-truck"></i><span>Departments</span></a></li>
+                        <li><a href="payments.html"><i class="fa fa-credit-card"></i><span>Courses</span></a></li>
                         <li><a href="attendance.html"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
                         <li><a href="leave.html"><i class="fa fa-flag"></i><span>Leave</span></a></li>
                         <li><a href="setting.html"><i class="fa fa-gear"></i><span>Settings</span></a></li>
                     </ul>
                 </nav>
-            </div> -->
+            </div>
         </div>
     </div>
     <!-- Start project content area -->
