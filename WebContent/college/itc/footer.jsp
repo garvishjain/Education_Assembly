@@ -71,6 +71,10 @@
 				<form action="../collegelogin" class="popup-form" id="myLogin" method="post">
 					<input type="text" name="user" id="user"  class="form-control form-white" placeholder="Username">
 					<input type="text" name="pass" id="pass" class="form-control form-white" placeholder="Password">
+					<span style="color:red" id="cfaxerr"></span>
+                    <span style="color:red" id="error"></span>
+                     
+					
 					<div class="checkbox-holder text-left">
 						<div class="checkbox">
 							<input type="checkbox" value="accept_1" id="check_1" name="check_1" />

@@ -30,8 +30,8 @@ public class collegelogin extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	
 	private  Connection con;
-	private Statement stmt;
-	
+	private PreparedStatement stmt;
+	private RequestDispatcher rd;
 
 	
 	
@@ -53,29 +53,38 @@ public class collegelogin extends HttpServlet {
 		{
 			
 		
-		String uname = request.getParameter("Username")!= null ? request.getParameter("Username") : "";
-		String pass = request.getParameter("Password")!= null ? request.getParameter("Password") : "";
-	
+		String uname = request.getParameter("user")!= null ? request.getParameter("user") : "";
+		String pass = request.getParameter("pass")!= null ? request.getParameter("pass") : "";
+		out.println(uname);
+		out.println(pass);
+		
 		hashed hash = new hashed();
 		String Hashed = hash.getHash(pass);
+		out.println(Hashed);
+		String sql = "Select * from user where username ='"+uname+"' and password = '"+Hashed+"' LIMIT 1";
+		out.println(sql);
 		
-		String sql = "Select username,password from user where username =' " + uname + " ' and password= '"+ Hashed + "' LIMIT 1";
 		stmt = con.prepareStatement(sql);
+		
+	   
+		
+		
 		ResultSet rs = stmt.executeQuery(sql);
-		String uniname = rs.getString(4);
-		out.println(uniname);
-		String unipass = rs.getString(5);
-		out.println(unipass);
+		
 		if(rs.next())
 			
 		{
+			    request.setAttribute("error2", "data found");
+				rd = request.getRequestDispatcher("college/collegeregister.jsp");		
+	        	rd.forward(request, response);
 			
-			out.println("<html><body><script>alert('Data  Submitted');</script></body></html>");	
-		}
+				}
 		else
 		{
-			out.println("<html><body><script>alert('Data not Submitted');</script></body></html>");
-		}
+			request.setAttribute("error2", "no user found");	
+			rd = request.getRequestDispatcher("college/collegeregister.jsp");	
+			rd.forward(request, response);
+			}
 		
 		
 		
