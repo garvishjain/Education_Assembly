@@ -383,6 +383,7 @@
  
         
 	<div class="container_gray_bg" id="newsletter_container">
+	
       <!-- 	  <div class="container margin_60">
             <div class="row">
                 <div class="col-md-8 col-md-offset-2 text-center">
