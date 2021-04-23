@@ -87,7 +87,7 @@
 					
 					<div class="checkbox-holder text-left">
 						<div class="checkbox">
-							<input type="checkbox" value="accept_1" id="check_1" name="check_1" />
+							<input type="checkbox" value="accept_1" id="check_1" name="check_1"  />
 							<label for="check_1"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
 						</div>
 					</div>

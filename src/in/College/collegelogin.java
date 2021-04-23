@@ -31,7 +31,7 @@ public class collegelogin extends HttpServlet {
 	
 	private  Connection con;
 	private PreparedStatement stmt;
-	private RequestDispatcher rd;
+	
 
 	
 	
@@ -46,7 +46,7 @@ public class collegelogin extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		response.setContentType("text/plain");
+		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		
 		try
@@ -70,7 +70,9 @@ public class collegelogin extends HttpServlet {
 			
 		{
 			String n =rs.getString(2);
-		    out.println("data  found");
+			
+			
+			response.sendRedirect("candid.jsp?n="+n);
 					
 				}
 		else

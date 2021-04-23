@@ -4,7 +4,7 @@
 <%@page import="in.common.GetConnection"%>
 <%@ include file="inc/stdimport.jsp" %>  
 <%@page import="java.util.ArrayList"%>
-<%@page import="in.Student.St_GetData"%>
+<%@page import="in.Student.St_Login"%>
 <html>
 <head>
 
