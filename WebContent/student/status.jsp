@@ -4,7 +4,7 @@
 <%@page import="in.common.GetConnection"%>
 <%@ include file="inc/stdimport.jsp" %>  
 <%@page import="java.util.ArrayList"%>
-<%@page import="in.Student.St_Login"%>
+<%@page import="in.College.User"%>
 <html>
 <head>
 
@@ -30,7 +30,9 @@
      <link href="css/date_time_picker.css" rel="stylesheet">
  
  <%
-		St_Login st=new St_Login();
+ 
+ 
+ User st = new User();
 String s= st.getUsername();
 System.out.print(s);
 
@@ -80,13 +82,13 @@ GetConnection getConObj=new GetConnection();
        						<table>
        						<%
        						try{
-                                     	String sql="Select * from student_information where username=' " +s+ " '";
+                                     	String sql="Select * from user where username=' " +s+ " '";
        									ResultSet  result	=stmt.executeQuery(sql);
        									while(result.next())
        									{
        						%>
        								<tr>
-       										<td><%=result.getString("first_name") %></td>
+       										<td><%=result.getString("name") %></td>
        								</tr>
        								<%
        									}

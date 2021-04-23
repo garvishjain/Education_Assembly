@@ -22,6 +22,7 @@ import javax.xml.bind.DatatypeConverter;
 import in.common.GetConnection;
 import in.common.hashed;
 
+
 /**
  * Servlet implementation class collegelogin
  */
@@ -70,10 +71,13 @@ public class collegelogin extends HttpServlet {
 			
 		{
 			String n =rs.getString(2);
+			String u=rs.getString(4);
+			String e =rs.getString(3);
 			
+			User user = new User(n,e,u);
+		
+			response.sendRedirect("/status.jsp");
 			
-			response.sendRedirect("candid.jsp?n="+n);
-					
 				}
 		else
 		{
