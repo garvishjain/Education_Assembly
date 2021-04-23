@@ -22,67 +22,73 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 import javax.xml.bind.DatatypeConverter;
 
+import in.common.GetConnection;
+import in.common.hashed;
+
 /**
  * Servlet implementation class St_Login
  */
 @WebServlet("/St_Login")
 public class St_Login extends HttpServlet {
+	
+	private String username;
+	
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
 	private static final long serialVersionUID = 1L;
 	private Connection con;
 	private String hashing;
 	private Statement stmt;
 	private RequestDispatcher rd;
 
-	private String getHash(byte[] passbyte, String algo) {
-		try {
-			MessageDigest msgdigest = MessageDigest.getInstance(algo);
-			msgdigest.update(passbyte);
-			byte[] passdigest = msgdigest.digest();
-			hashing = DatatypeConverter.printHexBinary(passdigest).toLowerCase();
-
-		} catch (NoSuchAlgorithmException e) {
-			e.printStackTrace();
-		}
-		return hashing;
-	}
-
-	public void init(ServletConfig config) throws ServletException {
-		try {
-			Context cxt = new InitialContext();
-			DataSource ds = (DataSource) cxt.lookup("java:comp/env/myCon");
-			con = ds.getConnection();
-			stmt = con.createStatement();
-
-		} catch (NamingException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+	public void init(ServletConfig config) throws ServletException 
+	{
+		try
+			{
+				GetConnection getConObj=new GetConnection();
+				 con=getConObj.getCon();
+				 stmt=con.createStatement();
+				
+			} 
+		catch (SQLException e) 
+				{
+					e.printStackTrace();
+				}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
+		
 						response.setContentType("text/html");
 						PrintWriter out = response.getWriter();
 				try {
 						String uname = request.getParameter("uname");
 						String pass = request.getParameter("pass");
+						/*password hashing*/
+						hashed gethash = new hashed();
+						String hashed = gethash.getHash(pass);
 						
-					/*password hashing*/
-						byte[] bytepass = pass.getBytes();
-						String Hashed = getHash(bytepass, "SHA-256");
-							
-						
-						String sql = "Select username,password from student_information where username =' " + uname + " ' and password= '"+ Hashed + "' LIMIT 1";
+						String sql = "Select * from student_information where username =' " + uname + " ' and password= '"+ hashed + "' LIMIT 1";
 						
 						ResultSet rs = stmt.executeQuery(sql);
-						String u = rs.getString(1);
+						
+						String u = rs.getString(2);
 						String p = rs.getString(2);
-						System.out.println(uname+"\n"+Hashed+"\n\n\n"+u+"\n"+p);
+						
+						System.out.println("u = "+u);
+						System.out.println("p = "+p);
+						
+						setUsername(u);
+							
 						if (rs.next()) 
 								{
-									String password = rs.getString(2);
-									if (pass.equals(password))
+									if (pass.equals(p))
 											{
 										out.println("<html><body><script>alert('Data  Submitted');</script></body></html>");
 											}
@@ -97,9 +103,7 @@ public class St_Login extends HttpServlet {
 								}
 			} 
 	catch (Exception e) {
-				// TODO: handle exception
 			}
-		
-		
-	}
+		}
+	
 }

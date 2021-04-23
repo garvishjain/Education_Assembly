@@ -5,6 +5,7 @@
 <%@ include file="inc/header.jsp" %>  
 <%@ include file="inc/stdimport.jsp" %>  
 
+
 <%
 GetProfessorsDB gpd= new GetProfessorsDB();
 ArrayList<GetProfessorsDB> records =gpd.getData(111, "Y"); // Here you have to pass University Id or College ID, pick it from the session when a user login

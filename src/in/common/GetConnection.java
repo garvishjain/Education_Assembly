@@ -38,7 +38,7 @@ public class GetConnection
 			cxt = new InitialContext();
 			DataSource ds = (DataSource) cxt.lookup("java:comp/env/myCon");
 			setCon(ds.getConnection());
-			
+		
 			
 		} 
 		
