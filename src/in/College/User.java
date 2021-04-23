@@ -30,6 +30,10 @@ public class User {
 	public String getUsername() {
 		return username;
 	}
+	@Override
+	public String toString() {
+		return "User [name=" + name + ", email=" + email + ", username=" + username + "]";
+	}
 	public void setUsername(String username) {
 		this.username = username;
 	}

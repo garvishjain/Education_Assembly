@@ -76,7 +76,8 @@ public class collegelogin extends HttpServlet {
 			
 			User user = new User(n,e,u);
 		
-			response.sendRedirect("/status.jsp");
+			System.out.println(user);
+			response.sendRedirect("student/status.jsp?n="+n);
 			
 				}
 		else
