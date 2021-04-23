@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -23,6 +24,7 @@ import javax.sql.DataSource;
 import javax.xml.bind.DatatypeConverter;
 
 import in.common.GetConnection;
+<<<<<<< HEAD
 import in.common.hashed;
 
 /**
@@ -44,9 +46,10 @@ public class St_Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Connection con;
 	private String hashing;
-	private Statement stmt;
-	private RequestDispatcher rd;
+	private PreparedStatement stmt;
+	
 
+<<<<<<< HEAD
 	public void init(ServletConfig config) throws ServletException 
 	{
 		try
@@ -60,6 +63,24 @@ public class St_Login extends HttpServlet {
 				{
 					e.printStackTrace();
 				}
+=======
+	private String getHash(byte[] passbyte, String algo) {
+		try {
+			MessageDigest msgdigest = MessageDigest.getInstance(algo);
+			msgdigest.update(passbyte);
+			byte[] passdigest = msgdigest.digest();
+			hashing = DatatypeConverter.printHexBinary(passdigest).toLowerCase();
+
+		} catch (NoSuchAlgorithmException e) {
+			e.printStackTrace();
+		}
+		return hashing;
+	}
+
+	public void init(ServletConfig config) throws ServletException {
+		 GetConnection getConObj=new GetConnection();
+	     con = getConObj.getCon();
+>>>>>>> origin/main
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
@@ -74,6 +95,7 @@ public class St_Login extends HttpServlet {
 						hashed gethash = new hashed();
 						String hashed = gethash.getHash(pass);
 						
+<<<<<<< HEAD
 						String sql = "Select * from student_information where username =' " + uname + " ' and password= '"+ hashed + "' LIMIT 1";
 						
 						ResultSet rs = stmt.executeQuery(sql);
@@ -86,8 +108,29 @@ public class St_Login extends HttpServlet {
 						
 						setUsername(u);
 							
+=======
+						
+						out.println(uname);
+						out.println(pass);
+					/*password hashing*/
+						byte[] bytepass = pass.getBytes();
+						String Hashed = getHash(bytepass, "SHA-256");
+						out.println(Hashed);
+						
+						String sql = "Select * from student_information where username =' " + uname + " ' and password= '"+ Hashed + "' LIMIT 1";
+						out.println(sql);
+						
+						
+						
+					     stmt = con.prepareStatement(sql);
+						
+						  ResultSet rs = stmt.executeQuery(sql);
+						 
+>>>>>>> origin/main
 						if (rs.next()) 
+							       
 								{
+<<<<<<< HEAD
 									if (pass.equals(p))
 											{
 										out.println("<html><body><script>alert('Data  Submitted');</script></body></html>");
@@ -96,14 +139,29 @@ public class St_Login extends HttpServlet {
 											{
 										out.println("<html><body><script>alert('Data Not Submitted');</script></body></html>");
 											}
+=======
+							
+							    out.println("<html><body><script>alert('Data  Submitted');</script></body></html>");
+							  
+>>>>>>> origin/main
 									} 
 						else
 								{
 							out.println("<html><body><script>alert('Data Not Submitted');</script></body></html>");
 								}
 			} 
+<<<<<<< HEAD
 	catch (Exception e) {
 			}
 		}
 	
+=======
+				catch (SQLException e) 
+				{
+					e.printStackTrace();
+				} 
+		
+		
+	}
+>>>>>>> origin/main
 }

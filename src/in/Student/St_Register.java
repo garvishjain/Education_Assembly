@@ -49,21 +49,12 @@ public class St_Register extends HttpServlet {
 	private String hashed;
 	private int fk_address;
 	private int fk_education;
-	private Statement stmt;
+	private PreparedStatement stmt;
 	
 	public void init(ServletConfig config) throws ServletException 
-				{
-							try
-									{
-										GetConnection getConObj=new GetConnection();
-										 con=getConObj.getCon();
-										 stmt = con.createStatement();
-									} 
-					catch (SQLException e) 
-									{
-										e.printStackTrace();
-									}
-				}
+				{GetConnection getConObj=new GetConnection();
+				 con=getConObj.getCon();
+				 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException
 		{
 			response.setContentType("text/html");
@@ -76,7 +67,7 @@ public class St_Register extends HttpServlet {
 						String fname = request.getParameter("fname")      	  !=null?request.getParameter("fname") : "";
 						String lname = request.getParameter("lname")           !=null?request.getParameter("lname") : "";
 						String email=request.getParameter("email")           	  !=null?request.getParameter("email") : "";
-						String adhar=request.getParameter("aadhar")         	  !=null?request.getParameter("aadhar") : "";
+						String adhar=request.getParameter("adhar")         	  !=null?request.getParameter("adhar") : "";
 						String num = request.getParameter("num")                !=null?request.getParameter("num") : "";
 						String dob = request.getParameter("dob")             	  !=null?request.getParameter("dob") : "";
 						String gender=request.getParameter("gender")         !=null?request.getParameter("gender") : "";
@@ -85,7 +76,7 @@ public class St_Register extends HttpServlet {
 						String f_num = request.getParameter("fnum")        	  !=null?request.getParameter("fnum") : "";
 						String religion = request.getParameter("religion")     !=null?request.getParameter("religion") : "";
 						String cast = request.getParameter("cast")          		  !=null?request.getParameter("cast") : "";
-						String uname= request.getParameter("user")         !=null?request.getParameter("uname") : "";
+						String uname= request.getParameter("uname")!=null?request.getParameter("uname") : "";
 						String pass=request.getParameter("pass")             	  !=null?request.getParameter("pass") : "";
 			/*Student Information*/                                                              
 			/*StudentAddress*/		                                                             
@@ -121,7 +112,7 @@ public class St_Register extends HttpServlet {
 						 Part part = request.getPart("image");
 						 String filename = part.getSubmittedFileName();
 						String s = filename+(LocalDateTime.now().toString().replace(":",""));
-						 String path="G:\\i\\"+s;
+						 String path="E:\\notes\\"+s;
 						String finallocation = path +""+ filename;
 					   	part.write(finallocation );
 						/* img image = new img();
@@ -173,9 +164,27 @@ public class St_Register extends HttpServlet {
 								}
 							}
 						
-	/*Insert Data into student_education*/
+//	insert user table detail
 						
-						
+						String sql3="insert into user(name,email,username,password)values(?,?,?,?)";
+								stmt = con.prepareStatement(sql3);
+								stmt.setString(1,fname+lname);
+								stmt.setString(2,email);
+								stmt.setString(3,uname);
+								stmt.setString(4,hashed);
+								int res3 = stmt.executeUpdate();
+								if(res3>0)
+								{
+									out.println("<html><body><h4>Data Submitted</h4></body></html>");
+									
+								}
+								else
+								{
+									out.println("<html><body><h4>Data  not Submitted</h4></body></html>");
+									
+								}
+								
+								
 		/*Insert Data into student_information*/
 						String sql="insert into student_information(first_name,last_name,email,gender,dob,religion,"
 										+ "category,s_contact,image,f_name,m_name,f_num,aadhar_number,username,password,fk_address,fk_education)"

@@ -22,6 +22,7 @@ import javax.xml.bind.DatatypeConverter;
 import in.common.GetConnection;
 import in.common.hashed;
 
+
 /**
  * Servlet implementation class collegelogin
  */
@@ -31,7 +32,7 @@ public class collegelogin extends HttpServlet {
 	
 	private  Connection con;
 	private PreparedStatement stmt;
-	private RequestDispatcher rd;
+	
 
 	
 	
@@ -46,7 +47,7 @@ public class collegelogin extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		
-		response.setContentType("text/plain");
+		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		
 		try
@@ -69,8 +70,15 @@ public class collegelogin extends HttpServlet {
 		if(rs.next())
 			
 		{
-			out.println("data  found");
-					
+			String n =rs.getString(2);
+			String u=rs.getString(4);
+			String e =rs.getString(3);
+			
+			User user = new User(n,e,u);
+		
+			System.out.println(user);
+			response.sendRedirect("student/status.jsp?n="+n);
+			
 				}
 		else
 		{

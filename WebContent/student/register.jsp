@@ -83,7 +83,7 @@
   
            <div class="col-md-9">
                 	<div class="box_style_1">
-                      <!-- <form action="../St_Register" id="apply_online" method="post" enctype="multipart/form-data"> -->
+                     <form action="../St_Register" id="apply_online" method="post" enctype="multipart/form-data"> 
                    	<div class="indent_title_in">
                     <i class="pe-7s-user"></i>
 				<h3 style="text-decoration: underline;">Personal details</h3>
