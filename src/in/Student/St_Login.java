@@ -24,7 +24,7 @@ import javax.sql.DataSource;
 import javax.xml.bind.DatatypeConverter;
 
 import in.common.GetConnection;
-<<<<<<< HEAD
+
 import in.common.hashed;
 
 /**
@@ -46,122 +46,125 @@ public class St_Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Connection con;
 	private String hashing;
-	private PreparedStatement stmt;
+	private Statement stmt;
 	
 
-<<<<<<< HEAD
+
 	public void init(ServletConfig config) throws ServletException 
 	{
 		try
-			{
+		{
 				GetConnection getConObj=new GetConnection();
 				 con=getConObj.getCon();
-				 stmt=con.createStatement();
-				
-			} 
-		catch (SQLException e) 
-				{
+					stmt=con.createStatement();
+					System.out.println("connectipon = "+con);
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-=======
-	private String getHash(byte[] passbyte, String algo) {
-		try {
-			MessageDigest msgdigest = MessageDigest.getInstance(algo);
-			msgdigest.update(passbyte);
-			byte[] passdigest = msgdigest.digest();
-			hashing = DatatypeConverter.printHexBinary(passdigest).toLowerCase();
-
-		} catch (NoSuchAlgorithmException e) {
-			e.printStackTrace();
-		}
-		return hashing;
+				
+				
 	}
 
-	public void init(ServletConfig config) throws ServletException {
-		 GetConnection getConObj=new GetConnection();
-	     con = getConObj.getCon();
->>>>>>> origin/main
-	}
+	
+
+	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
 	{
 		
 						response.setContentType("text/html");
 						PrintWriter out = response.getWriter();
-				try {
+						try {
 						String uname = request.getParameter("uname");
 						String pass = request.getParameter("pass");
 						/*password hashing*/
 						hashed gethash = new hashed();
 						String hashed = gethash.getHash(pass);
 						
-<<<<<<< HEAD
-						String sql = "Select * from student_information where username =' " + uname + " ' and password= '"+ hashed + "' LIMIT 1";
-						
+						System.out.println("user = "+uname);
+						System.out.println("user = "+hashed);
+						String sql = "Select * from student_information where username =' " + uname + " ' and password= '"+ hashed + "' LIMIT 1"; 
 						ResultSet rs = stmt.executeQuery(sql);
-						
-						String u = rs.getString(2);
-						String p = rs.getString(2);
-						
-						System.out.println("u = "+u);
-						System.out.println("p = "+p);
-						
-						setUsername(u);
-							
-=======
-						
-						out.println(uname);
-						out.println(pass);
-					/*password hashing*/
-						byte[] bytepass = pass.getBytes();
-						String Hashed = getHash(bytepass, "SHA-256");
-						out.println(Hashed);
-						
-						String sql = "Select * from student_information where username =' " + uname + " ' and password= '"+ Hashed + "' LIMIT 1";
-						out.println(sql);
-						
-						
-						
-					     stmt = con.prepareStatement(sql);
-						
-						  ResultSet rs = stmt.executeQuery(sql);
-						 
->>>>>>> origin/main
-						if (rs.next()) 
-							       
-								{
-<<<<<<< HEAD
-									if (pass.equals(p))
+						String n = rs.getString(2);
+						String p = rs.getString(10);
+						//System.out.println(n+p);
+						if (!rs.next()) 
+						{
+									if (pass.equals(hashed))
 											{
-										out.println("<html><body><script>alert('Data  Submitted');</script></body></html>");
+										out.println("<html><body><script>alert('pass logged in');</script></body></html>");
 											}
 									else
 											{
-										out.println("<html><body><script>alert('Data Not Submitted');</script></body></html>");
+										out.println("<html><body><script>alert('pass invalid');</script></body></html>");
 											}
-=======
-							
-							    out.println("<html><body><script>alert('Data  Submitted');</script></body></html>");
-							  
->>>>>>> origin/main
-									} 
-						else
-								{
-							out.println("<html><body><script>alert('Data Not Submitted');</script></body></html>");
-								}
-			} 
-<<<<<<< HEAD
-	catch (Exception e) {
-			}
-		}
+					    out.println("<html><body><script>alert('login');</script></body></html>");
+						} 
+				else
+						{
+					out.println("<html><body><script>alert('Not ');</script></body></html>");
+						}
+						
+						
+								} 
+						
+						
+						
+						catch (SQLException e) {
+													// TODO Auto-generated catch block
+													e.printStackTrace();
+												}
 	
-=======
-				catch (SQLException e) 
-				{
-					e.printStackTrace();
-				} 
-		
-		
-	}
->>>>>>> origin/main
 }
+		
+}
+	/*password hashing
+	byte[] bytepass = pass.getBytes();
+	String Hashed = getHash(bytepass, "SHA-256");
+	out.println(Hashed);
+	
+	String sql = "Select * from student_information where username =' " + uname + " ' and password= '"+ Hashed + "' LIMIT 1";
+	out.println(sql);
+	
+	
+	
+     stmt = con.prepareStatement(sql);
+	
+	  ResultSet rs = stmt.executeQuery(sql);
+	 
+>>>>>>> origin/main
+	if (rs.next()) 
+		       
+			{
+<<<<<<< HEAD
+				if (pass.equals(p))
+						{
+					out.println("<html><body><script>alert('Data  Submitted');</script></body></html>");
+						}
+				else
+						{
+					out.println("<html><body><script>alert('Data Not Submitted');</script></body></html>");
+						}
+=======
+		
+		    out.println("<html><body><script>alert('Data  Submitted');</script></body></html>");
+		  
+>>>>>>> origin/main
+				} 
+	else
+			{
+		out.println("<html><body><script>alert('Data Not Submitted');</script></body></html>");
+			}
+} 
+<<<<<<< HEAD
+catch (Exception e) {
+}
+}
+
+=======
+	public void init(ServletConfig config) throws ServletException {
+		 GetConnection getConObj=new GetConnection();
+	     con = getConObj.getCon();
+
+	}*/

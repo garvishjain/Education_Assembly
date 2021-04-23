@@ -2165,11 +2165,13 @@ margin-left: -50px;}
 
 .status{border: 2px solid #223038;
     			width: 70%;
-    			height: 800px;;
+    			height: 850px;;
     			margin: auto; 
     			margin-top: 120px;
     			margin-bottom: 50px;
-    			background-color: white;}
+    			background-color: white;
+    			/* display: grid;
+    			border-collapse: collapse; */}
   
 .imf{border: 2px solid #223038;
     					width:170px;
