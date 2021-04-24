@@ -22,6 +22,11 @@
     
     <!-- SPECIFIC CSS -->
     <link href="css/skins/square/blue.css" rel="stylesheet">
+    <script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    
 
     <!--[if lt IE 9]>
       <script src="js/html5shiv.min.js"></script>
@@ -48,6 +53,50 @@
 			label{font-size: 18px;}
 			
 </style>
+
+
+
+
+<script type="text/javascript">
+document.getElementById('first').style.display = "block";
+document.getElementById('second').style.display = "none";
+document.getElementById('third').style.display = "none";
+document.getElementById('four').style.display = "none";
+
+	function firstnext() 
+				{
+					document.getElementById('first').style.display = "none";
+					document.getElementById('second').style.display = "block";
+				
+				}
+	function secondprev()
+				{
+					document.getElementById('second').style.display = "none";
+					document.getElementById('first').style.display = "block";
+				}
+	function secondnext() 
+				{
+					document.getElementById('second').style.display = "none";
+					document.getElementById('third').style.display = "block";
+				}
+	function thirdprev() 
+				{
+					document.getElementById('third').style.display = "none";
+					document.getElementById('second').style.display = "block";
+				}
+
+	function thirdnext() 
+				{
+					document.getElementById('third').style.display = "none";
+					document.getElementById('four').style.display = "block";
+				}
+	function fourprev() 
+				{
+					document.getElementById('four').style.display = "none";
+					document.getElementById('third').style.display = "block";
+				}
+</script>
+
 
 </head>
 
@@ -80,298 +129,320 @@
     </div><!-- Position -->
         <div class="container margin_60">
  		<div class="row">
-  
-           <div class="col-md-9">
-                	<div class="box_style_1">
-                     <form action="../St_Register" id="apply_online" method="post" enctype="multipart/form-data"> 
-                   	<div class="indent_title_in">
-                    <i class="pe-7s-user"></i>
-				<h3 style="text-decoration: underline;">Personal details</h3>
-			</div>
-			
-			
-         <div class="wrapper_indent">
-                        <div class="row">
-		                        	
-		                        	<div class="col-md-6">
-		                            	<div class="form-group"  >
-		                                <label>First name</label>
-		                                <input type="text" class="form-control styled required" id="fname" name="fname"  placeholder="Enter First Name">
-		                            	</div>
-		                            </div>
-		                            
-		                            <div class="col-md-6">
-		                            	<div class="form-group">
-		                                <label>Last name</label> 
-		                                <input type="text" class="form-control styled required" id="lname" name="lname" placeholder="Enter Last Name">
-		                           		 </div>
-		                            </div>
-                            
-                   </div><!-- End row -->
-       </div><!-- End row -->
-       
-       
-        <div class="wrapper_indent">
-                        <div class="row">
-        					
-						                        	<div class="col-md-6">
-						                            	<div class="form-group">
-						                                <label>Email</label>
-						                                <input type="email" class="form-control styled required" id="email" name="email" placeholder="youremail@gmail.com">
-						                               </div>
-						                            </div>
-						                            
-						                             <div class="col-md-6">
-		                            	<div class="form-group">
-		                                <label>Mobile Number</label>
-		                                <input type="text" class="form-control styled required" id="num" name="num" placeholder="Enter Your Number">
-		                               </div>
-		                            </div>
-						                           
-						                            
-		   </div><!-- End row -->
-       </div><!-- End row -->
-       
-       
-        <div class="wrapper_indent">
-                        <div class="row">
-       
-	                                    
-		                            
-		                            <div class="col-md-6">
-		                            	<div class="form-group">
-		                                <label>Date of birth</label>
-		                                <input type="date" class="form-control styled required" id="dob" name="dob"  placeholder="Enter Your DOB">
-		                              </div>
-		                            </div>
-		                             <div class="col-md-6">
-		                            	<div class="form-group">
-		                                <label>Aadhar Number</label>
-		                                <input type="text" class="form-control styled required" id="aadhar" name="adhar"  maxlength="12" minlength="12" placeholder="Enter 12 digit Aadhar Number">
-		                              </div>
-		                            </div>
-		                             <div class="col-md-6">
-                            	<div class="form-group">
-                                <label>Gender</label><br>
-                                    <div class="radio_inline">
-                                    <input type="radio" name="gender" id="gender" class="required" value="Male"><label style="margin-right:20px;">Male</label>
-                                    <input type="radio" name="gender" id="gender" class="required" value="Female"><label>Female</label>
-                                    </div>
-                            </div>
-                            </div>
-                            
-                            
-                            
-                            
-		   </div><!-- End row -->
-       </div><!-- End row -->
-       
-       
-       <div class="wrapper_indent">
-                        <div class="row">
-       
-	                                   <div class="col-md-6">
-		                            	<div class="form-group">
-		                                <label>Father's Name</label>
-		                                <input type="text" class="form-control styled required" id="fname" name="f_name" placeholder="Enter Father Name">
-		                               </div>
-		                            </div>
-		                            
-		                            <div class="col-md-6">
-		                            	<div class="form-group">
-		                                <label>Mother's Name</label>
-		                                <input type="text" class="form-control styled required" id="mname" name="mname" placeholder="Enter Mother Name">
-		                               </div>
-		                            </div>
-		   </div><!-- End row -->
-       </div>
-       
-       
-        <div class="wrapper_indent">
-                        <div class="row">
-       
-	                                   <div class="col-md-6">
-		                            	<div class="form-group">
-		                                <label>Father's Mobile</label>
-		                                <input type="text" class="form-control styled required" id="fnum" name="fnum"  placeholder="Enter Father's Number">
-		                              </div>
-		                            </div>
-                  
-                        
-		                        	<div class="col-md-6">
-		                            	<div class="form-group">
-		                                <label>Religion</label>
-		                                <select class="form-control styled required" name="religion" id="religion">
-		                                			<option value="null">-- select one --</option>
-												  <option value="Buddhism">Buddhism</option>
-												  <option value="Hindu">Hindu</option>
-												  <option value="Muslim">Muslim</option>
-												  <option value="Sikh">Sikh</option>
-		                                			 <option value="Christian">Christian</option>
-		                                			  <option value="Jainism">Jainism</option>
-		                                	</select>
-		                               </div>
-		                            </div>
-		   </div>
-       </div>
-		                            
-		         <div class="wrapper_indent">
-                        <div class="row">
-		                            <div class="col-md-6">
-		                            	<div class="form-group">
-		                                <label>Category</label>
-		                                <select class="form-control styled required" name="cast" id="cast">
-		                                			<option value="null">-- select one --</option>
-												  <option value="sc">SC</option>
-												  <option value="st">ST</option>
-												  <option value="obc">OBC</option>
-												  <option value="general">GENERAL</option>
-		                                			 
-		                                	</select>
-		                              </div>
-		                            </div>
-		                            
-		                            
-                     <div class="col-md-6">
-		                            	<div class="form-group">
-		                                <label  >Select Student Image</label>
-		                                <input type="file" name="image" id="image" class="form-control styled required">
-		                              </div>
-		                            </div>
-		                            
-		                         
-		     </div>
-       </div>  	
-       
-         	
-                   
-                     
-                      <hr class="styled_2">
-                      <div class="indent_title_in">
-                    <i class="pe-7s-map-marker"></i>
-				<h3 style="text-decoration: underline;">Address</h3>
-			</div>
-            	<div class="wrapper_indent">
-                    <div class="row">
-                        	
-                        	<div class="col-md-6">
-                            	<div class="form-group">
-                                <label>Address line</label>
-                            	<textarea class="form-control styled required" id="adrs" placeholder="Enter Student Address" name="adrs"></textarea>
-                            </div>
-                            </div>
-                            <div class="col-md-6">
-                            	<div class="form-group">
-                                <label>State</label>
-                                <select name="state" id="state" class="form-control styled required">
-                                			<option>---please Select---</option>
-														<%
+
+				<div class="col-md-9">
+					<div class="box_style_1">
+						<form action="../St_Register" id="apply_online" method="post"
+							enctype="multipart/form-data">
+
+
+
+							<fieldset id="first"  Style="display:block;">
+							
+							
+								<div class="indent_title_in">
+									<i class="pe-7s-user"></i>
+									<h3 style="text-decoration: underline;">Personal details</h3>
+								</div>
+
+
+								<div class="wrapper_indent">
+									<div class="row">
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>First name</label> <input type="text"
+													class="form-control styled required" id="fname"
+													name="fname" placeholder="Enter First Name">
+											</div>
+										</div>
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Last name</label> <input type="text"
+													class="form-control styled required" id="lname"
+													name="lname" placeholder="Enter Last Name">
+											</div>
+										</div>
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Email</label> <input type="email"
+													class="form-control styled required" id="email"
+													name="email" placeholder="youremail@gmail.com">
+											</div>
+										</div>
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Mobile Number</label> <input type="text"
+													class="form-control styled required" id="num" name="num"
+													placeholder="Enter Your Number">
+											</div>
+										</div>
+
+
+
+
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Date of birth</label> <input type="date"
+													class="form-control styled required" id="dob" name="dob"
+													placeholder="Enter Your DOB">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Aadhar Number</label> <input type="text"
+													class="form-control styled required" id="aadhar"
+													name="adhar" maxlength="12" minlength="12"
+													placeholder="Enter 12 digit Aadhar Number">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Gender</label><br>
+												<div class="radio_inline">
+													<input type="radio" name="gender" id="gender"
+														class="required" value="Male"><label
+														style="margin-right: 20px;">Male</label> <input
+														type="radio" name="gender" id="gender" class="required"
+														value="Female"><label>Female</label>
+												</div>
+											</div>
+										</div>
+
+
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Father's Name</label> <input type="text"
+													class="form-control styled required" id="fname"
+													name="f_name" placeholder="Enter Father Name">
+											</div>
+										</div>
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Mother's Name</label> <input type="text"
+													class="form-control styled required" id="mname"
+													name="mname" placeholder="Enter Mother Name">
+											</div>
+										</div>
+
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Father's Mobile</label> <input type="text"
+													class="form-control styled required" id="fnum" name="fnum"
+													placeholder="Enter Father's Number">
+											</div>
+										</div>
+
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Religion</label> <select
+													class="form-control styled required" name="religion"
+													id="religion">
+													<option value="null">-- select one --</option>
+													<option value="Buddhism">Buddhism</option>
+													<option value="Hindu">Hindu</option>
+													<option value="Muslim">Muslim</option>
+													<option value="Sikh">Sikh</option>
+													<option value="Christian">Christian</option>
+													<option value="Jainism">Jainism</option>
+												</select>
+											</div>
+										</div>
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Category</label> <select
+													class="form-control styled required" name="cast" id="cast">
+													<option value="null">-- select one --</option>
+													<option value="sc">SC</option>
+													<option value="st">ST</option>
+													<option value="obc">OBC</option>
+													<option value="general">GENERAL</option>
+
+												</select>
+											</div>
+										</div>
+
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Select Student Image</label> <input type="file"
+													name="image" id="image"
+													class="form-control styled required">
+											</div>
+										</div>
+
+											<hr>
+										<input type="button" name="password" class="next btn btn-info"
+										onclick="firstnext()" value="Next"  />
+
+									</div>
+								</div>
+							</fieldset>
+
+
+							<!-- Second Session Start -->
+							<fieldset id="second" Style="display:none;">
+								<div class="indent_title_in">
+									<i class="pe-7s-map-marker"></i>
+									<h3 style="text-decoration: underline;">Address</h3>
+								</div>
+								<div class="wrapper_indent">
+									<div class="row">
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Address line</label>
+												<textarea class="form-control styled required" id="adrs"
+													placeholder="Enter Student Address" name="adrs"></textarea>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>State</label> <select name="state" id="state"
+													class="form-control styled required">
+													<option>---please Select---</option>
+													<%
 														try {
 															String query = "select * from state";
 															//get Table data
 															ResultSet rs = stmt.executeQuery(query);
 															while (rs.next()) {
-														%>
-														<option><%=rs.getString("state_name")%></option>
+													%>
+													<option><%=rs.getString("state_name")%></option>
+													<%
+														}
+														} catch (Exception e) {
+
+														}
+													%>
+												</select>
+											</div>
+										</div>
+
+
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label>City</label> <select name="city" id="city" class="form-control styled required">
+														<option>---Please Select---</option>
 														<%
-															}
-															} catch (Exception e) {
-	
-															}
-														%>
-                                </select>
-                            </div>
-                            </div>
-                        </div><!-- End row -->
-                        
-                         <div class="row">
-                   	<div class="col-md-6">
-                   		<div class="form-group">
-                                <label>City</label>
-								<select  name="city" id="city" >
-									<option>---Please Select---</option>
-														<%
-														try {
-															String query = "select * from city";
-															//get Table data
-															ResultSet rs = stmt.executeQuery(query);
-															while (rs.next()) {
+															try {
+																String query = "select * from city";
+																//get Table data
+																ResultSet rs = stmt.executeQuery(query);
+																while (rs.next()) {
 														%>
 														<option><%=rs.getString("city_name")%></option>
 														<%
 															}
-														} catch (Exception e) {
+															} catch (Exception e) {
 
-														}
+															}
 														%>
-								</select>
-							</div>
-                            </div>
-                            <div class="col-md-6">
-                            <div class="form-group">
-                                <label>Pin Code</label>
-                                <input type="text" class="form-control styled required" id="pincode" name="pincode" maxlength="6" minlength="6" placeholder="123456">
-                            </div>
-                           </div>
-                   </div>
-                        
-                        
-                      </div>
-                      <hr class="styled_2">
-                      
-                      
-                     
-           
-                       
-                        <div class="indent_title_in">
-                        <i class="pe-7s-study"></i>
-								<h3 style="text-decoration: underline;">Education Detail</h3>
-						</div>
-                      <div class="wrapper_indent">
-                        <div class="row">
-		                        	
-		                            <div class="col-md-6">
-		                            	<div class="form-group">
-		                                <label>10th(%)</label> 
-		                                
-		                                <input type="text" class="form-control styled required" id="high" name="high" placeholder="Enter 10 Percentage">
-		                           		 
-		                                   	
-		                           	 
-		                           	 </div>
-		                            </div>
-		                            
-		                           <div class="col-md-6">
-		                            	<div class="form-group">
-		                                <label>12th (%)</label> 
-		                                <input type="text" class="form-control styled required" id="higher" name="higher" placeholder="Enter 12 Percentage">
-		                           		 </div>
-		                            </div>
-		                            
-		                            <div class="col-md-6">
-		                            	<div class="form-group">
-		                                <label>Graduation(%)</label> 
-		                                <input type="text" class="form-control styled required" id="grad" name="graduation" placeholder="Enter Graduation Percentage">
-		                           		 </div>
-		                            </div>
-		                            <div class="col-md-6">
-		                            	<div class="form-group"  >
-		                                <label>Roll No. Of Last Exam</label>
-		                                <input type="text" class="form-control styled required" id="roll" name="roll"  placeholder="Enter Roll Number">
-		                            	</div>
-		                            </div>
-		                           <div class="col-md-6">
-		                            	<div class="form-group">
-		                                <label>School / College Name</label> 
-		                                <input type="text" class="form-control styled required" id="school" name="school" placeholder="Enter School/CollegeName">
-		                           		 </div>
-		                            </div>
-                            
-                             
-                   </div><!-- End row -->
-       </div><!-- End row -->
-                      
-                      <hr class="styled_2">
+													</select>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label>Pin Code</label> <input type="text"
+														class="form-control styled required" id="pincode"
+														name="pincode" maxlength="6" minlength="6"
+														placeholder="123456">
+												</div>
+											</div>
+
+										<div class="col-md-6">
+										<div class="form-group">
+											<input type="button" name="previous"
+												class="previous btn btn-default" onclick="secondprev()" value="Previous" /> 
+												<input
+												type="button" name="next" onclick="secondnext()"  class="next btn btn-info"
+												value="Next"  />
+										</div>
+									</div>
+										</div>
+									</div>
+							</fieldset>
+
+
+
+
+		<!-- Third session start -->
+							<fieldset id="third" Style="display:none;">
+								<div class="indent_title_in">
+									<i class="pe-7s-study"></i>
+									<h3 style="text-decoration: underline;">Education Detail</h3>
+								</div>
+								<div class="wrapper_indent">
+									<div class="row">
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>10th(%)</label> <input type="text"
+													class="form-control styled required" id="high" name="high"
+													placeholder="Enter 10 Percentage">
+
+
+
+											</div>
+										</div>
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>12th (%)</label> <input type="text"
+													class="form-control styled required" id="higher"
+													name="higher" placeholder="Enter 12 Percentage">
+											</div>
+										</div>
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Graduation(%)</label> <input type="text"
+													class="form-control styled required" id="grad"
+													name="graduation" placeholder="Enter Graduation Percentage">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Roll No. Of Last Exam</label> <input type="text"
+													class="form-control styled required" id="roll" name="roll"
+													placeholder="Enter Roll Number">
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>School / College Name</label> <input type="text"
+													class="form-control styled required" id="school"
+													name="school" placeholder="Enter School/CollegeName">
+											</div>
+										</div>
+										 
+										 <div class="col-md-6">
+										<div class="form-group">
+											<input type="button" name="previous"
+												class="previous btn btn-default" onclick="thirdprev()" value="Previous" /> 
+												<input
+												type="button" name="next" onclick="thirdnext()"  class="next btn btn-info"
+												value="Next"  />
+										</div>
+									</div>
+									
+							
+					</div>
+					<!-- End row -->
+				</div>
+				<!-- End row -->
+</fieldset>
+				<fieldset id="four" Style="display:none;">
                       
                        <div class="indent_title_in">
                        
@@ -400,25 +471,7 @@
 		                                <input type="password" class="form-control styled required" id="birth_apply" name="cpass"  placeholder="Enter Confirm Password">
 		                              </div>
 		                            </div>
-                    </div>
-         </div>
-                      
-                      <hr class="styled_2">
-                      
-                      <!-- <div class="wrapper_indent" >
-				                      <div class="form-group">
-									<input type="checkbox" name="policy_terms" id="policy_terms" class="required" value="Yes"><label>I accept <a href="#0">terms and conditions</a> and general policy.</label>
-								</div>
-						<div  style="display: ">
-						<p><button type="button"  style="display:inline; "  href="home.jsp" class="button"><a  href="home.jsp" >Exit</a></button><p>
-					 <p><button type="reset"   style="display:inline; " class="button">Clear</button></p>
-                     <p><button type="submit"  style="display:inline; " class="button">Save&Next</button></p>
-                     </div>
-                      		</div> -->
-                      		
-                      		
-              	<div class="wrapper_indent">
-                      <div class="row">
+                    
        
 	                                   <div class="form-group">
 										<input type="checkbox" name="policy_terms" id="policy_terms" class="required" value="Yes"><label>I accept <a href="#0">terms and conditions</a> and general policy.</label>
@@ -428,9 +481,17 @@
 									 <p><button type="reset"   style="display:inline; " class="button">Clear</button></p>
 				                     <p>  <button  type="submit" onclick="jquery()">Register</button></p>
                             				<span id="showMsg"></span>
+                            			
+                            				<input type="button" name="previous"
+												class="previous btn btn-default" onclick="fourprev()" value="Previous" /> 
+											
+									<button type="submit" class="button">Submit</button>
+                            				
+                            				
 		   </div><!-- End row -->
        </div><!-- End row -->
-                      <!-- </form> -->
+       </fieldset>
+         </form>             <!-- </form> -->
                     </div>
            </div>
            <br>
