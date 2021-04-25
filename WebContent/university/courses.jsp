@@ -1009,15 +1009,15 @@ Statement stmt=con.createStatement();
                 <div class="tab-content">
                     <div class="tab-pane active" id="Courses-all">
                         <div class="row row-deck">
-                            <div class="col-xl-4 col-lg-4 col-md-6">
-                                <div class="card">
-                       				<%
+                         <%
                                        try {
-										String query = "select * from duration";
+										String query = "select * from university_courses";
 										//get Table data
 										ResultSet rs = stmt.executeQuery(query);
 										while (rs.next()) {
                                    	%>
+                            <div class="col-xl-4 col-lg-4 col-md-6">
+                                <div class="card">
                                     <a href="#"><img class="card-img-top" src="F:\\myImage\\<%=rs.getString("image") %>" alt=""></a>
                                     <div class="card-body d-flex flex-column">
                                         <h5><a href="courses-details.html"><%=rs.getString("course_name") %></a></h5>
@@ -1044,15 +1044,15 @@ Statement stmt=con.createStatement();
                                             </tbody>
                                         </table>
                                     </div>
-                                    <%
+                                </div>
+                            </div>
+                            <%
 	                                    }
 	                                    }catch(Exception e)
 	                                    {
 	                                    	e.printStackTrace();
 	                                    }
                                     %>
-                                </div>
-                            </div>
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="card ribbon">
                                     <div class="ribbon-box orange"><i class="fa fa-star"></i></div>
