@@ -2,6 +2,7 @@ package in.University;
 
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -55,10 +56,16 @@ public class courses extends HttpServlet {
 			String fees = request.getParameter("fees")!=null?request.getParameter("fees") : "";
 			String seats = request.getParameter("seats")!=null?request.getParameter("seats") : "";
 			Part part = request.getPart("image");
-			 String filename = part.getSubmittedFileName();
+			InputStream imgName = part.getInputStream();
+			System.out.println("check");
 			
-		   	img Image = new img();
-		   	String iname = Image.image(filename, part);
+			 String filename = part.getSubmittedFileName();
+			System.out.println(filename);
+		   	
+		   	Image imageObj = new Image(filename, part);
+		   	imageObj.service(request, response);
+		   	String iname=(String)request.getAttribute("fileName")!=null ? (String)request.getAttribute("fileName") : "";
+		   	System.out.println(iname);
 			 
 			 System.out.println(id+name+duration+fees+seats+"\n"+iname);
 			
@@ -83,15 +90,9 @@ public class courses extends HttpServlet {
 				out.println("<body><html><script>alert('Something Went Wrong');</script></html></body>");
 			}
 			
-		} catch (SQLException e) {
+		}catch (Exception e) {
 			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} /*catch (FileUploadException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}*/ catch (Exception e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			System.out.println(e);
 		}
 		
 	}
