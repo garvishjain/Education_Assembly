@@ -26,7 +26,8 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 
     <!--[if lt IE 9]>
       <script src="js/html5shiv.min.js"></script>
@@ -55,46 +56,53 @@
 </style>
 
 
-
-
 <script type="text/javascript">
-document.getElementById('first').style.display = "block";
-document.getElementById('second').style.display = "none";
-document.getElementById('third').style.display = "none";
-document.getElementById('four').style.display = "none";
 
-	function firstnext() 
-				{
-					document.getElementById('first').style.display = "none";
-					document.getElementById('second').style.display = "block";
-				
-				}
-	function secondprev()
-				{
-					document.getElementById('second').style.display = "none";
-					document.getElementById('first').style.display = "block";
-				}
-	function secondnext() 
-				{
-					document.getElementById('second').style.display = "none";
-					document.getElementById('third').style.display = "block";
-				}
-	function thirdprev() 
-				{
-					document.getElementById('third').style.display = "none";
-					document.getElementById('second').style.display = "block";
-				}
 
-	function thirdnext() 
-				{
-					document.getElementById('third').style.display = "none";
-					document.getElementById('four').style.display = "block";
-				}
-	function fourprev() 
-				{
-					document.getElementById('four').style.display = "none";
-					document.getElementById('third').style.display = "block";
-				}
+function myFunction() {
+	  var x = document.getElementById("pass");
+	  if (x.type === "password") {
+	    x.type = "text";
+	  } else {
+	    x.type = "password";
+	  }
+	}
+
+</script>
+<script type="text/javascript">
+function validate() { 
+  
+    var pass = document.getElementById("pass").value;
+    var cpass = document.getElementById("cpass").value;
+    if (pass== "") { 
+    	document.getElementById("passerr").innerHTML=""; 
+        return false; 
+    } 
+    else
+	{
+	document.getElementById("passerr").innerHTML="";
+	}
+    if (cpass== "") 
+        { 
+        	document.getElementById("cpasserr").innerHTML="";          
+        } 
+	    else
+		{
+		document.getElementById("cpasserr").innerHTML="";
+		}
+    if (cpass!=pass) 
+    { 
+    	document.getElementById("cpasserr").innerHTML="Password does not match"; 
+        return false;   
+    } 
+    else
+	{
+	document.getElementById("cpaserr").innerHTML="Password Match";
+	}
+    return true; 
+} 
+
+
 </script>
 
 
@@ -102,15 +110,12 @@ document.getElementById('four').style.display = "none";
 
 <body>
 
-<!--[if lte IE 8]>
-    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
-<![endif]-->
+	<div id="preloader">
+		<div class="pulse"></div>
+	</div>
+	<!-- Pulse Preloader -->
 
-<div id="preloader">
-	<div class="pulse"></div>
-</div><!-- Pulse Preloader -->
-
-   <!--Header File-->	
+	<!--Header File-->	
 	 <%@ include file="itc/header.jsp" %>
 		<!--Header File-->
 
@@ -122,29 +127,28 @@ document.getElementById('four').style.display = "none";
 			<h1>Online <strong>Admission</strong>Form</h1>
             </div>
 		</div> <!--End sub_header -->
- 
- 		<div class="container_gray_bg">
-        <div id="position">
-    	
-    </div><!-- Position -->
-        <div class="container margin_60">
- 		<div class="row">
+
+	<div class="container_gray_bg">
+		<div id="position"></div>
+		<!-- Position -->
+		<div class="container margin_60">
+			<div class="row">
 
 				<div class="col-md-9">
 					<div class="box_style_1">
 						<form action="../St_Register" id="apply_online" method="post"
-							enctype="multipart/form-data">
+							enctype="multipart/form-data" onsubmit="return validate()">
 
 
 
-							<fieldset id="first"  Style="display:block;">
-							
-							
+							<!-- <fieldset id="first" Style="display: block;"> -->
+
+
 								<div class="indent_title_in">
 									<i class="pe-7s-user"></i>
 									<h3 style="text-decoration: underline;">Personal details</h3>
 								</div>
-
+<hr style="width: 107%;margin-left: -30px;">
 
 								<div class="wrapper_indent">
 									<div class="row">
@@ -177,7 +181,9 @@ document.getElementById('four').style.display = "none";
 											<div class="form-group">
 												<label>Mobile Number</label> <input type="text"
 													class="form-control styled required" id="num" name="num"
-													placeholder="Enter Your Number">
+													placeholder="Enter Your Number"
+													 minlength="10" maxlength="10"
+										oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')">
 											</div>
 										</div>
 
@@ -197,29 +203,34 @@ document.getElementById('four').style.display = "none";
 												<label>Aadhar Number</label> <input type="text"
 													class="form-control styled required" id="aadhar"
 													name="adhar" maxlength="12" minlength="12"
-													placeholder="Enter 12 digit Aadhar Number">
+													placeholder="Enter 12 digit Aadhar Number"
+													oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')">
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>Gender</label><br>
-												<div class="radio_inline">
-													<input type="radio" name="gender" id="gender"
-														class="required" value="Male"><label
-														style="margin-right: 20px;">Male</label> <input
-														type="radio" name="gender" id="gender" class="required"
-														value="Female"><label>Female</label>
-												</div>
+												<div class="radio_inline" >
+												<input type="radio" name="gender"  value="Male"
+													class="required">
+													<label> Male</label>
+													
+											 <input type="radio" name="gender" id="female"
+													value="Female" class="required">
+													<label>Female</label>
+											</div>
 											</div>
 										</div>
 
 
 
+										
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>Father's Name</label> <input type="text"
-													class="form-control styled required" id="fname"
-													name="f_name" placeholder="Enter Father Name">
+													class="form-control styled required" id="f_name"
+													name="f_name" placeholder="Enter Father Name"  >
+													
 											</div>
 										</div>
 
@@ -245,7 +256,7 @@ document.getElementById('four').style.display = "none";
 											<div class="form-group">
 												<label>Religion</label> <select
 													class="form-control styled required" name="religion"
-													id="religion">
+													id="religion" required="required">
 													<option value="null">-- select one --</option>
 													<option value="Buddhism">Buddhism</option>
 													<option value="Hindu">Hindu</option>
@@ -260,7 +271,7 @@ document.getElementById('four').style.display = "none";
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>Category</label> <select
-													class="form-control styled required" name="cast" id="cast">
+													class="form-control styled required" required="required" name="cast" required="required" id="cast" class="form-control styled required">
 													<option value="null">-- select one --</option>
 													<option value="sc">SC</option>
 													<option value="st">ST</option>
@@ -280,36 +291,41 @@ document.getElementById('four').style.display = "none";
 											</div>
 										</div>
 
-											<hr>
-										<input type="button" name="password" class="next btn btn-info"
-										onclick="firstnext()" value="Next"  />
+										<hr>
+
 
 									</div>
 								</div>
-							</fieldset>
+							<!-- 	<input type="button" name="password" class="button"
+									onclick="firstnext()" value="Next" /> -->
+						<!-- 	</fieldset>
 
 
-							<!-- Second Session Start -->
-							<fieldset id="second" Style="display:none;">
+							Second Session Start
+							<fieldset id="second" Style="display: none;"> -->
+							<hr style="width: 107%;margin-left: -30px;">
 								<div class="indent_title_in">
 									<i class="pe-7s-map-marker"></i>
 									<h3 style="text-decoration: underline;">Address</h3>
 								</div>
+								
+								
 								<div class="wrapper_indent">
 									<div class="row">
 
 										<div class="col-md-6">
 											<div class="form-group">
-												<label>Address line</label>
+												<label>Address</label>
 												<textarea class="form-control styled required" id="adrs"
 													placeholder="Enter Student Address" name="adrs"></textarea>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
-												<label>State</label> <select name="state" id="state"
-													class="form-control styled required">
-													<option>---please Select---</option>
+												<label>State</label> 
+												<select name="state" id="state"
+													class="form-control styled required" required="required">
+													<option >---please Select---</option>
 													<%
 														try {
 															String query = "select * from state";
@@ -329,55 +345,58 @@ document.getElementById('four').style.display = "none";
 										</div>
 
 
-										<div class="row">
-											<div class="col-md-6">
-												<div class="form-group">
-													<label>City</label> <select name="city" id="city" class="form-control styled required">
-														<option>---Please Select---</option>
-														<%
-															try {
-																String query = "select * from city";
-																//get Table data
-																ResultSet rs = stmt.executeQuery(query);
-																while (rs.next()) {
-														%>
-														<option><%=rs.getString("city_name")%></option>
-														<%
-															}
-															} catch (Exception e) {
-
-															}
-														%>
-													</select>
-												</div>
-											</div>
-											<div class="col-md-6">
-												<div class="form-group">
-													<label>Pin Code</label> <input type="text"
-														class="form-control styled required" id="pincode"
-														name="pincode" maxlength="6" minlength="6"
-														placeholder="123456">
-												</div>
-											</div>
 
 										<div class="col-md-6">
-										<div class="form-group">
-											<input type="button" name="previous"
-												class="previous btn btn-default" onclick="secondprev()" value="Previous" /> 
-												<input
-												type="button" name="next" onclick="secondnext()"  class="next btn btn-info"
-												value="Next"  />
+											<div class="form-group">
+												<label>City</label>
+												 <select name="city" id="city"
+													class="form-control styled required" required="required">
+													<option>---Please Select---</option>
+													<%
+														try {
+															String query = "select * from city";
+															//get Table data
+															ResultSet rs = stmt.executeQuery(query);
+															while (rs.next()) {
+													%>
+													<option><%=rs.getString("city_name")%></option>
+													<%
+														}
+														} catch (Exception e) {
+
+														}
+													%>
+												</select>
+											</div>
 										</div>
-									</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Pin Code</label> <input type="text"
+													class="form-control styled required" id="pincode"
+													name="pincode" maxlength="6" minlength="6"
+													placeholder="123456"
+													oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')">
+											</div>
 										</div>
+
+										<!-- <div class="col-md-6">
+											<div class="form-group">
+												<input type="button" name="previous" class="button"
+													onclick="secondprev()" value="Previous" /> <input
+													type="button" name="next" onclick="secondnext()"
+													class="button" value="Next" />
+											</div>
+										</div> -->
 									</div>
-							</fieldset>
+								</div>
+						<!-- 	</fieldset>
 
 
 
 
-		<!-- Third session start -->
-							<fieldset id="third" Style="display:none;">
+							Third session start
+							<fieldset id="third" Style="display: none;"> -->
+							<hr style="width: 107%;margin-left: -30px;">
 								<div class="indent_title_in">
 									<i class="pe-7s-study"></i>
 									<h3 style="text-decoration: underline;">Education Detail</h3>
@@ -389,7 +408,8 @@ document.getElementById('four').style.display = "none";
 											<div class="form-group">
 												<label>10th(%)</label> <input type="text"
 													class="form-control styled required" id="high" name="high"
-													placeholder="Enter 10 Percentage">
+													placeholder="Enter 10 Percentage"
+													oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')">
 
 
 
@@ -400,7 +420,8 @@ document.getElementById('four').style.display = "none";
 											<div class="form-group">
 												<label>12th (%)</label> <input type="text"
 													class="form-control styled required" id="higher"
-													name="higher" placeholder="Enter 12 Percentage">
+													name="higher" placeholder="Enter 12 Percentage"
+													oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')">
 											</div>
 										</div>
 
@@ -408,7 +429,8 @@ document.getElementById('four').style.display = "none";
 											<div class="form-group">
 												<label>Graduation(%)</label> <input type="text"
 													class="form-control styled required" id="grad"
-													name="graduation" placeholder="Enter Graduation Percentage">
+													name="graduation" placeholder="Enter Graduation Percentage"
+													oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')">
 											</div>
 										</div>
 										<div class="col-md-6">
@@ -420,119 +442,213 @@ document.getElementById('four').style.display = "none";
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
-												<label>School / College Name</label> <input type="text"
+												<label>Last School/College Name</label> <input type="text"
 													class="form-control styled required" id="school"
 													name="school" placeholder="Enter School/CollegeName">
 											</div>
 										</div>
-										 
-										 <div class="col-md-6">
-										<div class="form-group">
-											<input type="button" name="previous"
-												class="previous btn btn-default" onclick="thirdprev()" value="Previous" /> 
-												<input
-												type="button" name="next" onclick="thirdnext()"  class="next btn btn-info"
-												value="Next"  />
+									</div>
+									<!-- End row -->
+								</div>
+								<!-- End row -->
+								
+								
+									<hr style="width: 107%;margin-left: -30px;">
+								<div class="indent_title_in">
+									<i class="pe-7s-user"></i>
+									<h3 style="text-decoration: underline;">College/Course</h3>
+								</div>
+								<div class="wrapper_indent">
+									<div class="row">
+
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Select College/University</label> 
+												 <select name="college" id="college"
+													class="form-control styled required" required="required">
+													<option value="null">---Please Select---</option>
+												<%
+														try {
+															String query = "select * from college_registration";
+															//get Table data
+															ResultSet rs = stmt.executeQuery(query);
+															while (rs.next()) {
+													%>
+													<option><%=rs.getString("college_name")%></option>
+													<%
+														}
+														} catch (Exception e) {
+
+														}
+													%>
+													</select>
+											</div>
 										</div>
+										
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>Select Course</label>
+												 <select name="course" id="course"
+													class="form-control styled required" required="required">
+													<option value="null">---Please Select---</option>	<%
+														try {
+															String query = "select * from course";
+															//get Table data
+															ResultSet rs = stmt.executeQuery(query);
+															while (rs.next()) {
+													%>
+													<option><%=rs.getString("course_name")%></option>
+													<%
+														}
+														} catch (Exception e) {
+
+														}
+													%>
+													</select>
+											</div>
+										</div>
+
+										
+
+
 									</div>
-									
-							
+									<!-- End row -->
+								</div>
+								
+								
+								
+					<!-- 		</fieldset>
+							<fieldset id="four" Style="display: none;">
+ --><hr style="width: 107%;margin-left: -30px;">
+								<div class="indent_title_in">
+
+									<i class="pe-7s-users"></i>
+									<h3 style="text-decoration: underline;">Log-In Credential</h3>
+								</div>
+								<div class="wrapper_indent">
+									<div class="row">
+
+										<div class="col-md-4">
+											<div class="form-group">
+												<label>User name</label> <input type="text"
+													class="form-control styled required" id="user" name="uname"
+													placeholder="Enter UserName">
+							<span id="available"> <!--- data show this span tag --->  </span>
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="form-group">
+												<label>Password</label> <input type="password"
+													class="form-control styled required" id="pass" name="pass"
+													placeholder="Enter Password" minlength="8" maxlength="20" >&nbsp;&nbsp;
+													<br>
+													<input type="checkbox" onclick="myFunction()">&nbsp;Show Password
+													<span style="color:red" id="passerr"></span>
+													
+													
+											</div>
+										</div>
+
+										<div class="col-md-4">
+											<div class="form-group">
+												<label>Confirm Password</label> <input type="password"
+													class="form-control styled required" id="cpass"
+													name="cpass" placeholder="Enter Confirm Password" minlength="8" maxlength="20" >
+													 <span style="color:green" id="cpaserr"></span>
+                    <span style="color:red" id="cpasserr"></span>
+											</div>
+										</div>
+
+									<hr style="width: 113%;margin-left: -95px;">
+										<div class="form-group">
+											<input type="checkbox" name="policy_terms" id="policy_terms"
+												class="form-control styled required" value="Yes"><label>I accept
+												<a href="#0">terms and conditions</a> and general policy.
+											</label>
+										</div>
+
+										<!-- <input type="button" name="previous" class="button"
+											onclick="fourprev()" value="Previous" /> -->
+										<p >
+										
+										<button type="reset" onclick="jquery()" class="button" >Clear</button>
+											<button type="submit" onclick="jquery()" class="button">Register</button>
+										</p>
+										<span id="showMsg"></span>
+
+
+
+
+
+									</div>
+									<!-- End row -->
+								</div>
+								<!-- End row -->
+							</fieldset>
+						</form>
+						<!-- </form> -->
 					</div>
-					<!-- End row -->
 				</div>
-				<!-- End row -->
-</fieldset>
-				<fieldset id="four" Style="display:none;">
-                      
-                       <div class="indent_title_in">
-                       
-                          <i class="pe-7s-users"></i>
-				<h3 style="text-decoration: underline;">Log-In Credential</h3>
-			</div>
-            	<div class="wrapper_indent">
-                    <div class="row">
-                    
-                     <div class="col-md-4">
-	                            			<div class="form-group">
-	                                			<label>User name</label> 
-	                                			<input type="text" class="form-control styled required" id="user" name="uname" placeholder="Enter UserName">
-	                            			</div>
-	                           		 </div>
-                     					<div class="col-md-4">
-		                            	<div class="form-group">
-		                                <label>Password</label>
-		                                <input type="password" class="form-control styled required" id="pass" name="pass"  placeholder="Enter Password">
-		                              </div>
-		                            </div>
-		                            
-		                            <div class="col-md-4">
-		                            	<div class="form-group">
-		                                <label>Confirm Password</label>
-		                                <input type="password" class="form-control styled required" id="birth_apply" name="cpass"  placeholder="Enter Confirm Password">
-		                              </div>
-		                            </div>
-                    
-       
-	                                   <div class="form-group">
-										<input type="checkbox" name="policy_terms" id="policy_terms" class="required" value="Yes"><label>I accept <a href="#0">terms and conditions</a> and general policy.</label>
-									</div>
-		                            
-		                            <a  href="home.jsp" ><p ><button type="button"  style="display:inline; "  href="home.jsp" class="button">Exit</button><p></a>
-									 <p><button type="reset"   style="display:inline; " class="button">Clear</button></p>
-				                     <p>  <button  type="submit" onclick="jquery()">Register</button></p>
-                            				<span id="showMsg"></span>
-                            			
-                            				<input type="button" name="previous"
-												class="previous btn btn-default" onclick="fourprev()" value="Previous" /> 
-											
-									<button type="submit" class="button">Submit</button>
-                            				
-                            				
-		   </div><!-- End row -->
-       </div><!-- End row -->
-       </fieldset>
-         </form>             <!-- </form> -->
-                    </div>
-           </div>
-           <br>
-           <div class="col-md-3">
-           		
-                    <h4><strong>How to apply</strong></h4>
-                    <p>Step : College Selection<br>
-							Step : Filling the Application Form<br>
-							Step : Appearing for Entrance Exam<br>
-							Step : Taking Part in Counselling<br>
-							Step : Final Allocation of Seats<br>
-							Step : Final Admission</p>
-                   
-                    <div class="box_side"><h5>By Phone</h5> <i class="icon-phone"></i>
-                    <p> + 000-1234567<br><small>Monday to Friday 9.00am - 5.00pm</small></p>
-                    </div>
-             
-                    <div class="box_side"><h5>By Postal Mail</h5> <i class="icon_pencil-edit"></i>
-                    <p><a href="#0"><strong>Download the application form</strong></a>,<br> and send it to this address:<br><br><em>Ground Floor,
-Pragati Maidan Metro Station,
-Pragati Maidan,
-New Delhi-110001<br>
-</em></p>
-</div>
- <hr class="styled">
-                 <!--    <div class="box_side"><h4>Plan a visit</h4> <i class="icon_pencil-edit"></i>
+				<br>
+				<!-- <div class="col-md-3">
+
+					<h4>
+						<strong>How to apply</strong>
+					</h4>
+					<p>
+						Step : College Selection<br> Step : Filling the Application
+						Form<br> Step : Appearing for Entrance Exam<br> Step :
+						Taking Part in Counselling<br> Step : Final Allocation of
+						Seats<br> Step : Final Admission
+					</p>
+
+					<div class="box_side">
+						<h5>By Phone</h5>
+						<i class="icon-phone"></i>
+						<p>
+							+ 000-1234567<br>
+							<small>Monday to Friday 9.00am - 5.00pm</small>
+						</p>
+					</div>
+
+					<div class="box_side">
+						<h5>By Postal Mail</h5>
+						<i class="icon_pencil-edit"></i>
+						<p>
+							<a href="#0"><strong>Download the application form</strong></a>,<br>
+							and send it to this address:<br>
+							<br>
+							<em>Ground Floor, Pragati Maidan Metro Station, Pragati
+								Maidan, New Delhi-110001<br>
+							</em>
+						</p>
+					</div>
+					<hr class="styled">
+					   <div class="box_side"><h4>Plan a visit</h4> <i class="icon_pencil-edit"></i>
                     <p>By filling out this form, you agree to allow your information to be shared with a consortium of colleges and universities  to contact you with more information. </p>
                     <a href="#0" class="button small">Plan a visit</a>
-</div> --><div class="box_side">
-                    <h5>Apply Online</h5> <i class="icon_desktop"></i>
-                    <p>By filling out this form, you agree to allow your information to be shared with a consortium of colleges and universities  to contact you with more information. </p>  
-                    <p><a href="register.jsp" class="button small">Apply online</a> </p>
 </div>
+					<div class="box_side">
+						<h5>Apply Online</h5>
+						<i class="icon_desktop"></i>
+						<p>By filling out this form, you agree to allow your
+							information to be shared with a consortium of colleges and
+							universities to contact you with more information.</p>
+						<p>
+							<a href="register.jsp" class="button small">Apply online</a>
+						</p>
+					</div>
 
-           </div>
-            </div><!--End row -->
-        </div><!--End container -->
-        </div><!--End container_gray_bg -->
-  
-  		
-		<!--Footer File-->	 
+				</ div>-->
+			</div>
+			<!--End row -->
+		</div>
+		<!--End container -->
+	</div>
+	<!--End container_gray_bg -->
+
+
+	<!--Footer File-->	 
 	<%@ include file="itc/footer.jsp" %>
 		<!--Footer File-->
     
@@ -571,7 +687,7 @@ New Delhi-110001<br>
 
 
 
-    <script type="text/javascript" src="js/lib/jquery-1.11.0.min.js"></script>
+ <!--    <script type="text/javascript" src="js/lib/jquery-1.11.0.min.js"></script>
      <script type="text/javascript">
     
    function jquery()
@@ -644,10 +760,39 @@ New Delhi-110001<br>
     	
     }
     </script>
+ -->
 
 
+<script type="text/javascript">
+$(document).ready(function(){
+   
+    $("#user").blur(function(){
+        
+        var username =$("#user").val();
+   
+        if(username.length >= 3)
+        {
+            $.ajax({
+                url:"username-check.jsp",
+                type:"post",
+                data:"uname="+username,
+                dataType:"text",
+                success:function(data)
+                {
+                    $("#available").html(data)
+                } 
+            });
+        }
+        else
+        {
+          $("#available").html(" ");
+        }
+        
+   }); 
+   
+});    
 
-
+</script>
 
 
 

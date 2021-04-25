@@ -72,7 +72,7 @@
 				<h3 style="text-decoration: underline;">Documents</h3>
 			</div>
              	
-      <div style="width: 104%;margin: auto;" >
+      <div style="width: 93%;" >
 				<div class="tab">
 				  <button class="tablinks" onclick="openCity(event, 'Domicile')" id="defaultOpen" ><p style="text-align: center;"><strong>Upload Digital <br>Caste/Income/Domicile <br>Certificate</strong></p></button>
 				  <button class="tablinks" onclick="openCity(event, 'Aadhar')"><p style="text-align: center;"><strong>Upload  Aadhar Card</strong></p></button>

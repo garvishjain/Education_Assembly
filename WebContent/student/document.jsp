@@ -15,7 +15,7 @@
   width: 30%;
   height: 400px;
   margin-top: 10px;
-  margin-left:200px;
+  margin-left:120px;;
   border-color: #283842;
   margin-bottom: 80px;
 }
@@ -76,7 +76,8 @@
   .tex{color: #283842;
   }
   .doc{text-align: center;
-  text-decoration: underline;}
+  text-decoration: underline;
+  margin-left: 20px;}
   .a{border: 2px solid gray;height: 80px; border-color: #283842;}
   .b{margin-top: 60px;}
   .c{margin-top: 17px;
@@ -110,22 +111,22 @@
 				   <button class="tablinks" onclick="openCity(event, 'Higher')"><p style="text-align: center;"><strong>Upload Higher Secondary Marksheet</strong></p></button>
 				</div>
 				
-				
+				<form action="../Documents" method="post" enctype="Multipart/form-data">
 				<div id="Domicile" class="tabcontent">
 				  <h3 class="doc">Uplaod Cast/Income/Domicile</h3>
 				  			
 				  			<div class="b">
 				  					<div class="a">
 				  								<h4 class="c">Upload Cast Certificate &nbsp;:&nbsp;</h4>
-				  								<input type="file" name="cast" class="fil">
+				  								<input type="file" name="cast" id="image">
 				  					</div>
 				  					<div class="a">
 				  								<h4 class="c">Upload Income Certificate &nbsp;:&nbsp;</h4>
-				  								<input type="file" name="income" class="fil">
+				  								<input type="file" name="income" id="image">
 				  					</div>
 				  					<div class="a">
 				  								<h4 class="c">Upload Domicile Certificate &nbsp;:&nbsp;</h4>
-				  								<input type="file" name="domicile" class="fil">
+				  								<input type="file" name="domicile" id="image">
 				  					</div>
 				  			</div>
 				</div>
@@ -135,7 +136,7 @@
 				
 				  					<div class="d">
 				  								<h4 class="c">Upload Aadhar Card &nbsp;:&nbsp;</h4>
-				  								<input type="file" name="aadhar" class="fil">
+				  								<input type="file" name="aadhar" id="image">
 				  					</div>
 				  
 				</div>
@@ -144,7 +145,7 @@
 				 <h3 class="doc">Upload High School Marksheet</h3>
 				 <div class="d">
 				  								<h4 class="c">Upload  High Class Marksheet&nbsp;:&nbsp;</h4>
-				  								<input type="file" name="high" class="fil">
+				  								<input type="file" name="high" >
 				  					</div>
 				</div>
 				
@@ -152,9 +153,14 @@
 				   <h3 class="doc">Upload Higher Secondary Marksheet</h3>
 				  				 <div class="d">
 				  								<h4 class="c">Upload  Higher Secondary Marksheet&nbsp;:&nbsp;</h4>
-				  								<input type="file" name="Higher" class="fil">
+				  								<input type="file" name="higher" id="image">
+				  								
 				  					</div>
+				  					
 				</div>
+				<input type="submit" value="submit">
+				<input type="file" name="higher" id="image">
+				</form>
 				</div>
 				
 				

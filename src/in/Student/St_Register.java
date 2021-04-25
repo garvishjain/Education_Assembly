@@ -78,6 +78,8 @@ public class St_Register extends HttpServlet {
 						String cast = request.getParameter("cast")          		  !=null?request.getParameter("cast") : "";
 						String uname= request.getParameter("uname")!=null?request.getParameter("uname") : "";
 						String pass=request.getParameter("pass")             	  !=null?request.getParameter("pass") : "";
+						String college= request.getParameter("college")!=null?request.getParameter("college") : "";
+						String course=request.getParameter("course")             	  !=null?request.getParameter("course") : "";
 			/*Student Information*/                                                              
 			/*StudentAddress*/		                                                             
 						String adrs=request.getParameter("adrs")              	 !=null?request.getParameter("adrs") : "";
@@ -91,7 +93,7 @@ public class St_Register extends HttpServlet {
 						String higher = request.getParameter("higher")          !=null?request.getParameter("higher") : "";
 						String roll=request.getParameter("roll")            			  !=null?request.getParameter("roll") : "";
 						String school=request.getParameter("school")        	  !=null?request.getParameter("school") : "";
-						String graduation = request.getParameter("grad") !=null?request.getParameter("graduation") : "";
+						String graduation = request.getParameter("graduation") !=null?request.getParameter("graduation") : "";
 			/*Education Detail*/                                           
 						                                                                                
 			/*Password hashing*/
@@ -111,12 +113,12 @@ public class St_Register extends HttpServlet {
 		 /* image upload*/
 						 Part part = request.getPart("image");
 						 String filename = part.getSubmittedFileName();
-						String s = filename+(LocalDateTime.now().toString().replace(":",""));
+						/*String s = filename+(LocalDateTime.now().toString().replace(":",""));
 						 String path="E:\\notes\\"+s;
 						String finallocation = path +""+ filename;
-					   	part.write(finallocation );
-						/* img image = new img();
-						String img = image.image(filename, part);*/
+					   	part.write(finallocation );*/
+						 img image = new img();
+						String img = image.image(filename, part);
 		 	/* image upload*/
 						 
 						 
@@ -141,9 +143,9 @@ public class St_Register extends HttpServlet {
 						}
 					}	
 	/*Insert Data into student_address*/
-					
+					System.out.println("grad"+graduation);
 	/*Insert Data into student_education*/
-						String sql2="insert into student_education(high,higher,grad_percentage,last_roll_no,school_name)"
+						String sql2="insert into student_education(high,higher,grad_percentage,roll_no,school_name)"
 												+ "values(?,?,?,?,?)";
 						stmt = con.prepareStatement(sql2);
 						stmt.setString(1, high);
@@ -168,7 +170,7 @@ public class St_Register extends HttpServlet {
 						
 						String sql3="insert into user(name,email,username,password)values(?,?,?,?)";
 								stmt = con.prepareStatement(sql3);
-								stmt.setString(1,fname+lname);
+								stmt.setString(1,fname+""+lname);
 								stmt.setString(2,email);
 								stmt.setString(3,uname);
 								stmt.setString(4,hashed);
@@ -176,18 +178,19 @@ public class St_Register extends HttpServlet {
 								if(res3>0)
 								{
 									out.println("<html><body><h4>Data Submitted</h4></body></html>");
+									response.sendRedirect("student/login.jsp");
 									
 								}
 								else
 								{
-									out.println("<html><body><h4>Data  not Submitted</h4></body></html>");
+									out.println("<html><body><script>alert('data not submitted');</script></body></html>");
 									
 								}
 								
 								
 		/*Insert Data into student_information*/
 						String sql="insert into student_information(first_name,last_name,email,gender,dob,religion,"
-										+ "category,s_contact,image,f_name,m_name,f_num,aadhar_number,username,password,fk_address,fk_education)"
+										+ "category,s_contact,image,f_name,m_name,f_num,aadhar_number,college,course,fk_address,fk_education)"
 												+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 								stmt = con.prepareStatement(sql);
 								stmt.setString(1,fname);
@@ -198,17 +201,17 @@ public class St_Register extends HttpServlet {
 								stmt.setString(6,religion);
 								stmt.setString(7,cast);
 								stmt.setString(8,num);
-								stmt.setString(9,s);
+								stmt.setString(9,img);
 								stmt.setString(10,f_name);
 								stmt.setString(11,m_name);
 								stmt.setString(12,f_num);
 								stmt.setString(13,adhar);
-								stmt.setString(14,uname);
-								stmt.setString(15,hashed);
+								stmt.setString(14,college);
+								stmt.setString(15,course);
 								stmt.setInt(16,fk_address);
 								stmt.setInt(17,fk_education);
 								int res2 = stmt.executeUpdate();
-					if(res>0&&res1>0&&res2>0)
+					if(res>0&&res1>0&&res2>0&&res>3)
 					{
 						out.println("<html><body><h4>Data Submitted</h4></body></html>");
 						

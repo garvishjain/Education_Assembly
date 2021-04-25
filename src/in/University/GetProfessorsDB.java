@@ -102,6 +102,7 @@ public class GetProfessorsDB
 	}*/
 	
 	public ArrayList<GetProfessorsDB> getData(int collegeId,String isCollege)
+	
 	{
 		
 		
@@ -141,7 +142,6 @@ public class GetProfessorsDB
 						list.add(data);
 						
 				}
-				
 			} 
 			catch (SQLException e) 
 			{

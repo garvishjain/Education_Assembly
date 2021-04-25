@@ -47,6 +47,8 @@ public class St_Login extends HttpServlet {
 	private Connection con;
 	private String hashing;
 	private Statement stmt;
+	private String n;
+	private String p;
 	
 
 
@@ -57,7 +59,7 @@ public class St_Login extends HttpServlet {
 				GetConnection getConObj=new GetConnection();
 				 con=getConObj.getCon();
 					stmt=con.createStatement();
-					System.out.println("connectipon = "+con);
+				//System.out.println("connectipon = "+con);
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -75,7 +77,8 @@ public class St_Login extends HttpServlet {
 		
 						response.setContentType("text/html");
 						PrintWriter out = response.getWriter();
-						try {
+						try 
+						{
 						String uname = request.getParameter("uname");
 						String pass = request.getParameter("pass");
 						/*password hashing*/
@@ -83,22 +86,15 @@ public class St_Login extends HttpServlet {
 						String hashed = gethash.getHash(pass);
 						
 						System.out.println("user = "+uname);
-						System.out.println("user = "+hashed);
-						String sql = "Select * from student_information where username =' " + uname + " ' and password= '"+ hashed + "' LIMIT 1"; 
+						System.out.println("pass = "+hashed);
+						String sql = "Select * from student_information where username ='" + uname + "' and password= '"+ hashed + "' LIMIT 1"; 
+						System.out.println(sql);
 						ResultSet rs = stmt.executeQuery(sql);
-						String n = rs.getString(2);
-						String p = rs.getString(10);
-						//System.out.println(n+p);
-						if (!rs.next()) 
+						if (rs.next()) 
 						{
-									if (pass.equals(hashed))
-											{
-										out.println("<html><body><script>alert('pass logged in');</script></body></html>");
-											}
-									else
-											{
-										out.println("<html><body><script>alert('pass invalid');</script></body></html>");
-											}
+							String us = rs.getString("username");
+							setUsername(us);
+							request.setAttribute("name",us);
 					    out.println("<html><body><script>alert('login');</script></body></html>");
 						} 
 				else
@@ -108,11 +104,8 @@ public class St_Login extends HttpServlet {
 						
 						
 								} 
-						
-						
-						
-						catch (SQLException e) {
-													// TODO Auto-generated catch block
+						catch (SQLException e) 
+											{
 													e.printStackTrace();
 												}
 	
