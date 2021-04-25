@@ -1009,11 +1009,18 @@ Statement stmt=con.createStatement();
                 <div class="tab-content">
                     <div class="tab-pane active" id="Courses-all">
                         <div class="row row-deck">
+                         <%
+                                       try {
+										String query = "select * from university_courses";
+										//get Table data
+										ResultSet rs = stmt.executeQuery(query);
+										while (rs.next()) {
+                                   	%>
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="card">
-                                    <a href="#"><img class="card-img-top" src="../assets/images/gallery/1.jpg" alt=""></a>
+                                    <a href="#"><img class="card-img-top" src="F:\\myImage\\<%=rs.getString("image") %>" alt=""></a>
                                     <div class="card-body d-flex flex-column">
-                                        <h5><a href="courses-details.html">PHP Development Course</a></h5>
+                                        <h5><a href="courses-details.html"><%=rs.getString("course_name") %></a></h5>
                                         <div class="text-muted">Look, my liege! The Knights Who Say Ni demand a sacrifice!</div>
                                     </div>
                                     <div class="table-responsive">
@@ -1022,35 +1029,30 @@ Statement stmt=con.createStatement();
                                                 <tr>
                                                     <td class="w20"><i class="fa fa-calendar text-blue"></i></td>
                                                     <td class="tx-medium">Duration</td>
-                                                    <td class="text-right">6 Months</td>
+                                                    <td class="text-right"><%=rs.getString("course_duration") %></td>
                                                 </tr>
                                                 <tr>
                                                     <td><i class="fa fa-cc-visa text-danger"></i></td>
                                                     <td class="tx-medium">Fees</td>
-                                                    <td class="text-right">$1,674</td>
+                                                    <td class="text-right">$<%=rs.getString("course_fees") %></td>
                                                 </tr>
                                                 <tr>
                                                     <td><i class="fa fa-users text-warning"></i></td>
                                                     <td class="tx-medium">Students</td>
-                                                    <td class="text-right">125+</td>
+                                                    <td class="text-right"><%=rs.getString("course_seat") %></td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
-                                    <div class="card-footer">
-                                        <div class="d-flex align-items-center mt-auto">
-                                            <img class="avatar avatar-md mr-3" src="../assets/images/xs/avatar4.jpg" alt="avatar">
-                                            <div>
-                                                <a href="#">Pro. Jane</a>
-                                                <small class="d-block text-muted">Head OF Dept.</small>
-                                            </div>
-                                            <div class="ml-auto text-muted">
-                                                <a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fe fe-heart mr-1"></i> 521</a>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
+                            <%
+	                                    }
+	                                    }catch(Exception e)
+	                                    {
+	                                    	e.printStackTrace();
+	                                    }
+                                    %>
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="card ribbon">
                                     <div class="ribbon-box orange"><i class="fa fa-star"></i></div>
