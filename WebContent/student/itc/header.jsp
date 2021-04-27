@@ -47,7 +47,7 @@
                         <li><a href="diploma.jsp">Diploma courses</a></li>
                         <li><a href="graduate.jsp">Graduate courses</a></li>
                         <li><a href="master.jsp">Master courses</a></li>
-                        <li><a href="register.jsp">Apply online</a></li>
+                        <li><a href="staff.jsp">Staff</a></li>
                         
                     </ul>
                     </li>
@@ -55,7 +55,7 @@
                     <a href="javascript:void(0);" class="show-submenu">About <i class="icon-down-open-mini"></i></a>
                     <ul>
                         <li><a href="about.jsp">About us</a></li>
-                        <li><a href="contacts.jsp">Plan a visit</a></li>
+                        <li><a href="visit-us.jsp">Plan a visit</a></li>
                         <li><a href="gallery.jsp">Gallery</a></li>
                     </ul>
                     </li>

@@ -1,0 +1,72 @@
+package in.Student;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.sql.Statement;
+
+import javax.servlet.ServletConfig;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import in.common.GetConnection;
+
+/**
+ * Servlet implementation class Contact_Us
+ */
+@WebServlet("/Contact_Us")
+public class Contact_Us extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+	private Connection con;
+	private PreparedStatement ps;
+	
+	
+	public void init(ServletConfig config) throws ServletException
+	{
+		GetConnection getConObj=new GetConnection();
+		 con=getConObj.getCon();
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
+	{
+		response.setContentType("text/html");
+		PrintWriter out = response.getWriter();
+		try {
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		String num = request.getParameter("num");
+		String college = request.getParameter("college");
+		String msg = request.getParameter("msg");
+		
+		String sql="insert into contact_us(name,email,number,college_name,message)values(?,?,?,?,?)";
+		ps = con.prepareStatement(sql);
+		ps.setString(1,name);
+		ps.setString(2,email);
+		ps.setString(3,num);
+		ps.setString(4,college);
+		ps.setString(5,msg);
+		int res = ps.executeUpdate();
+		
+			if(res>0)
+			{
+				out.println("<html><body><script>alert('Data Submitted');</script></body></html>");
+				
+			}
+			else
+			{
+				out.println("<html><body><script>alert('Data Not Submitted ');</script></body></html>");
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
+
+}

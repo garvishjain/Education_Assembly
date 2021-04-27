@@ -19,3 +19,190 @@ function openCity(evt, cityName) {
 
 // Get the element with id="defaultOpen" and click on it
 document.getElementById("defaultOpen").click();
+
+
+//IMage Validation
+
+function validateImage() {
+    var formData = new FormData();
+    var file = document.getElementById("img").files[0];
+    formData.append("Filedata", file);
+    var t = file.type.split('/').pop().toLowerCase();
+    if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+        alert('Please select a valid image file');
+        document.getElementById("img").value = '';
+        return false;
+    }
+  
+    if(file.size > 204800) {
+        alert('Max Upload size is 200kb only');
+        document.getElementById("img").value = '';
+        return false;
+    }
+   /*  else {
+        //Image preview
+        if (file.files && file.file[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('img').innerHTML = '<img src="'+e.target.result+'" width="150px" height="200px"/>';
+            };
+            reader.readAsDataURL(file.files[0]);
+        } */
+ 
+    return true;
+} 
+
+//IMage Validation
+
+function validateImage_1() {
+    var formData = new FormData();
+    var file = document.getElementById("img_1").files[0];
+    formData.append("Filedata", file);
+    var t = file.type.split('/').pop().toLowerCase();
+    if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+        alert('Please select a valid image file');
+        document.getElementById("img_1").value = '';
+        return false;
+    }
+  
+    if(file.size > 204800) {
+        alert('Max Upload size is 200kb only');
+        document.getElementById("img_1").value = '';
+        return false;
+    }
+   /*  else {
+        //Image preview
+        if (file.files && file.file[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('img').innerHTML = '<img src="'+e.target.result+'" width="150px" height="200px"/>';
+            };
+            reader.readAsDataURL(file.files[0]);
+        } */
+ 
+    return true;
+} 
+
+//IMage Validation
+
+function validateImage_2() {
+    var formData = new FormData();
+    var file = document.getElementById("img_2").files[0];
+    formData.append("Filedata", file);
+    var t = file.type.split('/').pop().toLowerCase();
+    if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+        alert('Please select a valid image file');
+        document.getElementById("img_2").value = '';
+        return false;
+    }
+  
+    if(file.size > 404800) {
+        alert('Max Upload size is 400kb only');
+        document.getElementById("img_2").value = '';
+        return false;
+    }
+   /*  else {
+        //Image preview
+        if (file.files && file.file[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('img').innerHTML = '<img src="'+e.target.result+'" width="150px" height="200px"/>';
+            };
+            reader.readAsDataURL(file.files[0]);
+        } */
+ 
+    return true;
+} 
+
+//IMage Validation
+
+function validateImage_3() {
+    var formData = new FormData();
+    var file = document.getElementById("img_3").files[0];
+    formData.append("Filedata", file);
+    var t = file.type.split('/').pop().toLowerCase();
+    if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+        alert('Please select a valid image file');
+        document.getElementById("img_3").value = '';
+        return false;
+    }
+  
+    if(file.size > 204800) {
+        alert('Max Upload size is 200kb only');
+        document.getElementById("img_3").value = '';
+        return false;
+    }
+   /*  else {
+        //Image preview
+        if (file.files && file.file[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('img').innerHTML = '<img src="'+e.target.result+'" width="150px" height="200px"/>';
+            };
+            reader.readAsDataURL(file.files[0]);
+        } */
+ 
+    return true;
+} 
+
+//IMage Validation
+
+function validateImage_4() {
+    var formData = new FormData();
+    var file = document.getElementById("img_4").files[0];
+    formData.append("Filedata", file);
+    var t = file.type.split('/').pop().toLowerCase();
+    if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+        alert('Please select a valid image file');
+        document.getElementById("img_4").value = '';
+        return false;
+    }
+  
+    if(file.size > 204800) {
+        alert('Max Upload size is 200kb only');
+        document.getElementById("img_4").value = '';
+        return false;
+    }
+   /*  else {
+        //Image preview
+        if (file.files && file.file[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('img').innerHTML = '<img src="'+e.target.result+'" width="150px" height="200px"/>';
+            };
+            reader.readAsDataURL(file.files[0]);
+        } */
+ 
+    return true;
+} 
+
+//IMage Validation
+
+function validateImage_5() {
+    var formData = new FormData();
+    var file = document.getElementById("img_5").files[0];
+    formData.append("Filedata", file);
+    var t = file.type.split('/').pop().toLowerCase();
+    if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+        alert('Please select a valid image file');
+        document.getElementById("img_5").value = '';
+        return false;
+    }
+  
+    if(file.size > 204800) {
+        alert('Max Upload size is 200kb only');
+        document.getElementById("img_5").value = '';
+        return false;
+    }
+   /*  else {
+        //Image preview
+        if (file.files && file.file[0]) {
+            var reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('img').innerHTML = '<img src="'+e.target.result+'" width="150px" height="200px"/>';
+            };
+            reader.readAsDataURL(file.files[0]);
+        } */
+ 
+    return true;
+} 

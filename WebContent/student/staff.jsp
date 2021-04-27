@@ -8,7 +8,7 @@
     <meta name="keywords" content="college, campus, university, courses, school, educational">
     <meta name="description" content="ATENA - College, University and campus template">
     <meta name="author" content="Ansonika">
-    <title>College, University and campus template </title>
+    <title>College, University and campus</title>
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -19,18 +19,47 @@
 
     <!-- BASE CSS -->
     <link href="css/base.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+<style type="text/css">
+.staff_Page {
+	border: 3px solid #dde6e8;
+	background-color:#dde6e8;
+	width: 70%;
+	height: 700px;
+	margin: auto;
+	margin-bottom: 50px;
+}
+.tag_line{font-size: 20px;margin: auto;}
+.form-group{margin-top: 30px;}
+	table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  border: 3px solid black;
+  
+}
 
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.min.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+ 
+}
+</style>
+   
 
 </head>
 
 <body>
-<!--[if lte IE 8]>
-    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
-<![endif]-->
+ <%@page import="in.common.GetConnection"%>
+		 <%@ include file="inc/stdimport.jsp" %> 
+		 
+		<%
+		GetConnection getConObj=new GetConnection();
+		Connection con=getConObj.getCon();
+		Statement stmt=con.createStatement();
+		
+		%> 
 
 <div id="preloader">
 	<div class="pulse"></div>
@@ -44,128 +73,103 @@
 
         <div class="sub_header bg_3">
         	<div id="intro_txt">
-			<h1><strong></strong> calendar</h1>
-            <p>Ex saepe accusata duo, vel ne summo option delenit.</p>
+			<h1><strong></strong>Check College Professor</h1>
+            <p></p>
             </div>
 		</div> <!--End sub_header -->
         
         
- 		<div class="container_gray_bg">
-        <div class="container margin_60">
+ 		
           <div class="main_title">
-            <h2>ATENA Teachers ...</h2>
-            <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+            <h2>Teachers</h2>
             </div>
-       <div class="row staff">
-			<div class="col-md-4">
-            	<div class="box_style_1">
-                	<p><img src="img/teacher_1_small.jpg" alt="" class="img-circle styled"></p>
-                                <h4>Patricia Doe <small>Biologist</small></h4>
-             					<p> When an unknown printer took a galley of type and <strong>scrambled it to make</strong> a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                                <ul class="social_team">
-                                    <li><a href="#"><i class="icon-facebook"></i></a></li>
-                                    <li><a href="#"><i class="icon-twitter"></i></a></li>
-                                    <li><a href="#"><i class="icon-google"></i></a></li>
-                                    <li><a href="#"><i class="icon-email"></i></a></li>
-							</ul>    
-                            <hr>
-                             <a href="teacher_profile.html" class="button_outline">Profile</a>           
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-            	<div class="box_style_1">
-                	<p><img src="img/teacher_2_small.jpg" alt="" class="img-circle styled"></p>
-                                <h4>Megan Fox <small>Engineer</small></h4>
-             					<p> When an unknown printer took a galley of type and <strong>scrambled it to make</strong> a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                                <ul class="social_team">
-                                    <li><a href="#"><i class="icon-facebook"></i></a></li>
-                                    <li><a href="#"><i class="icon-twitter"></i></a></li>
-                                    <li><a href="#"><i class="icon-google"></i></a></li>
-                                    <li><a href="#"><i class="icon-email"></i></a></li>
-							</ul>    
-                            <hr>
-                             <a href="teacher_profile.html" class="button_outline">Profile</a>           
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-            	<div class="box_style_1">
-                	<p><img src="img/teacher_3_small.jpg" alt="" class="img-circle styled"></p>
-                                 <h4>Silvia Doe <small>Biologist</small></h4>
-             					<p> When an unknown printer took a galley of type and <strong>scrambled it to make</strong> a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                                <ul class="social_team">
-                                    <li><a href="#"><i class="icon-facebook"></i></a></li>
-                                    <li><a href="#"><i class="icon-twitter"></i></a></li>
-                                    <li><a href="#"><i class="icon-google"></i></a></li>
-                                    <li><a href="#"><i class="icon-email"></i></a></li>
-							</ul>    
-                            <hr>
-                             <a href="teacher_profile.html" class="button_outline">Profile</a>           
-                </div>
-            </div>
-        </div><!--End row -->
-        <div class="row staff">
-			<div class="col-md-4">
-            	<div class="box_style_1">
-                	<p><img src="img/teacher_1_small.jpg" alt="" class="img-circle styled"></p>
-                                <h4>Patricia Doe <small>Biologist</small></h4>
-             					<p> When an unknown printer took a galley of type and <strong>scrambled it to make</strong> a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                                <ul class="social_team">
-                                    <li><a href="#"><i class="icon-facebook"></i></a></li>
-                                    <li><a href="#"><i class="icon-twitter"></i></a></li>
-                                    <li><a href="#"><i class="icon-google"></i></a></li>
-                                    <li><a href="#"><i class="icon-email"></i></a></li>
-							</ul>    
-                            <hr>
-                             <a href="teacher_profile.html" class="button_outline">Profile</a>           
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-            	<div class="box_style_1">
-                	<p><img src="img/teacher_2_small.jpg" alt="" class="img-circle styled"></p>
-                                <h4>Megan Fox <small>Engineer</small></h4>
-             					<p> When an unknown printer took a galley of type and <strong>scrambled it to make</strong> a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                                <ul class="social_team">
-                                    <li><a href="#"><i class="icon-facebook"></i></a></li>
-                                    <li><a href="#"><i class="icon-twitter"></i></a></li>
-                                    <li><a href="#"><i class="icon-google"></i></a></li>
-                                    <li><a href="#"><i class="icon-email"></i></a></li>
-							</ul>    
-                            <hr>
-                             <a href="teacher_profile.html" class="button_outline">Profile</a>           
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-            	<div class="box_style_1">
-                	<p><img src="img/teacher_3_small.jpg" alt="" class="img-circle styled"></p>
-                                 <h4>Silvia Doe <small>Biologist</small></h4>
-             					<p> When an unknown printer took a galley of type and <strong>scrambled it to make</strong> a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                                <ul class="social_team">
-                                    <li><a href="#"><i class="icon-facebook"></i></a></li>
-                                    <li><a href="#"><i class="icon-twitter"></i></a></li>
-                                    <li><a href="#"><i class="icon-google"></i></a></li>
-                                    <li><a href="#"><i class="icon-email"></i></a></li>
-							</ul>    
-                            <hr>
-                             <a href="teacher_profile.html" class="button_outline">Profile</a>           
-                </div>
-            </div>
-        </div><!--End row -->
-        </div><!--End container -->
-        </div><!--End bg_gray_container -->
-       
-        
 
-		
 
-	 
-		<!--Footer File-->	 
+	
+	<div class="staff_Page">		
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="tag_line">Select College/University</label> <br><select name="college"
+						id="college" class="form-control styled required"
+						required="required">
+						<option value="null">---Please Select---</option>
+						<%
+							try {
+								String query = "select * from college_registration";
+								//get Table data
+								ResultSet rs = stmt.executeQuery(query);
+								while (rs.next()) {
+						%>
+						<option><%=rs.getString("college_name")%></option>
+						<%
+							}
+							} catch (Exception e) {
+
+							}
+						%>
+					</select>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="form-group">
+					<label class="tag_line">Select Course</label><br> 
+					<select name="course" id="course"
+						class="form-control styled required" required="required">
+						<option value="null">---Please Select---</option>
+						<%
+							try {
+								String query = "select * from course";
+								//get Table data
+								ResultSet rs = stmt.executeQuery(query);
+								while (rs.next()) {
+						%>
+						<option><%=rs.getString("course_name")%></option>
+						<%
+							}
+							} catch (Exception e) {
+
+							}
+						%>
+					</select>
+				</div>
+			</div>
+			<table>
+			<tr>
+						<th>Name</th>
+						<th>E-Mail</th>
+						<th>D.O.B.</th>
+						<th>College/University</th>
+						<th>Branch</th>
+						<th>Study</th>
+						<th>Position</th>
+			
+			</tr>
+			
+			<tr>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+			
+			</tr>
+			
+			</table>
+			
+			
+			
+		</div>
+
+
+
+<div>
+	<!--Footer File-->	 
 	<%@ include file="itc/footer.jsp" %>
 		<!--Footer File-->
-
+</div>
 <!-- Login modal -->   
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myLogin" aria-hidden="true">
 		<div class="modal-dialog">

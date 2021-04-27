@@ -92,9 +92,7 @@ public class St_Login extends HttpServlet {
 						ResultSet rs = stmt.executeQuery(sql);
 						if (rs.next()) 
 						{
-							String us = rs.getString("username");
-							setUsername(us);
-							request.setAttribute("name",us);
+						
 					    out.println("<html><body><script>alert('login');</script></body></html>");
 						} 
 				else

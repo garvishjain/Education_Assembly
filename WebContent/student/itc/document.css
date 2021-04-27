@@ -3,14 +3,15 @@
 body {font-family: "Lato", sans-serif;}
 
 /* /* Style the tab */
-.tab {
+.tab 
+{
   float: left;
   border: 1px solid #ccc;
   background-color: white;
-  width: 30%;
+  width: 20%;
   height: 400px;
   margin-top: 10px;
-  margin-left: 120px;
+  margin-left: -80px;
   border-color: #283842;
 }
 

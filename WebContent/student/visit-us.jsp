@@ -34,6 +34,9 @@
 
 <body>
 
+<!--[if lte IE 8]>
+    <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
+<![endif]-->
 <%@page import="in.common.GetConnection"%>
 		 <%@ include file="inc/stdimport.jsp" %> 
 		 
@@ -61,38 +64,45 @@
                 <div class="row">
                     <div class="col-md-9">
                         <div class="box_style">
+                           
+                           
+                            
+                    
+                            
                             <div class="indent_title_in">
-                                <i class="pe-7s-mail-open-file"></i>
-                                <h3>Contact us</h3>
+                                <i class="pe-7s-look"></i>
+                                <h3>Plan a visit</h3>
                                 <p>
-                                   
+                                   		
                                 </p>
                             </div>
                             <div class="wrapper_indent">
-                                <div id="message-contact"></div>
-                                <form  action="../Contact_Us" method="post" >
+                                <div id="message-visit"></div>
+                                <form action="../Visit_Us" method="post" >
                                     <div class="row">
                                         <div class="col-md-6 col-sm-6">
                                             <div class="form-group">
-                                                <label>Enter name</label>
-                                                <input type="text" class="form-control styled" id="name_contact" name="name" placeholder="Enter name">
+                                                <label>Enter Name</label>
+                                                <input type="text" class="form-control styled" id="name_visit" name="name" placeholder="First name">
                                             </div>
-                                        
+                                           </div> 
+                                            <div class="col-md-6 col-sm-6">
                                             <div class="form-group">
                                                 <label>Enter Email</label>
-                                                <input type="email" id="email_contact" name="email" class="form-control styled" placeholder="Enter Email">
+                                                <input type="email" id="email_visit" name="email" class="form-control styled" placeholder="Enter Email">
                                             </div>
-                                        </div>
-                                        <div class="col-md-6 col-sm-6">
+                                            </div>
+                                            <div class="col-md-6 col-sm-6">
                                             <div class="form-group">
                                                 <label>Enter Phone number</label>
-                                                <input type="text" id="phone_contact" name="num" class="form-control styled" placeholder="Enter number">
+                                                <input type="text" id="phone_visit" name="num" class="form-control styled" placeholder="Phone number">
                                             </div>
-                                        </div>
-                                        
-                                         <div class="col-md-6 col-sm-6">
-                                            <div class="form-group">
-                                        <label>Select College/University</label> 
+                                            </div>
+                                            
+                                            
+                                            <div class="col-md-6 col-sm-6">
+											<div class="form-group">
+												<label>Select College/University</label> 
 												 <select name="college" id="college"
 													class="form-control styled required" required="required">
 													<option value="null">---Please Select---</option>
@@ -111,42 +121,49 @@
 														}
 													%>
 													</select>
-													</div>
-													</div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-12">
+											</div>
+										</div>
+                                      <div class="col-md-6 col-sm-6">
                                             <div class="form-group">
-                                                <label>Enter Your message</label>
-                                                <textarea rows="5" id="message_contact" name="msg" class="form-control styled" style="height:100px;" placeholder="Your message"></textarea>
+                                                <label>Preferred visit date</label>
+                                                <input type="date" name="date"  class="form-control styled" placeholder="Select date">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 col-sm-6">
+                                            <div class="form-group">
+                                                <label>Preferred visit time</label>
+                                                <input class="time-pick form-control styled" type="text" name="time" id="time_visit">
+                                            </div>
+                                        </div>
+                                       <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <input type="submit" value="Submit" class="button add_bottom_30" id="submit-contact"/>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                           
-                                            <input type="submit" value="Submit" class="button add_bottom_30" id="submit-contact"/>
+                                      
                                         </div>
-                                    </div>
+                                        
+                                
+                                   
                                 </form>
                             </div><!-- End wrapper_indent -->
-                            
-                           
                         </div><!-- End box style 1-->
                     </div><!-- End col-md-9 -->
-                    <br><br><br><br><br><br>
+                    <br><br><br><br>
                     <aside class="col-md-3">
                     <h3>Contacts info</h3>
                     <p>
-                       new delhi<br>
-                         + 000- 8093 3400 <br> + 000- 8093 3402<br>
-                        <a href="#">info@collegedunia.com</a>
+                       Gwalior<br>
+                         + 000-1234567 <br> + 000- 7654321<br>
+                        <a href="#">info@educationassembly.com</a>
                     </p>
                     <h5>Get directions</h5>
                     <form action="http://maps.google.com/maps" method="get" target="_blank">
                         <div class="form-group">
                             <input type="text" name="saddr" placeholder="Enter your location" class="form-control styled">
-                            <input type="hidden" name="daddr" value="Delhi">
+                            <input type="hidden" name="daddr" value="Emotech Software Solutions pvt ltd">
                             <!-- Write here your end point -->
                         </div>
                         <input type="submit" value="Get directions" class="button small nomargin">
@@ -154,19 +171,17 @@
                     <hr class="styled">
                     <h3>Departments</h3>
                     <ul class="contacts_info">
-                        <li><strong>Administration</strong><br>
-                        <a href="tel://003823932342">000-1111111</a> - <br><a href="tel://003823932342">admin@collegedunia.com</a><br>
-                        <small>Monday to Friday 9am - 7pm</small></li>
+                        
                         <li><strong>Admission</strong><br>
-                        <a href="tel://003823932342">000-2222222</a> - <a href="tel://003823932342">admission@collegedunia.com</a><br>
+                   <a >admission@educationassembly.com</a><br>
                         <small>Monday to Friday 9am - 7pm</small></li>
                         <li><strong>General questions</strong><br>
-                        <a href="tel://003823932342">000-3333333</a> - <a href="tel://003823932342">questions@collegedunia.com</a><br>
+                        <a >questions@educationassembly.com</a><br>
                         <small>Monday to Friday 9am - 7pm</small></li>
                     </ul>
-                    <hr class="styled">
+         
                     
-             
+             </aside>
                     
                 </div><!--End row -->
             </div><!--End container -->
