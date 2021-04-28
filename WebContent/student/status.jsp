@@ -46,10 +46,9 @@
 	Connection con = getConObj.getCon();
 	Statement stmt = con.createStatement();
 	
-	St_Login st=new St_Login();
+	St_Login st = new St_Login();
 	String u=(String)st.getUsername();
-	String s=(String)request.getAttribute("name");
-	System.out.println("getattribute ="+s);
+	System.out.println("status = "+u);
 %>
 <style type="text/css">
 .stu_name{

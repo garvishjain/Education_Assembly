@@ -23,6 +23,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 import javax.xml.bind.DatatypeConverter;
 
+import com.sun.org.apache.bcel.internal.generic.RETURN;
+
 import in.common.GetConnection;
 
 import in.common.hashed;
@@ -36,6 +38,7 @@ public class St_Login extends HttpServlet {
 	private String username;
 	
 	public String getUsername() {
+		System.out.println("get = "+username);
 		return username;
 	}
 
@@ -49,6 +52,7 @@ public class St_Login extends HttpServlet {
 	private Statement stmt;
 	private String n;
 	private String p;
+	private String user;
 	
 
 
@@ -69,7 +73,6 @@ public class St_Login extends HttpServlet {
 	}
 
 	
-
 	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
@@ -85,13 +88,13 @@ public class St_Login extends HttpServlet {
 						hashed gethash = new hashed();
 						String hashed = gethash.getHash(pass);
 						
-						System.out.println("user = "+uname);
-						System.out.println("pass = "+hashed);
-						String sql = "Select * from student_information where username ='" + uname + "' and password= '"+ hashed + "' LIMIT 1"; 
-						System.out.println(sql);
+						
+						String sql = "Select * from user where username ='" + uname + "' and password= '"+ hashed + "' LIMIT 1"; 
 						ResultSet rs = stmt.executeQuery(sql);
 						if (rs.next()) 
 						{
+						user = rs.getString("username");
+						
 						
 					    out.println("<html><body><script>alert('login');</script></body></html>");
 						} 

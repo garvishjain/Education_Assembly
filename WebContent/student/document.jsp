@@ -93,6 +93,11 @@ input[type="file"]
 
 .container{ 
     margin-top: -60px;}
+    .footy {
+    background-color: #223038;
+    color: #fff;
+    padding: 50px 0 0px 0;
+}
     </style>
     
    
@@ -273,10 +278,9 @@ jquery.min.js"></script>
 	</div>
 
 
-
-
-			<div >
+			<div class="footy">
 					<%@ include file="itc/footer.jsp" %>
-</div>
+			</div>
+		
 </body>
 </html> 
