@@ -260,9 +260,12 @@ header#contacts{
   display: block;
   float: left;
   margin: 15px 0 0 10px;
+      margin-top: 25px;
 }
 #logo img {
   display: block;
+  width: 100px;
+    margin-top: -20px;
 }
 /* Header bg */
 .sub_header {
@@ -301,6 +304,7 @@ header#contacts{
 }
 .sub_header.bg_4 {
   background-image: url(../img/changes/f.jpg);
+      margin-top: 70px;
 }
 .sub_header_contact_home{
    background-image: url(../img/changes/f.jpg);
@@ -1201,6 +1205,7 @@ ul.list_4 li:before {
 .staff .box_style_1{
 	text-align:center;
 	cursor:auto;
+	    width: 100%
 }
 ul.social_team {
 	list-style:none;

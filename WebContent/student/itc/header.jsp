@@ -16,7 +16,37 @@
     <link href="css/base.css" rel="stylesheet">
       <!-- SPECIFIC CSS -->
 	
-    
+    <style type="text/css">
+  .log{font-size: 35px;color: #f5aa0f;
+      margin-top: 10px;
+      font-family: Georgia;}
+        .logg{font-size: 35px;color: white;
+      margin-top: 10px;
+      font-family: Georgia;}
+      .log,.logg{display: inline;}
+/*  overflow: hidden;  
+  border-right: .15em solid orange; 
+  white-space: nowrap; 
+  margin: 0 auto; 
+  letter-spacing: .15em; 
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s step-end infinite;
+ }
+ @keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
+}
+
+     */
+   
+    </style>
 </head>
 <body>
 
@@ -26,7 +56,8 @@
         <div class="row">
             <div class="col-md-3 col-sm-3 col-xs-3">
                 <div id="logo">
-                    <a href="index.html"><img src="img/logo.png" width="125" height="40" alt="Atena" data-retina="true"></a>
+<!--                     <a><img src="img/changes/logo (2).png" width="150" height="70"   alt="Atena" data-retina="true" style=""  ></a> -->
+                	<p class="log">Education <p class="logg">Assembly</p></p>
                 </div>
             </div>
             <nav class="col-md-9 col-sm-9 col-xs-9">

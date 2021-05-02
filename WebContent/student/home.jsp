@@ -74,7 +74,7 @@
     	<div class="row">
         	<div class="col-md-4 col-sm-4">
             	 <div class="home_feat_1_box">
-                        <a href="#">
+                        <a href="visit-us.jsp">
                         <img src="img/changes/c.jpg" class="img-responsive" alt="">
                         <div class="short_info"><h3>Plan a visit</h3><i class="arrow_carrot-right_alt2"></i></div>
                         </a>
@@ -82,7 +82,7 @@
             </div>
             <div class="col-md-4 col-sm-4">
            <div class="home_feat_1_box">
-                        <a href="#">
+                        <a href="">
                         <img src="img/changes/a.jpg" class="img-responsive" alt="" >
                         <div class="short_info"><h3>Study Programs</h3><i class="arrow_carrot-right_alt2"></i></div>
                         </a>
@@ -90,7 +90,7 @@
             </div>
             <div class="col-md-4 col-sm-4">
            <div class="home_feat_1_box">
-                        <a href="#">
+                        <a href="register.jsp">
                         <img src="img/changes/b.jpg" class="img-responsive" alt="" height="200px">
                         <div class="short_info"><h3>Admissions</h3><i class="arrow_carrot-right_alt2"></i></div>
                         </a>
@@ -102,7 +102,7 @@
     
     <div class="container margin_60">
     <div class="main_title">
-    <h2>Latest from Atena ....</h2>
+    <h2>Latest from Education Assembly</h2>
     <p>Reset your research strategy by browsing through our lists of top colleges, courses and careers based on your area of interest.</p>
     </div>
     <div id="tabs" class="tabs">

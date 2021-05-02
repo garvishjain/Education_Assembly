@@ -87,16 +87,21 @@ public class St_Login extends HttpServlet {
 						/*password hashing*/
 						hashed gethash = new hashed();
 						String hashed = gethash.getHash(pass);
-						
+						User user2 = new User(uname, pass);
+							
 						
 						String sql = "Select * from user where username ='" + uname + "' and password= '"+ hashed + "' LIMIT 1"; 
 						ResultSet rs = stmt.executeQuery(sql);
 						if (rs.next()) 
 						{
 						user = rs.getString("username");
-						
-						
-					    out.println("<html><body><script>alert('login');</script></body></html>");
+						 response.sendRedirect("student/home.jsp");
+					   /* out.println("<html><body><script>alert('login');</script></body></html>");*/
+					   /* request.setAttribute("UserName",user);
+			            RequestDispatcher view = request.getRequestDispatcher("student/status.jsp");
+			            view.forward(request, response);*/
+			            con.close();
+					    
 						} 
 				else
 						{

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<%@page import="in.Student.User"%>
 <%@page import="in.Student.St_Login"%>
 <%@page import="in.common.GetConnection"%>
 <%@ include file="inc/stdimport.jsp"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="in.College.User"%>
+
 <html>
 <head>
 
@@ -46,10 +47,13 @@
 	Connection con = getConObj.getCon();
 	Statement stmt = con.createStatement();
 	
-	St_Login st = new St_Login();
-	String u=(String)st.getUsername();
-	System.out.println("status = "+u);
+	/* User user=new User();
+	String u=user.getUname();
+	System.out.print(u); */
+	/* String name=(String)request.getAttribute("view");
+	System.out.println(name); */
 %>
+
 <style type="text/css">
 .stu_name{
 					border: 2px solid gray;
