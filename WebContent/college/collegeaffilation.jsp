@@ -65,21 +65,22 @@
 
 
 <script type="text/javascript">
-	function next() {
-		document.getElementById('first').style.display = "none";
-		document.getElementById('second').style.display = "block";
+	
+function next(){
+	document.getElementById('first').style.display = "none";
+	document.getElementById('second').style.display = "block";
 	}
-	function prev() {
-		document.getElementById('second').style.display = "none";
-		document.getElementById('first').style.display = "block";
+	function prev(){
+	document.getElementById('second').style.display = "none";
+	document.getElementById('first').style.display = "block";
 	}
-	function antnext() {
-		document.getElementById('second').style.display = "none";
-		document.getElementById('third').style.display = "block";
+	function antnext(){
+	document.getElementById('second').style.display = "none";
+	document.getElementById('third').style.display = "block";
 	}
-	function fprev() {
-		document.getElementById('third').style.display = "none";
-		document.getElementById('second').style.display = "block";
+	function fprev(){
+	document.getElementById('third').style.display = "none";
+	document.getElementById('second').style.display = "block";
 	}
 </script>
 
@@ -87,6 +88,8 @@
 </style>
 
 </head>
+
+
 
 <body>
 
@@ -132,7 +135,7 @@
 								<i class="pe-7s-user"></i>
 
 							</div>
-							<fieldset id="first">
+							<fieldset  id="first">
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
@@ -144,14 +147,13 @@
 									</div>
 
 									<div class="form-group">
-										<input type="checkbox" name="policy_terms" id="policy_terms"
-											class="required" value="Yes"><label>accept <a
-											href="#0">when you filled </a> the above form and complete in
-											the pdf form.
-										</label>
-									</div>
+									<input type="checkbox" name="policy_terms" id="policy_terms"
+										class="required" value="Yes"><label>accept <a
+										href="#0">when you filled </a> the above form and complete in the pdf form.
+									</label>
+								</div>
 									<input type="button" name="password" class="next btn btn-info"
-										onclick="next()" value="Next" />
+										onclick="next()" value="Next"  />
 
 								</div>
 
@@ -250,9 +252,10 @@
 									<div class="col-md-6">
 										<div class="form-group">
 											<input type="button" name="previous"
-												class="previous btn btn-default" onclick="prev()"
-												value="Previous" /> <input type="button" name="next"
-												onclick="antnext()" class="next btn btn-info" value="Next" />
+												class="previous btn btn-default" onclick="prev()" value="Previous" /> 
+												<input
+												type="button" name="next" onclick="antnext()"  class="next btn btn-info"
+												value="Next"  />
 										</div>
 									</div>
 								</div>
@@ -270,10 +273,9 @@
 									</label>
 								</div>
 								<p>
-									<input type="button" name="previous"
-										class="previous btn btn-default" onclick="fprev()"
-										value="Previous" />
-
+								    <input type="button" name="previous"
+												class="previous btn btn-default" onclick="fprev()" value="Previous" /> 
+											
 									<button type="submit" class="button">Submit</button>
 								</p>
 

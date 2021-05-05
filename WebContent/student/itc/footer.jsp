@@ -22,7 +22,7 @@
             <div class="row ">
                 <div class="col-md-3 col-sm-3">
                     <p id="logo_footer">
-                        <img src="img/logo2.png" width="325" height="140" alt="Atena" data-retina="true">
+                        <img src="img/logo.png" width="125" height="40" alt="Atena" data-retina="true">
                     </p>
                 </div>
                 <div class="col-md-3 col-sm-3">
