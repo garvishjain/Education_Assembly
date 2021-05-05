@@ -48,13 +48,6 @@
 				<div class="card">
 					<div class="card-body">
 						<div class="text-center">
-							<div class="card-title mt-3">
-								<input type="radio" name="adm" value="admin"> Admin 
-								<input type="radio" name="uni" value="university"> University
-								<input type="radio" name="col" value="college"> College
-							</div>
-						</div>
-						<div class="text-center">
 							<h4 style="color: green;">
 								<%
 									String status = (String) request.getAttribute("status");
@@ -63,8 +56,8 @@
 									}
 								%>
 							</h4>
-							<a class="header-brand" href="index.html"><i
-								class="fa fa-graduation-cap brand-logo"></i></a>
+							<a class="header-brand" href="#"><i
+								class="fa fa-graduation-cap brand-logo">Education Assembly</i></a>
 							<div class="card-title mt-3">Login to your account</div>
 						</div>
 						<div class="form-group">
@@ -77,9 +70,8 @@
 							<input type="password" id="pass" name="pass" class="form-control"
 								id="exampleInputPassword1" placeholder="Enter Password">
 							<span style="color: red" id="passerr"></span> <label
-								class="form-label"><a href="forgot-password.html"
+								class="form-label"><a href="forgot-password.jsp"
 								class="float-right small">forgot password</a></label>
-
 						</div>
 						<div class="form-group">
 							<label class="custom-control custom-checkbox"> <input
