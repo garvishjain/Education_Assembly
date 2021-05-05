@@ -22,7 +22,7 @@
             <div class="row ">
                 <div class="col-md-3 col-sm-3">
                     <p id="logo_footer">
-                        <img src="img/logo2.png" width="225" height="140" alt="Education Assemnly" data-retina="true">
+                        <img src="img/logo2.png" width="625" height="190" alt="Education Assemnly" data-retina="true">
                     </p>
                 </div>
                 <div class="col-md-3 col-sm-3">
