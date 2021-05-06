@@ -14,7 +14,6 @@ GetConnection getConObj=new GetConnection();
 Connection con=getConObj.getCon();
 Statement stmt=con.createStatement();
 
-
 %>
     <!-- Start project content area -->
 
@@ -34,7 +33,6 @@ Statement stmt=con.createStatement();
                     <ul class="nav nav-tabs page-header-tab">
                         <li class="nav-item"><a class="nav-link active"data-toggle="tab" href="#pro-all">List View</a></li>
                         <li class="nav-item"><a class="nav-link"data-toggle="tab" href="#pro-grid">Grid View</a></li>
-                        <!-- <li class="nav-item"><a class="nav-link"data-toggle="tab" href="#pro-profile">Profile</a></li> -->
                         <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#pro-add">Add</a></li>
                     </ul>
                 </div>
