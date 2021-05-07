@@ -50,7 +50,7 @@ public class department extends HttpServlet {
 			String email = request.getParameter("email")!= null ? request.getParameter("email") : "";
 			String stdcapacity = request.getParameter("stdCapacity") !=null ? request.getParameter("stdCapacity") : "";
 			int u_id = 123;
-			
+			int dpartment=123;
 			
 			String sqll = "select pk_id from university where u_name = '" + uname + "' ";	
 			System.out.println(sqll);
@@ -63,14 +63,29 @@ public class department extends HttpServlet {
 			}
 			else
 			{
-				out.println("No Data Found");
+				request.setAttribute("status", "Failed to sign up...! please try again");
+				response.sendRedirect("university/department.jsp");
+				out.println("<body><html><script>alert('No Data Found');</script></html></body>");
+			}
+			String sql2="select pk_id from department_name where Details='"+department+"'";
+			PreparedStatement stmt = con.prepareStatement(sql2);
+			ResultSet rs2 = stmt.executeQuery(sql2);
+			if(rs2.next())
+			{
+				dpartment = rs.getInt(1);
+			}
+			else {
+				request.setAttribute("status", "Failed to sign up...! please try again");
+				response.sendRedirect("university/department.jsp");
+				out.println("<body><html><script>alert('No Data Found');</script></html></body>");
 			}
 			
-			String sql="insert into department(fk_university_id,department_name,hod_name,phone_number,email,std_capacity)value(?,?,?,?,?,?)";
+			
+			String sql="insert into department(fk_university_id,fk_department_name,hod_name,phone_no,email,std_capacity)value(?,?,?,?,?,?)";
 		
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, u_id);
-			stmt.setString(2, department);
+			stmt.setInt(2, dpartment);
 			stmt.setString(3, headname);
 			stmt.setString(4, phone);
 			stmt.setString(5, email);
@@ -80,10 +95,16 @@ public class department extends HttpServlet {
 			
 			if(res>0)
 			{
+				
+				request.setAttribute("status", "succesfull login");
+				response.sendRedirect("university/department.jsp");
 				out.println("<body><html><script>alert('Data Insert');</script></html></body>");
 			}
 			else
 			{
+				
+				request.setAttribute("status", "Failed to sign up...! please try again");
+				response.sendRedirect("university/department.jsp");
 				out.println("<body><html><script>alert('Something went wrong');</script></html></body>");
 			}
 		} catch (SQLException e) {
