@@ -100,14 +100,13 @@ public class Register extends HttpServlet {
 					if(res>0)
 					{
 						request.setAttribute("status","Successfully Registered");
-						//rd = request.getRequestDispatcher("/university/login.jsp").forward(request,response);
 						response.sendRedirect("university/login.jsp");
 					}
 					else
 					{
-						request.setAttribute("status","Failed to sign up...! please try again");
-						rd = request.getRequestDispatcher("/university/register.jsp");
-						rd.forward(request, response);				}
+						request.setAttribute("status", "Failed to sign up...! please try again");
+						response.sendRedirect("university/register.jsp");
+						}
 				
 				}
 			catch (SQLException e) 

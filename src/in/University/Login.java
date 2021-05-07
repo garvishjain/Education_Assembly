@@ -65,44 +65,7 @@ public class Login extends HttpServlet {
 			throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		String adm = request.getParameter("adm") !=null ? request.getParameter("adm") : "";
-		String uni = request.getParameter("uni") !=null ? request.getParameter("uni") : "";
-		String col = request.getParameter("col") !=null ? request.getParameter("col") : "";
-		if (adm.equals("admin")) {
-			try {
-				String uname = request.getParameter("uname");
-				String pass = request.getParameter("pass");
-
-				/*byte[] bytepass = pass.getBytes();
-				String Hashed = getHash(bytepass, "SHA-256");
-*/
-				String sql = "Select username,password from admin_register where username ='" + uname + "' and password= '"
-						+ pass + "' LIMIT 1";
-
-				ResultSet rs = stmt.executeQuery(sql);
-
-				if (rs.next()) {
-					String password = rs.getString(2);
-					if (pass.equals(password)) {
-						request.setAttribute("status", "succesfull login");
-						//rd = request.getRequestDispatcher("university/index.jsp");
-						response.sendRedirect("university/index.jsp");
-						//rd.forward(request, response);
-					} else {
-						request.setAttribute("status", "Failed to sign up...! please try again");
-						//rd = request.getRequestDispatcher("university/login.jsp");
-						response.sendRedirect("university/login.jsp");
-						//rd.forward(request, response);
-					}
-				} else {
-					request.setAttribute("status", "Failed to sign up...! please try again");
-					response.sendRedirect("university/login.jsp");
-				}
-			} catch (Exception e) {
-				// TODO: handle exception
-			}
-		}
-		if (uni.equals("university")) {
+		
 			try {
 				String uname = request.getParameter("uname");
 				String pass = request.getParameter("pass");
@@ -111,20 +74,18 @@ public class Login extends HttpServlet {
 				String Hashed = getHash(bytepass, "SHA-256");
 
 				String sql = "Select username,password from university_register where username ='" + uname + "' and password= '"
-						+ Hashed + "' LIMIT 1";
+						+ pass + "' LIMIT 1";
 
 				ResultSet rs = stmt.executeQuery(sql);
 
 				if (rs.next()) {
 					String password = rs.getString(2);
-					if (Hashed.equals(password)) {
+					if (pass.equals(password)) {
 						request.setAttribute("status", "succesfull login");
-						//rd = request.getRequestDispatcher("university/index.jsp");
-						response.sendRedirect("university/index.jsp");
+						response.sendRedirect("university/university-register.jsp");
 						//rd.forward(request, response);
 					} else {
 						request.setAttribute("status", "Failed to sign up...! please try again");
-						//rd = request.getRequestDispatcher("university/login.jsp");
 						response.sendRedirect("university/login.jsp");
 						//rd.forward(request, response);
 					}
@@ -136,38 +97,5 @@ public class Login extends HttpServlet {
 				// TODO: handle exception
 			}
 		}
-		if (col.equals("college")) {
-			try {
-				String uname = request.getParameter("uname");
-				String pass = request.getParameter("pass");
-
-				byte[] bytepass = pass.getBytes();
-				String Hashed = getHash(bytepass, "SHA-256");
-
-				String sql = "Select username,password from college_register where username ='" + uname + "' and password= '"
-						+ Hashed + "' LIMIT 1";
-				ResultSet rs = stmt.executeQuery(sql);
-
-				if (rs.next()) {
-					String password = rs.getString(2);
-					if (Hashed.equals(password)) {
-						request.setAttribute("status", "succesfull login");
-						//rd = request.getRequestDispatcher("university/index.jsp");
-						response.sendRedirect("university/index.jsp");
-						//rd.forward(request, response);
-					} else {
-						request.setAttribute("status", "Failed to sign up...! please try again");
-						//rd = request.getRequestDispatcher("university/login.jsp");
-						response.sendRedirect("university/login.jsp");
-						//rd.forward(request, response);
-					}
-				} else {
-					request.setAttribute("status", "Failed to sign up...! please try again");
-					response.sendRedirect("university/login.jsp");
-				}
-			} catch (Exception e) {
-				// TODO: handle exception
-			}
-		}
-	}
 }
+

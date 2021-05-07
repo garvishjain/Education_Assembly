@@ -57,7 +57,7 @@
             <div class="col-md-3 col-sm-3 col-xs-3">
                 <div id="logo">
 <!--                     <a><img src="img/changes/logo (2).png" width="150" height="70"   alt="Atena" data-retina="true" style=""  ></a> -->
-                	<p class="log">Education <p class="logg">Assembly</p></p>
+                <p class="log">Education<p class="logg"><b><i>Assembly</i></b></p></p>
                 </div>
             </div>
             <nav class="col-md-9 col-sm-9 col-xs-9">

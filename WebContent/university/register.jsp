@@ -162,59 +162,52 @@
                 		out.println(status);
                 	}
                 %></h4>
-                    <a class="header-brand" href="register.jsp"><i class="fa fa-graduation-cap brand-logo"></i></a>
+                    <a class="header-brand" href="#"><i class="fa fa-graduation-cap brand-logo">Education Assembly</i></a>
                     <div class="card-title">Create new account</div>
-                    <button type="button" class="btn btn-facebook"><i class="fa fa-facebook mr-2"></i>Facebook</button>
-                    <button type="button" class="btn btn-google"><i class="fa fa-google mr-2"></i>Google</button>
-                    <h6 class="mt-3 mb-3">Or</h6>
                 </div>
                 <form action="../Register" onsubmit="return validate()" method="Post">
-                <div class="form-group">
-                    <label class="form-label">First Name</label>
-                    <input type="text" name="fname" class="form-control" placeholder="Enter First Name"
-                    id="fname" minlength="3" maxlength="15" >
-               		<span style="color:red" id="fnameerr"></span>
-               		 <label class="form-label">Last Name</label>
-                    <input type="text" name="lname" class="form-control" placeholder="Enter Last Name"
-                   	id="lname" minlength="3" maxlength="15" >
-                   	<span style="color:red" id="lnameerr"></span>
-                </div>
-                 <div class="form-group">
-                    <label class="form-label">UserName</label>
-                    <input type="text" name="uname" class="form-control" placeholder="Enter UserName"
-                    id="uname" minlength="3" maxlength="15" >
-                    <span style="color:red" id="unameerr"></span>
-                </div>
-                <div class="form-group">
-                    <label class="form-label">Email address</label>
-                    <input type="email" name="email" class="form-control" placeholder="Enter email"
-                    id="email" >
-                    <span style="color:red" id="emailerr"></span>
-                </div>
-                <!-- <div class="form-group">
+						<div class="form-group">
+							<label class="form-label">First Name</label> <input type="text"
+								name="fname" class="form-control" placeholder="Enter First Name"
+								id="fname" minlength="3" maxlength="15"> <span style="color: red" id="fnameerr"></span>
+						</div>
+						<div class="form-group">	 
+							<label class="form-label">Last Name</label> <input type="text"
+								name="lname" class="form-control" placeholder="Enter Last Name"
+								id="lname" minlength="3" maxlength="15"> <span style="color: red" id="lnameerr"></span>
+						</div>
+						<div class="form-group">
+							<label class="form-label">UserName</label> <input type="text"
+								name="uname" class="form-control" placeholder="Enter UserName"
+								id="uname" minlength="3" maxlength="15"> <span style="color: red" id="unameerr" required></span>
+						</div>
+						<div class="form-group">
+							<label class="form-label">Email address</label> <input
+								type="email" name="email" class="form-control"
+								placeholder="Enter email" id="email"> <span	style="color: red" id="emailerr"></span>
+						</div>
+						<!-- <div class="form-group">
                     <label class="form-label">Mobile Number</label>
                     <input type="text" name="num" class="form-control" placeholder="Enter Number"
                     id="num" minlength="10" maxlength="10" required
             oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
                     <span style="color:red" id="numerr"></span>
                 </div> -->
-                <div class="form-group">
-                    <label class="form-label">Password</label>
-                    <input type="password" name="pass" class="form-control" placeholder="Enter Password"
-                    id="pass" minlength="8" maxlength="20" >&nbsp;
-                    <input type="checkbox" onclick="myFunction()">&nbsp;Show Password
-   <div id="message">
-  <p id="letter" class="invalid">A <strong>lowercase</strong> letter</p>
-  <p id="capital" class="invalid">A <strong>capital (uppercase)</strong> letter</p>
-  <p id="number" class="invalid">A <strong>number</strong></p>
-</div>
-
-                    <span style="color:red" id="passerr"></span>
-                </div>
-                <div class="form-group">
+						<div class="form-group">
+							<label class="form-label">Password</label> <input type="password"
+								name="pass" class="form-control" placeholder="Enter Password"
+								id="pass" minlength="8" maxlength="20" required> 
+							<div id="message">
+								<p id="letter" class="invalid">A <strong>lowercase</strong> letter</p>
+								<p id="capital" class="invalid">A <strong>capital (uppercase)</strong> letter</p>
+								<p id="number" class="invalid">A <strong>number</strong></p>
+							</div>
+							<span style="color: red" id="passerr"></span>
+						</div>
+						<div class="form-group">
                     <label class="form-label">Confirm Password</label>
                     <input type="password" name="cpass" class="form-control" placeholder="Enter Confirm Password"
-                    id="cpass" minlength="8" maxlength="20" >
+                    id="cpass" minlength="8" maxlength="20" required>
                     <span style="color:green" id="cpaserr"></span>
                     <span style="color:red" id="cpasserr"></span>
                 </div>
@@ -227,7 +220,7 @@
                 </div>
                 <div class="text-center">
                     <button type="submit" class="btn btn-primary btn-block" >Create new account</button>
-                    <div class="text-muted mt-4">Already have account? <a href="login.jsp">Sign in</a></div>
+                    <div class="text-muted mt-1">Already have account? <a href="login.jsp">Sign in</a></div>
                 </div>
                 <span id="showMsg"></span>
                 </form>

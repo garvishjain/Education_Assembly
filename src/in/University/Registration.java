@@ -19,10 +19,10 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
 /**
- * Servlet implementation class university
+ * Servlet implementation class Registration
  */
-@WebServlet("/university")
-public class university extends HttpServlet {
+@WebServlet("/Registration")
+public class Registration extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Connection con;
 	
@@ -162,7 +162,7 @@ public class university extends HttpServlet {
 			{
 				out.println("Data Not Found");
 			}
-			String sql="insert into university(u_registration,u_name,address,fk_country,fk_state,fk_city,fk_catagory,fk_type,email,establish_year,fk_contact_number,quota)value(?,?,?,?,?,?,?,?,?,?,?,?)";
+			String sql="insert into Registration(u_registration,u_name,address,fk_country,fk_state,fk_city,fk_catagory,fk_type,email,establish_year,fk_contact_number,quota)value(?,?,?,?,?,?,?,?,?,?,?,?)";
 			
 			stmt = con.prepareStatement(sql);
 			stmt.setString(1, ureg);
@@ -181,11 +181,13 @@ public class university extends HttpServlet {
 			int res = stmt.executeUpdate();
 			if(res>0 && res2>0)
 			{
-				out.println("<html><body><script>alert('Data Enter');</script></body></html>");
+				request.setAttribute("status","Successfully Registered");
+				response.sendRedirect("university/university-manager.jsp");
 			}
 			else
 			{
-				out.println("<html><body><script>alert('Some Thing Went Wrong');</script></body></html>");
+				request.setAttribute("status", "Failed to sign up...! please try again");
+				response.sendRedirect("university/university-register.jsp");
 			}
 			
 		} 
