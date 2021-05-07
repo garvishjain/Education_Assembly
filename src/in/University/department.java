@@ -23,6 +23,8 @@ public class department extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Connection con;
 	private PreparedStatement stmt;
+	private PreparedStatement stmt1;
+	private PreparedStatement stmt2;
 
 	public void init(ServletConfig config) throws ServletException {
 		try {
@@ -38,51 +40,46 @@ public class department extends HttpServlet {
 		}
 	}
 
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		try 
-		{
-			String department = request.getParameter("department")!= null ? request.getParameter("department") : "";
-			String headname = request.getParameter("headname")!= null ? request.getParameter("headname") : "";
-			String uname = request.getParameter("uname")!= null ? request.getParameter("uname") : "";
-			String phone = request.getParameter("phone")!= null ? request.getParameter("phone") : "";
-			String email = request.getParameter("email")!= null ? request.getParameter("email") : "";
-			String stdcapacity = request.getParameter("stdCapacity") !=null ? request.getParameter("stdCapacity") : "";
+		try {
+			String department = request.getParameter("department") != null ? request.getParameter("department") : "";
+			String headname = request.getParameter("headname") != null ? request.getParameter("headname") : "";
+			String uname = request.getParameter("uname") != null ? request.getParameter("uname") : "";
+			String phone = request.getParameter("phone") != null ? request.getParameter("phone") : "";
+			String email = request.getParameter("email") != null ? request.getParameter("email") : "";
+			String stdcapacity = request.getParameter("stdCapacity") != null ? request.getParameter("stdCapacity") : "";
 			int u_id = 123;
-			int dpartment=123;
-			
-			String sqll = "select pk_id from university where u_name = '" + uname + "' ";	
+			int dpartment = 12345;
+			// <--- foreign key convert start --->
+			String sqll = "select pk_id from university where u_name = '" + uname + "' ";
 			System.out.println(sqll);
-			stmt = con.prepareStatement(sqll);
-			
-			ResultSet rs=stmt.executeQuery(sqll);
-			if(rs.next())
-			{
+			stmt1 = con.prepareStatement(sqll);
+
+			ResultSet rs = stmt1.executeQuery(sqll);
+			if (rs.next()) {
 				u_id = rs.getInt(1);
-			}
-			else
-			{
-				request.setAttribute("status", "Failed to sign up...! please try again");
-				response.sendRedirect("university/department.jsp");
+			} else {
+
 				out.println("<body><html><script>alert('No Data Found');</script></html></body>");
 			}
-			String sql2="select pk_id from department_name where Details='"+department+"'";
-			PreparedStatement stmt = con.prepareStatement(sql2);
-			ResultSet rs2 = stmt.executeQuery(sql2);
-			if(rs2.next())
-			{
+			String sql2 = "select pk_id from department_name where Details='" + department + "'";
+			System.out.println(sql2);
+			stmt2 = con.prepareStatement(sql2);
+			ResultSet rs2 = stmt2.executeQuery(sql2);
+			if (rs2.next()) {
 				dpartment = rs.getInt(1);
-			}
-			else {
-				request.setAttribute("status", "Failed to sign up...! please try again");
-				response.sendRedirect("university/department.jsp");
+			} else {
+
 				out.println("<body><html><script>alert('No Data Found');</script></html></body>");
 			}
-			
-			
-			String sql="insert into department(fk_university_id,fk_department_name,hod_name,phone_no,email,std_capacity)value(?,?,?,?,?,?)";
-		
+			// <--- foreign key convert end --->
+
+			// <--- department data start--->
+			String sql = "insert into department(fk_university_id,fk_department_name,hod_name,phone_no,email,std_capacity)value(?,?,?,?,?,?)";
+
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, u_id);
 			stmt.setInt(2, dpartment);
@@ -90,23 +87,21 @@ public class department extends HttpServlet {
 			stmt.setString(4, phone);
 			stmt.setString(5, email);
 			stmt.setString(6, stdcapacity);
-			
+
 			int res = stmt.executeUpdate();
-			
-			if(res>0)
-			{
-				
+
+			if (res > 0) {
+
 				request.setAttribute("status", "succesfull login");
 				response.sendRedirect("university/department.jsp");
 				out.println("<body><html><script>alert('Data Insert');</script></html></body>");
-			}
-			else
-			{
-				
+			} else {
+
 				request.setAttribute("status", "Failed to sign up...! please try again");
 				response.sendRedirect("university/department.jsp");
 				out.println("<body><html><script>alert('Something went wrong');</script></html></body>");
 			}
+			// <--- department data end--->
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

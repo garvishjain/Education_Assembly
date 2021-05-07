@@ -620,7 +620,7 @@ Statement stmt=con.createStatement();
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
-                                        <label>Coures Duration</label>
+                                        <label>Courses Duration</label>
                                             <select type="text" name="duration" class="form-control" placeholder="Course Duration Months">
                                             	<option>---Course Duration Months---</option>
                                             	<%
@@ -659,17 +659,18 @@ Statement stmt=con.createStatement();
                                              <small id="fileHelp" class="form-text text-muted">Upload Course picture.</small>
                                          </div>
                                      </div>
-                                     <div class="col-sm-12">
+                                     <!-- <div class="col-sm-12">
                                          <div class="form-group">
                                              <textarea rows="4" class="form-control no-resize" placeholder="Brief"></textarea>
                                          </div>
-	                                 </div>
+	                                 </div> -->
                                      <div class="col-sm-12">
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                         <button type="submit" class="btn btn-outline-secondary btn-default">Cancel</button>
                                     </div>
-                    </div>
-                </div>
+	                    </div>
+	                </div>
+                </form>
             </div>
         </div>
          <%@ include file="inc/footer.jsp" %> 

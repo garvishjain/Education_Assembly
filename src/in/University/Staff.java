@@ -8,6 +8,7 @@ import java.sql.SQLException;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -21,12 +22,11 @@ import in.common.img;
  * Servlet implementation class Staff
  */
 @WebServlet("/Staff")
+@MultipartConfig
 public class Staff extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Connection con;
 	private PreparedStatement stmt;
-	private String filename;
-	private Part part;
 
 	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
@@ -48,10 +48,11 @@ public class Staff extends HttpServlet {
 			String position = request.getParameter("position");
 			String number = request.getParameter("number");
 			String email = request.getParameter("email");
+			Part part = request.getPart("image");
+			String filename = part.getSubmittedFileName();
 			
-			img image = new img();
-			String img = image.image(filename, part);
-			
+			img img = new img();
+			String image = img.image(filename, part);
 			
 			String sql="insert into university_staff(fname,lname,gender,designation,position,number,email,image)values(?,?,?,?,?,?,?,?)";
 		
@@ -65,7 +66,7 @@ public class Staff extends HttpServlet {
 			stmt.setString(5, position);
 			stmt.setString(6, number);
 			stmt.setString(7, email);
-			stmt.setString(8, img);
+			stmt.setString(8, image);
 			
 			int res = stmt.executeUpdate();
 			
