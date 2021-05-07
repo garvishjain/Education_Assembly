@@ -8,7 +8,7 @@
     <meta name="keywords" content="college, campus, university, courses, school, educational">
     <meta name="description" content="ATENA - College, University and campus template">
     <meta name="author" content="Ansonika">
-    <title>College, University and campus template</title>
+    <title>College, University and campus</title>
 
     <!-- Favicons-->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -94,10 +94,13 @@
 							</ul>    
                             <hr>
                              <a href="teacher_profile.html" class="button_outline">Profile</a>           
-                </div>
-            </div>
-            
-            <div class="col-md-4">
+							
+
+
+						</div>
+							</div>
+
+							<div class="col-md-4">
             	<div class="box_style_1">
                 	<p><img src="img/college/c_2.jpg" width="130px" height="130px;" alt="" ></p>
                                 <h4 style="font-size: 20px;">Prestige Institute Of Management Gwalior </h4>

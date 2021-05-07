@@ -28,6 +28,156 @@
       <script src="js/html5shiv.min.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
+    <style type="text/css">
+    .open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup form - hidden by default */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #223038;
+  z-index: 9;
+  margin: auto;
+    margin: 20px -13px 0px 16px;
+       height: 88.5%;
+    width: 99.8%;
+  background-color: #223038;
+ opacity: 0.9;
+  
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+}
+
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
+a.button, .button {
+    padding: 10px 30px;
+    display: inline-block;
+    float: right;
+    margin: 277px 343px 36px 24px;
+    background-color: #1cafec;
+    color: #fff;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-family: "proxima_novasemibold", Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    border: 0;
+    font-size: 14px;
+    outline: none;
+    margin-bottom: 20px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+#search {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+#search input[type="search"] {
+    position: absolute;
+    top: 50%;
+        width: 40%;
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0);
+    font-size: 35px;
+    line-height: 61px;
+    border: 0px;
+    margin: 0px;
+    margin-top: -51px;
+    padding-left: 30px;
+    padding-right: 30px;
+    outline: none;
+    background-color: white;
+    margin: -51px -14px 16px 245px;
+    text-align: center;
+}
+
+#search {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: silver;
+}
+
+    #search .button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin:auto;
+    margin-top: -13px;
+    margin-left: -85px
+
+}
+#search .close {
+       position: fixed;
+    margin: 98px 34px 6px 888px;
+    color: #fff;
+	outline:none;
+	opacity: 1;
+	padding: 10px;
+	font-size: 30px;
+	display:block;
+	    background-color: #223038;
+}
+    </style>
 
 </head>
 
@@ -381,9 +531,9 @@
         </div><!-- End bg_content -->
  
         
-	
+	<div>
 	<%@ include file="itc/footer.jsp" %>   
-    
+    </div>
 <!-- Login modal -->   
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myLogin" aria-hidden="true">
 		<div class="modal-dialog">
@@ -404,7 +554,7 @@
 		</div>
 	</div>  
     
-<!-- Register modal -->   
+<!-- <!-- Register modal 
 <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myRegister" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content modal-popup">
@@ -425,7 +575,7 @@
 			</div>
 		</div>
 	</div>
-    
+     -->
 <!-- Search modal -->   
 <div id="search">
     <button type="button" class="close">×</button>
@@ -434,6 +584,25 @@
         <button type="submit" class="button">Search</button>
     </form>
 </div>
+    
+    <div id="search">
+    <button type="button" class="close">×</button>
+    <form>
+        <input type="search" value="" placeholder="type keyword(s) here" >
+        <button type="submit" class="button">Search</button>
+    </form>
+</div>
+    <script type="text/javascript">
+    function openForm() {
+      document.getElementById("myForm").style.display = "block";
+    }
+
+    function closeForm() {
+      document.getElementById("myForm").style.display = "none";
+    }
+    </script>
+    
+    
     
 <!-- Common scripts -->
 <script src="js/jquery-1.11.2.min.js"></script>

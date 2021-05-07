@@ -1791,7 +1791,7 @@ input.form-control#email_newsletter:focus {
   border-color: #3f9ad6;
 }
 
-/*-------- 3.8 Search modal ------*/
+/* /*-------- 3.8 Search modal ------*/
 #search {
     position: fixed;
     top: 0px;
@@ -1820,13 +1820,13 @@ input.form-control#email_newsletter:focus {
 	transform: translate(0px, 0px) scale(1, 1); 
     opacity: 1;
 }
-#search input[type="search"] {
+ #search input[type="search"] {
     position: absolute;
     top: 50%;
-    width: 100%;
+    width: 40%;
     color: rgb(255, 255, 255);
     background: rgba(0, 0, 0, 0);
-    font-size: 40px;
+    font-size: 30px;
 	line-height:40px;
     border: 0px;
     margin: 0px;
@@ -1834,8 +1834,28 @@ input.form-control#email_newsletter:focus {
     padding-left: 30px;
     padding-right: 30px;
     outline: none;
+    background-color: white;
+    margin: -51px -14px 16px 245px;
 	text-align:center;
-}
+} 
+/*#search input[type="search"] {
+    position: absolute;
+    top: 50%;
+        width: 40%;
+    color: rgb(255, 255, 255);
+    background: rgba(0, 0, 0, 0);
+    font-size: 35px;
+    line-height: 61px;
+    border: 0px;
+    margin: 0px;
+    margin-top: -51px;
+    padding-left: 30px;
+    padding-right: 30px;
+    outline: none;
+    background-color: white;
+    margin: -51px -14px 16px 245px;
+    text-align: center;
+}*/
 #search .button {
     position: absolute;
     top: 50%;
@@ -1853,7 +1873,7 @@ input.form-control#email_newsletter:focus {
 	padding: 10px;
 	font-size: 30px;
 	display:block;
-}
+} */
 /*-------- 3.9 List styles ------*/
 ul.list_style_1 {
 	list-style:none;
