@@ -1,3 +1,27 @@
+<%@page import="in.common.GetName"%>
+<%@page import="in.common.GetConnection"%>
+<%@page import="in.common.hashed"%>
+<%
+	String status = request.getParameter("status");
+	if(status != null)
+	{
+		hashed gethash = new hashed();
+		if(status.equals(gethash.getHash("trueCBC")))
+		{
+			String sid = request.getParameter("sid");
+			
+			if(sid != null)
+			{
+				GetName name= new GetName();
+				name.getNameData("user", sid);
+				session.setAttribute("nameUser", name.getName());
+			}
+		}
+				
+	}
+			
+%>
+
 <!DOCTYPE html>
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
 <html>

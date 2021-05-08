@@ -2,31 +2,19 @@ package in.Student;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.sql.DataSource;
-import javax.xml.bind.DatatypeConverter;
-
-import com.sun.org.apache.bcel.internal.generic.RETURN;
 
 import in.common.GetConnection;
-
 import in.common.hashed;
 
 /**
@@ -34,6 +22,8 @@ import in.common.hashed;
  */
 @WebServlet("/St_Login")
 public class St_Login extends HttpServlet {
+	
+	HttpServletResponse res;
 	
 	private String username;
 	
@@ -62,7 +52,7 @@ public class St_Login extends HttpServlet {
 		{
 				GetConnection getConObj=new GetConnection();
 				 con=getConObj.getCon();
-					stmt=con.createStatement();
+				 stmt=con.createStatement();
 				//System.out.println("connectipon = "+con);
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
@@ -94,8 +84,13 @@ public class St_Login extends HttpServlet {
 						ResultSet rs = stmt.executeQuery(sql);
 						if (rs.next()) 
 						{
-						user = rs.getString("username");
-						 response.sendRedirect("student/home.jsp");
+							
+							
+							String id = gethash.getHash(String.valueOf(rs.getInt(1)));
+							
+							response.sendRedirect("student/home.jsp?sid="+id+"&status="+gethash.getHash("trueCBC"));
+							/*request.getRequestDispatcher("student/home.jsp").forward(request, response);*/
+							
 					   /* out.println("<html><body><script>alert('login');</script></body></html>");*/
 					   /* request.setAttribute("UserName",user);
 			            RequestDispatcher view = request.getRequestDispatcher("student/status.jsp");
@@ -116,6 +111,19 @@ public class St_Login extends HttpServlet {
 												}
 	
 }
+	
+	@Override
+	public void destroy() {
+		// TODO Auto-generated method stub
+		super.destroy();
+		try {
+			res.sendRedirect("student/home.jsp");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+	}
 		
 }
 	/*password hashing

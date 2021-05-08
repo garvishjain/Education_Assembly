@@ -1,3 +1,8 @@
+<%
+	String name=session.getAttribute("nameUser") != null ? (String)session.getAttribute("nameUser") : "";
+
+%>
+
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -105,16 +110,30 @@
                         <div class="col-md-4">
                             <h3>Pages</h3>
                             <ul>
+                                
                                 <li><a href="#" data-toggle="modal" data-target="#login">Login</a></li>
                                 <li><a href="register.jsp" >Register</a></li>
-                                <li><a href="tour.jsp">Tour</a></li>
                                
                             </ul>
                         </div>
                     </div><!-- End menu-wrapper -->
                     </li>
-                    <li><a href="tour.jsp">Tour</a></li>
-                    <li><a href="#" data-toggle="modal" data-target="#login">Login</a></li>
+                    
+                    <li><%
+                                	if(name.equals(""))
+                                	{
+                                %>
+                                
+                                		<li><a href="#" data-toggle="modal" data-target="#login">Login</a></li>
+                                		<%
+                                	}
+                                	else
+                                	{%>
+                                		<li><a href="logout.jsp">Logout</a></li>
+                                		<li><a>Welcome,<%=name %></a></li>
+                                		<%
+                                	}
+                                %></li>
                     <li><a href="#search" id="search_bt"><i class=" icon-search"></i><span>Search</span></a></li>
                 </ul>
             </div><!-- End main-menu -->
