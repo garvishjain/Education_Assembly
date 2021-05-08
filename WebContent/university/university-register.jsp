@@ -249,15 +249,6 @@ Statement stmt=con.createStatement();
 											</div>
 											<div class="col-md-6 col-sm-12">
 												<div class="form-group">
-													<label>Contact Number </label> <input class="form-control"
-														type="text" minlength="10" maxlength="11"
-														required="required" name="contact_num"
-														placeholder="Enter Number"
-														oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
-												</div>
-											</div>
-											<div class="col-md-6 col-sm-12">
-												<div class="form-group">
 													<label>Quota</label> <select class="form-control"
 														name="quota" required="required">
 														<option value="">---Please Select---</option>

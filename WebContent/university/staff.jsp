@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="icon" href="favicon.ico" type="image/x-icon"/>
-<title>:: Ericsson :: Staff</title>
+<title>:: Education Assembly :: Staff</title>
 
  <!-- Import package -->
 <%@page import="in.common.GetConnection"%>
@@ -824,12 +824,43 @@ Statement stmt=con.createStatement();
                                             <th>Number</th>
                                             <th>Designation</th>
                                             <th>Email</th>
-                                            <th>Joining Date</th>
-                                            <th></th>
+                                            <th>Position</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <%
+                                    try {
+										String query = "select * from university_staff";
+										//get Table data
+										ResultSet rs = stmt.executeQuery(query);
+										while (rs.next()) {
+                                    %>
+                                    	<tr>
+                                            <td class="w60">
+                                                <img class="avatar" src="../Education_Assembly/WebContent/university/img/<%=rs.getString("image") %>" alt="">
+                                            </td>
+                                            <td><div class="font-15"><%=rs.getString("fname").toUpperCase()+" "+rs.getString("lname").toUpperCase() %></div></td>
+                                             <%-- <td><div class="font-15"><%
+                                            String str=rs.getString("fname")+" "+rs.getString("lname");
+                                            str.substring(0, 1).toUpperCase()+str.substring(1); %>
+                                           </div></td> --%>
+                                            <td><span><%=rs.getString("number") %></span></td>
+                                            <td><span class="text-muted"><%=rs.getString("designation") %></span></td>
+                                            <td><%=rs.getString("email") %></td>
+                                            <td><span class="tag tag-success"><%=rs.getString("position") %></span></td>
+                                            <td>
+                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
+                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
+                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+                                            </td>
+                                        </tr>
+                                        <%
+                                        	}
+                                        	} catch (Exception e) {
+                                        		e.printStackTrace();
+                                        	}
+                                        %>
                                         <tr>
                                             <td class="w60">
                                                 <img class="avatar" src="../assets/images/xs/avatar3.jpg" alt="">
@@ -896,118 +927,6 @@ Statement stmt=con.createStatement();
                                                 <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td class="w60">
-                                                <img class="avatar" src="../assets/images/xs/avatar1.jpg" alt="">
-                                            </td>
-                                            <td><div class="font-15">Alan Johnson</div></td>
-                                            <td><span>(417) 646-8377</span></td>
-                                            <td><span class="text-muted">Librarian</span></td>
-                                            <td>kenh@gmail.com</td>
-                                            <td><strong>04 Jan, 2019</strong></td>
-                                            <td><span class="tag tag-warning">Part-time</span></td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="w60">
-                                                <img class="avatar" src="../assets/images/xs/avatar2.jpg" alt="">
-                                            </td>
-                                            <td><div class="font-15">James A Johnson</div></td>
-                                            <td><span>(417) 646-1636</span></td>
-                                            <td><span class="text-muted">Librarian</span></td>
-                                            <td>johnson@gmail.com</td>
-                                            <td><strong>04 Jan, 2019</strong></td>
-                                            <td><span class="tag tag-success">Full-time</span></td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="w60">
-                                                <img class="avatar" src="../assets/images/xs/avatar7.jpg" alt="">
-                                            </td>
-                                            <td><div class="font-15">Gladys J Smith</div></td>
-                                            <td><span>(417) 646-9207</span></td>
-                                            <td><span class="text-muted">Driver</span></td>
-                                            <td>Gladys@info.com</td>
-                                            <td><strong>04 Jan, 2019</strong></td>
-                                            <td><span class="tag tag-warning">Part-time</span></td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="w60">
-                                                <img class="avatar" src="../assets/images/xs/avatar8.jpg" alt="">
-                                            </td>
-                                            <td><div class="font-15">Danny M Johnson</div></td>
-                                            <td><span>(417) 646-8377</span></td>
-                                            <td><span class="text-muted">Driver</span></td>
-                                            <td>Danny@info.com</td>
-                                            <td><strong>04 Jan, 2019</strong></td>
-                                            <td><span class="tag tag-success">Full-time</span></td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="w60">
-                                                <img class="avatar" src="../assets/images/xs/avatar9.jpg" alt="">
-                                            </td>
-                                            <td><div class="font-15">Patricia Smith</div></td>
-                                            <td><span>(417) 646-8377</span></td>
-                                            <td><span class="text-muted">Purchase Officer</span></td>
-                                            <td>Patricia@info.com</td>
-                                            <td><strong>04 Jan, 2019</strong></td>
-                                            <td><span class="tag tag-warning">Part-time</span></td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="w60">
-                                                <img class="avatar" src="../assets/images/xs/avatar10.jpg" alt="">
-                                            </td>
-                                            <td><div class="font-15">Gladys J Smith</div></td>
-                                            <td><span>(417) 646-9207</span></td>
-                                            <td><span class="text-muted">Librarian</span></td>
-                                            <td>Gladys@info.com</td>
-                                            <td><strong>04 Jan, 2019</strong></td>
-                                            <td><span class="tag tag-success">Full-time</span></td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td class="w60">
-                                                <img class="avatar" src="../assets/images/xs/avatar6.jpg" alt="">
-                                            </td>
-                                            <td><div class="font-15">Gerald K Smith</div></td>
-                                            <td><span>(417) 646-8377</span></td>
-                                            <td><span class="text-muted">Lab Assistent</span></td>
-                                            <td>Smith@info.com</td>
-                                            <td><strong>04 Jan, 2019</strong></td>
-                                            <td><span class="tag tag-success">Full-time</span></td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
-                                        </tr>
                                     </tbody>
                                 </table>
                             </div>
@@ -1024,6 +943,7 @@ Statement stmt=con.createStatement();
                                             <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
                                         </div>
                                     </div>
+                                    <form action="../Staff" method="post" enctype="multipart/form-data">
                                     <div class="card-body">
                                         <div class="row clearfix">
                                             <div class="col-md-6 col-sm-12">
@@ -1040,10 +960,10 @@ Statement stmt=con.createStatement();
                                             </div>
                                             <div class="col-md-6 col-sm-12">
                                                 <label>Gender</label>
-                                                <select name="gender" class="form-control show-tick">
+                                               <select name="gender" class="form-control show-tick">
                                                     <option value="">-- Gender --</option>
-                                                    <option value="10">Male</option>
-                                                    <option value="20">Female</option>
+                                                    <option value="Male">Male</option>
+                                                    <option value="Female">Female</option>
                                                 </select>
                                             </div>
                                             <div class="col-md-6 col-sm-12">
@@ -1114,6 +1034,7 @@ Statement stmt=con.createStatement();
                                             </div>
                                         </div>
                                     </div>
+                                    </form>
                                 </div>
                             </div>
                         </div>

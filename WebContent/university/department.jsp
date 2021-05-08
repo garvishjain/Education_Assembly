@@ -54,9 +54,9 @@ Statement stmt=con.createStatement();
 									%>
                                     <tr>
 	                                    <td><%=rs.getInt("pk_id")%></td>
-	                                    <td><%=rs.getString("department_name") %></td>
+	                                    <td><%=rs.getString("fk_department_name") %></td>
 	                                    <td><%=rs.getString("hod_name") %></td>
-	                                    <td><%=rs.getString("phone_number") %></td>
+	                                    <td><%=rs.getString("phone_no") %></td>
 	                                    <td><%=rs.getString("email") %></td>
 	                                    <td><%=rs.getString("std_capacity") %></td>
 	                                    <td>

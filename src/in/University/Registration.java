@@ -26,11 +26,8 @@ public class Registration extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Connection con;
 	
-	private PreparedStatement stmt2;
 	private PreparedStatement stmt;
-	private PreparedStatement stmt3;
-	private int pk;
-	private int rt, rt4,rt5,rt6;
+	
 	
 
 	public void init(ServletConfig config) throws ServletException {
@@ -58,6 +55,7 @@ public class Registration extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		
+		
 		try 
 		{
 			String ureg = request.getParameter("ureg")!= null ? request.getParameter("ureg") : "";
@@ -70,29 +68,30 @@ public class Registration extends HttpServlet {
 			String utype = request.getParameter("utype")!= null ? request.getParameter("utype") : "";
 			String uemail = request.getParameter("uemail")!= null ? request.getParameter("uemail") : "";
 			String year = request.getParameter("year")!= null ? request.getParameter("year") : "";
-			/*String contact = request.getParameter("contact")!= null ? request.getParameter("contact") : "";*/
 			String quota = request.getParameter("quota")!= null ? request.getParameter("quota") : "";
-			
-			
+			int pk = 12;
+			int rt = 123, rt4 = 1234,rt5 = 12345,rt6 = 123456;
+//			<--- university contact start --->
 			String regname = request.getParameter("regname")!= null ? request.getParameter("regname") : "";
 			String contactname = request.getParameter("contact_name")!= null ? request.getParameter("contact_name") : "";
 			String contactnum = request.getParameter("contact_num")!= null ? request.getParameter("contact_num") : "";
 			String designation = request.getParameter("designation")!= null ? request.getParameter("designation") : "";
-			
-			
+
 			String sql2="insert into university_contact(registrar_name,contact_name,contact_number,designation)value(?,?,?,?)";
-			stmt2 = con.prepareStatement(sql2);
-			stmt2.setString(1, regname);
-			stmt2.setString(2, contactname);
-			stmt2.setString(3, contactnum);
-			stmt2.setString(4, designation);
+			stmt = con.prepareStatement(sql2);
+			stmt.setString(1, regname);
+			stmt.setString(2, contactname);
+			stmt.setString(3, contactnum);
+			stmt.setString(4, designation);
 			
-			int res2 = stmt2.executeUpdate();
+			int res2 = stmt.executeUpdate();
+//			<--- university contact end --->
 			
-			String sqll="select pk_id from university_contact where contact_number='"+contactname+"' ";
+//			<--- foreign key convert start --->
+			String sqll="select pk_id from university_contact where contact_number='"+contactnum+"' ";
 			System.out.println(sqll);
-			stmt3 = con.prepareStatement(sqll);
-			ResultSet rs = stmt3.executeQuery(sqll);
+			stmt = con.prepareStatement(sqll);
+			ResultSet rs = stmt.executeQuery(sqll);
 			if(rs.next())
 			{
 				pk = rs.getInt(1);
@@ -103,8 +102,8 @@ public class Registration extends HttpServlet {
 			}
 			String sqll2="select pk_id from country where country_name='"+cntry+"' ";
 			System.out.println(sqll2);
-			stmt3 = con.prepareStatement(sqll2);
-			ResultSet rs2 = stmt3.executeQuery(sqll2);
+			stmt = con.prepareStatement(sqll2);
+			ResultSet rs2 = stmt.executeQuery(sqll2);
 			if(rs2.next())
 			{
 				rt = rs2.getInt(1);
@@ -115,8 +114,8 @@ public class Registration extends HttpServlet {
 			}
 			String sqll3="select pk_id from state where state_name='"+state+"' ";
 			System.out.println(sqll3);
-			stmt3 = con.prepareStatement(sqll3);
-			ResultSet rs3 = stmt3.executeQuery(sqll3);
+			stmt = con.prepareStatement(sqll3);
+			ResultSet rs3 = stmt.executeQuery(sqll3);
 			int fk_state_id =0;
 			if(rs3.next())
 			{
@@ -128,8 +127,8 @@ public class Registration extends HttpServlet {
 			}
 			String sqll4="select pk_id from city where city_name='"+city+"' ";
 			System.out.println(sqll4);
-			stmt3 = con.prepareStatement(sqll4);
-			ResultSet rs4 = stmt3.executeQuery(sqll4);
+			stmt = con.prepareStatement(sqll4);
+			ResultSet rs4 = stmt.executeQuery(sqll4);
 			if(rs4.next())
 			{
 				rt4 = rs4.getInt(1);
@@ -140,8 +139,8 @@ public class Registration extends HttpServlet {
 			}
 			String sqll5="select pk_id from category where details='"+uctgry+"' ";
 			System.out.println(sqll5);
-			stmt3 = con.prepareStatement(sqll5);
-			ResultSet rs5 = stmt3.executeQuery(sqll5);
+			stmt = con.prepareStatement(sqll5);
+			ResultSet rs5 = stmt.executeQuery(sqll5);
 			if(rs5.next())
 			{
 				rt5 = rs5.getInt(1);
@@ -152,8 +151,8 @@ public class Registration extends HttpServlet {
 			}
 			String sqll6="select pk_id from type where details='"+utype+"' ";
 			System.out.println(sqll6);
-			stmt3 = con.prepareStatement(sqll6);
-			ResultSet rs6 = stmt3.executeQuery(sqll6);
+			stmt = con.prepareStatement(sqll6);
+			ResultSet rs6 = stmt.executeQuery(sqll6);
 			if(rs6.next())
 			{
 				rt6 = rs6.getInt(1);
@@ -162,7 +161,10 @@ public class Registration extends HttpServlet {
 			{
 				out.println("Data Not Found");
 			}
-			String sql="insert into Registration(u_registration,u_name,address,fk_country,fk_state,fk_city,fk_catagory,fk_type,email,establish_year,fk_contact_number,quota)value(?,?,?,?,?,?,?,?,?,?,?,?)";
+//			<--- foreign key convert end --->			
+			
+//			<--- university register start --->
+			String sql="insert into university(u_registration,u_name,address,fk_country,fk_state,fk_city,fk_category,fk_type,email,establish_year,fk_contact_number,quota)value(?,?,?,?,?,?,?,?,?,?,?,?)";
 			
 			stmt = con.prepareStatement(sql);
 			stmt.setString(1, ureg);
@@ -191,6 +193,7 @@ public class Registration extends HttpServlet {
 			}
 			
 		} 
+//		<--- university register end --->
 		catch (SQLException e) 
 		{
 			// TODO Auto-generated catch block
