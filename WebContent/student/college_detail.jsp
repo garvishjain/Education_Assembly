@@ -63,13 +63,7 @@
     /* padding: 0px 0px 0px 0; */
     
 }
-.mca_de{    margin: -20px 0px 0px -31px;
-    padding: 3px 0px 0px 86px;
-    color: white;
-    background: black;
-    width: 82.6%;
-    height: 42px;
-}
+
 </style>
 <script>
     $(document).ready(function(){
@@ -86,29 +80,7 @@
         });
     });
 </script>
-<script type="text/javascript">
 
-function btech() {
-	document.getElementById('mca').style.display = "none";
-	document.getElementById('btech').style.display = "block";
-	document.getElementById('mtech').style.display = "none";
-	
-}
-
-function mca() {
-	document.getElementById('mca').style.display = "block";
-	document.getElementById('btech').style.display = "none";
-	document.getElementById('mtech').style.display = "none";
-	
-}
-function mtech() {
-	document.getElementById('btech').style.display = "none";
-	document.getElementById('mtech').style.display = "block";
-	document.getElementById('mca').style.display = "none";
-	
-}
-
-</script>
 
 
 </head>
@@ -542,34 +514,85 @@ function mtech() {
     </div>
     </div>
 </fieldset>
-					
-					
-					
-<!--  seven fieldset -->					
+			
+<!-- fifth Fieldset -->		
+					<!--  placement fieldset -->
 <fieldset id="five" style="display: none;">
-        	<div class="part_1">
-					<div class="city">
-						<ul class="courseList" id="course-list">
-							<p class="pro"> <a style="color: black;text-align: center;margin: 120px 0px 0px 30px;">COURSE</a> </p> <hr style="width: 125%;">
-							<a class="cour" href="#btech" onclick="btech()">B.Tech</a> <hr>
-							<a class="cour" href="#barch" onclick="barch()">B.Arch</a> <hr>
-							<a class="cour" href="#mtech" onclick="mtech()">M.Tech</a> <hr>
-							<!-- <a class="cour" href="#mplan" >M.Plan</a>
-							<hr> -->
-							<a class="cour" href="#mca" onclick="mca()">MCA</a> <hr>
-							<a class="cour"href="#phd" onclick="phd()">PhD</a>
-						</ul>
+					<div class="part_1">
+							<div class="city_six">
+									<ul class="courseList" id="course-list">
+										<p class="pro"> <a style="color: black;text-align: center;margin: 120px 0px 0px 30px;">Programmes</a></p><hr class="line">
+										<a class="cour"  onclick="be()">B.Tech</a> <hr class="line">
+										<a class="cour"  onclick="me()">M.Tech</a> <hr class="line">
+										<a class="cour"  onclick="mca()">MCA</a>
+									</ul>
+							</div>
 					</div>
-		 </div>
-					
-<!-- courses div -->
-
-<div class="container_gray_b">
+					<!-- courses div -->
+<div class="container_gray_h">
 	<div class="container margin_60">
-		<fieldset id="mca" style="display: block;">
+							
+			<fieldset id="be" style="display: block;">
+						<div class="row staff">
+												<h2 class="mca_de">B.TECH Faculty</h2>
+												<h2 class="civil">Department of Civil Engineering</h2>
+												<div class="col-md-4">
+													<div class="box_style">
+														<p>
+															<img src="img/faculty/civilimage003.jpg" alt=""
+																class="img-circle styl" width="150" height="150">
+														</p>
+														<br>
+														<h4 class="faculty_name">DR. MANOJ TRIVEDI</h4>
+														<h5>Professor & Head</h5>
+														<h5>Regular (D.O.J.-01.07.92)</h5>
+														<h5>Ph.D.IIT Roorkee</h5>
+														<hr class="staff_line">
+														<h4>Area of Interest :</h4>
+														<br>
+														<h4 class="staff_detail">&nbsp; Water Resource Engg.,
+															Soil Water Transportation</h4>
+														<h4 class="staff_email">
+															<br>E-Mail : <br>&nbsp;manojtrivedi@mitsgwalior.in
+															<br>
+														</h4>
+														<h4 class="staff_number">
+															<br>Contact : <br>&nbsp;0751-4048220751
+														</h4>
+														<hr class="staff_line">
+														<ul class="social_team">
+															<li><a
+																href="https://www.linkedin.com/in/dr-manoj-trivedi-7049791a3/ "
+																target="_blank" title="Linkedin"><i
+																	class="icon-linkedin"></i></a></li>
+															<li><a href="#" title="Twitter"><i
+																	class="icon-twitter"></i></a></li>
+															<li><a
+																href="https://scholar.google.co.in/citations?user=QGCQGxMAAAAJ&hl=en&oi=sra "
+																target="_blank" title="Google Scholar"><i
+																	class="icon-google"></i></a></li>
+															<li><a
+																href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRqhSMCxMLnTJLNKfzwzlSCgxWTSNkqmNZbHSXtZRPmtTSvcWfWgXTcBNwpSTjZjdcChwfB"
+																title="E-mail" target="_blank"><i class="icon-email"></i></a></li>
+														</ul>
+													</div>
+												</div>
+<!-- Second STAff LIST -->
+					
+		</div><!-- End ROW STaff -->
+		</fieldset>
+								
 				
-<!-- 	First STAff LIST			 -->
-			<div class="row staff">
+	<!-- Recruiters Field Start -->					
+<fieldset id="me" style="display: none;">
+														
+													
+				</fieldset>
+
+<!--  Record Table STart -->	
+				<fieldset id="mca" style="display: none;">
+														<div class="row staff">
+								
 										<h2 class="mca_de">MCA Faculty</h2>
 					 					<div class="col-md-4">
 											<div class="box_style">
@@ -644,200 +667,25 @@ function mtech() {
 														title="E-mail" target="_blank"><i class="icon-email"></i></a></li>
 												</ul>
 											</div>
-										</div>
-
-
-</div>
-<!-- End row -->
-
-</fieldset>
-
-<!--  Btech FAculty List -->
-<fieldset id="btech" style="display: none;">
-				
-<!-- 	First STAff LIST			 -->
-			<div class="row staff">
-												<h2 class="mca_de">B.TECH Faculty</h2>
-												<h2 class="civil">Department of Civil Engineering</h2>
-												<div class="col-md-4">
-													<div class="box_style">
-														<p>
-															<img src="img/faculty/civilimage003.jpg" alt=""
-																class="img-circle styl" width="150" height="150">
-														</p>
-														<br>
-														<h4 class="faculty_name">DR. MANOJ TRIVEDI</h4>
-														<h5>Professor & Head</h5>
-														<h5>Regular (D.O.J.-01.07.92)</h5>
-														<h5>Ph.D.IIT Roorkee</h5>
-														<hr class="staff_line">
-														<h4>Area of Interest :</h4>
-														<br>
-														<h4 class="staff_detail">&nbsp; Water Resource Engg.,
-															Soil Water Transportation</h4>
-														<h4 class="staff_email">
-															<br>E-Mail : <br>&nbsp;manojtrivedi@mitsgwalior.in
-															<br>
-														</h4>
-														<h4 class="staff_number">
-															<br>Contact : <br>&nbsp;0751-4048220751
-														</h4>
-														<hr class="staff_line">
-														<ul class="social_team">
-															<li><a
-																href="https://www.linkedin.com/in/dr-manoj-trivedi-7049791a3/ "
-																target="_blank" title="Linkedin"><i
-																	class="icon-linkedin"></i></a></li>
-															<li><a href="#" title="Twitter"><i
-																	class="icon-twitter"></i></a></li>
-															<li><a
-																href="https://scholar.google.co.in/citations?user=QGCQGxMAAAAJ&hl=en&oi=sra "
-																target="_blank" title="Google Scholar"><i
-																	class="icon-google"></i></a></li>
-															<li><a
-																href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRqhSMCxMLnTJLNKfzwzlSCgxWTSNkqmNZbHSXtZRPmtTSvcWfWgXTcBNwpSTjZjdcChwfB"
-																title="E-mail" target="_blank"><i class="icon-email"></i></a></li>
-														</ul>
-													</div>
-												</div>
-<!-- Second STAff LIST -->
-					
-		</div><!-- End ROW STaff -->
-<!-- Third STAff LIST -->
-
-
-
-</fieldset>
-</div>
-</div>
-									
-<!-- <fieldset id="five" style="display: none;">
-					<div class="part_1">
-							<div class="city_six">
-									<ul class="courseList" id="course-list">
-										<p class="pro"> <a style="color: black;text-align: center;margin: 120px 0px 0px 30px;">COURSE</a></p><hr class="line">
-										<a class="cour" href="#btech" onclick="btech()">B.Tech</a> <hr>
-										<a class="cour" href="#barch" onclick="barch()">B.Arch</a> <hr>
-										<a class="cour" href="#mtech" onclick="mtech()">M.Tech</a> <hr>
-										<a class="cour" href="#mca" onclick="mca()">MC</a> <hr>
-										<a class="cour"href="#phd" onclick="phd()">PhD</a>
-									</ul>
-							</div>
 					</div>
-					courses div
+<!-- End row -->
 					
-					
-<div class="container_gray_h">
-	<div class="container margin_60">
-			<fieldset id="btech" style="display: block;">
-						<div class="row staff">
-										<h2 class="mca_de">B.TECH Faculty</h2>
-										<h2 class="civil">Department of Civil Engineering</h2>
-								<div class="col-md-4">
-									<div class="box_style">
-											<p><img src="img/faculty/civilimage003.jpg" alt="" class="img-circle styl" width="150" height="150">
-											</p><br>
-											<h4 class="faculty_name">DR. MANOJ TRIVEDI</h4>
-											<h5>Professor & Head</h5>
-											<h5>Regular (D.O.J.-01.07.92)</h5>
-											<h5>Ph.D.IIT Roorkee</h5> <hr class="staff_line">
-											<h4>Area of Interest :</h4> <br>
-											<h4 class="staff_detail">&nbsp; Water Resource Engg., Soil Water Transportation</h4>
-											<h4 class="staff_email"> <br>E-Mail : <br>&nbsp;manojtrivedi@mitsgwalior.in <br> </h4>
-											<h4 class="staff_number"> <br>Contact : <br>&nbsp;0751-4048220751 </h4> <hr class="staff_line">
-											<ul class="social_team">
-													<li>  <a href="https://www.linkedin.com/in/dr-manoj-trivedi-7049791a3/ " target="_blank" title="Linkedin"><i
-																	class="icon-linkedin"></i></a></li>
-													<li><a href="#" title="Twitter"><i class="icon-twitter"></i></a></li>
-													<li><a href="https://scholar.google.co.in/citations?user=QGCQGxMAAAAJ&hl=en&oi=sra "
-																target="_blank" title="Google Scholar"><i class="icon-google"></i></a></li>
-													 <li><a href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRqhSMCxMLnTJLNKfzwzlSCgxWTSNkqmNZbHSXtZRPmtTSvcWfWgXTcBNwpSTjZjdcChwfB"
-																title="E-mail" target="_blank"><i class="icon-email"></i></a></li>
-											</ul>
-								</div>
-							</div>
-		</div>
-</fieldset>End Btech Fieldset
-								
-				
-	mca Field Start						
-<fieldset id="mca" style="display: none;">
-			<div recruite_heading>
-								<h2 class="mca_de">MCA Faculty</h2>
-					 					<div class="col-md-4">
-											<div class="box_style">
-												<p> <img src="img/faculty/Rs-Jadon.jpg" alt="" class="img-circle styl" width="150" height="150"> </p> <br>
-												<h4 class="faculty_name">DR. R.S. JADON</h4>
-												<h5>Professor</h5>
-												<h5>Ph.D.</h5> <hr class="staff_line">
-												<h4>Area of Interest :</h4> <br>
-												<h4 class="staff_detail">&nbsp; Computer Vision & Image &nbsp;&nbsp;Processing</h4>
-												<h4 class="staff_email"> <br>E-Mail : <br>&nbsp;rsjadon@mitsgwalior.in<br> </h4>
-												<h4 class="staff_number"> <br>Contact : <br>&nbsp;0751-4048220751 </h4> <hr class="staff_line">
-												<ul class="social_team">
-													<li><a href="https://www.linkedin.com/in/dr-r-s-jadon-79b89816/?originalSubdomain=in " target="_blank" title="Linkedin"><i
-															class="icon-linkedin"></i></a></li>
-													<li><a href="#" title="Twitter"><i class="icon-twitter"></i></a></li>
-													<li><a href="https://scholar.google.com/citations?user=OTp6_fsAAAAJ&hl=en&oi=sra" target="_blank" title="Google Scholar"><i
-															class="icon-google"></i></a></li>
-													<li><a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSMTtdNhFNbTkGgPSbHdPdGBLhkxbQVSVLrGrbNsGcBBGLfdPDZRgKBTlXltPzdtstwScRQV"
-														title="E-mail" target="_blank"><i class="icon-email"></i></a></li>
-												</ul>
-											</div>
-									</div>
-									
-
-						<div class="col-md-4">
-								<div class="box_style">
-												<p> <img src="img/faculty/anshumca.jpeg" alt="" class="img-circle styl" width="150" height="150"> </p> <br>
-												<h4 class="faculty_name">DR. ANSHU CHATURVEDI</h4>
-												<h5>Professor</h5>
-												<h5>Ph.D.</h5> <hr class="staff_line">
-												<h4>Area of Interest :</h4> <br>
-												<h4 class="staff_detail">&nbsp; Adhoc Networks</h4>
-												<h4 class="staff_email"> <br>E-Mail : <br>&nbsp;anshu_chaturvedi@mitsgwalior.in<br> </h4>
-												<h4 class="staff_number"> <br>Contact : <br>&nbsp;0751-2340557 </h4>
-												<hr class="staff_line">
-												<ul class="social_team">
-													<li><a href="https://www.linkedin.com/in/dr-anshu-chaturvedi-6548463/?originalSubdomain=in  " target="_blank" title="Linkedin"><i
-															class="icon-linkedin"></i></a></li>
-													<li><a href="#" title="Twitter"><i class="icon-twitter"></i></a></li>
-													<li><a href="https://scholar.google.com/citations?user=OYJ5QoQAAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar"><i
-															class="icon-google"></i></a></li>
-													<li><a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDbFbLNTRpSmvQRHTxqxpjpglBzTmNgJNnzwJrrBjKWXsGFqbXfLFSCMWjxBrGgFwcJKbbg"
-														title="E-mail" target="_blank"><i class="icon-email"></i></a></li>
-												</ul>
-								</div>
-						</div>
-					
-					
-					
-		</div>
-</fieldset> -->
-
-<!--  Record Table STart -->	
-				<!-- <fieldset id="records" style="display: none;">
-														<h1 class="record_heading" >Placement Record</h1>
-														<img alt="" src="img/company_image/placemnt2021.jpg"><br>
-														<img alt="" src="img/company_image/plac2021.jpg">
+												
+				</div>
 				</fieldset>
     </div>
     </div>
-</fieldset> -->
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
-							
-<!--  eight fieldset -->			
+</fieldset>
 					
-					<fieldset id="six" style="display: none;">	
+
+
+
+									
+						
+							
+<!--  sixfieldset -->			
+					
+<fieldset id="six" style="display: none;">	
 				<div class="container margin_60">
 		<section class="grid">
 			<div class="row">

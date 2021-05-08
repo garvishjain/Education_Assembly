@@ -76,36 +76,21 @@
 	
 	
 	
-	function btech() {
+
+	function be() {
+		document.getElementById('be').style.display = "block";
+		document.getElementById('me').style.display = "none";
 		document.getElementById('mca').style.display = "none";
-		document.getElementById('btech').style.display = "block";
-		document.getElementById('mtech').style.display = "none";
 		
 	}
-	
+	function me() {
+		document.getElementById('be').style.display = "none";
+		document.getElementById('me').style.display = "block";
+		document.getElementById('mca').style.display = "none";
+	}
 	function mca() {
+		document.getElementById('be').style.display = "none";
+		document.getElementById('me').style.display = "none";
 		document.getElementById('mca').style.display = "block";
-		document.getElementById('btech').style.display = "none";
-		document.getElementById('mtech').style.display = "none";
 		
 	}
-	function mtech() {
-		document.getElementById('btech').style.display = "none";
-		document.getElementById('mtech').style.display = "block";
-		document.getElementById('mca').style.display = "none";
-		
-	}
-	
-	function phd() {
-		document.getElementById('recruiters').style.display = "none";
-		document.getElementById('records').style.display = "block";
-		document.getElementById('placements').style.display = "none";
-		
-	}
-	function barch() {
-		document.getElementById('recruiters').style.display = "none";
-		document.getElementById('records').style.display = "block";
-		document.getElementById('placements').style.display = "none";
-		
-	}
-	
