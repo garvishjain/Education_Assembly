@@ -19,6 +19,8 @@
 
     <!-- BASE CSS -->
     <link href="css/base.css" rel="stylesheet">
+    <link href="css/custom/college_detail.css" rel="stylesheet">
+    <script type="text/javascript" src="css/custom/college_Detail.js"></script>
     
     <!-- SPECIFIC CSS -->
     <link href="css/skins/square/blue.css" rel="stylesheet">
@@ -29,280 +31,85 @@
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
 <script	src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-<!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.min.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
-    <!-- File Import -->
 
-<style type="text/css">
-p {
-	display: inline;
-	size: 120px;
-	text-align: center;
-	font-size: 16px;
-	padding: 1px 2px;
-}
 
-label {
-	font-size: 18px;
-}
 
-body {
-	margin: 20px;
-}
-
-#topheader .navbar-nav li>a {
-	text-transform: capitalize;
-	color: #333;
-	-webkit-transition: background-color .2s, color .2s;
-	transition: background-color .2s, color .2s;
-}
-
-#topheader .navbar-nav li>a:hover, #topheader .navbar-nav li>a:focus {
-	background-color: #005596;
-	color: #fff;
-}
-
-#topheader .navbar-nav li.active>a {
-	background-color: #3990E0;
-	color: white;
-}
-
-.sub_header.bg_g {
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> -->
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+    .bs-example{
+        border: 1.5px solid #121111;
+    width: 1000px;
+    margin: 19px 0px 0px 86px;
+    padding: 28px 27px 45px 33px;
+    }
+    .accordion .fa{
+        margin-right: 0.5rem;
+}  
+        .sub_header.bg_g {
 	background-image: url(img/changes/mits1.jpg);
 	margin-top: 70px;
 }
 
-img {
-	vertical-align: middle;
-	margin: 255px 0px 0px -242px;
-}
-
-.heading {
-	font-size: 10px;
-	color: #223038;
-}
-
-.sub_header.bg_g h1 {
-	font-size: 20px;
-	color: #1e26e2;
-	margin: 82px -18px -71px -204px;
-	padding: 17px 45px 0px 35px;
-	background-color: #8e4b4b;
-}
-
-.navbar {
-	border-radius: 4px;
-	margin-top: 10px;
-	position: fixed;
-}
-
-.container-fluid>.navbar-collapse, .container-fluid>.navbar-header,
-	.container>.navbar-collapse, .container>.navbar-header {
-	margin-right: 0;
-	margin-left: 0;
-	background-color: silver;
-	position: fixed;
-}
-
-#topheader .navbar-nav li>a {
-	text-transform: capitalize;
-	color: white;
-	font-size: 15px;
-	font-weight: bold;
-	background-color: #223038;
-	-webkit-transition: background-color .2s, color .2s;
-	transition: background-color .2s, color .2s;
-	width: 160px;
-	text-align: center;
-	margin: 0px 0px 0px 47px;
-	padding: 18px 3px 20px 0px;
-	text-align: center;
-}
-
-#topheader .navbar-nav li.active>a {
-	background-color: silver;
-	color: black;
-	font-size: 15px;
-	text-align: center;
-}
-
-.navbar-default .navbar-collapse, .navbar-default .navbar-form {
-	border-color: #5f2424;
-	background-color: #223038;
-}
-
-#topheader .navbar-nav li>a:hover, #topheader .navbar-nav li>a:focus {
-	background-color: silver;
-	color: black;
-	text-align: center;
-}
-
-.container-flui {
-	padding-right: 5px;
-	padding-left: 0px;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-.city {
-	background-color: white;
-	color: white;
-	border: 2px solid #a7a2a2;
-	width: 200px;
-	height: 350px;
-	margin: 30px 0px 61px -17px;
-	padding: 0px 0px 0px 0px;
-}
-.col-md-4 {
-    width: 30%;
-}
-.cour {
-	color: black;
-	margin-left: -20px;
-}
-
-.cour:hover {
-	color: blue;
-}
-
-.pro {
-	font-size: 20px;
-	text-align: center;
-	margin-left: -30px;
-}
-
-hr {
-	margin-left: -40px;
-}
-
-.declare {
-	border: 2px solid black;
-	width: 90%;
-	height: 90%;
-}
-
-.city, .declare {
-	
-}
-
-.first_head {
-	border: 2px solid gray;
-	width: 80%;
-	height: 714px;
-    margin: 0px 0px 65px 125px;
-	padding : 30px 20px 20px 30px;
-	
-}
-
-h3 {
-	margin: 0px 0px 0px 20px;
-	text-decoration: underline;
-}
-
-img {
-	margin: auto;
-	margin: 20px 0px 0px 10px;
-	float: left;
-}
-
-.paragraph {
-	font-size: 17px;
-	margin: 20px 0px 0px 20px;
-}
-.p1{margin:0px 0px 0px 0px;
-padding: 0px 0px 0px 0px;}
-
-.part_1{width: 50px;margin: 0px 0px 0px 0px;}
-.container_gray_bg {
-    background-color: #f3f5f8;
-    width: 885px;
-    height:1200px;
-    
-    margin: -412px 0px 20px 224px;
-}
-.staff .box_style_1 {
+    .staff .box_style{
     text-align: center;
     cursor: auto;
-        width: 89%;
-    margin: auto;
+    width: 100%;
+      margin: 23px 0px 0px 53px;
+    /* padding: 0px 0px 0px 0; */
+    
 }
-col-md-3 {
-    width: 25%;
-    margin: 0px 0px 0px 32px;
+.mca_de{    margin: -20px 0px 0px -31px;
+    padding: 3px 0px 0px 86px;
+    color: white;
+    background: black;
+    width: 82.6%;
+    height: 42px;
 }
-h3 {
-    font-size: 22px;
-    margin: 0px 0px 0px 227px;
-}
-
-.p_c{margin: 0px 0px 0px -70px;}
-
-.p_c1{margin: 0px 0px 0px -66px;}
-
-.p_c2{margin: 0px 0px 0px -40px;}
-.p_c4{margin: 0px 0px 0px -56px;}
-.top_heading{color:#00aeef;margin-left: -1px;}
-.linedraw{width: 265px;margin: 0px 0px 0px -30px;}
 </style>
-
-<script type="text/javascript">
-	/* function info(){
-	 document.getElementById('first').style.display = "none";
-	 document.getElementById('second').style.display = "block";
-	 } */
-	function overview() {
-		document.getElementById('first').style.display = "block";
-		document.getElementById('second').style.display = "none";
-		document.getElementById('third').style.display = "none";
-		document.getElementById('four').style.display = "none";
-		document.getElementById('five').style.display = "none";
-		document.getElementById('six').style.display = "none";
-	}
-	function admission() {
-		document.getElementById('first').style.display = "none";
-		document.getElementById('second').style.display = "block";
-		document.getElementById('third').style.display = "none";
-		document.getElementById('four').style.display = "none";
-		document.getElementById('five').style.display = "none";
-		document.getElementById('six').style.display = "none";
-	}
-	function course() {
-		document.getElementById('first').style.display = "none";
-		document.getElementById('second').style.display = "none";
-		document.getElementById('third').style.display = "block";
-		document.getElementById('four').style.display = "none";
-		document.getElementById('five').style.display = "none";
-		document.getElementById('six').style.display = "none";
-	}
-	function placement() {
-		document.getElementById('first').style.display = "none";
-		document.getElementById('second').style.display = "none";
-		document.getElementById('third').style.display = "none";
-		document.getElementById('four').style.display = "block";
-		document.getElementById('five').style.display = "none";
-		document.getElementById('six').style.display = "none";
-	}
-	function cutoff() {
-		document.getElementById('first').style.display = "none";
-		document.getElementById('second').style.display = "none";
-		document.getElementById('third').style.display = "none";
-		document.getElementById('four').style.display = "none";
-		document.getElementById('five').style.display = "block";
-		document.getElementById('six').style.display = "none";
-	}
-	function gallery() {
-		document.getElementById('first').style.display = "none";
-		document.getElementById('second').style.display = "none";
-		document.getElementById('third').style.display = "none";
-		document.getElementById('four').style.display = "none";
-		document.getElementById('five').style.display = "none";
-		document.getElementById('six').style.display = "block";
-	}
+<script>
+    $(document).ready(function(){
+        // Add minus icon for collapse element which is open by default
+        $(".collapse.show").each(function(){
+        	$(this).prev(".card-header").find(".fa").addClass("fa-minus").removeClass("fa-plus");
+        });
+        
+        // Toggle plus minus icon on show hide of collapse element
+        $(".collapse").on('show.bs.collapse', function(){
+        	$(this).prev(".card-header").find(".fa").removeClass("fa-plus").addClass("fa-minus");
+        }).on('hide.bs.collapse', function(){
+        	$(this).prev(".card-header").find(".fa").removeClass("fa-minus").addClass("fa-plus");
+        });
+    });
 </script>
+<script type="text/javascript">
+
+function btech() {
+	document.getElementById('mca').style.display = "none";
+	document.getElementById('btech').style.display = "block";
+	document.getElementById('mtech').style.display = "none";
+	
+}
+
+function mca() {
+	document.getElementById('mca').style.display = "block";
+	document.getElementById('btech').style.display = "none";
+	document.getElementById('mtech').style.display = "none";
+	
+}
+function mtech() {
+	document.getElementById('btech').style.display = "none";
+	document.getElementById('mtech').style.display = "block";
+	document.getElementById('mca').style.display = "none";
+	
+}
+
+</script>
+
 
 </head>
 
@@ -311,35 +118,26 @@ h3 {
 	<div id="preloader">
 		<div class="pulse"></div>
 	</div>
-	<!-- Pulse Preloader -->
 
 	<!--Header File-->	
 	 <%@ include file="itc/header.jsp" %>
 		<!--Header File-->
 
-        <div class="sub_header bg_g">
-				<div class="merge_heading">
-								<div class="img_heading">
-									<img src="img/college/c_1.png">
-								</div>
-								<div class="col_heading">
-									<h1 style="font-family: Georgia;" class="heading">
-										<b>MADHAV INSTITUTE OF TECHNOLOGY AND SCIENCE , GWALIOR (MITS)</b>
-									</h1>
-								</div>
-					</div>
-	</div> <!--End sub_header -->
-		 
-			<!-- <!-- nav bar start 
-			<div class="topnav">
-			  <a  href="#home">Info</a>
-			  <a href="#news">Admission</a>
-			  <a href="#contact">Courses and fees</a>
-			  <a href="#about">Placement</a>
-			  <a href="#about">Cut Off</a>
-			  <a href="#about">Gallery</a>
+	<div class="sub_header bg_g">
+		<div class="merge_heading">
+			<div class="img_heading">
+				<img src="img/college/c_1.png">
 			</div>
-			nav bar end -->
+			<div class="col_heading">
+				<h1 style="font-family: Georgia;" class="heading">
+					<b>MADHAV INSTITUTE OF TECHNOLOGY AND SCIENCE , GWALIOR (MITS)</b>
+				</h1>
+			</div>
+		</div>
+	</div>
+	<!--End sub_header -->
+
+
 
 
 	<div id="topheader">
@@ -347,12 +145,12 @@ h3 {
 			<div class="container-flui">
 							<div class="collapse navbar-collapse"	id="bs-example-navbar-collapse-1">
 							<ul class="nav navbar-nav">
-								<li class="active"><a href="#home" onclick="overview()" > Overview</a></li>
-								<li><a href="#page1" onclick="admission()" >Admission</a></li>
-								<li><a href="#page2" onclick="course()" >Courses And Fees</a></li>
-								<li><a href="#page3" onclick="placement()" >Placement</a></li>
-								<li><a href="#page3" onclick="cutoff()" >Cut Off</a></li>
-								<li style="width: 2px;" onclick="gallery()" ><a href="#page3">Gallery</a></li>
+								<li class="active"><a href="#home" onclick="overview()" > OVERVIEW</a></li>
+								<li><a href="#page1" onclick="admission()" >ADMISSION</a></li>
+								<li><a href="#page2" onclick="course()" >COURSES AND FEES</a></li>
+								<li><a href="#page3" onclick="placement()" >PLACEMENT</a></li>
+								<li><a href="#page3" onclick="cutoff()" >FACULTY</a></li>
+								<li style="width: 2px;" onclick="gallery()" ><a href="#page3">GALLERY</a></li>
 							</ul>
 				</div>
 			</div>
@@ -365,67 +163,118 @@ h3 {
 		<div class="container margin_60">
 			<div class="row">
 				<div class="row staff">
-					<fieldset id="first" style="display: block;">
-								<div class="first_head">
+		<fieldset id="first" style="display: block;">
+					<div class="first_head">
 								<h3>Madhav Institute of Technology & Science, Gwalior Overview</h3>
-												<img  src="img/changes/mits_2.jpg">
+								<img  src="img/changes/mits_2.jpg">
 								
 								<span  class="paragraph">
-								<p class="p1">
-										Madhav Institute of Technology & Science (MITS), Gwalior was founded in 1957 by His &nbsp; &nbsp;&nbsp; &nbsp;Highness Sir Jiwaji Rao Scindia, Maharaja, of the former state of Gwalior under the &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Government open door policy of India. The institute is affiliated with RGPV, Bhopal, but &nbsp; &nbsp;&nbsp; &nbsp;since 2002 it has academic autonomy  for running courses of its choice. The institute has &nbsp; &nbsp;&nbsp; recently approved by the UGC Delhi. The institute is also accredited by the NAAC &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(National Assessment and Accreditation Council) & NBA (National Board of &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;  Accreditation).  The institute is located in the Race Course Road, Gwalior with the vision of creating world-class  &nbsp; &nbsp;&nbsp; &nbsp;quality Engineers and Technocrats capable of providing the leadership in all spheres of life and society.
-								</p>
-								<br><br>
-								<p>
-										The Institute also has an established IQAC (Internal Quality Assurance Cell) which helps to develop mechanisms and procedures to measure, monitor and evaluate the quality of the institution's various academic and administrative activities. The MITS Institute offers courses in various undergraduate and postgraduate programmes in various specializations such as B.E., M.E., M.Tech, and Ph.D. The programmes aim to develop the abilities of the student and confront them with contemporary issues of the corporate world. Interested candidates can apply for the Madhav Institute of Technology & Science programmes by completing the application form online or visiting the campus.
-								</p>
-								<br><br>
-								<p>
-										MITS Gwalior's has a fabulous state-of-the-art infrastructure which includes an enabled landscaped garden, modern architecture with the best campus facilities. The Madhav Institute of Technology & Science has one of the most beautiful and modern campuses among the nearby colleges in Gwalior. The institute has a lush green environment-conscious campus of about 44.6 acres which also includes ' Madhav-Van ' a small teak wood forest where it is possible to see a large variety of birds. In the midst of complex beauty and greenery, students at MITS are free to study. The campus also offers excellent facilities for students, including classrooms, seminar rooms, library and reading rooms, hostels, food & mess, ATM, etc.
-								</p>
-								<br><br>
-								<p>
-											To harness the students ' immense potential and vibrant energy the institute provides the students with various club activities for their overall development of personality and building confidence. In many sporting events such as table tennis, badminton, Kho-Kho, chess, etc the institute has won many awards & prizes.													
-								</p>
-										</span>	
-						 	</div>
+								
+												<p class="p1">
+														Madhav Institute of Technology & Science (MITS), Gwalior was founded in 1957 by His &nbsp; &nbsp;&nbsp; &nbsp;Highness Sir Jiwaji Rao Scindia, Maharaja, of the former state of Gwalior under the &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Government open door policy of India. The institute is affiliated with RGPV, Bhopal, but &nbsp; &nbsp;&nbsp; &nbsp;since 2002 it has academic autonomy  for running courses of its choice. The institute has &nbsp; &nbsp;&nbsp; recently approved by the UGC Delhi. The institute is also accredited by the NAAC &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(National Assessment and Accreditation Council) & NBA (National Board of &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;  Accreditation).  The institute is located in the Race Course Road, Gwalior with the vision of creating world-class  &nbsp; &nbsp;&nbsp; &nbsp;quality Engineers and Technocrats capable of providing the leadership in all spheres of life and society.
+												</p>								<br><br>
+											
+												<p>
+														The Institute also has an established IQAC (Internal Quality Assurance Cell) which helps to develop mechanisms and procedures to measure, monitor and evaluate the quality of the institution's various academic and administrative activities. The MITS Institute offers courses in various undergraduate and postgraduate programmes in various specializations such as B.E., M.E., M.Tech, and Ph.D. The programmes aim to develop the abilities of the student and confront them with contemporary issues of the corporate world. Interested candidates can apply for the Madhav Institute of Technology & Science programmes by completing the application form online or visiting the campus.
+												</p>									<br><br>
+												
+												<p>
+														MITS Gwalior's has a fabulous state-of-the-art infrastructure which includes an enabled landscaped garden, modern architecture with the best campus facilities. The Madhav Institute of Technology & Science has one of the most beautiful and modern campuses among the nearby colleges in Gwalior. The institute has a lush green environment-conscious campus of about 44.6 acres which also includes ' Madhav-Van ' a small teak wood forest where it is possible to see a large variety of birds. In the midst of complex beauty and greenery, students at MITS are free to study. The campus also offers excellent facilities for students, including classrooms, seminar rooms, library and reading rooms, hostels, food & mess, ATM, etc.
+												</p>     							 <br><br>
+												
+												<p>
+															To harness the students ' immense potential and vibrant energy the institute provides the students with various club activities for their overall development of personality and building confidence. In many sporting events such as table tennis, badminton, Kho-Kho, chess, etc the institute has won many awards & prizes.													
+												</p>
+							</span>	
+			</div>
+	</fieldset>
+					
+					<!--  second fieldset -->
+					<fieldset id="second" style="display: none;">
+							<div class="commonBlock">
+											<p class="text_second">The Madhav Institute of Technology and Science (MITS) offers an undergraduate degree in Engineering (B.E) and Architecture (B.Arch) for four and five years, respectively. Under the B.E programmes, the institute offers various specializations. And for the Post Graduate Programmes, the university offers degrees in M.E, M.Tech &amp; MCA. So, to be admitted in any of these programmes the candidates need to have 10+2 certification with Physics, Chemistry &amp; Mathematics from any recognized university. And for those candidates who seek admission in the B.E program needs to have appeared in the JEE ( Joint Entrance Examination) Exam. Whereas for the candidate seeking admission in B.Arch should have appeared in the NATA (National Aptitude Test in Architecture) Examinations. For the admission in the Post Graduate programmes (M.E./M.Tech.) the admission is done on the basis of candidate score in the GATE exam and the written exam. While for the admission in MCA program the admission is based on the candidate performance in 10+2 &amp; BCA.
+															</p>
+							</div>
+							
+							
+											<span>
+											
+											
+											<div class="bs-example">
+   		 <div class="accordion" id="accordionExample">
+       
+
+			        <div class="card">
+					            <div class="card-header" id="headingOne">
+					                <h2 class="mb-0"> <button type="button" class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"><i class="fa fa-plus"></i> For B.Tech</button>									
+					                </h2>
+					            </div>
+			            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+				                <div class="card-body">
+				                     <p><h2>Admission Process of Madhav Institute of Technology and Science 2019</h2><p><strong>Online:-</strong></p><ul><li>Visit the official website of Madhav Institute of Technology &amp; Science.</li><li>Then go to the tab of admission and select the online application form option.</li><li>Fillup the application form with relevant information and required documents.</li><li>Documents needed at the time of application submission :​</li><li>Copy of 10th Mark Sheet.</li><li>Copy of 10+2 Mark Sheet.</li><li>Copy of Transfer Certificate.</li><li>Copy of Migration Certificate.</li><li>Valid proof of the permanent residence (Passport / Ration Card / Election ID Card, etc.)</li><li>Visa or Passport, for Foreign National Students</li><li>Migration Certificate</li><li>Submit the application form with the payable amount.</li><li>Fees can be submitted using the Debit / Credit card / Cash.</li></ul><p><strong>Offline:-</strong></p><ul><li>Visit Madhav Institute of Technology &amp; Science&#39;s official website</li><li>Download the form below.</li><li>Complete the application form with the required fields and the required documents.</li><li>Class X Certificate for Date of Birth.</li><li>Other certificates for academics or sports.</li><li>Mark Sheets of Class X, XII, Degree, Diploma (as may be applicable).</li><li>Domicile Certificate (if applicable).</li><li>After finally filling the application form, send it to the admission office of the Madhav Institute of Technology &amp; Science</li></ul><h2>Eligibility Criteria for B.E. at&nbsp;Madhav Institute of Technology and Science 2019</h2><p>The candidate should have passed pre-university examinations with minimum 45% marks with Physics, Chemistry, and Chemistry / Biology / Computer Science as an optional subject under the Karnataka State Pre-university Board or its equivalent.</p><p>Candidates seeking admission to the second year of the four-year B.E. degree must have completed the three-year Diploma course conducted by the Board of Technical Examination of the Karnataka Government in the respective branches/courses or any other examination recognized as equivalent by the Visvesvaraya Technological University.</p><h2>Selection Process of&nbsp;B.E. at&nbsp;Madhav Institute of Technology and Science 2019</h2><p><strong>STEP-1</strong></p><p>The Selection will be done on the basis of score obtained in JEE &amp; the academic performance of the applicants.</p><p><strong>STEP-2</strong></p><p>Shortlisted applicants will be called for Aptitude test &amp; Group Discussion (GD) where applicants will be assessed to his/her verbal, written and analytical skills.</p><p><strong>STEP-3</strong></p><p>After that, the selected applicants will be called for the Personal Interview (PI) to identify &amp; assess the interpersonal skills of the applicant.</p><p><strong>STEP-4</strong></p><p>The Final Selection will be done on the basis of the composite scores of Entrance exam &amp; PI round conducted by the institute.</p></div><div class="heading"  id="mtech" >For M.Tech</div><div class="box content"  style="display:none;"   ><h2>Eligibility Criteria for M.Tech at Madhav Institute of Technology and Science 2019</h2><p>Candidates should have passed B.E./ B.Tech. Examinations in the relevant fields with not less than 50 percent of the marks in their degree examinations. The course is open to candidates who have passed the prescribed qualifying examinations. However, in the case of SC / ST and Group I candidates, the aggregate percentage of marks in qualifying examinations shall not be less than 45 percent.</p><h2>Selection Process of&nbsp;M.Tech at Madhav Institute of Technology and Science 2019</h2><p><strong>STEP-1</strong></p><p>The Selection will be done on the basis of the common entrance tests for M.Tech program ( PGCET/ GATE ).</p><p><strong>STEP-2</strong></p><p>Shortlisted applicants will be called for Aptitude test &amp; Group Discussion (GD) where applicants will be assessed to his/her verbal, written and analytical skills.</p><p><strong>STEP-3</strong></p><p>After that, the selected applicants will be called for the Personal Interview (PI) to identify &amp; assess the interpersonal skills of the applicant.</p><p><strong>STEP-4</strong></p><p>The Final Selection will be done on the basis of the composite scores of Entrance exam &amp; PI round conducted by the institute.</p></p>
+							   </div>
+			            </div>
+			    </div>
+			<br>
+
+        <br>
+        
+			        <div class="card">
+			            <div class="card-header" id="headingThree">
+			                <h2 class="mb-0">
+			                    <button type="button" class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"><i class="fa fa-plus"></i> For MCA</button>                     
+			                </h2>
+			            </div>
+			            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+			                <div class="card-body">
+			                  <h2>Eligibility Criteria for M.C.A. at Madhav Institute of Technology and Science 2019</h2><p>The candidates should have passed the prescribed qualifying examinations in the aggregate of all the years of the degree examinations with not less than 50 percent of the marks. However, in the case of candidates belonging to SC/ST and any other groups classified by the Government of Karnataka for this purpose, the aggregate percentage of marks in qualifying examinations shall not be less than 45% from time to time.</p><h2>Selection Process of&nbsp;M.C.A. at Madhav Institute of Technology and Science 2019</h2><p><strong>STEP-1</strong></p><p>The Selection will be done on the basis of the common entrance tests like&nbsp;PGCET/ KMAT/ MAT for MCA Programs</p><p><strong>STEP-2</strong></p><p>Shortlisted applicants will be called for Aptitude test &amp; Group Discussion (GD) where applicants will be assessed to his/her verbal, written and analytical skills.</p><p><strong>STEP-3</strong></p><p>After that, the selected applicants will be called for the Personal Interview (PI) to identify &amp; assess the interpersonal skills of the applicant.</p><p><strong>STEP-4</strong></p><p>The Final Selection will be done on the basis of the composite scores of Entrance exam &amp; PI round conducted by the institute.</p>          </div>
+			            </div>
+			        </div>
+    </div>
+</div>
+											</span>
+							
 						
 					</fieldset>
 					
-					<fieldset id="second" style="display: none;">
-					<h1> admission</h1>
-					</fieldset>
 					
+					
+	<!--  thirdfieldset -->
 					
 					<fieldset id="third" style="display: none;">
-					<h3 class="top_heading">36 Courses are offered by MITS GWALIOR</h3>
+<!-- 					<h3 class="top_heading">36 Courses are offered by MITS GWALIOR</h3> -->
 					<div class="part_1">
 					<div class="city">
 						<ul class="courseList" id="course-list">
 							<p class="pro">
-								<a style="color: black;text-align: center;margin: 120px 0px 0px 30px;">Programmes</a>
+								<a style="color: black;text-align: center;margin: 120px 0px 0px 30px;">COURSE</a>
 							</p>
 							<hr style="width: 125%;">
-							<li><a class="cour" href="#btech" data-degree="2090">B.Tech</a></li>
+							
+							
+							<a class="cour" href="#btech" >B.Tech</a>
 							<hr>
-							<li><a class="cour" href="#barch" data-degree="1494">B.Arch</a></li>
+							<a class="cour" href="#barch" >B.Arch</a>
 							<hr>
-							<li><a class="cour" href="#mtech" data-degree="10437">M.Tech</a></li>
+							<a class="cour" href="#mtech" >M.Tech</a>
 							<hr>
-							<li><a class="cour" href="#mplan" data-degree="10525">M.Plan</a></li>
+							<!-- <a class="cour" href="#mplan" >M.Plan</a>
+							<hr> -->
+							<a class="cour" href="#mca">MCA</a>
 							<hr>
-							<li><a class="cour" href="#mca" data-degree="10526">MCA</a></li>
-							<hr>
-							<li><a class="cour"href="#phd" data-degree="3351">PhD</a></li>
+							<a class="cour"href="#phd" >PhD</a>
 						</ul>
 					</div>
 					</div>
 					<!-- courses div -->
 		
-						<div class="container_gray_bg">
+						<div class="container_gray_b">
+							
 							
 							<div class="container margin_60">
 								<div class="row staff">
 
+								<p><a name="btech"></a></p>
 									<div class="col-md-3">
 										<div class="box_style_1">
 											<h4 class="top_heading">B.Tech. <br>(Bachelor of Technology)</h4><hr class="linedraw">
@@ -443,20 +292,7 @@ h3 {
 									</div>
 									
 									<!-- 2 -->
-									<div class="col-md-3">
-										<div class="box_style_1">
-											<h4 class="top_heading">B.Arch.<br>(Bachelor of Architecture)</h4><hr class="linedraw"><br>
-											<p class="p_c"><strong>Duration : 5 Years</strong></p>	<br>&nbsp;&nbsp;&nbsp;&nbsp;
-											<p class="p_c1">	<strong>Study Mode :Regular</strong>	</p>	<br>&nbsp;&nbsp;&nbsp;&nbsp;
-											<p class="p_c2">	<strong>Total Fees: Rs. 2.80 Lakh</strong>	</p><br><br>
-											<hr class="linedraw"><br>
-											<a href="register.jsp" class="button_outline">Apply</a> <a
-												href="be.jsp" class="button_outline">Check Branch &
-												Details</a>
-
-										</div>
-									</div>
-									<!-- 3 -->
+									<p><a name="mtech"></a></p>
 									<div class="col-md-3">
 										<div class="box_style_1">
 											<h4 class="top_heading">M.Tech.<br>(Master of Technology)</h4><hr class="linedraw"><br>
@@ -472,97 +308,112 @@ h3 {
 											
 										</div>
 									</div>
+									<!-- 3 -->
 									
-									<br>
-									<!-- 4 -->
+									<p><a name="barch"></a></p>
 									<div class="col-md-3">
+										<div class="box_style_1">
+											<h4 class="top_heading">B.Arch.<br>(Bachelor of Architecture)</h4><hr class="linedraw"><br>
+											<p class="p_c"><strong>Duration : 5 Years</strong></p>	<br>&nbsp;&nbsp;&nbsp;&nbsp;
+											<p class="p_c1">	<strong>Study Mode :Regular</strong>	</p>	<br>&nbsp;&nbsp;&nbsp;&nbsp;
+											<p class="p_c2">	<strong>Total Fees: Rs. 2.80 Lakh</strong>	</p><br><br>
+											<hr class="linedraw"><br>
+											<a href="register.jsp" class="button_outline">Apply</a> <a
+												href="be.jsp" class="button_outline">Check Branch &
+												Details</a>
+
+										</div>
+									</div>
+									
+									
+									</div>
+									</div>
+									<!-- 4 -->
+									 <div class="container margin_60">
+								<div class="row staff">
+									<!--<div class="col-md-3">
 										<div class="box_style_1">
 											<h4 class="top_heading">B.Tech. <br>(Bachelor of Technology)</h4><hr class="linedraw">
 											 <br>
-											<p class="p_c"> <strong>Duration : 4 Years</strong> </p><br>&nbsp;&nbsp;&nbsp;&nbsp;
-											<p class="p_c1"><strong>Study Mode :Regular</strong></p><br>&nbsp;&nbsp;&nbsp;&nbsp;
-											<p class="p_c2"><strong>Total Fees: Rs. 2.60 Lakh</strong>
-											</p><br>
+													<p class="p_c"> <strong>Duration : 3 Years</strong> </p><br>&nbsp;&nbsp;&nbsp;&nbsp;
+													<p class="p_c1"><strong>Study Mode :Regular</strong></p><br>&nbsp;&nbsp;&nbsp;&nbsp;
+													<p class="p_c2"><strong>Total Fees: Rs. 2.0 Lakh</strong>
+													</p><br>
 										<br>
 											<hr class="linedraw"><br>
 											<a href="register.jsp" class="button_outline">Apply</a>
 											<a href="be.jsp" class="button_outline">Check Branch & Details</a>
 											
 										</div>
-									</div>
+									</div> -->
 									
-									<!-- 4 -->
-									
+									<!-- 5 -->
+									<p><a name="mca"></a></p>
 									<div class="col-md-3">
 										<div class="box_style_1">
-											<h4 class="top_heading">M.C.A.<br> (Master of Computer Applications)</h4><hr class="linedraw">
-											 <br>
-											<p class="p_c"> <strong>Duration : 2 Years</strong> </p><br>&nbsp;&nbsp;&nbsp;&nbsp;
-											<p class="p_c1"><strong>Study Mode :Regular</strong></p><br>&nbsp;&nbsp;&nbsp;&nbsp;
-											<p class="p_c2"><strong>Total Fees: Rs. 1.40 Lakh</strong>
-											</p><br>
-										<br>
+												<h4 class="top_heading">M.C.A.<br> (Master of Computer Applications)</h4><hr class="linedraw">
+													 <br>
+												<p class="p_c"> <strong>Duration : 2 Years</strong> </p><br>&nbsp;&nbsp;&nbsp;&nbsp;
+												<p class="p_c1"><strong>Study Mode :Regular</strong></p><br>&nbsp;&nbsp;&nbsp;&nbsp;
+												<p class="p_c2"><strong>Total Fees: Rs. 1.40 Lakh</strong>
+												</p><br>
+														<br>
 											<hr class="linedraw"><br>
 											<a href="register.jsp" class="button_outline">Apply</a>
 											<a href="be.jsp" class="button_outline">Check Branch & Details</a>
-											
 										</div>
 									</div>
-									
-									
-									<!-- 4 -->
-									
+	<!-- 6 -->
+	<p><a name="mca"></a></p>
 									<div class="col-md-3">
 										<div class="box_style_1">
-											<h4 class="top_heading">M.C.A.<br>(Master of Computer Applications)</h4><hr class="linedraw">
-											 <br>
-											<p class="p_c"> <strong>Duration : 3 Years</strong> </p><br>&nbsp;&nbsp;&nbsp;&nbsp;
-											<p class="p_c1"><strong>Study Mode :Regular</strong></p><br>&nbsp;&nbsp;&nbsp;&nbsp;
-											<p class="p_c2"><strong>Total Fees: Rs. 2.0 Lakh</strong>
-											</p><br>
-										<br>
-											<hr class="linedraw"><br>
-											<a href="register.jsp" class="button_outline">Apply</a>
-											<a href="be.jsp" class="button_outline">Check Branch & Details</a>
-											
+													<h4 class="top_heading">M.C.A.<br>(Master of Computer Applications)</h4><hr class="linedraw">
+													 <br>
+													<p class="p_c"> <strong>Duration : 3 Years</strong> </p><br>&nbsp;&nbsp;&nbsp;&nbsp;
+													<p class="p_c1"><strong>Study Mode :Regular</strong></p><br>&nbsp;&nbsp;&nbsp;&nbsp;
+													<p class="p_c2"><strong>Total Fees: Rs. 2.0 Lakh</strong>
+													</p><br>
+													<br>
+														<hr class="linedraw"><br>
+														<a href="register.jsp" class="button_outline">Apply</a>
+												<a href="be.jsp" class="button_outline">Check Branch & Details</a>
 										</div>
 									</div>
-									
-									<!-- 7 -->
-									
+									</div>
+									</div>
+	<!-- 7 -->
+	<p><a name="phd"></a></p>
+	<div class="container margin_60">
+								<div class="row staff">
 									<div class="col-md-3">
 										<div class="box_style_1">
-											<h4 class="top_heading">Ph.D.<br> (Doctor of Philosophy)</h4><hr class="linedraw">
-											 <br>
-											<p class="p_c"> <strong>Duration : 3 Years</strong> </p><br>&nbsp;&nbsp;&nbsp;&nbsp;
-											<p class="p_c1"><strong>Study Mode :Regular</strong></p><br>&nbsp;&nbsp;&nbsp;&nbsp;
-											<p class="p_c2"><strong>Total Fees: N/A</strong>
-											</p><br>
-										<br>
-											<hr class="linedraw"><br>
-											<a href="register.jsp" class="button_outline">Apply</a>
-											<a href="be.jsp" class="button_outline">Check Branch & Details</a>
-											
+													<h4 class="top_heading">Ph.D.<br> (Doctor of Philosophy)</h4><hr class="linedraw">
+													 <br>
+													<p class="p_c"> <strong>Duration : 3 Years</strong> </p><br>&nbsp;&nbsp;&nbsp;&nbsp;
+													<p class="p_c1"><strong>Study Mode :Regular</strong></p><br>&nbsp;&nbsp;&nbsp;&nbsp;
+													<p class="p_c2"><strong>Total Fees: N/A</strong>
+													</p><br>
+												<br>
+													<hr class="linedraw"><br>
+													<a href="register.jsp" class="button_outline">Apply</a>
+												<a href="be.jsp" class="button_outline">Check Branch & Details</a>
 										</div>
 									</div>
-									
-									<!-- 8 -->
-									
-									<div class="col-md-3">
+<!-- 8 -->
+									<!-- <div class="col-md-3">
 										<div class="box_style_1">
-											<h4 class="top_heading">M.C.A.<br>(Master of Computer Applications)</h4><hr class="linedraw">
-											 <br>
-											<p class="p_c"> <strong>Duration : 3 Years</strong> </p><br>&nbsp;&nbsp;&nbsp;&nbsp;
-											<p class="p_c1"><strong>Study Mode :Regular</strong></p><br>&nbsp;&nbsp;&nbsp;&nbsp;
-											<p class="p_c2"><strong>Total Fees: Rs. 2.0 Lakh</strong>
-											</p><br>
-										<br>
-											<hr class="linedraw"><br>
-											<a href="register.jsp" class="button_outline">Apply</a>
-											<a href="be.jsp" class="button_outline">Check Branch & Details</a>
-											
+														<h4 class="top_heading">M.C.A.<br>(Master of Computer Applications)</h4><hr class="linedraw">
+														 <br>
+														<p class="p_c"> <strong>Duration : 3 Years</strong> </p><br>&nbsp;&nbsp;&nbsp;&nbsp;
+														<p class="p_c1"><strong>Study Mode :Regular</strong></p><br>&nbsp;&nbsp;&nbsp;&nbsp;
+														<p class="p_c2"><strong>Total Fees: Rs. 2.0 Lakh</strong>
+														</p><br>
+															<br>
+														<hr class="linedraw"><br>
+														<a href="register.jsp" class="button_outline">Apply</a>
+												<a href="be.jsp" class="button_outline">Check Branch & Details</a>
 										</div>
-									</div>
+									</div> -->
 									
 									
 								</div>
@@ -570,18 +421,421 @@ h3 {
 						</div>
 
 					</fieldset>
+
+<!--  placement fieldset -->
+<fieldset id="four" style="display: none;">
+					<div class="part_1">
+							<div class="city_six">
+									<ul class="courseList" id="course-list">
+										<p class="pro"> <a style="color: black;text-align: center;margin: 120px 0px 0px 30px;">Programmes</a></p><hr class="line">
+										<a class="cour" href="#btech" onclick="placements()">About Placement cell</a> <hr class="line">
+										<a class="cour" href="#barch" onclick="recruiters()" >Leading Recruiters</a> <hr class="line">
+										<a class="cour" href="#mtech" onclick="records()">placement records</a>
+									</ul>
+							</div>
+					</div>
+					<!-- courses div -->
+<div class="container_gray_h">
+	<div class="container margin_60">
+							
+			<fieldset id="placements" style="display: block;">
+						<div class="row staff">
+								<img src="img/college/tn.jpg"  class="tnpimage"> <br><br><br><br><br><br><br><br>
+							<div class="placement_detail">
+									<font face="Georgia" size="4" align="justify"><p class="placement_heading" align="justify"><dd>The Goal of Training & Placement Cell of MITS Gwalior is to be a liaison between Industry and students to provide employment opportunities available in the market and to provide intensive training to the students for their overall development.<br />
+												It works under guidance of Training & Placement Officer in consultation with Faculty In-Charge.<br />
+												Training & Placement Cell provides full placement support to its students in all areas of disciplines – Civil, Mechanical, Electrical, Electronics & Communication, Computer Science, Information Technology, Biotechnology & Chemical Engineering, Electronics & Telecommunication, Automobile Engineering and Computer Applications etc.<br />
+												Right from connecting with companies related to above mentioned disciplines in the industry to managing all logistics of arranging whole campus recruitment process with the required hospitality; T&P Cell officials and students coordinators provide their best possible assistance to the recruiters.<br />
+												Apart from that, T&P Cell focuses on conducting soft & professional skills training for Pre-Final & Final year students, Industrial Projects/Internships & Training, Guest Lectures, Motivation & Guiding Sessions, Alumni connect programmes and building brand value of the Institute in the industry & market. </dd> </p> </font> </br>  <b>
+									<font face="Georgia" size="5" color="blue">
+  												<ui><dt>Training & Placement Cell Activities</dt></ui></font></b>
+  									<font face="Georgia" size="4" align="justify"><p align="justify"><dd>
+												Training & Placement (T&P) Activities of Institute consist of following: 
+									<ol type="A"> <h2><li>Campus Placements Process:</li></h2> <p align="justify">
+												Campus Placement Process are organized by different companies for providing job placements of students for that company's contact T&P cell of MITS Gwalior. We, T&P Cell, also invites companies every year. It arranges all logistics & hospitality required at their best for the conduction of selection process at Institute with all required infrastructure. <br />
+												T&P Cell fulfil purpose for both sides; for students securing their future career and industry securing the best fresh talents available in the region.<br />
+												Companies are required to send their details and job description for the recruitment process by sending an official mail at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f98d9789b994908d8a9e8e989590968bd79097">[email&#160;protected]</a> in the same regard. </p>
+									<h2><li>Career Orientation Programmes:</li></h2>
+											<p align="justify">
+														Demanding training programmes like Soft & Professional Skills training in the Institute through experienced experts and programmes to orient students about industry expectations are organized.<br />
+														Additional Expert/Guest Lectures, Motivational & Guiding session, and training sessions to improve learning in the areas like Personality Development, Group Discussion, Aptitude Skills and Presentation Skills.
+														</p>
+									<h2><li>Industrial Training/Projects/Visits for the students:</li></h2>
+									<p align="justify">
+												Industrial Training and Internships are the integral part of the study to acknowledge them for real world problems. Students are placed at various industries for 6 to 8 weeks and under supervision and guidance of respective industry personnel.<br />
+												Industry visits of the students with faculty members are organized to the relevant industries at various locations. It serves the objective of exposure to large-scale practical applications of theoretical aspects for the students.<br />
+												Students prepare the projects reflecting the needs and problems of the industry. Institute faculty interacts with industry and students for successful implementation of such projects.<br />
+												Apart from the above basic activities, Training & Placement Cell continuously connect with Alumni present in the all Industries for the benefits of students, Connects with Industries for Faculty Training and plays a vital role as front of Institute to build a brand in the market & Industry.
+											</p>
+											</ol>
+										</dd>
+									</p>
+						</font>
+									</br>
+									<b><font face="Georgia" size="5" color="blue"> <ui><dt>Why @ MITS Gwalior</dt></ui></font>
+									</b>
+									  <font face="Georgia" size="4"><p align="justify"><dd>
+												MITS, Gwalior is one of the well-established engineering institutions in the country along the lines of IITs and NITs; it is a government aided autonomous institution, established in 1957.<br />
+												And, it is oldest premier institute in the North Central region of the country that aims at all round development of the students besides imparting technical knowledge.<br />
+												<!--<font face="Georgia" size="4" color="blue"><i><b>“MITS ranks 15th in latest DATAQUEST-CMR T-School Survey-2015 of Top 25 Government T-schools of India.”</b></i></font> -->
+									<ol type="A">
+									<h2><li>An Institute of Excellence:</li></h2>
+									<p align="justify">
+												The constant Endeavour to achieve excellence in all fields, with the world class facility, well equipped laboratories, R&D, and well known highly qualified faculty. Since its very foundation, the institute has set many benchmarks in the field of research.<br />
+												It has been 62 years since the establishment of MITS and it is the spirit of this institute that has remained intact. The hallmark of this spirit has been not to walk on the path already taken but to establish new routes, to take the less trodden path and be the first to respond to the needs of the people and the nation.
+									</p>
+						</div>								
+				</div>
+		</fieldset>
+								
+				
+	<!-- Recruiters Field Start -->						
+<fieldset id="recruiters" style="display: none;">
+	<font face="Georgia" size="5" color="black">
+			<div recruite_heading>
+					<table  class="table_com">
+					 <!-- <tr>
+					    <th class="table_head"><p class="table_head">Leading Recruiters<p></th>
+					  </tr> --> 
+							  <tr>
+							    <td align="right"  class="am"><img src="img/company_image/amazon-625x352.jpg"></td>
+							    <td align="left"    class="am1"><font   face="Georgia" size="4" color="black">Amazone</font></td>
+							    <td align="right" class="am"><img src="img/company_image/BYJUS_logo_600x400.2eab8a9e741c01c02b31b22d4cb028f9871d2893.jpg"></td>
+							    <td align="left"    class="am1"><font   face="Georgia" size="4" color="black">BYJUS</font></td>
+							    <td align="right" class="am"><img src="img/company_image/download (2).png"></td>
+							    <td align="left"    class="am"><font    face="Georgia" size="4" color="black">Mahindra</font></td>
+							  </tr>
+							  
+							  <tr>
+							    <td align="right" class="am"><img src="img/company_image/download.jpg"></td>
+							    <td align="left" class="am1"><font face="Georgia" size="4" color="black">Godrej</font></td>
+							    <td align="right"class="am"><img src="img/company_image/capegemini.jpg"></td>
+							    <td align="left" class="am1"><font face="Georgia" size="4" color="black">Capgemini</font></td>
+							    <td align="right" class="am"><img src="img/company_image/tcs.png"></td>
+							    <td align="left" class="am1"><font face="Georgia" size="4" color="black">TCS</font></td>
+							  </tr>
+							
+							  <tr> 
+							    <td align="right" class="am"><img src="img/company_image/hcl.png"></td>
+							    <td align="left" class="am1"><font face="Georgia" size="4" color="black">HCL Technologies</font></td>
+							    <td align="right" class="am"><img src="img/company_image/techmahindra.png"></td>
+							    <td align="left" class="am1"><font face="Georgia" size="4" color="black">Tech Mahindra</font></td>
+							    <td align="right" class="am"><img src="img/company_image/Wipro.png"></td>
+							    <td align="left" class="am1"><font face="Georgia" size="4" color="black">Wipro Technologies</font></td>
+							  </tr>
+
+  							<tr>
+							    <td align="right" class="am"><img src="img/company_image/infosis.jpg"></td>
+							    <td align="left" class="am1"><font face="Georgia" size="4" color="black">Infosys</font></td>
+							  </tr>
+				</table>
+		</div>
+	</font>
+</fieldset>
+
+<!--  Record Table STart -->	
+				<fieldset id="records" style="display: none;">
+														<h1 class="record_heading" >Placement Record</h1>
+														<img alt="" src="img/company_image/placemnt2021.jpg"><br>
+														<img alt="" src="img/company_image/plac2021.jpg">
+				</fieldset>
+    </div>
+    </div>
+</fieldset>
 					
-					<fieldset id="four" style="display: none;">
-					<h1> placement</h1>
-					</fieldset>
 					
-					<fieldset id="five" style="display: none;">
-					<h1> cutoff</h1>
-					</fieldset> 
+					
+<!--  seven fieldset -->					
+<fieldset id="five" style="display: none;">
+        	<div class="part_1">
+					<div class="city">
+						<ul class="courseList" id="course-list">
+							<p class="pro"> <a style="color: black;text-align: center;margin: 120px 0px 0px 30px;">COURSE</a> </p> <hr style="width: 125%;">
+							<a class="cour" href="#btech" onclick="btech()">B.Tech</a> <hr>
+							<a class="cour" href="#barch" onclick="barch()">B.Arch</a> <hr>
+							<a class="cour" href="#mtech" onclick="mtech()">M.Tech</a> <hr>
+							<!-- <a class="cour" href="#mplan" >M.Plan</a>
+							<hr> -->
+							<a class="cour" href="#mca" onclick="mca()">MCA</a> <hr>
+							<a class="cour"href="#phd" onclick="phd()">PhD</a>
+						</ul>
+					</div>
+		 </div>
+					
+<!-- courses div -->
+
+<div class="container_gray_b">
+	<div class="container margin_60">
+		<fieldset id="mca" style="display: block;">
+				
+<!-- 	First STAff LIST			 -->
+			<div class="row staff">
+										<h2 class="mca_de">MCA Faculty</h2>
+					 					<div class="col-md-4">
+											<div class="box_style">
+												<p> <img src="img/faculty/Rs-Jadon.jpg" alt="" class="img-circle styl" width="150" height="150"> </p> <br>
+												<h4 class="faculty_name">DR. R.S. JADON</h4>
+												<h5>Professor</h5>
+												<h5>Ph.D.</h5> <hr class="staff_line">
+												<h4>Area of Interest :</h4> <br>
+												<h4 class="staff_detail">&nbsp; Computer Vision & Image &nbsp;&nbsp;Processing</h4>
+												<h4 class="staff_email"> <br>E-Mail : <br>&nbsp;rsjadon@mitsgwalior.in<br> </h4>
+												<h4 class="staff_number"> <br>Contact : <br>&nbsp;0751-4048220751 </h4> <hr class="staff_line">
+												<ul class="social_team">
+													<li><a href="https://www.linkedin.com/in/dr-r-s-jadon-79b89816/?originalSubdomain=in " target="_blank" title="Linkedin"><i
+															class="icon-linkedin"></i></a></li>
+													<li><a href="#" title="Twitter"><i class="icon-twitter"></i></a></li>
+													<li><a href="https://scholar.google.com/citations?user=OTp6_fsAAAAJ&hl=en&oi=sra" target="_blank" title="Google Scholar"><i
+															class="icon-google"></i></a></li>
+													<li><a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSMTtdNhFNbTkGgPSbHdPdGBLhkxbQVSVLrGrbNsGcBBGLfdPDZRgKBTlXltPzdtstwScRQV"
+														title="E-mail" target="_blank"><i class="icon-email"></i></a></li>
+												</ul>
+											</div>
+									</div>
+									
+<!-- Second STAff LIST -->
+						<div class="col-md-4">
+								<div class="box_style">
+												<p> <img src="img/faculty/anshumca.jpeg" alt="" class="img-circle styl" width="150" height="150"> </p> <br>
+												<h4 class="faculty_name">DR. ANSHU CHATURVEDI</h4>
+												<h5>Professor</h5>
+												<h5>Ph.D.</h5> <hr class="staff_line">
+												<h4>Area of Interest :</h4> <br>
+												<h4 class="staff_detail">&nbsp; Adhoc Networks</h4>
+												<h4 class="staff_email"> <br>E-Mail : <br>&nbsp;anshu_chaturvedi@mitsgwalior.in<br> </h4>
+												<h4 class="staff_number"> <br>Contact : <br>&nbsp;0751-2340557 </h4>
+												<hr class="staff_line">
+												<ul class="social_team">
+													<li><a href="https://www.linkedin.com/in/dr-anshu-chaturvedi-6548463/?originalSubdomain=in  " target="_blank" title="Linkedin"><i
+															class="icon-linkedin"></i></a></li>
+													<li><a href="#" title="Twitter"><i class="icon-twitter"></i></a></li>
+													<li><a href="https://scholar.google.com/citations?user=OYJ5QoQAAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar"><i
+															class="icon-google"></i></a></li>
+													<li><a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDbFbLNTRpSmvQRHTxqxpjpglBzTmNgJNnzwJrrBjKWXsGFqbXfLFSCMWjxBrGgFwcJKbbg"
+														title="E-mail" target="_blank"><i class="icon-email"></i></a></li>
+												</ul>
+								</div>
+						</div>
+		</div>
+<!-- 		End ROW STaff -->
+<!-- Third STAff LIST -->
+
+									<br>
+<!-- Start Row Staff -->
+<!-- 				Four Staff List -->
+<div class="row staff">
+										<div class="col-md-4">
+											<div class="box_style">
+												<p> <img src="img/faculty/parulmca.jpeg" alt="" class="img-circle styl" width="150" height="150"> </p> <br>
+												<h4 class="faculty_name">DR. PARUL SAXENA</h4>
+												<h5>Assistant Professor</h5>
+												<h5>Ph.D.</h5> <hr class="staff_line">
+												<h4>Area of Interest :</h4> <br>
+												<h4 class="staff_detail">&nbsp; Computer Vision & Image Processing</h4>
+												<h4 class="staff_email"> <br>E-Mail : <br>&nbsp;gaurparul2007@mitsgwalior.in<br> </h4>
+												<h4 class="staff_number"> <br>Contact : <br>&nbsp;0751-2409395 </h4>
+												<hr class="staff_line">
+												<ul class="social_team">
+													<li><a href="https://www.linkedin.com/in/parul-saxena-30641b171/  " target="_blank" title="Linkedin"><i class="icon-linkedin"></i></a></li>
+													<li><a href="#" title="Twitter"><i class="icon-twitter"></i></a></li>
+													<li><a href="https://scholar.google.com/citations?user=0w69RDYAAAAJ&hl=en&authuser=1  " target="_blank" title="Google Scholar"><i
+															class="icon-google"></i></a></li>
+													<li><a href="https://mail.google.com/mail/u/0/#inbox?compose=CllgCKCGmTpwDcMpvQrxDvQkHTFRbcqxVJZprtKjMflrjmvdqvRqmkcTGXDrbvxMSdtsSPhKQSB"
+														title="E-mail" target="_blank"><i class="icon-email"></i></a></li>
+												</ul>
+											</div>
+										</div>
+
+
+</div>
+<!-- End row -->
+
+</fieldset>
+
+<!--  Btech FAculty List -->
+<fieldset id="btech" style="display: none;">
+				
+<!-- 	First STAff LIST			 -->
+			<div class="row staff">
+												<h2 class="mca_de">B.TECH Faculty</h2>
+												<h2 class="civil">Department of Civil Engineering</h2>
+												<div class="col-md-4">
+													<div class="box_style">
+														<p>
+															<img src="img/faculty/civilimage003.jpg" alt=""
+																class="img-circle styl" width="150" height="150">
+														</p>
+														<br>
+														<h4 class="faculty_name">DR. MANOJ TRIVEDI</h4>
+														<h5>Professor & Head</h5>
+														<h5>Regular (D.O.J.-01.07.92)</h5>
+														<h5>Ph.D.IIT Roorkee</h5>
+														<hr class="staff_line">
+														<h4>Area of Interest :</h4>
+														<br>
+														<h4 class="staff_detail">&nbsp; Water Resource Engg.,
+															Soil Water Transportation</h4>
+														<h4 class="staff_email">
+															<br>E-Mail : <br>&nbsp;manojtrivedi@mitsgwalior.in
+															<br>
+														</h4>
+														<h4 class="staff_number">
+															<br>Contact : <br>&nbsp;0751-4048220751
+														</h4>
+														<hr class="staff_line">
+														<ul class="social_team">
+															<li><a
+																href="https://www.linkedin.com/in/dr-manoj-trivedi-7049791a3/ "
+																target="_blank" title="Linkedin"><i
+																	class="icon-linkedin"></i></a></li>
+															<li><a href="#" title="Twitter"><i
+																	class="icon-twitter"></i></a></li>
+															<li><a
+																href="https://scholar.google.co.in/citations?user=QGCQGxMAAAAJ&hl=en&oi=sra "
+																target="_blank" title="Google Scholar"><i
+																	class="icon-google"></i></a></li>
+															<li><a
+																href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRqhSMCxMLnTJLNKfzwzlSCgxWTSNkqmNZbHSXtZRPmtTSvcWfWgXTcBNwpSTjZjdcChwfB"
+																title="E-mail" target="_blank"><i class="icon-email"></i></a></li>
+														</ul>
+													</div>
+												</div>
+<!-- Second STAff LIST -->
+					
+		</div><!-- End ROW STaff -->
+<!-- Third STAff LIST -->
+
+
+
+</fieldset>
+</div>
+</div>
+									
+<!-- <fieldset id="five" style="display: none;">
+					<div class="part_1">
+							<div class="city_six">
+									<ul class="courseList" id="course-list">
+										<p class="pro"> <a style="color: black;text-align: center;margin: 120px 0px 0px 30px;">COURSE</a></p><hr class="line">
+										<a class="cour" href="#btech" onclick="btech()">B.Tech</a> <hr>
+										<a class="cour" href="#barch" onclick="barch()">B.Arch</a> <hr>
+										<a class="cour" href="#mtech" onclick="mtech()">M.Tech</a> <hr>
+										<a class="cour" href="#mca" onclick="mca()">MC</a> <hr>
+										<a class="cour"href="#phd" onclick="phd()">PhD</a>
+									</ul>
+							</div>
+					</div>
+					courses div
+					
+					
+<div class="container_gray_h">
+	<div class="container margin_60">
+			<fieldset id="btech" style="display: block;">
+						<div class="row staff">
+										<h2 class="mca_de">B.TECH Faculty</h2>
+										<h2 class="civil">Department of Civil Engineering</h2>
+								<div class="col-md-4">
+									<div class="box_style">
+											<p><img src="img/faculty/civilimage003.jpg" alt="" class="img-circle styl" width="150" height="150">
+											</p><br>
+											<h4 class="faculty_name">DR. MANOJ TRIVEDI</h4>
+											<h5>Professor & Head</h5>
+											<h5>Regular (D.O.J.-01.07.92)</h5>
+											<h5>Ph.D.IIT Roorkee</h5> <hr class="staff_line">
+											<h4>Area of Interest :</h4> <br>
+											<h4 class="staff_detail">&nbsp; Water Resource Engg., Soil Water Transportation</h4>
+											<h4 class="staff_email"> <br>E-Mail : <br>&nbsp;manojtrivedi@mitsgwalior.in <br> </h4>
+											<h4 class="staff_number"> <br>Contact : <br>&nbsp;0751-4048220751 </h4> <hr class="staff_line">
+											<ul class="social_team">
+													<li>  <a href="https://www.linkedin.com/in/dr-manoj-trivedi-7049791a3/ " target="_blank" title="Linkedin"><i
+																	class="icon-linkedin"></i></a></li>
+													<li><a href="#" title="Twitter"><i class="icon-twitter"></i></a></li>
+													<li><a href="https://scholar.google.co.in/citations?user=QGCQGxMAAAAJ&hl=en&oi=sra "
+																target="_blank" title="Google Scholar"><i class="icon-google"></i></a></li>
+													 <li><a href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRqhSMCxMLnTJLNKfzwzlSCgxWTSNkqmNZbHSXtZRPmtTSvcWfWgXTcBNwpSTjZjdcChwfB"
+																title="E-mail" target="_blank"><i class="icon-email"></i></a></li>
+											</ul>
+								</div>
+							</div>
+		</div>
+</fieldset>End Btech Fieldset
+								
+				
+	mca Field Start						
+<fieldset id="mca" style="display: none;">
+			<div recruite_heading>
+								<h2 class="mca_de">MCA Faculty</h2>
+					 					<div class="col-md-4">
+											<div class="box_style">
+												<p> <img src="img/faculty/Rs-Jadon.jpg" alt="" class="img-circle styl" width="150" height="150"> </p> <br>
+												<h4 class="faculty_name">DR. R.S. JADON</h4>
+												<h5>Professor</h5>
+												<h5>Ph.D.</h5> <hr class="staff_line">
+												<h4>Area of Interest :</h4> <br>
+												<h4 class="staff_detail">&nbsp; Computer Vision & Image &nbsp;&nbsp;Processing</h4>
+												<h4 class="staff_email"> <br>E-Mail : <br>&nbsp;rsjadon@mitsgwalior.in<br> </h4>
+												<h4 class="staff_number"> <br>Contact : <br>&nbsp;0751-4048220751 </h4> <hr class="staff_line">
+												<ul class="social_team">
+													<li><a href="https://www.linkedin.com/in/dr-r-s-jadon-79b89816/?originalSubdomain=in " target="_blank" title="Linkedin"><i
+															class="icon-linkedin"></i></a></li>
+													<li><a href="#" title="Twitter"><i class="icon-twitter"></i></a></li>
+													<li><a href="https://scholar.google.com/citations?user=OTp6_fsAAAAJ&hl=en&oi=sra" target="_blank" title="Google Scholar"><i
+															class="icon-google"></i></a></li>
+													<li><a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSMTtdNhFNbTkGgPSbHdPdGBLhkxbQVSVLrGrbNsGcBBGLfdPDZRgKBTlXltPzdtstwScRQV"
+														title="E-mail" target="_blank"><i class="icon-email"></i></a></li>
+												</ul>
+											</div>
+									</div>
+									
+
+						<div class="col-md-4">
+								<div class="box_style">
+												<p> <img src="img/faculty/anshumca.jpeg" alt="" class="img-circle styl" width="150" height="150"> </p> <br>
+												<h4 class="faculty_name">DR. ANSHU CHATURVEDI</h4>
+												<h5>Professor</h5>
+												<h5>Ph.D.</h5> <hr class="staff_line">
+												<h4>Area of Interest :</h4> <br>
+												<h4 class="staff_detail">&nbsp; Adhoc Networks</h4>
+												<h4 class="staff_email"> <br>E-Mail : <br>&nbsp;anshu_chaturvedi@mitsgwalior.in<br> </h4>
+												<h4 class="staff_number"> <br>Contact : <br>&nbsp;0751-2340557 </h4>
+												<hr class="staff_line">
+												<ul class="social_team">
+													<li><a href="https://www.linkedin.com/in/dr-anshu-chaturvedi-6548463/?originalSubdomain=in  " target="_blank" title="Linkedin"><i
+															class="icon-linkedin"></i></a></li>
+													<li><a href="#" title="Twitter"><i class="icon-twitter"></i></a></li>
+													<li><a href="https://scholar.google.com/citations?user=OYJ5QoQAAAAJ&hl=en&oi=ao" target="_blank" title="Google Scholar"><i
+															class="icon-google"></i></a></li>
+													<li><a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSDbFbLNTRpSmvQRHTxqxpjpglBzTmNgJNnzwJrrBjKWXsGFqbXfLFSCMWjxBrGgFwcJKbbg"
+														title="E-mail" target="_blank"><i class="icon-email"></i></a></li>
+												</ul>
+								</div>
+						</div>
+					
+					
+					
+		</div>
+</fieldset> -->
+
+<!--  Record Table STart -->	
+				<!-- <fieldset id="records" style="display: none;">
+														<h1 class="record_heading" >Placement Record</h1>
+														<img alt="" src="img/company_image/placemnt2021.jpg"><br>
+														<img alt="" src="img/company_image/plac2021.jpg">
+				</fieldset>
+    </div>
+    </div>
+</fieldset> -->
 							
 							
 							
 							
+							
+							
+							
+							
+							
+							
+							
+<!--  eight fieldset -->			
 					
 					<fieldset id="six" style="display: none;">	
 				<div class="container margin_60">
@@ -798,13 +1052,29 @@ h3 {
     
 <!-- Search modal -->   
 <div id="search">
-    <button type="button" class="close">�</button>
+    <button type="button" class="close">ï¿½</button>
     <form>
         <input type="search" value="" placeholder="type keyword(s) here" >
         <button type="submit" class="button">Search</button>
     </form>
 </div>
+<script>
+$(document).ready(function(){
+    // Add minus icon for collapse element which is open by default
+    $(".collapse.show").each(function(){
+    	$(this).prev(".card-header").find(".fa").addClass("fa-minus").removeClass("fa-plus");
+    });
+    
+    // Toggle plus minus icon on show hide of collapse element
+    $(".collapse").on('show.bs.collapse', function(){
+    	$(this).prev(".card-header").find(".fa").removeClass("fa-plus").addClass("fa-minus");
+    }).on('hide.bs.collapse', function(){
+    	$(this).prev(".card-header").find(".fa").removeClass("fa-minus").addClass("fa-plus");
+    });
+});
 
+
+</script>
 
 
 
