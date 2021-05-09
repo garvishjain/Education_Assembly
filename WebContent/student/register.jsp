@@ -33,7 +33,7 @@
       <script src="js/html5shiv.min.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
-     <%@page import="in.common.GetConnection"%>
+     	<%@page import="in.common.GetConnection"%>
 		 <%@ include file="inc/stdimport.jsp" %> 
 		 
 		<%

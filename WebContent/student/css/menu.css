@@ -60,8 +60,8 @@ a.dropdown-toggle.icon-search{display: inline-block;}
 .main-menu ul ul li:hover > a {background-color:#f9f9f9;color:#1cafec;}
 	
 /* Megamenu */
-.main-menu ul li.megamenu {position:static}
-.main-menu ul li.megamenu .menu-wrapper {position: absolute;top: 100%;width:500px;float:left;left:auto;right:0;padding:10px 15px 0 15px;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
+.main-menu ul li.megamenu {position:static}                                                /*  width:500px; */
+.main-menu ul li.megamenu .menu-wrapper {position: absolute;top: 100%;width: 307px;float:left;left:auto;right:0;padding:10px 15px 0 15px;-moz-box-sizing: border-box;-webkit-box-sizing: border-box;box-sizing: border-box;}
 .main-menu ul .menu-wrapper h3 {font-size: 13px;text-transform:uppercase;border-bottom:2px solid #ededed;padding-bottom:10px;margin-bottom:0; font-family: "proxima_novasemibold", Arial, Helvetica, sans-serif;}
 
 .main-menu ul .menu-wrapper ul {position: relative;display:block;}

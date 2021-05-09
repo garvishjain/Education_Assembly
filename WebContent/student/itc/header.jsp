@@ -16,7 +16,7 @@
     <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
     <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
     <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- BASE CSS -->
     <link href="css/base.css" rel="stylesheet">
       <!-- SPECIFIC CSS -->
@@ -83,8 +83,7 @@
                         <li><a href="diploma.jsp">Diploma courses</a></li>
                         <li><a href="graduate.jsp">Graduate courses</a></li>
                         <li><a href="master.jsp">Master courses</a></li>
-                        <li><a href="staff.jsp">Staff</a></li>
-                        
+						<li><a href="college.jsp">College</a></li>                       
                     </ul>
                     </li>
                     <li class="submenu">
@@ -95,29 +94,49 @@
                         <li><a href="gallery.jsp">Gallery</a></li>
                     </ul>
                     </li>
-                    <li class="megamenu submenu">
+                    <li><%
+                                	if(name.equals(""))
+                                	{
+                                %>
+                                 <li class="megamenu submenu">
                     <a href="javascript:void(0);" class="show-submenu-mega">Pages &amp; elements<i class="icon-down-open-mini"></i></a>
                     <div class="menu-wrapper">
                         <div class="col-md-4">
-                            <h3>Pages</h3>
                             <ul>
                                 <li><a href="blog.jsp">Blog</a></li>
                                 <li><a href="contacts.jsp">Contacts</a></li>
-                                <li><a href="agenda_calendar.jsp">Agenda calendar</a></li>
-                                <li><a href="gallery.jsp">Gallery</a></li>
+                                <li><a href="agenda_calendar.jsp">Calendar</a></li>
                             </ul>
                         </div>
                         <div class="col-md-4">
-                            <h3>Pages</h3>
                             <ul>
-                                
                                 <li><a href="#" data-toggle="modal" data-target="#login">Login</a></li>
                                 <li><a href="register.jsp" >Register</a></li>
-                               
                             </ul>
                         </div>
                     </div><!-- End menu-wrapper -->
                     </li>
+                                		<%
+                                	}
+                                	else
+                                	{%>
+                    
+                    <li class="submenu">
+                    <a href="javascript:void(0);" class="show-submenu">Pages &amp; elements<i class="icon-down-open-mini"></i></a>
+                    <ul>
+                                <li><a href="blog.jsp">Blog</a></li>
+                                <li><a href="contacts.jsp">Contacts</a></li>
+                                <li><a href="agenda_calendar.jsp">Agenda calendar</a></li>
+                            </ul>
+                    </li>
+                         
+                                		<%
+                                	}
+                                %></li>
+                    
+                    
+                    
+                   
                     
                     <li><%
                                 	if(name.equals(""))
@@ -129,8 +148,17 @@
                                 	}
                                 	else
                                 	{%>
-                                		<li><a href="logout.jsp">Logout</a></li>
-                                		<li><a>Welcome,<%=name %></a></li>
+                                		
+                                		<%-- <li><a>Welcome,&nbsp;<%=name %><i class="fa fa-angle-down"></i></a></li> --%>
+                         <li class="submenu">
+                   				<a href="javascript:void(0);" class="show-submenu">Welcome,&nbsp;<%=name %><i class="icon-down-open-mini"></i></a>
+                    			<ul>
+                       					 <li><a href="document.jsp">Upload Documents</a></li>
+                       					 <li><a href="status.jsp">Check Status</a></li>
+                      					  
+                    			</ul>
+                   		 </li>
+                   		 <li><a href="logout.jsp">Logout</a></li>
                                 		<%
                                 	}
                                 %></li>

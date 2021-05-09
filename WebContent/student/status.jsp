@@ -1,3 +1,7 @@
+<%
+String uname="";
+uname=session.getAttribute("nameUser") != null ? (String)session.getAttribute("nameUser") : "";
+%>
 <!DOCTYPE html>
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
 <%@page import="in.Student.User"%>
@@ -37,22 +41,11 @@
 <link href="css/date_time_picker.css" rel="stylesheet">
 
 <%
-	/* User st = new User();
-	String s = st.getUsername();
-	System.out.print(s); */
-	
-	
-
-	GetConnection getConObj = new GetConnection();
-	Connection con = getConObj.getCon();
-	Statement stmt = con.createStatement();
-	
-	/* User user=new User();
-	String u=user.getUname();
-	System.out.print(u); */
-	/* String name=(String)request.getAttribute("view");
-	System.out.println(name); */
+	GetConnection getcon=new GetConnection();
+	Connection con=getcon.getCon();
+	Statement stmt=con.createStatement();
 %>
+
 
 <style type="text/css">
 .stu_name{
@@ -103,146 +96,118 @@ label {
 		<%@ include file="itc/header.jsp"%>
 		<!--Header File-->
 	</div>
-	<div>
-		<%-- <p><%=request.getParameter("n")%></p>
-		<p><%=request.getParameter("s")%></p> --%>
-	</div>
-
 	
-		<%-- <p><%=request.getParameter("n")%></p>
-		 <label>User name</label> --%> 
-                               <div class="status">
-                               <%
-															try {
-																String query = "select * from student_information where username='"+"shadab11"+"' ";
-																
-																ResultSet rs = stmt.executeQuery(query);
-																while (rs.next()) {
-														%>
-                               				<div class="imf">
-                               				
+ 												
+	<div class="status">
+										<%
+								try {
+										String query = "Select * from student_information where username='"+uname+"' ";
+										ResultSet rs = stmt.executeQuery(query);
+										while (rs.next()) {
+								%>
+                              						
+                               		<%-- <div class="imf">
                                				<img src="G:\i\<%=rs.getString("image") %>" width="167px" height="198px"/>
-                               							
-                               				</div>
-                               				<hr>
+                               		</div> --%>
+
                                				
 
 		<table>
 		<tr>
-				<td><h3>
+				<td>
 						<label>REGISTRATION NUMBER&nbsp;&nbsp;:&nbsp;&nbsp;</label>
-						<%=rs.getString("first_name")%></h3>
+						<%=rs.getString("first_name")%>
 				</td>
 				<td>
-				<h3 style="color: red;">
+				
 						<label>Status&nbsp;&nbsp;:&nbsp;&nbsp;</label>
-						<%=rs.getString("first_name")%></h3>
+						<%=rs.getString("first_name")%>
 				</td>
 				
 			</tr>
 			<tr>
-				<td><h3>
+				<td>
 						<label>NAME <label class="m">&nbsp;&nbsp;:&nbsp;&nbsp;</label></label>
-						<%=rs.getString("first_name").toUpperCase() + " " + rs.getString("last_name").toUpperCase()%></h3>
+						<%=rs.getString("first_name").toUpperCase() + " " + rs.getString("last_name").toUpperCase()%>
 				</td>
-				<td><h3>
+				<td>
 						<label>USER NAME &nbsp;&nbsp;:&nbsp;&nbsp;</label>
 						<%=rs.getString("username").toUpperCase()%>
-					</h3></td>
+					</td>
 			</tr>
 			
 			<tr>
-				<td><h3>
+				<td>
 						<label>E-MAIL &nbsp;&nbsp;:&nbsp;&nbsp;</label>
-						<%=rs.getString("email") %></h3>
+						<%=rs.getString("email") %>
 				</td>
-				<td><h3>
+				<td>
 						<label>Gender &nbsp;&nbsp;:&nbsp;&nbsp;</label>
 						<%=rs.getString("gender").toUpperCase()%>
-					</h3></td>
+					</td>
 			</tr>
 			<tr>
-				<td><h3>
+				<td>
 						<label>DATE OF BIRTH &nbsp;&nbsp;:&nbsp;&nbsp;</label>
-						<%=rs.getString("dob") %></h3>
+						<%=rs.getString("dob") %>
 				</td>
-				<td><h3>
+				<td>
 						<label>RELIGION &nbsp;&nbsp;:&nbsp;&nbsp;</label>
 						<%=rs.getString("religIon").toUpperCase()%>
-					</h3></td>
+					</td>
 			</tr>
 			<tr>
-				<td><h3>
+				<td>
 						<label>CAST &nbsp;&nbsp;:&nbsp;&nbsp;</label>
-						<%=rs.getString("category").toUpperCase() %></h3>
+						<%=rs.getString("category").toUpperCase() %>
 				</td>
-				<td><h3>
+				<td>
 						<label>AADHAR NUMBER &nbsp;&nbsp;:&nbsp;&nbsp;</label>
 						<%=rs.getString("aadhar_number")%>
-					</h3></td>
+					</td>
 			</tr>
 			<tr>
-				<td><h3>
+				<td>
 						<label>CONTACT NUMBER &nbsp;&nbsp;:&nbsp;&nbsp;</label>
-						<%=rs.getString("s_contact") %></h3>
+						<%=rs.getString("s_contact") %>
 				</td>
-				<td><h3>
+				<td>
 						<label>FATHER NAME &nbsp;&nbsp;:&nbsp;&nbsp;</label>
 						<%=rs.getString("f_name")%>
-					</h3></td>
+					</td>
 			</tr>
 			
 			<tr>
-				<td><h3>
+				<td>
 						<label>MOTHER NAME &nbsp;&nbsp;:&nbsp;&nbsp;</label>
-						<%=rs.getString("m_name") %></h3>
+						<%=rs.getString("m_name") %>
 				</td>
-				<td><h3>
+				<td>
 						<label>FATHER NAME &nbsp;&nbsp;:&nbsp;&nbsp;</label>
 						<%=rs.getString("f_name")%>
-					</h3></td>
+					</td>
 			</tr>
 			
 			<tr>
-				<td><h3>
+				<td>
 						<label>STATE &nbsp;&nbsp;:&nbsp;&nbsp;</label>
-						<%=rs.getString("m_name") %></h3>
+						<%=rs.getString("m_name") %>
 				</td>
-				<td><h3>
+				<td>
 						<label>CITY &nbsp;&nbsp;:&nbsp;&nbsp;</label>
 						<%=rs.getString("f_name")%>
-					</h3></td>
+					</td>
 			</tr>
 			<tr>
 				
-				<td><h3>
+				<td>
 						<label>PINCODE &nbsp;&nbsp;:&nbsp;&nbsp;</label>
 						<%=rs.getString("f_name")%>
-					</h3></td>
+					</td>
 			</tr>
 		</table>
 
-
-
-
-
-
-		<%-- 	<div class="stu_name">
-														<h3>
-														<label>Name &nbsp;&nbsp;:&nbsp;&nbsp;</label>
-																				<%=rs.getString("first_name")+" "+rs.getString("last_name")%>
-														</h3>
-														</div>
-														<div class="stu_name">
-																
-														
-														</div>
-														
-														<div class="stu_name">
-														<p ><%=rs.getString("first_name")%></p>
-														</div> --%>
 														<%
-														
 															}
 																
 															} catch (Exception e) {
@@ -250,16 +215,14 @@ label {
 															}
 														%>
                                </div>
-                                                	
-                                                		
-														<br><br>
-                                                	
-	
+                                             	
 <div>
 			<%@include file="itc/footer.jsp" %>
 </div>
 
 
+                                             
+                                                	
 
 
 

@@ -143,7 +143,6 @@ public class St_Register extends HttpServlet {
 						}
 					}	
 	/*Insert Data into student_address*/
-					System.out.println("grad"+graduation);
 	/*Insert Data into student_education*/
 						String sql2="insert into student_education(high,higher,grad_percentage,roll_no,school_name)"
 												+ "values(?,?,?,?,?)";
@@ -175,23 +174,13 @@ public class St_Register extends HttpServlet {
 								stmt.setString(3,uname);
 								stmt.setString(4,hashed);
 								int res3 = stmt.executeUpdate();
-								if(res3>0)
-								{
-									out.println("<html><body><h4>Data Submitted</h4></body></html>");
-									response.sendRedirect("student/login.jsp");
-									
-								}
-								else
-								{
-									out.println("<html><body><script>alert('data not submitted');</script></body></html>");
-									
-								}
+								
 								
 								
 		/*Insert Data into student_information*/
 						String sql="insert into student_information(first_name,last_name,email,gender,dob,religion,"
-										+ "category,s_contact,image,f_name,m_name,f_num,aadhar_number,college,course,fk_address,fk_education)"
-												+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+										+ "category,s_contact,image,f_name,m_name,f_num,aadhar_number,college,course,username,fk_address,fk_education)"
+												+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 								stmt = con.prepareStatement(sql);
 								stmt.setString(1,fname);
 								stmt.setString(2,lname);
@@ -208,12 +197,14 @@ public class St_Register extends HttpServlet {
 								stmt.setString(13,adhar);
 								stmt.setString(14,college);
 								stmt.setString(15,course);
-								stmt.setInt(16,fk_address);
-								stmt.setInt(17,fk_education);
+								stmt.setString(16,uname);
+								stmt.setInt(17,fk_address);
+								stmt.setInt(18,fk_education);
 								int res2 = stmt.executeUpdate();
 					if(res>0&&res1>0&&res2>0&&res>3)
 					{
 						out.println("<html><body><h4>Data Submitted</h4></body></html>");
+						response.sendRedirect("student/register.jsp");
 						
 					}
 					else

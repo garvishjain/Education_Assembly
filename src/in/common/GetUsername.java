@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class GetName 
+public class GetUsername 
 {
 	private String name;
 
@@ -42,7 +42,7 @@ public class GetName
 			}
 		}
 		
-		 sql="select username from "+tableName+" where id=? LIMIT 1";
+		 sql="select name from "+tableName+" where id=? LIMIT 1";
 		 stmt = con.prepareStatement(sql);
 		 
 		 
@@ -54,7 +54,7 @@ public class GetName
 		
 		if(rs.next())
 		{
-			setName(rs.getString("username"));
+			setName(rs.getString("name"));
 		}
 
 	}
