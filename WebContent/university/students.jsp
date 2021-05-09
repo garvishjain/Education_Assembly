@@ -273,7 +273,7 @@ Statement stmt=con.createStatement();
                     <ul class="metismenu">
                         <li><a href="university-manager.jsp"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
                         <li><a href="professors.jsp"><i class="fa fa-black-tie"></i><span>Professors</span></a></li>
-                        <li><a href="staff.html"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
+                        <li><a href="staff.jsp"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
                         <li class="active"><a href="students.jsp"><i class="fa fa-users"></i><span>Students</span></a></li>
                         <li><a href="department.jsp"><i class="fa fa-users"></i><span>Departments</span></a></li>
                         <li><a href="courses.jsp"><i class="fa fa-graduation-cap"></i><span>Courses</span></a></li>                        

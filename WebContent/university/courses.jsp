@@ -43,7 +43,7 @@ Statement stmt=con.createStatement();
     <div id="header_top" class="header_top">
         <div class="container">
             <div class="hleft">
-                <a class="header-brand" href="index.html"><i class="fa fa-graduation-cap brand-logo"></i></a>
+                <a class="header-brand" href="#"><i class="fa fa-graduation-cap brand-logo"></i></a>
                 <div class="dropdown">
                     <a href="javascript:void(0)" class="nav-link icon menu_toggle"><i class="fe fe-align-center"></i></a>
                     <a href="page-search.html" class="nav-link icon"><i class="fe fe-search" data-toggle="tooltip" data-placement="right" title="Search..."></i></a>
@@ -51,7 +51,7 @@ Statement stmt=con.createStatement();
                 </div>
             </div>
             <div class="hright">
-                <a href="login.html" class="nav-link icon settingbar"><i class="fe fe-power"></i></a>                
+                <a href="login.jsp" class="nav-link icon settingbar"><i class="fe fe-power"></i></a>                
             </div>
         </div>
     </div>
@@ -274,7 +274,7 @@ Statement stmt=con.createStatement();
                         <li><a href="university-manager.jsp"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
                         <li><a href="professors.jsp"><i class="fa fa-black-tie"></i><span>Professors</span></a></li>
                         <li><a href="staff.jsp"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
-                        <li><a href="students.html"><i class="fa fa-users"></i><span>Students</span></a></li>
+                        <li><a href="students.jsp"><i class="fa fa-users"></i><span>Students</span></a></li>
                         <li><a href="department.jsp"><i class="fa fa-users"></i><span>Departments</span></a></li>
                         <li class="active"><a href="courses.jsp"><i class="fa fa-graduation-cap"></i><span>Courses</span></a></li>                        
                     </ul>
