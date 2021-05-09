@@ -76,15 +76,16 @@ uname=session.getAttribute("nameUser") != null ? (String)session.getAttribute("n
 table {
 	font-family: arial, sans-serif;
 	border-collapse: collapse;
-	width: 100%;
-	border: 3px solid black;
-}
+	width: 87%;
+    border: 1px solid #223038;
+    margin: 20px 0px 41px 69px;
+       border-radius: 12px;
+} 
 
-td, th {
-	border: 1px solid #dddddd;
-	text-align: left;
-	padding: 8px;
-}
+ td, tr {
+	
+	height: 45px;
+} 
 
 tr:nth-child(even) {
 	background-color: #dddddd;
@@ -93,6 +94,46 @@ tr:nth-child(even) {
 label {
 	margin-left: 20px;
 }
+
+.name_frame {
+    border: 1px solid #223038;
+    border-radius: 12px;
+    margin: auto;
+    margin-top: 125px;
+    margin-bottom: 20px;
+    padding: inherit;
+    width: 80%;
+    height: 170px;
+}
+.name_frame_1 {
+        margin: 23px 0px 0px 222px;
+    font-size: 20px;
+    font-family: 'fontello';
+   
+}
+.detail_frame {
+    border: 1px solid #223038;
+    border-radius: 12px;
+    margin: auto;
+    margin-top: 25px;
+    margin-bottom: 20px;
+    padding: inherit;
+    width: 80%;
+   /*  height: 800px; */
+}
+.img_frame {
+    margin: -94px 80px 0px 40px;
+    width: 147px;
+}
+.aboutme{ font-size: 18px;
+    font-weight: bold;
+    margin: 25px 0px 0px 71px;
+    font-family: 'fontello';}		
+    
+    .st_detail{margin: 0px 0px 0px 150px;font-size: 16px;}
+    .st_field{margin: 0px 0px 0px 135px;font-size: 16px;}
+    .colon{margin: 0px 0px 0px 0px;}
+    .dash{margin: 0px 0px 0px 140px;font-size: 16px;}
 </style>
 </head>
 
@@ -108,6 +149,211 @@ label {
 		<%@ include file="itc/header.jsp"%>
 		<!--Header File-->
 	</div>
+	 <%String s=uname; %>
+	 <% String nb="null"; %>
+	<%
+			try {
+				/* String query = "Select * from student_information where username='" + uname + "' "; */
+				String sql="Select * from student_information INNER JOIN student_address ON student_information.fk_address=student_address.pk_id WHERE username= '" + uname + "'    ";
+				ResultSet rs = stmt.executeQuery(sql);
+				if (rs.next()) {
+		%>
+
+				<div class="name_frame">
+							<div class="name_frame_1">
+														<P><%=rs.getString("first_name").toUpperCase() + " " + rs.getString("last_name").toUpperCase()%></P>
+														<P>REG. NO.-<p>
+							</div>
+							
+							<div class="img_frame">
+								<img src="img/teacher_1_small.jpg" alt="" class="img-circle styled">
+							</div>
+		
+				</div>
+				
+				<div class="detail_frame">
+						<h2 class="aboutme">ABOUT ME</h2>
+						<div>
+			<table>
+				<%-- <tr>
+					<td><label class="st_field">REGISTRATION NUMBER</label> 
+					<label class="dash">&mdash;</label>
+					<label	class="st_detail"><%=rs.getString("first_name")%></label>
+					
+				</td>
+				</tr> --%>
+				
+				<tr>
+					<td><label class="st_field">STATUS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+					 <label class="dash">&mdash;</label>
+					 <label class="st_detail"><p hidden> String name=rs.getString("username") ;</p>
+					 											<p hidden> <%String prefix=(String)name.substring(0,2); %></p>
+					
+				<%
+					try {
+								if(prefix.equals("st"))
+								{
+									
+					%>
+					<p style="color: green;">
+									<%=rs.getString("username")%>
+					</p>
+				<%
+								 }
+								else
+								{
+									%>
+					<p style="color: red;">
+						<%= rs.getString("username")%>
+					</p>
+						<%
+								}
+					}
+				catch (Exception e) {
+					e.printStackTrace();
+				}
+				%>
+					  
+					 
+					 
+					 </label>
+					 
+					 </td>
+				</tr>
+				
+				
+						
+			<%-- <tr>
+					<td>
+						<label class="st_field">NAME&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+						<label class="dash">&mdash;</label>
+						<label class="st_detail"><%=rs.getString("first_name").toUpperCase() + " " + rs.getString("last_name").toUpperCase()%></label>
+		     	   </td>
+			</tr> --%>
+
+			<tr>
+					<td>
+						<label class="st_field">E-MAIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+						<label class="dash">&mdash;</label>
+						<label class="st_detail"><%=rs.getString("email")%></label>
+		     	   </td>
+			</tr>
+			
+			<tr>
+					<td>
+						<label class="st_field">GENDER&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+						<label class="dash">&mdash;</label>
+						<label class="st_detail"><%=rs.getString("gender").toUpperCase()%></label>
+		     	   </td>
+			</tr>
+			
+			<tr>
+					<td>
+						<label class="st_field">DATE OF BIRTH&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+						<label class="dash">&mdash;</label>
+						<label class="st_detail"> <%=rs.getString("dob")%></label>
+		     	   </td>
+			</tr>
+			
+			<tr>
+					<td>
+						<label class="st_field">RELIGION&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+						<label class="dash">&mdash;</label>
+						<label class="st_detail"><%=rs.getString("religIon").toUpperCase()%></label>
+		     	   </td>
+			</tr>
+			
+			<tr>
+					<td>
+						<label class="st_field">CAST&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+						<label class="dash">&mdash;</label>
+						<label class="st_detail"><%=rs.getString("category").toUpperCase()%></label>
+		     	   </td>
+			</tr>
+			
+			<tr>
+					<td>
+						<label class="st_field">AADHAR NUMBER&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+						<label class="dash">&mdash;</label>
+						<label class="st_detail"><%=rs.getString("aadhar_number")%></label>
+		     	   </td>
+			</tr>
+			
+			<tr>
+					<td>
+						<label class="st_field">CONTACT NUMBER&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+					<label class="dash">&mdash;</label>
+						<label class="st_detail"><%=rs.getString("s_contact")%></label>
+		     	   </td>
+			</tr>
+			
+			<tr>
+					<td>
+						<label class="st_field">FATHER NAME&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+						<label class="dash">&mdash;</label>
+						<label class="st_detail"><%=rs.getString("f_name")%></label>
+		     	   </td>
+			</tr>
+			
+			<tr>
+					<td>
+						<label class="st_field">MOTHER NAME&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+					<label class="dash">&mdash;</label>
+						<label class="st_detail"><%=rs.getString("m_name")%></label>
+		     	   </td>
+			</tr>
+			
+			 <tr>
+					<td>
+						<label class="st_field"> STATE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+						<label class="dash">&mdash;</label>
+						<label class="st_detail"><%=rs.getString("state")%></label>
+		     	   </td>
+			</tr> 
+			
+			<tr>
+					<td>
+						<label class="st_field">CITY&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+						<label class="dash">&mdash;</label>
+						<label class="st_detail"><%=rs.getString("city")%></label>
+		     	   </td>
+			</tr>
+			<tr>
+					<td>
+						<label class="st_field">PINCODE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+						<label class="dash">&mdash;</label>
+						<label class="st_detail"><%=rs.getString("pincode")%></label>
+		     	   </td>
+			</tr>
+			
+
+			</table>
+
+		</div>
+
+	
+				</div>
+<%
+	}
+	} catch (Exception e) {
+		e.printStackTrace();
+	}
+%>
+
 
 
 	<%-- <div class="status">
@@ -125,10 +371,11 @@ label {
 			<tr>
 				<td><label>REGISTRATION NUMBER&nbsp;&nbsp;:&nbsp;&nbsp;</label>
 					<%=rs.getString("first_name")%></td>
+			</tr>
+			<tr>
 				<td><label>Status&nbsp;&nbsp;:&nbsp;&nbsp;</label> <%=rs.getString("first_name")%>
 				</td>
-
-			</tr>
+				</tr>
 			<tr>
 				<td><label>NAME <label class="m">&nbsp;&nbsp;:&nbsp;&nbsp;</label></label>
 					<%=rs.getString("first_name").toUpperCase() + " " + rs.getString("last_name").toUpperCase()%>
@@ -191,9 +438,9 @@ label {
 		%>
 	</div>  --%>
 <!-- new one -->
- <div class="section-body mt-4">
+ <%-- <div class="section-body mt-4">
 		<div class="row">
-			 <div class="col-md-12 col-lg-12">
+			 <div class="col-md-10 col-lg-10">
 				<%
 					try {
 						String query = "Select * from student_information where username='" + uname + "'";
@@ -203,14 +450,13 @@ label {
 				%>
 				<div class="card">
 					<div class="card-body w_user">
-						<%-- <div class="user_avtar">
-							<img class="rounded-circle"
-								src="../assets/images/sm/avatar2.jpg" alt="">
+						<div class="user_avtar">
+							<img class="rounded-circle" src="../assets/images/sm/avatar2.jpg" alt="">
 						</div>
 						<div class="wid-u-info">
 							<h5><%=rs.getString("student_name") %></h5>
 							<p class="text-muted m-b-0"><%=rs.getString("pk_id") %></p>
-						</div> --%>
+						</div>
 					</div>
 				</div>
 				<div class="card">
@@ -281,13 +527,15 @@ label {
 		</div>
 	</div>
 </div>
-	
+ --%>
+
+	<div>
 <%@include file="itc/footer.jsp"%>
-	
+	</div>
 
 	<!--  
 <div id="search">
-    <button type="button" class="close">×</button>
+    <button type="button" class="close">Ã—</button>
     <form>
         <input type="search" value="" placeholder="type keyword(s) here" >
         <button type="submit" class="button">Search</button>

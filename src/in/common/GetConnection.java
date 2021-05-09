@@ -11,17 +11,11 @@ public class GetConnection
 {
 	
 	private Connection con;
-	
-	
-	
 	public Connection getCon() 
 	{
 		getConnection();
 		return con;
 	}
-
-
-
 	public void setCon(Connection con) {
 		this.con = con;
 	}

@@ -53,7 +53,7 @@ public class St_Login extends HttpServlet {
 				GetConnection getConObj=new GetConnection();
 				 con=getConObj.getCon();
 				 stmt=con.createStatement();
-				//System.out.println("connectipon = "+con);
+				System.out.println("connectipon = "+con);
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
