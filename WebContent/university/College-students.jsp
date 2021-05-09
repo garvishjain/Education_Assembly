@@ -265,18 +265,17 @@ Statement stmt=con.createStatement();
     <div id="left-sidebar" class="sidebar">
         <h6 class="brand-name">Education Assembly<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h6>
         <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-uni">University</a></li>
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-uni">College</a></li>
         </ul>
         <div class="tab-content mt-3">
             <div class="tab-pane fade show active" id="menu-uni" role="tabpanel">
                 <nav class="sidebar-nav">
                     <ul class="metismenu">
-                        <li><a href="university-manager.jsp"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
-                        <li><a href="professors.jsp"><i class="fa fa-black-tie"></i><span>Professors</span></a></li>
-                        <li><a href="staff.jsp"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
-                        <li class="active"><a href="students.jsp"><i class="fa fa-users"></i><span>Students</span></a></li>
-                        <li><a href="department.jsp"><i class="fa fa-users"></i><span>Departments</span></a></li>
-                        <li><a href="courses.jsp"><i class="fa fa-graduation-cap"></i><span>Courses</span></a></li>                        
+                        <li><a href="College-manager.jsp"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
+                        <li><a href="College-professors.jsp"><i class="fa fa-black-tie"></i><span>Professors</span></a></li>
+                        <li class="active"><a href="College-students.jsp"><i class="fa fa-users"></i><span>Students</span></a></li>
+                        <li><a href="College-department.jsp"><i class="fa fa-users"></i><span>Departments</span></a></li>
+                        <li><a href="College-courses.jsp"><i class="fa fa-graduation-cap"></i><span>Courses</span></a></li>                        
                     </ul>
                 </nav>
             </div>
@@ -304,12 +303,13 @@ Statement stmt=con.createStatement();
                     <div class="header-action">
                         <h1 class="page-title">Students</h1>
                         <ol class="breadcrumb page-breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">University</a></li>
+                            <li class="breadcrumb-item"><a href="#">College</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Students</li>
                         </ol>
                     </div>
                     <ul class="nav nav-tabs page-header-tab">
-                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Student-all">List View</a></li>
+                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Student-new">New Student</a></li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Student-old">Old Student</a></li>
                         <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Student-add">Add</a></li>
                     </ul>
                 </div>
@@ -318,7 +318,117 @@ Statement stmt=con.createStatement();
         <div class="section-body mt-4">
             <div class="container-fluid">
                 <div class="tab-content">
-                    <div class="tab-pane active" id="Student-all">
+                    <div class="tab-pane active" id="Student-new">
+                        <div class="card">
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-lg-2 col-md-4 col-sm-6">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Roll No.">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-sm-6">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Name">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-4 col-md-4 col-sm-6">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="Department">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-sm-6">
+                                        <div class="input-group">
+                                            <input data-provide="datepicker" data-date-autoclose="true" class="form-control" placeholder="Admission Date">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 col-md-4 col-sm-6">
+                                        <a href="javascript:void(0);" class="btn btn-sm btn-primary btn-block" title="">Search</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="table-responsive card">
+                            <table class="table table-hover table-vcenter table-striped mb-0 text-nowrap">
+                                <thead>
+                                    <tr>
+                                        <th>Roll No.</th>
+                                        <th></th>
+                                        <th>Name</th>
+                                        <th>Department</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>Admission Date</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                	<%
+	                                      try {
+										String query = "select * from university_student";
+										//get Table data
+										ResultSet rs = stmt.executeQuery(query);
+										while (rs.next()) {
+	                                 %>
+                                    <tr>
+                                        <td><%=rs.getString("pk_id") %></td>
+                                        <td class="w60">
+                                            <img class="avatar" src="../assets/images/xs/avatar1.jpg" alt="">
+                                        </td>
+                                        <td><span class="font-16"><%=rs.getString("student_name") %></span></td>
+                                        <td><%=rs.getString("department") %></td>
+                                        <td><%=rs.getString("email") %></td>
+                                        <td><%=rs.getString("phone") %></td>
+                                        <td></td>
+                                        <td>
+                                            <button type="button" class="btn btn-icon btn-sm" title="View Profile" ><a href="student-profile.jsp"><i class="fa fa-eye"></i></a></button>
+                                            <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
+                                            <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+                                        </td>
+                                    </tr>
+										<%
+											}
+											        } catch (Exception e) {
+												e.printStackTrace();
+											}
+										%>
+										<tr>
+                                        <td>A26</td>
+                                        <td class="w60">
+                                            <img class="avatar" src="../assets/images/xs/avatar2.jpg" alt="">
+                                        </td>
+                                        <td><span class="font-16">Durgesh Singh</span></td>
+                                        <td>M.C.A.</td>
+                                        <td>durgesh@gmail.com</td>
+                                        <td>8683794738</td>
+                                        <td>04 Jan, 2019</td>
+                                        <td>
+                                            <button type="button" class="btn btn-icon btn-sm" title="View" ><a href="College-student-profile.jsp"><i class="fa fa-eye" ></i></a></button>
+                                            <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
+                                            <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>A25</td>
+                                        <td class="w60">
+                                            <img class="avatar" src="../assets/images/xs/avatar3.jpg" alt="">
+                                        </td>
+                                        <td><span class="font-16">Ken Smith</span></td>
+                                        <td>Mechanical</td>
+                                        <td>ken@gmail.com</td>
+                                        <td>(417) 646-8377</td>
+                                        <td>04 Jan, 2019</td>
+                                        <td>
+                                            <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
+                                            <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
+                                            <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="Student-old">
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">

@@ -7,25 +7,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="icon" href="favicon.ico" type="image/x-icon"/>
-<title>:: Education Assembly :: Students</title>
+<title>:: Education Assembly :: Professors</title>
 
-<!-- Import Package  -->
-<%@ include file="inc/stdimport.jsp" %> 
+<!-- Import package -->
 <%@page import="in.common.GetConnection"%>
+<%@ include file="inc/stdimport.jsp" %>  
 
 <%
 GetConnection getConObj=new GetConnection();
 Connection con=getConObj.getCon();
 Statement stmt=con.createStatement();
-%>
 
+%>
 
 <!-- Bootstrap Core and vandor -->
 <link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
-<!-- <link rel="stylesheet" href="../assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
+<link rel="stylesheet" href="../assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
 <link rel="stylesheet" href="../assets/plugins/dropify/css/dropify.min.css">
 <link rel="stylesheet" href="../assets/plugins/summernote/dist/summernote.css"/>
-<link rel="stylesheet" href="../assets/plugins/sweetalert/sweetalert.css"> -->
 
 <!-- Core css -->
 <link rel="stylesheet" href="../assets/css/style.min.css"/>
@@ -41,7 +40,7 @@ Statement stmt=con.createStatement();
 
 <div id="main_content">
     <!-- Start Main top header -->
-     <div id="header_top" class="header_top">
+    <div id="header_top" class="header_top">
         <div class="container">
             <div class="hleft">
                 <a class="header-brand" href="#"><i class="fa fa-graduation-cap brand-logo"></i></a>
@@ -52,10 +51,10 @@ Statement stmt=con.createStatement();
                 </div>
             </div>
             <div class="hright">
-                <a href="login.jsp" class="nav-link icon settingbar"><i class="fe fe-power" title="Log Out"></i></a>                
+                <a href="login.jsp" class="nav-link icon settingbar"><i class="fe fe-power"></i></a>                
             </div>
         </div>
-    </div> 
+    </div>
     <!-- Start Rightbar setting panel -->
     <div id="rightsidebar" class="right_sidebar">
         <a href="javascript:void(0)" class="p-3 settingbar float-right"><i class="fa fa-close"></i></a>
@@ -238,7 +237,6 @@ Statement stmt=con.createStatement();
             </div>
         </div>
     </div>
-   
     <!-- Start Theme panel do not add in project -->
     <div class="theme_div">
         <div class="card">
@@ -265,18 +263,17 @@ Statement stmt=con.createStatement();
     <div id="left-sidebar" class="sidebar">
         <h6 class="brand-name">Education Assembly<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h6>
         <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-uni">University</a></li>
+            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-uni">College</a></li>
         </ul>
         <div class="tab-content mt-3">
             <div class="tab-pane fade show active" id="menu-uni" role="tabpanel">
                 <nav class="sidebar-nav">
                     <ul class="metismenu">
-                        <li><a href="university-manager.jsp"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
-                        <li><a href="professors.jsp"><i class="fa fa-black-tie"></i><span>Professors</span></a></li>
-                        <li><a href="staff.jsp"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
-                        <li class="active"><a href="students.jsp"><i class="fa fa-users"></i><span>Students</span></a></li>
-                        <li><a href="department.jsp"><i class="fa fa-users"></i><span>Departments</span></a></li>
-                        <li><a href="courses.jsp"><i class="fa fa-graduation-cap"></i><span>Courses</span></a></li>                        
+                        <li><a href="College-manager.jsp"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
+                        <li class="active"><a href="College-professors.jsp"><i class="fa fa-black-tie"></i><span>Professors</span></a></li>
+                        <li><a href="College-students.jsp"><i class="fa fa-users"></i><span>Students</span></a></li>
+                        <li><a href="College-departments.jsp"><i class="fa fa-users"></i><span>Departments</span></a></li>
+                        <li><a href="College-courses.jsp"><i class="fa fa-graduation-cap"></i><span>Courses</span></a></li>                        
                     </ul>
                 </nav>
             </div>
@@ -288,29 +285,30 @@ Statement stmt=con.createStatement();
         <div class="section-body" id="page_top" >
             <div class="container-fluid">
                 <div class="page-header">
-                   <div class="input-group">
-                       <input type="text" class="form-control" placeholder="What you want to find">
-                       <div class="input-group-append">
-                           <button class="btn btn-outline-secondary" type="button">Search</button>
-                       </div>
-                   </div>
+                    <div class="input-group">
+                        <input type="text" class="form-control" placeholder="What you want to find">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button">Search</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
         <!-- Start Page title and tab -->
-        <div class="section-body">
+        <div class="section-body" >
             <div class="container-fluid">
                 <div class="d-flex justify-content-between align-items-center ">
                     <div class="header-action">
-                        <h1 class="page-title">Students</h1>
+                        <h1 class="page-title">Professors</h1>
                         <ol class="breadcrumb page-breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">University</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Students</li>
+                            <li class="breadcrumb-item"><a href="#">College</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">Professors</li>
                         </ol>
                     </div>
                     <ul class="nav nav-tabs page-header-tab">
-                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Student-all">List View</a></li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Student-add">Add</a></li>
+                        <li class="nav-item"><a class="nav-link active"data-toggle="tab" href="#pro-all">List View</a></li>
+                        <li class="nav-item"><a class="nav-link"data-toggle="tab" href="#pro-grid">Grid View</a></li>
+                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#pro-add">Add</a></li>
                     </ul>
                 </div>
             </div>
@@ -318,117 +316,134 @@ Statement stmt=con.createStatement();
         <div class="section-body mt-4">
             <div class="container-fluid">
                 <div class="tab-content">
-                    <div class="tab-pane active" id="Student-all">
-                        <div class="card">
-                            <div class="card-body">
-                                <div class="row">
-                                    <div class="col-lg-2 col-md-4 col-sm-6">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Roll No.">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2 col-md-4 col-sm-6">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Name">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-4 col-md-4 col-sm-6">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Department">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2 col-md-4 col-sm-6">
-                                        <div class="input-group">
-                                            <input data-provide="datepicker" data-date-autoclose="true" class="form-control" placeholder="Admission Date">
-                                        </div>
-                                    </div>
-                                    <div class="col-lg-2 col-md-4 col-sm-6">
-                                        <a href="javascript:void(0);" class="btn btn-sm btn-primary btn-block" title="">Search</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="table-responsive card">
-                            <table class="table table-hover table-vcenter table-striped mb-0 text-nowrap">
-                                <thead>
-                                    <tr>
-                                        <th>Roll No.</th>
-                                        <th></th>
-                                        <th>Name</th>
-                                        <th>Department</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>Admission Date</th>
-                                        <th>Action</th>
-                                    </tr>
-                                </thead>
+                    <div class="tab-pane active" id="pro-all">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-vcenter table_custom text-nowrap spacing5 border-style mb-0">
                                 <tbody>
-                                	<%
-	                                      try {
-										String query = "select * from university_student";
-										//get Table data
-										ResultSet rs = stmt.executeQuery(query);
-										while (rs.next()) {
-	                                 %>
-                                    <tr>
-                                        <td><%=rs.getString("pk_id") %></td>
+                                <%-- <%
+                                
+                                for(GetProfessorsDB data : records)
+								{ 
+									String avatar=data.getFirstName().charAt(0) +""+ data.getLastName().charAt(0);
+								%>
+								<tr>
                                         <td class="w60">
-                                            <img class="avatar" src="../assets/images/xs/avatar1.jpg" alt="">
+                                            <div class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">
+                                                <span><%=avatar %></span>
+                                            </div>
                                         </td>
-                                        <td><span class="font-16"><%=rs.getString("student_name") %></span></td>
-                                        <td><%=rs.getString("department") %></td>
-                                        <td><%=rs.getString("email") %></td>
-                                        <td><%=rs.getString("phone") %></td>
-                                        <td></td>
+                                        <td><div class="font-15"><%=data.getFullName() %></div></td>
+                                        <td><span><%=data.getPhone() %></span></td>
+                                        <td><span><%=data.getGender() %></span></td>
+                                        <td><span class="text-muted"><%=data.getDepartment() %></span></td>
                                         <td>
-                                            <button type="button" class="btn btn-icon btn-sm" title="View Profile" ><a href="student-profile.jsp"><i class="fa fa-eye"></i></a></button>
-                                            <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                            <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+                                        <%
+                                        	if(data.getPosition().equalsIgnoreCase("Full Time")){
+                                        %>
+                                        <span class="tag tag-success">Full-time</span>
+                                        <%} 
+                                        	else
+                                        	{%>
+                                        		<span class="tag tag-warning">Part-time</span>
+                                        	<%}
+                                        %>
                                         </td>
-                                    </tr>
-										<%
-											}
-											        } catch (Exception e) {
-												e.printStackTrace();
-											}
-										%>
-										<tr>
-                                        <td>A26</td>
-                                        <td class="w60">
-                                            <img class="avatar" src="../assets/images/xs/avatar2.jpg" alt="">
-                                        </td>
-                                        <td><span class="font-16">Gerald K Smith</span></td>
-                                        <td>M.C.A.</td>
-                                        <td>Gerald@gmail.com</td>
-                                        <td>(154) 646-2486</td>
-                                        <td>04 Jan, 2019</td>
-                                        <td>
-                                            <button type="button" class="btn btn-icon btn-sm" title="View" ><i class="fa fa-eye" href="#student-profile.jsp"></i></button>
-                                            <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                            <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>A25</td>
-                                        <td class="w60">
-                                            <img class="avatar" src="../assets/images/xs/avatar3.jpg" alt="">
-                                        </td>
-                                        <td><span class="font-16">Ken Smith</span></td>
-                                        <td>Mechanical</td>
-                                        <td>ken@gmail.com</td>
-                                        <td>(417) 646-8377</td>
-                                        <td>04 Jan, 2019</td>
                                         <td>
                                             <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
                                             <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
                                             <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
                                         </td>
                                     </tr>
+								<%}
+                                %> --%>
+                                <tr>
+                                        <td class="w60">
+                                            <div class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">
+                                                <span>GS</span>
+                                            </div>
+                                        </td>
+                                        <td><div class="font-15">Gladys J Smith</div></td>
+                                        <td><span>(417) 646-8377</span></td>
+                                        <td><span class="text-muted">Computer</span></td>
+                                        <td>BCA, MCA</td>
+                                        <td><strong>04 Jan, 2019</strong></td>
+                                        <td><span class="tag tag-success">Full-time</span></td>
+                                        <td>
+                                            <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
+                                            <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
+                                            <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="w60">
+                                            <img class="avatar" src="../assets/images/xs/avatar1.jpg" alt="">
+                                        </td>
+                                        <td><div class="font-15">Alan Johnson</div></td>
+                                        <td><span>(417) 646-8377</span></td>
+                                        <td><span class="text-muted">Mechanical</span></td>
+                                        <td>MCA</td>
+                                        <td><strong>04 Jan, 2019</strong></td>
+                                        <td><span class="tag tag-warning">Part-time</span></td>
+                                        <td>
+                                            <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
+                                            <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
+                                            <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+                                        </td>
+                                    </tr>
+						       
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                    <div class="tab-pane" id="Student-add">
+                    <div class="tab-pane" id="pro-grid">
+                        <div class="row">
+                            <%--  <%
+                                for(GetProfessorsDB data : records)
+								{ 
+									String avatar=data.getFirstName().charAt(0) +""+ data.getLastName().charAt(0);
+								%>
+                            <div class="col-xl-3 col-lg-4 col-md-6">
+                                <div class="card">
+                                    <div class="card-body text-center ribbon">
+                                        <div class="ribbon-box orange" data-toggle="tooltip" title="Permanent"><i class="fa fa-star"></i></div>
+                                        <img class="card-profile-img" alt="<%= avatar %>">
+                                        <h5 class="mb-0"><%=data.getFullName() %></h5>
+                                        <span><%=data.getDepartment() %></span>
+                                        <div class="text-muted"><%=data.getPhone() %></div>
+                                        <button class="btn btn-primary btn-sm">Read More</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <%}
+                                %> --%>
+                                <div class="col-xl-3 col-lg-4 col-md-6">
+                                <div class="card">
+                                    <div class="card-body text-center ribbon">
+                                        <div class="ribbon-box orange" data-toggle="tooltip" title="Permanent"><i class="fa fa-star"></i></div>
+                                        <img class="card-profile-img" src="../assets/images/sm/avatar2.jpg" alt="">
+                                        <h5 class="mb-0">Ken Smith</h5>
+                                        <span>Science</span>
+                                        <div class="text-muted">+ (916) 369-7180</div>
+                                        <p class="mb-4 mt-3">449 Thompson St, Conway, SC, 29527</p>
+                                        <button class="btn btn-primary btn-sm">Read More</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <img class="card-profile-img" src="../assets/images/sm/avatar3.jpg" alt="">
+                                        <h5 class="mb-0">Alan Johnson</h5>
+                                        <span>Music</span>
+                                        <div class="text-muted">+ (916) 369-7180</div>
+                                        <p class="mb-4 mt-3">5290 NE 50th Rd, Osceola, MO, 64776</p>
+                                        <button class="btn btn-primary btn-sm">Read More</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane" id="pro-add">
                         <div class="row clearfix">
                             <div class="col-md-12 col-lg-12">
                                 <div class="card">
@@ -439,96 +454,106 @@ Statement stmt=con.createStatement();
                                             <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
                                         </div>
                                     </div>
-                                    <form class="card-body">
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">First Name <span class="text-danger">*</span></label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control" placeholder="Enter First name">
+                                    <form action="../professors" method="post" enctype="multipart/form-data" >
+                                    <div class="card-body">
+                                        <div class="row clearfix">
+                                            <div class="col-md-6 col-sm-12">
+                                                <div class="form-group">
+                                                    <label>First Name</label>
+                                                    <input type="text" name="fname" class="form-control">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Last Name <span class="text-danger">*</span></label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control" placeholder="Enter Last name">
+                                            <div class="col-md-6 col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Last Name</label>
+                                                    <input type="text" name="lname" class="form-control">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Roll No <span class="text-danger">*</span></label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control">
+                                            <div class="col-md-3 col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Date of Birth</label>
+                                                    <input data-provide="datepicker" data-date-autoclose="true" name="dob" class="form-control" placeholder="Date of Birth">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Email</label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Registration Date <span class="text-danger">*</span></label>
-                                            <div class="col-md-9">
-                                                <input data-provide="datepicker" data-date-autoclose="true" class="form-control" placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Class <span class="text-danger">*</span></label>
-                                            <div class="col-md-9">
-                                                <select class="form-control input-height" name="department">
-                                                    <option value="">Select...</option>
-                                                    <option value="Category 1">Computer</option>
-                                                    <option value="Category 2">Mechanical</option>
-                                                    <option value="Category 3">Mathematics</option>
-                                                    <option value="Category 3">Commerce</option>
+                                            <div class="col-md-3 col-sm-12">
+                                                <label>Gender</label>
+                                                <select name="gender" class="form-control show-tick">
+                                                    <option value="">-- Gender --</option>
+                                                    <option value="10">Male</option>
+                                                    <option value="20">Female</option>
                                                 </select>
                                             </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Gender <span class="text-danger">*</span></label>
-                                            <div class="col-md-9">
-                                                <select class="form-control input-height" name="gender">
-                                                    <option value="">Select...</option>
-                                                    <option value="Category 1">Male</option>
-                                                    <option value="Category 2">Female</option>
-                                                </select>
+                                            <div class="col-md-3 col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Department</label>
+                                                    <select name="department" class="form-control">
+                                                    <option></option>
+                                                    <%
+	                                                    try {
+	            											String query = "select * from department_name";
+	            											//get Table data
+	            											ResultSet rs = stmt.executeQuery(query);
+	            											while (rs.next()) {
+                                                    %>
+                                                    	<option><%=rs.getString("department_name") %></option>
+                                                   	<%
+	            										}
+	                                                    }catch(Exception e)
+	                                                    {
+		                                                 	e.printStackTrace();   	
+	                                                    }
+                                                   	%>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3 col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Position</label>
+                                                    <select name="position" class="form-control">
+                                                    <option></option>
+                                                    <%
+	                                                    try {
+	            											String query = "select * from position";
+	            											//get Table data
+	            											ResultSet rs = stmt.executeQuery(query);
+	            											while (rs.next()) {
+                                                    %>
+                                                    	<option><%=rs.getString("position") %></option>
+                                                    <%
+	            											}	
+	                                                    }	
+	            										catch(Exception e)
+	                                                    {
+	                                                    	e.printStackTrace();
+	                                                    }
+                                                    %>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Phone</label>
+                                                    <input type="text" name="phone" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-4 col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Enter Your Email</label>
+                                                    <input type="email" name="email" class="form-control">
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group mt-2 mb-3">
+                                                    <input type="file" name="image" class="dropify">
+                                                    <small id="fileHelp" class="form-text text-muted">Upload professor profile picture.</small>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <button type="submit" class="btn btn-primary">Submit</button>
+                                                <button type="submit" class="btn btn-outline-secondary">Cancel</button>
                                             </div>
                                         </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Mobile No. <span class="text-danger">*</span></label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Parents Name <span class="text-danger">*</span></label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Parents Mobile No. <span class="text-danger">*</span></label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Date Of Birth  <span class="text-danger">*</span></label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Address <span class="text-danger">*</span></label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Profile Picture</label>
-                                            <div class="col-md-9">
-                                                <input type="file" class="dropify">
-                                                <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
-                                            </div>
-                                        </div>
+                                    </div>
                                     </form>
                                 </div>
                             </div>
@@ -539,7 +564,7 @@ Statement stmt=con.createStatement();
         </div>
         <!-- Start main footer -->
          <%@ include file="inc/footer.jsp" %> 
-         <%@ include file="inc/incjs.jsp" %>
+        <%@ include file="inc/incjs.jsp" %>
     </div>    
 </div>
 
@@ -550,12 +575,10 @@ Statement stmt=con.createStatement();
 <script src="../assets/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 <script src="../assets/plugins/dropify/js/dropify.min.js"></script>
 <script src="../assets/bundles/summernote.bundle.js"></script>
-<script src="../assets/plugins/sweetalert/sweetalert.min.js"></script>
 
 <!-- Start project main js  and page js -->
 <script src="../assets/js/core.js"></script>
 <script src="assets/js/form/dropify.js"></script>
 <script src="assets/js/page/summernote.js"></script>
-<script src="assets/js/page/dialogs.js"></script>
 </body>
 </html>

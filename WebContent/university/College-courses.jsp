@@ -271,12 +271,12 @@ Statement stmt=con.createStatement();
             <div class="tab-pane fade show active" id="menu-uni" role="tabpanel">
                 <nav class="sidebar-nav">
                     <ul class="metismenu">
-                        <li><a href="university-manager.jsp"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
-                        <li><a href="professors.jsp"><i class="fa fa-black-tie"></i><span>Professors</span></a></li>
+                        <li><a href="College-manager.jsp"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
+                        <li><a href="College-professors.jsp"><i class="fa fa-black-tie"></i><span>Professors</span></a></li>
                         <li><a href="staff.jsp"><i class="fa fa-user-circle-o"></i><span>Staff</span></a></li>
-                        <li><a href="students.jsp"><i class="fa fa-users"></i><span>Students</span></a></li>
-                        <li><a href="department.jsp"><i class="fa fa-users"></i><span>Departments</span></a></li>
-                        <li class="active"><a href="courses.jsp"><i class="fa fa-graduation-cap"></i><span>Courses</span></a></li>                        
+                        <li><a href="College-students.jsp"><i class="fa fa-users"></i><span>Students</span></a></li>
+                        <li><a href="College-department.jsp"><i class="fa fa-users"></i><span>Departments</span></a></li>
+                        <li class="active"><a href="College-courses.jsp"><i class="fa fa-graduation-cap"></i><span>Courses</span></a></li>                        
                     </ul>
                 </nav>
             </div>
@@ -304,14 +304,13 @@ Statement stmt=con.createStatement();
                     <div class="header-action">
                         <h1 class="page-title">Courses</h1>
                         <ol class="breadcrumb page-breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">University</a></li>
+                            <li class="breadcrumb-item"><a href="#">College</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Courses</li>
                         </ol>
                     </div>
                     <ul class="nav nav-tabs page-header-tab">
                         <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Courses-all">List View</a></li>
                         <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Courses-add">Add</a></li>
-                        <!-- <li class="nav-item"><a class="nav-link" id="Courses-tab-Boot" data-toggle="tab" href="#Courses-add-Boot">Add Bootstrap Style</a></li> -->
                     </ul>
                 </div>
             </div>
