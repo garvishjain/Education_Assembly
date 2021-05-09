@@ -46,7 +46,6 @@ uname=session.getAttribute("nameUser") != null ? (String)session.getAttribute("n
 	Statement stmt=con.createStatement();
 %>
 
-
 <style type="text/css">
 .stu_name{
 					border: 2px solid gray;
