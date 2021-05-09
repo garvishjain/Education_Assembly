@@ -63,13 +63,13 @@ uname=session.getAttribute("nameUser") != null ? (String)session.getAttribute("n
 					
 					}
 					
-					table {
+				/* 	table {
   font-family: arial, sans-serif;
   border-collapse: collapse;
   width: 100%;
   border: 3px solid black;
   
-}
+} */
 
 td, th {
   border: 1px solid #dddddd;
@@ -106,12 +106,9 @@ label {
 										while (rs.next()) {
 								%>
                               						
-                               		<%-- <div class="imf">
+                               		<div class="imf">
                                				<img src="G:\i\<%=rs.getString("image") %>" width="167px" height="198px"/>
-                               		</div> --%>
-
-                               				
-
+                               		</div>
 		<table>
 		<tr>
 				<td>
@@ -199,7 +196,6 @@ label {
 					</td>
 			</tr>
 			<tr>
-				
 				<td>
 						<label>PINCODE &nbsp;&nbsp;:&nbsp;&nbsp;</label>
 						<%=rs.getString("f_name")%>
