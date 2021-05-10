@@ -8,6 +8,7 @@
       
       <script src="itc/document.js"></script>
        <link href="css/base.css" rel="stylesheet">
+         <link href="itc/document.css" rel="stylesheet">
        <script src="./document.js"></script>
         <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -15,44 +16,58 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style type="text/css">
-  
-    label {
+label {
 	font-size: 20px;
-	 margin-top: 25px;
-	 margin-left: 140px;
+	margin-top: 25px;
+	margin-left: 140px;
 }
-table {
-  font-family: arial, sans-serif;
-  border-collapse: collapse;
-  width: 100%;
-  border: 3px solid #223038;
 
-  
+table {
+	font-family: arial, sans-serif;
+	border-collapse: collapse;
+	width: 100%;
+	border: 3px solid #223038;
 }
 
 td {
-  border: 1px solid #dddddd;
-  text-align: left;
-  padding: 8px;
-  height: 90px;
- 
+	border: 1px solid #dddddd;
+	text-align: left;
+	padding: 8px;
+	height: 90px;
 }
-input[type="file"]
-{
-		float: right;
-		margin-top: 25px;
-		margin-right: 100px;
+
+input[type="file"] {
+	float: right;
+	margin-top: 25px;
+	margin-right: 100px;
 }
-  .mid_a{margin-left: 190px;}
- .mid_b{margin-left: 165px;}
- .mid_c{margin-left: 152px;}
- .mid_d{margin-left: 215px;}
- .mid_e{margin-left: 125px;}  
- .mid_f{margin-left: 80px;}
- 
+
+.mid_a {
+	margin-left: 190px;
+}
+
+.mid_b {
+	margin-left: 165px;
+}
+
+.mid_c {
+	margin-left: 152px;
+}
+
+.mid_d {
+	margin-left: 215px;
+}
+
+.mid_e {
+	margin-left: 125px;
+}
+
+.mid_f {
+	margin-left: 80px;
+}
 
 .butto {
- /*  background-color: #1cafec; 
+	/*  background-color: #1cafec; 
   border: none;
   color: white;
  width:50%;
@@ -63,13 +78,121 @@ input[type="file"]
   margin-right: 250px;
   font-family: "proxima_novasemibold", Arial, Helvetica, sans-serif;
    */
-   width:50%;
-   font-size: 20px;
-   height:40px;
-   /* padding: 10px 30px; */
+	width: 50%;
+	font-size: 20px;
+	height: 40px;
+	/* padding: 10px 30px; */
+	display: inline-block;
+	float: right;
+	background-color: #1cafec;
+	color: #fff;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font-family: "proxima_novasemibold", Arial, Helvetica, sans-serif;
+	cursor: pointer;
+	border: 0;
+	font-size: 20px;
+	outline: none;
+	margin-bottom: 5px;
+	-webkit-transition: all 0.2s ease;
+	transition: all 0.2s ease;
+	margin-right: 290px;
+	margin-top: 10px;
+}
+
+.butto:hover {
+	background-color: #283842;
+}
+
+.container {
+	margin-top: -60px;
+}
+
+.footy {
+	background-color: #223038;
+	color: #fff;
+	padding: 50px 0 0px 0;
+}
+
+
+.select_document {
+    border: 1px solid black;
+    width: 20%;
+   height:570px;
+     margin: 98px 0px 46px 134px;
+    padding: 0px 0px 0px 0px;
+    border-radius: 12px 0px 0px 12px;
+    background-color: white;
+    opacity: 0.9;
+}
+
+.upload_document{  border: 1px solid black;
+								    width:500px;;
+   									 height: 570px;
+   									 width: 806px;
+    									margin:70px 0px 0px 175px;;
+   								/*  margin: -683px 0px 46px 210px; */
+								    padding: 0px 0px 0px 0px;
+								    border-radius: 0px 12px 12px 0px;
+								     background-color: white;
+    								opacity: 0.9;
+								   }
+.imgframe{width: 245px;
+    height: 200px;
+    margin: -1px 0px 0px -1px;
+    border-radius: 10px 0px 0px 0px;}	
+ .imgframe1{width: 100.3%;
+    height: 200px;
+    margin: -1px 0px 0px -1px;
+    border-radius: 0px 10px 0px 0px;}	
+    
+    .upload_doc{font-size: 16px;
+    margin: 12px 0px 0px 100px;
+    					}
+    .line_doc{ margin: 18px 0px 0px 0px;
+    width: 248px;}
+	.document{margin: 0px 0px 0px 0px;}
+	.doc_names{margin: 3px 0px 0px 45px;
+    font-size: 16px;}
+	.doc_name{margin: 3px 0px 0px 74px;
+    font-size: 18px;}
+	.doc_nam{margin: 3px 0px 0px 38px;
+    font-size: 18px; }
+	.doc_na{margin: 3px 0px 0px 7px;
+    font-size: 18px;}
+	.doc_n{margin: 3px 0px 16px 50px;
+    font-size: 18px;}
+    
+    .cido{ margin: 0px 0px 0px 0px; padding: 44px 0px 0px 65px;}
+    .ca{ margin: 27px 0px 0px 50px;     font-size: 18px;}
+    .i{ margin: 27px 0px 0px 50px;    font-size: 18px; }
+    .do{ margin: 27px 0px 0px 50px;    font-size: 18px; }
+    .doc_image{ margin: 0px 0px 0px 0px;  padding: 0px 0px 0px 0px;}
+  /*   .iii{background-image: url("img/college/j.jpg");} */
+   .h_line{    width: 110%;
+    margin: 8px 0px 0px -63px;}
+    .v{color: black; font-size: 14px;}
+    .v:hover {color:blue;
+	background-color: red;
+}
+.ddd{    font-size: 18px;
+    margin: -23px 0px 16px -8px;
+    color: black;
+    text-decoration: underline; cursor: pointer;}
+  .butt{margin: 20px 45px;}
+  
+  button, html input[type=button], input[type=reset], input[type=submit] {
+    margin: 20px 0px 0px 553px;
+    width: 122px;
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+a.button, .button {
+    padding: 10px 30px;
     display: inline-block;
     float: right;
-    
+    margin-right: 10px;
     background-color: #1cafec;
     color: #fff;
     -webkit-border-radius: 3px;
@@ -78,27 +201,14 @@ input[type="file"]
     font-family: "proxima_novasemibold", Arial, Helvetica, sans-serif;
     cursor: pointer;
     border: 0;
-    font-size: 20px;
+    font-size: 14px;
     outline: none;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     -webkit-transition: all 0.2s ease;
     transition: all 0.2s ease;
-        margin-right: 290px;
-        margin-top: 10px;
+    margin: 19px 77px 0px 0px;
 }
-
-.butto:hover {
-	background-color: #283842;
-}
-
-.container{ 
-    margin-top: -60px;}
-    .footy {
-    background-color: #223038;
-    color: #fff;
-    padding: 50px 0 0px 0;
-}
-    </style>
+</style>
     
    
 
@@ -167,18 +277,61 @@ jquery.min.js"></script>
         $('#butto').attr('disabled', disableButton);
     }
 </script>
+<script type="text/javascript">
+function next() 
+	{
+		document.getElementById('cast').style.display = "none";
+		document.getElementById('aadhar').style.display = "block";
+		document.getElementById('high').style.display = "none";
+		document.getElementById('tc').style.display = "none";
+	}
+function firstprev() 
+	{
+		document.getElementById('cast').style.display = "block";
+		document.getElementById('aadhar').style.display = "none";
+		document.getElementById('high').style.display = "none";
+		document.getElementById('tc').style.display = "none";
+	}
+function secondnext() 
+	{
+		document.getElementById('cast').style.display = "none";
+		document.getElementById('aadhar').style.display = "none";
+		document.getElementById('high').style.display = "block";
+		document.getElementById('tc').style.display = "none";
+	}
+
+function secondprev() 
+	{
+		document.getElementById('cast').style.display = "none";
+		document.getElementById('aadhar').style.display = "block";
+		document.getElementById('high').style.display = "none";
+		document.getElementById('tc').style.display = "none";
+	}
+
+function thirdprev() 
+		{
+			document.getElementById('cast').style.display = "none";
+			document.getElementById('aadhar').style.display = "none";
+			document.getElementById('high').style.display = "block";
+			document.getElementById('tc').style.display = "none";
+		}
+function thirdnext() 
+		{
+			document.getElementById('cast').style.display = "none";
+			document.getElementById('aadhar').style.display = "none";
+			document.getElementById('high').style.display = "none";
+			document.getElementById('tc').style.display = "block";
+		}
+</script>
 </head>
 <body>
+
 			<div>
 						<%@ include file="itc/header.jsp" %>
-<div>
-						<div class="myDiv">
-				 </div>
-				
+			</div>
+					
 
-		<div class="container_gray_bg">
-		
-		<!-- Position -->
+<!-- <div class="container_gray_bg">
 		<div class="container margin_60">
 		
 			<div class="row">
@@ -190,6 +343,7 @@ jquery.min.js"></script>
 				
 							<form action="../Documents" method="post" enctype="Multipart/form-data">
 									<table>
+									<fieldset id="cast" style="display: none;">
 										<tr>
 											<td>
 												<div >
@@ -224,6 +378,9 @@ jquery.min.js"></script>
 
 											</td>
 										</tr>
+										<input type="button" name="password" class="next btn btn-info"
+										onclick="next()" value="Next" />
+										</fieldset>
 									<tr>
 										<td>
 									<div>
@@ -252,7 +409,7 @@ jquery.min.js"></script>
 									</div><br>
 									</td>
 									</tr>
-									<tr ><!-- style="background-color: gray;" -->
+									<tr >
 									<td>
 									<p >
 										
@@ -269,16 +426,122 @@ jquery.min.js"></script>
 						
 						
 						
-					</div>
+					</div> 
 				</div>
 				<br>
 			
 			</div>
 		</div>
+	</div> -->
+
+	<div class="myDiv">
 	</div>
+	<!-- <img alt="" src="img/college/j.jpg" width="100%" height="40%"> -->
+	 <!-- <div class="iii"> -->
+	<!--	<div class="select_document">
+			<div>
+				<img src="img/college/docu.jpg" class="imgframe">
+			</div>
+			 <div class=document>
+				<a class="v" onclick="cast()"><p class="upload_doc">Upload</p> <p class="doc_names">Caste/Income/Domicile</p></a>
+				<hr class="line_doc">
+				<a class="v" onclick="aadhar()"><p class="upload_doc">Upload</p> <p class="doc_name">Aadhar Card</p></a>
+				<hr class="line_doc">
+				<a class="v" onclick="high()"><p class="upload_doc">Upload</p> <p class="doc_nam">High School Marksheet</p></a>
+				<hr class="line_doc">
+				<a class="v" onclick="higher()"><p class="upload_doc">Upload</p> <p class="doc_na">Higher Secondary Marksheet</p></a>
+				<hr class="line_doc">
+				<a class="v" onclick="tc()"><p class="upload_doc">Upload</p> <p class="doc_n">Transfer Certificate</p></a>
 
+			</div> -->
+			 <div class="container_gray_bg">
+		<div class="container margin_60">
+		<div class="row">
+			<div class="upload_document">
+							<div>
+								<img src="img/college/do.jpg" class="imgframe1">
+							</div>
+				<form action="../St_Document" method="post" enctype="Multipart/form-data"></form>
 
-			<div class="footy">
+								<fieldset id="cast" style="display: block;">
+									<div class="cido">
+										<p class="ddd">Upload Cast/Income/Domicile</p>
+										<hr class="h_line">
+										<input type="file" name="cast" class="doc_image">
+										<p class="ca">Upload Cast Certificate
+											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</p>
+										<br>
+										<hr class="h_line">
+										<input type="file" name="cast" class="doc_image">
+										<p class="i">Upload Income Certificate
+											&nbsp;&nbsp;&nbsp;:&nbsp;</p>
+										<br>
+										<hr class="h_line">
+										<input type="file" name="cast" class="doc_image">
+										<p class="do">Upload Domicile Certificate &nbsp;:&nbsp;</p>
+										<br>
+										<hr class="h_line">
+										<div class="but">
+										<button type="submit" onclick="next()" class="button">Next</button>
+										</div>
+									</div>
+									
+								</fieldset>
+
+									<fieldset id="aadhar" style="display: none;">
+										<div class="cido">
+											<p class="ddd">Aadhaar Card</p>
+											<hr class="h_line">
+											<input type="file" name="cast" class="doc_image">
+											<p class="ca">Upload Aadhaar Card
+												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</p>
+											<br>
+											<hr class="h_line">
+											<button type="submit" onclick="firstprev()" class="button">previous</button>
+											<button type="submit" onclick="secondnext()" class="button">Next</button>
+										</div>
+									</fieldset>
+
+										<fieldset id="high" style="display: none;">
+											<div class="cido">
+												<p class="ddd">High</p>
+												<hr class="h_line">
+												<input type="file" name="cast" class="doc_image">
+												<p class="i">Upload Marksheet &nbsp;&nbsp;&nbsp;:&nbsp;</p>
+												<br>
+												<hr class="h_line">
+												<input type="file" name="cast" class="doc_image">
+												<p class="i">Upload Marksheet &nbsp;&nbsp;&nbsp;:&nbsp;</p>
+												<button type="submit" onclick="secondprev()" class="button">previous</button>
+											<button type="submit" onclick="thirdnext()" class="button">Next</button>
+											</div>
+										</fieldset>
+										
+									
+										
+										<fieldset id="tc" style="display: none;">
+											<div class="cido">
+												<p class="ddd"></p>
+												<hr class="h_line">
+												<input type="file" name="cast" class="doc_image">
+												<p class="i">Upload TC &nbsp;&nbsp;&nbsp;:&nbsp;</p>
+												<br>
+												<hr class="h_line">
+												<input type="file" name="cast" class="doc_image">
+												<p class="i">Upload MIgration &nbsp;&nbsp;&nbsp;:&nbsp;</p>
+											
+											<button type="submit"  class="button">Submit</button>
+												<button type="submit" onclick="thirdprev()" class="button">previous</button>
+											</div>
+										</fieldset>
+										
+										
+						
+			</div>
+			</div>
+		</div>
+		</div>
+	<div class="footy">
 					<%@ include file="itc/footer.jsp" %>
 			</div>
 		
