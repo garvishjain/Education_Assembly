@@ -15,6 +15,7 @@ import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -28,6 +29,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 
 @WebServlet("/professors")
+@MultipartConfig
 public class professors extends HttpServlet {
 	private Connection con;
 	private PreparedStatement stmt;
