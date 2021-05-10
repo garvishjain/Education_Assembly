@@ -39,30 +39,28 @@ public class St_Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Connection con;
 	private String hashing;
-	private Statement stmt;
 	private String n;
 	private String p;
 	private String user;
+
+	private Statement stmt;
 	
 
 
 	public void init(ServletConfig config) throws ServletException 
 	{
-		try
-		{
-				GetConnection getConObj=new GetConnection();
-				 con=getConObj.getCon();
-				 stmt=con.createStatement();
-				System.out.println("connectipon = "+con);
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
+		
+		 try {
+					GetConnection getCon = new GetConnection();
+				    con = getCon.getCon();
+				   stmt = con.createStatement();
+		 		} 
+		 catch (SQLException e) 
+				 {
 					e.printStackTrace();
 				}
 				
-				
 	}
-
-	
 	
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
@@ -70,46 +68,31 @@ public class St_Login extends HttpServlet {
 		
 						response.setContentType("text/html");
 						PrintWriter out = response.getWriter();
-						try 
-						{
+						try {
 						String uname = request.getParameter("uname");
 						String pass = request.getParameter("pass");
 						/*password hashing*/
 						hashed gethash = new hashed();
 						String hashed = gethash.getHash(pass);
-						User user2 = new User(uname, pass);
-							
-						
 						String sql = "Select * from user where username ='" + uname + "' and password= '"+ hashed + "' LIMIT 1"; 
+						
 						ResultSet rs = stmt.executeQuery(sql);
-						if (rs.next()) 
-						{
-							
-							
-							String id = gethash.getHash(String.valueOf(rs.getInt(1)));
-							
-							response.sendRedirect("student/home.jsp?sid="+id+"&status="+gethash.getHash("trueCBC"));
-							/*request.getRequestDispatcher("student/home.jsp").forward(request, response);*/
-							
-					   /* out.println("<html><body><script>alert('login');</script></body></html>");*/
-					   /* request.setAttribute("UserName",user);
-			            RequestDispatcher view = request.getRequestDispatcher("student/status.jsp");
-			            view.forward(request, response);*/
-			            con.close();
-					    
-						} 
-				else
-						{
-					out.println("<html><body><script>alert('Not ');</script></body></html>");
-						}
-						
-						
+								if (rs.next()) 
+								{
+								
+									String id = gethash.getHash(String.valueOf(rs.getInt(1)));
+									response.sendRedirect("student/home.jsp?sid="+id+"&status="+gethash.getHash("trueCBC"));
+							    
 								} 
-						catch (SQLException e) 
-											{
-													e.printStackTrace();
-												}
-	
+							else
+									{
+								out.println("<html><body><script>alert('Not ');</script></body></html>");
+									}
+						} 
+						catch (SQLException e)
+						{
+							e.printStackTrace();
+						}
 }
 	
 	@Override
@@ -126,52 +109,4 @@ public class St_Login extends HttpServlet {
 	}
 		
 }
-	/*password hashing
-	byte[] bytepass = pass.getBytes();
-	String Hashed = getHash(bytepass, "SHA-256");
-	out.println(Hashed);
 	
-	String sql = "Select * from student_information where username =' " + uname + " ' and password= '"+ Hashed + "' LIMIT 1";
-	out.println(sql);
-	
-	
-	
-     stmt = con.prepareStatement(sql);
-	
-	  ResultSet rs = stmt.executeQuery(sql);
-	 
->>>>>>> origin/main
-	if (rs.next()) 
-		       
-			{
-<<<<<<< HEAD
-				if (pass.equals(p))
-						{
-					out.println("<html><body><script>alert('Data  Submitted');</script></body></html>");
-						}
-				else
-						{
-					out.println("<html><body><script>alert('Data Not Submitted');</script></body></html>");
-						}
-=======
-		
-		    out.println("<html><body><script>alert('Data  Submitted');</script></body></html>");
-		  
->>>>>>> origin/main
-				} 
-	else
-			{
-		out.println("<html><body><script>alert('Data Not Submitted');</script></body></html>");
-			}
-} 
-<<<<<<< HEAD
-catch (Exception e) {
-}
-}
-
-=======
-	public void init(ServletConfig config) throws ServletException {
-		 GetConnection getConObj=new GetConnection();
-	     con = getConObj.getCon();
-
-	}*/
