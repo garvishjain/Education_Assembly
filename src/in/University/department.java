@@ -23,8 +23,8 @@ public class department extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Connection con;
 	private PreparedStatement stmt;
-	private PreparedStatement stmt1;
-	private PreparedStatement stmt2;
+	private String detail;
+	
 
 	public void init(ServletConfig config) throws ServletException {
 		try {
@@ -56,33 +56,37 @@ public class department extends HttpServlet {
 			// <--- foreign key convert start --->
 			String sqll = "select pk_id from university where u_name = '" + uname + "' ";
 			System.out.println(sqll);
-			stmt1 = con.prepareStatement(sqll);
-
-			ResultSet rs = stmt1.executeQuery(sqll);
+			stmt = con.prepareStatement(sqll);
+			ResultSet rs = stmt.executeQuery(sqll);
 			if (rs.next()) {
 				u_id = rs.getInt(1);
 			} else {
 
 				out.println("<body><html><script>alert('No Data Found');</script></html></body>");
 			}
-			String sql2 = "select pk_id from department_name where Details='" + department + "'";
+			
+			
+			String sql2="Select * from department_name where Details='"+department+"'";
 			System.out.println(sql2);
-			stmt2 = con.prepareStatement(sql2);
-			ResultSet rs2 = stmt2.executeQuery(sql2);
-			if (rs2.next()) {
-				dpartment = rs.getInt(1);
-			} else {
+			stmt= con.prepareStatement(sql2);
+			ResultSet rs6 = stmt.executeQuery();
+			if(rs6.next())
+			{
+				detail = rs6.getString("pk_id");
+			}else {
 
 				out.println("<body><html><script>alert('No Data Found');</script></html></body>");
 			}
 			// <--- foreign key convert end --->
 
 			// <--- department data start--->
+				
+			
 			String sql = "insert into department(fk_university_id,fk_department_name,hod_name,phone_no,email,std_capacity)value(?,?,?,?,?,?)";
 
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, u_id);
-			stmt.setInt(2, dpartment);
+			stmt.setString(2, detail);
 			stmt.setString(3, headname);
 			stmt.setString(4, phone);
 			stmt.setString(5, email);

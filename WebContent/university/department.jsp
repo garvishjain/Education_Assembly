@@ -47,23 +47,23 @@ Statement stmt=con.createStatement();
                                     </thead>
                                     <%
 										try {
-											String query = "select * from department";
+											String query = "select * from department INNER JOIN department_name ON department.fk_department_name=department_name.pk_id";
 											//get Table data
 											ResultSet rs = stmt.executeQuery(query);
 											while (rs.next()) {
 									%>
                                     <tr>
 	                                    <td><%=rs.getInt("pk_id")%></td>
-	                                    <td><%=rs.getString("fk_department_name") %></td>
+	                                    <td><%=rs.getString("Details") %></td>
 	                                    <td><%=rs.getString("hod_name") %></td>
 	                                    <td><%=rs.getString("phone_no") %></td>
 	                                    <td><%=rs.getString("email") %></td>
 	                                    <td><%=rs.getString("std_capacity") %></td>
 	                                    <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
+                                            <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
+                                            <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
+                                            <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+                                        </td>
                                     </tr>
                                    <%
 									}

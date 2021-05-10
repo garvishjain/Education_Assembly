@@ -6,7 +6,7 @@
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
-<title>:: Educucation Assembly :: Registration</title>
+<title>:: Education Assembly :: Registration</title>
 
 <!-- Import package -->
 <%@page import="in.common.GetConnection"%>
