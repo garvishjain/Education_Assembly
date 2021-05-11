@@ -52,7 +52,6 @@
 				 		 padding: 1px  2px;
 						}
 			label{font-size: 18px;}
-			
 </style>
 
 

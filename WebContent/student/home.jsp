@@ -46,10 +46,6 @@
 	<link href="layerslider/css/layerslider.css" rel="stylesheet">
     <link href="css/tabs.css" rel="stylesheet">
 
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.min.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
     <style type="text/css">
     .open-button {
   background-color: #555;
