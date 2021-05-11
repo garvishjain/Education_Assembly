@@ -133,9 +133,13 @@
 								<i class="pe-7s-user"></i>
 
 							</div>
+<<<<<<< HEAD
+<fieldset id="first">
+=======
 							<fieldset id="first" Style="display: block;">
 
 
+>>>>>>> origin/main
 								<div class="row">
 									<div class="col-md-8">
 										<div class="form-group">

@@ -323,6 +323,46 @@ function thirdnext()
 			document.getElementById('tc').style.display = "block";
 		}
 </script>
+<script type="text/javascript">
+function validateImage_61() {
+    var formData = new FormData();
+    var file = document.getElementById("img_61").files[0];
+    formData.append("Filedata", file);
+    var t = file.type.split('/').pop().toLowerCase();
+    if (t != "jpeg" && t != "jpg" ) {
+    	alert( "Please select a valid image file");
+        document.getElementById("img_61").value = '';
+        return false;
+    }
+  
+    if(file.size > 400000) {
+        alert('Max Upload size is 400kb only');
+        document.getElementById("img_61").value = '';
+        return false;
+    }
+    return true;
+} 
+
+
+function validateImage_72() {
+    var formData = new FormData();
+    var file = document.getElementById("img_72").files[0];
+    formData.append("Filedata", file);
+    var t = file.type.split('/').pop().toLowerCase();
+    if (t != "jpeg" && t != "jpg" ) {
+    	alert( "Please select a valid image file");
+        document.getElementById("img_72").value = '';
+        return false;
+    }
+    if(file.size > 409600) {
+        alert('Max Upload size is 400kb only');
+        document.getElementById("img_72").value = '';
+        return false;
+    }
+    return true;
+} 
+
+</script>
 </head>
 <body>
 	<div>
@@ -455,17 +495,17 @@ function thirdnext()
 							<div class="cido">
 								<p class="ddd"><strong>Cast / Income / Domicile</strong></p>
 								<hr class="h_line">
-								<input type="file" name="cast" class="doc_image">
+								<input type="file" name="cast" class="doc_image"  id="img" onchange="validateImage()">
 								<p class="ca">Upload Cast Certificate
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</p>
 								<br>
 								<hr class="h_line">
-								<input type="file" name="cast" class="doc_image">
+								<input type="file" name="income" class="doc_image" id="img_1" onchange="validateImage_1()">
 								<p class="i">Upload Income Certificate
 										&nbsp;&nbsp;&nbsp;:&nbsp;</p>
 								<br>
 								<hr class="h_line">
-								<input type="file" name="cast" class="doc_image">
+								<input type="file" name="domicile" class="doc_image"  id="img_2" onchange="validateImage_2()">
 								<p class="do">Upload Domicile Certificate &nbsp;:&nbsp;</p>
 								<br>
 								<hr class="h_line">
@@ -478,7 +518,7 @@ function thirdnext()
 							<div class="cido">
 								<p class="ddd"><strong>Aadhaar Card</strong></p>
 								<hr class="h_line">
-								<input type="file" name="cast" class="doc_image">
+								<input type="file" name="aadhar" class="doc_image"  id="img_3" onchange="validateImage_3()">
 								<p class="ca">Upload Aadhaar Card
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</p>
 								<br>
@@ -491,11 +531,11 @@ function thirdnext()
 							<div class="cido">
 								<p class="ddd"><strong>MarkSheets</strong></p>
 								<hr class="h_line">
-								<input type="file" name="cast" class="doc_image">
+								<input type="file" name="high" class="doc_image"  id="img_4" onchange="validateImage_4()">
 								<p class="i">Upload 10<sup>th</sup> Marksheet &nbsp;&nbsp;&nbsp;:&nbsp;</p>
 								<br>
 								<hr class="h_line">
-								<input type="file" name="cast" class="doc_image">
+								<input type="file" name="higher" class="doc_image"  id="img_5" onchange="validateImage_5()">
 								<p class="i">Upload 12<sup>th</sup> Marksheet &nbsp;&nbsp;&nbsp;:&nbsp;</p>
 								<hr class="h_line">
 								<button type="submit" onclick="thirdnext()" class="button">Next</button>
@@ -506,12 +546,13 @@ function thirdnext()
 							<div class="cido">
 								<p class="ddd"><strong>TC / Migration</strong></p>
 								<hr class="h_line">
-								<input type="file" name="cast" class="doc_image">
-								<p class="i">Upload TC &nbsp;&nbsp;&nbsp;:&nbsp;</p>
+								<input type="file" name="tc" class="doc_image" id="img_61" onchange="validateImage_61()">
+								
+								<p class="i">Upload Transfer Certificate &nbsp;&nbsp;&nbsp;:&nbsp;</p>
 								<br>
 								<hr class="h_line">
-								<input type="file" name="cast" class="doc_image">
-								<p class="i">Upload Migration &nbsp;&nbsp;&nbsp;:&nbsp;</p>
+								<input type="file" name="migration" class="doc_image"  id="img_72" onchange="validateImage_72()">
+								<p class="i">Upload Migration(optional) &nbsp;&nbsp;&nbsp;:&nbsp;</p>
 								<hr class="h_line">
 								<button type="submit"  class="button">Submit</button>
 								<button type="submit" onclick="thirdprev()" class="button">previous</button>
