@@ -68,14 +68,18 @@ Statement stmt=con.createStatement();
 
      <%@ include file="itc/header.jsp" %>
       
- 
+ <div class="sub_header bg_1">
+        	<div id="intro_txt">
+			<h1>join <strong>US</strong></h1>
+            </div>
+		</div>
  		<div class="container_gray_bg">
         <div id="position">
     	<div class="container">
                 	
         </div>
     </div><!-- Position -->
-        <div class="container margin_60">
+        <div class="container margin_40">
  		<div class="row">
   	<br><br><br>
            <div class="col-md-14">
