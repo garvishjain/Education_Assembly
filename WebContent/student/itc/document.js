@@ -28,14 +28,14 @@ function validateImage() {
     var file = document.getElementById("img").files[0];
     formData.append("Filedata", file);
     var t = file.type.split('/').pop().toLowerCase();
-    if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+    if (t != "jpeg" && t != "jpg" ) {
         alert('Please select a valid image file');
         document.getElementById("img").value = '';
         return false;
     }
   
-    if(file.size > 204800) {
-        alert('Max Upload size is 200kb only');
+    if(file.size > 404800) {
+        alert('Max Upload size is 400kb only');
         document.getElementById("img").value = '';
         return false;
     }
@@ -44,7 +44,7 @@ function validateImage() {
         if (file.files && file.file[0]) {
             var reader = new FileReader();
             reader.onload = function(e) {
-                document.getElementById('img').innerHTML = '<img src="'+e.target.result+'" width="150px" height="200px"/>';
+                document.getElementById('img').innerHTML = '<img src="'+e.target.result+'" width="150px" height="400px"/>';
             };
             reader.readAsDataURL(file.files[0]);
         } */
@@ -59,14 +59,14 @@ function validateImage_1() {
     var file = document.getElementById("img_1").files[0];
     formData.append("Filedata", file);
     var t = file.type.split('/').pop().toLowerCase();
-    if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+    if (t != "jpeg" && t != "jpg" ) {
         alert('Please select a valid image file');
         document.getElementById("img_1").value = '';
         return false;
     }
   
-    if(file.size > 204800) {
-        alert('Max Upload size is 200kb only');
+    if(file.size > 404800) {
+        alert('Max Upload size is 400kb only');
         document.getElementById("img_1").value = '';
         return false;
     }
@@ -75,7 +75,7 @@ function validateImage_1() {
         if (file.files && file.file[0]) {
             var reader = new FileReader();
             reader.onload = function(e) {
-                document.getElementById('img').innerHTML = '<img src="'+e.target.result+'" width="150px" height="200px"/>';
+                document.getElementById('img').innerHTML = '<img src="'+e.target.result+'" width="150px" height="400px"/>';
             };
             reader.readAsDataURL(file.files[0]);
         } */
@@ -90,7 +90,7 @@ function validateImage_2() {
     var file = document.getElementById("img_2").files[0];
     formData.append("Filedata", file);
     var t = file.type.split('/').pop().toLowerCase();
-    if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+    if (t != "jpeg" && t != "jpg" ) {
         alert('Please select a valid image file');
         document.getElementById("img_2").value = '';
         return false;
@@ -106,7 +106,7 @@ function validateImage_2() {
         if (file.files && file.file[0]) {
             var reader = new FileReader();
             reader.onload = function(e) {
-                document.getElementById('img').innerHTML = '<img src="'+e.target.result+'" width="150px" height="200px"/>';
+                document.getElementById('img').innerHTML = '<img src="'+e.target.result+'" width="150px" height="400px"/>';
             };
             reader.readAsDataURL(file.files[0]);
         } */
@@ -121,14 +121,14 @@ function validateImage_3() {
     var file = document.getElementById("img_3").files[0];
     formData.append("Filedata", file);
     var t = file.type.split('/').pop().toLowerCase();
-    if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+    if (t != "jpeg" && t != "jpg" ) {
         alert('Please select a valid image file');
         document.getElementById("img_3").value = '';
         return false;
     }
   
-    if(file.size > 204800) {
-        alert('Max Upload size is 200kb only');
+    if(file.size > 404800) {
+        alert('Max Upload size is 400kb only');
         document.getElementById("img_3").value = '';
         return false;
     }
@@ -137,7 +137,7 @@ function validateImage_3() {
         if (file.files && file.file[0]) {
             var reader = new FileReader();
             reader.onload = function(e) {
-                document.getElementById('img').innerHTML = '<img src="'+e.target.result+'" width="150px" height="200px"/>';
+                document.getElementById('img').innerHTML = '<img src="'+e.target.result+'" width="150px" height="400px"/>';
             };
             reader.readAsDataURL(file.files[0]);
         } */
@@ -152,14 +152,14 @@ function validateImage_4() {
     var file = document.getElementById("img_4").files[0];
     formData.append("Filedata", file);
     var t = file.type.split('/').pop().toLowerCase();
-    if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
+    if (t != "jpeg" && t != "jpg" ) {
         alert('Please select a valid image file');
         document.getElementById("img_4").value = '';
         return false;
     }
   
-    if(file.size > 204800) {
-        alert('Max Upload size is 200kb only');
+    if(file.size > 404800) {
+        alert('Max Upload size is 400kb only');
         document.getElementById("img_4").value = '';
         return false;
     }
@@ -168,7 +168,7 @@ function validateImage_4() {
         if (file.files && file.file[0]) {
             var reader = new FileReader();
             reader.onload = function(e) {
-                document.getElementById('img').innerHTML = '<img src="'+e.target.result+'" width="150px" height="200px"/>';
+                document.getElementById('img').innerHTML = '<img src="'+e.target.result+'" width="150px" height="400px"/>';
             };
             reader.readAsDataURL(file.files[0]);
         } */
@@ -183,14 +183,14 @@ function validateImage_5() {
     var file = document.getElementById("img_5").files[0];
     formData.append("Filedata", file);
     var t = file.type.split('/').pop().toLowerCase();
-    if (t != "jpeg" && t != "jpg" && t != "png" && t != "bmp" && t != "gif") {
-        alert('Please select a valid image file');
+    if (t != "jpeg" && t != "jpg" ) {
+        	return "Please select a valid image file";
         document.getElementById("img_5").value = '';
         return false;
     }
   
-    if(file.size > 204800) {
-        alert('Max Upload size is 200kb only');
+    if(file.size > 404800) {
+        alert('Max Upload size is 400kb only');
         document.getElementById("img_5").value = '';
         return false;
     }
@@ -199,10 +199,13 @@ function validateImage_5() {
         if (file.files && file.file[0]) {
             var reader = new FileReader();
             reader.onload = function(e) {
-                document.getElementById('img').innerHTML = '<img src="'+e.target.result+'" width="150px" height="200px"/>';
+                document.getElementById('img').innerHTML = '<img src="'+e.target.result+'" width="150px" height="400px"/>';
             };
             reader.readAsDataURL(file.files[0]);
         } */
+   
  
     return true;
 } 
+
+

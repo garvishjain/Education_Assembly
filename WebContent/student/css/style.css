@@ -45,7 +45,7 @@ html * {-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
 body {font-size:14px; line-height:20px; font-family:"proxima_nova_rgregular", Arial, sans-serif; color:#444;background-color: #fff;}
 
 h1, h2, h3, h4, h5, h6{color:#222;}
-h3{ font-size:22px;}
+h3{ font-size:22px;}.container_gray_bg
 
 .sub_header h1, #intro_txt h1, .sub_header_contact_home #intro_txt h1{font-family: "proxima_novalight", Arial, Helvetica, sans-serif;letter-spacing:-1px;}
 .sub_header h1 strong, #intro_txt h1 strong, .sub_header_contact_home #intro_txt h1 strong {font-family: "proxima_nova_rgbold", Arial, Helvetica, sans-serif;}
@@ -56,8 +56,11 @@ p.lead{font-family: "proxima_novalight", Arial, Helvetica, sans-serif;letter-spa
 
 footer h4{color:#fff; font-size:14px; text-transform:uppercase; font-family: 'proxima_nova_rgbold', Arial, Helvetica, sans-serif; margin-top:0; border-bottom:1px solid rgba(255,255,255,0.1); padding-bottom:10px;}
 
-.main_title{ text-align:center; margin-bottom:45px; }
-.main_title h2{ font-size:34px; letter-spacing:-1px; margin-top:0;}
+.main_title{text-align: center;
+    
+    margin: 25px 0px 0px 0px;
+}
+.main_title h2{ font-size:34px; letter-spacing:-1px;    margin-top: 60px;}
 .main_title p{ font-size:22px; font-family: "proxima_novalight", Arial, Helvetica, sans-serif; color:#777; line-height:1.2;}
 
 /** Layes slider typography **/   
@@ -332,9 +335,9 @@ header#contacts{
 
 /* Footer  */
 footer{ 
-	background-color:#223038;
-	color:#fff;
-	padding:50px 0 10px 0;
+	    background-color: #223038;
+    color: #fff;
+    padding: 106px 0 10px 0;
 	
 }
 footer ul{
@@ -1521,7 +1524,8 @@ input#website {display:none;}
 	background-color:#3f9ad6;
 }
 .container_gray_bg {
-	background-color:#f3f5f8;
+/* 	background-color:#f3f5f8; */
+	margin: 45px 0px 0px 0px
 }
 .container_gray_line {
 	border-top:1px solid #e9ebee;
@@ -1873,7 +1877,7 @@ input.form-control#email_newsletter:focus {
 	padding: 10px;
 	font-size: 30px;
 	display:block;
-} */
+} 
 /*-------- 3.9 List styles ------*/
 ul.list_style_1 {
 	list-style:none;
