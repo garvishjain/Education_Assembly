@@ -74,7 +74,7 @@ public class St_Login extends HttpServlet {
 						/*password hashing*/
 						hashed gethash = new hashed();
 						String hashed = gethash.getHash(pass);
-						String sql = "Select * from user where username ='" + uname + "' and password= '"+ hashed + "' LIMIT 1"; 
+						String sql = "Select * from user where username ='" + uname + "' or email = " + uname + "and password= '"+ hashed + "' LIMIT 1"; 
 						
 						ResultSet rs = stmt.executeQuery(sql);
 								if (rs.next()) 
