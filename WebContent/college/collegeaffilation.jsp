@@ -132,7 +132,7 @@
 								<i class="pe-7s-user"></i>
 
 							</div>
-							<fieldset id="first">
+<fieldset id="first">
 								<div class="row">
 									<div class="col-md-6">
 										<div class="form-group">
