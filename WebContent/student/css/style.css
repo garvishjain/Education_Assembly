@@ -663,30 +663,27 @@ video {
 	color:#777;
 }
 /*-------- 2.2 Accademics/single course page--------*/
-.box_style_1, a.box_style_1{
-	background-color:white;
-	/* change */
-width: 1200px;
+.box_style_1, a.box_style_1 {
+    background-color: white;
+    width: 1200px;
     margin: auto;
     margin-left: -30px;
-	  margin-top:10px;
-	  /* change */
-	  /* margin-left: -120px; */
-	-webkit-box-shadow: 0px 3px 0px 0px #f0f2f4; 
-	-moz-box-shadow: 0px 3px 0px 0px #f0f2f4; 
-	box-shadow: 0px 3px 0px 0px #f0f2f4;
-	margin-bottom:30px;
-	-webkit-border-radius: 3px;
-	-moz-border-radius: 3px;
-	border-radius: 3px;
-	display:block;
-	padding:30px 30px 10px 30px;
-	color:#444;
-	transition: all 500ms ease-in-out; 
-	-webkit-transition: all 500ms ease-in-out; 
-	-moz-transition: all 500ms ease-in-out; 
-	-o-transition: all 500ms ease-in-out; 
-	
+    margin-top: 69px;
+    /* margin-left: -120px; */
+    -webkit-box-shadow: 0px 3px 0px 0px #f0f2f4;
+    -moz-box-shadow: 0px 3px 0px 0px #f0f2f4;
+    box-shadow: 0px 3px 0px 0px #f0f2f4;
+    margin-bottom: 30px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    display: block;
+    padding: 30px 30px 10px 30px;
+    color: #444;
+    transition: all 500ms ease-in-out;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
 }
 a.box_style_1{cursor:pointer;}
 a.box_style_1:hover{
@@ -1524,8 +1521,9 @@ input#website {display:none;}
 	background-color:#3f9ad6;
 }
 .container_gray_bg {
-/* 	background-color:#f3f5f8; */
-	margin: 45px 0px 0px 0px
+background-color:#f3f5f8;
+	/* margin: 45px 0px 0px 0px */
+	margin-top: 60px;
 }
 .container_gray_line {
 	border-top:1px solid #e9ebee;
