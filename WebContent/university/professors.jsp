@@ -81,7 +81,40 @@ Statement stmt=con.createStatement();
                                     </tr>
 								<%}
                                 %>
-						       
+						       <tr>
+                                        <td class="w60">
+                                            <div class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">
+                                                <span>GS</span>
+                                            </div>
+                                        </td>
+                                        <td><div class="font-15">Gladys J Smith</div></td>
+                                        <td><span>(417) 646-8377</span></td>
+                                        <td><span class="text-muted">Computer</span></td>
+                                        <td>BCA, MCA</td>
+                                        <td><strong>04 Jan, 2019</strong></td>
+                                        <td><span class="tag tag-success">Full-time</span></td>
+                                        <td>
+                                            <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
+                                            <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
+                                            <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="w60">
+                                            <img class="avatar" src="../assets/images/xs/avatar1.jpg" alt="">
+                                        </td>
+                                        <td><div class="font-15">Alan Johnson</div></td>
+                                        <td><span>(417) 646-8377</span></td>
+                                        <td><span class="text-muted">Mechanical</span></td>
+                                        <td>MCA</td>
+                                        <td><strong>04 Jan, 2019</strong></td>
+                                        <td><span class="tag tag-warning">Part-time</span></td>
+                                        <td>
+                                            <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
+                                            <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
+                                            <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+                                        </td>
+                                    </tr>
                                 </tbody>
                             </table>
                         </div>
@@ -107,6 +140,31 @@ Statement stmt=con.createStatement();
                             </div>
                             <%}
                                 %>
+                                <div class="col-xl-3 col-lg-4 col-md-6">
+                                <div class="card">
+                                    <div class="card-body text-center ribbon">
+                                        <div class="ribbon-box orange" data-toggle="tooltip" title="Permanent"><i class="fa fa-star"></i></div>
+                                        <img class="card-profile-img" src="../assets/images/sm/avatar2.jpg" alt="">
+                                        <h5 class="mb-0">Ken Smith</h5>
+                                        <span>Science</span>
+                                        <div class="text-muted">+ (916) 369-7180</div>
+                                        <p class="mb-4 mt-3">449 Thompson St, Conway, SC, 29527</p>
+                                        <button class="btn btn-primary btn-sm">Read More</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-3 col-lg-4 col-md-6">
+                                <div class="card">
+                                    <div class="card-body text-center">
+                                        <img class="card-profile-img" src="../assets/images/sm/avatar3.jpg" alt="">
+                                        <h5 class="mb-0">Alan Johnson</h5>
+                                        <span>Music</span>
+                                        <div class="text-muted">+ (916) 369-7180</div>
+                                        <p class="mb-4 mt-3">5290 NE 50th Rd, Osceola, MO, 64776</p>
+                                        <button class="btn btn-primary btn-sm">Read More</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="tab-pane" id="pro-add">
@@ -161,7 +219,7 @@ Statement stmt=con.createStatement();
 	            											ResultSet rs = stmt.executeQuery(query);
 	            											while (rs.next()) {
                                                     %>
-                                                    	<option><%=rs.getString("department_name") %></option>
+                                                    	<option><%=rs.getString("Details") %></option>
                                                    	<%
 	            										}
 	                                                    }catch(Exception e)

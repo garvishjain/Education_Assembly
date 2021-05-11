@@ -80,31 +80,9 @@ public class GetProfessorsDB
 	}
 	
 	
-	
-	/*private void getConnection()
-	{
-		InitialContext cxt;
-		try 
-		{
-			cxt = new InitialContext();
-			DataSource ds = (DataSource) cxt.lookup("java:comp/env/myCon");
-			con = ds.getConnection();
-			
-			
-		} 
-		
-		catch (NamingException | SQLException e) {
-			// TODO Auto-generated catch block
-			throw new RuntimeException("Connection error");
-		}
-		
-		
-	}*/
-	
 	public ArrayList<GetProfessorsDB> getData(int collegeId,String isCollege)
 	
 	{
-		
 		
 		ArrayList<GetProfessorsDB> list = new ArrayList<>();
 		GetConnection getConObj = new GetConnection();
@@ -112,7 +90,7 @@ public class GetProfessorsDB
 		
 		if(con != null)
 		{
-			String sql="select department.department_name as dept,professor.* from professor,department where professor.department=department.pk_id and iscollege=? and collegeid=?";
+			String sql="select department.fk_department_name as dept,professor.* from professor,department where professor.department=department.pk_id and iscollege=? and collegeid=?";
 			try 
 			{
 				
@@ -120,11 +98,7 @@ public class GetProfessorsDB
 				stmt.setString(1, "Y");
 				stmt.setInt(2, collegeId);
 				
-				
 				ResultSet result = stmt.executeQuery();
-				
-				
-				
 				
 				int i=0;
 				while(result.next())
@@ -140,17 +114,13 @@ public class GetProfessorsDB
 						data.setPosition(result.getString("position")!= null ? result.getString("position") : "");
 						data.setFullName(fname+" "+lname);
 						list.add(data);
-						
 				}
 			} 
 			catch (SQLException e) 
 			{
 				System.out.println("SQL EXCEPTION");
-				
 				throw new RuntimeException (e.getMessage());
 			}
-			
-			
 		}
 		else
 		{
@@ -159,10 +129,7 @@ public class GetProfessorsDB
 		}
 		return list ;
 	}
-		
-		
-		
-	}
+}
 	
 	
 	

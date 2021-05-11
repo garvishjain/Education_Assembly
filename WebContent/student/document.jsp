@@ -134,7 +134,7 @@ input[type="file"] {
     									margin:70px 0px 0px 175px;;
    								/*  margin: -683px 0px 46px 210px; */
 								    padding: 0px 0px 0px 0px;
-								    border-radius: 0px 12px 12px 0px;
+								    border-radius: 10px 10px 10px 10px;
 								     background-color: white;
     								opacity: 0.9;
 								   }
@@ -145,7 +145,7 @@ input[type="file"] {
  .imgframe1{width: 100.3%;
     height: 200px;
     margin: -1px 0px 0px -1px;
-    border-radius: 0px 10px 0px 0px;}	
+    border-radius: 10px 10px 0px 0px;}	
     
     .upload_doc{font-size: 16px;
     margin: 12px 0px 0px 100px;
@@ -325,117 +325,106 @@ function thirdnext()
 </script>
 </head>
 <body>
+	<div>
+		<%@ include file="itc/header.jsp"%>
+	</div>
 
-			<div>
-						<%@ include file="itc/header.jsp" %>
-			</div>
-					
-
-<!-- <div class="container_gray_bg">
+	<!-- <div class="container_gray_bg">
 		<div class="container margin_60">
-		
 			<div class="row">
-
 				<div class="col-md-9">
-				
 					<div class="box_style_1" style="margin-top: 70px;">
-					  <marquee direction = "left"><h2 class="tex"><strong>Please Upload Your Documents!!!</strong></h2></marquee>
-				
-							<form action="../Documents" method="post" enctype="Multipart/form-data">
-									<table>
-									<fieldset id="cast" style="display: none;">
-										<tr>
-											<td>
-												<div >
-													<label>Upload Cast Certificate</label>
-													<label class="mid_a">:</label>
-													 <input type="file" name="cast" id="img"  class="input" onchange="validateImage()" required="required">
-												</div>
-												<br>
-											</td>
-										</tr>
+						<marquee direction="left">
+							<h2 class="tex">
+								<strong>Please Upload Your Documents!!!</strong>
+							</h2>
+						</marquee>
+						<form action="../Documents" method="post"
+							enctype="Multipart/form-data">
+							<table>
+								<fieldset id="cast" style="display: none;">
+									<tr>
+										<td>
+											<div>
+												<label>Upload Cast Certificate</label> <label class="mid_a">:</label>
+												<input type="file" name="cast" id="img" class="input"
+													onchange="validateImage()" required="required">
+											</div> <br>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div>
+												<label>Upload Income Certificate</label> <label
+													class="mid_b">:</label> <input type="file" name="income"
+													id="img_1" onchange="validateImage_1()" required="required">
+											</div> <br>
 
-										<tr>
-											<td>
-												<div>
-													<label>Upload Income Certificate</label> 
-													<label class="mid_b">:</label>
-													<input type="file" name="income"  id="img_1" onchange="validateImage_1()" required="required">
-												</div> <br>
 
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<div>
+												<label>Upload Domicile Certificate</label> <label
+													class="mid_c">:</label> <input type="file" name="domicile"
+													id="img_2" onchange="validateImage_2()" required="required">
+											</div> <br>
 
-											</td>
-										</tr>
-
-										<tr>
-											<td>
-												<div>
-													<label>Upload Domicile Certificate</label>
-													<label class="mid_c">:</label> <input
-														type="file" name="domicile" id="img_2" onchange="validateImage_2()" required="required">
-												</div>
-												<br>
-
-											</td>
-										</tr>
-										<input type="button" name="password" class="next btn btn-info"
+										</td>
+									</tr>
+									<input type="button" name="password" class="next btn btn-info"
 										onclick="next()" value="Next" />
-										</fieldset>
-									<tr>
-										<td>
-									<div>
-									<label>Upload Aadhar Card</label>
-									<label class="mid_d">:</label>
-									<input type="file" name="aadhar" id="img_3" onchange="validateImage_3()" required="required">
-									</div><br>
-									</td>
-									</tr>
-										<tr>
-											<td>
-												<div>
-													<label>Upload High School Certificate</label>
-													<label class="mid_e">:</label>
-													<input type="file" name="high" id="img_4" onchange="validateImage_4()" required="required" >
-													</div>
-																<br>
-									</td>
-									</tr>
-									<tr>
-										<td>
-									<div>
-									<label>Upload Higher Seconday Certificate</label>
-									<label class="mid_f">:</label>
-									<input type="file" name="higher"id="img_5"  onchange="validateImage_5()" required="required">
-									</div><br>
-									</td>
-									</tr>
-									<tr >
+								</fieldset>
+								<tr>
 									<td>
-									<p >
-										
-										<button type="reset"  class="butto" >Clear</button>
+										<div>
+											<label>Upload Aadhar Card</label> <label class="mid_d">:</label>
+											<input type="file" name="aadhar" id="img_3"
+												onchange="validateImage_3()" required="required">
+										</div>
+										<br>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div>
+											<label>Upload High School Certificate</label> <label
+												class="mid_e">:</label> <input type="file" name="high"
+												id="img_4" onchange="validateImage_4()" required="required">
+										</div> <br>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<div>
+											<label>Upload Higher Seconday Certificate</label> <label
+												class="mid_f">:</label> <input type="file" name="higher"
+												id="img_5" onchange="validateImage_5()" required="required">
+										</div>
+										<br>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<p>
+											<button type="reset" class="butto">Clear</button>
 											<button type="submit" class="butto" id="butto">Register</button>
 										</p>
-											</td>
-											</tr>
-					</table>
-											<p >
-										
-										</p>
-							</form>
-						
-						
-						
-					</div> 
+									</td>
+								</tr>
+							</table>
+							<p></p>
+						</form>
+					</div>
 				</div>
 				<br>
-			
 			</div>
 		</div>
 	</div> -->
 
-	<div class="myDiv">
-	</div>
+<div class="myDiv">
+	
 	<!-- <img alt="" src="img/college/j.jpg" width="100%" height="40%"> -->
 	 <!-- <div class="iii"> -->
 	<!--	<div class="select_document">
@@ -452,98 +441,92 @@ function thirdnext()
 				<a class="v" onclick="higher()"><p class="upload_doc">Upload</p> <p class="doc_na">Higher Secondary Marksheet</p></a>
 				<hr class="line_doc">
 				<a class="v" onclick="tc()"><p class="upload_doc">Upload</p> <p class="doc_n">Transfer Certificate</p></a>
-
 			</div> -->
-			 <div class="container_gray_bg">
+			
+	<div class="container_gray_bg">
 		<div class="container margin_60">
-		<div class="row">
-			<div class="upload_document">
-							<div>
-								<img src="img/college/do.jpg" class="imgframe1">
+			<div class="row">
+				<div class="upload_document">
+					<div>
+						<img src="img/college/do.jpg" class="imgframe1">
+					</div>
+					<form action="../St_Document" method="post" enctype="Multipart/form-data"></form>
+						<fieldset id="cast" style="display: block;">
+							<div class="cido">
+								<p class="ddd"><strong>Cast / Income / Domicile</strong></p>
+								<hr class="h_line">
+								<input type="file" name="cast" class="doc_image">
+								<p class="ca">Upload Cast Certificate
+										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</p>
+								<br>
+								<hr class="h_line">
+								<input type="file" name="cast" class="doc_image">
+								<p class="i">Upload Income Certificate
+										&nbsp;&nbsp;&nbsp;:&nbsp;</p>
+								<br>
+								<hr class="h_line">
+								<input type="file" name="cast" class="doc_image">
+								<p class="do">Upload Domicile Certificate &nbsp;:&nbsp;</p>
+								<br>
+								<hr class="h_line">
+								<div class="but">
+								<button type="submit" onclick="next()" class="button">Next</button>
+								</div>
 							</div>
-				<form action="../St_Document" method="post" enctype="Multipart/form-data"></form>
-
-								<fieldset id="cast" style="display: block;">
-									<div class="cido">
-										<p class="ddd">Upload Cast/Income/Domicile</p>
-										<hr class="h_line">
-										<input type="file" name="cast" class="doc_image">
-										<p class="ca">Upload Cast Certificate
-											&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</p>
-										<br>
-										<hr class="h_line">
-										<input type="file" name="cast" class="doc_image">
-										<p class="i">Upload Income Certificate
-											&nbsp;&nbsp;&nbsp;:&nbsp;</p>
-										<br>
-										<hr class="h_line">
-										<input type="file" name="cast" class="doc_image">
-										<p class="do">Upload Domicile Certificate &nbsp;:&nbsp;</p>
-										<br>
-										<hr class="h_line">
-										<div class="but">
-										<button type="submit" onclick="next()" class="button">Next</button>
-										</div>
-									</div>
-									
-								</fieldset>
-
-									<fieldset id="aadhar" style="display: none;">
-										<div class="cido">
-											<p class="ddd">Aadhaar Card</p>
-											<hr class="h_line">
-											<input type="file" name="cast" class="doc_image">
-											<p class="ca">Upload Aadhaar Card
-												&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</p>
-											<br>
-											<hr class="h_line">
-											<button type="submit" onclick="firstprev()" class="button">previous</button>
-											<button type="submit" onclick="secondnext()" class="button">Next</button>
-										</div>
-									</fieldset>
-
-										<fieldset id="high" style="display: none;">
-											<div class="cido">
-												<p class="ddd">High</p>
-												<hr class="h_line">
-												<input type="file" name="cast" class="doc_image">
-												<p class="i">Upload Marksheet &nbsp;&nbsp;&nbsp;:&nbsp;</p>
-												<br>
-												<hr class="h_line">
-												<input type="file" name="cast" class="doc_image">
-												<p class="i">Upload Marksheet &nbsp;&nbsp;&nbsp;:&nbsp;</p>
-												<button type="submit" onclick="secondprev()" class="button">previous</button>
-											<button type="submit" onclick="thirdnext()" class="button">Next</button>
-											</div>
-										</fieldset>
-										
-									
-										
-										<fieldset id="tc" style="display: none;">
-											<div class="cido">
-												<p class="ddd"></p>
-												<hr class="h_line">
-												<input type="file" name="cast" class="doc_image">
-												<p class="i">Upload TC &nbsp;&nbsp;&nbsp;:&nbsp;</p>
-												<br>
-												<hr class="h_line">
-												<input type="file" name="cast" class="doc_image">
-												<p class="i">Upload MIgration &nbsp;&nbsp;&nbsp;:&nbsp;</p>
-											
-											<button type="submit"  class="button">Submit</button>
-												<button type="submit" onclick="thirdprev()" class="button">previous</button>
-											</div>
-										</fieldset>
-										
-										
-						
-			</div>
+						</fieldset>
+						<fieldset id="aadhar" style="display: none;">
+							<div class="cido">
+								<p class="ddd"><strong>Aadhaar Card</strong></p>
+								<hr class="h_line">
+								<input type="file" name="cast" class="doc_image">
+								<p class="ca">Upload Aadhaar Card
+									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</p>
+								<br>
+								<hr class="h_line">
+								<button type="submit" onclick="secondnext()" class="button">Next</button>
+								<button type="submit" onclick="firstprev()" class="button">previous</button>
+							</div>
+						</fieldset>
+						<fieldset id="high" style="display: none;">
+							<div class="cido">
+								<p class="ddd"><strong>MarkSheets</strong></p>
+								<hr class="h_line">
+								<input type="file" name="cast" class="doc_image">
+								<p class="i">Upload 10<sup>th</sup> Marksheet &nbsp;&nbsp;&nbsp;:&nbsp;</p>
+								<br>
+								<hr class="h_line">
+								<input type="file" name="cast" class="doc_image">
+								<p class="i">Upload 12<sup>th</sup> Marksheet &nbsp;&nbsp;&nbsp;:&nbsp;</p>
+								<hr class="h_line">
+								<button type="submit" onclick="thirdnext()" class="button">Next</button>
+								<button type="submit" onclick="secondprev()" class="button">previous</button>
+							</div>
+						</fieldset>
+						<fieldset id="tc" style="display: none;">
+							<div class="cido">
+								<p class="ddd"><strong>TC / Migration</strong></p>
+								<hr class="h_line">
+								<input type="file" name="cast" class="doc_image">
+								<p class="i">Upload TC &nbsp;&nbsp;&nbsp;:&nbsp;</p>
+								<br>
+								<hr class="h_line">
+								<input type="file" name="cast" class="doc_image">
+								<p class="i">Upload Migration &nbsp;&nbsp;&nbsp;:&nbsp;</p>
+								<hr class="h_line">
+								<button type="submit"  class="button">Submit</button>
+								<button type="submit" onclick="thirdprev()" class="button">previous</button>
+							</div>
+						</fieldset>
+					</div>
+				</div>
 			</div>
 		</div>
-		</div>
+	</div>
 	<div class="footy">
-					<%@ include file="itc/footer.jsp" %>
-			</div>
-		
+		<%@ include file="itc/footer.jsp" %>
+	</div>
 </body>
 </html> 
+								
+								
+								
