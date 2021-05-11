@@ -1,0 +1,2 @@
+<Resource name="myCon" auth="Container" type="javax.sql.DataSource" driverClassName="com.mysql.jdbc.Driver"
+    url="jdbc:mysql://u248334632-hotel.cadfo0pydruh.us-east-2.rds.amazonaws.com:3333/UniversityData?autoReconnect=true&amp;useSSL=false" username="u248334632_Hotel" password="CBCsumit24" testOnBorrow="true" validationQuery="SELECT 1" validationInterval="60000" />
