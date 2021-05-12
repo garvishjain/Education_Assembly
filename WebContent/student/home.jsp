@@ -421,53 +421,62 @@ a.button, .button {
     <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
     </div>
     	<div class="row">
-        	<div class="col-md-6 col-sm-6">
-            	<div class="box_feat_home">
-                	<i class=" iconcustom-certificate"></i>
-                	<h3>Quality Certifications</h3>
-                    <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-            	<div class="box_feat_home">
-                	<i class=" iconcustom-innovation"></i>
-                	<h3>Learning Best Practice</h3>
-                    <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.</p>
-                </div>
-            </div>
-        </div><!-- End row -->
-        <div class="row">
-        	<div class="col-md-6 col-sm-6">
-            	<div class="box_feat_home">
-                	<i class=" iconcustom-education_online"></i>
+        	<div class="col-md-3 col-sm-3">
+				<a class="box_feat" href="#"> <i
+					class="iconcustom-certificate"></i>
+					<h3>Quality Certifications</h3>
+					<p>Id mea congue dictas,  Vim te	audiam impetus interpretaris, cum no alii option, cu sit mazim libris.</p>
+				</a>
+			</div>
+			<div class="col-md-3 col-sm-3">
+				<a class="box_feat" href="#"> <i
+					class="iconcustom-innovation"></i>
+					<h3>Learning Best Practice</h3>
+					<p>Id mea congue dictas,  Vim te	audiam impetus interpretaris, cum no alii option, cu sit mazim libris.</p>
+				</a>
+			</div>
+			<div class="col-md-3 col-sm-3">
+				<a class="box_feat" href="#"> 
+					<i class=" iconcustom-education_online"></i>
                 	<h3>Online Resources</h3>
-                    <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-            	<div class="box_feat_home">
-                	<i class=" iconcustom-know_how"></i>
+					<p>Id mea congue dictas, nec et summo mazim impedit. Vim te	audiam impetus interpretaris, cum no alii option, cu sit mazim libris.</p>
+				</a>
+			</div>
+			<div class="col-md-3 col-sm-3">
+				<a class="box_feat" href="#"> <i class=" iconcustom-know_how"></i>
                 	<h3>Study Plan Tutors</h3>
-                    <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.</p>
-                </div>
-            </div>
-        </div><!-- End row -->
-        <div class="row">
-        	<div class="col-md-6 col-sm-6">
-            	<div class="box_feat_home">
-                	<i class=" iconcustom-science"></i>
+					<p>Id mea congue dictas, nec et summo mazim impedit. Vim te	audiam impetus interpretaris, cum no alii option, cu sit mazim libris.</p>
+				</a>
+			</div>
+			<div class="col-md-3 col-sm-3">
+				<a class="box_feat" href="#"> 
+					<i class=" iconcustom-science"></i>
                 	<h3>Advanced Practice</h3>
-                    <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-            	<div class="box_feat_home">
-                	<i class=" iconcustom-test"></i>
+					<p>Id mea congue dictas, nec et summo mazim impedit. Vim te	audiam impetus interpretaris, cum no alii option, cu sit mazim libris.</p>
+				</a>
+			</div>
+			<div class="col-md-3 col-sm-3">
+				<a class="box_feat" href="#"> 
+					<i class=" iconcustom-test"></i>
                 	<h3>Research</h3>
-                    <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.</p>
-                </div>
-            </div>
-        </div><!-- End row -->
+					<p>Id mea congue dictas, nec et summo mazim impedit. Vim te	audiam impetus interpretaris, cum no alii option, cu sit mazim libris.</p>
+				</a>
+			</div>
+			<div class="col-md-3 col-sm-3">
+				<a class="box_feat" href="#"> 
+					<i class="iconcustom-certificate"></i>
+					<h3>Quality Certifications</h3>
+					<p>Id mea congue dictas, nec et summo mazim impedit. Vim te	audiam impetus interpretaris, cum no alii option, cu sit mazim libris.</p>
+				</a>
+			</div>
+			<div class="col-md-3 col-sm-3">
+				<a class="box_feat" href="#"> 
+					<i class=" iconcustom-science"></i>
+                	<h3>Advanced Practice</h3>
+					<p>Id mea congue dictas, nec et summo mazim impedit. Vim te	audiam impetus interpretaris, cum no alii option, cu sit mazim libris.</p>
+				</a>
+			</div>
+        </div><!-- End rows -->
         </div>
         </div>
         
