@@ -987,6 +987,7 @@ ul.add_info li i{
 /*-------- 2.3 About --------*/
 a.box_feat, .box_feat{
 	text-align:center;
+	
 	background:#fff;
 	padding:40px 30px 30px 30px;
 	display:block;
@@ -1003,6 +1004,9 @@ a.box_feat, .box_feat{
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 	overflow:hidden;
+	
+	
+	height: 244px;
 }
 a.box_feat:hover{
 	 transform: translate(0, -10px); 
@@ -1445,6 +1449,7 @@ input#website {display:none;}
 .form-control.styled {
 	border-radius: 0;
 	height:40px;
+	margin: 0px 0px 0px 0px;
 }
 .form-control.f:focus {
 	  -webkit-box-shadow: none;
