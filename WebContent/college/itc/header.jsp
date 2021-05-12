@@ -84,8 +84,8 @@ orange
 		<div class="row">
 			<div class="col-md-3 col-sm-3 col-xs-3">
 				<div id="logo">
-					<!--                     <a><img src="img/changes/logo (2).png" width="150" height="70"   alt="Atena" data-retina="true" style=""  ></a> -->
-					<p class="log">Education
+<!-- 					                    <a><img src="img/changes/logo (2).png" width="150" height="70"   alt="Atena" data-retina="true" style=""  ></a>  -->
+					                    <p class="log">Education
 					<p class="logg">
 						<b><i>Assembly</i></b>
 					</p>
@@ -107,17 +107,17 @@ orange
 					<li class="submenu"><a href="javascript:void(0);"
 						class="show-submenu">Academic <i class="icon-down-open-mini"></i></a>
 						<ul>
-							<li><a href="diploma.jsp">Diploma courses</a></li>
-							<li><a href="graduate.jsp">Graduate courses</a></li>
-							<li><a href="master.jsp">Master courses</a></li>
-							<li><a href="college.jsp">College</a></li>
+							<li><a href="../student/diploma.jsp">Diploma courses</a></li>
+							<li><a href="../student/graduate.jsp">Graduate courses</a></li>
+							<li><a href="../student/master.jsp">Master courses</a></li>
+							<li><a href="../student/college.jsp">College</a></li>
 						</ul></li>
 					<li class="submenu"><a href="javascript:void(0);"
 						class="show-submenu">About <i class="icon-down-open-mini"></i></a>
 						<ul>
-							<li><a href="about.jsp">About us</a></li>
-							<li><a href="visit-us.jsp">Plan a visit</a></li>
-							<li><a href="gallery.jsp">Gallery</a></li>
+							<li><a href="../student/about.jsp">About us</a></li>
+							<li><a href="../student/visit-us.jsp">Plan a visit</a></li>
+							<li><a href="../student/gallery.jsp">Gallery</a></li>
 						</ul></li>
 					<li>
 						<%
@@ -130,9 +130,9 @@ orange
 						<div class="menu-wrapper">
 							<div class="col-md-4">
 								<ul>
-									<li><a href="blog.jsp">Blog</a></li>
-									<li><a href="contacts.jsp">Contacts</a></li>
-									<li><a href="agenda_calendar.jsp">Calendar</a></li>
+									<li><a href="../student/blog.jsp">Blog</a></li>
+									<li><a href="../student/contacts.jsp">Contacts</a></li>
+									<li><a href="../student/agenda_calendar.jsp">Calendar</a></li>
 								</ul>
 							</div>
 							<div class="col-md-4">

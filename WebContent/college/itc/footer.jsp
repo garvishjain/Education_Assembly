@@ -68,33 +68,21 @@
 		<div class="modal-dialog">
 			<div class="modal-content modal-popup">
 				<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
- 				
- 				
- 				
- 				
-				
-				
-				
-				
-				<form action="../St_Login" class="popup-form" id="myLogin" method="post">
-					<input type="text" name="user" id="user"  class="form-control form-white" placeholder="Username">
-					<input type="text" name="pass" id="pass" class="form-control form-white" placeholder="Password">
-					<span style="color:red" id="cfaxerr"></span>
-                    <span style="color:red" id="error"></span>
-                     
-					
+				<form action="../St_Login" method="post" class="popup-form" id="myLogin">
+					<input type="text" name="uname" class="form-control form-white" placeholder="Enter Username">
+					<input type="password" name="pass" class="form-control form-white" placeholder="Enter Password">
 					<div class="checkbox-holder text-left">
 						<div class="checkbox">
 							<input type="checkbox" value="accept_1" id="check_1" name="check_1" />
 							<label for="check_1"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
 						</div>
 					</div>
-					<label name="forget" id="forget"><a href="#" data-toggle="modal" data-target="#register">forget password</a> </label>
-					<button type="submit" class="btn btn-submit" id="button">Submit</button>
+					<button type="submit" class="btn btn-submit">Submit</button>
 				</form>
 			</div>
 		</div>
 	</div>  
+    
     
 <!-- Register modal -->   
 <div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myRegister" aria-hidden="true">
@@ -127,6 +115,36 @@
     </form>
 </div>
 
+<script type="text/javascript">
+$(document).ready(function(){
+   
+    $("#user").blur(function(){
+        
+        var username =$("#user").val();
+   
+        if(username.length >= 3)
+        {
+            $.ajax({
+                url:"../student/username-check.jsp",
+                type:"post",
+                data:"uname="+username,
+                dataType:"text",
+                success:function(data)
+                {
+                    $("#available").html(data)
+                } 
+            });
+        }
+        else
+        {
+          $("#available").html(" ");
+        }
+        
+   }); 
+   
+});    
+
+</script>
 <!-- Common scripts -->
 <script src="js/jquery-1.11.2.min.js"></script>
 <script src="js/common_scripts_min.js"></script>
