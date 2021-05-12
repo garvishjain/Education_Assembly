@@ -67,7 +67,7 @@ Statement stmt=con.createStatement();
 	<div class="pulse" style="display: none;"></div>
 </div><!-- Pulse Preloader -->
 
-     <%@ include file="itc/header.jsp" %>
+     <%@ include file="../student/itc/header.jsp" %>
       
  <div class="sub_header bg_1">
         	<div id="intro_txt">
@@ -402,6 +402,6 @@ Statement stmt=con.createStatement();
         
 	
 	
- <%@ include file="itc/footer.jsp" %>
+ <%@ include file="../student/itc/footer.jsp" %>
 </body>
 </html>
