@@ -195,6 +195,74 @@ a.button, .button {
 	display:block;
 	    background-color: #223038;
 }
+
+[class^="pe-7s-"]{
+    display: inline-block;
+    font-family: 'Pe-icon-7-stroke';
+    speak: none;
+    font-style: normal;
+    font-weight: 400;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size:50px;
+    color: #00aeef;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-conte {
+  background-color: #fefefe;
+  margin: 250px 0px 0px 515px;;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 20%;
+}
+
+/* The Close Button */
+.close{
+    float: right;
+    font-size: 29px;
+    font-weight: bold;
+    line-height: 1;
+    color: black;
+    margin: -22px -18px 0px 0px;
+  
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.pat{cursor:pointer;}
+
+.course_define{background-color: #00aeef;
+    width: 119%;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+ 
+    margin: -20px 0px 26px -21px; }
+    
+    .cours_def{}
     </style>
 
 </head>
@@ -417,57 +485,86 @@ a.button, .button {
     <div class="container_gray_bg">
     <div class="container margin_60">
     <div class="main_title">
-    <h2>Atena core feautures</h2>
-    <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
+    <h2>Choose a Domain or Course</h2>
+    <p>Search your college easily by selecting your domain or course</p>
     </div>
     	<div class="row">
-        	<div class="col-md-6 col-sm-6">
-            	<div class="box_feat_home">
-                	<i class=" iconcustom-certificate"></i>
-                	<h3>Quality Certifications</h3>
-                    <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-            	<div class="box_feat_home">
-                	<i class=" iconcustom-innovation"></i>
-                	<h3>Learning Best Practice</h3>
-                    <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.</p>
-                </div>
-            </div>
-        </div><!-- End row -->
-        <div class="row">
-        	<div class="col-md-6 col-sm-6">
-            	<div class="box_feat_home">
-                	<i class=" iconcustom-education_online"></i>
-                	<h3>Online Resources</h3>
-                    <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-            	<div class="box_feat_home">
-                	<i class=" iconcustom-know_how"></i>
-                	<h3>Study Plan Tutors</h3>
-                    <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.</p>
-                </div>
-            </div>
-        </div><!-- End row -->
-        <div class="row">
-        	<div class="col-md-6 col-sm-6">
-            	<div class="box_feat_home">
-                	<i class=" iconcustom-science"></i>
-                	<h3>Advanced Practice</h3>
-                    <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.</p>
-                </div>
-            </div>
-            <div class="col-md-6 col-sm-6">
-            	<div class="box_feat_home">
-                	<i class=" iconcustom-test"></i>
-                	<h3>Research</h3>
-                    <p>Lorem ipsum dolor sit amet, vix erat audiam ei. Cum doctus civibus efficiantur in. Nec id tempor imperdiet deterruisset, doctus volumus explicari qui ex, appareat similique an usu.</p>
-                </div>
-            </div>
-        </div><!-- End row -->
+        	<div class="col-md-3 col-sm-3">
+				<span class="box_feat" href="#"> <i
+					class="pe-7s-config"></i>
+					<h3>Engineering</h3>
+					<p>Colleges</p>
+					<a ><p id="myBtn" class="pat">View Courses</p></a>
+				</span>
+			</div>
+			
+			<!-- The Modal -->
+<div id="myModal" class="modal">
+
+  <!-- Modal content -->
+  <div class="modal-conte">
+    <span class="close"  style="font-size: 29px;color: black;">&times;</span>
+    <p class="course_define">Engineering Courses</p>
+    <p class="cours_def">[BCA] [MCA]</p>
+  </div>
+
+</div>
+			<div class="col-md-3 col-sm-3">
+				<span class="box_feat" href="#"> <i
+					class="pe-7s-science"></i>
+					<h3>Science</h3>
+					<p>Colleges</p>
+					<a href=""><p >View Courses</p></a>
+				</span>
+			</div>
+			<div class="col-md-3 col-sm-3">
+				<span class="box_feat" href="#"> 
+					<i class="pe-7s-paint-bucket"></i>
+                	<h3>Arts</h3>
+					<p>Colleges</p>
+					<a href=""><p>View Courses</p></a>
+				</span>
+			</div>
+			<div class="col-md-3 col-sm-3">
+				<span class="box_feat" href="#"> <i class="pe-7s-scissors"></i>
+                	<h3>Agriculture</h3>
+					<p>Colleges</p>
+					<a><p>View Courses</p></a>
+				</span>
+			</div>
+			<div class="col-md-3 col-sm-3">
+				<span class="box_feat" href="#"> 
+					<i class="pe-7s-portfolio"></i>
+                	<h3>Management</h3>
+					<p>Colleges</p>
+					<a href="" class="view_cours">View Courses</a>
+				</span>
+			</div>
+			<div class="col-md-3 col-sm-3">
+				<span class="box_feat" href="#"> 
+					<i class="pe-7s-monitor"></i>
+                	<h3>Computer</h3>
+					<p>Colleges</p>
+					<a href=""><p>View Courses</p></a>
+				</span>
+			</div>
+			<div class="col-md-3 col-sm-3">
+				<span class="box_feat" href="#"> 
+					<i class="pe-7s-film"></i>
+					<h3>Animation</h3>
+					<p>Colleges</p>
+					<a href=""><p>View Courses</p></a>
+				</span>
+			</div>
+			<div class="col-md-3 col-sm-3">
+				<span class="box_feat" href="#"> 
+					<i class="pe-7s-home"></i>
+                	<h3>Architecture</h3>
+					<p>Colleges</p>
+					<a href=""><p>View Courses</p></a>
+				</span>
+			</div>
+        </div><!-- End rows -->
         </div>
         </div>
         
@@ -631,6 +728,34 @@ a.button, .button {
 <script src="layerslider/js/greensock.js"></script>
  <script src="layerslider/js/layerslider.transitions.js"></script>
 <script src="layerslider/js/layerslider.kreaturamedia.jquery.js"></script>
+<script type="text/javascript">
+//Get the modal
+var modal = document.getElementById("myModal");
+
+//Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+//Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+//When the user clicks the button, open the modal 
+btn.onclick = function() {
+modal.style.display = "block";
+}
+
+//When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+modal.style.display = "none";
+}
+
+//When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+if (event.target == modal) {
+ modal.style.display = "none";
+}
+}
+</script>
+
 <script type="text/javascript">
     // Running the code when the document is ready
     $(document).ready(function(){

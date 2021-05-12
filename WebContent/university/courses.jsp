@@ -661,7 +661,7 @@ Statement stmt=con.createStatement();
                                      </div>
                                      <!-- <div class="col-sm-12">
                                          <div class="form-group">
-                                             <textarea rows="4" class="form-control no-resize" placeholder="Brief"></textarea>
+                                             <textarea rows="4" class="form-control no-resize" name="brief" placeholder="Write Course Brief"></textarea>
                                          </div>
 	                                 </div> -->
                                      <div class="col-sm-12">
