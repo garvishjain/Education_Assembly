@@ -68,6 +68,7 @@ ul.recent_post li:last-child{
 	-moz-border-radius: 3px;
 	border-radius: 3px;
 	padding:20px;
+	height: 455px;
 }
 .post h2{
 	font-size:22px;

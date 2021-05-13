@@ -1,5 +1,12 @@
 <!DOCTYPE html>
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<%@page import="in.common.GetConnection"%>
+<%@ include file="inc/stdimport.jsp" %> 
+		 <%
+			GetConnection getcon=new GetConnection();
+		 Connection con=getcon.getCon();
+		Statement stmt= con.createStatement();
+		%> 
 <html>
 <head>
     <meta charset="utf-8">
@@ -29,6 +36,13 @@
 
 <body>
 
+		 
+		
+					
+					
+					
+					
+					
 <!--[if lte IE 8]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
 <![endif]-->
@@ -64,6 +78,18 @@
         <div class="container_gray_bg">
             <div class="container margin_60">
                 <div class="row">
+                <% String s="course";
+                    		if(s.equals("course"))
+                    		{
+                    			
+                    	
+                    %>
+                <%
+			try{
+				String sql="Select * from course";
+				ResultSet rs=stmt.executeQuery(sql);
+				while (rs.next()) {
+					%>
                     <div class="col-md-9">
                     <br>
                         <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
@@ -81,10 +107,11 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="course_list_desc">
-                                        <h3><strong>MASTER OF COMPUTER APPLICATION</strong> (MCA)</h3>
-                                        <p>
-                                           Aims to groom the software skills and strengthen the computer application aspect of students. This prepares the students for the industry requirements so that they can flourish in the corporate IT Sector.
-                                        </p>
+                                        <h3><strong><%= rs.getString("course_name")%></strong></h3>
+                                        <h4>Course Duration - <%=rs.getString("course_duration") %> Years
+                                         <!--   Aims to groom the software skills and strengthen the computer application aspect of students. This prepares the students for the industry requirements so that they can flourish in the corporate IT Sector.
+                                      -->  
+										</h4>
                                         <ul class="add_info">
                                             <!--  <li>
                                             <div class="tooltip_styled tooltip-effect-4">
@@ -94,14 +121,14 @@
                                                 </div>
                                             </div>
                                             </li> -->
-                                            <li>
+                                            <!-- <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-hourglass"></i></span>
                                                 <div class="tooltip-content">
                                                    Admission Date 10/05/2021 To 10/07/2021
                                                 </div>
                                             </div>
-                                            </li>
+                                            </li> -->
                                            <!--  <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-medal"></i></span>
@@ -122,8 +149,8 @@
                                 </div>
                             </div>
                         </div><!--End strip -->
-                        
-                        <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
+                       
+                     <!--    <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 col-sm-4">
                                     <div class="img_list">
@@ -143,14 +170,14 @@
                                             MBA is an internationally accredited post-graduate degree for developing business and management skills amongst future business leaders and entrepreneurs.
                                         </p>
                                         <ul class="add_info">
-                                            <!--  <li>
+                                             <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-compass"></i></span>
                                                 <div class="tooltip-content">
                                                     Dedicated Study Plan
                                                 </div>
                                             </div>
-                                            </li> -->
+                                            </li>
                                             <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-hourglass"></i></span>
@@ -159,14 +186,14 @@
                                                 </div>
                                             </div>
                                             </li>
-                                           <!--  <li>
+                                            <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-medal"></i></span>
                                                 <div class="tooltip-content">
                                                     Most Requested Course
                                                 </div>
                                             </div>
-                                            </li> -->
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -178,9 +205,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div><!--End strip -->
+                        </div>End strip -->
                         
-                        <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
+                       <!--  <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 col-sm-4">
                                     <div class="img_list">
@@ -200,14 +227,14 @@
                                            The Master of Commerce (M.Com) is a 2-year postgraduate or master’s degree course offered in commerce colleges across India, designed to enhance one's skill and knowledge on commerce, finance, management, accounting and economics, and other related areas.
                                             </p>
                                         <ul class="add_info">
-                                           <!--  <li>
+                                            <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-compass"></i></span>
                                                 <div class="tooltip-content">
                                                     Dedicated Study Plan
                                                 </div>
                                             </div>
-                                            </li> -->
+                                            </li>
                                             <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-hourglass"></i></span>
@@ -216,14 +243,14 @@
                                                 </div>
                                             </div>
                                             </li>
-                                           <!--  <li>
+                                            <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-medal"></i></span>
                                                 <div class="tooltip-content">
                                                     Most Requested Course
                                                 </div>
                                             </div>
-                                            </li> -->
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -235,8 +262,8 @@
                                     </div>
                                 </div>
                             </div>
-                        </div><!--End strip -->
-                          <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
+                        </div>End strip -->
+                       <!--    <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 col-sm-4">
                                     <div class="img_list">
@@ -256,14 +283,14 @@
                                          Master of Science (M.Sc) is a two-year post-graduate program which offers advanced knowledge in a number of specialized science fields such as physics, chemistry, biology, botany, mathematics, zoology, nursing, pharmacy etc.  
                                           </p>
                                         <ul class="add_info">
-                                            <!--  <li>
+                                             <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-compass"></i></span>
                                                 <div class="tooltip-content">
                                                     Dedicated Study Plan
                                                 </div>
                                             </div>
-                                            </li> -->
+                                            </li>
                                             <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-hourglass"></i></span>
@@ -272,14 +299,14 @@
                                                 </div>
                                             </div>
                                             </li>
-                                           <!--  <li>
+                                            <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-medal"></i></span>
                                                 <div class="tooltip-content">
                                                     Most Requested Course
                                                 </div>
                                             </div>
-                                            </li> -->
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -291,8 +318,19 @@
                                     </div>
                                 </div>
                             </div>
-                        </div><!--End strip -->
+                        </div>End strip -->
                     </div><!--End col-md-9 -->
+                    
+                    <%
+				}
+				}
+		catch (Exception e) {
+			e.printStackTrace();
+					}
+					%>
+					 <% 
+                        	}
+                    %>
                     <br>
                     <aside class="col-md-3">
                   <!--   <div class="banner">

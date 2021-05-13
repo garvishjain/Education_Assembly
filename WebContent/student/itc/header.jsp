@@ -115,9 +115,11 @@ orange
 					<li class="submenu"><a href="javascript:void(0);"
 						class="show-submenu">About <i class="icon-down-open-mini"></i></a>
 						<ul>
-							<li><a href="about.jsp">About us</a></li>
+							
+							<!-- <li><a href="gallery.jsp">Gallery</a></li> -->
 							<li><a href="visit-us.jsp">Plan a visit</a></li>
-							<li><a href="gallery.jsp">Gallery</a></li>
+							<li><a href="contacts.jsp">Conatct us</a></li>
+							<li><a href="about.jsp">About us</a></li>
 						</ul></li>
 					<li>
 						<%
@@ -131,7 +133,7 @@ orange
 							<div class="col-md-4">
 								<ul>
 									<li><a href="blog.jsp">Blog</a></li>
-									<li><a href="contacts.jsp">Contacts</a></li>
+									<!-- <li><a href="contacts.jsp">Contacts</a></li> -->
 									<li><a href="agenda_calendar.jsp">Calendar</a></li>
 								</ul>
 							</div>
@@ -164,8 +166,8 @@ orange
 							class="icon-down-open-mini"></i></a>
 						<ul>
 							<li><a href="blog.jsp">Blog</a></li>
-							<li><a href="contacts.jsp">Contacts</a></li>
-							<li><a href="agenda_calendar.jsp">Agenda calendar</a></li>
+							<!-- <li><a href="contacts.jsp">Contacts</a></li> -->
+							<li><a href="agenda_calendar.jsp">Calendar</a></li>
 						</ul></li>
 
 					<%

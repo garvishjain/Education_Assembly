@@ -47,8 +47,8 @@
         
         <div class="sub_header bg_1">
         	<div id="intro_txt">
-			<h1>Atena <strong>Blog</strong> page</h1>
-            <p>Ex saepe accusata duo, vel ne summo option delenit.</p>
+			<h1><strong>Education Assembly Blog</strong></h1>
+          <!--   <p>Ex saepe accusata duo, vel ne summo option delenit.</p> -->
             </div>
 		</div> <!--End sub_header -->
         
@@ -63,43 +63,43 @@
 					<a href="blog_post_right_sidebar.html" ><img src="img/blog-1.jpg" alt="" class="img-responsive"></a>
 					<div class="post_info clearfix">
 						<div class="post-left">
-							<ul>
+							<!-- <ul>
 								<li><i class="icon-calendar-empty"></i>12/05/2015 <em>by Mark</em></li>
                                 <li><i class="icon-inbox-alt"></i><a href="#">Category</a></li>
 								<li><i class="icon-tags"></i><a href="#">Works</a>, <a href="#">Personal</a></li>
-							</ul>
+							</ul> -->
 						</div>
-						<div class="post-right"><i class="icon-comment"></i><a href="#">25 </a></div>
+						<div class="post-right"><i class="icon-comment"></i><!-- <a href="#">25 </a> --></div>
 					</div>
-					<h2>Duis aute irure dolor in reprehenderit</h2>
+					<!-- <h2>Duis aute irure dolor in reprehenderit</h2>
 					<p>
 						Ludus albucius adversarium eam eu. Sit eu reque tation aliquip. Quo no dolorum albucius lucilius, hinc eligendi ut sed. Ex nam quot ferri suscipit, mea ne legere alterum repudiandae. Ei pri quaerendum intellegebat, ut vel consequuntur voluptatibus. Et volumus sententiae adversarium duo......
 					</p>
                     <p>
 						Ludus albucius adversarium eam eu. Sit eu reque tation aliquip. Quo no dolorum albucius lucilius, hinc eligendi ut sed. Ex nam quot ferri suscipit, mea ne legere alterum repudiandae. Ei pri quaerendum intellegebat, ut vel consequuntur voluptatibus. Et volumus sententiae adversarium duo......
-					</p>
-					<a href="blog_post.html" class="button" >Read more</a>
+					</p>-->
+					<a href="blog_post.html" class="button" >Read more</a> 
 				</div><!-- end post -->
                                 
 				<div class="post">
 					<a href="blog_post_right_sidebar.html" ><img src="img/blog-2.jpg" alt="" class="img-responsive"></a>
 					<div class="post_info clearfix">
 						<div class="post-left">
-							<ul>
+							<!-- <ul>
 								<li><i class="icon-calendar-empty"></i>12/05/2015 <em>by Mark</em></li>
                                 <li><i class="icon-inbox-alt"></i><a href="#">Category</a></li>
 								<li><i class="icon-tags"></i><a href="#">Works</a>, <a href="#">Personal</a></li>
-							</ul>
+							</ul> -->
 						</div>
-						<div class="post-right"><i class="icon-comment"></i><a href="#">25 </a></div>
+						<div class="post-right"><i class="icon-comment"></i><!-- <a href="#">25 </a> --></div>
 					</div>
-					<h2>Duis aute irure dolor in reprehenderit</h2>
+					<!-- <h2>Duis aute irure dolor in reprehenderit</h2>
 					<p>
 						Ludus albucius adversarium eam eu. Sit eu reque tation aliquip. Quo no dolorum albucius lucilius, hinc eligendi ut sed. Ex nam quot ferri suscipit, mea ne legere alterum repudiandae. Ei pri quaerendum intellegebat, ut vel consequuntur voluptatibus. Et volumus sententiae adversarium duo......
 					</p>
                     <p>
 						Ludus albucius adversarium eam eu. Sit eu reque tation aliquip. Quo no dolorum albucius lucilius, hinc eligendi ut sed. Ex nam quot ferri suscipit, mea ne legere alterum repudiandae. Ei pri quaerendum intellegebat, ut vel consequuntur voluptatibus. Et volumus sententiae adversarium duo......
-					</p>
+					</p> -->
 					<a href="blog_post.html" class="button" >Read more</a>
 				</div><!-- end post -->
                 
@@ -108,20 +108,20 @@
 					<div class="post_info clearfix">
 						<div class="post-left">
 							<ul>
-								<li><i class="icon-calendar-empty"></i>12/05/2015 <em>by Mark</em></li>
+							<!-- 	<li><i class="icon-calendar-empty"></i>12/05/2015 <em>by Mark</em></li>
                                 <li><i class="icon-inbox-alt"></i><a href="#">Category</a></li>
-								<li><i class="icon-tags"></i><a href="#">Works</a>, <a href="#">Personal</a></li>
+								<li><i class="icon-tags"></i><a href="#">Works</a>, <a href="#">Personal</a></li> -->
 							</ul>
 						</div>
-						<div class="post-right"><i class="icon-comment"></i><a href="#">25 </a></div>
+						<div class="post-right"><i class="icon-comment"></i><!-- <a href="#">25 </a> --></div>
 					</div>
-					<h2>Duis aute irure dolor in reprehenderit</h2>
+					<!-- <h2>Duis aute irure dolor in reprehenderit</h2>
 					<p>
 						Ludus albucius adversarium eam eu. Sit eu reque tation aliquip. Quo no dolorum albucius lucilius, hinc eligendi ut sed. Ex nam quot ferri suscipit, mea ne legere alterum repudiandae. Ei pri quaerendum intellegebat, ut vel consequuntur voluptatibus. Et volumus sententiae adversarium duo......
 					</p>
                     <p>
 						Ludus albucius adversarium eam eu. Sit eu reque tation aliquip. Quo no dolorum albucius lucilius, hinc eligendi ut sed. Ex nam quot ferri suscipit, mea ne legere alterum repudiandae. Ei pri quaerendum intellegebat, ut vel consequuntur voluptatibus. Et volumus sententiae adversarium duo......
-					</p>
+					</p> -->
 					<a href="blog_post.html" class="button" >Read more</a>
 				</div><!-- end post -->
        
@@ -159,7 +159,7 @@
 					<ul id="cat_nav">
                     	<li><a href="#">News</a></li>
                         <li><a href="#">Events</a></li>
-                        <li><a href="#">Tutorials</a></li>
+                        <!-- <li><a href="#">Tutorials</a></li> -->
                         <li><a href="#">Posted by staff</a></li>
                     </ul>
 				</div><!-- End widget -->
@@ -169,7 +169,7 @@
 				<div class="widget">
 					<h4>Recent post</h4>
 					<ul class="recent_post">
-						<li>
+						<!-- <li>
 						<i class="icon-calendar-empty"></i> 16th July, 2020
 						<div><a href="#">It is a long established fact that a reader will be distracted </a></div>
 						</li>
@@ -180,18 +180,18 @@
 						<li>
 						<i class="icon-calendar-empty"></i> 16th July, 2020
 						<div><a href="#">It is a long established fact that a reader will be distracted </a></div>
-						</li>
+						</li> -->
 					</ul>
 				</div><!-- End widget -->
                 <hr>
 				<div class="widget tags">
 					<h4>Tags</h4>
-					<a href="#">Lorem ipsum</a>
+					<!-- <a href="#">Lorem ipsum</a>
 					<a href="#">Dolor</a>
 					<a href="#">Long established</a>
 					<a href="#">Sit amet</a>
 					<a href="#">Latin words</a>
-					<a href="#">Excepteur sint</a>
+					<a href="#">Excepteur sint</a> -->
 				</div><!-- End widget -->
                 
      </aside><!-- End aside -->

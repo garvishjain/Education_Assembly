@@ -151,7 +151,7 @@
                             </div><!-- End wrapper_indent -->
                         </div><!-- End box style 1-->
                     </div><!-- End col-md-9 -->
-                    <br><br><br><br>
+                    <br><br><br><br><br><br><br>
                     <aside class="col-md-3">
                     <h3>Contacts info</h3>
                     <p>
@@ -189,11 +189,9 @@
         
  		
 
-	 
-		<!--Footer File-->	 
-	<%@ include file="itc/footer.jsp" %>
-		<!--Footer File-->
-    
+	 <div>
+	<%@ include file="itc/footer.jsp" %>   
+    </div>
 <!-- Login modal -->   
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myLogin" aria-hidden="true">
 		<div class="modal-dialog">

@@ -33,8 +33,13 @@ Statement stmt=con.createStatement();
     <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
 
     <!-- BASE CSS -->
-    <link href="css/base.css" rel="stylesheet">
-    
+  
+     <link href="/css/base.css" rel="stylesheet">
+     <link href="/css/style.css" rel="stylesheet">
+	<link href="/css/customize.css" rel="stylesheet">
+    <!-- SPECIFIC CSS -->
+	<link href="/layerslider/css/layerslider.css" rel="stylesheet">
+    <link href="/css/tabs.css" rel="stylesheet">
     <!-- SPECIFIC CSS -->
     <link href="css/skins/square/blue.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>

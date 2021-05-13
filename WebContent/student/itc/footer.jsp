@@ -28,31 +28,30 @@
                 <div class="col-md-3 col-sm-3">
                     <h4>About</h4>
                     <ul>
-                        <li><a href="#">About us</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Login</a></li>
-                        <li><a href="#">Register</a></li>
-                        <li><a href="#">Terms and condition</a></li>
+                        <li><a href="about.jsp">About us</a></li>
+                        <li><a href="blog.jsp">Blog</a></li>
+                        <li><a  href="#" data-toggle="modal" data-target="#login">Login</a></li>
+                        <li><a href="register.jsp">Register</a></li>
+                        <li><a href="term_c.jsp">Terms and condition</a></li>
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-3">
                     <h4>Academic</h4>
                     <ul>
                         <li><a href="#">Plans of study</a></li>
-                        <li><a href="#">Courses</a></li>
                         <li><a href="#">Admissions</a></li>
-                        <li><a href="#">Staff</a></li>
-                        <li><a href="#">Students</a></li>
+                        <!-- <li><a href="#">Staff</a></li>
+                        <li><a href="#">Students</a></li> -->
                     </ul>
                 </div>
                 <div class="col-md-3 col-sm-3">
                     <h4>Contact us</h4>
                     <ul>
-                        <li><a href="#">Contacts</a></li>
-                        <li><a href="#">Plan a visit</a></li>
+                        <li><a href="contacts.jsp">Contacts</a></li>
+                        <li><a href="visit-us.jsp">Plan a visit</a></li>
                     </ul>
                     <ul id="contacts_footer">
-                        <li>Info line - <a href="tel://033284322">+000-1234567</a></li>
+                        <li>Contact No  - <a href="tel://033284322">+000-1234567</a></li>
                         <li>Email - <a href="#">info@educationassembly.com</a></li>
                     </ul>
                 </div>

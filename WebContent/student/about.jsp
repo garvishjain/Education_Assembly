@@ -25,6 +25,9 @@
       <script src="js/html5shiv.min.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
+    <style type="text/css">
+
+    </style>
 
 </head>
 
@@ -45,20 +48,20 @@
 
         <div class="sub_header bg_2">
         	<div id="intro_txt">
-			<h1>Atena <strong>Excellence</strong> in teaching</h1>
-            <p>Ex saepe accusata duo, vel ne summo option delenit.</p>
+			<h1>About Education Assembly</h1>
+            <p>India's fastest growing college search platform aiming to help students choose the right college for their ambitious career.</p>
             </div>
 		</div> <!--End sub_header -->
  
  		<div class="container_gray_bg">
         <div class="container margin_60">
-        <div class="main_title">
+      <!--   <div class="main_title">
             <h2>Why choose ATENA ...</h2>
-            <p>Cum doctus civibus efficiantur in imperdiet deterruisset.</p>
-            </div>
+            <p>India's fastest growing college search platform aiming to help students choose the right college for their ambitious career.</p>
+            </div> -->
 
         	<div class="row">
-        	<div class="col-md-4 col-sm-4">
+        	<!-- <div class="col-md-4 col-sm-4">
             	<a class="box_feat" href="#">
                 <i class="pe-7s-diamond"></i>
             	<h3>Qualified teachers</h3>
@@ -78,10 +81,10 @@
             	<h3>Advanced teaching</h3>
                 <p>Id mea congue dictas, nec et summo mazim impedit. Vim te audiam impetus interpretaris, cum no alii option, cu sit mazim libris.</p>
             </a>
-            </div>
+            </div> -->
             </div><!--End row-->
             <div class="row">
-            <div class="col-md-4 col-sm-4">
+           <!--  <div class="col-md-4 col-sm-4">
             	<a class="box_feat" href="#">
                 <i class="pe-7s-rocket"></i>
             	<h3>Adavanced study plans</h3>
@@ -101,23 +104,23 @@
             	<h3>focus on success</h3>
                 <p>Id mea congue dictas, nec et summo mazim impedit. Vim te audiam impetus interpretaris, cum no alii option, cu sit mazim libris. </p>
             </a>
-            </div>
+            </div> -->
             </div><!--End row-->
             <br>
-            <div class="text-center"><a href="tour.html" class=" button_outline large">Take a tour of ATENA</a></div>
+         <!--    <div class="text-center"><a href="tour.html" class=" button_outline large">Take a tour of ATENA</a></div> -->
 
         </div><!--End container -->
         </div><!--End bg_gray_container -->
         
         <div class="container margin_60">
-        	<div class="main_title">
+        	<!-- <div class="main_title">
                 <h2>Some words about Atena ...</h2>
                 <p>
                     Cum doctus civibus efficiantur in imperdiet deterruisset.
                 </p>
-            </div>
+            </div> -->
             <div class="row">
-                <div class="col-md-8 col-sm-8">
+                <!-- <div class="col-md-8 col-sm-8">
                     <h3>Founded in 1998</h3>
                     <p>
                          His nonumes maluisset delicatissimi ut, <strong>no ius odio putent vocibus</strong>. Oratio quidam essent his ei, at animal argumentum nam. Sale inani sapientem sit at. Quo an vocent mediocritatem, eu natum argumentum pri. Deleniti invenire his ei, ut mei liber ancillae, pri et fugit interpretaris. Quod unum democritum per no, nam nostrud conclusionemque ad.
@@ -140,7 +143,7 @@
                                 <li>Nonumes maluisset delicatissimi</li>
                             </ul>
                         </div>
-                    </div><!-- end row -->
+                    </div>end row
                     <h3>Founders and Directors</h3>
                     <p>
                          His nonumes maluisset delicatissimi ut, no ius odio putent vocibus. Oratio quidam essent his ei, at animal argumentum nam. Sale inani sapientem sit at. Quo an vocent mediocritatem, eu natum argumentum pri. Deleniti invenire his ei, ut mei liber ancillae, pri et fugit interpretaris.
@@ -174,25 +177,25 @@
                             <li><span>5</span>Oportere efficiendi eu vim</li>
                         </ul>
                     </div>
-                </div>
+                </div> -->
             </div><!--End row -->
             <hr class="more_margin">
             <div class="row">
             	<div class="col-md-4 col-sm-4">
                 	<p><img src="img/campus.jpg" alt="" class="img-responsive"></p>
-                	<h4>Campus Area</h4>
+                <!-- 	<h4>Campus Area</h4>
                     <p>Lorem ipsum dolor sit amet, ne vis suas harum nonumy, at enim vocent delicatissimi eos, vocent inermis veritus mel no. Vix in offendit forensibus cotidieque. </p>
-                </div>
+            -->     </div>
                 <div class="col-md-4 col-sm-4">
                 	<p><img src="img/sport.jpg" alt="" class="img-responsive"></p>
-                	<h4>Sport activites</h4>
+                	<!-- <h4>Sport activites</h4>
                     <p>Lorem ipsum dolor sit amet, ne vis suas harum nonumy, at enim vocent delicatissimi eos, vocent inermis veritus mel no. Vix in offendit forensibus cotidieque. </p>
-                </div>
+        -->         </div>
                 <div class="col-md-4 col-sm-4">
                 	<p><img src="img/conference_hall.jpg" alt="" class="img-responsive"></p>
-                	<h4>Conference Hall</h4>
+                <!-- 	<h4>Conference Hall</h4>
                     <p>Lorem ipsum dolor sit amet, ne vis suas harum nonumy, at enim vocent delicatissimi eos, vocent inermis veritus mel no. Vix in offendit forensibus cotidieque. </p>
-                </div>
+        -->         </div>
             </div><!--End row -->
         </div><!--End container -->
         

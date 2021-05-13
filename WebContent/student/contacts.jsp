@@ -134,19 +134,19 @@
                            
                         </div><!-- End box style 1-->
                     </div><!-- End col-md-9 -->
-                    <br><br><br><br><br><br>
-                    <aside class="col-md-3">
+                    <br><br><br><br><br><br><br>
+                     <aside class="col-md-3">
                     <h3>Contacts info</h3>
                     <p>
-                       new delhi<br>
-                         + 000- 8093 3400 <br> + 000- 8093 3402<br>
-                        <a href="#">info@collegedunia.com</a>
+                       Gwalior<br>
+                         + 000-1234567 <br> + 000- 7654321<br>
+                        <a href="#">info@educationassembly.com</a>
                     </p>
                     <h5>Get directions</h5>
                     <form action="http://maps.google.com/maps" method="get" target="_blank">
                         <div class="form-group">
                             <input type="text" name="saddr" placeholder="Enter your location" class="form-control styled">
-                            <input type="hidden" name="daddr" value="Delhi">
+                            <input type="hidden" name="daddr" value="Emotech Software Solutions pvt ltd">
                             <!-- Write here your end point -->
                         </div>
                         <input type="submit" value="Get directions" class="button small nomargin">
@@ -154,17 +154,17 @@
                     <hr class="styled">
                     <h3>Departments</h3>
                     <ul class="contacts_info">
-                        <li><strong>Administration</strong><br>
-                        <a href="tel://003823932342">000-1111111</a> - <br><a href="tel://003823932342">admin@collegedunia.com</a><br>
-                        <small>Monday to Friday 9am - 7pm</small></li>
+                        
                         <li><strong>Admission</strong><br>
-                        <a href="tel://003823932342">000-2222222</a> - <a href="tel://003823932342">admission@collegedunia.com</a><br>
+                   <a >admission@educationassembly.com</a><br>
                         <small>Monday to Friday 9am - 7pm</small></li>
                         <li><strong>General questions</strong><br>
-                        <a href="tel://003823932342">000-3333333</a> - <a href="tel://003823932342">questions@collegedunia.com</a><br>
+                        <a >questions@educationassembly.com</a><br>
                         <small>Monday to Friday 9am - 7pm</small></li>
                     </ul>
-                    <hr class="styled">
+         
+                    
+             </aside>
                     
              
                     
@@ -175,9 +175,9 @@
  		
 
 	 
-		<!--Footer File-->	 
-	<%@ include file="itc/footer.jsp" %>
-		<!--Footer File-->
+		<div>
+	<%@ include file="itc/footer.jsp" %>   
+    </div>
     
 <!-- Login modal -->   
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myLogin" aria-hidden="true">
