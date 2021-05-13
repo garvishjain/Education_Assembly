@@ -16,7 +16,7 @@ public class img {
 	public String image(String filename, Part part)
 	{   
 			try {	
-				pathname = "H:\\Education_Assembly\\WebContent\\university\\img\\"+" UNI";
+				pathname = "F:\\lastproject\\Education_Assembly\\WebContent\\college\\img\\"+" col";
 				name =filename+""+(LocalDateTime.now().toString().replace(":","")) ;
 			
                  String finallocation = pathname +""+name;
