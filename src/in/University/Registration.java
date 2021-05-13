@@ -70,7 +70,7 @@ public class Registration extends HttpServlet {
 			String year = request.getParameter("year")!= null ? request.getParameter("year") : "";
 			String quota = request.getParameter("quota")!= null ? request.getParameter("quota") : "";
 			int pk = 12;
-			int rt = 123, rt4 = 1234,rt5 = 12345,rt6 = 123456;
+			int rt = 123, rt4 = 1234,rt5 = 12345,rt6 = 123456,rt7=1234567,rt8=12345678;
 //			<--- university contact start --->
 			String regname = request.getParameter("regname")!= null ? request.getParameter("regname") : "";
 			String contactname = request.getParameter("contact_name")!= null ? request.getParameter("contact_name") : "";
@@ -161,6 +161,30 @@ public class Registration extends HttpServlet {
 			{
 				out.println("Data Not Found");
 			}
+			String sqll7="select pk_id from Establish_years where years='"+year+"' ";
+			System.out.println(sqll7);
+			stmt = con.prepareStatement(sqll7);
+			ResultSet rs7 = stmt.executeQuery(sqll7);
+			if(rs7.next())
+			{
+				rt7 = rs7.getInt(1);
+			}
+			else
+			{
+				out.println("Data Not Found");
+			}
+			String sqll8="select pk_quota from quota where details='"+quota+"' ";
+			System.out.println(sqll8);
+			stmt = con.prepareStatement(sqll8);
+			ResultSet rs8 = stmt.executeQuery(sqll8);
+			if(rs8.next())
+			{
+				rt8 = rs8.getInt(1);
+			}
+			else
+			{
+				out.println("Data Not Found");
+			}
 //			<--- foreign key convert end --->			
 			
 //			<--- university register start --->
@@ -176,9 +200,9 @@ public class Registration extends HttpServlet {
 			stmt.setInt(7, rt5);
 			stmt.setInt(8, rt6);
 			stmt.setString(9, uemail);
-			stmt.setString(10, year);
+			stmt.setInt(10, rt7);
 			stmt.setInt(11, pk);
-			stmt.setString(12, quota);
+			stmt.setInt(12, rt8);
 			
 			int res = stmt.executeUpdate();
 			if(res>0 && res2>0)
