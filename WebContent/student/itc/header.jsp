@@ -145,7 +145,7 @@ orange
 										<div class="menu-wrapper">
 											<div class="col-md-2">
 												<ul>
-													<li><a href="../college/collegeregister.jsp">College</a></li>
+													<li><a href="collegeregister.jsp">College</a></li>
 													<li><a href="register.jsp">Student</a></li>
 													<li><a href="agenda_calendar.jsp">University</a></li>
 												</ul>
