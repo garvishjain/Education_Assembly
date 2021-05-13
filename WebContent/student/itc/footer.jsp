@@ -51,13 +51,10 @@
                         <li><a href="visit-us.jsp">Plan a visit</a></li>
                     </ul>
                     <ul id="contacts_footer">
-<<<<<<< HEAD
+
                         <li>Contact No  - <a href="tel://033284322">+000-1234567</a></li>
                         <li>Email - <a href="#">info@educationassembly.com</a></li>
-=======
-                        <li>Info line - <a href="tel://033284322">+000-1234567</a></li>
-                        <li>Email - <a href="#">info@educationassembly.com</a> / <a href="#">office@educationassembly.com</a></li>
->>>>>>> origin/main
+
                     </ul>
                 </div>
             </div><!-- End row -->
