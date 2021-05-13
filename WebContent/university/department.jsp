@@ -2,7 +2,32 @@
 <%@page import="in.common.GetConnection"%>
 <%@ include file="inc/stdimport.jsp" %>  
 <%@ include file="inc/header.jsp" %>  
+<!-- <script>
 
+$(document).ready(function() {
+        $("#delete").on("change", function() {
+            var del = $("#delete").val();
+            if (del === "")
+            {
+                $("#error").html("required");
+                return false;
+            }
+            else
+            {
+                $("#error").html("");
+                $.ajax({
+                    url: "delete.jsp",
+                    data: {del: del},
+                    method: "POST",
+                    success: function(data)
+                    {
+                        $("#delete").html(data);
+                        }
+                });
+            }
+        });
+    });
+</script> -->
 <%
 GetConnection getConObj=new GetConnection();
 Connection con=getConObj.getCon();
@@ -21,89 +46,248 @@ Statement stmt=con.createStatement();
                         </ol>
                     </div>
                     <ul class="nav nav-tabs page-header-tab">
-                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Dep-all">List View</a></li>
+                    	 <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Dep-all">All</a></li>
+		                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Dep-active">Active</a></li>
+		                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Dep-nonactive">Non Active</a></li>
                         <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Dep-add">Add</a></li>
                     </ul>
                 </div>
             </div>
         </div>
+        <!-- <div class="container-fluid">
+        	<div class="d-flex justify-content-between align-items-center ">
+	        	<ul class="nav nav-tabs page-header-tab">
+	                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="dept-all">All</a></li>
+	                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="dept-active">Active</a></li>
+	                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="dept-nonactive">Non Active</a></li>
+	            </ul>
+            </div>
+        </div> -->
         <div class="section-body mt-4">
             <div class="container-fluid">
                 <div class="tab-content">
-                    <div class="tab-pane active" id="Dep-all">
-                        <div class="table-responsive">
-                            <div class="table-responsive card">
-                                <table class="table table-hover table-striped table-vcenter text-nowrap mb-0">
-                                    <thead>
-                                        <tr>
-                                            <th>#</th>
-                                            <th>Dept. Name</th>
-                                            <th>Head OF Dept.</th>
-                                            <th>Phone</th>
-                                            <th>Email</th>
-                                            <th>Std. Capacity</th>
-                                            <th>Edit</th>
-                                        </tr>
-                                    </thead>
-                                    <%
-										try {
-											String query = "select * from department INNER JOIN department_name ON department.fk_department_name=department_name.pk_id";
-											//get Table data
-											ResultSet rs = stmt.executeQuery(query);
-											while (rs.next()) {
-									%>
-                                    <tr>
-	                                    <td><%=rs.getInt("pk_id")%></td>
-	                                    <td><%=rs.getString("Details") %></td>
-	                                    <td><%=rs.getString("hod_name") %></td>
-	                                    <td><%=rs.getString("phone_no") %></td>
-	                                    <td><%=rs.getString("email") %></td>
-	                                    <td><%=rs.getString("std_capacity") %></td>
-	                                    <td>
-                                            <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                            <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                            <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                        </td>
-                                    </tr>
-                                   <%
-									}
-									}catch(Exception e)
-                                    {
-										e.printStackTrace();	
-                                    }
-                                   %>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>Mechanical Engg.</td>
-                                            <td>Emmett L Johnson</td>
-                                            <td>+123 4567890</td>
-                                            <td>test@example.com</td>
-                                            <td>150</td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Computer Engg.</td>
-                                            <td>Corrine M Johnson</td>
-                                            <td>+123 4567890</td>
-                                            <td>test@example.com</td>
-                                            <td>205</td>
-                                            <td>
-                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>        
-                        </div>
-                    </div>
+	                <div class="tab-pane active" id="Dep-all">
+	                        <div class="table-responsive">
+	                            <div class="table-responsive card">
+	                                <table class="table table-hover table-striped table-vcenter text-nowrap mb-0">
+	                                    <thead>
+	                                        <tr>
+	                                            <th>#</th>
+	                                            <th>Dept. Name</th>
+	                                            <th>Head OF Dept.</th>
+	                                            <th>Phone</th>
+	                                            <th>Email</th>
+	                                            <th>Std. Capacity</th>
+	                                            <th>Edit</th>
+	                                        </tr>
+	                                    </thead>
+	                                    <%
+											try {
+												String query = "select * from department INNER JOIN department_name ON department.fk_department_name=department_name.pk_id";
+												//get Table data
+												ResultSet rs = stmt.executeQuery(query);
+												while (rs.next()) {
+										%>
+	                                    <tr>
+		                                    <td><%=rs.getInt("pk_id")%></td>
+		                                    <td><%=rs.getString("Details") %></td>
+		                                    <td><%=rs.getString("hod_name") %></td>
+		                                    <td><%=rs.getString("phone_no") %></td>
+		                                    <td><%=rs.getString("email") %></td>
+		                                    <td><%=rs.getString("std_capacity") %></td>
+		                                    <td>
+	                                            <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
+	                                            <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
+	                                            <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" name="delete" id="delete" data-type="confirm" value="<%=rs.getString("pk_id") %>"><i class="fa fa-trash-o text-danger"></i></button>
+	                                        </td>
+	                                    </tr>
+	                                   <%
+										}
+										}catch(Exception e)
+	                                    {
+											e.printStackTrace();	
+	                                    }
+	                                   %>
+	                                    <tbody>
+	                                        <tr>
+	                                            <td>1</td>
+	                                            <td>Mechanical Engg.</td>
+	                                            <td>Emmett L Johnson</td>
+	                                            <td>+123 4567890</td>
+	                                            <td>test@example.com</td>
+	                                            <td>150</td>
+	                                            <td>
+	                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
+	                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
+	                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2</td>
+	                                            <td>Computer Engg.</td>
+	                                            <td>Corrine M Johnson</td>
+	                                            <td>+123 4567890</td>
+	                                            <td>test@example.com</td>
+	                                            <td>205</td>
+	                                            <td>
+	                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
+	                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
+	                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+	                                            </td>
+	                                        </tr>
+	                                    </tbody>
+	                                </table>
+	                            </div>        
+	                        </div>
+	                    </div>
+                		<div class="tab-pane" id="Dep-active">
+	                        <div class="table-responsive">
+	                            <div class="table-responsive card">
+	                                <table class="table table-hover table-striped table-vcenter text-nowrap mb-0">
+	                                    <thead>
+	                                        <tr>
+	                                            <th>#</th>
+	                                            <th>Dept. Name</th>
+	                                            <th>Head OF Dept.</th>
+	                                            <th>Phone</th>
+	                                            <th>Email</th>
+	                                            <th>Std. Capacity</th>
+	                                            <th>Edit</th>
+	                                        </tr>
+	                                    </thead>
+	                                    <%
+											try {
+												String query = "select * from department INNER JOIN department_name ON department.fk_department_name=department_name.pk_id where isActive=1";
+												//get Table data
+												ResultSet rs = stmt.executeQuery(query);
+												while (rs.next()) {
+										%>
+	                                    <tr>
+		                                    <td><%=rs.getInt("pk_id")%></td>
+		                                    <td><%=rs.getString("Details") %></td>
+		                                    <td><%=rs.getString("hod_name") %></td>
+		                                    <td><%=rs.getString("phone_no") %></td>
+		                                    <td><%=rs.getString("email") %></td>
+		                                    <td><%=rs.getString("std_capacity") %></td>
+		                                    <td>
+	                                            <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
+	                                            <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
+	                                            <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+	                                        </td>
+	                                    </tr>
+	                                   <%
+										}
+										}catch(Exception e)
+	                                    {
+											e.printStackTrace();	
+	                                    }
+	                                   %>
+	                                    <tbody>
+	                                        <tr>
+	                                            <td>1</td>
+	                                            <td>Mechanical Engg.</td>
+	                                            <td>Garvish Jain</td>
+	                                            <td>+123 4567890</td>
+	                                            <td>test@example.com</td>
+	                                            <td>150</td>
+	                                            <td>
+	                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
+	                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
+	                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2</td>
+	                                            <td>Computer Engg.</td>
+	                                            <td>Corrine M Johnson</td>
+	                                            <td>+123 4567890</td>
+	                                            <td>test@example.com</td>
+	                                            <td>205</td>
+	                                            <td>
+	                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
+	                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
+	                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+	                                            </td>
+	                                        </tr>
+	                                    </tbody>
+	                                </table>
+	                            </div>        
+	                        </div>
+	                    </div>
+	                	<div class="tab-pane" id="Dep-nonactive">
+	                        <div class="table-responsive">
+	                            <div class="table-responsive card">
+	                                <table class="table table-hover table-striped table-vcenter text-nowrap mb-0">
+	                                    <thead>
+	                                        <tr>
+	                                            <th>#</th>
+	                                            <th>Dept. Name</th>
+	                                            <th>Head OF Dept.</th>
+	                                            <th>Phone</th>
+	                                            <th>Email</th>
+	                                            <th>Std. Capacity</th>
+	                                            <th>Edit</th>
+	                                        </tr>
+	                                    </thead>
+	                                    <%
+											try {
+												String query = "select * from department INNER JOIN department_name ON department.fk_department_name=department_name.pk_id where isActive=0";
+												//get Table data
+												ResultSet rs = stmt.executeQuery(query);
+												while (rs.next()) {
+										%>
+	                                    <tr>
+		                                    <td><%=rs.getInt("pk_id")%></td>
+		                                    <td><%=rs.getString("Details") %></td>
+		                                    <td><%=rs.getString("hod_name") %></td>
+		                                    <td><%=rs.getString("phone_no") %></td>
+		                                    <td><%=rs.getString("email") %></td>
+		                                    <td><%=rs.getString("std_capacity") %></td>
+		                                    <td>
+	                                            <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
+	                                            <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
+	                                            <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+	                                        </td>
+	                                    </tr>
+	                                   <%
+										}
+										}catch(Exception e)
+	                                    {
+											e.printStackTrace();	
+	                                    }
+	                                   %>
+	                                    <tbody>
+	                                        <tr>
+	                                            <td>1</td>
+	                                            <td>Mechanical Engg.</td>
+	                                            <td>Shadab Quershi</td>
+	                                            <td>+123 4567890</td>
+	                                            <td>test@example.com</td>
+	                                            <td>150</td>
+	                                            <td>
+	                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
+	                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
+	                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+	                                            </td>
+	                                        </tr>
+	                                        <tr>
+	                                            <td>2</td>
+	                                            <td>Computer Engg.</td>
+	                                            <td>Corrine M Johnson</td>
+	                                            <td>+123 4567890</td>
+	                                            <td>test@example.com</td>
+	                                            <td>205</td>
+	                                            <td>
+	                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
+	                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
+	                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+	                                            </td>
+	                                        </tr>
+	                                    </tbody>
+	                                </table>
+	                            </div>        
+	                        </div>
+	                    </div>
                     <div class="tab-pane" id="Dep-add">
                         <div class="col-lg-12 col-md-12">                
                             <div class="card">
