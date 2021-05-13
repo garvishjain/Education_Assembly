@@ -10,3 +10,5 @@
 <script src="assets/js/page/index.js"></script>
 <script src="assets/js/page/summernote.js"></script>
 
+</body>
+</html>
