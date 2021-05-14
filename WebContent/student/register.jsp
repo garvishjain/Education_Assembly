@@ -70,7 +70,8 @@ label {
 			x.type = "text";
 		} else {
 			x.type = "password";
-		}
+		}                             
+// 		</>
 	}
 </script>
 <script type="text/javascript">
