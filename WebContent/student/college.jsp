@@ -47,6 +47,7 @@
     cursor: auto;
     width: 100%;
 }
+
 /*  .college_detail_fill{width: 300px;
     height: 180px;} */
 /*.field_fill{margin:8px 0px 0px 22px;float: left;} */
