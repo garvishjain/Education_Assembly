@@ -101,6 +101,55 @@ function validate() {
     return true; 
 } 
 
+$(document).ready(function() {
+    $("#send").on("click", function() {
+        var sts = $("#email").val();
+        var name = $("#fname").val();
+        if (sts === "")
+        {
+            $("#error").html("required");
+            return false;
+        }
+        else
+        {
+            $("#error").html("");
+            $.ajax({
+                url: "../UserVerify",
+                data: {sts: sts, fname: fname},
+                method: "POST",
+                success: function(data)
+                {
+                    $("#send").html(data);
+                    }
+            });
+        }
+    });
+});
+
+$(document).ready(function() {
+    $("#verify").on("click", function() {
+        var sts = $("#authcode").val();
+       
+        if (sts === "")
+        {
+            $("#error").html("required");
+            return false;
+        }
+        else
+        {
+            $("#error").html("");
+            $.ajax({
+                url: "../VerifyCode",
+                data: {sts: sts},
+                method: "POST",
+                success: function(data)
+                {
+                    $("#verify").html(data);
+                    }
+            });
+        }
+    });
+});
 
 </script>
 
@@ -524,6 +573,38 @@ function validate() {
 									<i class="pe-7s-users"></i>
 									<h3 style="text-decoration: underline;">Log-In Credential</h3>
 								</div>
+								
+								<div class="wrapper_indent">
+									<div class="row">
+
+										<div class="col-md-4">
+											<div class="form-group">
+												 <input type="text"
+													class="form-control styled required" id="authcode" name="authcode"
+													placeholder="Enter otp">
+							<span id="available"> <!--- data show this span tag --->  </span>
+											</div>
+										</div>
+										
+
+										
+
+									
+										<!-- <input type="button" name="previous" class="button"
+											onclick="fourprev()" value="Previous" /> -->
+										<p >
+										
+													<button type="Button"  name="verify" id="verify" class="button">verify otp</button>
+										</p>
+										<span id="showMsg"></span>
+
+
+
+
+
+									</div>
+									<!-- End row -->
+								</div>
 								<div class="wrapper_indent">
 									<div class="row">
 
@@ -569,7 +650,8 @@ function validate() {
 										<!-- <input type="button" name="previous" class="button"
 											onclick="fourprev()" value="Previous" /> -->
 										<p >
-										
+										<button type="Button" name="send" id="send" class="button">Send otp</button>
+								
 										<button type="reset" onclick="jquery()" class="button" >Clear</button>
 											<button type="submit" onclick="jquery()" class="button">Register</button>
 										</p>
