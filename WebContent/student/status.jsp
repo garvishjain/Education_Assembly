@@ -153,8 +153,7 @@ label {
 	 <% String nb="null"; %>
 	<%
 			try {
-				/* Select * from student_information INNER JOIN student_education ON student_education.pk_id=student_information.fk_education
-INNER JOIN student_address ON student_address.pk_id=student_information.fk_address */
+				/* String query = "Select * from student_information where username='" + uname + "' "; */
 				String sql="Select * from student_information INNER JOIN student_address ON student_information.fk_address=student_address.pk_id WHERE username= '" + uname + "'    ";
 				ResultSet rs = stmt.executeQuery(sql);
 				if (rs.next()) {

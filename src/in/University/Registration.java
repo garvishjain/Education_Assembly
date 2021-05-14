@@ -6,7 +6,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.util.Random;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -59,11 +58,7 @@ public class Registration extends HttpServlet {
 		
 		try 
 		{
-			
-			Random rnd = new Random();
-	        int number = rnd.nextInt(99999999);
-	        String ureg ="UNI" + number ;
-//			String ureg = request.getParameter("ureg")!= null ? request.getParameter("ureg") : "";
+			String ureg = request.getParameter("ureg")!= null ? request.getParameter("ureg") : "";
 			String uname = request.getParameter("uname")!= null ? request.getParameter("uname") : "";
 			String uadrs = request.getParameter("uadrs")!= null ? request.getParameter("uadrs") : "";
 			String cntry = request.getParameter("cntry")!= null ? request.getParameter("cntry") : "";
@@ -142,7 +137,7 @@ public class Registration extends HttpServlet {
 			{
 				out.println("Data Not Found");
 			}
-			String sqll5="select pk_id from category where category='"+uctgry+"' ";
+			String sqll5="select pk_id from category where details='"+uctgry+"' ";
 			System.out.println(sqll5);
 			stmt = con.prepareStatement(sqll5);
 			ResultSet rs5 = stmt.executeQuery(sqll5);
@@ -154,7 +149,7 @@ public class Registration extends HttpServlet {
 			{
 				out.println("Data Not Found");
 			}
-			String sqll6="select pk_id from type where type='"+utype+"' ";
+			String sqll6="select pk_id from type where details='"+utype+"' ";
 			System.out.println(sqll6);
 			stmt = con.prepareStatement(sqll6);
 			ResultSet rs6 = stmt.executeQuery(sqll6);

@@ -90,7 +90,7 @@ public class GetProfessorsDB
 		
 		if(con != null)
 		{
-			String sql="select department.fk_department_name as dept,university_professor.* from university_professor,department where university_professor.department=department.pk_id and iscollege=? and collegeid=?";
+			String sql="select department.fk_department_name as dept,professor.* from professor,department where professor.department=department.pk_id and iscollege=? and collegeid=?";
 			try 
 			{
 				

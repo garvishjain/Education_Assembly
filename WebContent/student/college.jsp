@@ -1,10 +1,3 @@
-<%@page import="in.common.GetConnection"%>
-<%@ include file="inc/stdimport.jsp" %> 
-		 <%
-			GetConnection getcon=new GetConnection();
-		 Connection con=getcon.getCon();
-		Statement stmt= con.createStatement();
-		%> 
 <!DOCTYPE html>
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
 <html>
@@ -40,7 +33,15 @@
       <script src="js/html5shiv.min.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
-     
+     <%@page import="in.common.GetConnection"%>
+		 <%@ include file="inc/stdimport.jsp" %> 
+		 
+		<%
+		GetConnection getConObj=new GetConnection();
+		Connection con=getConObj.getCon();
+		Statement stmt=con.createStatement();
+		
+		%> 
 <style type="text/css">
 		.staff .box_style_1 {
     text-align: center;
@@ -68,73 +69,38 @@
        
         <div class="sub_header bg_1">
         	<div id="intro_txt">
-			<h1>College Detail</h1>
+			<h1>Check College Detail</h1>
             </div>
 		</div> <!--End sub_header -->
-		<!-- 
-				Select university.pk_id,u_registration,u_name,address,email,establish_year,state.state_name,
-				city.city_name,category.category,type.type,university_contact.contact_number from university 
-				INNER JOIN country ON country.pk_id=university.fk_country
-				INNER JOIN state ON state.pk_id=university.fk_state
-				INNER JOIN city ON city.pk_id=university.fk_city
-				INNER JOIN category ON category.pk_id=university.fk_category
-				INNER JOIN type ON type.pk_id=university.fk_type
-				INNER JOIN university_contact ON university_contact.pk_id=university.fk_contact_number 
-		-->
 
 	<div class="container_gray_bg">
 		<div id="position"></div>
-		   <div class="container margin_60">
-			  <div class="row">
-			   
-				  <div class="row staff">
-				  <%
-			try{
-				String sql="Select university.pk_id,u_registration,u_name,address,email,establish_year,state.state_name,\n" + 
-						"city.city_name,category.category,type.type,university_contact.contact_number from university \n" + 
-						"INNER JOIN country ON country.pk_id=university.fk_country\n" + 
-						"INNER JOIN state ON state.pk_id=university.fk_state\n" + 
-						"INNER JOIN city ON city.pk_id=university.fk_city\n" + 
-						"INNER JOIN category ON category.pk_id=university.fk_category\n" + 
-						"INNER JOIN type ON type.pk_id=university.fk_type\n" + 
-						"INNER JOIN university_contact ON university_contact.pk_id=university.fk_contact_number ";
-				ResultSet rs=stmt.executeQuery(sql);
-				while (rs.next()) {
-					%>
-								<div class="col-md-4">
-								
-					            	<div class="box_style_1">
-					                			<p><img src="img/college/c_1.png" alt="" ></p>
-					                                <h4 style="font-size: 20px;"><%=rs.getString("u_name").toUpperCase()%></h4>
-					                                <h4 style="font-size: 20px;">Reg. No. - <%=rs.getString("u_registration").toUpperCase()%></h4>
-					                                <div class="college_detail_fill">
-					                                <p class="field_fill">Courses - <%=rs.getString("course")%></p>
-					                                 <p class="field_fill">Category - <%=rs.getString("category").toUpperCase()%></p>
-					                                 <p class="field_fill">Type - <%=rs.getString("type").toUpperCase() %></p>
-					                                 <p class="field_fill">Email - <%=rs.getString("email").toUpperCase() %></p>
-					                                 <p class="field_fill">Address - <%=rs.getString("address")%> , <%=rs.getString("city_name")%> , <%=rs.getString("state_name")%></p>
-					                                 <p class="field_fill">Contact No - <%=rs.getString("contact_number").toUpperCase() %></p>
-					                                 </div>
-					                                <ul class="social_team">
-					                                    <li><a href="https://www.facebook.com/Madhav-Institute-of-Technology-Science-Gwalior-MP-India-102055234637800/?modal=admin_todo_tour"><i class="icon-facebook"></i></a></li>
-					                                    <li><a href="https://twitter.com/MITS_Gwalior"><i class="icon-twitter"></i></a></li>
-					                                    <li><a href="https://mitsgwalior.in/index.php"><i class="icon-google"></i></a></li>
-					                                    <li><a href="#"><i class="icon-email"></i></a></li>
-													</ul> <hr>
-					                             <a href="college_detail.jsp" class="button_outline">Profile</a>           
-									</div>
-									
-				     			</div>
-				     			<%
-				}
-				}
-		catch (Exception e) {
-			e.printStackTrace();
-					}
-					%>
-					  </div>
-					   
-							<!-- <div class="col-md-4">
+		<!-- Position -->
+		<div class="container margin_60">
+			<div class="row">
+
+				
+				<div class="row staff">
+			<div class="col-md-4">
+            	<div class="box_style_1">
+                	<p><img src="img/college/c_1.png" alt="" ></p>
+                                <h4 style="font-size: 20px;">Madhav Institute of Technology & Science</h4>
+             					<p>  Madhav Institute of Technology and Science,(MITS) was established in the year 1957. It is affiliated to  RGPV, Bhopal but has an academic autonomy to run courses of its choice since 2002. It has also been accredited by the National Assessment and Accreditation Council (NAAC) and the National Board of Accreditation (NBA).</p>
+                                <ul class="social_team">
+                                    <li><a href="https://www.facebook.com/Madhav-Institute-of-Technology-Science-Gwalior-MP-India-102055234637800/?modal=admin_todo_tour"><i class="icon-facebook"></i></a></li>
+                                    <li><a href="https://twitter.com/MITS_Gwalior"><i class="icon-twitter"></i></a></li>
+                                    <li><a href="https://mitsgwalior.in/index.php"><i class="icon-google"></i></a></li>
+                                    <li><a href="#"><i class="icon-email"></i></a></li>
+							</ul>    
+                            <hr>
+                             <a href="teacher_profile.html" class="button_outline">Profile</a>           
+							
+
+
+						</div>
+							</div>
+
+							<div class="col-md-4">
             	<div class="box_style_1">
                 	<p><img src="img/college/c_2.jpg" width="130px" height="130px;" alt="" ></p>
                                 <h4 style="font-size: 20px;">Prestige Institute Of Management Gwalior </h4>
@@ -149,9 +115,9 @@
                             <hr>
                              <a href="teacher_profile.html" class="button_outline">Profile</a>           
                 </div>
-            </div> -->
+            </div>
             
-           <!--  <div class="col-md-4">
+            <div class="col-md-4">
             	<div class="box_style_1">
                 	<p><img src="img/college/c_3.png" width="130px" height="130px;" alt="" ></p>
                                  <h4 style="font-size: 20px;">ITM University, Gwalior</h4>
@@ -165,9 +131,9 @@
                             <hr>
                              <a href="teacher_profile.html" class="button_outline">Profile</a>           
                 </div>
-            </div> -->
-      <!--End row -->
-       <%--  <div class="row staff">
+            </div>
+        </div><!--End row -->
+        <div class="row staff">
 			<div class="col-md-4">
             	<div class="box_style_1">
                 	<p><img src="img/teacher_1_small.jpg" alt="" class="img-circle styled"></p>
@@ -199,14 +165,12 @@
                              <a href="teacher_profile.html" class="button_outline">Profile</a>           
                 </div>
             </div>
-              
+            
             <div class="col-md-4">
             	<div class="box_style_1">
                 	<p><img src="img/teacher_3_small.jpg" alt="" class="img-circle styled"></p>
                                  <h4>Silvia Doe <small>Biologist</small></h4>
-										<p><% String s=(String)rs.getString("course");
-										
-										%> </p>
+             					<p> When an unknown printer took a galley of type and <strong>scrambled it to make</strong> a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                                 <ul class="social_team">
                                     <li><a href="#"><i class="icon-facebook"></i></a></li>
                                     <li><a href="#"><i class="icon-twitter"></i></a></li>
@@ -217,23 +181,19 @@
                              <a href="teacher_profile.html" class="button_outline">Profile</a>           
                 </div>
             </div>
-             
-        </div><!--End row --> --%>
+        </div><!--End row -->
 				
 				
 		<!--End container -->
 	</div>
-	 
 	<!--End container_gray_bg -->
 </div>
-
 </div>
 
-<div>
 	<!--Footer File-->	 
 	<%@ include file="itc/footer.jsp" %>
 		<!--Footer File-->
-   </div> 
+    
 <!-- Login modal -->   
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myLogin" aria-hidden="true">
 		<div class="modal-dialog">

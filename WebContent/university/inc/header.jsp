@@ -280,8 +280,15 @@
             <div class="tab-pane fade" id="menu-college" role="tabpanel">
                 <nav class="sidebar-nav">
                     <ul class="metismenu">
-                    	<li><a href="collegelist.jsp"><i class="fa fa-list-ul"></i><span>College List</span></a></li>
+                    	<li><a href="hostel.html"><i class="fa fa-bed"></i><span>College List</span></a></li>
                         <li><a href="noticeboard.html"><i class="fa fa-dashboard"></i><span>Professors</span></a></li>
+                        <li><a href="taskboard.html"><i class="fa fa-list-ul"></i><span>Students</span></a></li>
+                        <li><a href="hostel.html"><i class="fa fa-bed"></i><span>Admission List</span></a></li>
+                        <li><a href="transport.html"><i class="fa fa-truck"></i><span>Departments</span></a></li>
+                        <li><a href="payments.html"><i class="fa fa-credit-card"></i><span>Courses</span></a></li>
+                        <li><a href="attendance.html"><i class="fa fa-calendar-check-o"></i><span>Attendance</span></a></li>
+                        <li><a href="leave.html"><i class="fa fa-flag"></i><span>Leave</span></a></li>
+                        <li><a href="setting.html"><i class="fa fa-gear"></i><span>Settings</span></a></li>
                     </ul>
                 </nav>
             </div>

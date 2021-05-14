@@ -284,7 +284,7 @@ Statement stmt=con.createStatement();
                                             </select>	
                                         </div>
                                     </div>
-                                   <%--  <div class="col-sm-6">
+                                    <div class="col-sm-6">
                                         <div class="form-group">
                                         <label>Course Name</label>
                                             <select type="text" name="name" class="form-control" >
@@ -305,7 +305,7 @@ Statement stmt=con.createStatement();
                                             	%>
                                             </select>	
                                         </div>
-                                    </div> --%>
+                                    </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                         <label>Courses Duration</label>
