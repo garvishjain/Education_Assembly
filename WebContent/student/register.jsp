@@ -2,155 +2,148 @@
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="college, campus, university, courses, school, educational">
-    <meta name="description" content="ATENA - College, University and campus template">
-    <meta name="author" content="Ansonika">
-    <title>College, University and campus template</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords"
+	content="college, campus, university, courses, school, educational">
+<meta name="description"
+	content="ATENA - College, University and campus template">
+<meta name="author" content="Ansonika">
+<title>College, University and campus template</title>
 
-    <!-- Favicons-->
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" type="image/x-icon" href="img/apple-touch-icon-57x57-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="72x72" href="img/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="114x114" href="img/apple-touch-icon-114x114-precomposed.png">
-    <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
+<!-- Favicons-->
+<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" type="image/x-icon"
+	href="img/apple-touch-icon-57x57-precomposed.png">
+<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72"
+	href="img/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114"
+	href="img/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144"
+	href="img/apple-touch-icon-144x144-precomposed.png">
 
-    <!-- BASE CSS -->
-    <link href="css/base.css" rel="stylesheet">
-    
-    <!-- SPECIFIC CSS -->
-    <link href="css/skins/square/blue.css" rel="stylesheet">
-    <script
+<!-- BASE CSS -->
+<link href="css/base.css" rel="stylesheet">
+
+<!-- SPECIFIC CSS -->
+<link href="css/skins/square/blue.css" rel="stylesheet">
+<script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 
-    <!--[if lt IE 9]>
+<!--[if lt IE 9]>
       <script src="js/html5shiv.min.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
-     	<%@page import="in.common.GetConnection"%>
-		 <%@ include file="inc/stdimport.jsp" %> 
-		 
-		<%
-		GetConnection getConObj=new GetConnection();
-		Connection con=getConObj.getCon();
-		Statement stmt=con.createStatement();
-		
-		%> 
-		<style type="text/css">
-			p			{
-						display: inline;
-						size: 120px;
-						text-align: center;
-						font-size: 16px;
-				  		
-				 		 padding: 1px  2px;
-						}
-			label{font-size: 18px;}
+<%@page import="in.common.GetConnection"%>
+<%@ include file="inc/stdimport.jsp"%>
+
+<%
+	GetConnection getConObj = new GetConnection();
+	Connection con = getConObj.getCon();
+	Statement stmt = con.createStatement();
+%>
+<style type="text/css">
+p {
+	display: inline;
+	size: 120px;
+	text-align: center;
+	font-size: 16px;
+	padding: 1px 2px;
+}
+
+label {
+	font-size: 18px;
+}
 </style>
 
 
 <script type="text/javascript">
-
-
-function myFunction() {
-	  var x = document.getElementById("pass");
-	  if (x.type === "password") {
-	    x.type = "text";
-	  } else {
-	    x.type = "password";
-	  }
+	function myFunction() {
+		var x = document.getElementById("pass");
+		if (x.type === "password") {
+			x.type = "text";
+		} else {
+			x.type = "password";
+		}
 	}
-
 </script>
 <script type="text/javascript">
-function validate() { 
-  
-    var pass = document.getElementById("pass").value;
-    var cpass = document.getElementById("cpass").value;
-    if (pass== "") { 
-    	document.getElementById("passerr").innerHTML=""; 
-        return false; 
-    } 
-    else
-	{
-	document.getElementById("passerr").innerHTML="";
-	}
-    if (cpass== "") 
-        { 
-        	document.getElementById("cpasserr").innerHTML="";          
-        } 
-	    else
-		{
-		document.getElementById("cpasserr").innerHTML="";
+	function validate() {
+
+		var pass = document.getElementById("pass").value;
+		var cpass = document.getElementById("cpass").value;
+		if (pass == "") {
+			document.getElementById("passerr").innerHTML = "";
+			return false;
+		} else {
+			document.getElementById("passerr").innerHTML = "";
 		}
-    if (cpass!=pass) 
-    { 
-    	document.getElementById("cpasserr").innerHTML="Password does not match"; 
-        return false;   
-    } 
-    else
-	{
-	document.getElementById("cpaserr").innerHTML="Password Match";
+		if (cpass == "") {
+			document.getElementById("cpasserr").innerHTML = "";
+		} else {
+			document.getElementById("cpasserr").innerHTML = "";
+		}
+		if (cpass != pass) {
+			document.getElementById("cpasserr").innerHTML = "Password does not match";
+			return false;
+		} else {
+			document.getElementById("cpaserr").innerHTML = "Password Match";
+		}
+		return true;
 	}
-    return true; 
-} 
 
-$(document).ready(function() {
-    $("#send").on("click", function() {
-        var sts = $("#email").val();
-        var name = $("#fname").val();
-        if (sts === "")
-        {
-            $("#error").html("required");
-            return false;
-        }
-        else
-        {
-            $("#error").html("");
-            $.ajax({
-                url: "../UserVerify",
-                data: {sts: sts, fname: fname},
-                method: "POST",
-                success: function(data)
-                {
-                    $("#send").html(data);
-                    }
-            });
-        }
-    });
-});
+	$(document).ready(function() {
+		$("#send").on("click", function() {
+			var sts = $("#email").val();
+			var name = $("#fname").val();
+			if (sts === "") {
+				$("#error").html("required");
+				return false;
+			} else {
+				$("#error").html("");
+				$.ajax({
+					url : "../UserVerify",
+					data : {
+						sts : sts,
+						fname : fname
+					},
+					method : "POST",
+					success : function(data) {
+						$("#send").html(data);
+					}
+				});
+			}
+		});
+	});
 
-$(document).ready(function() {
-    $("#verify").on("click", function() {
-        var sts = $("#authcode").val();
-       
-        if (sts === "")
-        {
-            $("#error").html("required");
-            return false;
-        }
-        else
-        {
-            $("#error").html("");
-            $.ajax({
-                url: "../VerifyCode",
-                data: {sts: sts},
-                method: "POST",
-                success: function(data)
-                {
-                    $("#verify").html(data);
-                    }
-            });
-        }
-    });
-});
+	$(document).ready(function() {
+		$("#verify").on("click", function() {
+			var sts = $("#authcode").val();
 
+			if (sts === "") {
+				$("#error").html("required");
+				return false;
+			} else {
+				$("#error").html("");
+				$.ajax({
+					url : "../VerifyCode",
+					data : {
+						sts : sts
+					},
+					method : "POST",
+					success : function(data) {
+						$("#verify").html(data);
+					}
+				});
+			}
+		});
+	});
 </script>
 
 
@@ -163,18 +156,21 @@ $(document).ready(function() {
 	</div>
 	<!-- Pulse Preloader -->
 
-	<!--Header File-->	
-	 <%@ include file="itc/header.jsp" %>
-		<!--Header File-->
+	<!--Header File-->
+	<%@ include file="itc/header.jsp"%>
+	<!--Header File-->
 
-	 
 
-       
-        <div class="sub_header bg_1">
-        	<div id="intro_txt">
-			<h1>Online <strong>Admission</strong>Form</h1>
-            </div>
-		</div> <!--End sub_header -->
+
+
+	<div class="sub_header bg_1">
+		<div id="intro_txt">
+			<h1>
+				Online <strong>Admission</strong>Form
+			</h1>
+		</div>
+	</div>
+	<!--End sub_header -->
 
 	<div class="container_gray_bg">
 		<div id="position"></div>
@@ -192,242 +188,238 @@ $(document).ready(function() {
 							<!-- <fieldset id="first" Style="display: block;"> -->
 
 
-								<div class="indent_title_in">
-									<i class="pe-7s-user"></i>
-									<h3 style="text-decoration: underline;">Personal details</h3>
-								</div>
-<hr style="width: 107%;margin-left: -30px;">
+							<div class="indent_title_in">
+								<i class="pe-7s-user"></i>
+								<h3 style="text-decoration: underline;">Personal details</h3>
+							</div>
+							<hr style="width: 107%; margin-left: -30px;">
 
-								<div class="wrapper_indent">
-									<div class="row">
+							<div class="wrapper_indent">
+								<div class="row">
 
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>First name</label> <input type="text"
-													class="form-control styled required" id="fname"
-													name="fname" placeholder="Enter First Name">
-											</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>First name</label> <input type="text"
+												class="form-control styled required" id="fname" name="fname"
+												placeholder="Enter First Name">
 										</div>
-
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Last name</label> <input type="text"
-													class="form-control styled required" id="lname"
-													name="lname" placeholder="Enter Last Name">
-											</div>
-										</div>
-
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Email</label> <input type="email"
-													class="form-control styled required" id="email"
-													name="email" placeholder="youremail@gmail.com">
-											</div>
-										</div>
-
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Mobile Number</label> <input type="text"
-													class="form-control styled required" id="num" name="num"
-													placeholder="Enter Your Number"
-													 minlength="10" maxlength="10"
-										oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')">
-											</div>
-										</div>
-
-
-
-
-
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Date of birth</label> <input type="date"
-													class="form-control styled required" id="dob" name="dob"
-													placeholder="Enter Your DOB">
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Aadhar Number</label> <input type="text"
-													class="form-control styled required" id="aadhar"
-													name="adhar" maxlength="12" minlength="12"
-													placeholder="Enter 12 digit Aadhar Number"
-													oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')">
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Gender</label><br>
-												<div class="radio_inline" >
-												<input type="radio" name="gender"  value="Male"
-													class="required">
-													<label> Male</label>
-													
-											 <input type="radio" name="gender" id="female"
-													value="Female" class="required">
-													<label>Female</label>
-											</div>
-											</div>
-										</div>
-
-
-
-										
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Father's Name</label> <input type="text"
-													class="form-control styled required" id="f_name"
-													name="f_name" placeholder="Enter Father Name"  >
-													
-											</div>
-										</div>
-
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Mother's Name</label> <input type="text"
-													class="form-control styled required" id="mname"
-													name="mname" placeholder="Enter Mother Name">
-											</div>
-										</div>
-
-
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Father's Mobile</label> <input type="text"
-													class="form-control styled required" id="fnum" name="fnum"
-													placeholder="Enter Father's Number">
-											</div>
-										</div>
-
-
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Religion</label> <select
-													class="form-control styled required" name="religion"
-													id="religion" required="required">
-													<option value="null">-- select one --</option>
-													<option value="Buddhism">Buddhism</option>
-													<option value="Hindu">Hindu</option>
-													<option value="Muslim">Muslim</option>
-													<option value="Sikh">Sikh</option>
-													<option value="Christian">Christian</option>
-													<option value="Jainism">Jainism</option>
-												</select>
-											</div>
-										</div>
-
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Category</label> <select
-													class="form-control styled required" required="required" name="cast" required="required" id="cast" class="form-control styled required">
-													<option value="null">-- select one --</option>
-													<option value="sc">SC</option>
-													<option value="st">ST</option>
-													<option value="obc">OBC</option>
-													<option value="general">GENERAL</option>
-
-												</select>
-											</div>
-										</div>
-
-
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Select Student Image</label> <input type="file"
-													name="image" id="image"
-													class="form-control styled required">
-											</div>
-										</div>
-
-										<hr>
-
-
 									</div>
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Last name</label> <input type="text"
+												class="form-control styled required" id="lname" name="lname"
+												placeholder="Enter Last Name">
+										</div>
+									</div>
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Email</label> <input type="email"
+												class="form-control styled required" id="email" name="email"
+												placeholder="youremail@gmail.com">
+										</div>
+									</div>
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Mobile Number</label> <input type="text"
+												class="form-control styled required" id="num" name="num"
+												placeholder="Enter Your Number" minlength="10"
+												maxlength="10"
+												oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')">
+										</div>
+									</div>
+
+
+
+
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Date of birth</label> <input type="date"
+												class="form-control styled required" id="dob" name="dob"
+												placeholder="Enter Your DOB">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Aadhar Number</label> <input type="text"
+												class="form-control styled required" id="aadhar"
+												name="adhar" maxlength="12" minlength="12"
+												placeholder="Enter 12 digit Aadhar Number"
+												oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Gender</label><br>
+											<div class="radio_inline">
+												<input type="radio" name="gender" value="Male"
+													class="required"> <label> Male</label> <input
+													type="radio" name="gender" id="female" value="Female"
+													class="required"> <label>Female</label>
+											</div>
+										</div>
+									</div>
+
+
+
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Father's Name</label> <input type="text"
+												class="form-control styled required" id="f_name"
+												name="f_name" placeholder="Enter Father Name">
+
+										</div>
+									</div>
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Mother's Name</label> <input type="text"
+												class="form-control styled required" id="mname" name="mname"
+												placeholder="Enter Mother Name">
+										</div>
+									</div>
+
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Father's Mobile</label> <input type="text"
+												class="form-control styled required" id="fnum" name="fnum"
+												placeholder="Enter Father's Number">
+										</div>
+									</div>
+
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Religion</label> <select
+												class="form-control styled required" name="religion"
+												id="religion" required="required">
+												<option value="null">-- select one --</option>
+												<option value="Buddhism">Buddhism</option>
+												<option value="Hindu">Hindu</option>
+												<option value="Muslim">Muslim</option>
+												<option value="Sikh">Sikh</option>
+												<option value="Christian">Christian</option>
+												<option value="Jainism">Jainism</option>
+											</select>
+										</div>
+									</div>
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Category</label> <select
+												class="form-control styled required" required="required"
+												name="cast" required="required" id="cast"
+												class="form-control styled required">
+												<option value="null">-- select one --</option>
+												<option value="sc">SC</option>
+												<option value="st">ST</option>
+												<option value="obc">OBC</option>
+												<option value="general">GENERAL</option>
+
+											</select>
+										</div>
+									</div>
+
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Select Student Image</label> <input type="file"
+												name="image" id="image" class="form-control styled required">
+										</div>
+									</div>
+
+									<hr>
+
+
 								</div>
+							</div>
 							<!-- 	<input type="button" name="password" class="button"
 									onclick="firstnext()" value="Next" /> -->
-						<!-- 	</fieldset>
+							<!-- 	</fieldset>
 
 
 							Second Session Start
 							<fieldset id="second" Style="display: none;"> -->
-							<hr style="width: 107%;margin-left: -30px;">
-								<div class="indent_title_in">
-									<i class="pe-7s-map-marker"></i>
-									<h3 style="text-decoration: underline;">Address</h3>
-								</div>
-								
-								
-								<div class="wrapper_indent">
-									<div class="row">
+							<hr style="width: 107%; margin-left: -30px;">
+							<div class="indent_title_in">
+								<i class="pe-7s-map-marker"></i>
+								<h3 style="text-decoration: underline;">Address</h3>
+							</div>
 
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Address</label>
-												<textarea class="form-control styled required" id="adrs"
-													placeholder="Enter Student Address" name="adrs"></textarea>
-											</div>
+
+							<div class="wrapper_indent">
+								<div class="row">
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Address</label>
+											<textarea class="form-control styled required" id="adrs"
+												placeholder="Enter Student Address" name="adrs"></textarea>
 										</div>
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>State</label> 
-												<select name="state" id="state"
-													class="form-control styled required" required="required">
-													<option >---please Select---</option>
-													<%
-														try {
-															String query = "select * from state";
-															//get Table data
-															ResultSet rs = stmt.executeQuery(query);
-															while (rs.next()) {
-													%>
-													<option><%=rs.getString("state_name")%></option>
-													<%
-														}
-														} catch (Exception e) {
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>State</label> <select name="state" id="state"
+												class="form-control styled required" required="required">
+												<option>---please Select---</option>
+												<%
+													try {
+														String query = "select * from state";
+														//get Table data
+														ResultSet rs = stmt.executeQuery(query);
+														while (rs.next()) {
+												%>
+												<option><%=rs.getString("state_name")%></option>
+												<%
+													}
+													} catch (Exception e) {
 
-														}
-													%>
-												</select>
-											</div>
+													}
+												%>
+											</select>
 										</div>
+									</div>
 
 
 
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>City</label>
-												 <select name="city" id="city"
-													class="form-control styled required" required="required">
-													<option>---Please Select---</option>
-													<%
-														try {
-															String query = "select * from city";
-															//get Table data
-															ResultSet rs = stmt.executeQuery(query);
-															while (rs.next()) {
-													%>
-													<option><%=rs.getString("city_name")%></option>
-													<%
-														}
-														} catch (Exception e) {
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>City</label> <select name="city" id="city"
+												class="form-control styled required" required="required">
+												<option>---Please Select---</option>
+												<%
+													try {
+														String query = "select * from city";
+														//get Table data
+														ResultSet rs = stmt.executeQuery(query);
+														while (rs.next()) {
+												%>
+												<option><%=rs.getString("city_name")%></option>
+												<%
+													}
+													} catch (Exception e) {
 
-														}
-													%>
-												</select>
-											</div>
+													}
+												%>
+											</select>
 										</div>
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Pin Code</label> <input type="text"
-													class="form-control styled required" id="pincode"
-													name="pincode" maxlength="6" minlength="6"
-													placeholder="123456"
-													oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')">
-											</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Pin Code</label> <input type="text"
+												class="form-control styled required" id="pincode"
+												name="pincode" maxlength="6" minlength="6"
+												placeholder="123456"
+												oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')">
 										</div>
+									</div>
 
-										<!-- <div class="col-md-6">
+									<!-- <div class="col-md-6">
 											<div class="form-group">
 												<input type="button" name="previous" class="button"
 													onclick="secondprev()" value="Previous" /> <input
@@ -435,236 +427,245 @@ $(document).ready(function() {
 													class="button" value="Next" />
 											</div>
 										</div> -->
-									</div>
 								</div>
-						<!-- 	</fieldset>
+							</div>
+							<!-- 	</fieldset>
 
 
 
 
 							Third session start
 							<fieldset id="third" Style="display: none;"> -->
-							<hr style="width: 107%;margin-left: -30px;">
-								<div class="indent_title_in">
-									<i class="pe-7s-study"></i>
-									<h3 style="text-decoration: underline;">Education Detail</h3>
-								</div>
-								<div class="wrapper_indent">
-									<div class="row">
+							<hr style="width: 107%; margin-left: -30px;">
+							<div class="indent_title_in">
+								<i class="pe-7s-study"></i>
+								<h3 style="text-decoration: underline;">Education Detail</h3>
+							</div>
+							<div class="wrapper_indent">
+								<div class="row">
 
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>10th(%)</label> <input type="text"
-													class="form-control styled required" id="high" name="high"
-													placeholder="Enter 10 Percentage"
-													oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')">
-
-
-
-											</div>
-										</div>
-
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>12th (%)</label> <input type="text"
-													class="form-control styled required" id="higher"
-													name="higher" placeholder="Enter 12 Percentage"
-													oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')">
-											</div>
-										</div>
-
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Graduation(%)</label> <input type="text"
-													class="form-control styled required" id="grad"
-													name="graduation" placeholder="Enter Graduation Percentage"
-													oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')">
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Roll No. Of Last Exam</label> <input type="text"
-													class="form-control styled required" id="roll" name="roll"
-													placeholder="Enter Roll Number">
-											</div>
-										</div>
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Last School/College Name</label> <input type="text"
-													class="form-control styled required" id="school"
-													name="school" placeholder="Enter School/CollegeName">
-											</div>
-										</div>
-									</div>
-									<!-- End row -->
-								</div>
-								<!-- End row -->
-								
-								
-									<hr style="width: 107%;margin-left: -30px;">
-								<div class="indent_title_in">
-									<i class="pe-7s-user"></i>
-									<h3 style="text-decoration: underline;">College/Course</h3>
-								</div>
-								<div class="wrapper_indent">
-									<div class="row">
-
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Select College/University</label> 
-												 <select name="college" id="college"
-													class="form-control styled required" required="required">
-													<option value="null">---Please Select---</option>
-												<%
-														try {
-															String query = "select * from college_registration";
-															//get Table data
-															ResultSet rs = stmt.executeQuery(query);
-															while (rs.next()) {
-													%>
-													<option><%=rs.getString("college_name")%></option>
-													<%
-														}
-														} catch (Exception e) {
-
-														}
-													%>
-													</select>
-											</div>
-										</div>
-										
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>Select Course</label>
-												 <select name="course" id="course"
-													class="form-control styled required" required="required">
-													<option value="null">---Please Select---</option>	<%
-														try {
-															String query = "select * from course";
-															//get Table data
-															ResultSet rs = stmt.executeQuery(query);
-															while (rs.next()) {
-													%>
-													<option><%=rs.getString("course_name")%></option>
-													<%
-														}
-														} catch (Exception e) {
-
-														}
-													%>
-													</select>
-											</div>
-										</div>
-
-										
-
-
-									</div>
-									<!-- End row -->
-								</div>
-								
-								
-								
-					<!-- 		</fieldset>
-							<fieldset id="four" Style="display: none;">
- --><hr style="width: 107%;margin-left: -30px;">
-								<div class="indent_title_in">
-
-									<i class="pe-7s-users"></i>
-									<h3 style="text-decoration: underline;">Log-In Credential</h3>
-								</div>
-								
-								<div class="wrapper_indent">
-									<div class="row">
-
-										<div class="col-md-4">
-											<div class="form-group">
-												 <input type="text"
-													class="form-control styled required" id="authcode" name="authcode"
-													placeholder="Enter otp">
-							<span id="available"> <!--- data show this span tag --->  </span>
-											</div>
-										</div>
-										
-
-										
-
-									
-										<!-- <input type="button" name="previous" class="button"
-											onclick="fourprev()" value="Previous" /> -->
-										<p >
-										
-													<button type="Button"  name="verify" id="verify" class="button">verify otp</button>
-										</p>
-										<span id="showMsg"></span>
-
-
-
-
-
-									</div>
-									<!-- End row -->
-								</div>
-								<div class="wrapper_indent">
-									<div class="row">
-
-										<div class="col-md-4">
-											<div class="form-group">
-												<label>User name</label> <input type="text"
-													class="form-control styled required" id="user" name="uname"
-													placeholder="Enter UserName">
-							<span id="available"> <!--- data show this span tag --->  </span>
-											</div>
-										</div>
-										<div class="col-md-4">
-											<div class="form-group">
-												<label>Password</label> <input type="password"
-													class="form-control styled required" id="pass" name="pass"
-													placeholder="Enter Password" minlength="8" maxlength="20" >&nbsp;&nbsp;
-													<br>
-													<input type="checkbox" onclick="myFunction()">&nbsp;Show Password
-													<span style="color:red" id="passerr"></span>
-													
-													
-											</div>
-										</div>
-
-										<div class="col-md-4">
-											<div class="form-group">
-												<label>Confirm Password</label> <input type="password"
-													class="form-control styled required" id="cpass"
-													name="cpass" placeholder="Enter Confirm Password" minlength="8" maxlength="20" >
-													 <span style="color:green" id="cpaserr"></span>
-                    <span style="color:red" id="cpasserr"></span>
-											</div>
-										</div>
-
-									<hr style="width: 113%;margin-left: -95px;">
+									<div class="col-md-6">
 										<div class="form-group">
-											<input type="checkbox" name="policy_terms" id="policy_terms"
-												class="form-control styled required" value="Yes"><label>I accept
-												<a href="#0">terms and conditions</a> and general policy.
-											</label>
+											<label>10th(%)</label> <input type="text"
+												class="form-control styled required" id="high" name="high"
+												placeholder="Enter 10 Percentage"
+												oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')">
+
+
+
 										</div>
-
-										<!-- <input type="button" name="previous" class="button"
-											onclick="fourprev()" value="Previous" /> -->
-										<p >
-										<button type="Button" name="send" id="send" class="button">Send otp</button>
-								
-										<button type="reset" onclick="jquery()" class="button" >Clear</button>
-											<button type="submit" onclick="jquery()" class="button">Register</button>
-										</p>
-										<span id="showMsg"></span>
-
-
-
-
-
 									</div>
-									<!-- End row -->
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>12th (%)</label> <input type="text"
+												class="form-control styled required" id="higher"
+												name="higher" placeholder="Enter 12 Percentage"
+												oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')">
+										</div>
+									</div>
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Graduation(%)</label> <input type="text"
+												class="form-control styled required" id="grad"
+												name="graduation" placeholder="Enter Graduation Percentage"
+												oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Roll No. Of Last Exam</label> <input type="text"
+												class="form-control styled required" id="roll" name="roll"
+												placeholder="Enter Roll Number">
+										</div>
+									</div>
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Last School/College Name</label> <input type="text"
+												class="form-control styled required" id="school"
+												name="school" placeholder="Enter School/CollegeName">
+										</div>
+									</div>
 								</div>
 								<!-- End row -->
+							</div>
+							<!-- End row -->
+
+
+							<hr style="width: 107%; margin-left: -30px;">
+							<div class="indent_title_in">
+								<i class="pe-7s-user"></i>
+								<h3 style="text-decoration: underline;">College/Course</h3>
+							</div>
+							<div class="wrapper_indent">
+								<div class="row">
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Select College/University</label> <select
+												name="college" id="college"
+												class="form-control styled required" required="required">
+												<option value="null">---Please Select---</option>
+												<%
+													try {
+														String query = "select * from college_registration";
+														//get Table data
+														ResultSet rs = stmt.executeQuery(query);
+														while (rs.next()) {
+												%>
+												<option><%=rs.getString("college_name")%></option>
+												<%
+													}
+													} catch (Exception e) {
+
+													}
+												%>
+											</select>
+										</div>
+									</div>
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>Select Course</label> <select name="course"
+												id="course" class="form-control styled required"
+												required="required">
+												<option value="null">---Please Select---</option>
+												<%
+													try {
+														String query = "select * from course";
+														//get Table data
+														ResultSet rs = stmt.executeQuery(query);
+														while (rs.next()) {
+												%>
+												<option><%=rs.getString("course_name")%></option>
+												<%
+													}
+													} catch (Exception e) {
+
+													}
+												%>
+											</select>
+										</div>
+									</div>
+
+
+
+
+								</div>
+								<!-- End row -->
+							</div>
+
+
+
+							<!-- 		</fieldset>
+							<fieldset id="four" Style="display: none;">
+ -->
+							<hr style="width: 107%; margin-left: -30px;">
+							<div class="indent_title_in">
+
+								<i class="pe-7s-users"></i>
+								<h3 style="text-decoration: underline;">Log-In Credential</h3>
+							</div>
+
+
+							<div class="wrapper_indent">
+								<div class="row">
+
+									<div class="col-md-4">
+										<div class="form-group">
+											<label>User name</label> <input type="text"
+												class="form-control styled required" id="user" name="uname"
+												placeholder="Enter UserName"> <span id="available">
+												<!--- data show this span tag --->
+											</span>
+										</div>
+									</div>
+									<div class="col-md-4">
+										<div class="form-group">
+											<label>Password</label> <input type="password"
+												class="form-control styled required" id="pass" name="pass"
+												placeholder="Enter Password" minlength="8" maxlength="20">&nbsp;&nbsp;
+											<br> <input type="checkbox" onclick="myFunction()">&nbsp;Show
+											Password <span style="color: red" id="passerr"></span>
+
+
+										</div>
+									</div>
+
+									<div class="col-md-4">
+										<div class="form-group">
+											<label>Confirm Password</label> <input type="password"
+												class="form-control styled required" id="cpass" name="cpass"
+												placeholder="Enter Confirm Password" minlength="8"
+												maxlength="20"> <span style="color: green"
+												id="cpaserr"></span> <span style="color: red" id="cpasserr"></span>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="wrapper_indent">
+								<div class="row">
+
+									<div class="col-md-4">
+										<div class="form-group">
+											<input type="text" class="form-control styled required"
+												id="authcode" name="authcode" placeholder="Enter otp">
+											<span id="available"> <!--- data show this span tag --->
+											</span>
+										</div>
+									</div>
+
+
+
+
+
+									<!-- <input type="button" name="previous" class="button"
+											onclick="fourprev()" value="Previous" /> -->
+									<p>
+
+										<button type="Button" name="verify" id="verify" class="button">verify
+											otp</button>
+									</p>
+									<span id="showMsg"></span>
+
+
+
+
+
+								</div>
+								<!-- End row -->
+							</div>
+							<div class="wrapper_indent">
+								<div class="row">
+									<hr style="width: 113%; margin-left: -95px;">
+									<div class="form-group">
+										<input type="checkbox" name="policy_terms" id="policy_terms"
+											class="form-control styled required" value="Yes"><label>I
+											accept <a href="#0">terms and conditions</a> and general
+											policy.
+										</label>
+									</div>
+
+									<!-- <input type="button" name="previous" class="button"
+											onclick="fourprev()" value="Previous" /> -->
+									<p>
+										<button type="Button" name="send" id="send" class="button">Send
+											otp</button>
+
+										<button type="reset" onclick="jquery()" class="button">Clear</button>
+										<button type="submit" onclick="jquery()" class="button">Register</button>
+									</p>
+									<span id="showMsg"></span>
+
+
+
+
+
+								</div>
+								<!-- End row -->
+							</div>
+							<!-- End row -->
 							</fieldset>
 						</form>
 						<!-- </form> -->
@@ -729,46 +730,52 @@ $(document).ready(function() {
 	<!--End container_gray_bg -->
 
 
-	<!--Footer File-->	 
-	<%@ include file="itc/footer.jsp" %>
-		<!--Footer File-->
-    
-<!-- Login modal -->   
-<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myLogin" aria-hidden="true">
+	<!--Footer File-->
+	<%@ include file="itc/footer.jsp"%>
+	<!--Footer File-->
+
+	<!-- Login modal -->
+	<div class="modal fade" id="login" tabindex="-1" role="dialog"
+		aria-labelledby="myLogin" aria-hidden="true">
 		<div class="modal-dialog">
 			<div class="modal-content modal-popup">
 				<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
-				<form action="../St_Login" method="post" class="popup-form" id="myLogin">
-					<input type="text" name="uname" class="form-control form-white" placeholder="Enter Username">
-					<input type="password" name="pass" class="form-control form-white" placeholder="Enter Password">
+				<form action="../St_Login" method="post" class="popup-form"
+					id="myLogin">
+					<input type="text" name="uname" class="form-control form-white"
+						placeholder="Enter Username"> <input type="password"
+						name="pass" class="form-control form-white"
+						placeholder="Enter Password">
 					<div class="checkbox-holder text-left">
 						<div class="checkbox">
-							<input type="checkbox" value="accept_1" id="check_1" name="check_1" />
-							<label for="check_1"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
+							<input type="checkbox" value="accept_1" id="check_1"
+								name="check_1" /> <label for="check_1"><span>I
+									Agree to the <strong>Terms &amp; Conditions</strong>
+							</span></label>
 						</div>
 					</div>
 					<button type="submit" class="btn btn-submit">Submit</button>
 				</form>
 			</div>
 		</div>
-	</div>  
-    
-
-    
-<!-- Search modal -->   
-<div id="search">
-    <button type="button" class="close">×</button>
-    <form>
-        <input type="search" value="" placeholder="type keyword(s) here" >
-        <button type="submit" class="button">Search</button>
-    </form>
-</div>
+	</div>
 
 
 
+	<!-- Search modal -->
+	<div id="search">
+		<button type="button" class="close">×</button>
+		<form>
+			<input type="search" value="" placeholder="type keyword(s) here">
+			<button type="submit" class="button">Search</button>
+		</form>
+	</div>
 
 
- <!--    <script type="text/javascript" src="js/lib/jquery-1.11.0.min.js"></script>
+
+
+
+	<!--    <script type="text/javascript" src="js/lib/jquery-1.11.0.min.js"></script>
      <script type="text/javascript">
     
    function jquery()
@@ -844,56 +851,51 @@ $(document).ready(function() {
  -->
 
 
-<script type="text/javascript">
-$(document).ready(function(){
-   
-    $("#user").blur(function(){
-        
-        var username =$("#user").val();
-   
-        if(username.length >= 3)
-        {
-            $.ajax({
-                url:"username-check.jsp",
-                type:"post",
-                data:"uname="+username,
-                dataType:"text",
-                success:function(data)
-                {
-                    $("#available").html(data)
-                } 
-            });
-        }
-        else
-        {
-          $("#available").html(" ");
-        }
-        
-   }); 
-   
-});    
+	<script type="text/javascript">
+		$(document).ready(function() {
 
-</script>
+			$("#user").blur(function() {
+
+				var username = $("#user").val();
+
+				if (username.length >= 3) {
+					$.ajax({
+						url : "username-check.jsp",
+						type : "post",
+						data : "uname=" + username,
+						dataType : "text",
+						success : function(data) {
+							$("#available").html(data)
+						}
+					});
+				} else {
+					$("#available").html(" ");
+				}
+
+			});
+
+		});
+	</script>
 
 
 
-<!-- Common scripts -->
-<script src="js/jquery-1.11.2.min.js"></script>
-<script src="js/common_scripts_min.js"></script>
-<script src="js/functions.js"></script>
-<script src="assets/validate.js"></script>
+	<!-- Common scripts -->
+	<script src="js/jquery-1.11.2.min.js"></script>
+	<script src="js/common_scripts_min.js"></script>
+	<script src="js/functions.js"></script>
+	<script src="assets/validate.js"></script>
 
-<!-- Specific scripts -->
-<script src="js/icheck.js"></script>
-<script>  
-$('input').iCheck({
-   checkboxClass: 'icheckbox_square-blue',
-   radioClass: 'iradio_square-blue'
- });
- </script>
- <script src="js/jquery.validate.js"></script>
- <script>
-  $("#apply_online").validate();
-</script>
+	<!-- Specific scripts -->
+	<script src="js/icheck.js"></script>
+	<script>
+		$('input').iCheck({
+			checkboxClass : 'icheckbox_square-blue',
+			radioClass : 'iradio_square-blue'
+		});
+	</script>
+	<script src="js/jquery.validate.js"></script>
+	<script>
+		$("#apply_online").validate();
+	</script>
 </body>
 </html>
