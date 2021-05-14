@@ -47,7 +47,11 @@
     cursor: auto;
     width: 100%;
 }
-
+/*  .college_detail_fill{border: 1px solid red; width: 300px;
+    height: 180px;} */
+/*.field_fill{margin:8px 0px 0px 22px;float: left;} */
+.u_name{font-size: 16px;
+    font-weight: bold;}
 </style>
 
 </head>
@@ -90,8 +94,7 @@
 				  <div class="row staff">
 				  <%
 			try{
-				String sql="Select university.pk_id,u_registration,u_name,address,email,establish_year,state.state_name,\n" + 
-						"city.city_name,category.category,type.type,university_contact.contact_number from university \n" + 
+				String sql="Select  * from university\n" + 
 						"INNER JOIN country ON country.pk_id=university.fk_country\n" + 
 						"INNER JOIN state ON state.pk_id=university.fk_state\n" + 
 						"INNER JOIN city ON city.pk_id=university.fk_city\n" + 
@@ -105,15 +108,17 @@
 								
 					            	<div class="box_style_1">
 					                			<p><img src="img/college/c_1.png" alt="" ></p>
-					                                <h4 style="font-size: 20px;"><%=rs.getString("u_name").toUpperCase()%></h4>
-					                                <h4 style="font-size: 20px;">Reg. No. - <%=rs.getString("u_registration").toUpperCase()%></h4>
+					                                <p class="u_name"><%=rs.getString("u_name").toUpperCase()%></p>
+					                                
 					                                <div class="college_detail_fill">
-					                                <p class="field_fill">Courses - <%=rs.getString("course")%></p>
-					                                 <p class="field_fill">Category - <%=rs.getString("category").toUpperCase()%></p>
-					                                 <p class="field_fill">Type - <%=rs.getString("type").toUpperCase() %></p>
-					                                 <p class="field_fill">Email - <%=rs.getString("email").toUpperCase() %></p>
-					                                 <p class="field_fill">Address - <%=rs.getString("address")%> , <%=rs.getString("city_name")%> , <%=rs.getString("state_name")%></p>
-					                                 <p class="field_fill">Contact No - <%=rs.getString("contact_number").toUpperCase() %></p>
+					                                <h5>Establish Year - <%=rs.getString("establish_year").toUpperCase()%></h5>
+					                                <h5>Reg. No. - <%=rs.getString("u_registration").toUpperCase()%></h5>
+					                                 <h5 class="field_fill">Category - <%=rs.getString("category").toUpperCase()%></h5>
+					                                 <h5 class="field_fill">Type - <%=rs.getString("type").toUpperCase() %></h5>
+					                                 <h5 class="field_fill">Email - <%=rs.getString("email").toUpperCase() %></h5>
+					                                 <h5 class="field_fill">Address - <%=rs.getString("address")%> , <%=rs.getString("city_name")%> , <%=rs.getString("state_name")%></h5>
+					                                 <h5 class="field_fill">Contact No - <%=rs.getString("contact_number").toUpperCase() %></h5>
+					                                <%--   <h5 class="field_fill">Courses - <%=rs.getString("course")%></h5> --%>
 					                                 </div>
 					                                <ul class="social_team">
 					                                    <li><a href="https://www.facebook.com/Madhav-Institute-of-Technology-Science-Gwalior-MP-India-102055234637800/?modal=admin_todo_tour"><i class="icon-facebook"></i></a></li>
