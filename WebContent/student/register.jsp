@@ -663,11 +663,12 @@ label {
 									<!-- <input type="button" name="previous" class="button"
 											onclick="fourprev()" value="Previous" /> -->
 									<p>
-										<button type="Button"  name="send" id="send" onclick="verified()"class="button">Send
-											otp</button>
-
+										<!-- <button type="submit" onclick="jquery()" class="button" style="visibility:hidden;" name="register" id="register" disabled>Register</button> -->
+									    <button type="submit" style="visibility:hidden;" name="register" id="register" onclick="jquery()" class="button" >Register</button>
 										<button type="reset" onclick="jquery()" class="button">Clear</button>
-										<button type="submit" style="visibility:hidden;" name="register" id="register" onclick="jquery()" class="button" disabled>Register</button>
+										
+										<button type="Button"  name="send" id="send" onclick="verified()"class="button">Send
+											OTP</button>
 									</p>
 									<span id="showMsg"></span>
 
