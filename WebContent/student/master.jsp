@@ -78,19 +78,13 @@
         <div class="container_gray_bg">
             <div class="container margin_60">
                 <div class="row">
-                <% String s="course";
-                    		if(s.equals("course"))
-                    		{
-                    			
-                    	
-                    %>
-                <%
+                    <div class="col-md-9">
+                    <%
 			try{
-				String sql="Select * from course";
+				String sql="Select * from course_name where degree_name='"+"Master Degree"+"' Limit 7 ";
 				ResultSet rs=stmt.executeQuery(sql);
 				while (rs.next()) {
 					%>
-                    <div class="col-md-9">
                     <br>
                         <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
                             <div class="row">
@@ -107,11 +101,14 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="course_list_desc">
-                                        <h3><strong><%= rs.getString("course_name")%></strong></h3>
-                                        <h4>Course Duration - <%=rs.getString("course_duration") %> Years
+                                        <h3><strong><%= rs.getString("course")%></strong></h3>
+                                        <h4><%=rs.getString("degree_name") %></h4>
+                                        <h4>Course Duration - <%=rs.getString("duration") %></h4>
+                                        <h4>Eligibility - <%=rs.getString("eligibility") %></h4>
+                                        
                                          <!--   Aims to groom the software skills and strengthen the computer application aspect of students. This prepares the students for the industry requirements so that they can flourish in the corporate IT Sector.
                                       -->  
-										</h4>
+										
                                         <ul class="add_info">
                                             <!--  <li>
                                             <div class="tooltip_styled tooltip-effect-4">
@@ -149,7 +146,16 @@
                                 </div>
                             </div>
                         </div><!--End strip -->
-                       
+                      
+                    
+                    <%
+				}
+				}
+		catch (Exception e) {
+			e.printStackTrace();
+					}
+					%>
+				</div><!--End col-md-9 -->
                      <!--    <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 col-sm-4">
@@ -319,18 +325,8 @@
                                 </div>
                             </div>
                         </div>End strip -->
-                    </div><!--End col-md-9 -->
-                    
-                    <%
-				}
-				}
-		catch (Exception e) {
-			e.printStackTrace();
-					}
-					%>
-					 <% 
-                        	}
-                    %>
+                   
+					 
                     <br>
                     <aside class="col-md-3">
                   <!--   <div class="banner">

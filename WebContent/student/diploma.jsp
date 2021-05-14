@@ -1,3 +1,11 @@
+<%@page import="in.common.GetConnection"%>
+<%@ include file="inc/stdimport.jsp" %> 
+		 <%
+			GetConnection getcon=new GetConnection();
+		 Connection con=getcon.getCon();
+		Statement stmt= con.createStatement();
+		%>
+
 <!DOCTYPE html>
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
 <html>
@@ -67,6 +75,12 @@
                 <div class="row">
                     <div class="col-md-9">
                     <br>
+                       <%
+			try{
+				String sql="Select * from course_name where degree_name='"+"Diploma Course"+"' ";
+				ResultSet rs=stmt.executeQuery(sql);                                      
+				while (rs.next()) {
+					%>
                         <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 col-sm-4">
@@ -82,11 +96,14 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="course_list_desc">
-                                        <h3><strong>Diploma  in Engineering</strong></h3>
-                                        <p>
+                                         <h3><strong><%= rs.getString("course")%></strong></h3>
+                                         <h4><%=rs.getString("degree_name") %>
+                                        <h4>Course Duration - <%=rs.getString("duration") %></h4>
+                                        <h4>Eligibility - <%=rs.getString("eligibility") %></h4>
+                                       <!--  <p>
 
 												A diploma course in engineering involves classes on fundamental engineering concepts. It is a professional course, planned in such a way that students may still take up jobs in the field of engineering once they earn their diplomas.                                        
-												</p>
+												</p> -->
                                         <ul class="add_info">
                                             <!--  <li>
                                             <div class="tooltip_styled tooltip-effect-4">
@@ -96,14 +113,14 @@
                                                 </div>
                                             </div>
                                             </li> -->
-                                            <li>
+                                           <!--  <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-hourglass"></i></span>
                                                 <div class="tooltip-content">
                                                    Admission Date 10/05/2021 To 10/07/2021
                                                 </div>
                                             </div>
-                                            </li>
+                                            </li> -->
                                            <!--  <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-medal"></i></span>
@@ -125,7 +142,7 @@
                             </div>
                         </div><!--End strip -->
                         
-                        <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
+                        <!-- <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 col-sm-4">
                                     <div class="img_list">
@@ -145,14 +162,14 @@
                                         Agriculture is the art and science of cultivating the soil, growing crops and raising livestock. It includes the preparation of plant and animal products for people to use and their distribution to markets. Agriculture provides most of the world's food and fabrics.
                                         </p>
                                         <ul class="add_info">
-                                           <!--  <li>
+                                            <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-compass"></i></span>
                                                 <div class="tooltip-content">
                                                     Dedicated Study Plan
                                                 </div>
                                             </div>
-                                            </li> -->
+                                            </li>
                                             <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-hourglass"></i></span>
@@ -161,14 +178,14 @@
                                                 </div>
                                             </div>
                                             </li>
-                                           <!--  <li>
+                                            <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-medal"></i></span>
                                                 <div class="tooltip-content">
                                                     Most Requested Course
                                                 </div>
                                             </div>
-                                            </li> -->
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -180,7 +197,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div><!--End strip -->
+                        </div>End strip
                         
                         <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
                             <div class="row">
@@ -202,14 +219,14 @@
                                         Commerce is a field which students who have an interest in the field of financial information/transactions, trading of economic value, etc
                                         </p>
                                         <ul class="add_info">
-                                           <!--  <li>
+                                            <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-compass"></i></span>
                                                 <div class="tooltip-content">
                                                     Dedicated Study Plan
                                                 </div>
                                             </div>
-                                            </li> -->
+                                            </li>
                                             <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-hourglass"></i></span>
@@ -218,14 +235,14 @@
                                                 </div>
                                             </div>
                                             </li>
-                                           <!--  <li>
+                                            <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-medal"></i></span>
                                                 <div class="tooltip-content">
                                                     Most Requested Course
                                                 </div>
                                             </div>
-                                            </li> -->
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -237,7 +254,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div><!--End strip -->
+                        </div>End strip
                         
                         <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
                             <div class="row">
@@ -259,14 +276,14 @@
                                         	Diploma in Computer Application or DCA is a one year program to study computer application in-depth, it provides students with practical and scientific knowledge on the Computer course along with major soft skills.
                                         </p>
                                         <ul class="add_info">
-                                            <!--  <li>
+                                             <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-compass"></i></span>
                                                 <div class="tooltip-content">
                                                     Dedicated Study Plan
                                                 </div>
                                             </div>
-                                            </li> -->
+                                            </li>
                                             <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-hourglass"></i></span>
@@ -275,14 +292,14 @@
                                                 </div>
                                             </div>
                                             </li>
-                                           <!--  <li>
+                                            <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-medal"></i></span>
                                                 <div class="tooltip-content">
                                                     Most Requested Course
                                                 </div>
                                             </div>
-                                            </li> -->
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -294,7 +311,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div><!--End strip -->
+                        </div>End strip
                         
                         <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
                             <div class="row">
@@ -317,14 +334,14 @@
                                         Diploma in Hotel Management is a 3-year diploma level Hotel Management course. Diploma in hotel management course focuses on the management of hotel administration, accounts, advertising, housekeeping, front office or front office, food and beverage management, catering, and upkeep.
                                         </p>
                                         <ul class="add_info">
-                                           <!--  <li>
+                                            <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-compass"></i></span>
                                                 <div class="tooltip-content">
                                                     Dedicated Study Plan
                                                 </div>
                                             </div>
-                                            </li> -->
+                                            </li>
                                             <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-hourglass"></i></span>
@@ -333,14 +350,14 @@
                                                 </div>
                                             </div>
                                             </li>
-                                           <!--  <li>
+                                            <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-medal"></i></span>
                                                 <div class="tooltip-content">
                                                     Most Requested Course
                                                 </div>
                                             </div>
-                                            </li> -->
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -351,10 +368,17 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> 
                         </div><!--End strip -->
-                        
+                          <%
+				}
+				}
+		catch (Exception e) {
+			e.printStackTrace();
+					}
+					%>
                     </div><!--End col-md-9 -->
+                   
                     <br>
                     <aside class="col-md-3">
                   <!--   <div class="banner">

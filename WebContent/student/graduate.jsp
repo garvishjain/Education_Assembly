@@ -1,3 +1,10 @@
+<%@page import="in.common.GetConnection"%>
+<%@ include file="inc/stdimport.jsp" %> 
+		 <%
+			GetConnection getcon=new GetConnection();
+		 Connection con=getcon.getCon();
+		Statement stmt= con.createStatement();
+		%>
 <!DOCTYPE html>
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
 <html>
@@ -67,6 +74,12 @@
                 <div class="row">
                     <div class="col-md-9">
                     <br>
+                       <%
+			try{
+				String sql="Select * from course_name where degree_name='"+"Bachelor Degree"+"' Limit 8";
+				ResultSet rs=stmt.executeQuery(sql);                                      
+				while (rs.next()) {
+					%>
                         <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 col-sm-4">
@@ -82,10 +95,14 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="course_list_desc">
-                                        <h3><strong>Bachelor of Engineering</strong></h3>
-                                        <p>
+                                        <h3><strong><%= rs.getString("course")%></strong></h3>
+                                        <h4><%=rs.getString("degree_name") %></h4>
+                                        <h4>Course Duration - <%=rs.getString("duration") %></h4>
+                                        <h4>Eligibility - <%=rs.getString("eligibility").toUpperCase() %></h4>
+                                        
+                                        <!-- <p>
                                         Engineering is the use of science and math to design or make things. People who do engineering are called engineers. They learn engineering at a college or university. Engineers usually design or build things. Some engineers also use their skills to solve technical problems.
-                                        </p>
+                                        </p> -->
                                         <ul class="add_info">
                                             <!-- <li>
                                             <div class="tooltip_styled tooltip-effect-4">
@@ -95,14 +112,14 @@
                                                 </div>
                                             </div>
                                             </li> -->
-                                            <li>
+                                        <!--     <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-hourglass"></i></span>
                                                 <div class="tooltip-content">
                                                    Admission Date 10/05/2021 To 10/07/2021
                                                 </div>
                                             </div>
-                                            </li>
+                                            </li> -->
                                             <!-- <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-medal"></i></span>
@@ -124,7 +141,7 @@
                             </div>
                         </div><!--End strip -->
                         
-                        <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
+                      <!--   <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 col-sm-4">
                                     <div class="img_list">
@@ -144,14 +161,14 @@
                                         The Bachelor of Science (B. Sc.) is a type undergraduate degree that focuses on combining theoretical knowledge with research practice. The Bachelor of Science is mainly awarded to students of Natural Sciences, Engineering& Technology, Mathematics, Computer Science& IT. 
                                         </p>
                                         <ul class="add_info">
-                                           <!--  <li>
+                                            <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-compass"></i></span>
                                                 <div class="tooltip-content">
                                                     Dedicated Study Plan
                                                 </div>
                                             </div>
-                                            </li> -->
+                                            </li>
                                             <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-hourglass"></i></span>
@@ -160,14 +177,14 @@
                                                 </div>
                                             </div>
                                             </li>
-                                            <!-- <li>
+                                            <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-medal"></i></span>
                                                 <div class="tooltip-content">
                                                     Most Requested Course
                                                 </div>
                                             </div>
-                                            </li> -->
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -179,7 +196,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div><!--End strip -->
+                        </div>End strip
                         
                         <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
                             <div class="row">
@@ -201,14 +218,14 @@
                                         The Bachelor of Science (B. Sc.) is a type undergraduate degree that focuses on combining theoretical knowledge with research practice. The Bachelor of Science is mainly awarded to students of Natural Sciences, Engineering& Technology, Mathematics, Computer Science& IT.
                                         </p>
                                         <ul class="add_info">
-                                            <!-- <li>
+                                            <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-compass"></i></span>
                                                 <div class="tooltip-content">
                                                     Dedicated Study Plan
                                                 </div>
                                             </div>
-                                            </li> -->
+                                            </li>
                                             <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-hourglass"></i></span>
@@ -217,14 +234,14 @@
                                                 </div>
                                             </div>
                                             </li>
-                                           <!--  <li>
+                                            <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-medal"></i></span>
                                                 <div class="tooltip-content">
                                                     Most Requested Course
                                                 </div>
                                             </div>
-                                            </li> -->
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -236,7 +253,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div><!--End strip -->
+                        </div>End strip
                         
                         <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
                             <div class="row">
@@ -258,14 +275,14 @@
 												Bachelor of Business Administration, is a 3-year undergraduate course that teaches students to understand, manage and deal with management of business.  
                                         </p>
                                         <ul class="add_info">
-                                            <!-- <li>
+                                            <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-compass"></i></span>
                                                 <div class="tooltip-content">
                                                     Dedicated Study Plan
                                                 </div>
                                             </div>
-                                            </li> -->
+                                            </li>
                                             <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-hourglass"></i></span>
@@ -274,14 +291,14 @@
                                                 </div>
                                             </div>
                                             </li>
-                                            <!-- <li>
+                                            <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-medal"></i></span>
                                                 <div class="tooltip-content">
                                                     Most Requested Course
                                                 </div>
                                             </div>
-                                            </li> -->
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -293,7 +310,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div><!--End strip -->
+                        </div>End strip
                         
                         <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
                             <div class="row">
@@ -315,14 +332,14 @@
                                         The Bachelor of Arts (B.A.) is the most common among undergraduate degrees and usually takes three to four years to complete. It is mainly awarded to students following a programme in the Liberal Arts or in study fields that are covered in Humanities and Social Sciences, such as:
                                         </p>
                                         <ul class="add_info">
-                                           <!--  <li>
+                                            <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-compass"></i></span>
                                                 <div class="tooltip-content">
                                                     Dedicated Study Plan
                                                 </div>
                                             </div>
-                                            </li> -->
+                                            </li>
                                             <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-hourglass"></i></span>
@@ -331,14 +348,14 @@
                                                 </div>
                                             </div>
                                             </li>
-                                           <!--  <li>
+                                            <li>
                                             <div class="tooltip_styled tooltip-effect-4">
                                                 <span class="tooltip-item"><i class="pe-7s-medal"></i></span>
                                                 <div class="tooltip-content">
                                                     Most Requested Course
                                                 </div>
                                             </div>
-                                            </li> -->
+                                            </li>
                                         </ul>
                                     </div>
                                 </div>
@@ -350,8 +367,14 @@
                                     </div>
                                 </div>
                             </div>
-                        </div><!--End strip -->
-                        
+                        </div>End strip -->
+                        <%
+				}
+				}
+		catch (Exception e) {
+			e.printStackTrace();
+					}
+					%>
                     </div><!--End col-md-9 -->
                     <br>
                     <aside class="col-md-3">

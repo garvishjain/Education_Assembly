@@ -24,7 +24,8 @@ Statement stmt=con.createStatement();
                         </ol>
                     </div>
                     <ul class="nav nav-tabs page-header-tab">
-                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Courses-all">List View</a></li>
+                        <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Courses-bachelor">Bachelor Courses</a></li>
+                        <li class="nav-item"><a class="nav-link " data-toggle="tab" href="#Courses-master">Master Courses</a></li>
                         <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Courses-add">Add</a></li>
                         <!-- <li class="nav-item"><a class="nav-link" id="Courses-tab-Boot" data-toggle="tab" href="#Courses-add-Boot">Add Bootstrap Style</a></li> -->
                     </ul>
@@ -34,20 +35,19 @@ Statement stmt=con.createStatement();
         <div class="section-body mt-4">
             <div class="container-fluid">
                 <div class="tab-content">
-                    <div class="tab-pane active" id="Courses-all">
+                    <div class="tab-pane active" id="Courses-bachelor">
                         <div class="row row-deck">
-                         <%
+                        <%
                                        try {
-										String query = "select * from university_courses";
+										String query = "select * from university_courses INNER JOIN course_name ON university_courses.course_name=course_name.pk_id where course_type='"+"Bachelor Degree"+"'";
 										//get Table data
 										ResultSet rs = stmt.executeQuery(query);
 										while (rs.next()) {
                                    	%>
-                            <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="card">
-                                    <a href="courses-details.jsp"><img class="card-img-top" src="F:\\myImage\\<%=rs.getString("image") %>" alt=""></a>
+                                    <%-- <a href="courses-details.jsp"><img class="card-img-top" src="F:\\myImage\\<%=rs.getString("image") %>" alt=""></a> --%>
                                     <div class="card-body d-flex flex-column">
-                                        <h5><a href="#"><%=rs.getString("course_name") %></a></h5>
+                                        <h5><a href="#"><%=rs.getString("course") %></a></h5>
                                         <div class="text-muted">Look, my liege! The Knights Who Say Ni demand a sacrifice!</div>
                                     </div>
                                     <div class="table-responsive">
@@ -56,7 +56,7 @@ Statement stmt=con.createStatement();
                                                 <tr>
                                                     <td class="w20"><i class="fa fa-calendar text-blue"></i></td>
                                                     <td class="tx-medium">Duration</td>
-                                                    <td class="text-right"><%=rs.getString("course_duration") %></td>
+                                                    <td class="text-right"><%=rs.getString("duration") %></td>
                                                 </tr>
                                                 <tr>
                                                     <td><i class="fa fa-cc-visa text-danger"></i></td>
@@ -65,15 +65,14 @@ Statement stmt=con.createStatement();
                                                 </tr>
                                                 <tr>
                                                     <td><i class="fa fa-users text-warning"></i></td>
-                                                    <td class="tx-medium">Students</td>
+                                                    <td class="tx-medium">Seats</td>
                                                     <td class="text-right"><%=rs.getString("course_seat") %></td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
                                 </div>
-                            </div>
-                            <%
+                                <%
 	                                    }
 	                                    }catch(Exception e)
 	                                    {
@@ -167,48 +166,6 @@ Statement stmt=con.createStatement();
                             </div>
                             <div class="col-xl-4 col-lg-4 col-md-6">
                                 <div class="card">
-                                    <a href="#"><img class="card-img-top" src="../assets/images/gallery/4.jpg" alt=""></a>
-                                    <div class="card-body d-flex flex-column">
-                                        <h5><a href="courses-details.html">PHP Development Course</a></h5>
-                                        <div class="text-muted">Look, my liege! The Knights Who Say Ni demand a sacrifice!</div>
-                                    </div>
-                                    <div class="table-responsive">
-                                        <table class="table table-striped table-vcenter mb-0">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="w20"><i class="fa fa-calendar text-blue"></i></td>
-                                                    <td class="tx-medium">Duration</td>
-                                                    <td class="text-right">6 Months</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><i class="fa fa-cc-visa text-danger"></i></td>
-                                                    <td class="tx-medium">Fees</td>
-                                                    <td class="text-right">$1,674</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><i class="fa fa-users text-warning"></i></td>
-                                                    <td class="tx-medium">Students</td>
-                                                    <td class="text-right">125+</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="card-footer">
-                                        <div class="d-flex align-items-center mt-auto">
-                                            <img class="avatar avatar-md mr-3" src="../assets/images/xs/avatar4.jpg" alt="avatar">
-                                            <div>
-                                                <a href="#">Pro. Jane</a>
-                                                <small class="d-block text-muted">Head OF Dept.</small>
-                                            </div>
-                                            <div class="ml-auto text-muted">
-                                                <a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fe fe-heart mr-1"></i> 521</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6">
-                                <div class="card">
                                     <a href="#"><img class="card-img-top" src="../assets/images/gallery/5.jpg" alt=""></a>
                                     <div class="card-body d-flex flex-column">
                                         <h5><a href="courses-details.html">Magento Programmer Course</a></h5>
@@ -249,11 +206,22 @@ Statement stmt=con.createStatement();
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6">
+                        </div>
+                    </div>
+                   
+                    <div class="tab-pane" id="Courses-master">
+                        <div class="row row-deck">
+                        <%
+                                       try {
+										String query = "select * from university_courses INNER JOIN course_name ON university_courses.course_name=course_name.pk_id where course_type='"+"Master Degree"+"'";
+										//get Table data
+										ResultSet rs = stmt.executeQuery(query);
+										while (rs.next()) {
+                                   	%>
                                 <div class="card">
-                                    <a href="#"><img class="card-img-top" src="../assets/images/gallery/6.jpg" alt=""></a>
+                                    <%-- <a href="courses-details.jsp"><img class="card-img-top" src="F:\\myImage\\<%=rs.getString("image") %>" alt=""></a> --%>
                                     <div class="card-body d-flex flex-column">
-                                        <h5><a href="courses-details.html">UI UX Design Course</a></h5>
+                                        <h5><a href="#"><%=rs.getString("course") %></a></h5>
                                         <div class="text-muted">Look, my liege! The Knights Who Say Ni demand a sacrifice!</div>
                                     </div>
                                     <div class="table-responsive">
@@ -262,35 +230,29 @@ Statement stmt=con.createStatement();
                                                 <tr>
                                                     <td class="w20"><i class="fa fa-calendar text-blue"></i></td>
                                                     <td class="tx-medium">Duration</td>
-                                                    <td class="text-right">6 Months</td>
+                                                    <td class="text-right"><%=rs.getString("duration") %></td>
                                                 </tr>
                                                 <tr>
                                                     <td><i class="fa fa-cc-visa text-danger"></i></td>
                                                     <td class="tx-medium">Fees</td>
-                                                    <td class="text-right">$1,674</td>
+                                                    <td class="text-right">$<%=rs.getString("course_fees") %></td>
                                                 </tr>
                                                 <tr>
                                                     <td><i class="fa fa-users text-warning"></i></td>
-                                                    <td class="tx-medium">Students</td>
-                                                    <td class="text-right">125+</td>
+                                                    <td class="tx-medium">Seats</td>
+                                                    <td class="text-right"><%=rs.getString("course_seat") %></td>
                                                 </tr>
                                             </tbody>
                                         </table>
                                     </div>
-                                    <div class="card-footer">
-                                        <div class="d-flex align-items-center mt-auto">
-                                            <img class="avatar avatar-md mr-3" src="../assets/images/xs/avatar6.jpg" alt="avatar">
-                                            <div>
-                                                <a href="#">Pro. Emmett</a>
-                                                <small class="d-block text-muted">Head OF Dept.</small>
-                                            </div>
-                                            <div class="ml-auto text-muted">
-                                                <a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fe fe-heart mr-1"></i> 521</a>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
-                            </div>
+                                 <%
+	                                    }
+	                                    }catch(Exception e)
+	                                    {
+	                                    	e.printStackTrace();
+	                                    }
+                                    %>
                         </div>
                     </div>
                     <div class="tab-pane" id="Courses-add">
@@ -313,6 +275,17 @@ Statement stmt=con.createStatement();
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group">
+                                        <label>Course Type</label>
+                                            <select type="text" name="type" class="form-control" >
+                                            <option>--Select Course Type</option>
+                                            <option>Bachelor Degree</option>
+                                            <option>Master Degree</option>
+                                            <option>Diploma Degree</option>
+                                            </select>	
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
                                         <label>Course Name</label>
                                             <select type="text" name="name" class="form-control" >
                                             <option>--Select Course Name</option>
@@ -323,7 +296,7 @@ Statement stmt=con.createStatement();
         											ResultSet rs = stmt.executeQuery(query);
         											while (rs.next()) {
                                             	%>
-                                            	<option><%=rs.getString("course_name") %></option>
+                                            	<option><%=rs.getString("course") %></option>
                                             	<%
                                             		}
                                             		} catch (Exception e) {
@@ -345,7 +318,7 @@ Statement stmt=con.createStatement();
         											ResultSet rs = stmt.executeQuery(query);
         											while (rs.next()) {
                                             	%>
-                                            	<option><%=rs.getString("duration")+" Months" %></option>
+                                            	<option><%=rs.getString("duration") %></option>
                                             	<%
                                             		}
                                             		} catch (Exception e) {
@@ -367,18 +340,18 @@ Statement stmt=con.createStatement();
                                             <input type="number" name="seats" class="form-control" placeholder="Course Student Seats">
                                         </div>
                                     </div>
-                                     <div class="col-sm-12">
+                                     <!-- <div class="col-sm-12">
                                          <div class="form-group mt-2 mb-3">
                                          <label>Upload Course Picture</label>
                                              <input type="file" id="image" name="image" class="dropify">
                                              <small id="fileHelp" class="form-text text-muted">Upload Course picture.</small>
                                          </div>
-                                     </div>
-                                     <!-- <div class="col-sm-12">
+                                     </div> -->
+                                     <div class="col-sm-12">
                                          <div class="form-group">
                                              <textarea rows="4" class="form-control no-resize" name="brief" placeholder="Write Course Brief"></textarea>
                                          </div>
-	                                 </div> -->
+	                                 </div> 
                                      <div class="col-sm-12">
                                         <button type="submit" class="btn btn-primary">Submit</button>
                                         <button type="submit" class="btn btn-outline-secondary btn-default">Cancel</button>
