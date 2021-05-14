@@ -144,6 +144,18 @@ label {
 			}
 		});
 	});
+	
+	function verified() {
+		  document.getElementById("verify").style.visibility = "visible";
+		  document.getElementById("authcode").style.visibility = "visible";
+		}
+
+		function regist() {
+		  document.getElementById("register").style.visibility = "visible";
+		}
+	
+	
+	
 </script>
 
 
@@ -609,7 +621,7 @@ label {
 
 									<div class="col-md-4">
 										<div class="form-group">
-											<input type="text" class="form-control styled required"
+											<input type="text" style="visibility:hidden;" class="form-control styled required"
 												id="authcode" name="authcode" placeholder="Enter otp">
 											<span id="available"> <!--- data show this span tag --->
 											</span>
@@ -624,7 +636,7 @@ label {
 											onclick="fourprev()" value="Previous" /> -->
 									<p>
 
-										<button type="Button" name="verify" id="verify" class="button">verify
+										<button type="Button" name="verify" style="visibility:hidden;" onclick="regist()" id="verify" class="button" >verify
 											otp</button>
 									</p>
 									<span id="showMsg"></span>
@@ -650,11 +662,11 @@ label {
 									<!-- <input type="button" name="previous" class="button"
 											onclick="fourprev()" value="Previous" /> -->
 									<p>
-										<button type="Button" name="send" id="send" class="button">Send
+										<button type="Button"  name="send" id="send" onclick="verified()"class="button">Send
 											otp</button>
 
 										<button type="reset" onclick="jquery()" class="button">Clear</button>
-										<button type="submit" onclick="jquery()" class="button">Register</button>
+										<button type="submit" style="visibility:hidden;" name="register" id="register" onclick="jquery()" class="button" disabled>Register</button>
 									</p>
 									<span id="showMsg"></span>
 
