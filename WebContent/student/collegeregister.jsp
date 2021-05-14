@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 <%@page import="in.common.GetConnection"%>
 	<%@ include file="inc/stdimport.jsp" %>    
+=======
+>>>>>>> origin/main
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -11,12 +14,18 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="college, campus, university, courses, school, educational">
+    <meta name="keywords" content="college, campus
+    university, courses, school, educational">
     <meta name="description" content="ATENA - College, University and campus template">
     <meta name="author" content="Ansonika">
     <title>College  Registration </title>
     <!-- Import package -->
+<<<<<<< HEAD
     
+=======
+    <%@page import="in.common.GetConnection"%>
+	<%@ include file="inc/stdimport.jsp" %>    
+>>>>>>> origin/main
     
 <%
 GetConnection getConObj=new GetConnection();
@@ -34,13 +43,8 @@ Statement stmt=con.createStatement();
     <link rel="apple-touch-icon" type="image/x-icon" sizes="144x144" href="img/apple-touch-icon-144x144-precomposed.png">
 
     <!-- BASE CSS -->
-  
-     <link href="/css/base.css" rel="stylesheet">
-     <link href="/css/style.css" rel="stylesheet">
-	<link href="/css/customize.css" rel="stylesheet">
-    <!-- SPECIFIC CSS -->
-	<link href="/layerslider/css/layerslider.css" rel="stylesheet">
-    <link href="/css/tabs.css" rel="stylesheet">
+    <link href="css/base.css" rel="stylesheet">
+    
     <!-- SPECIFIC CSS -->
     <link href="css/skins/square/blue.css" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -72,7 +76,7 @@ Statement stmt=con.createStatement();
 	<div class="pulse" style="display: none;"></div>
 </div><!-- Pulse Preloader -->
 
-     <%@ include file="itc/header.jsp" %>
+     <%@ include file="../student/itc/header.jsp" %>
       
  <div class="sub_header bg_1">
         	<div id="intro_txt">
@@ -407,6 +411,7 @@ Statement stmt=con.createStatement();
         
 	
 	
+<<<<<<< HEAD
  <%@ include file="itc/footer.jsp" %>
 </body>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -808,4 +813,8 @@ Statement stmt=con.createStatement();
  <%@ include file="../student/itc/footer.jsp" %>
 </body>
 >>>>>>> origin/main:WebContent/student/collegeregister.jsp
+=======
+ <%@ include file="../student/itc/footer.jsp" %>
+</body>
+>>>>>>> origin/main
 </html>

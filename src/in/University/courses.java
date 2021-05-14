@@ -13,10 +13,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.Part;
+/*import javax.servlet.http.Part;*/
 
 import in.common.GetConnection;
-import in.common.img;
+/*import in.common.img;*/
 
 @WebServlet("/courses")
 @MultipartConfig
@@ -41,19 +41,20 @@ public class courses extends HttpServlet {
 		try 
 		{
 			String id = request.getParameter("id")!=null?request.getParameter("id") : "";
+			String type = request.getParameter("type")!=null?request.getParameter("type") : "";
 			String name = request.getParameter("name")!=null?request.getParameter("name") : "";
 			String duration = request.getParameter("duration")!=null?request.getParameter("duration") : "";
 			String fees = request.getParameter("fees")!=null?request.getParameter("fees") : "";
 			String seats = request.getParameter("seats")!=null?request.getParameter("seats") : "";
-			Part part = request.getPart("image");
+			/*Part part = request.getPart("image");
 			String filename = part.getSubmittedFileName();
 			
 			img img = new img();
-			String image = img.image(filename, part)!=null?img.image(filename,part) : "";
+			String image = img.image(filename, part)!=null?img.image(filename,part) : "";*/
 			
 			String brief = request.getParameter("brief")!=null?request.getParameter("brief") : "";
 			
-			String sql1="select pk_id from course_name where course_name='"+name+"'";
+			String sql1="select pk_id from course_name where course='"+name+"'";
 			stmt = con.prepareStatement(sql1);
 			ResultSet rs = stmt.executeQuery(sql1);
 			if (rs.next()) {
@@ -67,31 +68,35 @@ public class courses extends HttpServlet {
 			stmt = con.prepareStatement(sql2);
 			ResultSet rs2 = stmt.executeQuery(sql2);
 			if (rs2.next()) {
-					dur = rs.getInt(1);
+					dur = rs2.getInt(1);
 			} else {
 				out.println("<body><html><script>alert('No Data Found');</script></html></body>");
 			}
 			
 			
-			String sql="insert into university_courses(course_id,course_name,course_duration,course_fees,course_seat,image,course_brief)values(?,?,?,?,?,?,?)";
+			String sql="insert into university_courses(course_id,course_type,course_name,course_duration,course_fees,course_seat,course_brief)values(?,?,?,?,?,?,?)";
 		
 			stmt = con.prepareStatement(sql);
 			stmt.setString(1, id);
-			stmt.setInt(2, coursename);
-			stmt.setInt(3, dur);
-			stmt.setString(4, fees);
-			stmt.setString(5, seats);
-			stmt.setString(6, image);
+			stmt.setString(2, type);
+			stmt.setInt(3, coursename);
+			stmt.setInt(4, dur);
+			stmt.setString(5, fees);
+			stmt.setString(6, seats);
 			stmt.setString(7, brief);
 			
 			
 			int res = stmt.executeUpdate();
 			if(res>0)
 			{
+				request.setAttribute("status", "succesfull login");
+				response.sendRedirect("university/courses.jsp");
 				out.println("<body><html><script>alert('Data Insert');</script></html></body>");
 			}
 			else
 			{
+				request.setAttribute("status", "Failed to sign up...! please try again");
+				response.sendRedirect("university/courses.jsp");
 				out.println("<body><html><script>alert('Something Went Wrong');</script></html></body>");
 			}
 			
@@ -106,17 +111,5 @@ public class courses extends HttpServlet {
 		}
 		
 	}
-
-	/*private String extractFileName(Part part) {
-		// TODO Auto-generated method stub
-		String contentDisp = part.getHeader("content-disposition");
-		String[] items = contentDisp.split(";");
-				for(String s : items) {
-					if(s.trim().startsWith("image"));
-					return s.substring(s.indexOf("=")+2,s.length()-1);
-				}
-		return "";
-	}*/
-
 
 }
