@@ -79,7 +79,7 @@ public class St_Login extends HttpServlet {
 						ResultSet rs = stmt.executeQuery(sql);
 								if (rs.next()) 
 								{
-								
+									
 									String id = gethash.getHash(String.valueOf(rs.getInt(1)));
 									response.sendRedirect("student/home.jsp?sid="+id+"&status="+gethash.getHash("trueCBC"));
 							    
@@ -93,20 +93,18 @@ public class St_Login extends HttpServlet {
 						{
 							e.printStackTrace();
 						}
+						
+						finally
+						{
+							try {
+								con.close();
+							} catch (SQLException e) {
+								// TODO Auto-generated catch block
+								e.printStackTrace();
+							}
+						}
 }
 	
-	@Override
-	public void destroy() {
-		// TODO Auto-generated method stub
-		super.destroy();
-		try {
-			res.sendRedirect("student/home.jsp");
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-	}
 		
 }
 	

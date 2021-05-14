@@ -1,5 +1,6 @@
 <!doctype html>
 <%-- <%@page import="in.University.RegisterAdmin"%> --%>
+<%@page import="in.common.hashed"%>
 <html lang="en" dir="ltr">
 <head>
 <meta charset="UTF-8">
@@ -16,7 +17,7 @@
 
 <!-- Core css -->
 <link rel="stylesheet" href="../assets/css/style.min.css"/>
-<link rel="stylesheet" href="assets/css/default.css" />
+<!-- <link rel="stylesheet" href="../assets/css/default.css" /> -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -165,9 +166,9 @@
                     <a class="header-brand" href="#"><i class="fa fa-graduation-cap brand-logo">Education Assembly</i></a>
                     <div class="card-title">Create new account</div>
                 </div>
-                <form action="../Register" onsubmit="return validate()" method="Post">
+                <form action="/RegisterUniversity"  method="Post">
 						<div class="form-group">
-							<label class="form-label">First Name</label> <input type="text"
+							<label class="form-label">First </label> <input type="text"
 								name="fname" class="form-control" placeholder="Enter First Name"
 								id="fname" minlength="3" maxlength="15"> <span style="color: red" id="fnameerr"></span>
 						</div>
@@ -219,10 +220,46 @@
                     <span style="color:red" id="chck"></span>
                 </div>
                 <div class="text-center">
-                    <button type="submit" class="btn btn-primary btn-block" >Create new account</button>
+                    <button type="submit" class="btn btn-primary btn-block" id="submit">Create new account</button>
                     <div class="text-muted mt-1">Already have account? <a href="login.jsp">Sign in</a></div>
                 </div>
-                <span id="showMsg"></span>
+                <%
+                hashed gethash = new hashed();
+                
+                if(request.getParameter("status") != null && request.getParameter("status").equals(gethash.getHash("CBCtrue")))
+                {
+                
+                	%>
+                	<span id="showMsg" class="text-success">Registered SuccessFully</span>
+                	<%
+                	try
+                	{
+                		
+                		Thread.sleep(2000);
+                		response.sendRedirect("login.jsp");
+                	
+                	}
+                	catch(Exception e)
+                	{
+                		response.sendRedirect("login.jsp");
+                	}
+                	
+                }
+                
+                else if(request.getParameter("status") != null && request.getParameter("status").equals(gethash.getHash("CBCfalse")))
+                {
+                	%>
+                	
+                	<span id="showMsg" class="text-danger">Something Went Wrong!!!</span>
+                	<%
+                }
+                else
+                {
+                	
+                }
+                %>
+                
+                
                 </form>
                 <%-- 	<%! 
 				RegisterAdmin reg=new RegisterAdmin();
@@ -246,15 +283,35 @@
 
 
 <!-- Start Main project js, jQuery, Bootstrap -->
-<script src="../assets/bundles/lib.vendor.bundle.js"></script>
+<!-- <script src="../assets/bundles/lib.vendor.bundle.js"></script> -->
 
 <!-- Start project main js  and page js -->
-<script src="../assets/js/core.js"></script>
+<!-- <script src="../assets/js/core.js"></script> -->
 
 
  <!-- LOAD JQUERY -->
-     <script type="text/javascript" src="js/lib/jquery-1.11.0.min.js"></script>
-    <script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
+     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+     <script>
+		$.ajaxSetup({ cache: false });
+		    $(document).ready(function() {   
+		        $('#submit').click(function(event) {
+		            var form = (event.target.form),
+		                url = "../Register"
+		                    + "?fname=" + escape(form.elements.fname.text)
+		                    + "&lname=" + escape(form.elements.lname.text)
+		                    + "&uname=" + escape(form.elements.uname.text)
+		                    + "&email=" + escape(form.elements.email.text)
+		                    + "&pass=" + escape(form.elements.pass.text);
+		
+		            $.get(url, function(getData) { 
+		                $('#showMsg').text(getData);         
+		            });
+		        });
+		    });
+	</script>
+     
+     </script>
+    <!-- <script type="text/javascript" src="js/lib/jquery-ui.min.js"></script>
     <script type="text/javascript" src="js/lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="js/lib/bootstrap-select.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&amp;signed_in=true"></script>
@@ -268,7 +325,7 @@
     <script type="text/javascript" src="js/lib/jquery.parallax-1.1.3.js"></script>
     <script type="text/javascript" src="js/lib/jquery.magnific-popup.min.js"></script>
     <script type="text/javascript" src="js/lib/SmoothScroll.js"></script>
-    <script type="text/javascript" src="js/scripts.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script> -->
 
 
 

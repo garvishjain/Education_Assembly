@@ -5,14 +5,27 @@
 <%@ include file="inc/header.jsp" %>  
 <%@ include file="inc/stdimport.jsp" %>  
 
-
+<h1>Hello</h1>
 <%
-GetProfessorsDB gpd= new GetProfessorsDB();
-ArrayList<GetProfessorsDB> records =gpd.getData(111, "Y"); // Here you have to pass University Id or College ID, pick it from the session when a user login
-
+ArrayList<GetProfessorsDB> records= new ArrayList();
 GetConnection getConObj=new GetConnection();
 Connection con=getConObj.getCon();
 Statement stmt=con.createStatement();
+try
+{
+	GetProfessorsDB gpd= new GetProfessorsDB();
+
+	records =gpd.getData(111, "Y"); // Here you have to pass University Id or College ID, pick it from the session when a user login
+
+	
+}
+
+catch(Exception e)
+{
+	System.out.print("This is running");
+	e.printStackTrace();
+}
+
 
 %>
     <!-- Start project content area -->
