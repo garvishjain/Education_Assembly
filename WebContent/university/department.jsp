@@ -54,15 +54,6 @@ Statement stmt=con.createStatement();
                 </div>
             </div>
         </div>
-        <!-- <div class="container-fluid">
-        	<div class="d-flex justify-content-between align-items-center ">
-	        	<ul class="nav nav-tabs page-header-tab">
-	                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="dept-all">All</a></li>
-	                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="dept-active">Active</a></li>
-	                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="dept-nonactive">Non Active</a></li>
-	            </ul>
-            </div>
-        </div> -->
         <div class="section-body mt-4">
             <div class="container-fluid">
                 <div class="tab-content">
@@ -83,7 +74,7 @@ Statement stmt=con.createStatement();
 	                                    </thead>
 	                                    <%
 											try {
-												String query = "select * from department INNER JOIN department_name ON department.fk_department_name=department_name.pk_id";
+												String query = "select * from university_department INNER JOIN department_name ON university_department.fk_department_name=department_name.pk_id";
 												//get Table data
 												ResultSet rs = stmt.executeQuery(query);
 												while (rs.next()) {
@@ -157,7 +148,7 @@ Statement stmt=con.createStatement();
 	                                    </thead>
 	                                    <%
 											try {
-												String query = "select * from department INNER JOIN department_name ON department.fk_department_name=department_name.pk_id where isActive=1";
+												String query = "select * from university_department INNER JOIN department_name ON university_department.fk_department_name=department_name.pk_id where isActive=1";
 												//get Table data
 												ResultSet rs = stmt.executeQuery(query);
 												while (rs.next()) {
@@ -231,7 +222,7 @@ Statement stmt=con.createStatement();
 	                                    </thead>
 	                                    <%
 											try {
-												String query = "select * from department INNER JOIN department_name ON department.fk_department_name=department_name.pk_id where isActive=0";
+												String query = "select * from university_department INNER JOIN department_name ON university_department.fk_department_name=department_name.pk_id where isActive=0";
 												//get Table data
 												ResultSet rs = stmt.executeQuery(query);
 												while (rs.next()) {
@@ -330,21 +321,21 @@ Statement stmt=con.createStatement();
 	                                                <input type="text" class="form-control" name="headname" placeholder="Head of Department">
 	                                            </div>
 	                                        </div>
-	                                         <div class="col-sm-6">
+	                                        <!-- <div class="col-sm-6">
 	                                            <div class="form-group">
 	                                             <label>university name</label>
 	                                                <input type="text" class="form-control" name="uname" placeholder="university name ">
 	                                            </div>
-	                                        </div>
+	                                        </div> -->
 	                                        <div class="col-sm-6">
 	                                            <div class="form-group">
-	                                             <label>phone number</label>
+	                                             <label>Phone Number</label>
 	                                                <input type="number" class="form-control" name="phone" placeholder="Phone number">
 	                                            </div>
 	                                        </div>
 	                                        <div class="col-sm-6">
 	                                            <div class="form-group">
-	                                             <label>email</label>
+	                                             <label>Email Address</label>
 	                                                <input type="email" class="form-control" name="email" placeholder="Email">
 	                                            </div>
 	                                        </div>
