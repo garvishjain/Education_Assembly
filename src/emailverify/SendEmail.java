@@ -27,7 +27,7 @@ public class SendEmail {
 
         String toEmail = user.getEmail();
         String fromEmail = "sikarwarsingh.durgesh@gmail.com";
-        String password = "sikarwar.singh";
+        String password = "your emailpassword";
 
         try {
 
