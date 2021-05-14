@@ -118,8 +118,7 @@ orange
 							<li><a href="master.jsp">Master courses</a></li>
 							<li><a href="college.jsp">College</a></li>
 						</ul></li>
-<<<<<<< HEAD
-					
+
 						<!-- <ul>
 							<li><a href="gallery.jsp">Gallery</a></li>
 =======
@@ -128,8 +127,8 @@ orange
 						<ul>
 
 							<!-- <li><a href="gallery.jsp">Gallery</a></li> -->
->>>>>>> origin/main
-							<li><a href="visit-us.jsp">Plan a visit</a></li>
+
+							<!-- <li><a href="visit-us.jsp">Plan a visit</a></li>
 							<li><a href="contacts.jsp">Conatct us</a></li>
 							<li><a href="about.jsp">About us</a></li>
 						</ul></li> -->
@@ -143,75 +142,8 @@ orange
 							<li><a href="agenda_calendar.jsp">University</a></li>
 						</ul></li>
 					<li>
-						<%
-							if (name.equals("")) {
-						%>
+						
 					
-<<<<<<< HEAD
-					<!--<l i class="megamenu submenu"><a href="javascript:void(0);"
-						class="show-submenu-mega">Pages &amp; elements<i
-=======
-					<li class="megamenu submenu"><a href="javascript:void(0);"
-						class="show-submenu-mega">Register<i
->>>>>>> origin/main
-							class="icon-down-open-mini"></i></a>
-						<div class="menu-wrapper">
-							<div class="col-md-4">
-								<ul>
-<<<<<<< HEAD
-									<li><a href="blog.jsp">Blog</a></li>
-									<li><a href="contacts.jsp">Contacts</a></li>
-									<li><a href="agenda_calendar.jsp">Calendar</a></li>
-								</ul>
-							</div>
-							<div class="col-md-4">
-								<ul>
-									<li><a href="#" data-toggle="modal" data-target="#login">Login</a></li>
-									<li><a href="javascript:void(0);" class="show-submenu-mega">Register</a>
-										<div class="menu-wrapper">
-											<div class="col-md-2">
-												<ul>
-													<li><a href="collegeregister.jsp">College</a></li>
-													<li><a href="register.jsp">Student</a></li>
-													<li><a href="agenda_calendar.jsp">University</a></li>
-												</ul>
-											</div>
-											
-										</div></li>
-
-								</ul>
-							</div>
-						</div>
-						End menu-wrapper</li> -->
-=======
-									<li><a href="collegeregister.jsp">College</a></li>
-									<li><a href="register.jsp">Student</a></li>
-									<li><a href="agenda_calendar.jsp">University</a></li>
-								</ul>
-							</div>
-							
-						</div> <!-- End menu-wrapper --></li>
->>>>>>> origin/main
-					<%
-						} else {
-					%>
-
-					<!-- <li class="submenu"><a href="javascript:void(0);"
-						class="show-submenu">Pages &amp; elements<i
-							class="icon-down-open-mini"></i></a>
-						<ul>
-							<li><a href="blog.jsp">Blog</a></li>
-							<li><a href="contacts.jsp">Contacts</a></li>
-							<li><a href="agenda_calendar.jsp">Calendar</a></li>
-						</ul></li> -->
-
-					<%
-						}
-					%></li>
-
-
-
-
 
 					<li>
 						<%
@@ -237,17 +169,17 @@ orange
 					<%
 						}
 					%></li>
-<<<<<<< HEAD
+
 					<li class="submenu"><a href="contacts.jsp">Conatct us</a></li>
 					<li class="submenu"><a href="visit-us.jsp">Plan a visit</a></li>
 					<li><a href="about.jsp">About us</a></li>
 					<!-- <li><a href="#search" id="search_bt"><i
 							class=" icon-search"></i><span>Search</span></a></li>
 				</ul> -->
-=======
+
 					
 				</ul>
->>>>>>> origin/main
+
 			</div>
 			<!-- End main-menu --> </nav>
 		</div>
