@@ -1,4 +1,5 @@
-<<<<<<< HEAD:WebContent/college/collegeregister.jsp
+<%@page import="in.common.GetConnection"%>
+	<%@ include file="inc/stdimport.jsp" %>    
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -15,8 +16,7 @@
     <meta name="author" content="Ansonika">
     <title>College  Registration </title>
     <!-- Import package -->
-    <%@page import="in.common.GetConnection"%>
-	<%@ include file="INC/stdimport.jsp" %>    
+    
     
 <%
 GetConnection getConObj=new GetConnection();
@@ -409,7 +409,6 @@ Statement stmt=con.createStatement();
 	
  <%@ include file="itc/footer.jsp" %>
 </body>
-=======
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -427,15 +426,7 @@ Statement stmt=con.createStatement();
     <meta name="author" content="Ansonika">
     <title>College  Registration </title>
     <!-- Import package -->
-    <%@page import="in.common.GetConnection"%>
-	<%@ include file="inc/stdimport.jsp" %>    
-    
-<%
-GetConnection getConObj=new GetConnection();
-Connection con=getConObj.getCon();
-Statement stmt=con.createStatement();
-
-%>
+  
     
 
     <!-- Favicons-->
