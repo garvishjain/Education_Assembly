@@ -147,6 +147,7 @@ label {
 	
 	function verified() {
 		  document.getElementById("verify").style.visibility = "visible";
+		  document.getElementById("authcode").style.visibility = "visible";
 		}
 
 		function regist() {
@@ -620,7 +621,7 @@ label {
 
 									<div class="col-md-4">
 										<div class="form-group">
-											<input type="text" class="form-control styled required"
+											<input type="text" style="visibility:hidden;" class="form-control styled required"
 												id="authcode" name="authcode" placeholder="Enter otp">
 											<span id="available"> <!--- data show this span tag --->
 											</span>
