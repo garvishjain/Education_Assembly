@@ -101,6 +101,7 @@
 						"INNER JOIN city ON city.pk_id=university.fk_city\n" + 
 						"INNER JOIN category ON category.pk_id=university.fk_category\n" + 
 						"INNER JOIN type ON type.pk_id=university.fk_type\n" + 
+						"INNER JOIN university_link ON university.fk_university_link = university_link.pk_id\n" +
 						"INNER JOIN university_contact ON university_contact.pk_id=university.fk_contact_number ";
 				ResultSet rs=stmt.executeQuery(sql);
 				while (rs.next()) {
@@ -123,10 +124,11 @@
 					                                <%--   <h5 class="field_fill">Courses - <%=rs.getString("course")%></h5> --%>
 					                                 </div>
 					                                <ul class="social_team">
-					                                    <li><a href="https://www.facebook.com/Madhav-Institute-of-Technology-Science-Gwalior-MP-India-102055234637800/?modal=admin_todo_tour"><i class="icon-facebook"></i></a></li>
-					                                    <li><a href="https://twitter.com/MITS_Gwalior"><i class="icon-twitter"></i></a></li>
-					                                    <li><a href="https://mitsgwalior.in/index.php"><i class="icon-google"></i></a></li>
-					                                    <li><a href="#"><i class="icon-email"></i></a></li>
+					                               
+					                                    <li><a href="<%=rs.getString("fb_link") %>"><i class="icon-facebook"></i></a></li>
+					                                    <li><a href="<%=rs.getString("twitter_link") %> "><i class="icon-twitter"></i></a></li>
+					                                    <li><a href="<%=rs.getString("google_link") %>"><i class="icon-google"></i></a></li>
+					                                    <li><a href="<%=rs.getString("email_link") %>"><i class="icon-email"></i></a></li>
 													</ul> <hr>
 					                             <a href="college_detail.jsp" class="button_outline">Profile</a>           
 									</div>

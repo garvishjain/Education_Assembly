@@ -53,7 +53,7 @@
         
         <div class="sub_header bg_1">
             <div id="intro_txt">
-                <h1> <strong>Diploma</strong>courses</h1>
+                <h1> <strong>Diploma</strong> courses</h1>
                <!--  <p>
                     Ex saepe accusata duo, vel ne summo option delenit.
                 </p> -->
