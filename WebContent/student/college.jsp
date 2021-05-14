@@ -76,16 +76,7 @@
 			<h1>College Detail</h1>
             </div>
 		</div> <!--End sub_header -->
-		<!-- 
-				Select university.pk_id,u_registration,u_name,address,email,establish_year,state.state_name,
-				city.city_name,category.category,type.type,university_contact.contact_number from university 
-				INNER JOIN country ON country.pk_id=university.fk_country
-				INNER JOIN state ON state.pk_id=university.fk_state
-				INNER JOIN city ON city.pk_id=university.fk_city
-				INNER JOIN category ON category.pk_id=university.fk_category
-				INNER JOIN type ON type.pk_id=university.fk_type
-				INNER JOIN university_contact ON university_contact.pk_id=university.fk_contact_number 
-		-->
+		
 
 	<div class="container_gray_bg">
 		<div id="position"></div>
