@@ -24,6 +24,8 @@ public class department extends HttpServlet {
 	private Connection con;
 	private PreparedStatement stmt;
 	private String detail;
+	private PreparedStatement pstmt;
+	private ResultSet resdel;
 	
 
 	public void init(ServletConfig config) throws ServletException {
@@ -47,15 +49,16 @@ public class department extends HttpServlet {
 		try {
 			String department = request.getParameter("department") != null ? request.getParameter("department") : "";
 			String headname = request.getParameter("headname") != null ? request.getParameter("headname") : "";
-			String uname = request.getParameter("uname") != null ? request.getParameter("uname") : "";
+			/*String uname = request.getParameter("uname") != null ? request.getParameter("uname") : "";*/
 			String phone = request.getParameter("phone") != null ? request.getParameter("phone") : "";
 			String email = request.getParameter("email") != null ? request.getParameter("email") : "";
 			String stdcapacity = request.getParameter("stdCapacity") != null ? request.getParameter("stdCapacity") : "";
+			String delete = request.getParameter("delete")!=null?request.getParameter("delete") : "";
+			
 			int u_id = 123;
 			int dpartment = 12345;
 			// <--- foreign key convert start --->
-			String sqll = "select pk_id from university where u_name = '" + uname + "' ";
-			System.out.println(sqll);
+			String sqll = "select pk_id from university ";
 			stmt = con.prepareStatement(sqll);
 			ResultSet rs = stmt.executeQuery(sqll);
 			if (rs.next()) {
@@ -67,7 +70,6 @@ public class department extends HttpServlet {
 			
 			
 			String sql2="Select * from department_name where Details='"+department+"'";
-			System.out.println(sql2);
 			stmt= con.prepareStatement(sql2);
 			ResultSet rs6 = stmt.executeQuery();
 			if(rs6.next())
@@ -82,7 +84,7 @@ public class department extends HttpServlet {
 			// <--- department data start--->
 				
 			
-			String sql = "insert into department(fk_university_id,fk_department_name,hod_name,phone_no,email,std_capacity)value(?,?,?,?,?,?)";
+			String sql = "insert into university_department(fk_university_id,fk_department_name,hod_name,phone_no,email,std_capacity)value(?,?,?,?,?,?)";
 
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, u_id);
@@ -106,6 +108,21 @@ public class department extends HttpServlet {
 				out.println("<body><html><script>alert('Something went wrong');</script></html></body>");
 			}
 			// <--- department data end--->
+			
+			/*Delete Query*/
+			/*String del="update department set isActive=0 where pk_id=?";
+			pstmt = con.prepareStatement(del);
+			int eu = pstmt.executeUpdate();
+			if(eu>0)
+			{
+				out.println("<body><html><script>alert('Data Delete');</script></html></body>");
+			}
+			else
+			{
+				out.println("<body><html><script>alert('Data Not Delete');</script></html></body>");
+			}*/
+			
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

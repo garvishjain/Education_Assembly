@@ -28,7 +28,29 @@ Statement stmt=con.createStatement();
 <!-- Core css -->
 <link rel="stylesheet" href="../assets/css/style.min.css" />
 <script type="text/javascript">
-	
+$(document).ready(function() {
+    $("#sts").on("change", function() {
+        var sts = $("#sts").val();
+        if (sts === "")
+        {
+            $("#error").html("required");
+            return false;
+        }
+        else
+        {
+            $("#error").html("");
+            $.ajax({
+                url: "state.jsp",
+                data: {sts: sts},
+                method: "POST",
+                success: function(data)
+                {
+                    $("#state").html(data);
+                    }
+            });
+        }
+    });
+});
 </script>
 </head>
 
@@ -136,7 +158,7 @@ Statement stmt=con.createStatement();
 															ResultSet rs = stmt.executeQuery(query);
 															while (rs.next()) {
 														%>
-														<option><%=rs.getString("state_name")%></option>
+														<option value="<%=rs.getInt("pk_id")%>"><%=rs.getString("state_name")%></option>
 														<%
 															}
 															} catch (Exception e) {
@@ -146,28 +168,38 @@ Statement stmt=con.createStatement();
 														</select>
 												</div>
 											</div>
-											<div class="col-md-6 col-sm-12">
+											<div class="col-md-6">
 												<div class="form-group">
 													<label>City</label> <select id="state" name="city"
-														class="form-control" >
-														<option>---Please Select---</option>
-														<%
-														try {
-															String query = "select * from city";
-															//get Table data
-															ResultSet rs = stmt.executeQuery(query);
-															while (rs.next()) {
-														%>
-														<option><%=rs.getString("city_name")%></option>
-														<%
-															}
-														} catch (Exception e) {
-
-														}
-														%>
-														</select>
+														class="form-control">
+														<!-- <option value="">Select city</option> -->
+													</select> <span style="color: red" id="cityerr"></span>
 												</div>
 											</div>
+<!-- 											<div class="col-md-6 col-sm-12"> -->
+<!-- 												<div class="form-group"> -->
+<!-- 													<label>City</label> <select id="state" name="city" -->
+<!-- 														class="form-control" > -->
+<!-- 														<option>---Please Select---</option> -->
+<%-- 														<% --%>
+														<!-- try {
+// 															String query = "select * from city";
+// 															//get Table data
+// 															ResultSet rs = stmt.executeQuery(query);
+// 															while (rs.next()) { -->
+<%-- 														%> --%>
+<%-- 														<option><%=rs.getString("city_name")%></option> --%>
+<%-- 														<% --%>
+													<!-- 	}
+// 														} catch (Exception e) {
+
+// 														} -->
+<%-- 														%> --%>
+<!-- 														</select> -->
+<!-- 												</div> -->
+<!-- 											</div> -->
+
+											
 											<div class="col-md-6 col-sm-12">
 												<div class="form-group">
 													<label>University Category</label> <select
@@ -180,7 +212,7 @@ Statement stmt=con.createStatement();
 																ResultSet rs = stmt.executeQuery(query);
 																while (rs.next()) {
 														%>
-														<option><%=rs.getString("details")%></option>
+														<option><%=rs.getString("category")%></option>
 														<%
 															}
 															} catch (Exception e) {
@@ -202,7 +234,7 @@ Statement stmt=con.createStatement();
 																ResultSet rs = stmt.executeQuery(query);
 																while (rs.next()) {
 														%>
-														<option><%=rs.getString("details")%></option>
+														<option><%=rs.getString("type")%></option>
 														<%
 															}
 															} catch (Exception e) {
