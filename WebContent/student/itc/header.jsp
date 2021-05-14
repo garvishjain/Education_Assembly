@@ -66,10 +66,16 @@ keyframes blink-caret {from , to { border-color:transparent
 50%
 {
 border-color
+
+
 :
+
  
+
 orange
+
  
+
 }
 }
 *
@@ -115,7 +121,7 @@ orange
 					<li class="submenu"><a href="javascript:void(0);"
 						class="show-submenu">About <i class="icon-down-open-mini"></i></a>
 						<ul>
-							
+
 							<!-- <li><a href="gallery.jsp">Gallery</a></li> -->
 							<li><a href="visit-us.jsp">Plan a visit</a></li>
 							<li><a href="contacts.jsp">Conatct us</a></li>
@@ -127,36 +133,18 @@ orange
 						%>
 					
 					<li class="megamenu submenu"><a href="javascript:void(0);"
-						class="show-submenu-mega">Pages &amp; elements<i
+						class="show-submenu-mega">Register<i
 							class="icon-down-open-mini"></i></a>
 						<div class="menu-wrapper">
 							<div class="col-md-4">
 								<ul>
-									<li><a href="blog.jsp">Blog</a></li>
-									<!-- <li><a href="contacts.jsp">Contacts</a></li> -->
-									<li><a href="agenda_calendar.jsp">Calendar</a></li>
+									<li><a href="collegeregister.jsp">College</a></li>
+									<li><a href="register.jsp">Student</a></li>
+									<li><a href="agenda_calendar.jsp">University</a></li>
 								</ul>
 							</div>
-							<div class="col-md-4">
-								<ul>
-									<li><a href="#" data-toggle="modal" data-target="#login">Login</a></li>
-									<li><a href="javascript:void(0);"
-										class="show-submenu-mega">Register</a>
-										<div class="menu-wrapper">
-											<div class="col-md-2">
-												<ul>
-													<li><a href="collegeregister.jsp">College</a></li>
-													<li><a href="register.jsp">Student</a></li>
-													<li><a href="agenda_calendar.jsp">University</a></li>
-												</ul>
-											</div>
-											
-										</div></li>
-
-								</ul>
-							</div>
-						</div>
-						<!-- End menu-wrapper --></li>
+							
+						</div> <!-- End menu-wrapper --></li>
 					<%
 						} else {
 					%>
@@ -201,8 +189,7 @@ orange
 					<%
 						}
 					%></li>
-					<li><a href="#search" id="search_bt"><i
-							class=" icon-search"></i><span>Search</span></a></li>
+					
 				</ul>
 			</div>
 			<!-- End main-menu --> </nav>
