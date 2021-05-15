@@ -1,34 +1,53 @@
 <!doctype html>
 <html lang="en" dir="ltr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport"
-	content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="icon" href="favicon.ico" type="image/x-icon" />
-<title>:: Education Assembly :: Registration</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="keywords"
+	content="college, campus, university, courses, school, educational">
+<meta name="description"
+	content="ATENA - College, University and campus template">
+<meta name="author" content="Ansonika">
+<title>College, University and campus</title>
 
-<!-- Import package -->
+
+<!-- Favicons-->
+<link rel="shortcut icon" href="../student/img/favicon.ico" type="image/x-icon">
+<link rel="apple-touch-icon" type="image/x-icon"
+	href="../student/img/apple-touch-icon-57x57-precomposed.png">
+<link rel="apple-touch-icon" type="image/x-icon" sizes="72x72"
+	href="../student/img/apple-touch-icon-72x72-precomposed.png">
+<link rel="apple-touch-icon" type="image/x-icon" sizes="114x114"
+	href="../student/img/apple-touch-icon-114x114-precomposed.png">
+<link rel="apple-touch-icon" type="image/x-icon" sizes="144x144"
+	href="../student/img/apple-touch-icon-144x144-precomposed.png">
+
+<!-- BASE CSS -->
+<link href="../student/css/base.css" rel="stylesheet">
+
+<!-- SPECIFIC CSS -->
+<link href="../student/css/skins/square/blue.css" rel="stylesheet">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
+
+<!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
 <%@page import="in.common.GetConnection"%>
-<%@ include file="inc/stdimport.jsp" %> 
+<%@ include file="../student/inc/stdimport.jsp"%>
 
 <%
-GetConnection getConObj=new GetConnection();
-Connection con=getConObj.getCon();
-Statement stmt=con.createStatement();
-
-%> 
-
-<!-- Bootstrap Core and vandor -->
-<link rel="stylesheet"
-	href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
-<link rel="stylesheet"
-	href="../assets/plugins/dropify/css/dropify.min.css">
-
-<!-- Core css -->
-<link rel="stylesheet" href="../assets/css/style.min.css" />
-<script type="text/javascript">
-	
+	GetConnection getConObj = new GetConnection();
+	Connection con = getConObj.getCon();
+	Statement stmt = con.createStatement();
+%>
 </script>
 </head>
 
@@ -40,6 +59,9 @@ Statement stmt=con.createStatement();
 	</div>
 
 	<div id="main_content">
+	   <div>
+	   <%@ include file="../student/itc/header.jsp"%>
+	   </div>
 		<!-- Start Main top header -->
 		<!-- Start Rightbar setting panel -->
 		<!-- Start Theme panel do not add in project -->
@@ -321,11 +343,11 @@ Statement stmt=con.createStatement();
 												</div>
 											</div>
 										</div> 
-										<div class="row">
+										
 											<div class="col-sm-12 text-right m-t-20">
-												<button type="submit" class="btn btn-primary">SAVE</button>
+												<button type="submit" class="button">SAVE</button>
 											</div>
-										</div>
+									
 									</form>
 								</div>
 							</div>
@@ -335,7 +357,7 @@ Statement stmt=con.createStatement();
 			</div>
 			</form>
 			<!-- Start main footer -->
-         <%@ include file="inc/footer.jsp" %> 
+         <%@ include file="../student/itc/footer.jsp"%>
          <%@ include file="inc/incjs.jsp" %>
 		</div>
 	</div>
