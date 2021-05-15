@@ -78,7 +78,7 @@ public class GetName
 		}
 		else if(tableName.equals("university"))
 		{
-		 sql="select college_name, Email from "+tableName+" where pk_id=? LIMIT 1";
+		 sql="select u_name, email from "+tableName+" where pk_id=? LIMIT 1";
 			 stmt = con.prepareStatement(sql);
 			 		 
 			
