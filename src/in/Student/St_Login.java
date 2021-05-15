@@ -42,9 +42,9 @@ public class St_Login extends HttpServlet {
 	private String n;
 	private String p;
 	private String user;
-
+    private String regnum;
 	private Statement stmt;
-	
+	private ResultSet rs;
 
 
 	public void init(ServletConfig config) throws ServletException 
@@ -74,20 +74,79 @@ public class St_Login extends HttpServlet {
 						/*password hashing*/
 						hashed gethash = new hashed();
 						String hashed = gethash.getHash(pass);
+						
+						
+					
 						String sql = "Select * from user where username ='" + uname + "' and password= '"+ hashed + "' LIMIT 1"; 
 						
-						ResultSet rs = stmt.executeQuery(sql);
+						 rs = stmt.executeQuery(sql);
 								if (rs.next()) 
 								{
+									 regnum = rs.getString(6);
 									
-									String id = gethash.getHash(String.valueOf(rs.getInt(1)));
-									response.sendRedirect("student/home.jsp?sid="+id+"&status="+gethash.getHash("trueCBC"));
-							    
-								} 
+									
+									 
+								}
 							else
 									{
 								out.println("<html><body><script>alert('Not ');</script></body></html>");
 									}
+								String prefix = regnum.substring(0, 3);
+								
+								if(prefix.equals("col"))
+								{
+									
+									String sql1 = "Select * from college_registration where registration_number ='" + regnum + "'  LIMIT 1"; 
+									 rs = stmt.executeQuery(sql1);
+									 if (rs.next()) 
+										{
+										    String id = gethash.getHash(String.valueOf(rs.getInt(1)));
+										    String cname = "college_registration";
+											response.sendRedirect("student/home.jsp?sid="+id+"&cname="+cname+"&status="+gethash.getHash("trueCBC"));
+									    
+										} 
+									else
+											{
+									
+										out.println("<html><body><script>alert('comingnot ');</script></body></html>");
+											}
+																				
+								}
+								else if(prefix.equals("UNI"))
+								{
+									String sql1 = "Select * from university where u_registration ='" + regnum + "'  LIMIT 1"; 
+									 rs = stmt.executeQuery(sql1);
+									 if (rs.next()) 
+										{
+										    String id = gethash.getHash(String.valueOf(rs.getInt(1)));
+										    String cname = "university";
+											response.sendRedirect("student/home.jsp?sid="+id+"&cname="+cname+"&status="+gethash.getHash("trueCBC"));
+									    
+										} 
+									else
+											{
+										out.println("<html><body><script>alert('Not ');</script></body></html>");
+											}
+																				
+								}
+								else 
+								{
+									String sql2 = "Select * from student_information where aadhar_number ='" + regnum + "'  LIMIT 1"; 
+									 rs = stmt.executeQuery(sql2);
+									 if (rs.next()) 
+										{
+										    String id = gethash.getHash(String.valueOf(rs.getInt(1)));
+										    String cname = "student_information";
+											response.sendRedirect("student/home.jsp?sid="+id+"&cname="+cname+"&status="+gethash.getHash("trueCBC"));
+									    
+										} 
+									else
+											{
+										out.println("<html><body><script>alert('Not ');</script></body></html>");
+											}
+																				
+								}	
+								
 						} 
 						catch (SQLException e)
 						{

@@ -9,12 +9,13 @@
 							if(status.equals(gethash.getHash("trueCBC")))
 							{
 								String sid = request.getParameter("sid");
-								
+								String cname = request.getParameter("cname");
 								if(sid != null)
 								{
 									GetName name= new GetName();
-									name.getNameData("user", sid);
+									name.getNameData(cname, sid);
 									session.setAttribute("nameUser", name.getName());
+									session.setAttribute("EmailUser", name.getEmail());
 								}
 							}
 						 }

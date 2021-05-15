@@ -1,6 +1,7 @@
 
 <%
 	String name = session.getAttribute("nameUser") != null ? (String) session.getAttribute("nameUser") : "";
+	String Email = session.getAttribute("EmailUser") != null ? (String) session.getAttribute("EmailUser") : "";
 %>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -163,11 +164,13 @@ orange
 						class="show-submenu">Welcome,&nbsp;<%=name%><i
 							class="icon-down-open-mini"></i></a>
 						<ul>
+						    <li><a href="javascript:void(0);"><%=Email%></a></li>
 							<li><a href="document.jsp">Upload Documents</a></li>
 							<li><a href="status.jsp">Check Status</a></li>
 
 						</ul></li>
-					<li><a href="logout.jsp">Logout</a></li>
+						    
+					       <li><a href="logout.jsp">Logout</a></li>
 					<%
 						}
 					%></li>

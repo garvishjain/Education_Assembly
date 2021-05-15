@@ -9,7 +9,10 @@ import java.sql.Statement;
 public class GetName 
 {
 	private String name;
-
+	private String Email;
+	private ResultSet rs;
+	private String sql;
+	
 	public String getName() {
 		return name;
 	}
@@ -17,18 +20,25 @@ public class GetName
 	public void setName(String name) {
 		this.name = name;
 	}
+	public String getEmail() {
+		return Email;
+	}
+
+	public void setEmail(String Email) {
+		this.Email = Email;
+	}
 	
 	public void getNameData(String tableName,String hashedId) throws SQLException
 	{
 		GetConnection gc=new GetConnection();
 		Connection con = gc.getCon();
-		String sql="select id from "+tableName ;
+		 sql="select pk_id from "+tableName ;
 		PreparedStatement stmt = con.prepareStatement(sql);
 		
 		
 		
 		
-		ResultSet rs = stmt.executeQuery(sql);
+		 rs = stmt.executeQuery(sql);
 		
 		hashed hash = new hashed();
 		int id=-1;
@@ -42,7 +52,55 @@ public class GetName
 			}
 		}
 		
-		 sql="select username from "+tableName+" where id=? LIMIT 1";
+		
+		
+		if(tableName.equals("college_registration"))
+		{
+			sql="select college_name, Email from "+tableName+" where pk_id=? LIMIT 1";
+			 stmt = con.prepareStatement(sql);
+			 
+			 
+			
+			stmt.setInt(1, id); 
+			rs=stmt.executeQuery();
+			System.out.println(sql);
+			
+			
+			if(rs.next())
+			{
+				String name =  rs.getString("college_name"); 
+				String lname =  rs.getString("Email");
+				
+				setName(name);
+				setEmail(lname);
+			}
+			
+		}
+		else if(tableName.equals("university"))
+		{
+		 sql="select college_name, Email from "+tableName+" where pk_id=? LIMIT 1";
+			 stmt = con.prepareStatement(sql);
+			 		 
+			
+			stmt.setInt(1, id); 
+			rs=stmt.executeQuery();
+			System.out.println(sql);
+			
+			
+			if(rs.next())
+			{
+				String name =  rs.getString("u_name"); 
+				String lname =  rs.getString("email");
+				
+				setName(name);
+				setEmail(lname);
+			}
+			
+		}
+		
+		else
+		{
+		 sql="select first_name, last_name from "+tableName+" where pk_id=? LIMIT 1";
 		 stmt = con.prepareStatement(sql);
 		 
 		 
@@ -54,8 +112,14 @@ public class GetName
 		
 		if(rs.next())
 		{
-			setName(rs.getString("username"));
+			String fname =  rs.getString("first_name"); 
+			String lname =  rs.getString("last_name");
+			String name = fname+lname;
+			setName(name);
 		}
+		
+	   }
+		
 
 	}
 	
