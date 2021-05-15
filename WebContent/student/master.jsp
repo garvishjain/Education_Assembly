@@ -108,6 +108,7 @@
 		                                    int b=(myStr.lastIndexOf(' '));
 		                            	    String course=myStr.substring(0,b); 
                                     %>
+
                                         <h3><strong><%=course%></strong></h3>
                                         <h4><%=rs.getString("degree_name") %></h4>
                                         <h4>Course Duration - <%=rs.getString("duration") %></h4>

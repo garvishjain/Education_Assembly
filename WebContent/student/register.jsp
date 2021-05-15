@@ -12,6 +12,7 @@
 <meta name="author" content="Ansonika">
 <title>College, University and campus</title>
 
+
 <!-- Favicons-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
 <link rel="apple-touch-icon" type="image/x-icon"

@@ -107,6 +107,7 @@
                                         <h4>Course Duration - <%=rs.getString("duration") %></h4>
                                         <h4>Eligibility - <%=rs.getString("eligibility").toUpperCase() %></h4>
                                         
+                                      
                                         <!-- <p>
                                         Engineering is the use of science and math to design or make things. People who do engineering are called engineers. They learn engineering at a college or university. Engineers usually design or build things. Some engineers also use their skills to solve technical problems.
                                         </p> -->
