@@ -1,3 +1,10 @@
+<%@page import="in.common.GetConnection"%>
+<%@ include file="inc/stdimport.jsp" %> 
+		 <%
+			GetConnection getcon=new GetConnection();
+		 Connection con=getcon.getCon();
+		Statement stmt= con.createStatement();
+		%> 
 <!DOCTYPE html>
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
 <html>
@@ -52,14 +59,19 @@
   padding: 10px 24px; /* Some padding */
   cursor: pointer; /* Pointer/hand icon */
   float: left; /* Float the buttons side by side */
-    
+    margin: 0px 0px 0px 1px;
 }
+.college_but{margin: 0px 0px 0px 0px;}
 .btn-group button:hover {
   background-color: black;
 }
 .bbb{margin: 0px 0px 0px -23px;
     padding: -3px 0px -4px -4px;
     float: right;}
+  .field_detailed{font-size: 10px;font-size: 14px;}
+.field_info{font-size: 15px;
+    font-weight: bold;
+    margin: 0px 0px 0px 0px;}
 	</style>
 </head>
 
@@ -75,10 +87,20 @@
 
     <!-- Header================================================== -->
      <%@ include file="itc/header.jsp" %>
+     
+     
+       <%
+			try{
+				String sql=  "Select  * from course_details\n"+  
+								    " INNER JOIN course_highlights ON course_highlights.pk_id=course_details.fk_course_highlights\n"+
+								     "INNER JOIN course_name ON course_name.pk_id=course_highlights.fk_duration\n" ; 
+     ResultSet rs=stmt.executeQuery(sql);
+				while (rs.next()) {
+		%>
 
         <div class="sub_header bg_1">
         	<div id="intro_txt">
-			<h1> <strong>Master of Computer Applications (MCA)</strong> </h1>
+			<h1> <strong>Course Detail</strong> </h1>
             <p></p>
             </div>
 		</div> <!--End sub_header -->
@@ -93,22 +115,26 @@
  		<div class="row">
            <div class="col-md-9">
            <div class="btn-group" >
-  			 <a href="mca.jsp" class="bbb"><button>College</button></a>
-  			 <a href="mca.jsp" ><button>Summary</button></a>
-			
+  			<a href="bba.jsp" ><button>Summary</button></a>
+  			 <a href="bba_c.jsp" ><button>Colleges</button></a>
+
 		</div>
                 	<div class="box_style_1">
                 	
                    	<div class="indent_title_in">
                    	
                     <i class="pe-7s-news-paper"></i>
+                      <%String str=rs.getString("course");
+		                                    int b=(str.lastIndexOf(' '));
+		                            	    String course=str.substring(0,b); 
+                                    %>
                       
-				<h4 class="h">About Master of Computer Applications (MCA)</h4>
+				<h4 class="h">About <%=course %></h4>
 				<p></p>
 			</div>
             	<div class="wrapper_indent">
-                    <p>Aims to groom the software skills and strengthen the computer application aspect of students. This prepares the students for the industry requirements so that they can flourish in the corporate IT Sector. MCA courses are more focused on implementation of Programming Languages, IT Skills and other such concepts with a detailed curriculum that stretches to five semesters. The sixth and final semester is dedicated to industrial training/ internship and projects.</p>
-                  <p>The MCA program focuses on providing a sound theoretical background as well as good practical exposure to students in the relevant areas. It is intended to provide modern, industry-oriented education in applied computer science. It aims at producing trained professionals who can successfully meet the demands of the information technology industry.</p>
+                    <p><%=rs.getString("about_course")/* .substring(0,464) */ %></p>
+                  <%-- <p><%=rs.getString("about_for").substring(464) %></p> --%>
                   <div class="row">
                     	<div class="col-md-6">
                         	<p><img src="img/mca/m1.jpg" alt="" class="img-responsive"></p>
@@ -121,115 +147,92 @@
                     <hr class="styled_2">
                     <div class="indent_title_in">
                     <i class="pe-7s-user"></i>
-				<h4  class="h">MCA (Masters of Computer Applications) Course Highlights</h4>
-				<p style="color: black; ">Some of the major highlights of MCA (Masters of Computer Applications) course are given below:</p>
+				<h4  class="h"><%=course %> Course Highlights</h4>
+				<p style="color: black; ">Some of the major highlights of  <%=course %> course are given below:</p>
 			</div>
             	<div class="wrapper_indent">
                     <div class="row">
                     	<table>
 		<tbody>
 			<tr>
-				<th>
-					<p >Name of the Course</p>
-				</th>
-				<th>
-					<p  >MCA (Masters of Computer Applications)</p>
-				</th>
-			</tr>
-			<tr>
 				<td>
-					<p>Duration</p>
+					<p class="field_info">Degree</p>
 				</td>
 				<td>
-					<p>2 years <br>3 years</p>
+					<p class="field_detailed" ><%=rs.getString("degree_name") %></p>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<p  >Minimum Eligibility</p>
+					<p class="field_info">Full Form</p>
 				</td>
 				<td>
-					<p>The candidate must have pursued a Bachelor&rsquo;s degree in BCA or equivalent.</p>
+					<p class="field_detailed"><%=course %></p>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<p>Admission Process</p>
+					<p class="field_info"  > Duration</p>
 				</td>
 				<td>
-					<p  >Merit-based: Some colleges take admission on the basis of merit obtained in the qualifying exam.</p>
-					<p  >Entrance based: Some colleges take admission on the basis of a national level, Institute level or a state level entrance exam.</p>
+					<p class="field_detailed">Course Duration of <%=course %> is <%=rs.getString("duration") %></p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p class="field_info">Minimum Percentage</p>
+				</td>
+				<td>
+					<p  class="field_detailed"><%=rs.getString("min_perc") %></p>
 				</td>
 			</tr>
 			
 			<tr>
 				<td>
-					<p  >Scholarship</p>
+					<p class="field_info" >Subject Required</p>
 				</td>
 				<td>
-					<ul>
-						<li >
-							<p  role="presentation" >Candidates belonging to reserved categories and economically weaker sections are eligible for state government scholarship schemes.&nbsp;</p>
-						</li>
-						<li >
-							<p  role="presentation" >Deemed or private universities offer merit scholarships&nbsp; (based on marks in entrance exam or Graduation)</p>
-						</li>
-					</ul>
+					<p class="field_detailed"><%=rs.getString("sub_required") %></p>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<p  >Internship</p>
+					<p class="field_info" >Average Fees Incurred</p>
 				</td>
 				<td>
-					<p>There are a lot of internship opportunities for MCA in India.</p>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<p  >Average starting salary</p>
-				</td>
-				<td>
-					<p  >3 LPA to 5 LPA</p>
+					<p class="field_detailed"><%=rs.getString("average_fees") %></p>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<p>Career Options</p>
+					<p class="field_info" >Similar Options of Study</p>
 				</td>
 				<td>
-					<ul>
-						<li>
-							<p  role="presentation" >Software Developer</p>
-						</li>
-						<li >
-							<p  role="presentation" >Programmer</p>
-						</li>
-						<li >
-							<p  role="presentation" >System Engineer</p>
-						</li>
-						<li >
-							<p  role="presentation" >System Analyst</p>
-						</li>
-						<li >
-							<p  role="presentation" >System Administrator</p>
-						</li>
-						<li >
-							<p  role="presentation" >Troubleshooter</p>
-						</li>
-						<li >
-							<p  role="presentation" >Software Application Architect</p>
-						</li>
-						<li >
-							<p  role="presentation" >Web Designer and Developer</p>
-						</li>
-						<li >
-							<p  role="presentation" >Software Consultant</p>
-						</li>
-						<li >
-							<p  role="presentation" >Technical Writer</p>
-						</li>
-					</ul>
+					<p class="field_detailed"><%=rs.getString("similar_option") %></p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p class="field_info" >Average Salary</p>
+				</td>
+				<td>
+					<p class="field_detailed"><%=rs.getString("average_salary") %></p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p class="field_info">Employment Roles</p>
+				</td>
+				<td>
+					<p class="field_detailed"><%=rs.getString("employment_roles") %></p>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<p class="field_info" >Placement Opportunities</p>
+				</td>
+				<td>
+					<p  class="field_detailed"><%=rs.getString("placement_opportunity") %></p>
 				</td>
 			</tr>
 		</tbody>
@@ -241,26 +244,26 @@
                         
             	<div class="wrapper_indent">
                     <div class="row">
-                    	<div><h4 class="h">Master of Computer Applications (MCA) Eligibility Criteria</h4>
+                    	<div><h4 class="h"><%=course %> Eligibility Criteria</h4>
 						<p style="  line-height:1.2;">
-							In order to pursue the MCA (Masters of Computer Applications) course, the candidates will have to fulfil the given below eligibility criteria:</p>
+							In order to pursue the <%=course %> course, the candidates will have to fulfil the given below eligibility criteria:</p>
 						<ul>
 									<li >
-										<p style="  line-height:1.2;">The candidate must have passed Graduation in BCA or equivalent from a recognized board.</p>
+										<p style="  line-height:1.2;"><%=rs.getString("eligible_criteria")/* .substring(0,87) */ %></p>
+									</li>
+									<%-- <li >
+										<p style="  line-height:1.2;"><%=rs.getString("eligible_criteria").substring(87,185) %></p>
 									</li>
 									<li >
-										<p style="  line-height:1.2;">The candidate must have acquired a minimum aggregate of 60% in the qualifying examination.</p>
-									</li>
-									<li >
-										<p style="  line-height:1.2;">The candidates who are in their final year of degree can also apply for admission.</p>
-									</li>
+										<p style="  line-height:1.2;"><%=rs.getString("eligible_criteria").substring(185) %></p>
+									</li> --%>
 						</ul>
-						<h4 class="h">MCA Admission Process</h4>
-						<p  style="  line-height:1;">The admission to MCA (Masters of Computer Applications) course is done in two ways:</p>
-						<p  style="  line-height:1;">Merit-Based: The merit-based admission to the course is done directly on the basis of score obtained by the candidate in the qualifying examination. Some colleges also prepare a cutoff list based on the qualifying examination for admission.</p>
-						<p  style="  line-height:1;">Entrance Based: The entrance based admission to the course is done on the basis of score obtained by the candidate at a national level, state level or college level entrance exams. The admission is done through the counselling process.</p>
-						
-					</p>
+						<%-- <h4 class="h"><%=course %> Admission Process</h4>
+						<p  style="  line-height:1;">The admission to <%=course %> course is done in diffrent ways:</p>
+						<p  style="  line-height:1;"><%=rs.getString("addmission_process").substring(0,240)%></p>
+						<p  style="  line-height:1;"></p><%=rs.getString("addmission_process").substring(240)%>
+					
+					</p> --%>
 </div>
                     	
                     </div>
@@ -314,6 +317,13 @@ New Delhi-110001<br>
                     </aside>
             </div><!--End row -->
         </div><!--End container -->
+        <%
+				}
+				}
+		catch (Exception e) {
+			e.printStackTrace();
+					}
+					%>
         </div><!--End container_gray_bg -->
   
   

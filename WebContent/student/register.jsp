@@ -61,6 +61,28 @@ p {
 label {
 	font-size: 18px;
 }
+.box_style_1, a.box_style_1 {
+    background-color: white;
+     width: 1200px; 
+    margin: auto;
+    margin-left: -30px;
+    margin-top: 6px;
+    /* margin-left: -120px; */ 
+    -webkit-box-shadow: 0px 3px 0px 0px #f0f2f4;
+    -moz-box-shadow: 0px 3px 0px 0px #f0f2f4;
+    box-shadow: 0px 3px 0px 0px #f0f2f4;
+    margin-bottom: 30px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    display: block;
+    padding: 30px 30px 10px 30px;
+    color: #444;
+    transition: all 500ms ease-in-out;
+    -webkit-transition: all 500ms ease-in-out;
+    -moz-transition: all 500ms ease-in-out;
+    -o-transition: all 500ms ease-in-out;
+}
 </style>
 
 
@@ -204,7 +226,7 @@ label {
 								<i class="pe-7s-user"></i>
 								<h3 style="text-decoration: underline;">Personal details</h3>
 							</div>
-							<hr style="width: 107%; margin-left: -30px;">
+							<hr style="width: 105.3%; margin-left: -30px;">
 
 							<div class="wrapper_indent">
 								<div class="row">
@@ -448,7 +470,7 @@ label {
 
 							Third session start
 							<fieldset id="third" Style="display: none;"> -->
-							<hr style="width: 107%; margin-left: -30px;">
+							<hr style="width: 105.3%; margin-left: -30px;">
 							<div class="indent_title_in">
 								<i class="pe-7s-study"></i>
 								<h3 style="text-decoration: underline;">Education Detail</h3>
@@ -505,7 +527,7 @@ label {
 							<!-- End row -->
 
 
-							<hr style="width: 107%; margin-left: -30px;">
+							<hr style="width: 105.3%; margin-left: -30px;">
 							<div class="indent_title_in">
 								<i class="pe-7s-user"></i>
 								<h3 style="text-decoration: underline;">College/Course</h3>
@@ -573,7 +595,7 @@ label {
 							<!-- 		</fieldset>
 							<fieldset id="four" Style="display: none;">
  -->
-							<hr style="width: 107%; margin-left: -30px;">
+							<hr style="width: 105.3%; margin-left: -30px;">
 							<div class="indent_title_in">
 
 								<i class="pe-7s-users"></i>
@@ -650,7 +672,7 @@ label {
 							</div>
 							<div class="wrapper_indent">
 								<div class="row">
-									<hr style="width: 113%; margin-left: -95px;">
+									<hr style="width: 110%; margin-left: -95px;">
 									<div class="form-group">
 										<input type="checkbox" name="policy_terms" id="policy_terms"
 											class="form-control styled required" value="Yes"><label>I

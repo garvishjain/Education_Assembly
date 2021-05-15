@@ -57,8 +57,9 @@
   padding: 10px 24px; /* Some padding */
   cursor: pointer; /* Pointer/hand icon */
   float: left; /* Float the buttons side by side */
-    
+    margin: 0px 0px 0px 1px;
 }
+.college_but{margin: 0px 0px 0px 0px;}
 .btn-group button:hover {
   background-color: black;
 }
@@ -103,9 +104,9 @@ a:hover {
  		<div class="row">
     
            <div class="col-md-9">
-           <div class="btn-group" >
-  			<a href="de.jsp"><button>Summary</button></a>
-  			 <a href="de_c.jsp"><button>Colleges</button></a>
+          <div class="btn-group" >
+  			<a href="bba.jsp" ><button>Summary</button></a>
+  			 <a href="bba_c.jsp" ><button>Colleges</button></a>
 
 		</div>
                 	<div class="box_style_1">

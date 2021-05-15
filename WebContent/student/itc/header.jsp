@@ -144,7 +144,9 @@ orange
 					<li>
 						
 					
-
+<li class="submenu"><a href="contacts.jsp">Conatct us</a></li>
+					<li class="submenu"><a href="visit-us.jsp">Plan a visit</a></li>
+					<li><a href="about.jsp">About us</a></li>
 					<li>
 						<%
 							if (name.equals("")) {
@@ -170,9 +172,7 @@ orange
 						}
 					%></li>
 
-					<li class="submenu"><a href="contacts.jsp">Conatct us</a></li>
-					<li class="submenu"><a href="visit-us.jsp">Plan a visit</a></li>
-					<li><a href="about.jsp">About us</a></li>
+					
 					<!-- <li><a href="#search" id="search_bt"><i
 							class=" icon-search"></i><span>Search</span></a></li>
 				</ul> -->

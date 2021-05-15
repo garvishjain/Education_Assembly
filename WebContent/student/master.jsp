@@ -105,8 +105,8 @@
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="course_list_desc">
                                     <%String str=rs.getString("course");
-		                                    int b=(myStr.lastIndexOf(' '));
-		                            	    String course=myStr.substring(0,b); 
+		                                    int b=(str.lastIndexOf(' '));
+		                            	    String course=str.substring(0,b); 
                                     %>
 
                                         <h3><strong><%=course%></strong></h3>
