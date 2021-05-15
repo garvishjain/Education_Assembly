@@ -1,4 +1,7 @@
+<%=
+	"<h2>"+request.getParameter("uid")+"</h2>"
 
+%>
 
 <!DOCTYPE html>
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
@@ -242,10 +245,7 @@
 					</div>
 					<!-- courses div -->
 					
-					<%=
-	"<h2>"+request.getParameter("uid")+"</h2>"
-
-%>
+					
 		
 						<div class="container_gray_b">
 							

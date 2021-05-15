@@ -148,12 +148,28 @@
                                 <div class="col-lg-2 col-md-2 col-sm-2">
                                     <div class="details_list_col">
                                         <div>
-                                            <a href="mca.jsp" class="button_outline">Details</a>
+                                            <a href="mca.jsp" class="button_outline"  >Details</a>
+                                           <%-- 
+                                           		<form action="college_detail.jsp" method="post" id='university_info'>
+					                             	 <input type="hidden" name="uid" value="<%=rs.getString("u_registration")%>">
+													<button type ="submit" class="button_outline" >Profile</button>
+												</form> 
+											--%>
+                                            <!-- style="position: absolute;
+														    top: 553px;
+														    right: 500px;" -->
+                                             <%-- <form action="mca.jsp" method="post" id='university_info'>
+					                             	 <input type="hidden" name="uid" value=" <%=rs.getString("u_registration")%>">
+													<button type ="submit" class="button_outline" >Profile</button>
+									     </form> --%>
+                                             <!-- style="position: absolute;
+														    top: 553px;
+														    right: 500px;"-->
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div><!--End strip -->
+                        </div>
                       
                     
                     <%
@@ -164,6 +180,7 @@
 					}
 					%>
 				</div><!--End col-md-9 -->
+				<br>
                      <!--    <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
                             <div class="row">
                                 <div class="col-lg-4 col-md-4 col-sm-4">
@@ -219,7 +236,7 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>End strip -->
+                        </div>
                         
                        <!--  <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
                             <div class="row">
@@ -334,50 +351,49 @@
                             </div>
                         </div>End strip -->
                    
-					 
-                    <br>
-                    <aside class="col-md-3">
-                  <!--   <div class="banner">
+					 <!--<div class="banner">
                         <i class=" iconcustom-school"></i>
                         <h3>Take a campus tour</h3>
                         <p>
                             Zril causae ancillae sit ea. Dicam veritus mediocritatem sea ex, nec id agam eius.
                         </p>
                         <a href="tour.html" class="banner_bt">Start tour</a>
-                    </div> -->
-                    <h4><strong>How to apply</strong></h4>
-                    <p>Step : College Selection<br>
-							Step : Filling the Application Form<br>
-							Step : Appearing for Entrance Exam<br>
-							Step : Taking Part in Counselling<br>
-							Step : Final Allocation of Seats<br>
-							Step : Final Admission</p>
-                   
-                    <div class="box_side"><h5>By Phone</h5> <i class="icon-phone"></i>
-                    <p> + 000-1234567<br><small>Monday to Friday 9.00am - 5.00pm</small></p>
-                    </div>
-             
-                    <div class="box_side"><h5>By Postal Mail</h5> <i class="icon_pencil-edit"></i>
-                    <p><a href="#0"><strong>Download the application form</strong></a>,<br> and send it to this address:<br><br><em>Ground Floor,
+                    </div>  
+                    
+                    <div class="box_side"><h4>Plan a visit</h4> <i class="icon_pencil-edit"></i>
+                    <p>By filling out this form, you agree to allow your information to be shared with a consortium of colleges and universities  to contact you with more information. </p>
+                    <a href="#0" class="button small">Plan a visit</a><br><br>
+					</div>
+					
+				<div class="box_side"><h5>By Postal Mail</h5> <i class="icon_pencil-edit"></i>
+                    <p><a href="#0"><strong>Download the application form</strong></a>,<br> and send it to this address:<br><br><em>
+                    Ground Floor,
 Pragati Maidan Metro Station,
 Pragati Maidan,
 New Delhi-110001<br>
 </em></p>
-</div>
- <hr class="styled">
-                 <!--    <div class="box_side"><h4>Plan a visit</h4> <i class="icon_pencil-edit"></i>
-                    <p>By filling out this form, you agree to allow your information to be shared with a consortium of colleges and universities  to contact you with more information. </p>
-                    <a href="#0" class="button small">Plan a visit</a>
-</div> --><div class="box_side">
-                    <h5>Apply Online</h5> <i class="icon_desktop"></i>
-                    <p>By filling out this form, you agree to allow your information to be shared with a consortium of colleges and universities  to contact you with more information. </p>  
-                    <p><a href="register.jsp" class="button small">Apply online</a> </p>
-                    </div>     
-                    </div>
-                  
-                    
+</div> -->
+                 
+                    <br>
+                    <aside class="col-md-3">
+			                    <h4><strong>How to apply</strong></h4>
+			                    <p>Step : College Selection<br>
+										Step : Filling the Application Form<br>
+										Step : Appearing for Entrance Exam<br>
+										Step : Taking Part in Counselling<br>
+										Step : Final Allocation of Seats<br>
+										Step : Final Admission</p>
+			                    <div class="box_side"><h5>By Phone</h5> <i class="icon-phone"></i>
+			                    <p> + 000-1234567<br><small>Monday to Friday 9.00am - 5.00pm</small></p>
+			                    </div>
+								 <hr class="styled">
+			                    <div class="box_side">
+			                    <h5>Apply Online</h5> <i class="icon_desktop"></i>
+			                    <p>By filling out this form, you agree to allow your information to be shared with a consortium of colleges and universities  to contact you with more information. </p>  
+			                    <p><a href="register.jsp" class="button small">Apply online</a> </p>
+			                    </div>     
+			                    </div>
                     </aside>
-                    
                 </div><!--End row -->
             </div><!--End container -->
         </div><!--End container_gray_bg -->

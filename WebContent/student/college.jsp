@@ -150,9 +150,9 @@ button.button_outline:hover, .button_outline:hover{
 									<form action="college_detail.jsp" method="post" id='university_info'>
 					                             	 <input type="hidden" name="uid" value="<%=rs.getString("u_registration")%>">
 													<button type ="submit" class="button_outline" style="position: absolute;
-    top: 553px;
-    right: 500px;">Profile</button>
-													</form>
+														    top: 553px;
+														    right: 500px;">Profile</button>
+									</form>
 									
 				     			</div>
 				     			<%

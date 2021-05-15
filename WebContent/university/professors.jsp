@@ -97,7 +97,7 @@ System.out.print("<p>bufferSize: " + out.getBufferSize() + " remaining: " + out.
 									String avatar=records.getString("fname").charAt(0) +""+ records.getString("lname").charAt(0);
 								%>
 								<tr>
-                                        <td class="w60">
+                                      <td class="w60">
                                             <div class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">
                                                 <span><%=avatar %></span>
                                             </div>
