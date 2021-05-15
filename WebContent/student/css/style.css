@@ -666,7 +666,7 @@ video {
 /*-------- 2.2 Accademics/single course page--------*/
 .box_style_1, a.box_style_1 {
     background-color: white;
-    width: 1200px;
+    /* width: 1200px; */
     margin: auto;
     margin-left: -30px;
     margin-top: 6px;

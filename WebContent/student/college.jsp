@@ -140,7 +140,7 @@ button.button_outline:hover, .button_outline:hover{
 					                                    <li><a href="<%=rs.getString("fb_link") %>"><i class="icon-facebook"></i></a></li>
 					                                    <li><a href="<%=rs.getString("twitter_link") %> "><i class="icon-twitter"></i></a></li>
 					                                    <li><a href="<%=rs.getString("google_link") %>"><i class="icon-google"></i></a></li>
-					                                    <li><a href="<%=rs.getString("email_link") %>"><i class="icon-email"></i></a></li>
+					                                    <li><a href="<%=rs.getString("mail_link") %>"><i class="icon-email"></i></a></li>
 													</ul> <hr>
 													
 					                             
