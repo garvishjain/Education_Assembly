@@ -664,13 +664,13 @@ video {
 	color:#777;
 }
 /*-------- 2.2 Accademics/single course page--------*/
-.box_style_1, a.box_style_1 {
+/* .box_style_1, a.box_style_1 {
     background-color: white;
     width: 1200px;
     margin: auto;
     margin-left: -30px;
     margin-top: 6px;
-    /* margin-left: -120px; */
+    margin-left: -120px;
     -webkit-box-shadow: 0px 3px 0px 0px #f0f2f4;
     -moz-box-shadow: 0px 3px 0px 0px #f0f2f4;
     box-shadow: 0px 3px 0px 0px #f0f2f4;
@@ -685,7 +685,25 @@ video {
     -webkit-transition: all 500ms ease-in-out;
     -moz-transition: all 500ms ease-in-out;
     -o-transition: all 500ms ease-in-out;
+} */
+.box_style_1, a.box_style_1{
+	background-color:#fff;
+	-webkit-box-shadow: 0px 3px 0px 0px #f0f2f4; 
+	-moz-box-shadow: 0px 3px 0px 0px #f0f2f4; 
+	box-shadow: 0px 3px 0px 0px #f0f2f4;
+	margin-bottom:30px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	display:block;
+	padding:30px 30px 10px 30px;
+	color:#444;
+	transition: all 500ms ease-in-out; 
+	-webkit-transition: all 500ms ease-in-out; 
+	-moz-transition: all 500ms ease-in-out; 
+	-o-transition: all 500ms ease-in-out; 
 }
+
 a.box_style_1{cursor:pointer;}
 a.box_style_1:hover{
 	transform: translate(0, -10px); 
@@ -1211,7 +1229,7 @@ ul.list_4 li:before {
 	text-align:center;
 	cursor:auto;
 	    width: 100%;
-	        height: 605px;
+	   /*      height: 605px; */
 }
 ul.social_team {
 	list-style:none;

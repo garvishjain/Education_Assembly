@@ -145,7 +145,7 @@ button.button_outline:hover, .button_outline:hover{
 					                             	 <input type="hidden" name="uid" value="<%=rs.getString("u_registration")%>">
 													<button type ="submit" class="button_outline" style="position: absolute;
     top: 553px;
-    right: 500px;">Profile</button>
+    right: 475px;">Profile</button>
 													</form>
 									
 				     			</div>

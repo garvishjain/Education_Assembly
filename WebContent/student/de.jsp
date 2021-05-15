@@ -118,7 +118,7 @@ a:hover {
 				<p></p>
 			</div>
             	<div class="wrapper_indent">
-            	<p>
+            	<p class="about_diploma">
             	Diploma in Engineering is a professional course which is of a total of 3 years duration. The candidates who have passed class 10th or 12th can apply for admission to Diploma in Engineering. Sometimes, the candidates cannot get admission in BE or B. Tech directly. Therefore, they apply for a degree in Diploma in Engineering which can help them get admission directly to the second year of Engineering. After completing a degree in Diploma, the candidates can go for B.Tech which collectively takes them 6 years to complete their engineering (3 years diploma + 3 years B. Tech).
             	
             	</p>                      <!--  <div class="row">

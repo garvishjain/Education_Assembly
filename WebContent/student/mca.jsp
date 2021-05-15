@@ -57,6 +57,8 @@
 .btn-group button:hover {
   background-color: black;
 }
+.bbb{margin: 0px 0px 0px 96px;
+    float: right;}
 	</style>
 </head>
 
@@ -91,9 +93,9 @@
     
            <div class="col-md-9">
            <div class="btn-group" >
-  			<a href="mca.jsp"><button>Summary</button></a>
-  			 <a href="mca.jsp"><button>Colleges</button></a>
-
+  			 <a href="mca.jsp"><button>College</button></a>
+  			 <a href="mca.jsp" class="bbb"><button>Summary</button></a>
+			
 		</div>
                 	<div class="box_style_1">
                 	
@@ -268,6 +270,7 @@
                     
                     </div>
            </div>
+           <br><br><br>
               <aside class="col-md-3">
                   <!--   <div class="banner">
                         <i class=" iconcustom-school"></i>

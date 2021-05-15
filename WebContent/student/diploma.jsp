@@ -100,42 +100,16 @@
                                          <h4><%=rs.getString("degree_name") %>
                                         <h4>Course Duration - <%=rs.getString("duration") %></h4>
                                         <h4>Eligibility - <%=rs.getString("eligibility") %></h4>
-                                       <!--  <p>
-
-												A diploma course in engineering involves classes on fundamental engineering concepts. It is a professional course, planned in such a way that students may still take up jobs in the field of engineering once they earn their diplomas.                                        
-												</p> -->
-                                        <ul class="add_info">
-                                            <!--  <li>
-                                            <div class="tooltip_styled tooltip-effect-4">
-                                                <span class="tooltip-item"><i class="pe-7s-compass"></i></span>
-                                                <div class="tooltip-content">
-                                                    Dedicated Study Plan
-                                                </div>
-                                            </div>
-                                            </li> -->
-                                           <!--  <li>
-                                            <div class="tooltip_styled tooltip-effect-4">
-                                                <span class="tooltip-item"><i class="pe-7s-hourglass"></i></span>
-                                                <div class="tooltip-content">
-                                                   Admission Date 10/05/2021 To 10/07/2021
-                                                </div>
-                                            </div>
-                                            </li> -->
-                                           <!--  <li>
-                                            <div class="tooltip_styled tooltip-effect-4">
-                                                <span class="tooltip-item"><i class="pe-7s-medal"></i></span>
-                                                <div class="tooltip-content">
-                                                    Most Requested Course
-                                                </div>
-                                            </div>
-                                            </li> -->
-                                        </ul>
                                     </div>
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-2">
                                     <div class="details_list_col">
                                         <div>
                                             <a href="de.jsp" class="button_outline">Details</a>
+                                            <%-- <form action="college_detail.jsp" method="post" id='university_info'>
+					                             	 <input type="hidden" name="uid" value="<%=rs.getString("u_registration")%>">
+													<button type ="submit" >Profile</button>
+													</form> --%>
                                         </div>
                                     </div>
                                 </div>
