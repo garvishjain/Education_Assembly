@@ -84,7 +84,7 @@ public class GetName
 			
 			stmt.setInt(1, id); 
 			rs=stmt.executeQuery();
-			System.out.println(sql);
+			System.out.println(sql);    
 			
 			
 			if(rs.next())
