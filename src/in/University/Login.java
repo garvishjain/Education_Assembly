@@ -70,29 +70,20 @@ public class Login extends HttpServlet {
 				byte[] bytepass = pass.getBytes();
 				String Hashed = getHash(bytepass, "SHA-256");
 
-				String sql = "Select username,password from university_register where username ='" + uname + "' and password= '"
+				String sql = "Select * from university_register where username ='" + uname + "' and password= '"
 						+ Hashed + "' LIMIT 1";
 
 				ResultSet rs = stmt.executeQuery(sql);
 
 				if (rs.next()) 
 				{
-					String password = rs.getString(2);
-					if (Hashed.equals(password)) 
-					{
-						request.setAttribute("status",true);
-						response.sendRedirect("university/set_session.jsp?status=true");
-					} 
-					else 
-					{
-						request.setAttribute("status",false);
-						response.sendRedirect("university/login.jsp");
-					}
+						response.sendRedirect("university/set_session.jsp?status=true&uid="+rs.getInt(1));
 				} 
-				else {
-					out.println("No records");
-					/*request.setAttribute("status", "Failed to sign up...! please try again");
-					response.sendRedirect("university/login.jsp");*/
+				else 
+				{
+					out.print("<script>alert('Invalid Username/Password!!!')</script>");
+					response.sendRedirect("university/login.jsp");
+					
 				}
 			} 
 			catch (Exception e) 
@@ -100,16 +91,7 @@ public class Login extends HttpServlet {
 				System.out.println(e);
 			}
 			
-			finally
-			{
-				try {
-					con.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-
-			}
+			
 		}
 }
 

@@ -1,22 +1,48 @@
 <!-- Import package -->
+<%@page import="com.sun.xml.internal.ws.server.sei.EndpointResponseMessageBuilder"%>
+<%@page import="java.io.File"%>
+<%@page import="in.University.professors"%>
 <%@page import="in.common.GetConnection"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="in.University.GetProfessorsDB"%>
 <%@ include file="inc/header.jsp" %>  
 <%@ include file="inc/stdimport.jsp" %>  
 
-<h1>Hello</h1>
 <%
-ArrayList<GetProfessorsDB> records= new ArrayList();
+
+int ucid=0;
+String isCollege="";
+String isUniversity="";
+if(session.getAttribute("uid") != null)
+{	
+	String id=(String)session.getAttribute("uid");
+	 ucid = Integer.parseInt(id);
+	 isCollege="N";
+	 isUniversity="Y";
+}
+else if (session.getAttribute("cid") != null)
+{
+	String id=(String)session.getAttribute("cid");
+	 ucid = Integer.parseInt(id);
+	 isCollege="Y";
+	 isUniversity="N";
+}
+
 GetConnection getConObj=new GetConnection();
 Connection con=getConObj.getCon();
 Statement stmt=con.createStatement();
+ResultSet records=null;
 try
-{
-	GetProfessorsDB gpd= new GetProfessorsDB();
+{	
+	String selectwhichID= isUniversity.equals("Y")? "university_professor.fk_university_id="+ucid :  "university_professor.collegeid="+ucid;
+			
+	String sql="select position.position as position, department_name.Details as dept,university_professor.* from  university_professor,position,"
+			+ "department_name where university_professor.department=department_name.pk_id  AND "
+			+ "university_professor.iscollege LIKE '"+isCollege+"' and university_professor.isuniversity LIKE'"+isUniversity+"' and "+selectwhichID ;
+	
+	records = stmt.executeQuery(sql);
 
-	records =gpd.getData(111, "Y"); // Here you have to pass University Id or College ID, pick it from the session when a user login
-
+	
 	
 }
 
@@ -27,6 +53,12 @@ catch(Exception e)
 }
 
 
+professors pf=new professors();
+String des=pf.getImageDesination();
+String reponsePath = new File(des).getPath() + File.separatorChar;
+
+System.out.println("from JSp \n"+reponsePath);
+System.out.print("<p>bufferSize: " + out.getBufferSize() + " remaining: " + out.getRemaining() + " used: " + (out.getBufferSize() - out.getRemaining()) + " autoFlush: " + out.isAutoFlush() + "</p><br>");
 %>
     <!-- Start project content area -->
 
@@ -60,9 +92,9 @@ catch(Exception e)
                                 <tbody>
                                 <%
                                 
-                                for(GetProfessorsDB data : records)
+                                while(records.next())
 								{ 
-									String avatar=data.getFirstName().charAt(0) +""+ data.getLastName().charAt(0);
+									String avatar=records.getString("fname").charAt(0) +""+ records.getString("lname").charAt(0);
 								%>
 								<tr>
                                         <td class="w60">
@@ -70,13 +102,13 @@ catch(Exception e)
                                                 <span><%=avatar %></span>
                                             </div>
                                         </td>
-                                        <td><div class="font-15"><%=data.getFullName() %></div></td>
-                                        <td><span><%=data.getPhone() %></span></td>
-                                        <td><span><%=data.getGender() %></span></td>
-                                        <td><span class="text-muted"><%=data.getDepartment() %></span></td>
+                                        <td><div class="font-15"><%=records.getString("fname") %> <%=records.getString("lname") %></div></td>
+                                        <td><span><%=records.getLong("phone") %></span></td>
+                                        <td><span><%=records.getString("gender") %></span></td>
+                                        <td><span class="text-muted"><%=records.getString("dept") %></span></td>
                                         <td>
                                         <%
-                                        	if(data.getPosition().equalsIgnoreCase("Full Time")){
+                                        	if(records.getString("position").equalsIgnoreCase("Full Time")){
                                         %>
                                         <span class="tag tag-success">Full-time</span>
                                         <%} 
@@ -94,40 +126,7 @@ catch(Exception e)
                                     </tr>
 								<%}
                                 %>
-						       <tr>
-                                        <td class="w60">
-                                            <div class="avatar avatar-pink" data-toggle="tooltip" data-placement="top" title="" data-original-title="Avatar Name">
-                                                <span>GS</span>
-                                            </div>
-                                        </td>
-                                        <td><div class="font-15">Gladys J Smith</div></td>
-                                        <td><span>(417) 646-8377</span></td>
-                                        <td><span class="text-muted">Computer</span></td>
-                                        <td>BCA, MCA</td>
-                                        <td><strong>04 Jan, 2019</strong></td>
-                                        <td><span class="tag tag-success">Full-time</span></td>
-                                        <td>
-                                            <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                            <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                            <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td class="w60">
-                                            <img class="avatar" src="../assets/images/xs/avatar1.jpg" alt="">
-                                        </td>
-                                        <td><div class="font-15">Alan Johnson</div></td>
-                                        <td><span>(417) 646-8377</span></td>
-                                        <td><span class="text-muted">Mechanical</span></td>
-                                        <td>MCA</td>
-                                        <td><strong>04 Jan, 2019</strong></td>
-                                        <td><span class="tag tag-warning">Part-time</span></td>
-                                        <td>
-                                            <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                            <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                            <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                        </td>
-                                    </tr>
+						       
                                 </tbody>
                             </table>
                         </div>
@@ -135,49 +134,31 @@ catch(Exception e)
                     <div class="tab-pane" id="pro-grid">
                         <div class="row">
                              <%
-                                for(GetProfessorsDB data : records)
+                             	records.beforeFirst();
+                                while(records.next())
 								{ 
-									String avatar=data.getFirstName().charAt(0) +""+ data.getLastName().charAt(0);
+									String avatar=records.getString("fname").charAt(0) +""+ records.getString("lname").charAt(0);
 								%>
                             <div class="col-xl-3 col-lg-4 col-md-6">
+                            
                                 <div class="card">
                                     <div class="card-body text-center ribbon">
                                         <div class="ribbon-box orange" data-toggle="tooltip" title="Permanent"><i class="fa fa-star"></i></div>
-                                        <img class="card-profile-img" alt="<%= avatar %>">
-                                        <h5 class="mb-0"><%=data.getFullName() %></h5>
-                                        <span><%=data.getDepartment() %></span>
-                                        <div class="text-muted"><%=data.getPhone() %></div>
+                                        <img class="card-profile-img" src="img/<%=records.getString("image") %>" alt="<%=records.getString("fname") %> <%=records.getString("lname") %>">
+                                        <h5 class="mb-0"><%=records.getString("fname") %> <%=records.getString("lname") %></h5>
+                                        <span><%=records.getString("dept") %></span>
+                                        <div class="text-muted"><%=records.getLong("phone") %></div>
                                         <button class="btn btn-primary btn-sm">Read More</button>
                                     </div>
                                 </div>
                             </div>
-                            <%}
+                            
+                            <%
+                            
+								}
                                 %>
-                                <div class="col-xl-3 col-lg-4 col-md-6">
-                                <div class="card">
-                                    <div class="card-body text-center ribbon">
-                                        <div class="ribbon-box orange" data-toggle="tooltip" title="Permanent"><i class="fa fa-star"></i></div>
-                                        <img class="card-profile-img" src="../assets/images/sm/avatar2.jpg" alt="">
-                                        <h5 class="mb-0">Ken Smith</h5>
-                                        <span>Science</span>
-                                        <div class="text-muted">+ (916) 369-7180</div>
-                                        <p class="mb-4 mt-3">449 Thompson St, Conway, SC, 29527</p>
-                                        <button class="btn btn-primary btn-sm">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-lg-4 col-md-6">
-                                <div class="card">
-                                    <div class="card-body text-center">
-                                        <img class="card-profile-img" src="../assets/images/sm/avatar3.jpg" alt="">
-                                        <h5 class="mb-0">Alan Johnson</h5>
-                                        <span>Music</span>
-                                        <div class="text-muted">+ (916) 369-7180</div>
-                                        <p class="mb-4 mt-3">5290 NE 50th Rd, Osceola, MO, 64776</p>
-                                        <button class="btn btn-primary btn-sm">Read More</button>
-                                    </div>
-                                </div>
-                            </div>
+                                
+                            
                         </div>
                     </div>
                     <div class="tab-pane" id="pro-add">
@@ -192,6 +173,7 @@ catch(Exception e)
                                         </div>
                                     </div>
                                     <form action="../professors" method="post" enctype="multipart/form-data" >
+                                    <input type="hidden" name="uid" value="<%=ucid%>">
                                     <div class="card-body">
                                         <div class="row clearfix">
                                             <div class="col-md-6 col-sm-12">
@@ -209,15 +191,15 @@ catch(Exception e)
                                             <div class="col-md-3 col-sm-12">
                                                 <div class="form-group">
                                                     <label>Date of Birth</label>
-                                                    <input data-provide="datepicker" data-date-autoclose="true" name="dob" class="form-control" placeholder="Date of Birth">
+                                                    <input data-provide="datepicker" type="date" data-date-autoclose="true" name="dob" class="form-control" placeholder="Date of Birth">
                                                 </div>
                                             </div>
                                             <div class="col-md-3 col-sm-12">
                                                 <label>Gender</label>
                                                 <select name="gender" class="form-control show-tick">
                                                     <option value="">-- Gender --</option>
-                                                    <option value="10">Male</option>
-                                                    <option value="20">Female</option>
+                                                    <option value="Male">Male</option>
+                                                    <option value="Female">Female</option>
                                                 </select>
                                             </div>
                                             <div class="col-md-3 col-sm-12">
@@ -232,7 +214,7 @@ catch(Exception e)
 	            											ResultSet rs = stmt.executeQuery(query);
 	            											while (rs.next()) {
                                                     %>
-                                                    	<option><%=rs.getString("Details") %></option>
+                                                    	<option value="<%=rs.getInt("pk_id") %>"><%=rs.getString("Details") %></option>
                                                    	<%
 	            										}
 	                                                    }catch(Exception e)
@@ -255,7 +237,7 @@ catch(Exception e)
 	            											ResultSet rs = stmt.executeQuery(query);
 	            											while (rs.next()) {
                                                     %>
-                                                    	<option><%=rs.getString("position") %></option>
+                                                    	<option value="<%=rs.getInt("pk_id") %>" > <%=rs.getString("position") %></option>
                                                     <%
 	            											}	
 	                                                    }	
@@ -299,6 +281,7 @@ catch(Exception e)
                 </div>
             </div>
         </div>
+        
         <%@ include file="inc/footer.jsp" %> 
 
 		<%@ include file="inc/incjs.jsp" %> 
