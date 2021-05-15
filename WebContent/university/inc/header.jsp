@@ -5,7 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="icon" href="favicon.ico" type="image/x-icon"/>
+
+
 <%
+
+	if(session == null || session.getAttribute("uniSession") == null)
+	{
+		session.invalidate();
+		response.sendRedirect("login.jsp");
+	} 
+
+	else if(session.getAttribute("uniSession")!=null && session.getAttribute("uniSession").equals("true"))
+	{
+		System.out.println(session.getAttribute("sessionValue"));
+	}
+
 	StringBuffer url = request.getRequestURL();
 	int start = url.lastIndexOf("/");
 	int end = url.lastIndexOf(".jsp");
@@ -50,11 +64,12 @@
                     <a href="javascript:void(0)" class="nav-link icon menu_toggle"><i class="fe fe-align-center"></i></a>
                     <a href="page-search.html" class="nav-link icon"><i class="fe fe-search" data-toggle="tooltip" data-placement="right" title="Search..."></i></a>
                     <a href="javascript:void(0)" class="nav-link icon settingbar"><i class="fe fe-settings"></i></a>
+                     <a href="logoutUniversity.jsp" class="nav-link icon settingbar"><i class="fe fe-power" title="Log Out"></i></a>    
+                    
+                    
                 </div>
             </div>
-            <div class="hright">
-                <a href="login.jsp" class="nav-link icon settingbar"><i class="fe fe-power" title="Log Out"></i></a>                
-            </div>
+            
         </div>
     </div>
     <!-- Start Rightbar setting panel -->

@@ -4,10 +4,8 @@
 <%@ include file="inc/header.jsp" %>  
 
 <%
-	if(session.getAttribute("sessionValue")!=null)
-	{
-		System.out.println(session.getAttribute("sessionValue"));
-	}
+	 
+	
 	
 %>
 

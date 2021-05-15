@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 
 import in.common.GetConnection;
@@ -20,7 +21,7 @@ public class GetProfessorsDB
 	private long phone;
 	private String position;
 	private Connection con = null;
-	private PreparedStatement stmt = null;
+	private Statement stmt = null;
 	
 	public int getProfessorId() {
 		return professorId;
@@ -79,31 +80,30 @@ public class GetProfessorsDB
 	public ArrayList<GetProfessorsDB> getData(int collegeId,String isCollege)
 	
 	{
-		String sql="select department_name.Details as dept,professor.* from  professor,department,"
-				+ "department_name where department.fk_department_name=department_name.pk_id AND "
-				+ "professor.department=department.pk_id and professor.iscollege=? and professor.collegeid=?";
-	
-		System.out.println(sql);
-		
 		ArrayList<GetProfessorsDB> list = new ArrayList<>();
 		GetConnection getConObj = new GetConnection();
 		con = getConObj.getCon();
 		
+		String sql="select department_name.Details as dept,university_professor.* from  university_professor,university_department,"
+				+ "department_name where university_department.fk_department_name=department_name.pk_id AND "
+				+ "university_professor.department=university_department.pk_id and university_professor.iscollege='"+isCollege+"' and university_professor.collegeid="+collegeId;
+	
+		System.out.println(sql);
+		
+		
+		
 		if(con != null)
 		{
-<<<<<<< Updated upstream
-			String sql="select department.fk_department_name as dept,professor.* from professor,department where professor.department=department.pk_id and iscollege=? and collegeid=?";
-=======
 
->>>>>>> Stashed changes
 			try 
 			{
 				
-				stmt=con.prepareStatement(sql);
-				stmt.setString(1, "Y");
-				stmt.setInt(2, collegeId);
+				stmt=con.createStatement();
 				
-				ResultSet result = stmt.executeQuery();
+				
+				ResultSet result = stmt.executeQuery(sql);
+				result.last();
+				System.out.println(result.getRow());
 				
 				int i=0;
 				while(result.next())
@@ -120,6 +120,8 @@ public class GetProfessorsDB
 						data.setFullName(fname+" "+lname);
 						list.add(data);
 				}
+				
+				//System.out.print(list.size());
 			} 
 			catch (SQLException e) 
 			{
@@ -127,15 +129,7 @@ public class GetProfessorsDB
 				throw new RuntimeException ("");
 			}
 			
-			finally
-			{
-				try {
-					con.close();
-				} catch (SQLException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
-			}
+			
 		}
 		else
 		{
