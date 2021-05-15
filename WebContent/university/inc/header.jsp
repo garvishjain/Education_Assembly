@@ -9,8 +9,12 @@
 	StringBuffer url = request.getRequestURL();
 	int start = url.lastIndexOf("/");
 	int end = url.lastIndexOf(".jsp");
+	String pageName="::Education Assembly:: Index";
 	
-	String pageName="::Education Assembly:: "+ url.substring(start+1,end).toUpperCase();
+	if(start>0 && end > 0)
+	{
+		pageName="::Education Assembly:: "+ url.substring(start+1,end).toUpperCase();
+	}
 	
 	
 	

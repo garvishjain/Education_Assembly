@@ -21,9 +21,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 import javax.xml.bind.DatatypeConverter;
 
+import in.common.hashed;
 
-@WebServlet("/Register")
-public class Register extends HttpServlet {
+
+@WebServlet("/RegisterUniversity")
+public class RegisterUniversity extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Connection con;
 	private String hashing;
@@ -97,21 +99,22 @@ public class Register extends HttpServlet {
 				stmt.setString(5,Hashed);
 				
 				int res = stmt.executeUpdate();
+				hashed gethash = new hashed();
+				
 					if(res>0)
 					{
-						request.setAttribute("status","Successfully Registered");
-						response.sendRedirect("university/login.jsp");
+						
+						response.sendRedirect("university/register.jsp?status="+gethash.getHash("CBCtrue"));  
 					}
 					else
 					{
-						request.setAttribute("status", "Failed to sign up...! please try again");
-						response.sendRedirect("university/register.jsp");
-						}
+						response.sendRedirect("university/register.jsp?status="+gethash.getHash("CBCfalse")); 
+					}
 				
 				}
 			catch (SQLException e) 
 				{
-					e.printStackTrace();
+					response.getWriter().write(e.toString());
 				}
 			
 		}

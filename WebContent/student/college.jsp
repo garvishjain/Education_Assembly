@@ -53,6 +53,26 @@
 /*.field_fill{margin:8px 0px 0px 22px;float: left;} */
 .u_name{font-size: 16px;
     font-weight: bold;}
+    
+    button.button_outline, .button_outline{
+	padding:8px 30px;
+	display:inline-block;
+	background-color:transparent;
+	border:2px solid #00aeef;
+	color:#00aeef;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font-family: "proxima_novasemibold", Arial, Helvetica, sans-serif; 
+	cursor:pointer;
+	font-size:14px;
+	outline:none;
+	margin-bottom:20px;
+}
+button.button_outline:hover, .button_outline:hover{
+	border:2px solid #283842;
+	color:#283842;
+}
 </style>
 
 </head>
@@ -84,6 +104,7 @@
 			  <div class="row">
 			   
 				  <div class="row staff">
+				  
 				  <%
 			try{
 				String sql="Select  * from university\n" + 
@@ -102,7 +123,7 @@
 					            	<div class="box_style_1">
 					                			<p><img src="img/college/c_1.png" alt="" ></p>
 					                                <p class="u_name"><%=rs.getString("u_name").toUpperCase()%></p>
-					                                
+					                               
 					                                <div class="college_detail_fill">
 					                                <h5>Establish Year - <%=rs.getString("establish_year").toUpperCase()%></h5>
 					                                <h5>Reg. No. - <%=rs.getString("u_registration").toUpperCase()%></h5>
@@ -121,8 +142,17 @@
 					                                    <li><a href="<%=rs.getString("google_link") %>"><i class="icon-google"></i></a></li>
 					                                    <li><a href="<%=rs.getString("email_link") %>"><i class="icon-email"></i></a></li>
 													</ul> <hr>
-					                             <a href="college_detail.jsp" class="button_outline">Profile</a>           
+													
+					                             
+					                                     
 									</div>
+									
+									<form action="college_detail.jsp" method="post" id='university_info'>
+					                             	 <input type="hidden" name="uid" value="<%=rs.getString("u_registration")%>">
+													<button type ="submit" class="button_outline" style="position: absolute;
+    top: 553px;
+    right: 500px;">Profile</button>
+													</form>
 									
 				     			</div>
 				     			<%
@@ -132,6 +162,7 @@
 			e.printStackTrace();
 					}
 					%>
+					
 					  </div>
 					   
 							<!-- <div class="col-md-4">

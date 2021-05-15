@@ -6,10 +6,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
-import javax.sql.DataSource;
-
 import in.common.GetConnection;
 
 public class GetProfessorsDB 
@@ -83,6 +79,11 @@ public class GetProfessorsDB
 	public ArrayList<GetProfessorsDB> getData(int collegeId,String isCollege)
 	
 	{
+		String sql="select department_name.Details as dept,professor.* from  professor,department,"
+				+ "department_name where department.fk_department_name=department_name.pk_id AND "
+				+ "professor.department=department.pk_id and professor.iscollege=? and professor.collegeid=?";
+	
+		System.out.println(sql);
 		
 		ArrayList<GetProfessorsDB> list = new ArrayList<>();
 		GetConnection getConObj = new GetConnection();
@@ -90,7 +91,11 @@ public class GetProfessorsDB
 		
 		if(con != null)
 		{
+<<<<<<< Updated upstream
 			String sql="select department.fk_department_name as dept,professor.* from professor,department where professor.department=department.pk_id and iscollege=? and collegeid=?";
+=======
+
+>>>>>>> Stashed changes
 			try 
 			{
 				
@@ -118,8 +123,18 @@ public class GetProfessorsDB
 			} 
 			catch (SQLException e) 
 			{
-				System.out.println("SQL EXCEPTION");
-				throw new RuntimeException (e.getMessage());
+				System.out.println(e);
+				throw new RuntimeException ("");
+			}
+			
+			finally
+			{
+				try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		}
 		else

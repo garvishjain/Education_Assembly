@@ -107,14 +107,7 @@
 		</div>
 	</div>
     
-<!-- Search modal -->   
-<div id="search">
-    <button type="button" class="close">×</button>
-    <form>
-        <input type="search" value="" placeholder="type keyword(s) here" >
-        <button type="submit" class="button">Search</button>
-    </form>
-</div>
+
 
 <script type="text/javascript">
 $(document).ready(function(){

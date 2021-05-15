@@ -9,10 +9,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-import javax.jws.WebService;
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -20,8 +16,10 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.sql.DataSource;
 import javax.xml.bind.DatatypeConverter;
+
+import in.common.GetConnection;
+
 
 /**
  * Servlet implementation class Login
@@ -49,15 +47,14 @@ public class Login extends HttpServlet {
 
 	public void init(ServletConfig config) throws ServletException {
 		try {
-			Context cxt = new InitialContext();
-			DataSource ds = (DataSource) cxt.lookup("java:comp/env/myCon");
-			con = ds.getConnection();
-			stmt = con.createStatement();
+			GetConnection gc = new GetConnection();
+			 con= gc.getCon();
+			 stmt = con.createStatement();
 
-		} catch (NamingException e) {
-			e.printStackTrace();
-		} catch (SQLException e) {
-			e.printStackTrace();
+		} 
+		catch(Exception e)
+		{
+			System.out.println(e);
 		}
 	}
 
@@ -74,27 +71,44 @@ public class Login extends HttpServlet {
 				String Hashed = getHash(bytepass, "SHA-256");
 
 				String sql = "Select username,password from university_register where username ='" + uname + "' and password= '"
-						+ pass + "' LIMIT 1";
+						+ Hashed + "' LIMIT 1";
 
 				ResultSet rs = stmt.executeQuery(sql);
 
-				if (rs.next()) {
+				if (rs.next()) 
+				{
 					String password = rs.getString(2);
-					if (pass.equals(password)) {
-						request.setAttribute("status", "succesfull login");
-						response.sendRedirect("university/university-register.jsp");
-						//rd.forward(request, response);
-					} else {
-						request.setAttribute("status", "Failed to sign up...! please try again");
+					if (Hashed.equals(password)) 
+					{
+						request.setAttribute("status",true);
+						response.sendRedirect("university/set_session.jsp?status=true");
+					} 
+					else 
+					{
+						request.setAttribute("status",false);
 						response.sendRedirect("university/login.jsp");
-						//rd.forward(request, response);
 					}
-				} else {
-					request.setAttribute("status", "Failed to sign up...! please try again");
-					response.sendRedirect("university/login.jsp");
+				} 
+				else {
+					out.println("No records");
+					/*request.setAttribute("status", "Failed to sign up...! please try again");
+					response.sendRedirect("university/login.jsp");*/
 				}
-			} catch (Exception e) {
-				// TODO: handle exception
+			} 
+			catch (Exception e) 
+			{
+				System.out.println(e);
+			}
+			
+			finally
+			{
+				try {
+					con.close();
+				} catch (SQLException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+
 			}
 		}
 }
