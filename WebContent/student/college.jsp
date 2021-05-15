@@ -119,11 +119,9 @@ button.button_outline:hover, .button_outline:hover{
 				while (rs.next()) {
 					%>
 								<div class="col-md-4">
-								
 					            	<div class="box_style_1">
 					                			<p><img src="img/college/c_1.png" alt="" ></p>
 					                                <p class="u_name"><%=rs.getString("u_name").toUpperCase()%></p>
-					                               
 					                                <div class="college_detail_fill">
 					                                <h5>Establish Year - <%=rs.getString("establish_year").toUpperCase()%></h5>
 					                                <h5>Reg. No. - <%=rs.getString("u_registration").toUpperCase()%></h5>
@@ -136,15 +134,11 @@ button.button_outline:hover, .button_outline:hover{
 					                                <%--   <h5 class="field_fill">Courses - <%=rs.getString("course")%></h5> --%>
 					                                 </div>
 					                                <ul class="social_team">
-					                               
 					                                    <li><a href="<%=rs.getString("fb_link") %>"><i class="icon-facebook"></i></a></li>
 					                                    <li><a href="<%=rs.getString("twitter_link") %> "><i class="icon-twitter"></i></a></li>
 					                                    <li><a href="<%=rs.getString("google_link") %>"><i class="icon-google"></i></a></li>
-					                                    <li><a href="<%=rs.getString("email_link") %>"><i class="icon-email"></i></a></li>
+					                                    <li><a href="<%=rs.getString("mail_link") %>"><i class="icon-email"></i></a></li>
 													</ul> <hr>
-													
-					                             
-					                                     
 									</div>
 									
 									<form action="college_detail.jsp" method="post" id='university_info'>
@@ -156,108 +150,18 @@ button.button_outline:hover, .button_outline:hover{
 									
 				     			</div>
 				     			<%
-				}
-				}
-		catch (Exception e) {
-			e.printStackTrace();
-					}
-					%>
-					
+													}
+													}
+											catch (Exception e) {
+												e.printStackTrace();
+														}
+														%>
+														
 					  </div>
-					   
-							<!-- <div class="col-md-4">
-            	<div class="box_style_1">
-                	<p><img src="img/college/c_2.jpg" width="130px" height="130px;" alt="" ></p>
-                                <h4 style="font-size: 20px;">Prestige Institute Of Management Gwalior </h4>
-             					<p>Prestige Institute of Management, [PIMG] Gwalior was established in 1997 by Prestige Education Society, Indore. This institute has now become a premier institute of higher learning. This institute has a strong mentorship system which helps all the students go through the transformational process from a fresh graduate to be a confident and competent business professional.</p>
-                               
-                                <ul class="social_team">
-                                    <li><a href="#"><i class="icon-facebook"></i></a></li>
-                                    <li><a href="#"><i class="icon-twitter"></i></a></li>
-                                    <li><a href="#"><i class="icon-google"></i></a></li>
-                                    <li><a href="#"><i class="icon-email"></i></a></li>
-							</ul>    
-                            <hr>
-                             <a href="teacher_profile.html" class="button_outline">Profile</a>           
-                </div>
-            </div> -->
-            
-           <!--  <div class="col-md-4">
-            	<div class="box_style_1">
-                	<p><img src="img/college/c_3.png" width="130px" height="130px;" alt="" ></p>
-                                 <h4 style="font-size: 20px;">ITM University, Gwalior</h4>
-             					<p>ITM University, Gwalior is ranked 79th overall by Outlook 2020. ITM University has 13 institutions providing education in various disciplines. The university offers various degree, diploma and research courses in the stream of Engineering, Science, Agriculture, Law, Design and many more..</p>
-                                <ul class="social_team">
-                                    <li><a href="#"><i class="icon-facebook"></i></a></li>
-                                    <li><a href="#"><i class="icon-twitter"></i></a></li>
-                                    <li><a href="#"><i class="icon-google"></i></a></li>
-                                    <li><a href="#"><i class="icon-email"></i></a></li>
-							</ul>    
-                            <hr>
-                             <a href="teacher_profile.html" class="button_outline">Profile</a>           
-                </div>
-            </div> -->
-      <!--End row -->
-       <%--  <div class="row staff">
-			<div class="col-md-4">
-            	<div class="box_style_1">
-                	<p><img src="img/teacher_1_small.jpg" alt="" class="img-circle styled"></p>
-                                <h4>Patricia Doe <small>Biologist</small></h4>
-             					<p> When an unknown printer took a galley of type and <strong>scrambled it to make</strong> a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                                <ul class="social_team">
-                                    <li><a href="#"><i class="icon-facebook"></i></a></li>
-                                    <li><a href="#"><i class="icon-twitter"></i></a></li>
-                                    <li><a href="#"><i class="icon-google"></i></a></li>
-                                    <li><a href="#"><i class="icon-email"></i></a></li>
-							</ul>    
-                            <hr>
-                             <a href="teacher_profile.html" class="button_outline">Profile</a>           
-                </div>
-            </div>
-            
-            <div class="col-md-4">
-            	<div class="box_style_1">
-                	<p><img src="img/teacher_2_small.jpg" alt="" class="img-circle styled"></p>
-                                <h4>Megan Fox <small>Engineer</small></h4>
-             					<p> When an unknown printer took a galley of type and <strong>scrambled it to make</strong> a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
-                                <ul class="social_team">
-                                    <li><a href="#"><i class="icon-facebook"></i></a></li>
-                                    <li><a href="#"><i class="icon-twitter"></i></a></li>
-                                    <li><a href="#"><i class="icon-google"></i></a></li>
-                                    <li><a href="#"><i class="icon-email"></i></a></li>
-							</ul>    
-                            <hr>
-                             <a href="teacher_profile.html" class="button_outline">Profile</a>           
-                </div>
-            </div>
-              
-            <div class="col-md-4">
-            	<div class="box_style_1">
-                	<p><img src="img/teacher_3_small.jpg" alt="" class="img-circle styled"></p>
-                                 <h4>Silvia Doe <small>Biologist</small></h4>
-										<p><% String s=(String)rs.getString("course");
-										
-										%> </p>
-                                <ul class="social_team">
-                                    <li><a href="#"><i class="icon-facebook"></i></a></li>
-                                    <li><a href="#"><i class="icon-twitter"></i></a></li>
-                                    <li><a href="#"><i class="icon-google"></i></a></li>
-                                    <li><a href="#"><i class="icon-email"></i></a></li>
-							</ul>    
-                            <hr>
-                             <a href="teacher_profile.html" class="button_outline">Profile</a>           
-                </div>
-            </div>
-             
-        </div><!--End row --> --%>
-				
-				
 		<!--End container -->
 	</div>
-	 
 	<!--End container_gray_bg -->
 </div>
-
 </div>
 
 <div>
