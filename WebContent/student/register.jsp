@@ -10,7 +10,7 @@
 <meta name="description"
 	content="ATENA - College, University and campus template">
 <meta name="author" content="Ansonika">
-<title>College, University and campus template</title>
+<title>College, University and campus</title>
 
 <!-- Favicons-->
 <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
@@ -178,9 +178,7 @@ label {
 
 	<div class="sub_header bg_1">
 		<div id="intro_txt">
-			<h1>
-				Online <strong>Admission</strong>Form
-			</h1>
+			<h1>Admission Form </h1>
 		</div>
 	</div>
 	<!--End sub_header -->

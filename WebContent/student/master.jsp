@@ -92,7 +92,10 @@
                                     <div class="img_list">
                                         <a ><img src="img/course/m1.jpg" alt="">
                                         <div class="short_info">
-                                            <h3>Computer Application</h3>
+                                        		<%String myStr = rs.getString("course");
+		                                        	    int a=(myStr.lastIndexOf(' '));
+		                                        	    String s=myStr.substring(a++); %>
+                                            <h3><%=s%></h3>
                                         </div>
                                         </a>
                                     </div>
@@ -101,7 +104,11 @@
                                 </div>
                                 <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="course_list_desc">
-                                        <h3><strong><%= rs.getString("course")%></strong></h3>
+                                    <%String str=rs.getString("course");
+		                                    int b=(myStr.lastIndexOf(' '));
+		                            	    String course=myStr.substring(0,b); 
+                                    %>
+                                        <h3><strong><%=course%></strong></h3>
                                         <h4><%=rs.getString("degree_name") %></h4>
                                         <h4>Course Duration - <%=rs.getString("duration") %></h4>
                                         <h4>Eligibility - <%=rs.getString("eligibility") %></h4>

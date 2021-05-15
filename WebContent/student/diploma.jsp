@@ -87,7 +87,7 @@
                                     <div class="img_list">
                                         <a ><img src="img/course/d1.jpg" alt="">
                                         <div class="short_info">
-                                            <h3>Engineering</h3>
+                                            <h3 ><%=rs.getString("course").substring(11)%></h3>
                                         </div>
                                         </a>
                                     </div>
