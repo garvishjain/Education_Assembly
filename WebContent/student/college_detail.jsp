@@ -2,6 +2,12 @@
 	"<h2>"+request.getParameter("uid")+"</h2>"
 
 %> --%>
+<%   
+  
+String course=request.getParameter("uid");  
+  
+  
+%>  
 
 <!DOCTYPE html>
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
@@ -36,7 +42,6 @@
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js'></script>
 <script	src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js'></script>
-
 
 
 
@@ -216,6 +221,7 @@ img {
 		<fieldset id="first" style="display: block;">
 					<div class="first_head">
 								<h3>Madhav Institute of Technology & Science, Gwalior Overview</h3>
+								<h3><%=course %></h3> 
 								<img  src="img/changes/mits_2.jpg">
 								
 								<span  class="paragraph">
