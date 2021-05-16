@@ -33,7 +33,24 @@
       <script src="js/html5shiv.min.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
-
+<style type="text/css">
+a.button_outline, .button_outline {
+    padding: 8px 30px;
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid #00aeef;
+    color: #00aeef;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-family: "proxima_novasemibold", Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    font-size: 14px;
+    outline: none;
+    margin-bottom: 20px;
+    margin: 0px 5px 0px 0px;
+}
+</style>
 </head>
 
 <body>
@@ -136,7 +153,11 @@
                                 <div class="col-lg-2 col-md-2 col-sm-2">
                                     <div class="details_list_col">
                                         <div>
-                                            <a href="de.jsp" class="button_outline">Details</a>
+                                            <!-- <a href="de.jsp" class="button_outline">Details</a> -->
+                                             <form action="mca.jsp" method="post" id='university_info'>
+					                         <input type="hidden" name="uid"   value="<%=rs.getString("course")%>">
+										     <button type="submit"class="button_outline">Details</button>
+								       </form>
                                         </div>
                                     </div>
                                 </div>

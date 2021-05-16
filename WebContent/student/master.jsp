@@ -31,7 +31,31 @@
       <script src="js/html5shiv.min.js"></script>
       <script src="js/respond.min.js"></script>
     <![endif]-->
-
+<style type="text/css">
+a.button_outline, .button_outline {
+    padding: 8px 30px;
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid #00aeef;
+    color: #00aeef;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+    font-family: "proxima_novasemibold", Arial, Helvetica, sans-serif;
+    cursor: pointer;
+    font-size: 14px;
+    outline: none;
+    margin-bottom: 20px;
+    margin: -63px -155px 0px 31px;
+}
+.course_list_desc {
+    padding: 10px 20px 0 0;
+    border-right: 1px solid #ededed;
+    height: 220px;
+    line-height: 1.4;
+    width: 380px;
+}
+</style>
 </head>
 
 <body>

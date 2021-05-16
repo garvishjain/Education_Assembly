@@ -103,6 +103,15 @@ button.button_outline:hover, .button_outline:hover{
 	border:2px solid #283842;
 	color:#283842;
 }
+		.staff .box_style_1 {
+    text-align: center;
+    cursor: auto;
+    width: 100%;
+    margin: 0px 0px 0px -44px
+}
+
+.u_name{font-size: 16px;
+    font-weight: bold;}
 	</style>
 	
 	
@@ -130,13 +139,13 @@ button.button_outline:hover, .button_outline:hover{
 
     <!-- Header================================================== -->
      <%@ include file="itc/header.jsp" %>
-     
+     <%String course_name=request.getParameter("uid");  %>
      
        <%
 			try{
 				String sql=  "Select  * from course_details\n"+  
 								    " INNER JOIN course_highlights ON course_highlights.pk_id=course_details.fk_course_highlights\n"+
-								     "INNER JOIN course_name ON course_name.pk_id=course_highlights.fk_duration\n" ; 
+								     "INNER JOIN course_name ON course_name.pk_id=course_highlights.fk_duration where course='"+course_name+"'  " ; 
      ResultSet rs=stmt.executeQuery(sql);
 				while (rs.next()) {
 		%>
@@ -186,6 +195,7 @@ button.button_outline:hover, .button_outline:hover{
                       }
                       %>
 				<h4 class="h">About <%=course %></h4>
+				 
 				<p></p>
 			</div>
             	<div class="wrapper_indent">
@@ -343,18 +353,22 @@ button.button_outline:hover, .button_outline:hover{
                   											 <div class="row staff">
 				  <%
 			try{
-				String sql1="Select  * from university\n" + 
-						"INNER JOIN country ON country.pk_id=university.fk_country\n" + 
-						"INNER JOIN state ON state.pk_id=university.fk_state\n" + 
-						"INNER JOIN city ON city.pk_id=university.fk_city\n" + 
-						"INNER JOIN category ON category.pk_id=university.fk_category\n" + 
-						"INNER JOIN type ON type.pk_id=university.fk_type\n" + 
-						"INNER JOIN university_link ON university.fk_university_link = university_link.pk_id\n" +
-						"INNER JOIN university_contact ON university_contact.pk_id=university.fk_contact_number ";
+				String sql1=
+						"Select  * from university_courses\r\n" + 
+						"INNER JOIN course_name ON course_name.pk_id=university_courses.course_name \r\n" + 
+						"INNER JOIN university ON university.pk_id=university_courses.fk_university_id\r\n" + 
+						"INNER JOIN country ON country.pk_id=university.fk_country\r\n" + 
+						"INNER JOIN state ON state.pk_id=university.fk_state\r\n" + 
+						"INNER JOIN city ON city.pk_id=university.fk_city \r\n" + 
+						"INNER JOIN category ON category.pk_id=university.fk_category\r\n" + 
+						"INNER JOIN type ON type.pk_id=university.fk_type\r\n" + 
+						"INNER JOIN university_link ON university.fk_university_link = university_link.pk_id\r\n" + 
+						"INNER JOIN university_contact ON university_contact.pk_id=university.fk_contact_number where course = '"+course_name+"'   " ;
 				ResultSet rs1=stmt.executeQuery(sql1);
+				System.out.print(sql1);
 				while (rs1.next()) {
 					%>
-								<div class="col-md-4">
+								<div class="col-md-6">
 								
 					            	<div class="box_style_1">
 					                			<p><img src="img/college/c_1.png" alt="" ></p>
@@ -377,20 +391,18 @@ button.button_outline:hover, .button_outline:hover{
 					                                    <li><a href="<%=rs1.getString("twitter_link") %> "><i class="icon-twitter"></i></a></li>
 					                                    <li><a href="<%=rs1.getString("google_link") %>"><i class="icon-google"></i></a></li>
 					                                    <li><a href="<%=rs1.getString("mail_link") %>"><i class="icon-email"></i></a></li>
-													</ul> <hr>
-													
-					                             
-					                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
-									</div>
+													</ul> 
+									</div><hr>
 									
 									<%-- <form action="college_detail.jsp" method="post" id='university_info'>
 					                             	 <input type="hidden" name="uid" value="<%=rs.getString("u_registration")%>">
 													<button type ="submit" class="button_outline" style="position: absolute;
 														    top: 553px;
 														    right: 500px;">Profile</button>
-									</form>
-									 --%>
+									</form> --%>
+									
 				     			</div>
+				     			
 				     			<%
 				}
 				}
