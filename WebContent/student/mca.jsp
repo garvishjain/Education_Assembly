@@ -140,11 +140,23 @@
                    	<div class="indent_title_in">
                    	
                     <i class="pe-7s-news-paper"></i>
-                      <%String str=rs.getString("course");
-		                                    int b=(str.lastIndexOf(' '));
-		                            	    String course=str.substring(0,b); 
-                                    %>
-                      
+                      <%String diploma="Diploma Course";
+                      			String course=null;%>
+                      <%
+                      if(diploma.equals(rs.getString("degree_name")))
+                      {
+                      	course=rs.getString("course");
+		                    
+                        %>
+                     <%
+                     }
+                      else
+                      {
+                    	  String str=rs.getString("course");
+		                    int b=(str.lastIndexOf(' '));
+		                    course=str.substring(0,b); 
+                      }
+                      %>
 				<h4 class="h">About <%=course %></h4>
 				<p></p>
 			</div>

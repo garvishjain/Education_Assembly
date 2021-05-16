@@ -386,47 +386,23 @@
                     </div><!--End col-md-9 -->
                     <br>
                     <aside class="col-md-3">
-                  <!--   <div class="banner">
-                        <i class=" iconcustom-school"></i>
-                        <h3>Take a campus tour</h3>
-                        <p>
-                            Zril causae ancillae sit ea. Dicam veritus mediocritatem sea ex, nec id agam eius.
-                        </p>
-                        <a href="tour.html" class="banner_bt">Start tour</a>
-                    </div> -->
-                    <h4><strong>How to apply</strong></h4>
-                    <p>Step : College Selection<br>
-							Step : Filling the Application Form<br>
-							Step : Appearing for Entrance Exam<br>
-							Step : Taking Part in Counselling<br>
-							Step : Final Allocation of Seats<br>
-							Step : Final Admission</p>
-                   
-                    <div class="box_side"><h5>By Phone</h5> <i class="icon-phone"></i>
-                    <p> + 000-1234567<br><small>Monday to Friday 9.00am - 5.00pm</small></p>
-                    </div>
-             
-                    <div class="box_side"><h5>By Postal Mail</h5> <i class="icon_pencil-edit"></i>
-                    <p><a href="#0"><strong>Download the application form</strong></a>,<br> and send it to this address:<br><br><em>Ground Floor,
-													Pragati Maidan Metro Station,
-													Pragati Maidan,
-													New Delhi-110001<br>
-													</em></p>
-													</div>
-													 <hr class="styled">
-               <div class="box_side">
-                        <h5>Apply Online</h5>
-                        <i class="icon_desktop"></i>
-                        <p>
-                            Eam admodum pertinacia an, essent nostro audiam ad qui, pro ex habeo aeterno maluisset. Aeque apeirian duo et, ad ludus denique tincidunt usu.
-                        </p>
-                        <p>
-                            <a href="register.jsp" class="button small">Apply online</a>
-                        </p>
-                    </div>
-                    </div>
-                  
-                    
+			                    <h4><strong>How to apply</strong></h4>
+			                    <p>Step : College Selection<br>
+										Step : Filling the Application Form<br>
+										Step : Appearing for Entrance Exam<br>
+										Step : Taking Part in Counselling<br>
+										Step : Final Allocation of Seats<br>
+										Step : Final Admission</p>
+			                    <div class="box_side"><h5>By Phone</h5> <i class="icon-phone"></i>
+			                    <p> + 000-1234567<br><small>Monday to Friday 9.00am - 5.00pm</small></p>
+			                    </div>
+								 <hr class="styled">
+			                    <div class="box_side">
+			                    <h5>Apply Online</h5> <i class="icon_desktop"></i>
+			                    <p>By filling out this form, you agree to allow your information to be shared with a consortium of colleges and universities  to contact you with more information. </p>  
+			                    <p><a href="register.jsp" class="button small">Apply online</a> </p>
+			                    </div>     
+			                    </div>
                     </aside>
                     
                 </div><!--End row -->
