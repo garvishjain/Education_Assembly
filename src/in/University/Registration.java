@@ -2,6 +2,8 @@ package in.University;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,6 +19,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
+import javax.xml.bind.DatatypeConverter;
+
+import in.common.hashed;
 
 /**
  * Servlet implementation class Registration
@@ -25,8 +30,9 @@ import javax.sql.DataSource;
 public class Registration extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Connection con;
-	
+	private String hashing;
 	private PreparedStatement stmt;
+	private String passbyte;
 	
 	
 
@@ -76,6 +82,16 @@ public class Registration extends HttpServlet {
 			String contactname = request.getParameter("contact_name")!= null ? request.getParameter("contact_name") : "";
 			String contactnum = request.getParameter("contact_num")!= null ? request.getParameter("contact_num") : "";
 			String designation = request.getParameter("designation")!= null ? request.getParameter("designation") : "";
+			
+			/*university account start*/
+			String username = request.getParameter("username")!= null ? request.getParameter("username") : "";
+			String pswd = request.getParameter("pswd")!= null ? request.getParameter("pswd") : "123";
+			String cpswd = request.getParameter("cpswd")!= null ? request.getParameter("cpswd") : "123";
+			if(pswd.equals(cpswd))
+			{	
+				byte[] passbyte= pswd.getBytes();
+				getHash(passbyte,"SHA-256");
+			}
 
 			String sql2="insert into university_contact(registrar_name,contact_name,contact_number,designation)value(?,?,?,?)";
 			stmt = con.prepareStatement(sql2);
@@ -137,7 +153,7 @@ public class Registration extends HttpServlet {
 			{
 				out.println("Data Not Found");
 			}
-			String sqll5="select pk_id from category where details='"+uctgry+"' ";
+			String sqll5="select pk_id from category where category='"+uctgry+"' ";
 			System.out.println(sqll5);
 			stmt = con.prepareStatement(sqll5);
 			ResultSet rs5 = stmt.executeQuery(sqll5);
@@ -149,7 +165,7 @@ public class Registration extends HttpServlet {
 			{
 				out.println("Data Not Found");
 			}
-			String sqll6="select pk_id from type where details='"+utype+"' ";
+			String sqll6="select pk_id from type where type='"+utype+"' ";
 			System.out.println(sqll6);
 			stmt = con.prepareStatement(sqll6);
 			ResultSet rs6 = stmt.executeQuery(sqll6);
@@ -205,15 +221,29 @@ public class Registration extends HttpServlet {
 			stmt.setInt(12, rt8);
 			
 			int res = stmt.executeUpdate();
-			if(res>0 && res2>0)
+			
+			String sql3="insert into user(name,email,username,password,register_num)values(?,?,?,?,?)";
+			
+			stmt = con.prepareStatement(sql3);
+			stmt.setString(1, regname);
+			stmt.setString(2, uemail);
+			stmt.setString(3, username);
+			stmt.setString(4, passbyte);
+			stmt.setString(5, ureg);
+			
+			int res3 = stmt.executeUpdate();
+			
+			if(res>0 && res2>0 && res3>0)
 			{
-				request.setAttribute("status","Successfully Registered");
-				response.sendRedirect("university/university-manager.jsp");
+				out.println("<html><body><script>alert('Data Inserted');</script></body></html>");
+				/*request.setAttribute("status","Successfully Registered");
+				response.sendRedirect("university/university-manager.jsp");*/
 			}
 			else
 			{
-				request.setAttribute("status", "Failed to sign up...! please try again");
-				response.sendRedirect("university/university-register.jsp");
+				out.println("<html><body><script>alert('Not Inserted');</script></body></html>");
+				/*request.setAttribute("status", "Failed to sign up...! please try again");
+				response.sendRedirect("university/university-register.jsp");*/
 			}
 			
 		} 
@@ -227,6 +257,21 @@ public class Registration extends HttpServlet {
 		{
 			e.printStackTrace();
 		}
+	}
+	private String getHash(byte[] passbyte,String algo) 
+	{
+		try 
+			{
+				MessageDigest msgdigest = MessageDigest.getInstance(algo);
+				msgdigest.update(passbyte);
+				byte[] passdigest = msgdigest.digest();
+				hashing = DatatypeConverter.printHexBinary(passdigest).toLowerCase();
+			}
+		catch (NoSuchAlgorithmException e) 
+			{
+				e.printStackTrace();
+			}
+		return hashing;
 	}
 
 }

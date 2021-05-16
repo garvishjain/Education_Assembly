@@ -52,16 +52,16 @@
 </head>
 
 <body class="font-muli theme-cyan gradient">
-
+<div>
+	   <%@ include file="../student/itc/header.jsp"%>
+	   </div>
 	<!-- Page Loader -->
 	<div class="page-loader-wrapper">
 		<div class="loader"></div>
 	</div>
 
 	<div id="main_content">
-	   <div>
-	   <%@ include file="../student/itc/header.jsp"%>
-	   </div>
+	   
 		<!-- Start Main top header -->
 		<!-- Start Rightbar setting panel -->
 		<!-- Start Theme panel do not add in project -->
@@ -72,16 +72,9 @@
 		<div class="page">
 			<!-- Start Page header -->
 			<!-- Start Page title and tab -->
-			<div class="section-body">
-				<div class="container-fluid">
-					<div class="d-flex justify-content-between align-items-center ">
-					 	<ul class="nav nav-tabs page-header-tab">
-                 <li  style="font-size:40px;text-align:center;"><a href="#"><i class="fa fa-graduation-cap brand-logo" ></i><span style="font-size:40px;">Education Assembly</span></a></li>
-						</ul>
-					</div>
-				</div>
+			<div class="tab-content">
 			</div>
-			<form action="../Registration" method="post">
+			
 			<div class="section-body mt-4">
 				<div class="container-fluid">
 					<div class="tab-content">
@@ -90,15 +83,13 @@
 								<div class="card-body">
 										<div class="left">
 											<ul class="nav nav-tabs page-header-tab">
-												<li style="font-size: 20px; text-align: center;"><a
-													href="#"><i
-														class="fa fa-graduation-cap brand-logo"></i><span
+												<a href="#"><i class="fa fa-graduation-cap brand-logo"></i><span
 														style="font-size: 20px; text-align: center;">University
-															Registration</span></a></li>
+															Registration</span></a>
 											</ul>
 										</div>
-										<hr
-											style="height: 1px; border-width: 0; color: gray; background-color: gray">
+										<hr	style="height: 1px; border-width: 0; color: gray; background-color: gray">
+										<form action="../Registration" method="post">
 										<div class="row">
 											<div class="col-md-6 col-sm-12">
 												<div class="form-group">
@@ -116,7 +107,7 @@
 												</div>
 											</div>
 
-											<div class="col-md-6 col-sm-12">
+											<div class=" col-sm-12">
 												<div class="form-group">
 													<label>University Address</label>
 													<textarea class="form-control" name="uadrs"
@@ -202,7 +193,7 @@
 																ResultSet rs = stmt.executeQuery(query);
 																while (rs.next()) {
 														%>
-														<option><%=rs.getString("details")%></option>
+														<option><%=rs.getString("category")%></option>
 														<%
 															}
 															} catch (Exception e) {
@@ -224,7 +215,7 @@
 																ResultSet rs = stmt.executeQuery(query);
 																while (rs.next()) {
 														%>
-														<option><%=rs.getString("details")%></option>
+														<option><%=rs.getString("type")%></option>
 														<%
 															}
 															} catch (Exception e) {
@@ -237,14 +228,8 @@
 											<div class="col-md-6 col-sm-12">
 												<div class="form-group">
 													<label>Email <span class="text-danger">*</span></label>
-													<div class="input-group">
-														<div class="input-group-prepend">
-															<span class="input-group-text"><i
-																class="icon-envelope"></i></span>
-														</div>
 														<input type="email" name="uemail" class="form-control"
 															placeholder="abc@example.com">
-													</div>
 												</div>
 											</div>
 											<div class="col-md-6 col-sm-12">
@@ -306,15 +291,9 @@
 											<div class="col-md-6 col-sm-12">
 												<div class="form-group">
 													<label>Registrar Name <span class="text-danger">*</span></label>
-													<div class="input-group">
-														<div class="input-group-prepend">
-															<span class="input-group-text"><i
-																class="icon-envelope"></i></span>
-														</div>
 														<input type="text" name="regname" class="form-control"
 															placeholder="Enter Registrar Name" required="required"
 															maxlength="20">
-													</div>
 												</div>
 											</div>
 											<div class="col-md-6 col-sm-12">
@@ -328,10 +307,8 @@
 											<div class="col-md-6 col-sm-12">
 												<div class="form-group">
 													<label>Contact Number </label> <input class="form-control"
-														type="text" minlength="10" maxlength="11"
-														required="required" name="contact_num"
-														placeholder="Enter Number"
-														oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+														type="text" required="required" name="contact_num"
+														placeholder="Enter Number"	oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
 												</div>
 											</div>
 											<div class="col-md-6 col-sm-12">
@@ -342,12 +319,46 @@
 														required="required">
 												</div>
 											</div>
+							 <hr	style="height: 1px; border-width: 0; color: gray; background-color: gray">
+											
 										</div> 
-										
+										<div class="left">
+											<ul class="nav nav-tabs page-header-tab">
+												<li style="font-size: 20px; text-align: center;"><a
+													href="university.jsp"><i class="fa fa-users"></i><span
+														style="font-size: 20px; text-align: center;">&nbsp;Account</span></a></li>
+											</ul>
+										</div>
+										<br>
+										<div class="row">
+											<div class="col-md-6 col-sm-12">
+												<div class="form-group">
+													<label>User Name</label><span class="text-danger">*</span> <input type="text"
+														class="form-control" name="username"
+														placeholder="Enter Username" aria-label="With textarea"
+														required="required">
+												</div>
+											</div>
+											<div class="col-md-6 col-sm-12">
+												<div class="form-group">
+													<label>Password</label><span class="text-danger">*</span> <input type="password"
+														class="form-control" name="pswd"
+														placeholder="Enter Password" aria-label="With textarea"
+														required="required">
+												</div>
+											</div>
+											<div class="col-md-6 col-sm-12">
+												<div class="form-group">
+													<label>Confirm Password</label><span class="text-danger">*</span> <input type="password"
+														class="form-control" name="cpswd"
+														placeholder="Enter Confirm Password" aria-label="With textarea"
+														required="required">
+												</div>
+											</div>
 											<div class="col-sm-12 text-right m-t-20">
 												<button type="submit" class="button">SAVE</button>
 											</div>
-									
+										</div>
 									</form>
 								</div>
 							</div>
@@ -355,7 +366,6 @@
 					</div>
 				</div>
 			</div>
-			</form>
 			<!-- Start main footer -->
          <%@ include file="../student/itc/footer.jsp"%>
          <%@ include file="inc/incjs.jsp" %>
