@@ -120,7 +120,7 @@
 				<div class="box_style_1">
 
 
-					<form action="../collegeaffilation" id="form" method="POST"
+					<form action="../colafilation" id="form" method="POST"
 						enctype="multipart/form-data">
 
 						<fieldset>
@@ -207,7 +207,7 @@
 															ResultSet rs = stmt.executeQuery(query);
 															while (rs.next()) {
 													%>
-													<option><%=rs.getString("u_name")%></option>
+													<option value="<%=rs.getInt("pk_id")%>"><%=rs.getString("u_name")%></option>
 													<%
 														}
 														} catch (Exception e) {
@@ -241,7 +241,7 @@
 															ResultSet rs = stmt.executeQuery(query);
 															while (rs.next()) {
 													%>
-													<option><%=rs.getString("type")%></option>
+													<option value="<%=rs.getInt("pk_id")%>"><%=rs.getString("type")%></option>
 													<%
 														}
 														} catch (Exception e) {
@@ -512,7 +512,7 @@
                                  <button type="button" name="previous"
 											class="button" onclick="fprev()"
 											value="Previous" >previous</button>
-									<button type="submit"  onclick="return validate()"class="button">Submit</button>
+									<button type="submit"  class="button">Submit</button>
 								</p>
                              </div>
 							</fieldset>
