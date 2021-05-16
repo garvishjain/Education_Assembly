@@ -95,7 +95,7 @@
                                 </div>
                                 <div class="clearfix visible-xs-block">
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                <div class="col-lg-4 col-md-4 col-sm-4">
                                     <div class="course_list_desc">
                                     <%String str=rs.getString("course");
 		                                    int b=(str.lastIndexOf(' '));
@@ -108,7 +108,7 @@
                                         <h4>Eligibility - <%=rs.getString("eligibility") %></h4>
                                         
                                           
-                                       <form action="college_detail.jsp" method="post" id='university_info'>
+                                       <form action="mca.jsp" method="post" id='university_info'>
 					                         <input type="hidden" name="uid"   value="<%=rs.getString("course")%>">
 										     <button type="submit"class="button_outline">Details</button>
 								       </form>
