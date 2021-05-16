@@ -176,7 +176,7 @@ public class collegeregist extends HttpServlet {
 //				
                 
 				// insert data into registration table
-				String sql3="insert into user (name,email,username,password)values(?,?,?,?)";
+				String sql3="insert into user (name,email,username,password,register_num)values(?,?,?,?,?)";
 		
 				
 				
@@ -185,6 +185,7 @@ public class collegeregist extends HttpServlet {
 				stmt3.setString(2,email);
 				stmt3.setString(3,user);
 				stmt3.setString(4,Hashed);
+				stmt3.setString(5,reg_num);
 				
 				
 				int res3 = stmt3.executeUpdate();
@@ -226,7 +227,7 @@ public class collegeregist extends HttpServlet {
 				else
 				{
 					
-					out.println("Data Not Found");
+					out.println("<html><body><script>alert('Data not found');</script></body></html>");
 				}
 				
 			//fetch fk_authentication_id	
@@ -243,7 +244,7 @@ public class collegeregist extends HttpServlet {
 				else
 				{
 					
-					out.println("Data Not Found");
+					out.println("<html><body><script>alert('Data not Enter');</script></body></html>");
 				}
 				
 			// college registration data inserted	
@@ -290,6 +291,7 @@ public class collegeregist extends HttpServlet {
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			out.println("<html><body><script>alert("+ e.getMessage() +");</script></body></html>");
 		}
 		catch(NullPointerException e)
 		{

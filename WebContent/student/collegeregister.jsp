@@ -147,7 +147,7 @@ Statement stmt=con.createStatement();
 																ResultSet rs = stmt.executeQuery(query);
 																while (rs.next()) {
 														%>
-														<option value="<%=rs.getInt("pk_id")%>"><%=rs.getString("details")%></option>
+														<option value="<%=rs.getInt("pk_id")%>"><%=rs.getString("type")%></option>
 														<%
 															}
 															} catch (Exception e) {
@@ -191,11 +191,10 @@ Statement stmt=con.createStatement();
                                   <span style="color:red" id="ccategoryerr"></span>
                             </div>
                             </div>
-                        </div>
-                        <br>
+                       
                         <div class="row">
                         	<div class="col-md-6">
-                            	<div class="form-group">
+                            <div class="form-group">
                                 <label>UserName</label>
                                 <input type="text" class="form-control styled " id="uname" name="uname" placeholder="Enter UserName">
                                 <span style="color:red" id="unameerr"></span>

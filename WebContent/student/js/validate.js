@@ -2,8 +2,10 @@
         var cname = document.getElementById("cname").value; 
         var uniname = document.getElementById("uniname").value; 
         var uname = document.getElementById("uname").value;
+        var dname = document.getElementById("dname").value;
         var email = document.getElementById("email").value; 
         var num = document.getElementById("num").value; 
+        var fax = document.getElementById("fax").value;
         var year = document.getElementById("year").value; 
         var address = document.getElementById("address").value;
         var sts = document.getElementById("sts").value;
@@ -29,6 +31,25 @@
         	document.getElementById("cnameerr").innerHTML="";
         	}
   
+        if (dname== "") { 
+        	document.getElementById("dnameerr").innerHTML="Please enter college name"; 
+        	return false; 
+        } 
+        else
+        	{
+        	document.getElementById("dnameerr").innerHTML="";
+        	}
+        
+        if (fax== "") { 
+        	document.getElementById("cfaxerr").innerHTML="Please enter college name"; 
+        	return false; 
+        } 
+        else
+        	{
+        	document.getElementById("cfaxerr").innerHTML="";
+        	}
+        
+        
         if (uniname== "") { 
         	document.getElementById("uninameerr").innerHTML="Please Enter University  Name";
             return false; 
