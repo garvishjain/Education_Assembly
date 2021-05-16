@@ -23,9 +23,9 @@ import in.common.GetConnection;
 public class courses extends HttpServlet {
 	private PreparedStatement stmt;
 	private int coursename=123;
-	private PreparedStatement stmt1;
 	private Connection con;
 	private int dur=12;
+	private int university=1234;
 
 	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
@@ -40,6 +40,7 @@ public class courses extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		try 
 		{
+			String u_id = request.getParameter("u_id")!=null?request.getParameter("u_id") : "";
 			String id = request.getParameter("id")!=null?request.getParameter("id") : "";
 			String type = request.getParameter("type")!=null?request.getParameter("type") : "";
 			String name = request.getParameter("name")!=null?request.getParameter("name") : "";
@@ -73,8 +74,16 @@ public class courses extends HttpServlet {
 				out.println("<body><html><script>alert('No Data Found');</script></html></body>");
 			}
 			
+			String sql3="select pk_id from university";
+			stmt = con.prepareStatement(sql3);
+			ResultSet rs3 = stmt.executeQuery(sql3);
+			if (rs3.next()) {
+					university = rs3.getInt(1);
+			} else {
+				out.println("<body><html><script>alert('No Data Found');</script></html></body>");
+			}
 			
-			String sql="insert into university_courses(course_id,course_type,course_name,course_duration,course_fees,course_seat,course_brief)values(?,?,?,?,?,?,?)";
+			String sql="insert into university_courses(course_id,course_type,course_name,course_duration,course_fees,course_seat,course_brief,fk_university_id)values(?,?,?,?,?,?,?,?)";
 		
 			stmt = con.prepareStatement(sql);
 			stmt.setString(1, id);
@@ -84,6 +93,7 @@ public class courses extends HttpServlet {
 			stmt.setString(5, fees);
 			stmt.setString(6, seats);
 			stmt.setString(7, brief);
+			stmt.setInt(8, university);
 			
 			
 			int res = stmt.executeUpdate();
@@ -100,10 +110,6 @@ public class courses extends HttpServlet {
 				out.println("<body><html><script>alert('Something Went Wrong');</script></html></body>");
 			}
 			
-		}
-		catch(NullPointerException e)
-		{
-			e.printStackTrace();
 		}
 		catch (Exception e) {
 			// TODO Auto-generated catch block
