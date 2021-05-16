@@ -140,7 +140,7 @@ orange
 							<!-- <li><a href="gallery.jsp">Gallery</a></li> -->
 							<li><a href="register.jsp">Student</a></li>
 							<li><a href="collegeregister.jsp">College</a></li>
-							<li><a href="agenda_calendar.jsp">University</a></li>
+							<li><a href="../university/university-register.jsp">University</a></li>
 						</ul></li>
 					<li>
 						

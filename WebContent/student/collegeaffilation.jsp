@@ -50,7 +50,7 @@
       <script src="js/respond.min.js"></script>
     <![endif]-->
 
-
+<script src="js/validate.js"></script>
 
 
 
@@ -120,7 +120,7 @@
 				<div class="box_style_1">
 
 
-					<form action="../collegeaffilation" id="form" method="POST"
+					<form action="../colafilation" id="form" method="POST"
 						enctype="multipart/form-data">
 
 						<fieldset>
@@ -133,17 +133,13 @@
 								<i class="pe-7s-user"></i>
 
 							</div>
-<<<<<<< HEAD
-<fieldset id="first">
-=======
 							<fieldset id="first" Style="display: block;">
 
 
->>>>>>> origin/main
 								<div class="row">
 									<div class="col-md-8">
 										<div class="form-group">
-											<p class="form-control styled " id="cname" name="cname">
+											<p class="form-control styled " id="cname" name="cname" required="">
 
 												<b><i>Applying for college affiliation from the
 														university. You have to first download this pdf form and
@@ -159,6 +155,7 @@
 										<div class="form-group">
 											<embed src="imp/affiliationform.pdf" type="application/pdf"
 												height="200px" width="100%" class="responsive">
+												
 											<br> <br> <br>
 										</div>
 									</div>
@@ -175,10 +172,11 @@
 								</div>
 								<div class="row">
 									<div class="form-group">
-										<a href="imp/affiliationform.pdf"><input type="button"
-											class="next btn btn-info" value="download"></a> <input
+										<a href="imp/affiliationform.pdf"><button type="button"
+											class="button" value="download">download</button></a>
+											 <button 
 											type="button" name="next" onclick="nextpage()"
-											class="next btn btn-info" value="Next" />
+											class="button" value="Next" onclick="return validate()">Next</button>
 									</div>
 								</div>
 							</fieldset>
@@ -192,14 +190,14 @@
 											<div class="form-group">
 												<label>College Name</label> <input type="text"
 													class="form-control styled " id="cname" name="cname"
-													placeholder="Enter college name"> <span
+													placeholder="Enter college name" required=""> <span
 													style="color: red" id="cnameerr"></span>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>University name</label> <select class="form-control"
-													id="uniname" name="uniname" required="required">
+													id="uniname" name="uniname" required="">
 													<option value="">---Please Select---</option>
 
 													<%
@@ -209,7 +207,7 @@
 															ResultSet rs = stmt.executeQuery(query);
 															while (rs.next()) {
 													%>
-													<option ><%=rs.getString("u_name")%></option>
+													<option value="<%=rs.getInt("pk_id")%>"><%=rs.getString("u_name")%></option>
 													<%
 														}
 														} catch (Exception e) {
@@ -226,14 +224,14 @@
 											<div class="form-group">
 												<label>Dean Name</label> <input type="text"
 													class="form-control styled " id="dname" name="dname"
-													placeholder="Enter Dean name"> <span
+													placeholder="Enter Dean name" required=""> <span
 													style="color: red" id="dnameerr"></span>
 											</div>
 										</div>
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>College Type</label> <select class="form-control"
-													name="ctype" required="required">
+													id="ctype" name="ctype" required="">
 													<option value="">---Please Select---</option>
 
 													<%
@@ -243,7 +241,7 @@
 															ResultSet rs = stmt.executeQuery(query);
 															while (rs.next()) {
 													%>
-													<option ><%=rs.getString("details")%></option>
+													<option value="<%=rs.getInt("pk_id")%>"><%=rs.getString("type")%></option>
 													<%
 														}
 														} catch (Exception e) {
@@ -255,19 +253,11 @@
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-md-6">
+									<div class="col-md-6">
 											<div class="form-group">
-												<label>Fax Number</label> <input type="text"
-													class="form-control styled " id="fax" name="fax"
-													placeholder="Enter Number" required=""> <span
-													style="color: red" id="cfaxerr"></span>
-											</div>
-										</div>
-
-										<div class="col-md-6">
-											<div class="form-group">
-												<label>College category</label> <select class="form-control"
-													name="ccategory" id="ccategory" required="required">
+												<label>College category</label> 
+												<select class="form-control"
+													name="ccategory" id="ccategory" required="">
 													<option value="" disabled selected>---Please
 														Select---</option>
 													<%
@@ -277,34 +267,38 @@
 															ResultSet rs = stmt.executeQuery(query);
 															while (rs.next()) {
 													%>
-													<option value="<%=rs.getString("details")%>">
-														<%=collegeCategory[i++]%></option>
+													<option value="<%=rs.getInt("pk_id")%>"> <%=collegeCategory[i++] %></option>
 													<%
 														}
 														} catch (Exception e) {
 
 														}
 													%>
-												</select> <span style="color: red" id="ccategoryerr"></span>
+												
+												<span style="color: red" id="ccategoryerr"></span>
+												</select> 
 											</div>
 										</div>
-									</div>
-									<br>
-									<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
-												<label>UserName</label> <input type="text"
-													class="form-control styled " id="uname" name="uname"
-													placeholder="Enter UserName"> <span
-													style="color: red" id="unameerr"></span>
+												<label>Fax Number</label> <input type="text"
+													class="form-control styled " id="fax" name="fax"
+													placeholder="Enter Number" required=""> <span
+													style="color: red" id="cfaxerr"></span>
 											</div>
 										</div>
 
-										<div class="col-md-6">
+										
+									</div>
+									</div>
+									<div class="wrapper_indent">
+								
+										<div class="row">
+									<div class="col-md-6">
 											<div class="form-group">
 												<label>Email</label> <input type="email"
 													class="form-control styled required" id="email"
-													name="email" placeholder="youremail@domain.com"> <span
+													name="email" placeholder="youremail@domain.com" required=""> <span
 													style="color: red" id="emailerr"></span>
 											</div>
 										</div>
@@ -316,12 +310,22 @@
 												<span style="color: red" id="numerr"></span>
 											</div>
 										</div>
+										</div>
+										<div class="row">
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>Establish year</label> <input type="number"
 													class="form-control styled required valid" id="year"
-													name="year" min="1890" max="2035"> <span
+													name="year" min="1890" max="2035" required=""> <span
 													style="color: red" id="yearerr"></span>
+											</div>
+										</div>
+										<div class="col-md-6">
+											<div class="form-group">
+												<label>UserName</label> <input type="text"
+													class="form-control styled " id="uname" name="uname"
+													placeholder="Enter UserName" required=""> <span
+													style="color: red" id="unameerr"></span>
 											</div>
 										</div>
 									</div>
@@ -342,7 +346,7 @@
 											<div class="form-group">
 												<label>Address </label> <input type="text"
 													class="form-control styled required" id="address"
-													name="address" placeholder="Your full address"> <span
+													name="address" placeholder="Your full address" required=""> <span
 													style="color: red" id="addresserr"></span>
 											</div>
 										</div>
@@ -383,7 +387,7 @@
 										<div class="col-md-6">
 											<div class="form-group">
 												<label>City</label> <select id="state" name="city"
-													class="form-control">
+													class="form-control" required="">
 													<option value="">Select city</option>
 												</select> <span style="color: red" id="cityerr"></span>
 											</div>
@@ -398,7 +402,7 @@
 												<label>Postal Code</label> <input type="text"
 													class="form-control styled required" id="pincode"
 													name="pincode" placeholder="Enter Area Code" maxlength="6"
-													minlength="6"> <span style="color: red" id="pinerr"></span>
+													minlength="6" required=""> <span style="color: red" id="pinerr"></span>
 
 											</div>
 										</div>
@@ -424,7 +428,7 @@
 											<div class="form-group">
 												<label>College image</label> <input type="file"
 													accept="image/gif, image/jpeg, image/png" id="pic"
-													class="form-control" name="pic">
+													class="form-control" name="pic" required="">
 											</div>
 											<span style="color: red" id="picerr"></span>
 										</div>
@@ -448,7 +452,7 @@
 												<label class="form-label">Password</label> <input
 													type="password" class="form-control styled required"
 													id="pass" name="pass" placeholder="Enter Password"
-													minlength="8" maxlength="20">&nbsp; <br> <br>
+													minlength="8" maxlength="20" required="">&nbsp; <br> <br>
 												<input type="checkbox" onclick="myFunction()">&nbsp;Show
 												Password <span style="color: red" id="passerr"></span>
 											</div>
@@ -458,7 +462,7 @@
 											<div class="form-group">
 												<label>Confirm Password</label> <input type="password"
 													class="form-control styled required" id="cpass"
-													name="cpass" placeholder="Enter Confirm Password">
+													name="cpass" placeholder="Enter Confirm Password" required="">
 												<span style="color: red" id="cpasserr"></span> <span
 													style="color: green" id="cpaserr"></span>
 											</div>
@@ -467,13 +471,15 @@
 										<div class="row">
 											<div class="col-md-6">
 												<div class="form-group">
-													<input type="button" name="previous"
-														class="previous btn btn-default" onclick="prev()"
-														value="Previous" /> <input type="button" name="next"
-														class="next btn btn-info" onclick="antnext()" value="Next" />
+													<button type="button" name="previous"
+														class="button" onclick="prev()"
+														value="Previous" >previous</button>
+														 <button type="button" name="next"
+														class="button" onclick="antnext()" onclick=" validate()" value="Next" >Next</button>
 												</div>
 											</div>
 										</div>
+							
 							</fieldset>
 
 
@@ -484,29 +490,33 @@
 									<div class="col-md-10">
 										<div class="form-group">
 											<label> upload Affiliation form </label> <input type="file"
-												accept="application/pdf" id="pdf"
-												class="form-control" name="pdf">
+												accept="application/pdf" id="pdf" class="form-control"
+												name="pdf" required="">
 										</div>
-										<span style="color: red" id="picerr"></span>
+										<span style="color: red" id="pdferr"></span>
 									</div>
 
 								</div>
 								<div class="row">
 								<div class="form-group">
 									<input type="checkbox" name="policy_terms" id="policy_terms"
-										class="required" value="Yes"><label>I accept <a
-										href="#0">terms and conditions</a> and general policy.
+											class="required" value="Yes"><label>I accept <a
+											href="#0">terms and conditions</a> and general policy.
+										
 									</label>
+									
 								</div>
-								<p>
-									<input type="button" name="previous"
-										class="previous btn btn-default" onclick="fprev()"
-										value="Previous" />
-
-									<button type="submit" class="button">Submit</button>
+								
+									
+                                <p>
+                                 <button type="button" name="previous"
+											class="button" onclick="fprev()"
+											value="Previous" >previous</button>
+									<button type="submit"  class="button">Submit</button>
 								</p>
                              </div>
 							</fieldset>
+					
 					</form>
 				</div>
 			</div>
@@ -529,7 +539,5 @@
 
 
 
-
-	<%@ include file="itc/footer.jsp"%>
-</body>
+	<%@ include file="itc/footer.jsp"%></body>
 </html>
