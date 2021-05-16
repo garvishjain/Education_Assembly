@@ -95,7 +95,7 @@
                                 </div>
                                 <div class="clearfix visible-xs-block">
                                 </div>
-                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                <div class="col-lg-3 col-md-3 col-sm-3">
                                     <div class="course_list_desc">
                                     <%String str=rs.getString("course");
 		                                    int b=(str.lastIndexOf(' '));

@@ -4,7 +4,7 @@
 %> --%>
 <%   
   
-String course=request.getParameter("uid");  
+String coursename=request.getParameter("uid");  
   
   
 %>  
@@ -221,7 +221,7 @@ img {
 		<fieldset id="first" style="display: block;">
 					<div class="first_head">
 								<h3>Madhav Institute of Technology & Science, Gwalior Overview</h3>
-								<h3><%=course %></h3> 
+								<h3><%=coursename %></h3> 
 								<img  src="img/changes/mits_2.jpg">
 								
 								<span  class="paragraph">
