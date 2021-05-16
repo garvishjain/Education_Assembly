@@ -72,22 +72,49 @@
 .field_info{font-size: 15px;
     font-weight: bold;
     margin: 0px 0px 0px 0px;}
+    
+    .staff .box_style_1 {
+    text-align: center;
+    cursor: auto;
+    width: 241px;
+    margin: 7px 0px 0px -8px;
+    /* padding: 20px 0px 0px -18pxx; */
+    height: 578px;
+    background-color: #e1dede;
+}
+
+
+   button.button_outline, .button_outline{
+	padding:8px 30px;
+	display:inline-block;
+	background-color:transparent;
+	border:2px solid #00aeef;
+	color:#00aeef;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	font-family: "proxima_novasemibold", Arial, Helvetica, sans-serif; 
+	cursor:pointer;
+	font-size:14px;
+	outline:none;
+	margin-bottom:20px;
+}
+button.button_outline:hover, .button_outline:hover{
+	border:2px solid #283842;
+	color:#283842;
+}
 	</style>
 	
 	
 	<script type="text/javascript">
-	function first() {
-		  document.getElementById("about").style.visibility = "visible";
-		  document.getElementById("colleges").style.visibility = "hidden";
-		}
-
-		function second() {
-			document.getElementById("about").style.visibility = "hidden";
-			  document.getElementById("colleges").style.visibility = "visible";
-				}
-	
-	
-	
+					function college() {
+						  document.getElementById('about').style.display = "none";
+							document.getElementById('colg').style.display = "block";
+							}
+					function summary() {
+						  document.getElementById('about').style.display = "block";
+							document.getElementById('colg').style.display = "none";
+						}
 	</script>
 </head>
 
@@ -130,12 +157,13 @@
       
  		<div class="row">
            <div class="col-md-9">
-           <div class="btn-group" >
-  			<a href="#about"  onclick="first()"><button>Summary</button></a>
-  			 <a href="#Colleges" onclick="second()"><button>Colleges</button></a>
-
-		</div>
-                	<div class="box_style_1" id="about" style="visibility:visible;">
+           
+					           <div class="btn-group" >
+					  			<a href="#about"  onclick="summary()"><button>Summary</button></a>
+					  			 <a href="#Colleges" onclick="college()"><button>Colleges</button></a>
+								</div>
+						<fieldset id="about" style="display: block;">		
+                	<div class="box_style_1" >
                 	
                    	<div class="indent_title_in">
                    	
@@ -300,11 +328,82 @@
                      
                     
                     </div>
+                    </fieldset>
                     
                     
                     
                     
-                    <div class="box_style_1" id="colleges"  style="visibility:hidden;">
+                    <fieldset id="colg" style="display: none;">
+				 <div class="box_style_1" >
+											<div class="indent_title_in">
+												<i class="pe-7s-study"></i>
+												<h4 class="h">About College</h4>
+											</div>
+							<div class="wrapper_indent"><br>
+                  											 <div class="row staff">
+				  <%
+			try{
+				String sql1="Select  * from university\n" + 
+						"INNER JOIN country ON country.pk_id=university.fk_country\n" + 
+						"INNER JOIN state ON state.pk_id=university.fk_state\n" + 
+						"INNER JOIN city ON city.pk_id=university.fk_city\n" + 
+						"INNER JOIN category ON category.pk_id=university.fk_category\n" + 
+						"INNER JOIN type ON type.pk_id=university.fk_type\n" + 
+						"INNER JOIN university_link ON university.fk_university_link = university_link.pk_id\n" +
+						"INNER JOIN university_contact ON university_contact.pk_id=university.fk_contact_number ";
+				ResultSet rs1=stmt.executeQuery(sql1);
+				while (rs1.next()) {
+					%>
+								<div class="col-md-4">
+								
+					            	<div class="box_style_1">
+					                			<p><img src="img/college/c_1.png" alt="" ></p>
+					                                <p class="u_name"><%=rs1.getString("u_name").toUpperCase()%></p>
+					                               
+					                                <div class="college_detail_fill">
+					                                <h5>Establish Year - <%=rs1.getString("establish_year").toUpperCase()%></h5>
+					                                <h5>Reg. No. - <%=rs1.getString("u_registration").toUpperCase()%></h5>
+					                                 <h5 class="field_fill">Category - <%=rs1.getString("category").toUpperCase()%></h5>
+					                                 <h5 class="field_fill">Type - <%=rs1.getString("type").toUpperCase() %></h5>
+					                                 <h5 class="field_fill">Email - <%=rs1.getString("email").toUpperCase() %></h5>
+					                                 <h5 class="field_fill">Address - <%=rs1.getString("address")%> , <%=rs1.getString("city_name")%> , <%=rs1.getString("state_name")%></h5>
+					                                 <h5 class="field_fill">Contact No - <%=rs1.getString("contact_number").toUpperCase() %></h5>
+					                                 <h5 class="field_fill">Admission Date - <%=rs1.getString("addm_start_date")%> TO <%=rs1.getString("addm_end_date")%></h5>
+					                                <%--   <h5 class="field_fill">Courses - <%=rs.getString("course")%></h5> --%>
+					                                 </div>
+					                                <ul class="social_team">
+					                               
+					                                    <li><a href="<%=rs1.getString("fb_link") %>"><i class="icon-facebook"></i></a></li>
+					                                    <li><a href="<%=rs1.getString("twitter_link") %> "><i class="icon-twitter"></i></a></li>
+					                                    <li><a href="<%=rs1.getString("google_link") %>"><i class="icon-google"></i></a></li>
+					                                    <li><a href="<%=rs1.getString("mail_link") %>"><i class="icon-email"></i></a></li>
+													</ul> <hr>
+													
+					                             
+					                                  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   
+									</div>
+									
+									<%-- <form action="college_detail.jsp" method="post" id='university_info'>
+					                             	 <input type="hidden" name="uid" value="<%=rs.getString("u_registration")%>">
+													<button type ="submit" class="button_outline" style="position: absolute;
+														    top: 553px;
+														    right: 500px;">Profile</button>
+									</form>
+									 --%>
+				     			</div>
+				     			<%
+				}
+				}
+		catch (Exception e) {
+			e.printStackTrace();
+					}
+					%>
+					
+					  </div>
+                          </div>
+                    </div>
+                    </fieldset>
+                    <!-- <div class="box_style_1" id="colleges"  style="visibility:hidden;">
                 	
                    	<div class="indent_title_in">
                    	
@@ -344,7 +443,7 @@
                     
                      
                     
-                    </div>
+                    </div> -->
                     
                     
                     
