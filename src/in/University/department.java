@@ -47,14 +47,14 @@ public class department extends HttpServlet {
 		try {
 			String department = request.getParameter("department") != null ? request.getParameter("department") : "";
 			String headname = request.getParameter("headname") != null ? request.getParameter("headname") : "";
-			String uname = request.getParameter("uname") != null ? request.getParameter("uname") : "";
+			/*String uname = request.getParameter("uname") != null ? request.getParameter("uname") : "";*/
 			String phone = request.getParameter("phone") != null ? request.getParameter("phone") : "";
 			String email = request.getParameter("email") != null ? request.getParameter("email") : "";
 			String stdcapacity = request.getParameter("stdCapacity") != null ? request.getParameter("stdCapacity") : "";
 			int u_id = 123;
 			int dpartment = 12345;
 			// <--- foreign key convert start --->
-			String sqll = "select pk_id from university where u_name = '" + uname + "' ";
+			String sqll = "select pk_id from university  ";
 			System.out.println(sqll);
 			stmt = con.prepareStatement(sqll);
 			ResultSet rs = stmt.executeQuery(sqll);
@@ -66,13 +66,13 @@ public class department extends HttpServlet {
 			}
 			
 			
-			String sql2="Select * from department_name where Details='"+department+"'";
+			String sql2="Select pk_id from department_name where Details='"+department+"'";
 			System.out.println(sql2);
 			stmt= con.prepareStatement(sql2);
 			ResultSet rs6 = stmt.executeQuery();
 			if(rs6.next())
 			{
-				detail = rs6.getString("pk_id");
+				detail = rs6.getString(1);
 			}else {
 
 				out.println("<body><html><script>alert('No Data Found');</script></html></body>");
@@ -82,8 +82,7 @@ public class department extends HttpServlet {
 			// <--- department data start--->
 				
 			
-			String sql = "insert into department(fk_university_id,fk_department_name,hod_name,phone_no,email,std_capacity)value(?,?,?,?,?,?)";
-
+			String sql = "insert into university_department(fk_university_id,fk_department_name,hod_name,phone_no,email,std_capacity)value(?,?,?,?,?,?)";
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, u_id);
 			stmt.setString(2, detail);

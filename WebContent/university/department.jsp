@@ -83,7 +83,7 @@ Statement stmt=con.createStatement();
 	                                    </thead>
 	                                    <%
 											try {
-												String query = "select * from department INNER JOIN department_name ON department.fk_department_name=department_name.pk_id";
+												String query = "select * from university_department INNER JOIN department_name ON university_department.fk_department_name=department_name.pk_id";
 												//get Table data
 												ResultSet rs = stmt.executeQuery(query);
 												while (rs.next()) {
@@ -157,7 +157,7 @@ Statement stmt=con.createStatement();
 	                                    </thead>
 	                                    <%
 											try {
-												String query = "select * from department INNER JOIN department_name ON department.fk_department_name=department_name.pk_id where isActive=1";
+												String query = "select * from university_department INNER JOIN department_name ON university_department.fk_department_name=department_name.pk_id where isActive=1";
 												//get Table data
 												ResultSet rs = stmt.executeQuery(query);
 												while (rs.next()) {
@@ -231,7 +231,7 @@ Statement stmt=con.createStatement();
 	                                    </thead>
 	                                    <%
 											try {
-												String query = "select * from department INNER JOIN department_name ON department.fk_department_name=department_name.pk_id where isActive=0";
+												String query = "select * from university_department INNER JOIN department_name ON university_department.fk_department_name=department_name.pk_id where isActive=0";
 												//get Table data
 												ResultSet rs = stmt.executeQuery(query);
 												while (rs.next()) {
@@ -330,12 +330,12 @@ Statement stmt=con.createStatement();
 	                                                <input type="text" class="form-control" name="headname" placeholder="Head of Department">
 	                                            </div>
 	                                        </div>
-	                                         <div class="col-sm-6">
+	                                        <!--  <div class="col-sm-6">
 	                                            <div class="form-group">
 	                                             <label>university name</label>
 	                                                <input type="text" class="form-control" name="uname" placeholder="university name ">
 	                                            </div>
-	                                        </div>
+	                                        </div> -->
 	                                        <div class="col-sm-6">
 	                                            <div class="form-group">
 	                                             <label>phone number</label>
