@@ -95,7 +95,7 @@
                                 </div>
                                 <div class="clearfix visible-xs-block">
                                 </div>
-                                <div class="col-lg-3 col-md-3 col-sm-3">
+                                <div class="col-lg-6 col-md-6 col-sm-6">
                                     <div class="course_list_desc">
                                     <%String str=rs.getString("course");
 		                                    int b=(str.lastIndexOf(' '));
@@ -107,16 +107,60 @@
                                         <h4>Course Duration - <%=rs.getString("duration") %></h4>
                                         <h4>Eligibility - <%=rs.getString("eligibility") %></h4>
                                         
-                                          
-                                       <form action="college_detail.jsp" method="post" id='university_info'>
-					                         <input type="hidden" name="uid"   value="<%=rs.getString("course")%>">
-										     <button type="submit"class="button_outline">Details</button>
-								       </form>
+                                         <!--   Aims to groom the software skills and strengthen the computer application aspect of students. This prepares the students for the industry requirements so that they can flourish in the corporate IT Sector.
+                                      -->  
 										
-                                       
+                                        <ul class="add_info">
+                                            <!--  <li>
+                                            <div class="tooltip_styled tooltip-effect-4">
+                                                <span class="tooltip-item"><i class="pe-7s-compass"></i></span>
+                                                <div class="tooltip-content">
+                                                    Dedicated Study Plan
+                                                </div>
+                                            </div>
+                                            </li> -->
+                                            <!-- <li>
+                                            <div class="tooltip_styled tooltip-effect-4">
+                                                <span class="tooltip-item"><i class="pe-7s-hourglass"></i></span>
+                                                <div class="tooltip-content">
+                                                   Admission Date 10/05/2021 To 10/07/2021
+                                                </div>
+                                            </div>
+                                            </li> -->
+                                           <!--  <li>
+                                            <div class="tooltip_styled tooltip-effect-4">
+                                                <span class="tooltip-item"><i class="pe-7s-medal"></i></span>
+                                                <div class="tooltip-content">
+                                                    Most Requested Course
+                                                </div>
+                                            </div>
+                                            </li> -->
+                                        </ul>
                                     </div>
                                 </div>
-                                
+                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                    <div class="details_list_col">
+                                        <div>
+                                            <a href="mca.jsp" class="button_outline"  >Details</a>
+                                            
+                                  <form action="college_detail.jsp" method="post" id='university_info'>
+					                             	 <input type="hidden" name="uid" value="<%=rs.getString("u_registration")%>">
+													<button type ="submit" class="button_outline" >Profile</button>
+								 </form> 
+											
+                                            <!-- style="position: absolute;
+														    top: 553px;
+														    right: 500px;" -->
+                                             <%-- <form action="mca.jsp" method="post" id='university_info'>
+					                             	 <input type="hidden" name="uid" value=" <%=rs.getString("u_registration")%>">
+													<button type ="submit" class="button_outline" >Profile</button>
+									     </form> --%>
+                                             <!-- style="position: absolute;
+														    top: 553px;
+														    right: 500px;"-->
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                       
@@ -130,7 +174,198 @@
 					%>
 				</div><!--End col-md-9 -->
 				<br>
-                     
+                     <!--    <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <div class="img_list">
+                                        <a ><img src="img/course/m2.jpg" alt="">
+                                        <div class="short_info">
+                                            <h3>Digital media</h3>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="clearfix visible-xs-block">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="course_list_desc">
+                                        <h3><strong>MASTER OF BUSINESS ADMINISTRATION</strong>(MBA)</h3>
+                                        <p>
+                                            MBA is an internationally accredited post-graduate degree for developing business and management skills amongst future business leaders and entrepreneurs.
+                                        </p>
+                                        <ul class="add_info">
+                                             <li>
+                                            <div class="tooltip_styled tooltip-effect-4">
+                                                <span class="tooltip-item"><i class="pe-7s-compass"></i></span>
+                                                <div class="tooltip-content">
+                                                    Dedicated Study Plan
+                                                </div>
+                                            </div>
+                                            </li>
+                                            <li>
+                                            <div class="tooltip_styled tooltip-effect-4">
+                                                <span class="tooltip-item"><i class="pe-7s-hourglass"></i></span>
+                                                <div class="tooltip-content">
+                                                   Admission Date 10/05/2021 To 10/07/2021
+                                                </div>
+                                            </div>
+                                            </li>
+                                            <li>
+                                            <div class="tooltip_styled tooltip-effect-4">
+                                                <span class="tooltip-item"><i class="pe-7s-medal"></i></span>
+                                                <div class="tooltip-content">
+                                                    Most Requested Course
+                                                </div>
+                                            </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                    <div class="details_list_col">
+                                        <div>
+                                            <a href="mba.jsp" class="button_outline">Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                       <!--  <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <div class="img_list">
+                                        <a ><img src="img/course/m3.jpg" alt="">
+                                        <div class="short_info">
+                                            <h3>Sculpture</h3>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="clearfix visible-xs-block">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="course_list_desc">
+                                        <h3><strong>Master of Commerce </strong> (M.Com)</h3>
+                                        <p>
+                                           The Master of Commerce (M.Com) is a 2-year postgraduate or master’s degree course offered in commerce colleges across India, designed to enhance one's skill and knowledge on commerce, finance, management, accounting and economics, and other related areas.
+                                            </p>
+                                        <ul class="add_info">
+                                            <li>
+                                            <div class="tooltip_styled tooltip-effect-4">
+                                                <span class="tooltip-item"><i class="pe-7s-compass"></i></span>
+                                                <div class="tooltip-content">
+                                                    Dedicated Study Plan
+                                                </div>
+                                            </div>
+                                            </li>
+                                            <li>
+                                            <div class="tooltip_styled tooltip-effect-4">
+                                                <span class="tooltip-item"><i class="pe-7s-hourglass"></i></span>
+                                                <div class="tooltip-content">
+                                                   Admission Date 10/05/2021 To 10/07/2021
+                                                </div>
+                                            </div>
+                                            </li>
+                                            <li>
+                                            <div class="tooltip_styled tooltip-effect-4">
+                                                <span class="tooltip-item"><i class="pe-7s-medal"></i></span>
+                                                <div class="tooltip-content">
+                                                    Most Requested Course
+                                                </div>
+                                            </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                    <div class="details_list_col">
+                                        <div>
+                                            <a href="mcom.jsp" class="button_outline">Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>End strip -->
+                       <!--    <div class="strip_all_courses_list wow fadeIn" data-wow-delay="0.1s">
+                            <div class="row">
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <div class="img_list">
+                                        <a ><img src="img/course/m4.png" alt="">
+                                        <div class="short_info">
+                                            <h3>Sculpture</h3>
+                                        </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="clearfix visible-xs-block">
+                                </div>
+                                <div class="col-lg-6 col-md-6 col-sm-6">
+                                    <div class="course_list_desc">
+                                        <h3><strong>Master of Science </strong> (M.Sc)</h3>
+                                        <p>
+                                         Master of Science (M.Sc) is a two-year post-graduate program which offers advanced knowledge in a number of specialized science fields such as physics, chemistry, biology, botany, mathematics, zoology, nursing, pharmacy etc.  
+                                          </p>
+                                        <ul class="add_info">
+                                             <li>
+                                            <div class="tooltip_styled tooltip-effect-4">
+                                                <span class="tooltip-item"><i class="pe-7s-compass"></i></span>
+                                                <div class="tooltip-content">
+                                                    Dedicated Study Plan
+                                                </div>
+                                            </div>
+                                            </li>
+                                            <li>
+                                            <div class="tooltip_styled tooltip-effect-4">
+                                                <span class="tooltip-item"><i class="pe-7s-hourglass"></i></span>
+                                                <div class="tooltip-content">
+                                                   Admission Date 10/05/2021 To 10/07/2021
+                                                </div>
+                                            </div>
+                                            </li>
+                                            <li>
+                                            <div class="tooltip_styled tooltip-effect-4">
+                                                <span class="tooltip-item"><i class="pe-7s-medal"></i></span>
+                                                <div class="tooltip-content">
+                                                    Most Requested Course
+                                                </div>
+                                            </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="col-lg-2 col-md-2 col-sm-2">
+                                    <div class="details_list_col">
+                                        <div>
+                                            <a href="msc.jsp" class="button_outline">Details</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>End strip -->
+                   
+					 <!--<div class="banner">
+                        <i class=" iconcustom-school"></i>
+                        <h3>Take a campus tour</h3>
+                        <p>
+                            Zril causae ancillae sit ea. Dicam veritus mediocritatem sea ex, nec id agam eius.
+                        </p>
+                        <a href="tour.html" class="banner_bt">Start tour</a>
+                    </div>  
+                    
+                    <div class="box_side"><h4>Plan a visit</h4> <i class="icon_pencil-edit"></i>
+                    <p>By filling out this form, you agree to allow your information to be shared with a consortium of colleges and universities  to contact you with more information. </p>
+                    <a href="#0" class="button small">Plan a visit</a><br><br>
+					</div>
+					
+				<div class="box_side"><h5>By Postal Mail</h5> <i class="icon_pencil-edit"></i>
+                    <p><a href="#0"><strong>Download the application form</strong></a>,<br> and send it to this address:<br><br><em>
+                    Ground Floor,
+Pragati Maidan Metro Station,
+Pragati Maidan,
+New Delhi-110001<br>
+</em></p>
+</div> -->
                  
                     <br>
                     <aside class="col-md-3">
@@ -163,6 +398,57 @@
 		<!--Footer File-->	 
 	<%@ include file="itc/footer.jsp" %>
 		<!--Footer File-->
+    
+<!-- Login modal -->   
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myLogin" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content modal-popup">
+				<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+				<form action="../St_Login" method="post" class="popup-form" id="myLogin">
+					<input type="text" name="uname" class="form-control form-white" placeholder="Enter Username">
+					<input type="password" name="pass" class="form-control form-white" placeholder="Enter Password">
+					<div class="checkbox-holder text-left">
+						<div class="checkbox">
+							<input type="checkbox" value="accept_1" id="check_1" name="check_1" />
+							<label for="check_1"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-submit">Submit</button>
+				</form>
+			</div>
+		</div>
+	</div>  
+    
+<!-- Register modal -->   
+<div class="modal fade" id="register" tabindex="-1" role="dialog" aria-labelledby="myRegister" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content modal-popup">
+				<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+				<form action="#" class="popup-form" id="myRegister">
+					<input type="text" class="form-control form-white" placeholder="Name">
+					<input type="text" class="form-control form-white" placeholder="Last Name">
+                    <input type="email" class="form-control form-white" placeholder="Email">
+                    <input type="text" class="form-control form-white" placeholder="Password">
+					<div class="checkbox-holder text-left">
+						<div class="checkbox">
+							<input type="checkbox" value="accept_2" id="check_2" name="check_2" />
+							<label for="check_2"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
+						</div>
+					</div>
+					<button type="submit" class="btn btn-submit">Register</button>
+				</form>
+			</div>
+		</div>
+	</div>
+    
+<!-- Search modal -->   
+<div id="search">
+    <button type="button" class="close">×</button>
+    <form>
+        <input type="search" value="" placeholder="type keyword(s) here" >
+        <button type="submit" class="button">Search</button>
+    </form>
+</div>
 
 <!-- Common scripts -->
 <script src="js/jquery-1.11.2.min.js"></script>
