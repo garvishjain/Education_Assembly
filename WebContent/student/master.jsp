@@ -36,13 +36,6 @@
 
 <body>
 
-		 
-		
-					
-					
-					
-					
-					
 <!--[if lte IE 8]>
     <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a>.</p>
 <![endif]-->
@@ -149,12 +142,12 @@
                                     <div class="details_list_col">
                                         <div>
                                             <a href="mca.jsp" class="button_outline"  >Details</a>
-                                           <%-- 
-                                           		<form action="college_detail.jsp" method="post" id='university_info'>
+                                            
+                                  <form action="college_detail.jsp" method="post" id='university_info'>
 					                             	 <input type="hidden" name="uid" value="<%=rs.getString("u_registration")%>">
 													<button type ="submit" class="button_outline" >Profile</button>
-												</form> 
-											--%>
+								 </form> 
+											
                                             <!-- style="position: absolute;
 														    top: 553px;
 														    right: 500px;" -->

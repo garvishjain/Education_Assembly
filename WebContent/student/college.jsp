@@ -36,10 +36,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <!--     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> -->
 
-    <!--[if lt IE 9]>
-      <script src="js/html5shiv.min.js"></script>
-      <script src="js/respond.min.js"></script>
-    <![endif]-->
      
 <style type="text/css">
 		.staff .box_style_1 {
@@ -83,7 +79,7 @@ button.button_outline:hover, .button_outline:hover{
 		<div class="pulse"></div>
 	</div>
 	<!-- Pulse Preloader -->
-
+	
 	<!--Header File-->	
 	 <%@ include file="itc/header.jsp" %>
 		<!--Header File-->

@@ -48,14 +48,6 @@ img {
 	color: #223038;
 }
 
-.sub_header.bg_g h1 {
-	font-size: 20px;
-	color: #1e26e2;
-	margin: 82px -18px -71px -204px;
-	padding: 17px 45px 0px 35px;
-	background-color: #8e4b4b;
-}
-
 .navbar {
 	border-radius: 4px;
 	margin-top: 10px;
@@ -70,7 +62,7 @@ img {
 	position: fixed;
 }
 
-#topheader .navbar-nav li>a {
+/* #topheader .navbar-nav li>a {
 	text-transform: capitalize;
 	color: white;
 	font-size: 15px;
@@ -83,18 +75,33 @@ img {
 	margin: 0px 0px 0px 47px;
 	padding: 18px 3px 20px 0px;
 	text-align: center;
+} */
+#topheader .navbar-nav li>a {
+    text-transform: capitalize;
+    color: #161515;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #c2c2c2;
+    -webkit-transition: background-color .2s, color .2s;
+    transition: background-color .2s, color .2s;
+    width: 160px;
+    height: 37px;
+    text-align: center;
+    margin: 0px 0px 0px -14.6px;
+    padding: 9px 15px 20px 0px;
+    text-align: center;
 }
-
 #topheader .navbar-nav li.active>a {
-	background-color: silver;
-	color: black;
+	background-color: black;
+	color: white;
 	font-size: 15px;
 	text-align: center;
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form {
 	border-color: #5f2424;
-	background-color: #223038;
+	background-color:#c2c2c2;
+	/* background-color: #223038; */
 }
 
 #topheader .navbar-nav li>a:hover, #topheader .navbar-nav li>a:focus {
@@ -157,7 +164,7 @@ hr {
 	border: 2px solid gray;
 	width: 80%;
 	height: 714px;
-    margin: 0px 0px 65px 125px;
+    margin: 35px 0px 65px 125px;
 	padding : 30px 20px 20px 30px;
 	
 }
@@ -168,11 +175,10 @@ h3 {
 }
 
 img {
-	margin: auto;
-	margin: 20px 0px 0px 10px;
-	float: left;
+    margin: auto;
+    margin: 330px 0px 0px -105px;
+    float: left;
 }
-
 .paragraph {
 	font-size: 17px;
 	margin: 20px 0px 0px 20px;
@@ -225,7 +231,7 @@ h3 {
     border: 1.5px solid #121111;
     width: 1000px;
     height: 225px;
-    margin: 19px 0px 0px 86px;
+    margin: 35px 0px 0px 86px;
     padding: 28px 27px 45px 33px;
 }
 .commonBlock1 {
@@ -311,3 +317,11 @@ h3 {
     height: 42px;
 }
    
+/* .sub_header.bg_g h1 {
+	font-size: 20px;
+	color: #1e26e2;
+	margin: 82px -18px -71px -204px;
+	padding: 17px 45px 0px 35px;
+	
+}
+ */

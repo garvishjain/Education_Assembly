@@ -1,7 +1,7 @@
-<%=
+<%-- <%=
 	"<h2>"+request.getParameter("uid")+"</h2>"
 
-%>
+%> --%>
 
 <!DOCTYPE html>
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
@@ -24,7 +24,7 @@
 
     <!-- BASE CSS -->
     <link href="css/base.css" rel="stylesheet">
-    <link href="css/custom/college_detail.css" rel="stylesheet">
+    <!-- <link href="css/custom/college_detail.css" rel="stylesheet"> -->
     <script type="text/javascript" src="css/custom/college_Detail.js"></script>
     
     <!-- SPECIFIC CSS -->
@@ -68,7 +68,79 @@
     /* padding: 0px 0px 0px 0; */
     
 }
-
+#topheader .navbar-nav li>a {
+    text-transform: capitalize;
+    color: #161515;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #c2c2c2;
+    -webkit-transition: background-color .2s, color .2s;
+    transition: background-color .2s, color .2s;
+    width: 160px;
+    height: 37px;
+    text-align: center;
+    margin: 0px 0px 0px -15px;
+    padding: 9px 15px 20px 0px;
+    text-align: center;
+}
+#topheader .navbar-nav li.active>a {
+	background-color: black;
+	color: white;
+	font-size: 15px;
+	text-align: center;
+}
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+	border-color: #5f2424;
+	background-color:#c2c2c2;
+	/* background-color: #223038; */
+}
+#position {
+    padding: 10px 0;
+    font-size: 12px;
+    border-bottom: 1px solid #e4e4e4;
+    background-color: #f3f5f8;
+    margin: -42px 0px 0px 0px;
+}
+.first_head {
+    border: 2px solid gray;
+    width: 80%;
+    height: 714px;
+    margin: 35px 0px 65px 125px;
+    padding: 30px 20px 20px 30px;
+}
+@media (min-width: 768px)
+.navbar {
+    border-radius: 4px;
+    margin: 38px 0px 0px 0px;
+    height: -29px;
+    min-height: 39px;
+}
+.commonBlock {
+    border: 1.5px solid #121111;
+    width: 1000px;
+    height: 225px;
+    margin: 35px 0px 0px 86px;
+    padding: 28px 27px 45px 33px;
+}
+.sub_header.bg_g h1  
+{
+font-size: 20px;
+    color: #212122;
+    margin: 185px 245px -172px -355px;
+    padding: 0px 0px 0px 0px;
+    width: 662px;}
+.heading{
+    font-size: 20px;
+    color: #212122;
+    margin: 185px 245px -172px -330px;
+    padding: 0px 0px 0px 0px;
+    width: 662px;
+}
+img {
+    margin: auto;
+    margin: 330px 0px 0px -105px;
+    float: left;
+}
 </style>
 <script>
     $(document).ready(function(){
@@ -105,12 +177,13 @@
 			<div class="img_heading">
 				<img src="img/college/c_1.png">
 			</div>
-			<div class="col_heading">
+			
+		</div>
+		<div class="col_heading">
 				<h1 style="font-family: Georgia;" class="heading">
 					<b>MADHAV INSTITUTE OF TECHNOLOGY AND SCIENCE , GWALIOR (MITS)</b>
 				</h1>
 			</div>
-		</div>
 	</div>
 	<!--End sub_header -->
 
