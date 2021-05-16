@@ -95,7 +95,11 @@
                                 </div>
                                 <div class="clearfix visible-xs-block">
                                 </div>
+<<<<<<< HEAD
                                 <div class="col-lg-6 col-md-6 col-sm-6">
+=======
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+>>>>>>> origin/main
                                     <div class="course_list_desc">
                                     <%String str=rs.getString("course");
 		                                    int b=(str.lastIndexOf(' '));
@@ -107,8 +111,16 @@
                                         <h4>Course Duration - <%=rs.getString("duration") %></h4>
                                         <h4>Eligibility - <%=rs.getString("eligibility") %></h4>
                                         
+<<<<<<< HEAD
                                          <!--   Aims to groom the software skills and strengthen the computer application aspect of students. This prepares the students for the industry requirements so that they can flourish in the corporate IT Sector.
                                       -->  
+=======
+                                          
+                                       <form action="mca.jsp" method="post" id='university_info'>
+					                         <input type="hidden" name="uid"   value="<%=rs.getString("course")%>">
+										     <button type="submit"class="button_outline">Details</button>
+								       </form>
+>>>>>>> origin/main
 										
                                         <ul class="add_info">
                                             <!--  <li>
