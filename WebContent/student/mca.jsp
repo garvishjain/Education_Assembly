@@ -73,6 +73,22 @@
     font-weight: bold;
     margin: 0px 0px 0px 0px;}
 	</style>
+	
+	
+	<script type="text/javascript">
+	function first() {
+		  document.getElementById("about").style.visibility = "visible";
+		  document.getElementById("colleges").style.visibility = "hidden";
+		}
+
+		function second() {
+			document.getElementById("about").style.visibility = "hidden";
+			  document.getElementById("colleges").style.visibility = "visible";
+				}
+	
+	
+	
+	</script>
 </head>
 
 <body>
@@ -115,11 +131,11 @@
  		<div class="row">
            <div class="col-md-9">
            <div class="btn-group" >
-  			<a href="bba.jsp" ><button>Summary</button></a>
-  			 <a href="bba_c.jsp" ><button>Colleges</button></a>
+  			<a href="#about"  onclick="first()"><button>Summary</button></a>
+  			 <a href="#Colleges" onclick="second()"><button>Colleges</button></a>
 
 		</div>
-                	<div class="box_style_1">
+                	<div class="box_style_1" id="about" style="visibility:visible;">
                 	
                    	<div class="indent_title_in">
                    	
@@ -272,6 +288,57 @@
                      
                     
                     </div>
+                    
+                    
+                    
+                    
+                    <div class="box_style_1" id="colleges"  style="visibility:hidden;">
+                	
+                   	<div class="indent_title_in">
+                   	
+                    <i class="pe-7s-news-paper"></i>
+                      
+				<h4 class="h">college list</h4>
+				<p></p>
+			</div>
+            	<div class="wrapper_indent">
+                        
+                    </div>
+                    <hr class="styled_2">
+                    
+                    
+                        h3>Madhav Institute of Technology & Science, Gwalior Overview</h3>
+								<img  src="img/changes/mits_2.jpg">
+								
+								<span  class="paragraph">
+								
+												<p class="p1">
+														Madhav Institute of Technology & Science (MITS), Gwalior was founded in 1957 by His &nbsp; &nbsp;&nbsp; &nbsp;Highness Sir Jiwaji Rao Scindia, Maharaja, of the former state of Gwalior under the &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Government open door policy of India. The institute is affiliated with RGPV, Bhopal, but &nbsp; &nbsp;&nbsp; &nbsp;since 2002 it has academic autonomy  for running courses of its choice. The institute has &nbsp; &nbsp;&nbsp; recently approved by the UGC Delhi. The institute is also accredited by the NAAC &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(National Assessment and Accreditation Council) & NBA (National Board of &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;  Accreditation).  The institute is located in the Race Course Road, Gwalior with the vision of creating world-class  &nbsp; &nbsp;&nbsp; &nbsp;quality Engineers and Technocrats capable of providing the leadership in all spheres of life and society.
+												</p>								<br><br>
+											
+												<p>
+														The Institute also has an established IQAC (Internal Quality Assurance Cell) which helps to develop mechanisms and procedures to measure, monitor and evaluate the quality of the institution's various academic and administrative activities. The MITS Institute offers courses in various undergraduate and postgraduate programmes in various specializations such as B.E., M.E., M.Tech, and Ph.D. The programmes aim to develop the abilities of the student and confront them with contemporary issues of the corporate world. Interested candidates can apply for the Madhav Institute of Technology & Science programmes by completing the application form online or visiting the campus.
+												</p>									<br><br>
+												
+												<p>
+														MITS Gwalior's has a fabulous state-of-the-art infrastructure which includes an enabled landscaped garden, modern architecture with the best campus facilities. The Madhav Institute of Technology & Science has one of the most beautiful and modern campuses among the nearby colleges in Gwalior. The institute has a lush green environment-conscious campus of about 44.6 acres which also includes ' Madhav-Van ' a small teak wood forest where it is possible to see a large variety of birds. In the midst of complex beauty and greenery, students at MITS are free to study. The campus also offers excellent facilities for students, including classrooms, seminar rooms, library and reading rooms, hostels, food & mess, ATM, etc.
+												</p>     							 <br><br>
+												
+												<p>
+															To harness the students ' immense potential and vibrant energy the institute provides the students with various club activities for their overall development of personality and building confidence. In many sporting events such as table tennis, badminton, Kho-Kho, chess, etc the institute has won many awards & prizes.													
+												</p>
+							</span>	
+            	
+                    
+                     
+                    
+                    </div>
+                    
+                    
+                    
+                    
+                    
+                    
            </div>
            <br><br><br>
               <aside class="col-md-3">
