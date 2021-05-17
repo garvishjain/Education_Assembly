@@ -1,14 +1,3 @@
-<%-- <%=
-	"<h2>"+request.getParameter("uid")+"</h2>"
-
-%> --%>
-<%   
-  
-String coursename=request.getParameter("uid");  
-  
-  
-%>  
-
 <!DOCTYPE html>
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
 <html>
@@ -30,7 +19,7 @@ String coursename=request.getParameter("uid");
 
     <!-- BASE CSS -->
     <link href="css/base.css" rel="stylesheet">
-    <!-- <link href="css/custom/college_detail.css" rel="stylesheet"> -->
+    <link href="css/custom/college_detail.css" rel="stylesheet">
     <script type="text/javascript" src="css/custom/college_Detail.js"></script>
     
     <!-- SPECIFIC CSS -->
@@ -45,8 +34,9 @@ String coursename=request.getParameter("uid");
 
 
 
-<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"> -->
+
+<!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"> -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -109,7 +99,7 @@ String coursename=request.getParameter("uid");
 .first_head {
     border: 2px solid gray;
     width: 80%;
-    height: 714px;
+  /*   height: 625px; */
     margin: 35px 0px 65px 125px;
     padding: 30px 20px 20px 30px;
 }
@@ -145,6 +135,30 @@ img {
     margin: auto;
     margin: 330px 0px 0px -105px;
     float: left;
+}
+.mits_img{margin: 39px 0px 0px 0px;}
+.para1{margin: 0px 0px 0px 0px; }
+.para3{margin: 12px 3px 0px 275px; }
+
+.para2{    margin: 0px 0px-15px 0px;}
+.para4{margin: 20px 0px 0px 0px;}
+
+
+.overview_heading{margin: 0px 0px 0px 163px;}
+.grid figure img {
+    width: 100%;
+    height: 100%;
+    margin: 0px 0px 0px 0px;
+    -webkit-transition: all 300ms ease-in-out;
+    transition: all 300ms ease-in-out;
+}
+.placement_data{margin: 34px 0px 0px 0px;}
+.btn-link {
+    font-weight: 400;
+    color: #884ba0;
+    border-radius: 0;
+    float: left;
+    margin: -22px 0px 0px 0px;
 }
 </style>
 <script>
@@ -182,13 +196,12 @@ img {
 			<div class="img_heading">
 				<img src="img/college/c_1.png">
 			</div>
-			
-		</div>
-		<div class="col_heading">
+			<div class="col_heading">
 				<h1 style="font-family: Georgia;" class="heading">
 					<b>MADHAV INSTITUTE OF TECHNOLOGY AND SCIENCE , GWALIOR (MITS)</b>
 				</h1>
 			</div>
+		</div>
 	</div>
 	<!--End sub_header -->
 
@@ -220,27 +233,29 @@ img {
 				<div class="row staff">
 		<fieldset id="first" style="display: block;">
 					<div class="first_head">
-								<h3>Madhav Institute of Technology & Science, Gwalior Overview</h3>
-								<h3><%=coursename %></h3>                           
-								<img  src="img/changes/mits_2.jpg">
+								<h3 class="overview_heading">Madhav Institute of Technology & Science, Gwalior Overview</h3>
+								<%-- <h3><%=coursename %></h3> --%>                           
+								<img  src="img/changes/mits_2.jpg" class="mits_img">
 								
 								<span  class="paragraph">
-								
-												<p class="p1">
-														Madhav Institute of Technology & Science (MITS), Gwalior was founded in 1957 by His &nbsp; &nbsp;&nbsp; &nbsp;Highness Sir Jiwaji Rao Scindia, Maharaja, of the former state of Gwalior under the &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;Government open door policy of India. The institute is affiliated with RGPV, Bhopal, but &nbsp; &nbsp;&nbsp; &nbsp;since 2002 it has academic autonomy  for running courses of its choice. The institute has &nbsp; &nbsp;&nbsp; recently approved by the UGC Delhi. The institute is also accredited by the NAAC &nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp; &nbsp;(National Assessment and Accreditation Council) & NBA (National Board of &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp; &nbsp; &nbsp;&nbsp;  Accreditation).  The institute is located in the Race Course Road, Gwalior with the vision of creating world-class  &nbsp; &nbsp;&nbsp; &nbsp;quality Engineers and Technocrats capable of providing the leadership in all spheres of life and society.
-												</p>								<br><br>
-											
-												<p>
+											<div class="para3">
+												<p class="para1">
+													Madhav Institute of Technology & Science (MITS), Gwalior was founded in 1957 by His Highness Sir Jiwaji Rao Scindia, Maharaja, of the former state of Gwalior under the Government open door policy of India. The institute is affiliated with RGPV, Bhopal, but since 2002 it has academic autonomy  for running courses of its choice. The institute has recently approved by the UGC Delhi. The institute is also accredited by the NAAC (National Assessment and Accreditation Council) & NBA (National Board of Accreditation).  The institute is located in the Race Course Road, Gwalior with the vision of creating world-class  quality Engineers and Technocrats capable of providing the leadership in all spheres of life and society.
+												</p>	
+												</div>						
+											<div class="para4">
+												<p class="para2">
 														The Institute also has an established IQAC (Internal Quality Assurance Cell) which helps to develop mechanisms and procedures to measure, monitor and evaluate the quality of the institution's various academic and administrative activities. The MITS Institute offers courses in various undergraduate and postgraduate programmes in various specializations such as B.E., M.E., M.Tech, and Ph.D. The programmes aim to develop the abilities of the student and confront them with contemporary issues of the corporate world. Interested candidates can apply for the Madhav Institute of Technology & Science programmes by completing the application form online or visiting the campus.
 												</p>									<br><br>
 												
-												<p>
+												<p class="para2">
 														MITS Gwalior's has a fabulous state-of-the-art infrastructure which includes an enabled landscaped garden, modern architecture with the best campus facilities. The Madhav Institute of Technology & Science has one of the most beautiful and modern campuses among the nearby colleges in Gwalior. The institute has a lush green environment-conscious campus of about 44.6 acres which also includes ' Madhav-Van ' a small teak wood forest where it is possible to see a large variety of birds. In the midst of complex beauty and greenery, students at MITS are free to study. The campus also offers excellent facilities for students, including classrooms, seminar rooms, library and reading rooms, hostels, food & mess, ATM, etc.
 												</p>     							 <br><br>
 												
-												<p>
+												<p class="para2">
 															To harness the students ' immense potential and vibrant energy the institute provides the students with various club activities for their overall development of personality and building confidence. In many sporting events such as table tennis, badminton, Kho-Kho, chess, etc the institute has won many awards & prizes.													
 												</p>
+												</div>
 							</span>	
 			</div>
 	</fieldset>
@@ -267,7 +282,7 @@ img {
 					            </div>
 			            <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
 				                <div class="card-body">
-				                     <p><h2>Admission Process of Madhav Institute of Technology and Science 2019</h2><p><strong>Online:-</strong></p><ul><li>Visit the official website of Madhav Institute of Technology &amp; Science.</li><li>Then go to the tab of admission and select the online application form option.</li><li>Fillup the application form with relevant information and required documents.</li><li>Documents needed at the time of application submission :​</li><li>Copy of 10th Mark Sheet.</li><li>Copy of 10+2 Mark Sheet.</li><li>Copy of Transfer Certificate.</li><li>Copy of Migration Certificate.</li><li>Valid proof of the permanent residence (Passport / Ration Card / Election ID Card, etc.)</li><li>Visa or Passport, for Foreign National Students</li><li>Migration Certificate</li><li>Submit the application form with the payable amount.</li><li>Fees can be submitted using the Debit / Credit card / Cash.</li></ul><p><strong>Offline:-</strong></p><ul><li>Visit Madhav Institute of Technology &amp; Science&#39;s official website</li><li>Download the form below.</li><li>Complete the application form with the required fields and the required documents.</li><li>Class X Certificate for Date of Birth.</li><li>Other certificates for academics or sports.</li><li>Mark Sheets of Class X, XII, Degree, Diploma (as may be applicable).</li><li>Domicile Certificate (if applicable).</li><li>After finally filling the application form, send it to the admission office of the Madhav Institute of Technology &amp; Science</li></ul><h2>Eligibility Criteria for B.E. at&nbsp;Madhav Institute of Technology and Science 2019</h2><p>The candidate should have passed pre-university examinations with minimum 45% marks with Physics, Chemistry, and Chemistry / Biology / Computer Science as an optional subject under the Karnataka State Pre-university Board or its equivalent.</p><p>Candidates seeking admission to the second year of the four-year B.E. degree must have completed the three-year Diploma course conducted by the Board of Technical Examination of the Karnataka Government in the respective branches/courses or any other examination recognized as equivalent by the Visvesvaraya Technological University.</p><h2>Selection Process of&nbsp;B.E. at&nbsp;Madhav Institute of Technology and Science 2019</h2><p><strong>STEP-1</strong></p><p>The Selection will be done on the basis of score obtained in JEE &amp; the academic performance of the applicants.</p><p><strong>STEP-2</strong></p><p>Shortlisted applicants will be called for Aptitude test &amp; Group Discussion (GD) where applicants will be assessed to his/her verbal, written and analytical skills.</p><p><strong>STEP-3</strong></p><p>After that, the selected applicants will be called for the Personal Interview (PI) to identify &amp; assess the interpersonal skills of the applicant.</p><p><strong>STEP-4</strong></p><p>The Final Selection will be done on the basis of the composite scores of Entrance exam &amp; PI round conducted by the institute.</p></div><div class="heading"  id="mtech" >For M.Tech</div><div class="box content"  style="display:none;"   ><h2>Eligibility Criteria for M.Tech at Madhav Institute of Technology and Science 2019</h2><p>Candidates should have passed B.E./ B.Tech. Examinations in the relevant fields with not less than 50 percent of the marks in their degree examinations. The course is open to candidates who have passed the prescribed qualifying examinations. However, in the case of SC / ST and Group I candidates, the aggregate percentage of marks in qualifying examinations shall not be less than 45 percent.</p><h2>Selection Process of&nbsp;M.Tech at Madhav Institute of Technology and Science 2019</h2><p><strong>STEP-1</strong></p><p>The Selection will be done on the basis of the common entrance tests for M.Tech program ( PGCET/ GATE ).</p><p><strong>STEP-2</strong></p><p>Shortlisted applicants will be called for Aptitude test &amp; Group Discussion (GD) where applicants will be assessed to his/her verbal, written and analytical skills.</p><p><strong>STEP-3</strong></p><p>After that, the selected applicants will be called for the Personal Interview (PI) to identify &amp; assess the interpersonal skills of the applicant.</p><p><strong>STEP-4</strong></p><p>The Final Selection will be done on the basis of the composite scores of Entrance exam &amp; PI round conducted by the institute.</p></p>
+				                     <p><h2>Admission Process of Madhav Institute of Technology and Science 2019</h2><p><strong>Online:-</strong></p><ul><li>Visit the official website of Madhav Institute of Technology &amp; Science.</li><li>Then go to the tab of admission and select the online application form option.</li><li>Fillup the application form with relevant information and required documents.</li><li>Documents needed at the time of application submission :â€‹</li><li>Copy of 10th Mark Sheet.</li><li>Copy of 10+2 Mark Sheet.</li><li>Copy of Transfer Certificate.</li><li>Copy of Migration Certificate.</li><li>Valid proof of the permanent residence (Passport / Ration Card / Election ID Card, etc.)</li><li>Visa or Passport, for Foreign National Students</li><li>Migration Certificate</li><li>Submit the application form with the payable amount.</li><li>Fees can be submitted using the Debit / Credit card / Cash.</li></ul><p><strong>Offline:-</strong></p><ul><li>Visit Madhav Institute of Technology &amp; Science&#39;s official website</li><li>Download the form below.</li><li>Complete the application form with the required fields and the required documents.</li><li>Class X Certificate for Date of Birth.</li><li>Other certificates for academics or sports.</li><li>Mark Sheets of Class X, XII, Degree, Diploma (as may be applicable).</li><li>Domicile Certificate (if applicable).</li><li>After finally filling the application form, send it to the admission office of the Madhav Institute of Technology &amp; Science</li></ul><h2>Eligibility Criteria for B.E. at&nbsp;Madhav Institute of Technology and Science 2019</h2><p>The candidate should have passed pre-university examinations with minimum 45% marks with Physics, Chemistry, and Chemistry / Biology / Computer Science as an optional subject under the Karnataka State Pre-university Board or its equivalent.</p><p>Candidates seeking admission to the second year of the four-year B.E. degree must have completed the three-year Diploma course conducted by the Board of Technical Examination of the Karnataka Government in the respective branches/courses or any other examination recognized as equivalent by the Visvesvaraya Technological University.</p><h2>Selection Process of&nbsp;B.E. at&nbsp;Madhav Institute of Technology and Science 2019</h2><p><strong>STEP-1</strong></p><p>The Selection will be done on the basis of score obtained in JEE &amp; the academic performance of the applicants.</p><p><strong>STEP-2</strong></p><p>Shortlisted applicants will be called for Aptitude test &amp; Group Discussion (GD) where applicants will be assessed to his/her verbal, written and analytical skills.</p><p><strong>STEP-3</strong></p><p>After that, the selected applicants will be called for the Personal Interview (PI) to identify &amp; assess the interpersonal skills of the applicant.</p><p><strong>STEP-4</strong></p><p>The Final Selection will be done on the basis of the composite scores of Entrance exam &amp; PI round conducted by the institute.</p></div><div class="heading"  id="mtech" >For M.Tech</div><div class="box content"  style="display:none;"   ><h2>Eligibility Criteria for M.Tech at Madhav Institute of Technology and Science 2019</h2><p>Candidates should have passed B.E./ B.Tech. Examinations in the relevant fields with not less than 50 percent of the marks in their degree examinations. The course is open to candidates who have passed the prescribed qualifying examinations. However, in the case of SC / ST and Group I candidates, the aggregate percentage of marks in qualifying examinations shall not be less than 45 percent.</p><h2>Selection Process of&nbsp;M.Tech at Madhav Institute of Technology and Science 2019</h2><p><strong>STEP-1</strong></p><p>The Selection will be done on the basis of the common entrance tests for M.Tech program ( PGCET/ GATE ).</p><p><strong>STEP-2</strong></p><p>Shortlisted applicants will be called for Aptitude test &amp; Group Discussion (GD) where applicants will be assessed to his/her verbal, written and analytical skills.</p><p><strong>STEP-3</strong></p><p>After that, the selected applicants will be called for the Personal Interview (PI) to identify &amp; assess the interpersonal skills of the applicant.</p><p><strong>STEP-4</strong></p><p>The Final Selection will be done on the basis of the composite scores of Entrance exam &amp; PI round conducted by the institute.</p></p>
 							   </div>
 			            </div>
 			    </div>
@@ -323,8 +338,6 @@ img {
 					</div>
 					</div>
 					<!-- courses div -->
-					
-					
 		
 						<div class="container_gray_b">
 							
@@ -502,7 +515,7 @@ img {
 							<div class="placement_detail">
 									<font face="Georgia" size="4" align="justify"><p class="placement_heading" align="justify"><dd>The Goal of Training & Placement Cell of MITS Gwalior is to be a liaison between Industry and students to provide employment opportunities available in the market and to provide intensive training to the students for their overall development.<br />
 												It works under guidance of Training & Placement Officer in consultation with Faculty In-Charge.<br />
-												Training & Placement Cell provides full placement support to its students in all areas of disciplines – Civil, Mechanical, Electrical, Electronics & Communication, Computer Science, Information Technology, Biotechnology & Chemical Engineering, Electronics & Telecommunication, Automobile Engineering and Computer Applications etc.<br />
+												Training & Placement Cell provides full placement support to its students in all areas of disciplines â€“ Civil, Mechanical, Electrical, Electronics & Communication, Computer Science, Information Technology, Biotechnology & Chemical Engineering, Electronics & Telecommunication, Automobile Engineering and Computer Applications etc.<br />
 												Right from connecting with companies related to above mentioned disciplines in the industry to managing all logistics of arranging whole campus recruitment process with the required hospitality; T&P Cell officials and students coordinators provide their best possible assistance to the recruiters.<br />
 												Apart from that, T&P Cell focuses on conducting soft & professional skills training for Pre-Final & Final year students, Industrial Projects/Internships & Training, Guest Lectures, Motivation & Guiding Sessions, Alumni connect programmes and building brand value of the Institute in the industry & market. </dd> </p> </font> </br>  <b>
 									<font face="Georgia" size="5" color="blue">
@@ -535,7 +548,7 @@ img {
 									  <font face="Georgia" size="4"><p align="justify"><dd>
 												MITS, Gwalior is one of the well-established engineering institutions in the country along the lines of IITs and NITs; it is a government aided autonomous institution, established in 1957.<br />
 												And, it is oldest premier institute in the North Central region of the country that aims at all round development of the students besides imparting technical knowledge.<br />
-												<!--<font face="Georgia" size="4" color="blue"><i><b>“MITS ranks 15th in latest DATAQUEST-CMR T-School Survey-2015 of Top 25 Government T-schools of India.”</b></i></font> -->
+												<!--<font face="Georgia" size="4" color="blue"><i><b>â€œMITS ranks 15th in latest DATAQUEST-CMR T-School Survey-2015 of Top 25 Government T-schools of India.â€</b></i></font> -->
 									<ol type="A">
 									<h2><li>An Institute of Excellence:</li></h2>
 									<p align="justify">
@@ -550,18 +563,22 @@ img {
 	<!-- Recruiters Field Start -->						
 <fieldset id="recruiters" style="display: none;">
 	<font face="Georgia" size="5" color="black">
-			<div recruite_heading>
-					<table  class="table_com">
-					 <!-- <tr>
+			
+					<!-- <table  class="table_com">
+					 <tr>
 					    <th class="table_head"><p class="table_head">Leading Recruiters<p></th>
-					  </tr> --> 
+					  </tr> 
 							  <tr>
-							    <td align="right"  class="am"><img src="img/company_image/amazon-625x352.jpg"></td>
-							    <td align="left"    class="am1"><font   face="Georgia" size="4" color="black">Amazone</font></td>
-							    <td align="right" class="am"><img src="img/company_image/BYJUS_logo_600x400.2eab8a9e741c01c02b31b22d4cb028f9871d2893.jpg"></td>
+							    <td   class="am"><img src="img/company_image/amazon-625x352.jpg"></td>
+							    <td  class="am1"><font   face="Georgia" size="4" color="black">Amazone</font></td>
+							 </tr>
+				</table> -->
+				
+				<table>
+   <td align="right" class="am"><img src="img/company_image/BYJUS_logo_600x400.2eab8a9e741c01c02b31b22d4cb028f9871d2893.jpg"></td>
 							    <td align="left"    class="am1"><font   face="Georgia" size="4" color="black">BYJUS</font></td>
 							    <td align="right" class="am"><img src="img/company_image/download (2).png"></td>
-							    <td align="left"    class="am"><font    face="Georgia" size="4" color="black">Mahindra</font></td>
+							    <td align="left"    class="am1"><font    face="Georgia" size="4" color="black">Mahindra</font></td>
 							  </tr>
 							  
 							  <tr>
@@ -586,16 +603,16 @@ img {
 							    <td align="right" class="am"><img src="img/company_image/infosis.jpg"></td>
 							    <td align="left" class="am1"><font face="Georgia" size="4" color="black">Infosys</font></td>
 							  </tr>
-				</table>
-		</div>
+							 </table>
+		
 	</font>
 </fieldset>
 
 <!--  Record Table STart -->	
 				<fieldset id="records" style="display: none;">
 														<h1 class="record_heading" >Placement Record</h1>
-														<img alt="" src="img/company_image/placemnt2021.jpg"><br>
-														<img alt="" src="img/company_image/plac2021.jpg">
+														<img alt="" src="img/company_image/placemnt2021.jpg" class="placement_data"><br>
+														<img alt="" src="img/company_image/plac2021.jpg" class="placement_data">
 				</fieldset>
     </div>
     </div>
@@ -986,7 +1003,7 @@ img {
     
 <!-- Search modal -->   
 <div id="search">
-    <button type="button" class="close">ï¿½</button>
+    <button type="button" class="close">Ã¯Â¿Â½</button>
     <form>
         <input type="search" value="" placeholder="type keyword(s) here" >
         <button type="submit" class="button">Search</button>
