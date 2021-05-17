@@ -2,12 +2,11 @@ package in.University;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.security.MessageDigest;
-import java.security.NoSuchAlgorithmException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Random;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
@@ -19,7 +18,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
-import javax.xml.bind.DatatypeConverter;
 
 import in.common.hashed;
 
@@ -30,9 +28,7 @@ import in.common.hashed;
 public class Registration extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Connection con;
-	private String hashing;
 	private PreparedStatement stmt;
-	private String passbyte;
 	
 	
 
@@ -61,10 +57,12 @@ public class Registration extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		
-		
+		Random rnd = new Random();
+        int number = rnd.nextInt(99999999);
+        String ureg ="UNI" + number ;
 		try 
 		{
-			String ureg = request.getParameter("ureg")!= null ? request.getParameter("ureg") : "";
+			/*String ureg = request.getParameter("ureg")!= null ? request.getParameter("ureg") : "";*/
 			String uname = request.getParameter("uname")!= null ? request.getParameter("uname") : "";
 			String uadrs = request.getParameter("uadrs")!= null ? request.getParameter("uadrs") : "";
 			String cntry = request.getParameter("cntry")!= null ? request.getParameter("cntry") : "";
@@ -86,12 +84,6 @@ public class Registration extends HttpServlet {
 			/*university account start*/
 			String username = request.getParameter("username")!= null ? request.getParameter("username") : "";
 			String pswd = request.getParameter("pswd")!= null ? request.getParameter("pswd") : "123";
-			String cpswd = request.getParameter("cpswd")!= null ? request.getParameter("cpswd") : "123";
-			if(pswd.equals(cpswd))
-			{	
-				byte[] passbyte= pswd.getBytes();
-				getHash(passbyte,"SHA-256");
-			}
 
 			String sql2="insert into university_contact(registrar_name,contact_name,contact_number,designation)value(?,?,?,?)";
 			stmt = con.prepareStatement(sql2);
@@ -222,13 +214,16 @@ public class Registration extends HttpServlet {
 			
 			int res = stmt.executeUpdate();
 			
+			hashed gethash = new hashed();
+			String hashed = gethash.getHash(pswd);
+			
 			String sql3="insert into user(name,email,username,password,register_num)values(?,?,?,?,?)";
 			
 			stmt = con.prepareStatement(sql3);
 			stmt.setString(1, regname);
 			stmt.setString(2, uemail);
 			stmt.setString(3, username);
-			stmt.setString(4, passbyte);
+			stmt.setString(4, hashed);
 			stmt.setString(5, ureg);
 			
 			int res3 = stmt.executeUpdate();
@@ -236,14 +231,14 @@ public class Registration extends HttpServlet {
 			if(res>0 && res2>0 && res3>0)
 			{
 				out.println("<html><body><script>alert('Data Inserted');</script></body></html>");
-				/*request.setAttribute("status","Successfully Registered");
-				response.sendRedirect("university/university-manager.jsp");*/
+				request.setAttribute("status","Successfully Registered");
+				response.sendRedirect("student/home.jsp");
 			}
 			else
 			{
 				out.println("<html><body><script>alert('Not Inserted');</script></body></html>");
-				/*request.setAttribute("status", "Failed to sign up...! please try again");
-				response.sendRedirect("university/university-register.jsp");*/
+				request.setAttribute("status", "Failed to sign up...! please try again");
+				response.sendRedirect("university/university-register.jsp");
 			}
 			
 		} 
@@ -258,20 +253,4 @@ public class Registration extends HttpServlet {
 			e.printStackTrace();
 		}
 	}
-	private String getHash(byte[] passbyte,String algo) 
-	{
-		try 
-			{
-				MessageDigest msgdigest = MessageDigest.getInstance(algo);
-				msgdigest.update(passbyte);
-				byte[] passdigest = msgdigest.digest();
-				hashing = DatatypeConverter.printHexBinary(passdigest).toLowerCase();
-			}
-		catch (NoSuchAlgorithmException e) 
-			{
-				e.printStackTrace();
-			}
-		return hashing;
-	}
-
 }
