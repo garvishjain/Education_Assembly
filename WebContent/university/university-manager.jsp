@@ -4,12 +4,6 @@
 <%@ include file="inc/header.jsp" %>  
 
 <%
-	 
-	
-	
-%>
-
-<%
 GetConnection getConObj=new GetConnection();
 Connection con=getConObj.getCon();
 Statement stmt=con.createStatement();

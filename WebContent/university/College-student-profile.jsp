@@ -1,17 +1,7 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html lang="en" dir="ltr">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<link rel="icon" href="favicon.ico" type="image/x-icon"/>
-<title>:: Education Assembly :: Students</title>
-
 <!-- Import Package  -->
 <%@ include file="inc/stdimport.jsp" %> 
 <%@page import="in.common.GetConnection"%>
+<%@ include file="inc/header2.jsp" %>  
 
 <%
 GetConnection getConObj=new GetConnection();
@@ -19,82 +9,7 @@ Connection con=getConObj.getCon();
 Statement stmt=con.createStatement();
 %>
 
-<!-- Bootstrap Core and vandor -->
-<link rel="stylesheet" href="../assets/plugins/bootstrap/css/bootstrap.min.css" />
-<link rel="stylesheet" href="../assets/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
-<link rel="stylesheet" href="../assets/plugins/dropify/css/dropify.min.css">
-<link rel="stylesheet" href="../assets/plugins/summernote/dist/summernote.css"/>
-<link rel="stylesheet" href="../assets/plugins/sweetalert/sweetalert.css">
 
-<!-- Core css -->
-<link rel="stylesheet" href="../assets/css/style.min.css"/>
-</head>
-
-<body class="font-muli theme-cyan gradient">
-
-<!-- Page Loader -->
-<div class="page-loader-wrapper">
-    <div class="loader">
-    </div>
-</div>
-
-<div id="main_content">
-    <!-- Start Main top header -->
-     <div id="header_top" class="header_top">
-        <div class="container">
-            <div class="hleft">
-                <a class="header-brand" href="#"><i class="fa fa-graduation-cap brand-logo"></i></a>
-                <div class="dropdown">
-                    <a href="javascript:void(0)" class="nav-link icon menu_toggle"><i class="fe fe-align-center"></i></a>
-                    <a href="page-search.html" class="nav-link icon"><i class="fe fe-search" data-toggle="tooltip" data-placement="right" title="Search..."></i></a>
-                    <a href="javascript:void(0)" class="nav-link icon settingbar"><i class="fe fe-settings"></i></a>
-                </div>
-            </div>
-            <div class="hright">
-                <a href="login.jsp" class="nav-link icon settingbar"><i class="fe fe-power" title="Log Out"></i></a>                
-            </div>
-        </div>
-    </div> 
-    <!-- Start Rightbar setting panel -->
-   
-    <!-- Start Theme panel do not add in project -->
-   
-    <!-- Start Quick menu with more functio -->
-    <!-- Start Main leftbar navigation -->
-    <div id="left-sidebar" class="sidebar">
-        <h6 class="brand-name">Education Assembly<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h6>
-        <ul class="nav nav-tabs">
-            <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-uni">College</a></li>
-        </ul>
-        <div class="tab-content mt-3">
-            <div class="tab-pane fade show active" id="menu-uni" role="tabpanel">
-                <nav class="sidebar-nav">
-                    <ul class="metismenu">
-                        <li><a href="College-manager.jsp"><i class="fa fa-dashboard"></i><span>Dashboard</span></a></li>
-                        <li><a href="College-professors.jsp"><i class="fa fa-black-tie"></i><span>Professors</span></a></li>
-                        <li class="active"><a href="College-students.jsp"><i class="fa fa-users"></i><span>Students</span></a></li>
-                        <li><a href="College-department.jsp"><i class="fa fa-users"></i><span>Departments</span></a></li>
-                        <li><a href="College-courses.jsp"><i class="fa fa-graduation-cap"></i><span>Courses</span></a></li>                        
-                    </ul>
-                </nav>
-            </div>
-        </div>
-    </div>
-    <!-- Start project content area -->
-    <div class="page">
-        <!-- Start Page header -->
-        <div class="section-body" id="page_top" >
-            <div class="container-fluid">
-                <div class="page-header">
-                   <div class="input-group">
-                       <input type="text" class="form-control" placeholder="What you want to find">
-                       <div class="input-group-append">
-                           <button class="btn btn-outline-secondary" type="button">Search</button>
-                       </div>
-                   </div>
-                </div>
-            </div>
-        </div>
         <!-- Start Page title and tab -->
         <div class="section-body">
             <div class="container-fluid">

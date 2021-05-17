@@ -1,7 +1,7 @@
 <!-- Import package -->
 <%@page import="in.common.GetConnection"%>
 <%@ include file="inc/stdimport.jsp" %>  
-<%@ include file="inc/header.jsp" %>  
+<%@ include file="inc/header2.jsp" %>  
 <%
 GetConnection getConObj=new GetConnection();
 Connection con=getConObj.getCon();
