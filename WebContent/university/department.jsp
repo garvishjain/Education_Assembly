@@ -54,15 +54,6 @@ Statement stmt=con.createStatement();
                 </div>
             </div>
         </div>
-        <!-- <div class="container-fluid">
-        	<div class="d-flex justify-content-between align-items-center ">
-	        	<ul class="nav nav-tabs page-header-tab">
-	                <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="dept-all">All</a></li>
-	                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="dept-active">Active</a></li>
-	                <li class="nav-item"><a class="nav-link" data-toggle="tab" href="dept-nonactive">Non Active</a></li>
-	            </ul>
-            </div>
-        </div> -->
         <div class="section-body mt-4">
             <div class="container-fluid">
                 <div class="tab-content">

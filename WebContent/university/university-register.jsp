@@ -93,13 +93,13 @@
 										<div class="row">
 											<div class="col-md-6 col-sm-12">
 												<div class="form-group">
-													<label>University Registration <span
-														class="text-danger">*</span></label> <input class="form-control"
-														type="text" placeholder="Enter Registration Number"
+													<!-- <label>University Registration <span
+														class="text-danger">*</span></label> --> <input class="form-control"
+														type="hidden" placeholder="Enter Registration Number"
 														required="required" name="ureg">
 												</div>
 											</div>
-											<div class="col-md-6 col-sm-12">
+											<div class="col-sm-12">
 												<div class="form-group">
 													<label>University Name <span class="text-danger">*</span></label>
 													<input class="form-control" type="text" name="uname"
@@ -347,14 +347,7 @@
 														required="required">
 												</div>
 											</div>
-											<div class="col-md-6 col-sm-12">
-												<div class="form-group">
-													<label>Confirm Password</label><span class="text-danger">*</span> <input type="password"
-														class="form-control" name="cpswd"
-														placeholder="Enter Confirm Password" aria-label="With textarea"
-														required="required">
-												</div>
-											</div>
+											
 											<div class="col-sm-12 text-right m-t-20">
 												<button type="submit" class="button">SAVE</button>
 											</div>
