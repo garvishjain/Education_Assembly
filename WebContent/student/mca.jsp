@@ -112,6 +112,20 @@ button.button_outline:hover, .button_outline:hover{
 
 .u_name{font-size: 16px;
     font-weight: bold;}
+    
+  .social_team li {
+    display: inline-block;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    border: 1px solid #1f1c1c;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 5px;
+}
+    
+    
 	</style>
 	
 	
@@ -140,16 +154,6 @@ button.button_outline:hover, .button_outline:hover{
     <!-- Header================================================== -->
      <%@ include file="itc/header.jsp" %>
      <%String course_name=request.getParameter("uid");  %>
-     
-       <%
-			try{
-				String sql=  "Select  * from course_details\n"+  
-								    " INNER JOIN course_highlights ON course_highlights.pk_id=course_details.fk_course_highlights\n"+
-								     "INNER JOIN course_name ON course_name.pk_id=course_highlights.fk_duration where course='"+course_name+"'  " ; 
-     ResultSet rs=stmt.executeQuery(sql);
-				while (rs.next()) {
-		%>
-
         <div class="sub_header bg_1">
         	<div id="intro_txt">
 			<h1> <strong>Course Detail</strong> </h1>
@@ -171,7 +175,15 @@ button.button_outline:hover, .button_outline:hover{
 					  			<a href="#about"  onclick="summary()"><button>Summary</button></a>
 					  			 <a href="#Colleges" onclick="college()"><button>Colleges</button></a>
 								</div>
-						<fieldset id="about" style="display: block;">		
+						<fieldset id="about" style="display: block;">	
+						 <%
+			try{
+				String sql=  "Select  * from course_details\n"+  
+								    " INNER JOIN course_highlights ON course_highlights.pk_id=course_details.fk_course_highlights\n"+
+								     "INNER JOIN course_name ON course_name.pk_id=course_highlights.fk_duration where course='"+course_name+"'  " ; 
+     ResultSet rs=stmt.executeQuery(sql);
+				while (rs.next()) {
+		%>	
                 	<div class="box_style_1" >
                 	
                    	<div class="indent_title_in">
@@ -338,6 +350,13 @@ button.button_outline:hover, .button_outline:hover{
                      
                     
                     </div>
+                     <%
+				}
+				}
+		catch (Exception e) {
+			e.printStackTrace();
+					}
+					%>
                     </fieldset>
                     
                     
@@ -355,7 +374,7 @@ button.button_outline:hover, .button_outline:hover{
 			try{
 				String sql1=
 						"Select  * from university_courses\r\n" + 
-						"INNER JOIN course_name ON course_name.pk_id=university_courses.course_name \r\n" + 
+						"INNER JOIN course_name ON course_name.pk_id=university_courses.course_id \r\n" + 
 						"INNER JOIN university ON university.pk_id=university_courses.fk_university_id\r\n" + 
 						"INNER JOIN country ON country.pk_id=university.fk_country\r\n" + 
 						"INNER JOIN state ON state.pk_id=university.fk_state\r\n" + 
@@ -392,14 +411,14 @@ button.button_outline:hover, .button_outline:hover{
 					                                    <li><a href="<%=rs1.getString("google_link") %>"><i class="icon-google"></i></a></li>
 					                                    <li><a href="<%=rs1.getString("mail_link") %>"><i class="icon-email"></i></a></li>
 													</ul> 
-									</div><hr>
+													<hr style="color: black; width: 338px; height: 0.5px;  margin: -10px 0px 0px -30px; background-color: black;">
+									</div>
 									
-									<%-- <form action="college_detail.jsp" method="post" id='university_info'>
-					                             	 <input type="hidden" name="uid" value="<%=rs.getString("u_registration")%>">
+									<form action="college_detail.jsp" method="post" id='university_info'>
+					                             	 <input type="hidden" name="uid" value="<%=rs1.getString("u_name")%>">
 													<button type ="submit" class="button_outline" style="position: absolute;
-														    top: 553px;
-														    right: 500px;">Profile</button>
-									</form> --%>
+														   top: 527px; right: 469px;">Profile</button>
+									</form>
 									
 				     			</div>
 				     			
@@ -507,13 +526,7 @@ New Delhi-110001<br>
                     </aside>
             </div><!--End row -->
         </div><!--End container -->
-        <%
-				}
-				}
-		catch (Exception e) {
-			e.printStackTrace();
-					}
-					%>
+       
         </div><!--End container_gray_bg -->
   
   
