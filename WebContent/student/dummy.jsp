@@ -34,6 +34,11 @@
         	$(this).prev(".card-header").find(".fa").removeClass("fa-minus").addClass("fa-plus");
         });
     });
+    
+    function getddl()
+    {
+    document.getElementById('lblmess').innerHTML=(formid.course[formid.course.selectedIndex].text+'<b>')
+    }
 </script>
 </head>
 <body>
@@ -70,5 +75,24 @@
 			        </div>
     </div>
 </div>
+
+
+<form name="formid">
+								<div class="col-md-6">
+										<div class="form-group">
+											<label>Select Course</label> <select name="course"
+												id="course"  onchange="getddl()" class="form-control styled required"
+												required="required">
+												<option >Shadab</option>
+												<option >AYan</option>
+											</select>
+										</div>
+									</div>
+</form>
+	<label id="lblmess" name="lblname"></label>
+	<% 
+	String sql="Select * from Student where name='"++"'";
+	System.out.print(sql);
+	%>
 </body>
 </html>

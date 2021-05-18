@@ -101,12 +101,20 @@ label {
 	function validate() {
 
 		var pass = document.getElementById("pass").value;
+		var courses = document.getElementById("course").value;
 		var cpass = document.getElementById("cpass").value;
+		
 		if (pass == "") {
 			document.getElementById("passerr").innerHTML = "";
 			return false;
 		} else {
 			document.getElementById("passerr").innerHTML = "";
+		}
+		if (courses == "null") {
+			document.getElementById("courseerr").innerHTML = "Please Select Course";
+			return false;
+		} else {
+			document.getElementById("courseerr").innerHTML = "";
 		}
 		if (cpass == "") {
 			document.getElementById("cpasserr").innerHTML = "";
@@ -179,9 +187,14 @@ label {
 		}
 	
 	
-	
+		function getddl()
+		{
+		document.getElementById('lblmess').innerHTML=(formid.course[formid.course.selectedIndex].text+'<b>')
+		}
 </script>
+<script type="text/javascript">
 
+</script>
 
 </head>
 
@@ -534,7 +547,33 @@ label {
 							</div>
 							<div class="wrapper_indent">
 								<div class="row">
+<form name="formid">
+								<div class="col-md-6">
+										<div class="form-group">
+											<label>Select Course</label> <select name="course"
+												id="course"  onchange="getddl()" class="form-control styled required"
+												required="required">
+												<option value="null" >---Please Select---</option>
+												<%
+													try {
+														String query = "select  * from course_name Limit 20";
+														//get Table data
+														ResultSet rs = stmt.executeQuery(query);
+														while (rs.next()) {
+												%>
+												<option ><%=rs.getString("course")%></option>
+												<%
+													}
+													} catch (Exception e) {
 
+													}
+												%>
+											</select>
+											<span style="color: red" id="courseerr"></span>
+										</div>
+									</div>
+</form>
+	
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Select College/University</label> <select
@@ -543,7 +582,9 @@ label {
 												<option value="null">---Please Select---</option>
 												<%
 													try {
-														String query = "select * from college_registration";
+														String query = "Select  * from university_courses"+
+																"INNER JOIN course_name ON course_name.pk_id=university_courses.course_id"+
+										                        "INNER JOIN university on university_courses.fk_university_id=university.pk_id " ;
 														//get Table data
 														ResultSet rs = stmt.executeQuery(query);
 														while (rs.next()) {
@@ -559,29 +600,7 @@ label {
 										</div>
 									</div>
 
-									<div class="col-md-6">
-										<div class="form-group">
-											<label>Select Course</label> <select name="course"
-												id="course" class="form-control styled required"
-												required="required">
-												<option value="null">---Please Select---</option>
-												<%
-													try {
-														String query = "select * from course";
-														//get Table data
-														ResultSet rs = stmt.executeQuery(query);
-														while (rs.next()) {
-												%>
-												<option><%=rs.getString("course_name")%></option>
-												<%
-													}
-													} catch (Exception e) {
-
-													}
-												%>
-											</select>
-										</div>
-									</div>
+									
 
 
 

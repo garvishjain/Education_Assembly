@@ -1,13 +1,14 @@
 <%@page import="in.common.GetName"%>
+<%@page import="in.common.hashed"%>
 <%@page import="in.common.GetConnection"%>
 <%@ include file="inc/stdimport.jsp"%>
 <%Statement stmt=null; %>
 <%
-			GetConnection getcon=new GetConnection();
-		 Connection con=getcon.getCon();
-		stmt= con.createStatement();
+			GetConnection getCon=new GetConnection();
+			Connection con=getCon.getCon();
+			stmt=con.createStatement();
+			System.out.print(con);
 		%>
-<%@page import="in.common.hashed"%>
 <%
 		String status = request.getParameter("status");
 		if(status != null)
@@ -312,6 +313,14 @@ a.link_normal {
     display: block;
     color: #00aeef;
     margin: 0px 0px 0px 24px;
+}
+
+.checkbox-holder span {
+    position: relative;
+    display: inline-block;
+    margin: 0 0 0 46px;
+    white-space: normal;
+    color: #fff;
 }
 </style>
 

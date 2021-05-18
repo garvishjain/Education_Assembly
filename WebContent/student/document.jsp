@@ -490,27 +490,27 @@ function validateImage_72() {
 					<div>
 						<img src="img/college/do.jpg" class="imgframe1">
 					</div>
-					<form action="../St_Document" method="post" enctype="Multipart/form-data"></form>
+					<form action="../Documents" method="post" enctype="Multipart/form-data">
 						<fieldset id="cast" style="display: block;">
 							<div class="cido">
 								<p class="ddd"><strong>Cast / Income / Domicile</strong></p>
 								<hr class="h_line">
-								<input type="file" name="cast" class="doc_image"  id="img" onchange="validateImage()">
+								<input type="file" name="cast" class="doc_image"  id="img" onchange="validateImage()" required="required">
 								<p class="ca">Upload Cast Certificate
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</p>
 								<br>
 								<hr class="h_line">
-								<input type="file" name="income" class="doc_image" id="img_1" onchange="validateImage_1()">
+								<input type="file" name="income" class="doc_image" id="img_1" onchange="validateImage_1()" required="required">
 								<p class="i">Upload Income Certificate
 										&nbsp;&nbsp;&nbsp;:&nbsp;</p>
 								<br>
 								<hr class="h_line">
-								<input type="file" name="domicile" class="doc_image"  id="img_2" onchange="validateImage_2()">
+								<input type="file" name="domicile" class="doc_image" required="required"  id="img_2" onchange="validateImage_2()">
 								<p class="do">Upload Domicile Certificate &nbsp;:&nbsp;</p>
 								<br>
 								<hr class="h_line">
 								<div class="but">
-								<button type="submit" onclick="next()" class="button">Next</button>
+								<button type="button" onclick="next()" class="button">Next</button>
 								</div>
 							</div>
 						</fieldset>
@@ -518,46 +518,47 @@ function validateImage_72() {
 							<div class="cido">
 								<p class="ddd"><strong>Aadhaar Card</strong></p>
 								<hr class="h_line">
-								<input type="file" name="aadhar" class="doc_image"  id="img_3" onchange="validateImage_3()">
+								<input type="file" name="aadhar" class="doc_image"  id="img_3" required="required" onchange="validateImage_3()">
 								<p class="ca">Upload Aadhaar Card
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</p>
 								<br>
 								<hr class="h_line">
-								<button type="submit" onclick="secondnext()" class="button">Next</button>
-								<button type="submit" onclick="firstprev()" class="button">previous</button>
+								<button type="button" onclick="secondnext()" class="button">Next</button>
+								<button type="button" onclick="firstprev()" class="button">previous</button>
 							</div>
 						</fieldset>
 						<fieldset id="high" style="display: none;">
 							<div class="cido">
 								<p class="ddd"><strong>MarkSheets</strong></p>
 								<hr class="h_line">
-								<input type="file" name="high" class="doc_image"  id="img_4" onchange="validateImage_4()">
+								<input type="file" name="high" class="doc_image"  id="img_4" required="required" onchange="validateImage_4()">
 								<p class="i">Upload 10<sup>th</sup> Marksheet &nbsp;&nbsp;&nbsp;:&nbsp;</p>
 								<br>
 								<hr class="h_line">
-								<input type="file" name="higher" class="doc_image"  id="img_5" onchange="validateImage_5()">
+								<input type="file" name="higher" class="doc_image"  id="img_5" required="required" onchange="validateImage_5()">
 								<p class="i">Upload 12<sup>th</sup> Marksheet &nbsp;&nbsp;&nbsp;:&nbsp;</p>
 								<hr class="h_line">
-								<button type="submit" onclick="thirdnext()" class="button">Next</button>
-								<button type="submit" onclick="secondprev()" class="button">previous</button>
+								<button type="button" onclick="thirdnext()" class="button">Next</button>
+								<button type="button" onclick="secondprev()" class="button">previous</button>
 							</div>
 						</fieldset>
 						<fieldset id="tc" style="display: none;">
 							<div class="cido">
 								<p class="ddd"><strong>TC / Migration</strong></p>
 								<hr class="h_line">
-								<input type="file" name="tc" class="doc_image" id="img_61" onchange="validateImage_61()">
+								<input type="file" name="tc" class="doc_image" id="img_61" required="required" onchange="validateImage_61()">
 								
 								<p class="i">Upload Transfer Certificate &nbsp;&nbsp;&nbsp;:&nbsp;</p>
 								<br>
 								<hr class="h_line">
-								<input type="file" name="migration" class="doc_image"  id="img_72" onchange="validateImage_72()">
+								<input type="file" name="migration" class="doc_image"  id="img_72" required="required" onchange="validateImage_72()">
 								<p class="i">Upload Migration(optional) &nbsp;&nbsp;&nbsp;:&nbsp;</p>
 								<hr class="h_line">
 								<button type="submit"  class="button">Submit</button>
 								<button type="submit" onclick="thirdprev()" class="button">previous</button>
 							</div>
 						</fieldset>
+						</form>
 					</div>
 				</div>
 			</div>

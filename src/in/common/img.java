@@ -16,11 +16,10 @@ public class img {
 	public String image(String filename, Part part)
 	{   
 			try {	
-				pathname = "F:\\lastproject\\Education_Assembly\\WebContent\\college\\img\\"+" col";
+				pathname = "G:\\i\\"+" col";
 				name =filename+""+(LocalDateTime.now().toString().replace(":","")) ;
-			
-                 String finallocation = pathname +""+name;
-	 part.write(finallocation );
+                String finallocation = pathname +""+name;
+	            part.write(finallocation );
 } catch (IOException e) {
 	// TODO Auto-generated catch block
 	e.printStackTrace();

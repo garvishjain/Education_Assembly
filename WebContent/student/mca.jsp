@@ -153,7 +153,7 @@ button.button_outline:hover, .button_outline:hover{
 
     <!-- Header================================================== -->
      <%@ include file="itc/header.jsp" %>
-     <%String course_name=request.getParameter("uid");  %>
+     <%String course_name=request.getParameter("uid"); %>
         <div class="sub_header bg_1">
         	<div id="intro_txt">
 			<h1> <strong>Course Detail</strong> </h1>
@@ -178,10 +178,11 @@ button.button_outline:hover, .button_outline:hover{
 						<fieldset id="about" style="display: block;">	
 						 <%
 			try{
-				String sql=  "Select  * from course_details\n"+  
-								    " INNER JOIN course_highlights ON course_highlights.pk_id=course_details.fk_course_highlights\n"+
-								     "INNER JOIN course_name ON course_name.pk_id=course_highlights.fk_duration where course='"+course_name+"'  " ; 
-     ResultSet rs=stmt.executeQuery(sql);
+				String sql=  "SELECT * FROM course_details\n"+  
+								    "INNER JOIN course_highlights ON course_highlights.pk_id=course_details.fk_course_highlights\n"+
+								     "INNER JOIN course_name ON course_name.pk_id=course_highlights.fk_semester where course='"+course_name+"'  " ;
+			
+                  ResultSet rs=stmt.executeQuery(sql);
 				while (rs.next()) {
 		%>	
                 	<div class="box_style_1" >
@@ -278,7 +279,7 @@ button.button_outline:hover, .button_outline:hover{
 					<p class="field_info" >Average Fees Incurred</p>
 				</td>
 				<td>
-					<p class="field_detailed"><%=rs.getString("average_fees") %></p>
+					<p class="field_detailed"><%=rs.getString("semester_fees") %></p>
 				</td>
 			</tr>
 			<tr>
@@ -294,7 +295,7 @@ button.button_outline:hover, .button_outline:hover{
 					<p class="field_info" >Average Salary</p>
 				</td>
 				<td>
-					<p class="field_detailed"><%=rs.getString("average_salary") %></p>
+					<p class="field_detailed"><%=rs.getString("placement_package") %></p>
 				</td>
 			</tr>
 			<tr>
@@ -375,8 +376,6 @@ button.button_outline:hover, .button_outline:hover{
 				String sql1=
 						"Select  * from university_courses\r\n" + 
 						"INNER JOIN course_name ON course_name.pk_id=university_courses.course_id \r\n" + 
-						"INNER JOIN course_details on course_details.pk_id=university_courses.course_brief\r\n"+
-		                 "INNER JOIN course_highlights on course_highlights.pk_id=course_details.fk_course_highlights\r\n"+
 						"INNER JOIN university ON university.pk_id=university_courses.fk_university_id\r\n" + 
 						"INNER JOIN country ON country.pk_id=university.fk_country\r\n" + 
 						"INNER JOIN state ON state.pk_id=university.fk_state\r\n" + 
@@ -386,7 +385,7 @@ button.button_outline:hover, .button_outline:hover{
 						"INNER JOIN university_link ON university.fk_university_link = university_link.pk_id\r\n" + 
 						"INNER JOIN university_contact ON university_contact.pk_id=university.fk_contact_number where course = '"+course_name+"'   " ;
 				ResultSet rs1=stmt.executeQuery(sql1);
-				System.out.print(sql1);
+				
 				while (rs1.next()) {
 					%>
 								<div class="col-md-6">

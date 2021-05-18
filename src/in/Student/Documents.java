@@ -53,6 +53,8 @@ public class Documents extends HttpServlet {
 		 Part aadhar = request.getPart("aadhar");
 		 Part high = request.getPart("high");
 		Part higher = request.getPart("higher");
+		Part tc = request.getPart("tc");
+		Part migration = request.getPart("migration");
 		
 		img img = new img();
 		 String cast_file = cast.getSubmittedFileName();
@@ -73,10 +75,15 @@ public class Documents extends HttpServlet {
 				
 				 String higher_file = higher.getSubmittedFileName();
 				String higher_img= img.image(higher_file, higher);
+				
+				String tc_file = tc.getSubmittedFileName();
+				String tc_img= img.image(tc_file,tc);
+				String migration_file = migration.getSubmittedFileName();
+				String migration_img= img.image(migration_file, migration);
 		
 		
-		String sql="insert into student_document(high,higher,cast,income,domicile,aadhar)"
-				+ "values(?,?,?,?,?,?)";
+		String sql="insert into student_document(high,higher,cast,income,domicile,aadhar,transfer_certificate,migration)"
+				+ "values(?,?,?,?,?,?,?,?)";
 		
 		
 			stmt = con.prepareStatement(sql);
@@ -86,6 +93,8 @@ public class Documents extends HttpServlet {
 			stmt.setString(4,income_img);
 			stmt.setString(5,domicile_img);
 			stmt.setString(6,aadhar_img);
+			stmt.setString(7,tc_img);
+			stmt.setString(8,migration_img);
 			int res = stmt.executeUpdate();
 			
 			if(res>0)
