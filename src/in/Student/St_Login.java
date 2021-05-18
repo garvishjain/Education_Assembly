@@ -153,15 +153,8 @@ public class St_Login extends HttpServlet {
 							e.printStackTrace();
 						}
 						
-						finally
-						{
-							try {
-								con.close();
-							} catch (SQLException e) {
-								// TODO Auto-generated catch block
-								e.printStackTrace();
-							}
-						}
+							 
+						
 }
 	
 		

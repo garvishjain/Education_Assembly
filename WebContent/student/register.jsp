@@ -563,7 +563,7 @@ label {
 														ResultSet rs = stmt.executeQuery(query);
 														while (rs.next()) {
 												%>
-												<option ><%=rs.getString("course")%></option>
+												<option value="<%=rs.getInt("pk_id")%>"><%=rs.getString("course")%></option>
 												<%
 												  }
 													} catch (Exception e) {
@@ -579,7 +579,7 @@ label {
 														ResultSet rs = stmt.executeQuery(query);
 														while (rs.next()) {
 												%>
-												<option ><%=rs.getString("course")%></option>
+												<option value="<%=rs.getInt("pk_id")%>"><%=rs.getString("course")%></option>
 												<%
 													}
 													} catch (Exception e) {
@@ -595,7 +595,7 @@ label {
 														ResultSet rs = stmt.executeQuery(query);
 														while (rs.next()) {
 												%>
-												<option ><%=rs.getString("course")%></option>
+												<option value="<%=rs.getInt("pk_id")%>"><%=rs.getString("course")%></option>
 												<%
 													}
 													} catch (Exception e) {
@@ -614,22 +614,7 @@ label {
 												name="college" id="college"
 												class="form-control styled required" required="required">
 												<option value="null">---Please Select---</option>
-												<%
-													try {
-														String query = "Select  * from university_courses"+
-																"INNER JOIN course_name ON course_name.pk_id=university_courses.course_id"+
-										                        "INNER JOIN university on university_courses.fk_university_id=university.pk_id " ;
-														//get Table data
-														ResultSet rs = stmt.executeQuery(query);
-														while (rs.next()) {
-												%>
-												<option><%=rs.getString("college_name")%></option>
-												<%
-													}
-													} catch (Exception e) {
-
-													}
-												%>
+												
 											</select>
 										</div>
 									</div>
@@ -972,7 +957,7 @@ label {
 	<script src="js/common_scripts_min.js"></script>
 	<script src="js/functions.js"></script>
 	<script src="assets/validate.js"></script>
-
+    <script src="js/validate.js"></script>
 	<!-- Specific scripts -->
 	<script src="js/icheck.js"></script>
 	<script>

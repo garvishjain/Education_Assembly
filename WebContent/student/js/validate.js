@@ -216,6 +216,30 @@
         });
     });
 	
+    
+    $(document).ready(function() {
+        $("#course").on("change", function() {
+            var sts = $("#course").val();
+            if (course === "")
+            {
+                $("#error").html("required");
+                return false;
+            }
+            else
+            {
+                $("#error").html("");
+                $.ajax({
+                    url: "institute.jsp",
+                    data: {course: course},
+                    method: "POST",
+                    success: function(data)
+                    {
+                        $("#college").html(data);
+                        }
+                });
+            }
+        });
+    });
 	
 	
 	/* spassword show   */
