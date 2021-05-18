@@ -554,9 +554,43 @@ label {
 												id="course"  onchange="getddl()" class="form-control styled required"
 												required="required">
 												<option value="null" >---Please Select---</option>
+												<!-- For Master courses -->	
+												<optgroup label="Master Courses"></optgroup>
 												<%
 													try {
-														String query = "select  * from course_name Limit 20";
+														String query = "select  * from course_name where degree_name='"+"Master Degree"+"'  Limit 8";
+														//get Table data
+														ResultSet rs = stmt.executeQuery(query);
+														while (rs.next()) {
+												%>
+												<option ><%=rs.getString("course")%></option>
+												<%
+												  }
+													} catch (Exception e) {
+
+													}
+												%>
+												<!-- For Bachelor courses -->	
+												<optgroup label="Bachelor Courses"></optgroup>
+												<%
+													try {
+														String query = "select  * from course_name where degree_name='"+"Bachelor Degree"+"'  Limit 8";
+														//get Table data
+														ResultSet rs = stmt.executeQuery(query);
+														while (rs.next()) {
+												%>
+												<option ><%=rs.getString("course")%></option>
+												<%
+													}
+													} catch (Exception e) {
+
+													}
+												%>
+									<!-- For Diploma courses -->			
+												<optgroup label="Diploma Courses"></optgroup>
+												<%
+													try {
+														String query = "select  * from course_name where degree_name='"+"Diploma Course"+"'  Limit 8";
 														//get Table data
 														ResultSet rs = stmt.executeQuery(query);
 														while (rs.next()) {

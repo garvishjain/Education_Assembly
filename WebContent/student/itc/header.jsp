@@ -117,7 +117,7 @@ orange
 							<li><a href="diploma.jsp">Diploma courses</a></li>
 							<li><a href="graduate.jsp">Graduate courses</a></li>
 							<li><a href="master.jsp">Master courses</a></li>
-							<li><a href="college.jsp">College</a></li>
+							<!-- <li><a href="college.jsp">College</a></li> -->
 						</ul></li>
 
 						<!-- <ul>
@@ -164,7 +164,7 @@ orange
 						class="show-submenu">Welcome,&nbsp;<%=name%><i
 							class="icon-down-open-mini"></i></a>
 						<ul>
-						    <li><a href="javascript:void(0);"><%=Email%></a></li>
+						  <%--   <li><a href="javascript:void(0);"><%=Email%></a></li> --%>
 							<li><a href="document.jsp">Upload Documents</a></li>
 							<li><a href="status.jsp">Check Status</a></li>
 

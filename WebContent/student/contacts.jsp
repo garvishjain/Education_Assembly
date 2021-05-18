@@ -98,12 +98,12 @@
 													<option value="null">---Please Select---</option>
 												<%
 														try {
-															String query = "select * from college_registration";
+															String query = "select * from university";
 															//get Table data
 															ResultSet rs = stmt.executeQuery(query);
 															while (rs.next()) {
 													%>
-													<option><%=rs.getString("college_name")%></option>
+													<option><%=rs.getString("u_name")%></option>
 													<%
 														}
 														} catch (Exception e) {

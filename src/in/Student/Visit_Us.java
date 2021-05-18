@@ -46,7 +46,7 @@ public class Visit_Us extends HttpServlet {
 		date dt = new date();
 		String getdate = dt.Date(date);
 	
-		String sql="insert into visit_us(name,email,number,college,vist_date,visit_time)values(?,?,?,?,?,?)";
+		String sql="insert into visit_us(name,email,number,college,visit_date,visit_time)values(?,?,?,?,?,?)";
 		ps = con.prepareStatement(sql);
 		ps.setString(1,name);
 		ps.setString(2,email);
