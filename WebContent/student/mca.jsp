@@ -375,6 +375,8 @@ button.button_outline:hover, .button_outline:hover{
 				String sql1=
 						"Select  * from university_courses\r\n" + 
 						"INNER JOIN course_name ON course_name.pk_id=university_courses.course_id \r\n" + 
+						"INNER JOIN course_details on course_details.pk_id=university_courses.course_brief\r\n"+
+		                 "INNER JOIN course_highlights on course_highlights.pk_id=course_details.fk_course_highlights\r\n"+
 						"INNER JOIN university ON university.pk_id=university_courses.fk_university_id\r\n" + 
 						"INNER JOIN country ON country.pk_id=university.fk_country\r\n" + 
 						"INNER JOIN state ON state.pk_id=university.fk_state\r\n" + 
