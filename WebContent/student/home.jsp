@@ -327,8 +327,9 @@ a.link_normal {
 		<div class="pulse"></div>
 	</div>
 	<!-- Pulse Preloader -->
-
+<div>
 	<%@ include file="itc/header.jsp"%>
+	</div>
 	<div class="img">
 		<div id="full-slider-wrapper">
 			<div id="layerslider" style="width: 100%; height: 550px;">
@@ -612,6 +613,7 @@ a.link_normal {
                             </div>
                         </div>End row
 					</section> -->
+
 
 					</div>
 					<!-- /content -->
