@@ -9,16 +9,10 @@
 
 <%
 
-	if(session == null || session.getAttribute("uniSession") == null)
-	{
-		session.invalidate();
-		response.sendRedirect("login.jsp");
-	} 
 
-	else if(session.getAttribute("uniSession")!=null && session.getAttribute("uniSession").equals("true"))
-	{
-		System.out.println(session.getAttribute("sessionValue"));
-	}
+          String name = session.getAttribute("nameUser") != null ? (String) session.getAttribute("nameUser") : "";
+          String Email = session.getAttribute("EmailUser") != null ? (String) session.getAttribute("EmailUser") : "";
+
 
 	StringBuffer url = request.getRequestURL();
 	int start = url.lastIndexOf("/");
@@ -64,7 +58,7 @@
                     <a href="javascript:void(0)" class="nav-link icon menu_toggle"><i class="fe fe-align-center"></i></a>
                     <a href="page-search.html" class="nav-link icon"><i class="fe fe-search" data-toggle="tooltip" data-placement="right" title="Search..."></i></a>
                     <a href="javascript:void(0)" class="nav-link icon settingbar"><i class="fe fe-settings"></i></a>
-                     <a href="logoutUniversity.jsp" class="nav-link icon settingbar"><i class="fe fe-power" title="Log Out"></i></a>    
+                     <a href="../student/logout.jsp" class="nav-link icon settingbar"><i class="fe fe-power" title="Log Out"></i></a>    
                     
                     
                 </div>
@@ -280,9 +274,15 @@
     <!-- Start Main leftbar navigation -->
     <div id="left-sidebar" class="sidebar">
         <h6 class="brand-name">Education Assembly<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h6>
+        
+        <ul class="brand-name">
+              <li ><a href="javascript:void(0)" class="brand-name"><%=name%></a></li>
+            <li><a href="javascript:void(0)" class="brand-name"><%=Email%></a></li>
+        </ul>
+        
         <ul class="nav nav-tabs">
             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-uni">College</a></li>
-        </ul>
+              </ul>
         <div class="tab-content mt-3">
             <div class="tab-pane fade show active" id="menu-uni" role="tabpanel">
                 <nav class="sidebar-nav">
@@ -291,7 +291,8 @@
                         <li><a href="College-professors.jsp"><i class="fa fa-black-tie"></i><span>Professors</span></a></li>
                         <li><a href="College-students.jsp"><i class="fa fa-users"></i><span>Students</span></a></li>
                         <li><a href="College-departments.jsp"><i class="fa fa-users"></i><span>Departments</span></a></li>
-                        <li><a href="College-courses.jsp"><i class="fa fa-graduation-cap"></i><span>Courses</span></a></li>                        
+                        <li><a href="College-courses.jsp"><i class="fa fa-graduation-cap"></i><span>Courses</span></a></li>   <a href="logout.jsp">Logout</a>                     
+                         <li><a href="../student/logout.jsp"><i class="fa fa-graduation-cap"></i><span>Logout</span></a></li>
                     </ul>
                 </nav>
             </div>

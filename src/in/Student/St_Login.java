@@ -102,7 +102,7 @@ public class St_Login extends HttpServlet {
 										{
 										    String id = gethash.getHash(String.valueOf(rs.getInt(1)));
 										    String cname = "college_registration";
-											response.sendRedirect("student/home.jsp?sid="+id+"&cname="+cname+"&status="+gethash.getHash("trueCBC"));
+											response.sendRedirect("university/College-manager.jsp?sid="+id+"&cname="+cname+"&status="+gethash.getHash("trueCBC"));
 									    
 										} 
 									else
@@ -120,7 +120,7 @@ public class St_Login extends HttpServlet {
 										{
 										    String id = gethash.getHash(String.valueOf(rs.getInt(1)));
 										    String cname = "university";
-											response.sendRedirect("student/home.jsp?sid="+id+"&cname="+cname+"&status="+gethash.getHash("trueCBC"));
+											response.sendRedirect("university/university-manager.jsp?sid="+id+"&cname="+cname+"&status="+gethash.getHash("trueCBC"));
 									    
 										} 
 									else
