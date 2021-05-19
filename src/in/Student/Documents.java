@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.time.LocalDateTime;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
@@ -15,12 +16,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
+import org.apache.catalina.Session;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import in.common.GetConnection;
+import in.common.GetName;
 import in.common.img;
-
 /**
  * Servlet implementation class Documents
  */
@@ -45,8 +47,7 @@ public class Documents extends HttpServlet {
 		try {
 		ServletFileUpload sf = new ServletFileUpload(new DiskFileItemFactory());
 			
-			 
-			 
+		
 		 Part cast = request.getPart("cast");
 		 Part income = request.getPart("income");
 		 Part domicile = request.getPart("domicile");
@@ -56,7 +57,59 @@ public class Documents extends HttpServlet {
 		Part tc = request.getPart("tc");
 		Part migration = request.getPart("migration");
 		
-		img img = new img();
+		String cast_file = cast.getSubmittedFileName();
+		String cast1 = cast_file+(LocalDateTime.now().toString().replace(":",""));
+		String path = "G:\\i\\"+cast1;
+		String finallocation = path+""+ cast_file;
+		cast.write(finallocation);
+		
+		String income_file = income.getSubmittedFileName();
+		String income1 = income_file+(LocalDateTime.now().toString().replace(":",""));
+		String path1 = "G:\\i\\"+income1;
+		String finallocation1 = path1+""+ income_file;
+		income.write(finallocation1);
+		
+		String  domicile_file = domicile.getSubmittedFileName();
+		String  domicile1= domicile_file+(LocalDateTime.now().toString().replace(":",""));
+		String path2 = "G:\\i\\"+ domicile1;
+		String finallocation2 = path2+""+  domicile_file;
+		domicile.write(finallocation2);
+		
+		String  aadhar_file = aadhar.getSubmittedFileName();
+		String  aadhar1=  aadhar_file+(LocalDateTime.now().toString().replace(":",""));
+		String path3 = "G:\\i\\"+ aadhar1;
+		String finallocation3 = path3 +""+  aadhar_file;
+		 aadhar.write(finallocation3);
+		
+		 String  high_file = high.getSubmittedFileName();
+			String  high1=  high_file+(LocalDateTime.now().toString().replace(":",""));
+			String path4 = "G:\\i\\"+ high1;
+			String finallocation4 = path4 +""+  high_file;
+			high.write(finallocation4);
+		
+			 String  higher_file = higher.getSubmittedFileName();
+				String  higher1=  higher_file+(LocalDateTime.now().toString().replace(":",""));
+				String path5 = "G:\\i\\"+ higher1;
+				String finallocation5 = path5 +""+  higher_file;
+				higher.write(finallocation5);
+		
+		String tc_file = tc.getSubmittedFileName();
+		String tc1 = tc_file+(LocalDateTime.now().toString().replace(":",""));
+		String path6 = "G:\\i\\"+tc1;
+		String finallocation6 = path6 +""+ tc_file;
+		tc.write(finallocation6 );
+		
+		String migration_file = migration.getSubmittedFileName();
+		String migration1 = migration_file+(LocalDateTime.now().toString().replace(":",""));
+		String path7 = "G:\\i\\"+migration1;
+		String finallocation7 = path7 +""+ migration_file;
+		migration.write(finallocation7 );
+		
+		
+		 	
+		 	
+		 	
+	/*	img img = new img();
 		 String cast_file = cast.getSubmittedFileName();
 		String cast_img = img.image(cast_file, cast);
 		
@@ -79,31 +132,37 @@ public class Documents extends HttpServlet {
 				String tc_file = tc.getSubmittedFileName();
 				String tc_img= img.image(tc_file,tc);
 				String migration_file = migration.getSubmittedFileName();
-				String migration_img= img.image(migration_file, migration);
+				String migration_img= img.image(migration_file, migration);*/
 		
+			
 		
-		String sql="insert into student_document(high,higher,cast,income,domicile,aadhar,transfer_certificate,migration)"
-				+ "values(?,?,?,?,?,?,?,?)";
+		String sql="insert into student_document(high,higher,cast,income,domicile,aadhar,transfer_certificate,migration,fk_student_information)"
+				+ "values(?,?,?,?,?,?,?,?,?)";
 		
 		
 			stmt = con.prepareStatement(sql);
-			stmt.setString(1,high_img);
-			stmt.setString(2,higher_img);
-			stmt.setString(3,cast_img);
-			stmt.setString(4,income_img);
-			stmt.setString(5,domicile_img);
-			stmt.setString(6,aadhar_img);
-			stmt.setString(7,tc_img);
-			stmt.setString(8,migration_img);
+			stmt.setString(1,path4);
+			stmt.setString(2,path5);
+			stmt.setString(3,path);
+			stmt.setString(4,path1);
+			stmt.setString(5,path2);
+			stmt.setString(6,path3);
+			stmt.setString(7,path6);
+			stmt.setString(8,path7);
+			stmt.setString(9,"1");
 			int res = stmt.executeUpdate();
 			
 			if(res>0)
 			{
-				out.println("<html><body><script>alert('submitted');</script></body></html>");
+			
+				out.println("<html><body><script>alert('Document Submitted');</script></body></html>");
+				response.sendRedirect("student/document.jsp");
+				
 			}
 			else
 			{
 				out.println("<html><body><script>alert('data not submitted');</script></body></html>");
+				response.sendRedirect("student/document.jsp");
 			}
 		} 
 		catch (SQLException e) 

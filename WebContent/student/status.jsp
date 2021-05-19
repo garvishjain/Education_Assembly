@@ -1,10 +1,11 @@
 <%
 String uname="";
 uname=session.getAttribute("nameUser") != null ? (String)session.getAttribute("nameUser") : "";
+System.out.print(uname);
 %>
 <!DOCTYPE html>
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
-<%@page import="in.Student.User"%>
+<%-- <%@page import="in.Student.User"%> --%>
 <%@page import="in.Student.St_Login"%>
 <%@page import="in.common.GetConnection"%>
 <%@ include file="inc/stdimport.jsp"%>
@@ -154,7 +155,7 @@ label {
 	<%
 			try {
 				/* String query = "Select * from student_information where username='" + uname + "' "; */
-				String sql="Select * from student_information INNER JOIN student_address ON student_information.fk_address=student_address.pk_id WHERE username= '" + uname + "'    ";
+				String sql="Select * from student_information INNER JOIN student_address ON student_information.fk_address=student_address.pk_id WHERE student_information.username= '" + uname + "'    ";
 				ResultSet rs = stmt.executeQuery(sql);
 				if (rs.next()) {
 		%>
@@ -166,7 +167,7 @@ label {
 							</div>
 							
 							<div class="img_frame">
-								<img src="img/teacher_1_small.jpg" alt="" class="img-circle styled">
+								<img src="<%=rs.getString("image") %>" class="img-circle styled" width="120px" height="120px">
 							</div>
 		
 				</div>

@@ -7,7 +7,6 @@
 			GetConnection getCon=new GetConnection();
 			Connection con=getCon.getCon();
 			stmt=con.createStatement();
-			System.out.print(con);
 		%>
 <%
 		String status = request.getParameter("status");
@@ -24,6 +23,7 @@
 									name.getNameData(cname, sid);
 									session.setAttribute("nameUser", name.getName());
 									session.setAttribute("EmailUser", name.getEmail());
+									session.setAttribute("student_id", name.getSt_id());
 								}
 							}
 						 }

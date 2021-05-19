@@ -228,7 +228,7 @@ label {
 				<div class="col-md-9">
 					<div class="box_style_1">
 						<form action="../St_Register" id="apply_online" method="post"
-							enctype="multipart/form-data" onsubmit="return validate()">
+							enctype="multipart/form-data" ><!-- onsubmit="return validate()" -->
 
 
 
@@ -414,7 +414,7 @@ label {
 											<label>State</label> <select name="state" id="state"
 												class="form-control styled required" required="required">
 												<option>---please Select---</option>
-												<%
+												<%-- <%
 													try {
 														String query = "select * from state";
 														//get Table data
@@ -455,7 +455,34 @@ label {
 												%>
 											</select>
 										</div>
-									</div>
+									</div> --%>
+									<%
+															try {
+																String query = "select * from  state";
+																//get Table data
+																ResultSet rs = stmt.executeQuery(query);
+																while (rs.next()) {
+														%>
+														<option value="<%=rs.getInt("pk_id")%>"><%=rs.getString("state_name")%></option>
+														<%
+															}
+															} catch (Exception e) {
+
+															}
+							  %>
+														</select>
+				                <span style="color:red" id="stserr"></span>									
+                            </div>
+                            </div>
+                             <div class="col-md-6">
+                            	<div class="form-group">
+                                <label>City</label>
+                               <select id="state" name="city" class="form-control" >
+                                 <option value="">Select city</option>
+                               </select>
+                               <span style="color:red" id="cityerr"></span>
+                            </div>
+                            </div>
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Pin Code</label> <input type="text"
@@ -547,7 +574,7 @@ label {
 							</div>
 							<div class="wrapper_indent">
 								<div class="row">
-<form name="formid">
+
 								<div class="col-md-6">
 										<div class="form-group">
 											<label>Select Course</label> <select name="course"
@@ -606,7 +633,7 @@ label {
 											<span style="color: red" id="courseerr"></span>
 										</div>
 									</div>
-</form>
+
 	
 									<div class="col-md-6">
 										<div class="form-group">
@@ -694,14 +721,14 @@ label {
 							<div class="wrapper_indent">
 								<div class="row">
 
-									<div class="col-md-4">
+									<!-- <div class="col-md-4">
 										<div class="form-group">
 											<input type="text" style="visibility:hidden;" class="form-control styled required"
 												id="authcode" name="authcode" placeholder="Enter otp">
-											<span id="available"> <!--- data show this span tag --->
+											<span id="available"> - data show this span tag -
 											</span>
 										</div>
-									</div>
+									</div> -->
 
 
 
@@ -738,11 +765,10 @@ label {
 											onclick="fourprev()" value="Previous" /> -->
 									<p>
 										<!-- <button type="submit" onclick="jquery()" class="button" style="visibility:hidden;" name="register" id="register" disabled>Register</button> -->
-									    <button type="submit" style="visibility:hidden;" name="register" id="register" onclick="jquery()" class="button" >Register</button>
-										<button type="reset" onclick="jquery()" class="button">Clear</button>
+									    <button type="submit"name="register" id="register"  class="button" >Register</button>
+										<button type="reset"  class="button">Clear</button><!-- onclick="jquery()" --><!-- onclick="jquery()" -->
 										
-										<button type="Button"  name="send" id="send" onclick="verified()"class="button">Send
-											OTP</button>
+										<button type="Button"  name="send" id="send" class="button">Send OTP</button><!-- onclick="verified()" -->
 									</p>
 									<span id="showMsg"></span>
 
@@ -972,7 +998,7 @@ label {
 	<script src="js/common_scripts_min.js"></script>
 	<script src="js/functions.js"></script>
 	<script src="assets/validate.js"></script>
-
+	<script src="js/validate.js"></script>
 	<!-- Specific scripts -->
 	<script src="js/icheck.js"></script>
 	<script>

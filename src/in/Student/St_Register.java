@@ -112,13 +112,13 @@ public class St_Register extends HttpServlet {
 						 
 		 /* image upload*/
 						 Part part = request.getPart("image");
-						 String filename = part.getSubmittedFileName();
-						/*String s = filename+(LocalDateTime.now().toString().replace(":",""));
-						 String path="E:\\notes\\"+s;
-						String finallocation = path +""+ filename;
-					   	part.write(finallocation );*/
-						 img image = new img();
-						String img = image.image(filename, part);
+						 String  file = part.getSubmittedFileName();
+							String  st_image=  file+(LocalDateTime.now().toString().replace(":",""));
+							String path3 = "G:\\i\\"+ st_image;
+							String finallocation = path3 +""+ file;
+							 part.write(finallocation);
+						 /*img image = new img();
+						String img = image.image(filename, part);*/
 		 	/* image upload*/
 						 
 						 
@@ -167,12 +167,13 @@ public class St_Register extends HttpServlet {
 						
 //	insert user table detail
 						
-						String sql3="insert into user(name,email,username,password)values(?,?,?,?)";
+						String sql3="insert into user(name,email,username,password,register_num)values(?,?,?,?,?)";
 								stmt = con.prepareStatement(sql3);
 								stmt.setString(1,fname+""+lname);
 								stmt.setString(2,email);
 								stmt.setString(3,uname);
 								stmt.setString(4,hashed);
+								stmt.setString(5,adhar);
 								int res3 = stmt.executeUpdate();
 								
 								
@@ -190,7 +191,7 @@ public class St_Register extends HttpServlet {
 								stmt.setString(6,religion);
 								stmt.setString(7,cast);
 								stmt.setString(8,num);
-								stmt.setString(9,img);
+								stmt.setString(9,path3);
 								stmt.setString(10,f_name);
 								stmt.setString(11,m_name);
 								stmt.setString(12,f_num);
@@ -203,13 +204,14 @@ public class St_Register extends HttpServlet {
 								int res2 = stmt.executeUpdate();
 					if(res>0&&res1>0&&res2>0&&res>3)
 					{
-						out.println("<html><body><h4>Data Submitted</h4></body></html>");
-						response.sendRedirect("student/register.jsp");
+						out.println("<html><body><h4>Data  not Submitted</h4></body></html>");
 						
 					}
 					else
 					{
-						out.println("<html><body><h4>Data  not Submitted</h4></body></html>");
+						
+						out.println("<html><body><h4>Data Submitted</h4></body></html>");
+						response.sendRedirect("student/register.jsp");
 						
 					}
 			}

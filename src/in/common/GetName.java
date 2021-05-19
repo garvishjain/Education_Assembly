@@ -10,6 +10,7 @@ public class GetName
 {
 	private String name;
 	private String Email;
+	private String st_id;
 	private ResultSet rs;
 	private String sql;
 	
@@ -26,6 +27,13 @@ public class GetName
 
 	public void setEmail(String Email) {
 		this.Email = Email;
+	}
+	public String getSt_id() {
+		return st_id;
+	}
+
+	public void setSt_id(String st_id) {
+		this.st_id = st_id;
 	}
 	
 	public void getNameData(String tableName,String hashedId) throws SQLException
@@ -53,14 +61,11 @@ public class GetName
 		}
 		
 		
-		
+		/*For College*/
 		if(tableName.equals("college_registration"))
 		{
 			sql="select college_name, Email from "+tableName+" where pk_id=? LIMIT 1";
 			 stmt = con.prepareStatement(sql);
-			 
-			 
-			
 			stmt.setInt(1, id); 
 			rs=stmt.executeQuery();
 			System.out.println(sql);
@@ -97,30 +102,33 @@ public class GetName
 			}
 			
 		}
-		
+		/*For College*/
+
 		else
 		{
-		 sql="select first_name, last_name from "+tableName+" where pk_id=? LIMIT 1";
+		 sql="select * from "+tableName+" where pk_id=? LIMIT 1";
 		 stmt = con.prepareStatement(sql);
-		 
-		 
 		
 		stmt.setInt(1, id); 
 		rs=stmt.executeQuery();
-		System.out.println(sql);
+		
 		
 		
 		if(rs.next())
 		{
-			String fname =  rs.getString("first_name"); 
-			String lname =  rs.getString("last_name");
-			String name = fname+lname;
+			String name =  rs.getString("username"); 
+			String st_id=rs.getString("pk_id");
+			/*String lname =  rs.getString("last_name");*/
+			/*String name = fname;*/
 			setName(name);
+			setSt_id(st_id);
 		}
 		
 	   }
 		
 
 	}
+
+
 	
 }
