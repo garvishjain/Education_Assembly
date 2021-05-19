@@ -36,11 +36,7 @@ Statement stmt=con.createStatement();
                         <div class="card">
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-lg-2 col-md-4 col-sm-6">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" placeholder="Aadhar Number">
-                                        </div>
-                                    </div>
+                                    
                                     
                                                                    
                                     <div class="col-lg-2 col-md-4 col-sm-6">
