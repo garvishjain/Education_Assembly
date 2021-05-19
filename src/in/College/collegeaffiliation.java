@@ -21,14 +21,11 @@ import in.common.hashed;
 import in.common.img;
 
 /**
- * Servlet implementation class collegeaffilation
+ * Servlet implementation class collegeaffiliation
  */
-@WebServlet("/colafilation")
-public class collegeaffilation extends HttpServlet {
+@WebServlet("/collegeaffiliation")
+public class collegeaffiliation extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	
-	
 	private int pk_city_id;
 	private Connection con;
 	private int active=0;
@@ -44,11 +41,11 @@ public class collegeaffilation extends HttpServlet {
     con=getConObj.getCon();
 	
 	}
-
-	
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		
@@ -233,10 +230,6 @@ public class collegeaffilation extends HttpServlet {
 		{
 			e.printStackTrace();
 		}
-		
-	
-		
-		
 		
 	}
 

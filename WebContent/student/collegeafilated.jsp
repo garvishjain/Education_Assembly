@@ -120,7 +120,7 @@
 				<div class="box_style_1">
 
 
-					<form action="../colafilation" id="form" method="POST"
+					<form action="../collegeaffiliation" id="form" method="POST"
 						enctype="multipart/form-data">
 
 						<fieldset>
@@ -207,7 +207,7 @@
 															ResultSet rs = stmt.executeQuery(query);
 															while (rs.next()) {
 													%>
-													<option value="<%=rs.getInt("pk_id")%>"><%=rs.getString("u_name")%></option>
+													<option value="<%=rs.getString("pk_id")%>"><%=rs.getString("u_name")%></option>
 													<%
 														}
 														} catch (Exception e) {
