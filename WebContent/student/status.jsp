@@ -188,32 +188,49 @@ label {
 					<td><label class="st_field">STATUS&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 					 <label class="dash">&mdash;</label>
-					 <label class="st_detail"><p hidden> String name=rs.getString("username") ;</p>
-					 											<p hidden> <%String prefix=(String)name.substring(0,2); %></p>
-					
+					 <label class="st_detail">
+					 <% String num=rs.getString("status") ;
+					 System.out.print("ID = "+num);%>
+					 
+					 										<%-- 	<p hidden> <%String prefix=(String)name.substring(0,2); %></p> --%>
+					<%String ab= "0" ; 
+						String ab1="1";
+						String ab2="2";%>
 				<%
-					try {
-								if(prefix.equals("st"))
+					try
+							{
+								if(ab.equals(num))
 								{
-									
-					%>
-					<p style="color: green;">
-									<%=rs.getString("username")%>
+									String status="pending";												
+				%>
+					<p style="color: red;">
+									<%=status%>
 					</p>
 				<%
 								 }
-								else
-								{
-									%>
-					<p style="color: red;">
-						<%= rs.getString("username")%>
+							   else if(ab1.equals(num))
+						         {
+									String status="Confirm ! PLease Contact Your College";	
+				%>
+					<p style="color: green;">
+						<%= status%>
 					</p>
-						<%
-								}
+					<%
+								 }
+							   else if(ab2.equals(num))
+						         {
+									String status="Reject";	
+				%>
+					<p style="color: red;">
+						<%= status%>
+					</p>
+					
+				<%
+					   }
 					}
-				catch (Exception e) {
-					e.printStackTrace();
-				}
+						catch (Exception e) {
+							e.printStackTrace();
+						   }
 				%>
 					  
 					 

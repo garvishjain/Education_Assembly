@@ -50,7 +50,7 @@ public class St_Register extends HttpServlet {
 	private int fk_address;
 	private int fk_education;
 	private PreparedStatement stmt;
-	
+	private int status=0;	
 	public void init(ServletConfig config) throws ServletException 
 				{GetConnection getConObj=new GetConnection();
 				 con=getConObj.getCon();
@@ -176,12 +176,12 @@ public class St_Register extends HttpServlet {
 								stmt.setString(5,adhar);
 								int res3 = stmt.executeUpdate();
 								
-								
+							
 								
 		/*Insert Data into student_information*/
 						String sql="insert into student_information(first_name,last_name,email,gender,dob,religion,"
-										+ "category,s_contact,image,f_name,m_name,f_num,aadhar_number,college,course,username,fk_address,fk_education)"
-												+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+										+ "category,s_contact,image,f_name,m_name,f_num,aadhar_number,college,course,username,fk_address,fk_education,status)"
+												+ "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 								stmt = con.prepareStatement(sql);
 								stmt.setString(1,fname);
 								stmt.setString(2,lname);
@@ -201,6 +201,7 @@ public class St_Register extends HttpServlet {
 								stmt.setString(16,uname);
 								stmt.setInt(17,fk_address);
 								stmt.setInt(18,fk_education);
+								stmt.setInt(19,status);
 								int res2 = stmt.executeUpdate();
 					if(res>0&&res1>0&&res2>0&&res>3)
 					{
