@@ -83,9 +83,6 @@ public class St_Login extends HttpServlet {
 								if (rs.next()) 
 								{
 									 regnum = rs.getString(6);
-									
-									
-									 
 								}
 							else
 									{

@@ -270,7 +270,7 @@ Statement stmt=con.createStatement();
 															} catch (Exception e) {
 
 															}
-														%>
+							  %>
 														</select>
 				                <span style="color:red" id="stserr"></span>									
                             </div>

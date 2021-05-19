@@ -1,3 +1,8 @@
+<%
+String student_id="";
+student_id=session.getAttribute("student_id") != null ? (String)session.getAttribute("student_id") : "";
+System.out.print("student_id = "+student_id);
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -495,17 +500,17 @@ function validateImage_72() {
 							<div class="cido">
 								<p class="ddd"><strong>Cast / Income / Domicile</strong></p>
 								<hr class="h_line">
-								<input type="file" name="cast" class="doc_image"  id="img" onchange="validateImage()" required="required">
+								<input type="file" name="cast" class="doc_image"  id="img" accept="image/gif, image/jpeg, image/png" onchange="validateImage()" required="required">
 								<p class="ca">Upload Cast Certificate
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</p>
 								<br>
 								<hr class="h_line">
-								<input type="file" name="income" class="doc_image" id="img_1" onchange="validateImage_1()" required="required">
+								<input type="file" name="income" class="doc_image" id="img_1" onchange="validateImage_1()" required="required" accept="image/gif, image/jpeg, image/png">
 								<p class="i">Upload Income Certificate
 										&nbsp;&nbsp;&nbsp;:&nbsp;</p>
 								<br>
 								<hr class="h_line">
-								<input type="file" name="domicile" class="doc_image" required="required"  id="img_2" onchange="validateImage_2()">
+								<input type="file" name="domicile" class="doc_image" required="required"  id="img_2" onchange="validateImage_2()" accept="image/gif, image/jpeg, image/png">
 								<p class="do">Upload Domicile Certificate &nbsp;:&nbsp;</p>
 								<br>
 								<hr class="h_line">
@@ -518,7 +523,7 @@ function validateImage_72() {
 							<div class="cido">
 								<p class="ddd"><strong>Aadhaar Card</strong></p>
 								<hr class="h_line">
-								<input type="file" name="aadhar" class="doc_image"  id="img_3" required="required" onchange="validateImage_3()">
+								<input type="file" name="aadhar" class="doc_image" accept="image/gif, image/jpeg, image/png"  id="img_3" required="required" onchange="validateImage_3()">
 								<p class="ca">Upload Aadhaar Card
 									&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;</p>
 								<br>
@@ -531,11 +536,11 @@ function validateImage_72() {
 							<div class="cido">
 								<p class="ddd"><strong>MarkSheets</strong></p>
 								<hr class="h_line">
-								<input type="file" name="high" class="doc_image"  id="img_4" required="required" onchange="validateImage_4()">
+								<input type="file" name="high" class="doc_image" accept="image/gif, image/jpeg, image/png" id="img_4" required="required" onchange="validateImage_4()">
 								<p class="i">Upload 10<sup>th</sup> Marksheet &nbsp;&nbsp;&nbsp;:&nbsp;</p>
 								<br>
 								<hr class="h_line">
-								<input type="file" name="higher" class="doc_image"  id="img_5" required="required" onchange="validateImage_5()">
+								<input type="file" name="higher" class="doc_image" accept="image/gif, image/jpeg, image/png" id="img_5" required="required" onchange="validateImage_5()">
 								<p class="i">Upload 12<sup>th</sup> Marksheet &nbsp;&nbsp;&nbsp;:&nbsp;</p>
 								<hr class="h_line">
 								<button type="button" onclick="thirdnext()" class="button">Next</button>
@@ -546,12 +551,12 @@ function validateImage_72() {
 							<div class="cido">
 								<p class="ddd"><strong>TC / Migration</strong></p>
 								<hr class="h_line">
-								<input type="file" name="tc" class="doc_image" id="img_61" required="required" onchange="validateImage_61()">
+								<input type="file" name="tc" class="doc_image" accept="image/gif, image/jpeg, image/png" id="img_61" required="required" onchange="validateImage_61()">
 								
 								<p class="i">Upload Transfer Certificate &nbsp;&nbsp;&nbsp;:&nbsp;</p>
 								<br>
 								<hr class="h_line">
-								<input type="file" name="migration" class="doc_image"  id="img_72" required="required" onchange="validateImage_72()">
+								<input type="file" name="migration" class="doc_image" accept="image/gif, image/jpeg, image/png" id="img_72" required="required" onchange="validateImage_72()">
 								<p class="i">Upload Migration(optional) &nbsp;&nbsp;&nbsp;:&nbsp;</p>
 								<hr class="h_line">
 								<button type="submit"  class="button">Submit</button>

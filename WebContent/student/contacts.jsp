@@ -75,9 +75,9 @@
                                         <div class="col-md-6 col-sm-6">
                                             <div class="form-group">
                                                 <label>Enter name</label>
-                                                <input type="text" class="form-control styled" id="name_contact" name="name" placeholder="Enter name">
+        									  <input type="text" class="form-control styled required" id="name_contact" name="name" placeholder="Enter name">
                                             </div>
-                                        
+                                           
                                             <div class="form-group">
                                                 <label>Enter Email</label>
                                                 <input type="email" id="email_contact" name="email" class="form-control styled" placeholder="Enter Email">
