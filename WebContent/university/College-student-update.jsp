@@ -14,7 +14,37 @@ String stdname = session.getAttribute("stdname") != null ? (String) session.getA
 
 %>
 
-
+<%
+	String collegeCategory[]={"Registration pending","registration conform"};
+	int i=0;
+	
+%>
+<script type="text/javascript">
+function update(){
+    $.ajax({
+    	
+    	var sts = request.getParameter("stdname");
+        if (sts === "")
+        {
+            $("#error").html("required");
+            return false;
+        }
+        else
+        {
+            $("#error").html("");
+            $.ajax({
+                url: "update.jsp",
+                data: {sts: sts},
+                method: "POST",
+                success: function(data)
+                {
+                    $("#status").html(data);
+                    }
+            });
+        }
+     });
+}
+</script>
         <!-- Start Page title and tab -->
         <div class="section-body">
             <div class="container-fluid">
@@ -51,7 +81,7 @@ String stdname = session.getAttribute("stdname") != null ? (String) session.getA
                                         <div class="wid-u-info">
                                             <h5><%=rs.getString("first_name") %></h5>
                                             <h5><%=rs.getString("last_name") %></h5>
-                                            <p class="text-muted m-b-0"><%=rs.getString("pk_id") %></p>
+                                            <p class="text-muted m-b-0" id="pk" name="pk"><%=rs.getString("pk_id") %></p>
                                         </div>
                                     </div>
                                 </div>
@@ -97,6 +127,18 @@ String stdname = session.getAttribute("stdname") != null ? (String) session.getA
                                                 <strong>Department</strong>
                                                 <div class="pull-right"><%=rs.getString("course") %></div>
                                             </li>
+                                          
+                                            <li class="list-group-item">
+                                                <strong>Status</strong>
+                                                <div class="pull-right" id="status" name="status"><%=rs.getString("status") %></div>
+                                            </li>
+                                            
+                                            <li class="button">
+                                                
+                                               <form action="../update" method="post" id='university_info'>
+					                         <input type="hidden" name="uid"   value="<%=rs.getString("pk_id")%>">
+										     <button type="submit"class="button_outline">Conform your status</button>
+								       </form>     </li>
                                             
                                         </ul>
                                     </div>
