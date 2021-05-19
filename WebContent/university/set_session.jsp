@@ -5,6 +5,6 @@
 	{	
 		session.setAttribute("uniSession","true");
 		session.setAttribute("uid",request.getParameter("uid").toString());
-		response.sendRedirect("university-manager.jsp");
+		response.sendRedirect("admin-manager.jsp");
 	}
 %>

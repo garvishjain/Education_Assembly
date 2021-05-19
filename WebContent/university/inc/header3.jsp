@@ -279,8 +279,9 @@
     
     <!-- Start Main leftbar navigation -->
     <div id="left-sidebar" class="sidebar">
-        <h6 class="brand-name">Education Assembly:Admin<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h6>
-        <ul class="nav nav-tabs">
+        <h6 class="brand-name">Education Assembly<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h6>
+        <h6 class="brand-name">Education Assembly<a href="javascript:void(0)" class="menu_option float-right"><i class="icon-grid font-16" data-toggle="tooltip" data-placement="left" title="Grid & List Toggle"></i></a></h6>
+      <ul class="nav nav-tabs">
             <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#menu-uni">University</a></li>
             <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#menu-college">College</a></li>
         </ul>
