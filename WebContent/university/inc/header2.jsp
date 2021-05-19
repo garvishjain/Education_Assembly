@@ -292,7 +292,7 @@
                         <li><a href="College-students.jsp"><i class="fa fa-users"></i><span>Students</span></a></li>
                         <li><a href="College-departments.jsp"><i class="fa fa-users"></i><span>Departments</span></a></li>
                         <li><a href="College-courses.jsp"><i class="fa fa-graduation-cap"></i><span>Courses</span></a></li>   <a href="logout.jsp">Logout</a>                     
-                         <li><a href="../student/logout.jsp"><i class="fa fa-graduation-cap"></i><span>Logout</span></a></li>
+                        
                     </ul>
                 </nav>
             </div>
