@@ -55,7 +55,9 @@ public class collegeaffiliation extends HttpServlet {
 		{
 		  
         	String cname = request.getParameter("cname")!= null ? request.getParameter("cname") : "";
-    		int  uninum = Integer.parseInt(request.getParameter("uniname")!= null ? request.getParameter("uniname") : "");
+        	String uni = request.getParameter("n1");
+        	
+    		int  uninum = request.getParameter("uniname")!= null ? Integer.parseInt(request.getParameter("uniname")): 0;
     		String dname = request.getParameter("dname")!= null ? request.getParameter("dname") : "";
     		int type = Integer.parseInt(request.getParameter("ctype")!= null ? request.getParameter("ctype") : "");
     		int fax= Integer.parseInt(request.getParameter("cfax")!= null ? request.getParameter("cfax") : "");
