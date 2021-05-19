@@ -40,7 +40,7 @@ Statement stmt=con.createStatement();
                         <div class="row row-deck">
                         <%
                                        try {
-										String query = "select * from college_courses ";
+										String query = "select * from college_courses INNER JOIN course_name ON college_courses.Course_id = course_name.pk_id ";
 										//get Table data
 										ResultSet rs = stmt.executeQuery(query);
 										while (rs.next()) {
@@ -62,12 +62,17 @@ Statement stmt=con.createStatement();
                                                 <tr>
                                                     <td><i class="fa fa-cc-visa text-danger"></i></td>
                                                     <td class="tx-medium">Fees</td>
-                                                    <td class="text-right">$<%=rs.getString("course_fees") %></td>
+                                                    <td class="text-right">$<%=rs.getString("Course_fees") %></td>
                                                 </tr>
                                                 <tr>
                                                     <td><i class="fa fa-users text-warning"></i></td>
                                                     <td class="tx-medium">Seats</td>
-                                                    <td class="text-right"><%=rs.getString("course_seat") %></td>
+                                                    <td class="text-right"><%=rs.getString("Course_seat") %></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><i class="fa fa-users text-warning"></i></td>
+                                                    <td class="tx-medium">Seats</td>
+                                                    <td class="text-right"><%=rs.getString("course category") %></td>
                                                 </tr>
                                             </tbody>
                                         </table>
