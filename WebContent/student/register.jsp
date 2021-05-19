@@ -376,7 +376,7 @@ label {
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Select Student Image</label> <input type="file"
-												name="image" id="image" class="form-control styled required">
+												name="image" id="image" class="form-control styled required" accept="image/gif, image/jpeg, image/png">
 										</div>
 									</div>
 
@@ -539,8 +539,9 @@ label {
 
 								<div class="col-md-6">
 										<div class="form-group">
-											<label>Select Course</label> <select name="course"
-												id="course"  onchange="getddl()" class="form-control styled required"
+											<label>Select Course</label> 
+											<select name="course"
+												id="course"   class="form-control styled required"
 												required="required">
 												<option value="null" >---Please Select---</option>
 												<!-- For Master courses -->	
@@ -552,7 +553,7 @@ label {
 														ResultSet rs = stmt.executeQuery(query);
 														while (rs.next()) {
 												%>
-												<option value="<%=rs.getInt("pk_id")%>"><%=rs.getString("course")%></option>
+												<option ><%=rs.getString("course")%></option>
 												<%
 												  }
 													} catch (Exception e) {
@@ -568,7 +569,7 @@ label {
 														ResultSet rs = stmt.executeQuery(query);
 														while (rs.next()) {
 												%>
-												<option value="<%=rs.getInt("pk_id")%>"><%=rs.getString("course")%></option>
+												<option ><%=rs.getString("course")%></option>
 												<%
 													}
 													} catch (Exception e) {
@@ -584,7 +585,7 @@ label {
 														ResultSet rs = stmt.executeQuery(query);
 														while (rs.next()) {
 												%>
-												<option value="<%=rs.getInt("pk_id")%>"><%=rs.getString("course")%></option>
+												<option><%=rs.getString("course")%></option>
 												<%
 													}
 													} catch (Exception e) {
@@ -599,11 +600,24 @@ label {
 	
 									<div class="col-md-6">
 										<div class="form-group">
-											<label>Select College/University</label> <select
-												name="college" id="college"
+											<label>Select College/University</label> 
+											<select name="college" id="college"
 												class="form-control styled required" required="required">
 												<option value="null">---Please Select---</option>
-												
+												<%
+													try {
+														String query = "select  * from university ";
+														//get Table data
+														ResultSet rs = stmt.executeQuery(query);
+														while (rs.next()) {
+												%>
+												<option><%=rs.getString("u_name")%></option>
+												<%
+													}
+													} catch (Exception e) {
+
+													}
+												%>
 											</select>
 										</div>
 									</div>

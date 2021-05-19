@@ -54,6 +54,7 @@ public class St_Login extends HttpServlet {
 					GetConnection getCon = new GetConnection();
 				    con = getCon.getCon();
 				   stmt = con.createStatement();
+				   
 		 		} 
 		 catch (SQLException e) 
 				 {

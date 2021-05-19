@@ -201,7 +201,15 @@ a.button, .button {
 	margin-top: -13px;
 	margin-left: -85px
 }
-
+.list_courses_tabs ul li {
+    position: relative;
+    padding: 15px 5px 10px 70px;
+    min-height: 65px;
+    width: 100%;
+    border-bottom: 1px solid #ededed;
+    display: table;
+    margin: 0px 0px 0px -38px;
+}
 #search .close {
 	position: fixed;
 	margin: 98px 34px 6px 888px;
