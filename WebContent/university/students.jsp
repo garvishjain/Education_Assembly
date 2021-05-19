@@ -67,7 +67,7 @@ Statement stmt=con.createStatement();
                                 <thead>
                                     <tr>
                                         <th>Roll No.</th>
-                                        <th></th>
+                                      <!--   <th></th> -->
                                         <th>Name</th>
                                         <th>Department</th>
                                         <th>Email</th>
@@ -86,9 +86,9 @@ Statement stmt=con.createStatement();
 	                                 %>
                                     <tr>
                                         <td><%=rs.getString("pk_id") %></td>
-                                        <td class="w60">
+                                       <!--  <td class="w60">
                                             <img class="avatar" src="../assets/images/xs/avatar1.jpg" alt="">
-                                        </td>
+                                        </td> -->
                                         <td><span class="font-16"><%=rs.getString("student_name") %></span></td>
                                         <td><%=rs.getString("department") %></td>
                                         <td><%=rs.getString("email") %></td>
@@ -106,38 +106,7 @@ Statement stmt=con.createStatement();
 												e.printStackTrace();
 											}
 										%>
-										<tr>
-                                        <td>A26</td>
-                                        <td class="w60">
-                                            <img class="avatar" src="../assets/images/xs/avatar2.jpg" alt="">
-                                        </td>
-                                        <td><span class="font-16">Gerald K Smith</span></td>
-                                        <td>M.C.A.</td>
-                                        <td>Gerald@gmail.com</td>
-                                        <td>(154) 646-2486</td>
-                                        <td>04 Jan, 2019</td>
-                                        <td>
-                                            <button type="button" class="btn btn-icon btn-sm" title="View" ><i class="fa fa-eye" href="#student-profile.jsp"></i></button>
-                                            <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                            <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>A25</td>
-                                        <td class="w60">
-                                            <img class="avatar" src="../assets/images/xs/avatar3.jpg" alt="">
-                                        </td>
-                                        <td><span class="font-16">Ken Smith</span></td>
-                                        <td>Mechanical</td>
-                                        <td>ken@gmail.com</td>
-                                        <td>(417) 646-8377</td>
-                                        <td>04 Jan, 2019</td>
-                                        <td>
-                                            <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                            <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                            <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                        </td>
-                                    </tr>
+										
                                 </tbody>
                             </table>
                         </div>

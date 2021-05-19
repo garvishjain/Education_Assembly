@@ -291,8 +291,7 @@
                         <li><a href="College-professors.jsp"><i class="fa fa-black-tie"></i><span>Professors</span></a></li>
                         <li><a href="College-students.jsp"><i class="fa fa-users"></i><span>Students</span></a></li>
                         <li><a href="College-departments.jsp"><i class="fa fa-users"></i><span>Departments</span></a></li>
-                        <li><a href="College-courses.jsp"><i class="fa fa-graduation-cap"></i><span>Courses</span></a></li>   <a href="logout.jsp">Logout</a>                     
-                        
+                        <li><a href="College-courses.jsp"><i class="fa fa-graduation-cap"></i><span>Courses</span></a></li>   
                     </ul>
                 </nav>
             </div>

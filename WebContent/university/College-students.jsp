@@ -100,38 +100,7 @@ Statement stmt=con.createStatement();
 												e.printStackTrace();
 											}
 										%>
-										<tr>
-                                        <td>A26</td>
-                                        <td class="w60">
-                                            <img class="avatar" src="../assets/images/xs/avatar2.jpg" alt="">
-                                        </td>
-                                        <td><span class="font-16">Gerald K Smith</span></td>
-                                        <td>M.C.A.</td>
-                                        <td>Gerald@gmail.com</td>
-                                        <td>(154) 646-2486</td>
-                                        
-                                        <td>
-                                            <button type="button" class="btn btn-icon btn-sm" title="View" ><i class="fa fa-eye" href="#College-student-profile.jsp"></i></button>
-                                            <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                            <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                        </td>
-                                    </tr>
-                                    <tr>
-                                        <td>A25</td>
-                                        <td class="w60">
-                                            <img class="avatar" src="../assets/images/xs/avatar3.jpg" alt="">
-                                        </td>
-                                        <td><span class="font-16">Ken Smith</span></td>
-                                        <td>Mechanical</td>
-                                        <td>ken@gmail.com</td>
-                                        <td>(417) 646-8377</td>
-                                        
-                                        <td>
-                                            <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-                                            <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-                                            <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-                                        </td>
-                                    </tr>
+										
                                 </tbody>
                             </table>
                         </div>

@@ -56,9 +56,9 @@ public class professors extends HttpServlet {
 		{
 			String path = this.getClass().getClassLoader().getResource("").getPath();
 			String fullPath = URLDecoder.decode(path, "UTF-8");
-			String[] destinationParts = fullPath.split(".metadata");
-			String desPath=destinationParts[0]+"Education_Assembly/WebContent/university/img";
-			
+			System.out.println(fullPath);
+			String[] destinationParts = fullPath.split(".metadata\\");
+			String desPath="F:\\Education_Assembly\\WebContent\\university\\img";
 			return desPath;
 		}
 		catch(Exception e)
