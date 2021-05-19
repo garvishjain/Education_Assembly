@@ -3,17 +3,5 @@
   <display-name>University_Internship</display-name>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
-    
   </welcome-file-list>
-<!-- <servlet>
-	<servlet-name>registerUniversity</servlet-name>
-	<servlet-class>in.University.RegisterUniversity</servlet-class>
-</servlet>
-
-<servlet-mapping>
-	<servlet-name>registerUniversity</servlet-name>
-	<url-pattern>/RegisterUniversity</url-pattern>
-</servlet-mapping> -->
-  
-  
 </web-app>

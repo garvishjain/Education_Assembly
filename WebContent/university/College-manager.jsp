@@ -1,4 +1,6 @@
  <!-- Import package -->
+ <%@page import="in.common.GetName"%>
+<%@page import="in.common.hashed"%>
 <%@page import="in.common.GetConnection"%>
 <%@ include file="inc/stdimport.jsp" %>  
 <%@ include file="inc/header2.jsp" %>  
@@ -8,6 +10,25 @@ GetConnection getConObj=new GetConnection();
 Connection con=getConObj.getCon();
 Statement stmt=con.createStatement();
 
+%>
+<%
+		String status = request.getParameter("status");
+		if(status != null)
+						{
+							hashed gethash = new hashed();
+							if(status.equals(gethash.getHash("trueCBC")))
+							{
+								String sid = request.getParameter("sid");
+								String cname = request.getParameter("cname");
+								if(sid != null)
+								{
+									GetName collegename= new GetName();
+									collegename.getNameData(cname, sid);
+									session.setAttribute("nameUser", collegename.getName());
+									session.setAttribute("EmailUser", collegename.getEmail());
+								}
+							}
+						 }
 %>
 
     <!-- Start Main top header -->
@@ -30,7 +51,7 @@ Statement stmt=con.createStatement();
                         <h1 class="page-title">Dashboard</h1>
                         <ol class="breadcrumb page-breadcrumb">
                             <li class="breadcrumb-item"><a href="#">Education Assembly</a></li>
-                            <li class="breadcrumb-item"><a href="#">University</a></li>
+                            <li class="breadcrumb-item"><a href="#">College</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
                         </ol>
                     </div>

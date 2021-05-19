@@ -9,16 +9,9 @@
 
 <%
 
-	if(session == null || session.getAttribute("uniSession") == null)
-	{
-		session.invalidate();
-		response.sendRedirect("login.jsp");
-	} 
+String name = session.getAttribute("nameUser") != null ? (String) session.getAttribute("nameUser") : "";
+String Email = session.getAttribute("EmailUser") != null ? (String) session.getAttribute("EmailUser") : "";
 
-	else if(session.getAttribute("uniSession")!=null && session.getAttribute("uniSession").equals("true"))
-	{
-		System.out.println(session.getAttribute("sessionValue"));
-	}
 
 	StringBuffer url = request.getRequestURL();
 	int start = url.lastIndexOf("/");
@@ -64,7 +57,7 @@
                     <a href="javascript:void(0)" class="nav-link icon menu_toggle"><i class="fe fe-align-center"></i></a>
                     <a href="page-search.html" class="nav-link icon"><i class="fe fe-search" data-toggle="tooltip" data-placement="right" title="Search..."></i></a>
                     <a href="javascript:void(0)" class="nav-link icon settingbar"><i class="fe fe-settings"></i></a>
-                     <a href="logoutUniversity.jsp" class="nav-link icon settingbar"><i class="fe fe-power" title="Log Out"></i></a>    
+                     <a href="../student/logout.jsp" class="nav-link icon settingbar"><i class="fe fe-power" title="Log Out"></i></a>    
                     
                     
                 </div>

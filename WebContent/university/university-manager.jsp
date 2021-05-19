@@ -2,12 +2,33 @@
 <%@page import="in.common.GetConnection"%>
 <%@ include file="inc/stdimport.jsp" %>  
 <%@ include file="inc/header.jsp" %>  
+<%@page import="in.common.GetName"%>
+<%@page import="in.common.hashed"%>
 
 <%
 GetConnection getConObj=new GetConnection();
 Connection con=getConObj.getCon();
 Statement stmt=con.createStatement();
 
+%>
+<%
+		String status = request.getParameter("status");
+		if(status != null)
+						{
+							hashed gethash = new hashed();
+							if(status.equals(gethash.getHash("trueCBC")))
+							{
+								String sid = request.getParameter("sid");
+								String cname = request.getParameter("cname");
+								if(sid != null)
+								{
+									GetName collegename= new GetName();
+									collegename.getNameData(cname, sid);
+									session.setAttribute("nameUser", collegename.getName());
+									session.setAttribute("EmailUser", collegename.getEmail());
+								}
+							}
+						 }
 %>
 
     <!-- Start Main top header -->

@@ -289,7 +289,7 @@ Statement stmt=con.createStatement();
                                         <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
                                     </div>
                                 </div>
-                                <form action="../department" method="post">
+                                <form action="../collegedepartment" method="post">
 	                                <div class="card-body">
 	                                    <div class="row clearfix">
 	                                        <div class="col-sm-6 col-sm-12">
@@ -299,12 +299,12 @@ Statement stmt=con.createStatement();
                                                     <option>---Please Select Department---</option>
                                                     <%
 	                                                    try {
-	            											String query = "select * from department_name";
+	            											String query = "select * from course_name";
 	            											//get Table data
 	            											ResultSet rs = stmt.executeQuery(query);
 	            											while (rs.next()) {
                                                     %>
-                                                    	<option><%=rs.getString("Details") %></option>
+                                                    	<option value="<%=rs.getString("pk_id")%>"><%=rs.getString("course") %></option>
                                                    	<%
 	            										}
 	                                                    }catch(Exception e)
@@ -315,6 +315,57 @@ Statement stmt=con.createStatement();
                                                     </select>
 	                                            </div>
 	                                        </div>
+	                                        <%
+							if (name.equals("")) {
+						%>
+					<div class="col-sm-6 col-sm-12">
+	                                            <div class="form-group">
+	                                            <label>College Name</label>
+	                                                <select name="collegename" class="form-control">
+                                                    <option>---Please Select College---</option>
+                                                    <%
+	                                                    try {
+	            											String query = "select * from college_registration";
+	            											//get Table data
+	            											ResultSet rs = stmt.executeQuery(query);
+	            											while (rs.next()) {
+                                                    %>
+                                                    	<option ><%=rs.getString("college_name") %></option>
+                                                   	<%
+	            										}
+	                                                    }catch(Exception e)
+	                                                    {
+		                                                 	e.printStackTrace();   	
+	                                                    }
+                                                   	%>
+                                                    </select>
+	                                            </div>
+	                                        </div>
+					
+					
+					<%
+						} else {
+					%>
+					<div class="col-sm-6 col-sm-12">
+	                                            <div class="form-group">
+	                                            <label>College Name</label>
+	                                                 
+                                                    	<input type="text" class="form-control" name="collname" value="<%=name%>" placeholder="<%=name%>" >
+                                                  	
+                                                    
+	                                            </div>
+	                                        </div>
+					
+	                                        
+	                <%
+						}
+	                %>             
+	                                 
+	                                 
+	                                 
+	                                        
+	                                        
+	                                        
 	                                        <div class="col-sm-6 col-sm-12">
 	                                            <div class="form-group">
 	                                            <label>Head Of Department</label>
@@ -330,7 +381,7 @@ Statement stmt=con.createStatement();
 	                                        <div class="col-sm-6">
 	                                            <div class="form-group">
 	                                             <label>phone number</label>
-	                                                <input type="number" class="form-control" name="phone" placeholder="Phone number">
+	                                                <input type="text" class="form-control" name="phonenum" placeholder="Phone number">
 	                                            </div>
 	                                        </div>
 	                                        <div class="col-sm-6">
@@ -341,8 +392,14 @@ Statement stmt=con.createStatement();
 	                                        </div>
 	                                        <div class="col-sm-6">
 	                                            <div class="form-group">
-	                                             <label>Standard Capacity</label>
+	                                             <label>Maximum seat </label>
 	                                                <input type="text" class="form-control" name="stdCapacity" placeholder="Standard Capacity ">
+	                                            </div>
+	                                        </div>
+	                                        <div class="col-sm-6">
+	                                            <div class="form-group">
+	                                             <label>Seat available</label>
+	                                                <input type="text" class="form-control" name="seat" placeholder="Standard Capacity ">
 	                                            </div>
 	                                        </div>
 	                                       <!-- <div class="col-sm-6">
