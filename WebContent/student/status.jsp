@@ -4,7 +4,7 @@ uname=session.getAttribute("nameUser") != null ? (String)session.getAttribute("n
 %>
 <!DOCTYPE html>
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
-<%@page import="in.Student.User"%>
+<%-- <%@page import="in.Student.User"%> --%>
 <%@page import="in.Student.St_Login"%>
 <%@page import="in.common.GetConnection"%>
 <%@ include file="inc/stdimport.jsp"%>

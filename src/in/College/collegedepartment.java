@@ -107,12 +107,12 @@ public class collegedepartment extends HttpServlet {
 			if (res > 0) {
 
 				request.setAttribute("status", "succesfull login");
-				response.sendRedirect("university/college-department.jsp");
+				response.sendRedirect("university/college-departments.jsp");
 				out.println("<body><html><script>alert('Data Insert');</script></html></body>");
 			} else {
 
 				request.setAttribute("status", "Failed to sign up...! please try again");
-				response.sendRedirect("university/college-department.jsp");
+				response.sendRedirect("university/college-departments.jsp");
 				out.println("<body><html><script>alert('Something went wrong');</script></html></body>");
 			}
 			// <--- department data end--->
