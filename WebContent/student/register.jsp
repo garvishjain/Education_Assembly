@@ -410,53 +410,10 @@ label {
 										</div>
 									</div>
 									<div class="col-md-6">
-										<div class="form-group">
-											<label>State</label> <select name="state" id="state"
-												class="form-control styled required" required="required">
-												<option>---please Select---</option>
-												<%-- <%
-													try {
-														String query = "select * from state";
-														//get Table data
-														ResultSet rs = stmt.executeQuery(query);
-														while (rs.next()) {
-												%>
-												<option><%=rs.getString("state_name")%></option>
-												<%
-													}
-													} catch (Exception e) {
-
-													}
-												%>
-											</select>
-										</div>
-									</div>
-
-
-
-									<div class="col-md-6">
-										<div class="form-group">
-											<label>City</label> <select name="city" id="city"
-												class="form-control styled required" required="required">
-												<option>---Please Select---</option>
-												<%
-													try {
-														String query = "select * from city";
-														//get Table data
-														ResultSet rs = stmt.executeQuery(query);
-														while (rs.next()) {
-												%>
-												<option><%=rs.getString("city_name")%></option>
-												<%
-													}
-													} catch (Exception e) {
-
-													}
-												%>
-											</select>
-										</div>
-									</div> --%>
-									<%
+                            	<div class="form-group">
+                               <label>State</label> <select class="form-control" name="state"  id="sts" required="">
+                               <option value="">Select State</option>
+                               <%
 															try {
 																String query = "select * from  state";
 																//get Table data
@@ -483,6 +440,7 @@ label {
                                <span style="color:red" id="cityerr"></span>
                             </div>
                             </div>
+                             
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Pin Code</label> <input type="text"
@@ -983,11 +941,11 @@ label {
 	<script src="js/common_scripts_min.js"></script>
 	<script src="js/functions.js"></script>
 	<script src="assets/validate.js"></script>
-<<<<<<< HEAD
+
 	<script src="js/validate.js"></script>
-=======
-    <script src="js/validate.js"></script>
->>>>>>> origin/main
+
+   
+
 	<!-- Specific scripts -->
 	<script src="js/icheck.js"></script>
 	<script>
