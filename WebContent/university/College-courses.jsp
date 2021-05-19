@@ -40,7 +40,7 @@ Statement stmt=con.createStatement();
                         <div class="row row-deck">
                         <%
                                        try {
-										String query = "select * from university_courses INNER JOIN course_name ON university_courses.course_name=course_name.pk_id ";
+										String query = "select * from college_courses ";
 										//get Table data
 										ResultSet rs = stmt.executeQuery(query);
 										while (rs.next()) {
@@ -113,7 +113,7 @@ Statement stmt=con.createStatement();
                                         <div class="d-flex align-items-center mt-auto">
                                             <img class="avatar avatar-md mr-3" src="../assets/images/xs/avatar2.jpg" alt="avatar">
                                             <div>
-                                                <a href="#">Pro. Alan</a>
+                                                <a href="#">Pro. Rakesh singh Jadon</a>
                                                 <small class="d-block text-muted">Head OF Dept.</small>
                                             </div>
                                             <div class="ml-auto text-muted">
@@ -155,7 +155,7 @@ Statement stmt=con.createStatement();
                                         <div class="d-flex align-items-center mt-auto">
                                             <img class="avatar avatar-md mr-3" src="../assets/images/xs/avatar3.jpg" alt="avatar">
                                             <div>
-                                                <a href="#">Pro. Jane</a>
+                                                <a href="#">Pro. parul</a>
                                                 <small class="d-block text-muted">Head OF Dept.</small>
                                             </div>
                                             <div class="ml-auto text-muted">
@@ -197,7 +197,7 @@ Statement stmt=con.createStatement();
                                         <div class="d-flex align-items-center mt-auto">
                                             <img class="avatar avatar-md mr-3" src="../assets/images/xs/avatar5.jpg" alt="avatar">
                                             <div>
-                                                <a href="#">Pro. Corrine</a>
+                                                <a href="#">Pro. Annshu</a>
                                                 <small class="d-block text-muted">Head OF Dept.</small>
                                             </div>
                                             <div class="ml-auto text-muted">
