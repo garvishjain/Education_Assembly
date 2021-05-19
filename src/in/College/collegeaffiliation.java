@@ -21,14 +21,11 @@ import in.common.hashed;
 import in.common.img;
 
 /**
- * Servlet implementation class collegeaffilation
+ * Servlet implementation class collegeaffiliation
  */
-@WebServlet("/colafilation")
-public class collegeaffilation extends HttpServlet {
+@WebServlet("/collegeaffiliation")
+public class collegeaffiliation extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-
-	
-	
 	private int pk_city_id;
 	private Connection con;
 	private int active=0;
@@ -44,11 +41,11 @@ public class collegeaffilation extends HttpServlet {
     con=getConObj.getCon();
 	
 	}
-
-	
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		
@@ -58,7 +55,9 @@ public class collegeaffilation extends HttpServlet {
 		{
 		  
         	String cname = request.getParameter("cname")!= null ? request.getParameter("cname") : "";
-    		int  uninum = Integer.parseInt(request.getParameter("uniname")!= null ? request.getParameter("uniname") : "");
+        	String uni = request.getParameter("n1");
+        	
+    		int  uninum = request.getParameter("uniname")!= null ? Integer.parseInt(request.getParameter("uniname")): 0;
     		String dname = request.getParameter("dname")!= null ? request.getParameter("dname") : "";
     		int type = Integer.parseInt(request.getParameter("ctype")!= null ? request.getParameter("ctype") : "");
     		int fax= Integer.parseInt(request.getParameter("cfax")!= null ? request.getParameter("cfax") : "");
@@ -233,10 +232,6 @@ public class collegeaffilation extends HttpServlet {
 		{
 			e.printStackTrace();
 		}
-		
-	
-		
-		
 		
 	}
 
