@@ -431,6 +431,7 @@ label {
 				                <span style="color:red" id="stserr"></span>									
                             </div>
                             </div>
+                            
                              <div class="col-md-6">
                             	<div class="form-group">
                                 <label>City</label>
@@ -460,8 +461,10 @@ label {
 											</div>
 										</div> -->
 								</div>
+								
 							</div>
 							<!-- 	</fieldset>
+							
 
 
 
