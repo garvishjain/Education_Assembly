@@ -65,7 +65,7 @@ Statement stmt=con.createStatement();
                                 <tbody>
                                 	<%
 	                                      try {
-										String query = "select * from college_professor INNER JOIN college_registration on college_professor.fk_college_id = college_registration.pk_id where college_registration.college_name='"+name+"'" ;
+										String query = "select * from college_professor" ;
 										//get Table data
 										ResultSet rs = stmt.executeQuery(query);
 										while (rs.next()) {
