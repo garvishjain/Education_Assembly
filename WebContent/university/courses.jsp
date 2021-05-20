@@ -40,7 +40,7 @@ Statement stmt=con.createStatement();
                         <div class="row row-deck">
                         <%
                                        try {
-										String query = "select * from university_courses INNER JOIN course_name ON university_courses.course_id=course_name.pk_id where degree_name='"+"Bachlor Degree"+"' ";
+										String query = "select * from university_courses INNER JOIN course_name ON university_courses.course_id=course_name.pk_id where degree_name='"+"Bachelor Degree"+"' ";
 										//get Table data
 										ResultSet rs = stmt.executeQuery(query);
 										while (rs.next()) {
