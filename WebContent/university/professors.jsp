@@ -103,6 +103,7 @@ Statement stmt=con.createStatement();
                         <div class="row clearfix">
                             <div class="col-md-12 col-lg-12">
                                 <div class="card">
+                                <input type="hidden" name="uid" class="form-control">
                                     <div class="card-header">
                                         <h3 class="card-title">Basic Information</h3>
                                         <div class="card-options ">
