@@ -34,6 +34,12 @@
 	margin-top: 10px;
 	font-family: Georgia;
 }
+strong, label {
+    font-family: "proxima_novasemibold", Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    margin: 0px 0px 0px 0px;
+}
 
 .logg {
 	font-size: 35px;
@@ -134,19 +140,36 @@ orange
 							<li><a href="about.jsp">About us</a></li>
 						</ul></li> -->
 						
-							<li class="submenu"><a href="javascript:void(0);"
+							
+						
+						<%
+							if (name.equals("")) {
+						%>
+						<li class="submenu"><a href="javascript:void(0);"
 						class="show-submenu">Register <i class="icon-down-open-mini"></i></a>
 						<ul>
-							<!-- <li><a href="gallery.jsp">Gallery</a></li> -->
-							<li><a href="register.jsp">Student</a></li>
+					<li><a href="register.jsp">Student</a></li>
 							<li><a href="collegeregister.jsp">College</a></li>
 							<li><a href="../university/university-register.jsp">University</a></li>
+<<<<<<< HEAD
 							<li><a href="../university/admin-manager.jsp">Admin</a></li>
 						</ul></li>
+=======
+				</ul></li>
+>>>>>>> b550d0b6c8fa25b6fdbb8de1ed8ffed684afbe6d
 					<li>
 						
 					
-<li class="submenu"><a href="contacts.jsp">Conatct us</a></li>
+					<%
+						} else {
+					
+						}
+					%>
+							<!-- <li><a href="gallery.jsp">Gallery</a></li> -->
+							
+						
+					
+<li class="submenu"><a href="contacts.jsp">Contact us</a></li>
 					<li class="submenu"><a href="visit-us.jsp">Plan a visit</a></li>
 					<li><a href="about.jsp">About us</a></li>
 					<li> 

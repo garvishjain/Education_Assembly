@@ -77,7 +77,7 @@
     text-align: center;
     cursor: auto;
     width: 241px;
-    margin: 7px 0px 0px -8px;
+      margin: 21px 0px 0px 0px;
     /* padding: 20px 0px 0px -18pxx; */
     height: 578px;
     background-color: #e1dede;
@@ -103,13 +103,13 @@ button.button_outline:hover, .button_outline:hover{
 	border:2px solid #283842;
 	color:#283842;
 }
-		.staff .box_style_1 {
+.staff .box_style_1 {
     text-align: center;
     cursor: auto;
     width: 100%;
-    margin: 0px 0px 0px -44px
+    /* height: 605px; */
+    margin: 21px 0px 0px 0px;
 }
-
 .u_name{font-size: 16px;
     font-weight: bold;}
     
@@ -395,7 +395,7 @@ button.button_outline:hover, .button_outline:hover{
 					                                <p class="u_name"><%=rs1.getString("u_name").toUpperCase()%></p>
 					                               
 					                                <div class="college_detail_fill">
-					                                <h5>Establish Year - <%=rs1.getString("establish_year").toUpperCase()%></h5>
+					                                <h5>Since - <%=rs1.getString("establish_year").toUpperCase()%>  Years</h5>
 					                                <h5>Reg. No. - <%=rs1.getString("u_registration").toUpperCase()%></h5>
 					                                 <h5 class="field_fill">Category - <%=rs1.getString("category").toUpperCase()%></h5>
 					                                 <h5 class="field_fill">Type - <%=rs1.getString("type").toUpperCase() %></h5>
@@ -418,7 +418,8 @@ button.button_outline:hover, .button_outline:hover{
 									<form action="college_detail.jsp" method="post" id='university_info'>
 					                             	 <input type="hidden" name="uid" value="<%=rs1.getString("u_name")%>">
 													<button type ="submit" class="button_outline" style="position: absolute;
-														   top: 527px; right: 469px;">Profile</button>
+    top: 545px;
+    right: 423px;">Profile</button>
 									</form>
 									
 				     			</div>

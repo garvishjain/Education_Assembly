@@ -1,7 +1,6 @@
 <%
 String uname="";
 uname=session.getAttribute("nameUser") != null ? (String)session.getAttribute("nameUser") : "";
-System.out.print(uname);
 %>
 <!DOCTYPE html>
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
@@ -155,7 +154,10 @@ label {
 	<%
 			try {
 				/* String query = "Select * from student_information where username='" + uname + "' "; */
-				String sql="Select * from student_information INNER JOIN student_address ON student_information.fk_address=student_address.pk_id WHERE student_information.username= '" + uname + "'    ";
+				String sql="Select * from student_information\n"+
+						"INNER JOIN student_address ON student_address.pk_id=student_information.fk_address\n"+
+						"INNER JOIN state ON state.pk_id=student_address.state where username = '" + uname + "'    ";
+			
 				ResultSet rs = stmt.executeQuery(sql);
 				if (rs.next()) {
 		%>
@@ -167,7 +169,7 @@ label {
 							</div>
 							
 							<div class="img_frame">
-								<img src="<%=rs.getString("image") %>" class="img-circle styled" width="120px" height="120px">
+								<img src="" class="img-circle styled" >
 							</div>
 		
 				</div>
@@ -337,7 +339,7 @@ label {
 						<label class="st_field"> STATE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
 						<label class="dash">&mdash;</label>
-						<label class="st_detail"><%=rs.getString("state")%></label>
+						<label class="st_detail"><%=rs.getString("state_name")%></label>
 		     	   </td>
 			</tr> 
 			

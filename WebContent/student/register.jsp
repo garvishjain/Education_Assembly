@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <!--[if IE 9]><html class="ie ie9"> <![endif]-->
+<%@page import="in.common.hashed"%>
 <html>
 <head>
 <meta charset="utf-8">
@@ -236,6 +237,18 @@ label {
 
 
 							<div class="indent_title_in">
+							<%
+										hashed gethash = new hashed();
+									if(request.getParameter("status") != null && request.getParameter("status").equals("ec3e272230019503389a1ffd1bbac8c4e80ba171f067356f3ef4b7323903dceb"))
+									{
+								%>
+									<center><h4><span id="showMsg" class="text-success">Registered Successfully</span></h4></center>
+									<%} 
+									else if(request.getParameter("status") != null && !(request.getParameter("status").equals("ec3e272230019503389a1ffd1bbac8c4e80ba171f067356f3ef4b7323903dceb")))
+									{
+										%>
+										<center><h4><span id="showMsg" class="text-danger"><h4>Something Went Wrong!!!</span></h4></center>
+										<%} %>
 								<i class="pe-7s-user"></i>
 								<h3 style="text-decoration: underline;">Personal details</h3>
 							</div>
@@ -376,7 +389,7 @@ label {
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Select Student Image</label> <input type="file"
-												name="image" id="image" class="form-control styled required">
+												name="image" id="image" class="form-control styled required" accept="image/gif, image/jpeg, image/png">
 										</div>
 									</div>
 
@@ -539,8 +552,9 @@ label {
 
 								<div class="col-md-6">
 										<div class="form-group">
-											<label>Select Course</label> <select name="course"
-												id="course"  onchange="getddl()" class="form-control styled required"
+											<label>Select Course</label> 
+											<select name="course"
+												id="course"   class="form-control styled required"
 												required="required">
 												<option value="null" >---Please Select---</option>
 												<!-- For Master courses -->	
@@ -552,7 +566,7 @@ label {
 														ResultSet rs = stmt.executeQuery(query);
 														while (rs.next()) {
 												%>
-												<option value="<%=rs.getInt("pk_id")%>"><%=rs.getString("course")%></option>
+												<option ><%=rs.getString("course")%></option>
 												<%
 												  }
 													} catch (Exception e) {
@@ -568,7 +582,7 @@ label {
 														ResultSet rs = stmt.executeQuery(query);
 														while (rs.next()) {
 												%>
-												<option value="<%=rs.getInt("pk_id")%>"><%=rs.getString("course")%></option>
+												<option ><%=rs.getString("course")%></option>
 												<%
 													}
 													} catch (Exception e) {
@@ -584,7 +598,7 @@ label {
 														ResultSet rs = stmt.executeQuery(query);
 														while (rs.next()) {
 												%>
-												<option value="<%=rs.getInt("pk_id")%>"><%=rs.getString("course")%></option>
+												<option><%=rs.getString("course")%></option>
 												<%
 													}
 													} catch (Exception e) {
@@ -599,11 +613,24 @@ label {
 	
 									<div class="col-md-6">
 										<div class="form-group">
-											<label>Select College/University</label> <select
-												name="college" id="college"
+											<label>Select College/University</label> 
+											<select name="college" id="college"
 												class="form-control styled required" required="required">
 												<option value="null">---Please Select---</option>
-												
+												<%
+													try {
+														String query = "select  * from university ";
+														//get Table data
+														ResultSet rs = stmt.executeQuery(query);
+														while (rs.next()) {
+												%>
+												<option><%=rs.getString("u_name")%></option>
+												<%
+													}
+													} catch (Exception e) {
+
+													}
+												%>
 											</select>
 										</div>
 									</div>
@@ -717,7 +744,7 @@ label {
 										
 										<button type="Button"  name="send" id="send" class="button">Send OTP</button><!-- onclick="verified()" -->
 									</p>
-									<span id="showMsg"></span>
+								
 
 
 
@@ -942,6 +969,8 @@ label {
 
 	<!-- Common scripts -->
 	<script src="js/jquery-1.11.2.min.js"></script>
+	
+	
 	<script src="js/common_scripts_min.js"></script>
 	<script src="js/functions.js"></script>
 	<script src="assets/validate.js"></script>

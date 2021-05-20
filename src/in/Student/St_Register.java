@@ -205,14 +205,16 @@ public class St_Register extends HttpServlet {
 								int res2 = stmt.executeUpdate();
 					if(res>0&&res1>0&&res2>0&&res>3)
 					{
-						out.println("<html><body><h4>Data  not Submitted</h4></body></html>");
+						
+						out.println("Data  not Submitted");
+						response.sendRedirect("student/register.jsp?status="+gethash.getHash("CBCfalse")); 
 						
 					}
 					else
 					{
 						
-						out.println("<html><body><h4>Data Submitted</h4></body></html>");
-						response.sendRedirect("student/register.jsp");
+						out.println("Data Submitted");
+						 response.sendRedirect("student/register.jsp?status="+gethash.getHash("CBCtrue")); 
 						
 					}
 			}

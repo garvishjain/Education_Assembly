@@ -82,7 +82,7 @@ public class department extends HttpServlet {
 			// <--- department data start--->
 				
 			
-			String sql = "insert into university_department(fk_university_id,fk_department_name,hod_name,phone_no,email,std_capacity)value(?,?,?,?,?,?)";
+			String sql = "insert into university_department(fk_university_id,fk_department_id,hod_name,phone_no,email,std_capacity)value(?,?,?,?,?,?)";
 			stmt = con.prepareStatement(sql);
 			stmt.setInt(1, u_id);
 			stmt.setString(2, detail);

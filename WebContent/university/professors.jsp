@@ -54,11 +54,8 @@ Statement stmt=con.createStatement();
                                         <th>Last Name</th>
                                         <th>Date of birth</th>
                                         <th>gender</th>
-                                        
                                        <th>Phone number</th>
                                        <th>Email</th>
-                                       <th>Brief</th>
-                                      
                                         <th>Action</th>
                                     </tr>
                                 </thead>
@@ -82,10 +79,12 @@ Statement stmt=con.createStatement();
                                         <td><span class="font-16"><%=rs.getString("lname") %></span></td>
                                         <td><%=rs.getString("dob") %></td>
                                         <td><%=rs.getString("gender") %></td>
-                                        
                                          <td><%=rs.getString("phone") %></td>
                                          <td><%=rs.getString("email") %></td>
-                                     <td><%=rs.getString("brief") %></td>
+                                     <td>
+                                        <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
+                                        <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+	                                </td>
                                     
                                     </tr>
 										<%
@@ -104,6 +103,7 @@ Statement stmt=con.createStatement();
                         <div class="row clearfix">
                             <div class="col-md-12 col-lg-12">
                                 <div class="card">
+                                <input type="hidden" name="uid" class="form-control">
                                     <div class="card-header">
                                         <h3 class="card-title">Basic Information</h3>
                                         <div class="card-options ">
