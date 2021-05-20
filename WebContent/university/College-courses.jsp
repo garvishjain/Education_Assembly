@@ -308,18 +308,38 @@ Statement stmt=con.createStatement();
                         </div>
                     </div>
                     <div class="tab-pane" id="Courses-add">
-                    <form action="../courses" method="post" enctype="multipart/form-data">
+                    <form action="../collegecourse" method="post" enctype="multipart/form-data">
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">Courses Basic Info</h3>
-                                <input type="hidden" name="u_id">
+                                
                                 <!-- <div class="card-options "> 
                                     <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
                                     <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
                                 </div> -->
                             </div>
                             <div class="card-body">
+                            
+                            
                                 <div class="row clearfix">
+                                <div class="col-sm-6">
+                                        <div class="form-group">
+                                        	<label>College Name</label>
+                                             <input type="text"  name="cname" class="form-control" value="<%=name%>" >
+		                                       	
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <div class="form-group">
+                                        	<label>Degree type</label>
+                                             <select  name="coursecat" class="form-control"  >
+		                                       	<option>--Select Course</option>
+		                                       	<option>Master Course</option>
+		                                       	<option>Gradutaion course</option>
+		                                       	<option>Diploma course</option>
+		                                       </select>
+                                        </div>
+                                    </div>
                                 <div class="col-sm-6">
                                         <div class="form-group">
                                         	<label>Course Name</label>

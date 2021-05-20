@@ -10,6 +10,7 @@ import java.util.Random;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -23,6 +24,7 @@ import in.common.img;
 /**
  * Servlet implementation class collegeaffiliation
  */
+@MultipartConfig
 @WebServlet("/collegeaffiliation")
 public class collegeaffiliation extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -55,27 +57,33 @@ public class collegeaffiliation extends HttpServlet {
 		{
 		  
         	String cname = request.getParameter("cname")!= null ? request.getParameter("cname") : "";
-        	String uni = request.getParameter("n1");
         	
-    		int  uninum = request.getParameter("uniname")!= null ? Integer.parseInt(request.getParameter("uniname")): 0;
+        	
+    		int  uninum = request.getParameter("uniname")!= null ?Integer.parseInt( request.getParameter("uniname")): 0;
     		String dname = request.getParameter("dname")!= null ? request.getParameter("dname") : "";
-    		int type = Integer.parseInt(request.getParameter("ctype")!= null ? request.getParameter("ctype") : "");
-    		int fax= Integer.parseInt(request.getParameter("cfax")!= null ? request.getParameter("cfax") : "");
-    		int category = Integer.parseInt(request.getParameter("ccategory")!= null ? request.getParameter("ccategory") : "");
+    		int type = request.getParameter("ctype")!= null ? Integer.parseInt(request.getParameter("ctype")) : 0;
+    		int fax= request.getParameter("cfax")!= null ? Integer.parseInt(request.getParameter("cfax")) :0;
+    		int category = request.getParameter("ccategory")!= null ?Integer.parseInt( request.getParameter("ccategory")) : 0;
     		String user = request.getParameter("uname")!= null ? request.getParameter("uname") : "";
     		String email = request.getParameter("email")!= null ? request.getParameter("email") : "";
-    	   int  num = Integer.parseInt(request.getParameter("num")!= null ? request.getParameter("num") : "");
-    		int year = Integer.parseInt(request.getParameter("year")!= null ? request.getParameter("year") : "");
+    	  String  num = request.getParameter("num")!= null ? request.getParameter("num") :"";
+    		int year =request.getParameter("year")!= null ?Integer.parseInt( request.getParameter("year") ): 0;
     		String address = request.getParameter("address")!= null ? request.getParameter("address") : "";
     		String cntry =request.getParameter("cntry")!= null ? request.getParameter("cntry") : "";
-            int state = Integer.parseInt(request.getParameter("state")!= null ? request.getParameter("state") : "");
+            int state = request.getParameter("state")!= null ? Integer.parseInt(request.getParameter("state")) : 0;
     		String city = request.getParameter("city")!= null ?  request.getParameter("city") : "";
-    		int pincode = Integer.parseInt(request.getParameter("pincode")!= null ? request.getParameter("pincode") : "11/01/2000");
+    		int pincode = request.getParameter("pincode")!= null ?Integer.parseInt( request.getParameter("pincode") ): 0;
     		Part pdf = request.getPart("pdf");
     		Part pic = request.getPart("pic");
     		String pass = request.getParameter("pass")!= null ? request.getParameter("pass") : "";
     		
-    		
+    	System.out.println(uninum);
+    	System.out.println(num);
+    	System.out.println(fax);
+    	System.out.println(year);
+    	System.out.println(state);
+    	System.out.println(city);
+    	System.out.println(pincode);
 		
 		
 		String filename = pdf.getSubmittedFileName();
@@ -181,7 +189,7 @@ public class collegeaffiliation extends HttpServlet {
 //	    		
 			
 			// college registration data inserted	
-				 String sql5="insert into college_registration"
+				 String sql5="insert into university_affiliation"
 				 		+ "(registration_num,C_name,D_name,Email,Est_year,Fax_num,fk_address_id,c_catagory,"
 				 		+ "c_type,u_name,ph_num,c_image,Affiliation_pdf,username,password,is_active )"
 				 		+ "value(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
@@ -199,23 +207,28 @@ public class collegeaffiliation extends HttpServlet {
 				stmt5.setInt(8,category);
 				stmt5.setInt(9,type);
 				stmt5.setInt(10,uninum);
-				stmt5.setInt(11,num);
+				stmt5.setString(11,num);
 				stmt5.setString(12,picname);
 				stmt5.setString(13,pdfname);
 				stmt5.setString(14,user);
 				stmt5.setString(15,Hashed);
-				stmt5.setInt(17,active);
+				stmt5.setInt(16,active);
 
 				
 				
 			    int res5 = stmt5.executeUpdate();
-				if(res5>0)
-				{
-					out.println("<html><body><script>alert('Data Enter registration no is' )+'"+reg_num +"';</script></body></html>");
-				}
-				else
-				{
-					out.println("<html><body><script>alert('Some Thing Went Wrong');</script></body></html>");
+				
+				if (res > 0 &&  res5>0) {
+					out.println("<body><html><script>alert(''Data Enter registration no is''"+reg_num +"'');</script></html></body>");
+					
+					request.setAttribute("status", "succesfull update");
+					response.sendRedirect("student/home.jsp");
+					out.println("<body><html><script>alert(''Data Enter registration no is''"+reg_num +"'');</script></html></body>");
+				} else {
+					out.println("<body><html><script>alert('Something went wrong');</script></html></body>");
+					request.setAttribute("status", "Failed to sign up...! please try again");
+					response.sendRedirect("student/home.jsp");
+					out.println("<body><html><script>alert('Something went wrong');</script></html></body>");
 				}
 				
                	

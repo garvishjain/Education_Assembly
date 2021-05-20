@@ -282,7 +282,17 @@ public class collegeregist extends HttpServlet {
 					out.println("<html><body><script>alert('Some Thing Went Wrong');</script></body></html>");
 				}
 				
-               	
+				if (res > 0 && res2>0 && res3>0 && res5>0) {
+
+					request.setAttribute("status", "succesfull update");
+					response.sendRedirect("student/home.jsp");
+					out.println("<body><html><script>alert('Data update');</script></html></body>");
+				} else {
+
+					request.setAttribute("status", "Failed to sign up...! please try again");
+					response.sendRedirect("student/home.jsp");
+					out.println("<body><html><script>alert('Something went wrong');</script></html></body>");
+				}
 				
 				
 				
@@ -291,7 +301,10 @@ public class collegeregist extends HttpServlet {
 		{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			out.println("<html><body><script>alert("+ e.getMessage() +");</script></body></html>");
+			request.setAttribute("status", e);
+			response.sendRedirect("student/home.jsp");
+			out.println("<body><html><script>alert('Something went wrong');</script></html></body>");
+			
 		}
 		catch(NullPointerException e)
 		{

@@ -141,6 +141,7 @@ orange
 							<li><a href="register.jsp">Student</a></li>
 							<li><a href="collegeregister.jsp">College</a></li>
 							<li><a href="../university/university-register.jsp">University</a></li>
+							<li><a href="../university/admin-manager.jsp">Admin</a></li>
 						</ul></li>
 					<li>
 						
