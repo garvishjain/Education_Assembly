@@ -34,12 +34,6 @@
 	margin-top: 10px;
 	font-family: Georgia;
 }
-strong, label {
-    font-family: "proxima_novasemibold", Arial, Helvetica, sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    margin: 0px 0px 0px 0px;
-}
 
 .logg {
 	font-size: 35px;
@@ -123,7 +117,7 @@ orange
 							<li><a href="diploma.jsp">Diploma courses</a></li>
 							<li><a href="graduate.jsp">Graduate courses</a></li>
 							<li><a href="master.jsp">Master courses</a></li>
-							<!-- <li><a href="college.jsp">College</a></li> -->
+							<li><a href="college.jsp">College</a></li>
 						</ul></li>
 
 						<!-- <ul>
@@ -140,36 +134,18 @@ orange
 							<li><a href="about.jsp">About us</a></li>
 						</ul></li> -->
 						
-							
-						
-						<%
-							if (name.equals("")) {
-						%>
-						<li class="submenu"><a href="javascript:void(0);"
+							<li class="submenu"><a href="javascript:void(0);"
 						class="show-submenu">Register <i class="icon-down-open-mini"></i></a>
 						<ul>
-					<li><a href="register.jsp">Student</a></li>
+							<!-- <li><a href="gallery.jsp">Gallery</a></li> -->
+							<li><a href="register.jsp">Student</a></li>
 							<li><a href="collegeregister.jsp">College</a></li>
 							<li><a href="../university/university-register.jsp">University</a></li>
-<<<<<<< HEAD
-							<li><a href="../university/admin-manager.jsp">Admin</a></li>
 						</ul></li>
-=======
-				</ul></li>
->>>>>>> b550d0b6c8fa25b6fdbb8de1ed8ffed684afbe6d
 					<li>
 						
 					
-					<%
-						} else {
-					
-						}
-					%>
-							<!-- <li><a href="gallery.jsp">Gallery</a></li> -->
-							
-						
-					
-<li class="submenu"><a href="contacts.jsp">Contact us</a></li>
+<li class="submenu"><a href="contacts.jsp">Conatct us</a></li>
 					<li class="submenu"><a href="visit-us.jsp">Plan a visit</a></li>
 					<li><a href="about.jsp">About us</a></li>
 					<li> 
@@ -188,7 +164,7 @@ orange
 						class="show-submenu">Welcome,&nbsp;<%=name%><i
 							class="icon-down-open-mini"></i></a>
 						<ul>
-						  <%--   <li><a href="javascript:void(0);"><%=Email%></a></li> --%>
+						    <li><a href="javascript:void(0);"><%=Email%></a></li>
 							<li><a href="document.jsp">Upload Documents</a></li>
 							<li><a href="status.jsp">Check Status</a></li>
 
