@@ -29,7 +29,7 @@ public class Registration extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Connection con;
 	private PreparedStatement stmt;
-	
+	private int pk_authentication_id, fk_state ;
 	
 
 	public void init(ServletConfig config) throws ServletException {
@@ -92,6 +92,10 @@ public class Registration extends HttpServlet {
 			stmt.setString(3, contactnum);
 			stmt.setString(4, designation);
 			
+			hashed gethash = new hashed();
+			String hashed = gethash.getHash(pswd);
+			
+			
 			int res2 = stmt.executeUpdate();
 //			<--- university contact end --->
 			
@@ -124,10 +128,10 @@ public class Registration extends HttpServlet {
 			System.out.println(sqll3);
 			stmt = con.prepareStatement(sqll3);
 			ResultSet rs3 = stmt.executeQuery(sqll3);
-			int fk_state_id =0;
+			
 			if(rs3.next())
 			{
-				 fk_state_id = rs3.getInt(1);
+				 fk_state = rs3.getInt(1);
 			}
 			else
 			{
@@ -193,31 +197,9 @@ public class Registration extends HttpServlet {
 			{
 				out.println("Data Not Found");
 			}
-//			<--- foreign key convert end --->			
+//			<--- foreign key convert end --->		
 			
-//			<--- university register start --->
-			String sql="insert into university(u_registration,u_name,address,fk_country,fk_state,fk_city,fk_category,fk_type,email,establish_year,fk_contact_number,quota)value(?,?,?,?,?,?,?,?,?,?,?,?)";
-			
-			stmt = con.prepareStatement(sql);
-			stmt.setString(1, ureg);
-			stmt.setString(2, uname);
-			stmt.setString(3, uadrs);
-			stmt.setInt(4, rt);
-		    stmt.setInt(5, fk_state_id);
-			stmt.setInt(6, rt4);
-			stmt.setInt(7, rt5);
-			stmt.setInt(8, rt6);
-			stmt.setString(9, uemail);
-			stmt.setInt(10, rt7);
-			stmt.setInt(11, pk);
-			stmt.setInt(12, rt8);
-			
-			int res = stmt.executeUpdate();
-			
-			hashed gethash = new hashed();
-			String hashed = gethash.getHash(pswd);
-			
-			String sql3="insert into user(name,email,username,password,register_num)values(?,?,?,?,?)";
+            String sql3="insert into user(name,email,username,password,register_num)values(?,?,?,?,?)";
 			
 			stmt = con.prepareStatement(sql3);
 			stmt.setString(1, regname);
@@ -227,6 +209,47 @@ public class Registration extends HttpServlet {
 			stmt.setString(5, ureg);
 			
 			int res3 = stmt.executeUpdate();
+			if(res3>0)
+			{
+			String sql6="select id from user ORDER BY id  DESC Limit 1";
+			System.out.println(sql6);
+			 stmt = con.prepareStatement(sql6);
+			ResultSet rs1 = stmt.executeQuery(sql6);
+				
+			if(rs1.next())
+			{
+				 pk_authentication_id = rs1.getInt(1);
+				 System.out.println(rs1);
+			}
+			else
+			{
+				
+				out.println("Data Not Found");
+			}	}
+		
+			
+//			<--- university register start --->
+			String sql="insert into university(u_registration,u_name,address,fk_country,fk_state,fk_city,fk_category,fk_type,email,establish_year,fk_contact_number,quota,fk_authentication_id)value(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			System.out.println(sql);
+			stmt = con.prepareStatement(sql);
+			stmt.setString(1, ureg);
+			stmt.setString(2, uname);
+			stmt.setString(3, uadrs);
+			stmt.setInt(4, rt);
+		    stmt.setInt(5, fk_state);
+			stmt.setInt(6, rt4);
+			stmt.setInt(7, rt5);
+			stmt.setInt(8, rt6);
+			stmt.setString(9, uemail);
+			stmt.setInt(10, rt7);
+			stmt.setInt(11, pk);
+			stmt.setInt(12, rt8);
+			stmt.setInt(13, pk_authentication_id);
+			
+			int res = stmt.executeUpdate();
+			
+			
+			
 			
 			if(res>0 && res2>0 && res3>0)
 			{
