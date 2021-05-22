@@ -55,7 +55,7 @@ String Email = session.getAttribute("EmailUser") != null ? (String) session.getA
                 <a class="header-brand" href="#"><i class="fa fa-graduation-cap brand-logo"></i></a>
                 <div class="dropdown">
                     <a href="javascript:void(0)" class="nav-link icon menu_toggle"><i class="fe fe-align-center"></i></a>
-                    <a href="page-search.html" class="nav-link icon"><i class="fe fe-search" data-toggle="tooltip" data-placement="right" title="Search..."></i></a>
+                    <a href="page-search.jsp" class="nav-link icon"><i class="fe fe-search" data-toggle="tooltip" data-placement="right" title="Search..."></i></a>
                     <a href="javascript:void(0)" class="nav-link icon settingbar"><i class="fe fe-settings"></i></a>
                      <a href="../student/logout.jsp" class="nav-link icon settingbar"><i class="fe fe-power" title="Log Out"></i></a>    
                     
