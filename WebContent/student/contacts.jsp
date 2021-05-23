@@ -110,6 +110,20 @@
 
 														}
 													%>
+													<%
+														try {
+															String query = "select * from college_registration";
+															//get Table data
+															ResultSet rs = stmt.executeQuery(query);
+															while (rs.next()) {
+													%>
+													<option><%=rs.getString("college_name")%></option>
+													<%
+														}
+														} catch (Exception e) {
+
+														}
+													%>
 													</select>
 													</div>
 													</div>
