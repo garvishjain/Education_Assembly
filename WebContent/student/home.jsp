@@ -320,7 +320,7 @@ a.link_normal {
     position: relative;
     display: block;
     color: #00aeef;
-    margin: 0px 0px 0px 24px;
+    margin: 0px 0px 0px 55px;
 }
 
 .checkbox-holder span {
@@ -329,6 +329,21 @@ a.link_normal {
     margin: 0 0 0 46px;
     white-space: normal;
     color: #fff;
+}
+.log {
+    font-size: 25px;
+    color: #f5aa0f;
+    margin-top: 10px;
+    font-family: Georgia;
+}
+.logg {
+    font-size: 25px;
+    color: white;
+    margin-top: 0px;
+    font-family: Georgia;
+}
+.log, .logg {
+    display: inline;
 }
 </style>
 

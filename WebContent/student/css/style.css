@@ -334,11 +334,10 @@ header#contacts{
 }
 
 /* Footer  */
-footer{ 
-	    background-color: #223038;
+footer {
+    background-color: #223038;
     color: #fff;
-    padding: 20px 0px 0px 0px;
-	
+    padding: 26px 0px 0px 280px;
 }
 footer ul{
 	list-style:none;
@@ -768,6 +767,9 @@ a.box_style_1:hover{
 }
 .wrapper_indent{
 	padding-left:80px;
+	
+	/* Customize */
+    margin: 0px 15px;
 }
 ul.list_teachers{
 	list-style:none;
@@ -2223,7 +2225,9 @@ a.banner_bt:hover {
 .tooltip-content a {
 	font-weight: bold;
 }
-.box_style{margin-top: 155px;
+.box_style{
+
+	margin-top: 30px;	/* Customize */
 background-color: white;
 margin-left: -50px;}
 

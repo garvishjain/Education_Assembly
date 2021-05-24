@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import in.common.GetConnection;
 import in.common.date;
+import in.common.hashed;
 
 /**
  * Servlet implementation class Visit_Us
@@ -42,6 +43,8 @@ public class Visit_Us extends HttpServlet {
 		String date = request.getParameter("date");
 		String time = request.getParameter("time");
 		
+		System.out.println(name+time+date);
+		
 		
 		date dt = new date();
 		String getdate = dt.Date(date);
@@ -55,16 +58,14 @@ public class Visit_Us extends HttpServlet {
 		ps.setString(5,getdate);
 		ps.setString(6,time);
 		int res = ps.executeUpdate();
-		
+		hashed gethash = new hashed();
 			if(res>0)
 			{
-				String d="Data Submitted";
-				request.setAttribute("data",d);
-				response.sendRedirect("student/visit-us.jsp");
+				 response.sendRedirect("student/visit-us.jsp?status="+gethash.getHash("CBCtrue")); 
 			}
 			else
 			{
-				out.println("<html><body><script>alert('Data Not Submitted');</script></body></html>");
+				 response.sendRedirect("student/visit-us.jsp?status="+gethash.getHash("CBCtrue")); 
 			}
 			
 		} catch (SQLException e) {

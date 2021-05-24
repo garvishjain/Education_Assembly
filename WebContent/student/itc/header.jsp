@@ -29,14 +29,14 @@
 
 <style type="text/css">
 .log {
-	font-size: 35px;
+	font-size: 30px;
 	color: #f5aa0f;
 	margin-top: 10px;
 	font-family: Georgia;
 }
 
 .logg {
-	font-size: 35px;
+	font-size: 30px;
 	color: white;
 	margin-top: 10px;
 	font-family: Georgia;

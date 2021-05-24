@@ -20,11 +20,11 @@
 		<footer>
         <div class="container">
             <div class="row ">
-                <div class="col-md-3 col-sm-3">
+               <!--  <div class="col-md-3 col-sm-3">
                     <p id="logo_footer">
                         <img src="img/logo2.png" width="225" height="140" alt="Education Assemnly" data-retina="true">
                     </p>
-                </div>
+                </div> -->
                 <div class="col-md-3 col-sm-3">
                     <h4>About</h4>
                     <ul>
