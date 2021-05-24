@@ -139,7 +139,17 @@ orange
 						<ul>
 							<!-- <li><a href="gallery.jsp">Gallery</a></li> -->
 							<li><a href="register.jsp">Student</a></li>
-							<li><a href="collegeregister.jsp">College</a></li>
+							
+							<li class="submenu"><a href="javascript:void(0);"
+						class="show-submenu">College</a>
+						
+						    <ul>
+						          <li><a href="collegeregister.jsp">College Registration</a></li>
+						         <li><a href="collegeafilated.jsp">College Affiliation</a></li>
+						    
+						    </ul>
+						    </li>
+						
 							<li><a href="../university/university-register.jsp">University</a></li>
 						</ul></li>
 					<li>

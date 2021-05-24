@@ -237,7 +237,7 @@ Statement stmt=con.createStatement();
                                 <div class="col-sm-6">
                                         <div class="form-group">
                                         	<label>Course Name</label>
-                                             <select  name="name" class="form-control" >
+                                             <select  name="sname" class="form-control" >
 		                                       <option>--Select Course</option>
 		                                       <%
 		                                           try {
@@ -246,7 +246,7 @@ Statement stmt=con.createStatement();
 		   											ResultSet rs = stmt.executeQuery(query);
 		   											while (rs.next()) {
 		                                       	%>
-		                                       	<option><%=rs.getString("course") %></option>
+		                                       	<option ><%=rs.getString("course") %></option>
 		                                       	<%
 		                                       		}
 		                                       		} catch (Exception e) {
