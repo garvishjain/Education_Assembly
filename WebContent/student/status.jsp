@@ -130,7 +130,7 @@ label {
     margin: 25px 0px 0px 71px;
     font-family: 'fontello';}		
     
-    .st_detail{margin: 0px 0px 0px 150px;font-size: 16px;}
+    .st_detail{margin: 0px 0px 0px 140px;font-size: 16px;}
     .st_field{margin: 0px 0px 0px 135px;font-size: 16px;}
     .colon{margin: 0px 0px 0px 0px;}
     .dash{margin: 0px 0px 0px 140px;font-size: 16px;}
@@ -169,7 +169,7 @@ label {
 							</div>
 							
 							<div class="img_frame">
-								<img src="" class="img-circle styled" >
+								<img src="   " class="img-circle styled" width="150px" height="150px;" >
 							</div>
 		
 				</div>
@@ -252,7 +252,21 @@ label {
 						<label class="st_detail"><%=rs.getString("first_name").toUpperCase() + " " + rs.getString("last_name").toUpperCase()%></label>
 		     	   </td>
 			</tr> --%>
-
+<tr>
+					<td>
+						<label class="st_field">College&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+						<label class="dash">&mdash;</label>
+						<label class="st_detail"><%=rs.getString("college")%></label>
+		     	   </td>
+			</tr><tr>
+					<td>
+						<label class="st_field">Course&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+						<label class="dash">&mdash;</label>
+						<label class="st_detail"><%=rs.getString("course")%></label>
+		     	   </td>
+			</tr>
 			<tr>
 					<td>
 						<label class="st_field">E-MAIL&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

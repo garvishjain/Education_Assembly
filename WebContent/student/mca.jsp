@@ -412,15 +412,15 @@ button.button_outline:hover, .button_outline:hover{
 					                                    <li><a href="<%=rs1.getString("google_link") %>"><i class="icon-google"></i></a></li>
 					                                    <li><a href="<%=rs1.getString("mail_link") %>"><i class="icon-email"></i></a></li>
 													</ul> 
-													<hr style="color: black; width: 338px; height: 0.5px;  margin: -10px 0px 0px -30px; background-color: black;">
+													<hr style="color: black; width: 322px; height: 0.5px;  margin: -10px 0px 0px -30px; background-color: black;">
 									</div>
 									
-									<form action="college_detail.jsp" method="post" id='university_info'>
-					                             	 <input type="hidden" name="uid" value="<%=rs1.getString("u_name")%>">
-													<button type ="submit" class="button_outline" style="position: absolute;
-    top: 545px;
-    right: 423px;">Profile</button>
-									</form>
+									<%-- <form action="college_detail.jsp" method="post" id='university_info'>
+					                             	 <input type="hidden" name="uid" value="<%=rs1.getString("u_name")%>"> --%>
+													<a href="college_detail.jsp"><button type ="submit" class="button_outline" style="position: absolute;
+    top: 554px;
+    right: 423px;">Profile</button></a>
+									<!-- </form> -->
 									
 				     			</div>
 				     			

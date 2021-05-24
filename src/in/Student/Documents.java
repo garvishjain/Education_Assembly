@@ -22,6 +22,7 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import in.common.GetConnection;
 import in.common.GetName;
+import in.common.hashed;
 import in.common.img;
 /**
  * Servlet implementation class Documents
@@ -37,7 +38,7 @@ public class Documents extends HttpServlet {
 		{
 			GetConnection getcon = new GetConnection();
 			con = getcon.getCon();
-		
+	
 		}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException 
@@ -106,7 +107,8 @@ public class Documents extends HttpServlet {
 		migration.write(finallocation7 );
 		
 		
-		 	
+		hashed gethash = new hashed();
+		
 		 	
 		 	
 	/*	img img = new img();
@@ -134,7 +136,7 @@ public class Documents extends HttpServlet {
 				String migration_file = migration.getSubmittedFileName();
 				String migration_img= img.image(migration_file, migration);*/
 		
-			
+		
 		
 		String sql="insert into student_document(high,higher,cast,income,domicile,aadhar,transfer_certificate,migration,fk_student_information)"
 				+ "values(?,?,?,?,?,?,?,?,?)";
@@ -149,20 +151,20 @@ public class Documents extends HttpServlet {
 			stmt.setString(6,path3);
 			stmt.setString(7,path6);
 			stmt.setString(8,path7);
-			stmt.setString(9,"1");
+			stmt.setInt(9,1);
 			int res = stmt.executeUpdate();
 			
 			if(res>0)
 			{
 			
-				out.println("<html><body><script>alert('Document Submitted');</script></body></html>");
-				response.sendRedirect("student/document.jsp");
+				out.println("Data Submitted");
+				 response.sendRedirect("student/document.jsp?status="+gethash.getHash("CBCtrue")); 
 				
 			}
 			else
 			{
-				out.println("<html><body><script>alert('data not submitted');</script></body></html>");
-				response.sendRedirect("student/document.jsp");
+				out.println("Data Submitted");
+				 response.sendRedirect("student/document.jsp?status="+gethash.getHash("CBCtrue")); 
 			}
 		} 
 		catch (SQLException e) 

@@ -59,18 +59,18 @@ public class Registration extends HttpServlet {
 		
 		Random rnd = new Random();
         int number = rnd.nextInt(99999999);
-        String ureg ="UNI" + number ;
+        String u_reg ="UNI" + number ;
 		try 
 		{
 			/*String ureg = request.getParameter("ureg")!= null ? request.getParameter("ureg") : "";*/
-			String uname = request.getParameter("uname")!= null ? request.getParameter("uname") : "";
-			String uadrs = request.getParameter("uadrs")!= null ? request.getParameter("uadrs") : "";
-			String cntry = request.getParameter("cntry")!= null ? request.getParameter("cntry") : "";
+			String u_name = request.getParameter("uname")!= null ? request.getParameter("uname") : "";
+			String u_adrs = request.getParameter("uadrs")!= null ? request.getParameter("uadrs") : "";
+			String country = request.getParameter("cntry")!= null ? request.getParameter("cntry") : "";
 			String state = request.getParameter("state")!= null ? request.getParameter("state") : "";
 			String city = request.getParameter("city")!= null ? request.getParameter("city") : "";
-			String uctgry = request.getParameter("uctgry")!= null ? request.getParameter("uctgry") : "";
-			String utype = request.getParameter("utype")!= null ? request.getParameter("utype") : "";
-			String uemail = request.getParameter("uemail")!= null ? request.getParameter("uemail") : "";
+			String u_ctgry = request.getParameter("uctgry")!= null ? request.getParameter("uctgry") : "";
+			String u_type = request.getParameter("utype")!= null ? request.getParameter("utype") : "";
+			String u_email = request.getParameter("uemail")!= null ? request.getParameter("uemail") : "";
 			String year = request.getParameter("year")!= null ? request.getParameter("year") : "";
 			String quota = request.getParameter("quota")!= null ? request.getParameter("quota") : "";
 			int pk = 12;
@@ -97,7 +97,7 @@ public class Registration extends HttpServlet {
 			
 //			<--- foreign key convert start --->
 			String sqll="select pk_id from university_contact where contact_number='"+contactnum+"' ";
-			System.out.println(sqll);
+		
 			stmt = con.prepareStatement(sqll);
 			ResultSet rs = stmt.executeQuery(sqll);
 			if(rs.next())
@@ -108,8 +108,8 @@ public class Registration extends HttpServlet {
 			{
 				out.println("Data Not Found");
 			}
-			String sqll2="select pk_id from country where country_name='"+cntry+"' ";
-			System.out.println(sqll2);
+			String sqll2="select pk_id from country where country_name='"+country+"' ";
+	
 			stmt = con.prepareStatement(sqll2);
 			ResultSet rs2 = stmt.executeQuery(sqll2);
 			if(rs2.next())
@@ -121,7 +121,7 @@ public class Registration extends HttpServlet {
 				out.println("Data Not Found");
 			}
 			String sqll3="select pk_id from state where state_name='"+state+"' ";
-			System.out.println(sqll3);
+	
 			stmt = con.prepareStatement(sqll3);
 			ResultSet rs3 = stmt.executeQuery(sqll3);
 			int fk_state_id =0;
@@ -134,7 +134,7 @@ public class Registration extends HttpServlet {
 				out.println("Data Not Found");
 			}
 			String sqll4="select pk_id from city where city_name='"+city+"' ";
-			System.out.println(sqll4);
+		
 			stmt = con.prepareStatement(sqll4);
 			ResultSet rs4 = stmt.executeQuery(sqll4);
 			if(rs4.next())
@@ -145,8 +145,8 @@ public class Registration extends HttpServlet {
 			{
 				out.println("Data Not Found");
 			}
-			String sqll5="select pk_id from category where category='"+uctgry+"' ";
-			System.out.println(sqll5);
+			String sqll5="select pk_id from category where category='"+u_ctgry+"' ";
+			
 			stmt = con.prepareStatement(sqll5);
 			ResultSet rs5 = stmt.executeQuery(sqll5);
 			if(rs5.next())
@@ -157,8 +157,7 @@ public class Registration extends HttpServlet {
 			{
 				out.println("Data Not Found");
 			}
-			String sqll6="select pk_id from type where type='"+utype+"' ";
-			System.out.println(sqll6);
+			String sqll6="select pk_id from type where type='"+u_type+"' ";
 			stmt = con.prepareStatement(sqll6);
 			ResultSet rs6 = stmt.executeQuery(sqll6);
 			if(rs6.next())
@@ -170,7 +169,7 @@ public class Registration extends HttpServlet {
 				out.println("Data Not Found");
 			}
 			String sqll7="select pk_id from Establish_years where years='"+year+"' ";
-			System.out.println(sqll7);
+			
 			stmt = con.prepareStatement(sqll7);
 			ResultSet rs7 = stmt.executeQuery(sqll7);
 			if(rs7.next())
@@ -182,7 +181,7 @@ public class Registration extends HttpServlet {
 				out.println("Data Not Found");
 			}
 			String sqll8="select pk_quota from quota where details='"+quota+"' ";
-			System.out.println(sqll8);
+			
 			stmt = con.prepareStatement(sqll8);
 			ResultSet rs8 = stmt.executeQuery(sqll8);
 			if(rs8.next())
@@ -196,23 +195,30 @@ public class Registration extends HttpServlet {
 //			<--- foreign key convert end --->			
 			
 //			<--- university register start --->
-			String sql="insert into university(u_registration,u_name,address,fk_country,fk_state,fk_city,fk_category,fk_type,email,establish_year,fk_contact_number,quota)value(?,?,?,?,?,?,?,?,?,?,?,?)";
+			String sql="insert into university(u_registration,u_name,address,fk_country,fk_state,fk_city,fk_category,"
+					          + "fk_type,email,establish_year,fk_contact_number"
+					          + ",quota,fk_authentication_id,isActive)"
+					          + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			
 			stmt = con.prepareStatement(sql);
-			stmt.setString(1, ureg);
-			stmt.setString(2, uname);
-			stmt.setString(3, uadrs);
+			stmt.setString(1, u_reg);
+			stmt.setString(2, u_name);
+			stmt.setString(3, u_adrs);
 			stmt.setInt(4, rt);
 		    stmt.setInt(5, fk_state_id);
 			stmt.setInt(6, rt4);
 			stmt.setInt(7, rt5);
 			stmt.setInt(8, rt6);
-			stmt.setString(9, uemail);
-			stmt.setInt(10, rt7);
+			stmt.setString(9, u_email);
+			stmt.setString(10,year);
 			stmt.setInt(11, pk);
 			stmt.setInt(12, rt8);
+			stmt.setInt(13,15);
+			stmt.setInt(14,1);
+			
 			
 			int res = stmt.executeUpdate();
+			System.out.println(stmt);
 			
 			hashed gethash = new hashed();
 			String hashed = gethash.getHash(pswd);
@@ -221,10 +227,10 @@ public class Registration extends HttpServlet {
 			
 			stmt = con.prepareStatement(sql3);
 			stmt.setString(1, regname);
-			stmt.setString(2, uemail);
+			stmt.setString(2, u_email);
 			stmt.setString(3, username);
 			stmt.setString(4, hashed);
-			stmt.setString(5, ureg);
+			stmt.setString(5, u_reg);
 			
 			int res3 = stmt.executeUpdate();
 			

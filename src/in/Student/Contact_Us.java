@@ -15,6 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import in.common.GetConnection;
+import in.common.hashed;
 
 /**
  * Servlet implementation class Contact_Us
@@ -52,14 +53,15 @@ public class Contact_Us extends HttpServlet {
 		ps.setString(5,msg);
 		int res = ps.executeUpdate();
 		
+		hashed gethash = new hashed();
 			if(res>0)
 			{
-				out.println("<html><body><script>alert('Data Submitted');</script></body></html>");
+				 response.sendRedirect("student/contacts.jsp?status="+gethash.getHash("CBCtrue")); 
 				
 			}
 			else
 			{
-				out.println("<html><body><script>alert('Data Not Submitted ');</script></body></html>");
+				 response.sendRedirect("student/contacts.jsp?status="+gethash.getHash("CBCtrue")); 
 			}
 			
 		} catch (SQLException e) {

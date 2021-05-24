@@ -1,3 +1,4 @@
+<%@page import="in.common.hashed"%>
 <%
 String student_id="";
 student_id=session.getAttribute("student_id") != null ? (String)session.getAttribute("student_id") : "";
@@ -487,16 +488,30 @@ function validateImage_72() {
 				<hr class="line_doc">
 				<a class="v" onclick="tc()"><p class="upload_doc">Upload</p> <p class="doc_n">Transfer Certificate</p></a>
 			</div> -->
-			
+			<br>
+			<%
+								hashed getHash=new hashed();
+									if(request.getParameter("status") != null && request.getParameter("status").equals("ec3e272230019503389a1ffd1bbac8c4e80ba171f067356f3ef4b7323903dceb"))
+									{
+								%>
+									<center><h4><span id="showMsg" class="text-success">Document Submitted</span></h4></center>
+									<%} 
+									else if(request.getParameter("status") != null && !(request.getParameter("status").equals("ec3e272230019503389a1ffd1bbac8c4e80ba171f067356f3ef4b7323903dceb")))
+									{
+										%>
+										<center><h4><span id="showMsg" class="text-danger"><h4>Something Went Wrong!!!</span></h4></center>
+										<%} %>
 	<div class="container_gray_bg">
 		<div class="container margin_60">
 			<div class="row">
+			
 				<div class="upload_document">
 					<div>
 						<img src="img/college/do.jpg" class="imgframe1">
 					</div>
 					<form action="../Documents" method="post" enctype="Multipart/form-data">
 						<fieldset id="cast" style="display: block;">
+							
 							<div class="cido">
 								<p class="ddd"><strong>Cast / Income / Domicile</strong></p>
 								<hr class="h_line">

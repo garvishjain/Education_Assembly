@@ -62,27 +62,28 @@ p {
 label {
 	font-size: 18px;
 }
+
 .box_style_1, a.box_style_1 {
-    background-color: white;
-     width: 1200px; 
-    margin: auto;
-    margin-left: -30px;
-    margin-top: 6px;
-    /* margin-left: -120px; */ 
-    -webkit-box-shadow: 0px 3px 0px 0px #f0f2f4;
-    -moz-box-shadow: 0px 3px 0px 0px #f0f2f4;
-    box-shadow: 0px 3px 0px 0px #f0f2f4;
-    margin-bottom: 30px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    border-radius: 3px;
-    display: block;
-    padding: 30px 30px 10px 30px;
-    color: #444;
-    transition: all 500ms ease-in-out;
-    -webkit-transition: all 500ms ease-in-out;
-    -moz-transition: all 500ms ease-in-out;
-    -o-transition: all 500ms ease-in-out;
+	background-color: white;
+	width: 1200px;
+	margin: auto;
+	margin-left: -30px;
+	margin-top: 6px;
+	/* margin-left: -120px; */
+	-webkit-box-shadow: 0px 3px 0px 0px #f0f2f4;
+	-moz-box-shadow: 0px 3px 0px 0px #f0f2f4;
+	box-shadow: 0px 3px 0px 0px #f0f2f4;
+	margin-bottom: 30px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	display: block;
+	padding: 30px 30px 10px 30px;
+	color: #444;
+	transition: all 500ms ease-in-out;
+	-webkit-transition: all 500ms ease-in-out;
+	-moz-transition: all 500ms ease-in-out;
+	-o-transition: all 500ms ease-in-out;
 }
 </style>
 
@@ -215,7 +216,7 @@ label {
 
 	<div class="sub_header bg_1">
 		<div id="intro_txt">
-			<h1>Admission Form </h1>
+			<h1>Admission Form</h1>
 		</div>
 	</div>
 	<!--End sub_header -->
@@ -229,7 +230,8 @@ label {
 				<div class="col-md-9">
 					<div class="box_style_1">
 						<form action="../St_Register" id="apply_online" method="post"
-							enctype="multipart/form-data" ><!-- onsubmit="return validate()" -->
+							enctype="multipart/form-data" onsubmit="return validate()">
+						
 
 
 
@@ -237,18 +239,28 @@ label {
 
 
 							<div class="indent_title_in">
-							<%
+								<%
 										hashed gethash = new hashed();
 									if(request.getParameter("status") != null && request.getParameter("status").equals("ec3e272230019503389a1ffd1bbac8c4e80ba171f067356f3ef4b7323903dceb"))
 									{
 								%>
-									<center><h4><span id="showMsg" class="text-success">Registered Successfully</span></h4></center>
-									<%} 
+								<center>
+									<h4>
+										<span id="showMsg" class="text-success">Registered
+											Successfully</span>
+									</h4>
+								</center>
+								<%} 
 									else if(request.getParameter("status") != null && !(request.getParameter("status").equals("ec3e272230019503389a1ffd1bbac8c4e80ba171f067356f3ef4b7323903dceb")))
 									{
 										%>
-										<center><h4><span id="showMsg" class="text-danger"><h4>Something Went Wrong!!!</span></h4></center>
-										<%} %>
+								<center>
+									<h4>
+										<span id="showMsg" class="text-danger"><h4>Something
+												Went Wrong!!!</span>
+									</h4>
+								</center>
+								<%} %>
 								<i class="pe-7s-user"></i>
 								<h3 style="text-decoration: underline;">Personal details</h3>
 							</div>
@@ -348,7 +360,8 @@ label {
 										<div class="form-group">
 											<label>Father's Mobile</label> <input type="text"
 												class="form-control styled required" id="fnum" name="fnum"
-												placeholder="Enter Father's Number">
+												placeholder="Enter Father's Number"
+												oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1')">
 										</div>
 									</div>
 
@@ -389,7 +402,8 @@ label {
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Select Student Image</label> <input type="file"
-												name="image" id="image" class="form-control styled required" accept="image/gif, image/jpeg, image/png">
+												name="image" id="image" class="form-control styled required">
+											<!--accept="image/*" -->
 										</div>
 									</div>
 
@@ -423,39 +437,40 @@ label {
 										</div>
 									</div>
 									<div class="col-md-6">
-                            	<div class="form-group">
-                               <label>State</label> <select class="form-control" name="state"  id="sts" required="">
-                               <option value="">Select State</option>
-                               <%
+										<div class="form-group">
+											<label>State</label> <select
+												class="form-control styled required" name="state" id="sts"
+												required="">
+
+												<option value="">Select State</option>
+												<%
 															try {
 																String query = "select * from  state";
 																//get Table data
 																ResultSet rs = stmt.executeQuery(query);
 																while (rs.next()) {
 														%>
-														<option value="<%=rs.getInt("pk_id")%>"><%=rs.getString("state_name")%></option>
-														<%
+												<option value="<%=rs.getInt("pk_id")%>"><%=rs.getString("state_name")%></option>
+												<%
 															}
 															} catch (Exception e) {
 
 															}
 							  %>
-							  
-														</select>
-				                <span style="color:red" id="stserr"></span>									
-                            </div>
-                            </div>
-                            
-                             <div class="col-md-6">
-                            	<div class="form-group">
-                                <label>City</label>
-                               <select id="state" name="city" class="form-control" >
-                                 <option value="">Select city</option>
-                               </select>
-                               <span style="color:red" id="cityerr"></span>
-                            </div>
-                            </div>
-                             
+
+											</select> <span style="color: red" id="stserr"></span>
+										</div>
+									</div>
+
+									<div class="col-md-6">
+										<div class="form-group">
+											<label>City</label> <select id="state" name="city"
+												class="form-control styled required">
+												<option value="">Select city</option>
+											</select> <span style="color: red" id="cityerr"></span>
+										</div>
+									</div>
+
 									<div class="col-md-6">
 										<div class="form-group">
 											<label>Pin Code</label> <input type="text"
@@ -475,7 +490,7 @@ label {
 											</div>
 										</div> -->
 								</div>
-								
+
 							</div>
 							<!-- 	</fieldset>
 							
@@ -550,14 +565,13 @@ label {
 							<div class="wrapper_indent">
 								<div class="row">
 
-								<div class="col-md-6">
+									<div class="col-md-6">
 										<div class="form-group">
-											<label>Select Course</label> 
-											<select name="course"
-												id="course"   class="form-control styled required"
+											<label>Select Course</label> <select name="course"
+												id="course" class="form-control styled required"
 												required="required">
-												<option value="null" >---Please Select---</option>
-												<!-- For Master courses -->	
+												<option value="null">---Please Select---</option>
+												<!-- For Master courses -->
 												<optgroup label="Master Courses"></optgroup>
 												<%
 													try {
@@ -566,14 +580,14 @@ label {
 														ResultSet rs = stmt.executeQuery(query);
 														while (rs.next()) {
 												%>
-												<option ><%=rs.getString("course")%></option>
+												<option><%=rs.getString("course")%></option>
 												<%
 												  }
 													} catch (Exception e) {
 
 													}
 												%>
-												<!-- For Bachelor courses -->	
+												<!-- For Bachelor courses -->
 												<optgroup label="Bachelor Courses"></optgroup>
 												<%
 													try {
@@ -582,14 +596,14 @@ label {
 														ResultSet rs = stmt.executeQuery(query);
 														while (rs.next()) {
 												%>
-												<option ><%=rs.getString("course")%></option>
+												<option><%=rs.getString("course")%></option>
 												<%
 													}
 													} catch (Exception e) {
 
 													}
 												%>
-									<!-- For Diploma courses -->			
+												<!-- For Diploma courses -->
 												<optgroup label="Diploma Courses"></optgroup>
 												<%
 													try {
@@ -605,16 +619,15 @@ label {
 
 													}
 												%>
-											</select>
-											<span style="color: red" id="courseerr"></span>
+											</select> <span style="color: red" id="courseerr"></span>
 										</div>
 									</div>
 
-	
+
 									<div class="col-md-6">
 										<div class="form-group">
-											<label>Select College/University</label> 
-											<select name="college" id="college"
+											<label>Select College/University</label> <select
+												name="college" id="college"
 												class="form-control styled required" required="required">
 												<option value="null">---Please Select---</option>
 												<%
@@ -635,7 +648,7 @@ label {
 										</div>
 									</div>
 
-									
+
 
 
 
@@ -674,9 +687,9 @@ label {
 											<label>Password</label> <input type="password"
 												class="form-control styled required" id="pass" name="pass"
 												placeholder="Enter Password" minlength="8" maxlength="20">&nbsp;&nbsp;
-											<br> <input type="checkbox" onclick="myFunction()">&nbsp;Show
-											Password <span style="color: red" id="passerr"></span>
-
+											<br> <span style="color: red" id="passerr"></span>
+											<!-- <input type="checkbox" onclick="myFunction()">&nbsp;Show
+											Password  -->
 
 										</div>
 									</div>
@@ -712,8 +725,9 @@ label {
 											onclick="fourprev()" value="Previous" /> -->
 									<p>
 
-										<button type="Button" name="verify" style="visibility:hidden;" onclick="regist()" id="verify" class="button" >verify
-											otp</button>
+										<button type="Button" name="verify"
+											style="visibility: hidden;" onclick="regist()" id="verify"
+											class="button">verify otp</button>
 									</p>
 									<span id="showMsg"></span>
 
@@ -739,12 +753,15 @@ label {
 											onclick="fourprev()" value="Previous" /> -->
 									<p>
 										<!-- <button type="submit" onclick="jquery()" class="button" style="visibility:hidden;" name="register" id="register" disabled>Register</button> -->
-									    <button type="submit"name="register" id="register"  class="button" >Register</button>
-										<button type="reset"  class="button">Clear</button><!-- onclick="jquery()" --><!-- onclick="jquery()" -->
-										
-										<button type="Button"  name="send" id="send" class="button">Send OTP</button><!-- onclick="verified()" -->
+										<button type="submit" name="register" id="register"
+											class="button">Register</button>
+										<button type="reset" class="button">Clear</button>
+										<!-- onclick="jquery()" -->
+										<!-- onclick="jquery()" -->
+
+										<!-- <button type="Button"  name="send" id="send" class="button">Send OTP</button>onclick="verified()" -->
 									</p>
-								
+
 
 
 
@@ -762,53 +779,6 @@ label {
 				<br>
 				<!-- <div class="col-md-3">
 
-					<h4>
-						<strong>How to apply</strong>
-					</h4>
-					<p>
-						Step : College Selection<br> Step : Filling the Application
-						Form<br> Step : Appearing for Entrance Exam<br> Step :
-						Taking Part in Counselling<br> Step : Final Allocation of
-						Seats<br> Step : Final Admission
-					</p>
-
-					<div class="box_side">
-						<h5>By Phone</h5>
-						<i class="icon-phone"></i>
-						<p>
-							+ 000-1234567<br>
-							<small>Monday to Friday 9.00am - 5.00pm</small>
-						</p>
-					</div>
-
-					<div class="box_side">
-						<h5>By Postal Mail</h5>
-						<i class="icon_pencil-edit"></i>
-						<p>
-							<a href="#0"><strong>Download the application form</strong></a>,<br>
-							and send it to this address:<br>
-							<br>
-							<em>Ground Floor, Pragati Maidan Metro Station, Pragati
-								Maidan, New Delhi-110001<br>
-							</em>
-						</p>
-					</div>
-					<hr class="styled">
-					   <div class="box_side"><h4>Plan a visit</h4> <i class="icon_pencil-edit"></i>
-                    <p>By filling out this form, you agree to allow your information to be shared with a consortium of colleges and universities  to contact you with more information. </p>
-                    <a href="#0" class="button small">Plan a visit</a>
-</div>
-					<div class="box_side">
-						<h5>Apply Online</h5>
-						<i class="icon_desktop"></i>
-						<p>By filling out this form, you agree to allow your
-							information to be shared with a consortium of colleges and
-							universities to contact you with more information.</p>
-						<p>
-							<a href="register.jsp" class="button small">Apply online</a>
-						</p>
-					</div>
-
 				</ div>-->
 			</div>
 			<!--End row -->
@@ -818,9 +788,9 @@ label {
 	<!--End container_gray_bg -->
 
 
-	<!--Footer File-->
-	<%@ include file="itc/footer.jsp"%>
-	<!--Footer File-->
+	<div>
+		<%@ include file="itc/footer.jsp"%>
+	</div>
 
 	<!-- Login modal -->
 	<div class="modal fade" id="login" tabindex="-1" role="dialog"
@@ -969,15 +939,15 @@ label {
 
 	<!-- Common scripts -->
 	<script src="js/jquery-1.11.2.min.js"></script>
-	
-	
+
+
 	<script src="js/common_scripts_min.js"></script>
 	<script src="js/functions.js"></script>
 	<script src="assets/validate.js"></script>
 
 	<script src="js/validate.js"></script>
 
-   
+
 
 	<!-- Specific scripts -->
 	<script src="js/icheck.js"></script>
