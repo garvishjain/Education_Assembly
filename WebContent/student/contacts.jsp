@@ -200,6 +200,7 @@
 
 														}
 													%>
+<<<<<<< HEAD
 											</select>
 											<span style="color: red" id="collegeerr"></span>
 										</div>
@@ -225,6 +226,103 @@
 									</div>
 								</div>
 							</form>
+=======
+													<%
+														try {
+															String query = "select * from college_registration";
+															//get Table data
+															ResultSet rs = stmt.executeQuery(query);
+															while (rs.next()) {
+													%>
+													<option><%=rs.getString("college_name")%></option>
+													<%
+														}
+														} catch (Exception e) {
+
+														}
+													%>
+													</select>
+													</div>
+													</div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-12">
+                                            <div class="form-group">
+                                                <label>Enter Your message</label>
+                                                <textarea rows="5" id="message_contact" name="msg" class="form-control styled" style="height:100px;" placeholder="Your message"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                           
+                                            <input type="submit" value="Submit" class="button add_bottom_30" id="submit-contact"/>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div><!-- End wrapper_indent -->
+                            
+                           
+                        </div><!-- End box style 1-->
+                    </div><!-- End col-md-9 -->
+                    <br><br><br><br><br><br><br>
+                     <aside class="col-md-3">
+                    <h3>Contacts info</h3>
+                    <p>
+                       Gwalior<br>
+                         + 000-1234567 <br> + 000- 7654321<br>
+                        <a href="#">info@educationassembly.com</a>
+                    </p>
+                    <h5>Get directions</h5>
+                    <form action="http://maps.google.com/maps" method="get" target="_blank">
+                        <div class="form-group">
+                            <input type="text" name="saddr" placeholder="Enter your location" class="form-control styled">
+                            <input type="hidden" name="daddr" value="Emotech Software Solutions pvt ltd">
+                            <!-- Write here your end point -->
+                        </div>
+                        <input type="submit" value="Get directions" class="button small nomargin">
+                    </form>
+                    <hr class="styled">
+                    <h3>Departments</h3>
+                    <ul class="contacts_info">
+                        
+                        <li><strong>Admission</strong><br>
+                   <a >admission@educationassembly.com</a><br>
+                        <small>Monday to Friday 9am - 7pm</small></li>
+                        <li><strong>General questions</strong><br>
+                        <a >questions@educationassembly.com</a><br>
+                        <small>Monday to Friday 9am - 7pm</small></li>
+                    </ul>
+         
+                    
+             </aside>
+                    
+             
+                    
+                </div><!--End row -->
+            </div><!--End container -->
+        </div><!--End container_gray_bg -->
+        
+ 		
+
+	 
+		<div>
+	<%@ include file="itc/footer.jsp" %>   
+    </div>
+    
+<!-- Login modal -->   
+<div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myLogin" aria-hidden="true">
+		<div class="modal-dialog">
+			<div class="modal-content modal-popup">
+				<a href="#" class="close-link"><i class="icon_close_alt2"></i></a>
+				<form action="../St_Login" method="post" class="popup-form" id="myLogin">
+					<input type="text" name="uname" class="form-control form-white" placeholder="Enter Username">
+					<input type="password" name="pass" class="form-control form-white" placeholder="Enter Password">
+					<div class="checkbox-holder text-left">
+						<div class="checkbox">
+							<input type="checkbox" value="accept_1" id="check_1" name="check_1" />
+							<label for="check_1"><span>I Agree to the <strong>Terms &amp; Conditions</strong></span></label>
+>>>>>>> origin/main
 						</div>
 						<!-- End wrapper_indent -->
 					</div>

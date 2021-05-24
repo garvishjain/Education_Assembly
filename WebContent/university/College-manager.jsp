@@ -86,7 +86,7 @@ Statement stmt=con.createStatement();
                             <div class="card-body">
                                 <a href="staff.html" class="my_sort_cut text-muted">
                                     <i class="fa fa-user-circle-o"></i>
-                                    <span>Staff</span>
+                                    <span>Student</span>
                                 </a>
                             </div>
                         </div>
@@ -106,7 +106,7 @@ Statement stmt=con.createStatement();
                             <div class="card-body">
                                 <a href="library.html" class="my_sort_cut text-muted">
                                     <i class="fa fa-book"></i>
-                                    <span>Library</span>
+                                    <span>Course</span>
                                 </a>
                             </div>
                         </div>
@@ -116,7 +116,7 @@ Statement stmt=con.createStatement();
                             <div class="card-body">
                                 <a href="affilated-college.jsp" class="my_sort_cut text-muted">
                                     <i class="fa fa-bullhorn"></i>
-                                    <span>Affilated College</span>
+                                    <span>Department</span>
                                 </a>
                             </div>
                         </div>

@@ -56,9 +56,9 @@ public class professors extends HttpServlet {
 		{
 			String path = this.getClass().getClassLoader().getResource("").getPath();
 			String fullPath = URLDecoder.decode(path, "UTF-8");
-			String[] destinationParts = fullPath.split(".metadata");
-			String desPath=destinationParts[0]+"Education_Assembly/WebContent/university/img";
-			
+			System.out.println(fullPath);
+			String[] destinationParts = fullPath.split(".metadata\\");
+			String desPath="F:\\Education_Assembly\\WebContent\\university\\img";
 			return desPath;
 		}
 		catch(Exception e)
@@ -75,7 +75,7 @@ public class professors extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		try 
 		{
-			int uid =Integer.parseInt(request.getParameter("uid"));
+			int uid =Integer.parseInt(request.getParameter("uid")!= null ? request.getParameter("uid") : "");
 			String fname = request.getParameter("fname");
 			String lname = request.getParameter("lname");
 			String dob = request.getParameter("dob")!= null ? request.getParameter("dob") : "11/01/2000";
@@ -116,6 +116,7 @@ public class professors extends HttpServlet {
 			/*This imageName will stored in db*/
 			String imageNameForDb=file.toString().substring(file.toString().lastIndexOf(File.separator)+1);
 			
+			
 			String sql = "insert into university_professor(fname,lname,dob,gender,department,position,phone,email,image,fk_university_id)value(?,?,?,?,?,?,?,?,?,?)";
 
 			stmt = con.prepareStatement(sql);
@@ -128,7 +129,7 @@ public class professors extends HttpServlet {
 			stmt.setString(7, phone);
 			stmt.setString(8, email);
 			stmt.setString(9, imageNameForDb);
-			stmt.setInt(9, uid);
+			stmt.setInt(10, uid);
 
 			int res = stmt.executeUpdate();
 

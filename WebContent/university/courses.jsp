@@ -40,7 +40,7 @@ Statement stmt=con.createStatement();
                         <div class="row row-deck">
                         <%
                                        try {
-										String query = "select * from university_courses INNER JOIN course_name ON university_courses.course_name=course_name.pk_id";
+										String query = "select * from university_courses INNER JOIN course_name ON university_courses.course_id=course_name.pk_id where degree_name='"+"Bachelor Degree"+"' ";
 										//get Table data
 										ResultSet rs = stmt.executeQuery(query);
 										while (rs.next()) {
@@ -80,133 +80,7 @@ Statement stmt=con.createStatement();
 	                                    	e.printStackTrace();
 	                                    }
                                     %>
-                            <div class="col-xl-4 col-lg-4 col-md-6">
-                                <div class="card ribbon">
-                                    <div class="ribbon-box orange"><i class="fa fa-star"></i></div>
-                                    <a href="#"><img class="card-img-top" src="../assets/images/gallery/2.jpg" alt=""></a>
-                                    <div class="card-body d-flex flex-column">
-                                        <h5><a href="courses-details.html">Account Management Course</a></h5>
-                                        <div class="text-muted">Look, my liege! The Knights Who Say Ni demand a sacrifice!</div>
-                                    </div>
-                                    <div class="table-responsive">
-                                        <table class="table table-striped table-vcenter mb-0">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="w20"><i class="fa fa-calendar text-blue"></i></td>
-                                                    <td class="tx-medium">Duration</td>
-                                                    <td class="text-right">1 Year</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><i class="fa fa-cc-visa text-danger"></i></td>
-                                                    <td class="tx-medium">Fees</td>
-                                                    <td class="text-right">$1,674</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><i class="fa fa-users text-warning"></i></td>
-                                                    <td class="tx-medium">Students</td>
-                                                    <td class="text-right">50+</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="card-footer">
-                                        <div class="d-flex align-items-center mt-auto">
-                                            <img class="avatar avatar-md mr-3" src="../assets/images/xs/avatar2.jpg" alt="avatar">
-                                            <div>
-                                                <a href="#">Pro. Alan</a>
-                                                <small class="d-block text-muted">Head OF Dept.</small>
-                                            </div>
-                                            <div class="ml-auto text-muted">
-                                                <a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fe fe-heart mr-1"></i> 521</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6">
-                                <div class="card">
-                                    <a href="#"><img class="card-img-top" src="../assets/images/gallery/3.jpg" alt=""></a>
-                                    <div class="card-body d-flex flex-column">
-                                        <h5><a href="courses-details.html">Angular Programmer Course</a></h5>
-                                        <div class="text-muted">Look, my liege! The Knights Who Say Ni demand a sacrifice!</div>
-                                    </div>
-                                    <div class="table-responsive">
-                                        <table class="table table-striped table-vcenter mb-0">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="w20"><i class="fa fa-calendar text-blue"></i></td>
-                                                    <td class="tx-medium">Duration</td>
-                                                    <td class="text-right">6 Months</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><i class="fa fa-cc-visa text-danger"></i></td>
-                                                    <td class="tx-medium">Fees</td>
-                                                    <td class="text-right">$1,674</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><i class="fa fa-users text-warning"></i></td>
-                                                    <td class="tx-medium">Students</td>
-                                                    <td class="text-right">125+</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="card-footer">
-                                        <div class="d-flex align-items-center mt-auto">
-                                            <img class="avatar avatar-md mr-3" src="../assets/images/xs/avatar3.jpg" alt="avatar">
-                                            <div>
-                                                <a href="#">Pro. Jane</a>
-                                                <small class="d-block text-muted">Head OF Dept.</small>
-                                            </div>
-                                            <div class="ml-auto text-muted">
-                                                <a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fe fe-heart mr-1"></i> 521</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-4 col-md-6">
-                                <div class="card">
-                                    <a href="#"><img class="card-img-top" src="../assets/images/gallery/5.jpg" alt=""></a>
-                                    <div class="card-body d-flex flex-column">
-                                        <h5><a href="courses-details.html">Magento Programmer Course</a></h5>
-                                        <div class="text-muted">Look, my liege! The Knights Who Say Ni demand a sacrifice!</div>
-                                    </div>
-                                    <div class="table-responsive">
-                                        <table class="table table-striped table-vcenter mb-0">
-                                            <tbody>
-                                                <tr>
-                                                    <td class="w20"><i class="fa fa-calendar text-blue"></i></td>
-                                                    <td class="tx-medium">Duration</td>
-                                                    <td class="text-right">1 Year</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><i class="fa fa-cc-visa text-danger"></i></td>
-                                                    <td class="tx-medium">Fees</td>
-                                                    <td class="text-right">$1,674</td>
-                                                </tr>
-                                                <tr>
-                                                    <td><i class="fa fa-users text-warning"></i></td>
-                                                    <td class="tx-medium">Students</td>
-                                                    <td class="text-right">50+</td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                    <div class="card-footer">
-                                        <div class="d-flex align-items-center mt-auto">
-                                            <img class="avatar avatar-md mr-3" src="../assets/images/xs/avatar5.jpg" alt="avatar">
-                                            <div>
-                                                <a href="#">Pro. Corrine</a>
-                                                <small class="d-block text-muted">Head OF Dept.</small>
-                                            </div>
-                                            <div class="ml-auto text-muted">
-                                                <a href="javascript:void(0)" class="icon d-none d-md-inline-block ml-3"><i class="fe fe-heart mr-1"></i> 521</a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            
                         </div>
                     </div>
                    
@@ -214,7 +88,7 @@ Statement stmt=con.createStatement();
                         <div class="row row-deck">
                         <%
                                        try {
-										String query = "select * from university_courses INNER JOIN course_name ON university_courses.course_name=course_name.pk_id ";
+										String query = "select * from university_courses INNER JOIN course_name ON university_courses.course_id=course_name.pk_id where degree_name='"+"Master Degree"+"' ";
 										//get Table data
 										ResultSet rs = stmt.executeQuery(query);
 										while (rs.next()) {
@@ -260,7 +134,7 @@ Statement stmt=con.createStatement();
                         <div class="row row-deck">
                         <%
                                        try {
-										String query = "select * from university_courses INNER JOIN course_name ON university_courses.course_name=course_name.pk_id ";
+										String query = "select * from university_courses INNER JOIN course_name ON university_courses.course_id=course_name.pk_id where degree_name='"+"Diploma Degree"+"'";
 										//get Table data
 										ResultSet rs = stmt.executeQuery(query);
 										while (rs.next()) {
@@ -301,7 +175,8 @@ Statement stmt=con.createStatement();
 	                                    }
                                     %>
                         </div>
-                    </div>
+                    </div> 
+                    
                     <div class="tab-pane" id="Courses-add">
                     <form action="../courses" method="post" enctype="multipart/form-data">
                         <div class="card">
