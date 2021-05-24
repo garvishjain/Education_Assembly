@@ -111,10 +111,16 @@ Statement stmt=con.createStatement();
                                             <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
                                         </div>
                                     </div>
-                                  <form action="../professors" method="post" enctype="multipart/form-data" >
+                                  <form action="../collegeprofessor" method="post" enctype="multipart/form-data" >
                                     
                                     <div class="card-body">
                                         <div class="row clearfix">
+                                        <div class="col-md-6 col-sm-12">
+                                                <div class="form-group">
+                                                    <label>College Name</label>
+                                                    <input type="text" name="cname" class="form-control" value=<%=name%>>
+                                                </div>
+                                            </div>
                                             <div class="col-md-6 col-sm-12">
                                                 <div class="form-group">
                                                     <label>First Name</label>
@@ -130,7 +136,7 @@ Statement stmt=con.createStatement();
                                             <div class="col-md-3 col-sm-12">
                                                 <div class="form-group">
                                                     <label>Date of Birth</label>
-                                                    <input data-provide="datepicker" type="date" data-date-autoclose="true" name="dob" class="form-control" placeholder="Date of Birth">
+                                                    <input type="date"   name="dob" class="form-control" placeholder="Date of Birth">
                                                 </div>
                                             </div>
                                             <div class="col-md-3 col-sm-12">
@@ -145,15 +151,14 @@ Statement stmt=con.createStatement();
                                                 <div class="form-group">
                                                     <label>Department</label>
                                                     <select name="department" class="form-control">
-                                                    <option></option>
-                                                    <%
+                                                      <%
 	                                                    try {
-	            											String query = "select * from department_name";
+	            											String query = "select * from course_name";
 	            											//get Table data
 	            											ResultSet rs = stmt.executeQuery(query);
 	            											while (rs.next()) {
                                                     %>
-                                                    	<option value="<%=rs.getInt("pk_id") %>"><%=rs.getString("Details") %></option>
+                                                    	<option ><%=rs.getString("course") %></option>
                                                    	<%
 	            										}
 	                                                    }catch(Exception e)
@@ -176,7 +181,7 @@ Statement stmt=con.createStatement();
 	            											ResultSet rs = stmt.executeQuery(query);
 	            											while (rs.next()) {
                                                     %>
-                                                    	<option value="<%=rs.getInt("pk_id") %>" > <%=rs.getString("position") %></option>
+                                                    	<option  > <%=rs.getString("position") %></option>
                                                     <%
 	            											}	
 	                                                    }	
@@ -198,6 +203,12 @@ Statement stmt=con.createStatement();
                                                 <div class="form-group">
                                                     <label>Enter Your Email</label>
                                                     <input type="email" name="email" class="form-control">
+                                                </div>
+                                            </div>
+                                             <div class="col-md-4 col-sm-12">
+                                                <div class="form-group">
+                                                    <label>Bio</label>
+                                                    <input type="text" name="bio" class="form-control">
                                                 </div>
                                             </div>
                                             <div class="col-sm-12">
