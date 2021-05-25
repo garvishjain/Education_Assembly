@@ -47,7 +47,7 @@ public class collegecourse extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		try 
 		{   String cname = request.getParameter("cname")!=null?request.getParameter("cname") : "";
-			String name = request.getParameter("name")!=null?request.getParameter("name") : "";
+			String sname = request.getParameter("sname")!=null?request.getParameter("sname") : "";
 			String fees = request.getParameter("fees")!=null?request.getParameter("fees") : "";
 			String seat = request.getParameter("seat")!=null?request.getParameter("seat") : "";
 			String course = request.getParameter("course")!=null?request.getParameter("course") : "";
@@ -61,7 +61,7 @@ public class collegecourse extends HttpServlet {
 			Part part = request.getPart("image");
 			String Coursecat =request.getParameter("coursecat")!=null?request.getParameter("coursecat") : "";
 			String filename = part.getSubmittedFileName();
-			System.out.println(name);
+			System.out.println(sname);
 			
 			img image=new img();
 			String imgname = image.image(filename, part);
@@ -154,11 +154,13 @@ public class collegecourse extends HttpServlet {
 				out.println("<body><html><script>alert('No Data Found');</script></html></body>");
 			}
 			
-			String sql5="select pk_id from course_name where course = '"+name+"'";
+			String sql5="select pk_id from course_name where course = '"+sname+"'";
+			System.out.println(sql5);
 			stmt = con.prepareStatement(sql5);
 			ResultSet rs3 = stmt.executeQuery(sql5);
 			if (rs3.next()) {
-					pk_course = rs2.getInt(1);
+					pk_course = rs3.getInt("pk_id");
+					System.out.println(pk_course);
 			} else {
 				out.println("<body><html><script>alert('No Data Found');</script></html></body>");
 			}
@@ -183,13 +185,13 @@ public class collegecourse extends HttpServlet {
 			if(res1>0 && res2>0 && res3>0)
 			{
 				request.setAttribute("status", "succesfull login");
-				response.sendRedirect("university/courses.jsp");
+				response.sendRedirect("university/College-courses.jsp");
 				out.println("<body><html><script>alert('Data Insert');</script></html></body>");
 			}
 			else
 			{
 				request.setAttribute("status", "Failed to sign up...! please try again");
-				response.sendRedirect("university/courses.jsp");
+				response.sendRedirect("university/College-courses.jsp");
 				out.println("<body><html><script>alert('Something Went Wrong');</script></html></body>");
 			}
 			

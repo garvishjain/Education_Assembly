@@ -47,13 +47,8 @@ $(document).ready(function() {
 			</div>
 			<ul class="nav nav-tabs page-header-tab">
 				<li class="nav-item"><a class="nav-link active"
-					data-toggle="tab" href="#Dep-all">All</a></li>
-				<li class="nav-item"><a class="nav-link" data-toggle="tab"
-					href="#Dep-active">Active</a></li>
-				<li class="nav-item"><a class="nav-link" data-toggle="tab"
-					href="#Dep-nonactive">Non Active</a></li>
-				<li class="nav-item"><a class="nav-link" data-toggle="tab"
-					href="#Dep-add">Add</a></li>
+					data-toggle="tab" href="#Dep-all">Contact Query</a></li>
+				
 			</ul>
 		</div>
 	</div>

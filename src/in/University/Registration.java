@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
+import in.common.GetConnection;
 import in.common.hashed;
 
 /**
@@ -34,22 +35,8 @@ public class Registration extends HttpServlet {
 
 	public void init(ServletConfig config) throws ServletException {
 		// TODO Auto-generated method stub
-		try 
-		{
-			Context cxt = new InitialContext();
-			DataSource ds = (DataSource) cxt.lookup("java:comp/env/myCon");
-			con = ds.getConnection();
-		} 
-		catch (NamingException e) 
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		catch (SQLException e) 
-		{
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			GetConnection getcon = new GetConnection();
+			con = getcon.getCon();
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -198,6 +185,7 @@ public class Registration extends HttpServlet {
 			}
 //			<--- foreign key convert end --->		
 			
+<<<<<<< HEAD
 
 //			<--- university register start --->
 			String sql="insert into university(u_registration,u_name,address,fk_country,fk_state,fk_city,fk_category,"
@@ -205,6 +193,10 @@ public class Registration extends HttpServlet {
 					          + ",quota,fk_authentication_id,isActive)"
 					          + "values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
+=======
+//			<--- university register start --->
+			
+>>>>>>> origin/main
             String sql3="insert into user(name,email,username,password,register_num)values(?,?,?,?,?)";
 			
 			stmt = con.prepareStatement(sql3);
@@ -232,11 +224,20 @@ public class Registration extends HttpServlet {
 				
 				out.println("Data Not Found");
 			}	}
+<<<<<<< HEAD
 
 //			<--- university register start --->
 			String sql1="insert into university(u_registration,u_name,address,fk_country,fk_state,fk_city,fk_category,fk_type,email,establish_year,fk_contact_number,quota,fk_authentication_id)value(?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			
 			stmt = con.prepareStatement(sql1);
+=======
+		
+			
+//			<--- university register start --->
+			String query="insert into university(u_registration,u_name,address,fk_country,fk_state,fk_city,fk_category,fk_type,email,establish_year,fk_contact_number,quota,fk_authentication_id)value(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			System.out.println(query);
+			stmt = con.prepareStatement(query);
+>>>>>>> origin/main
 			stmt.setString(1, u_reg);
 			stmt.setString(2, u_name);
 			stmt.setString(3, u_adrs);
@@ -249,6 +250,7 @@ public class Registration extends HttpServlet {
 			stmt.setString(10,year);
 			stmt.setInt(11, pk);
 			stmt.setInt(12, rt8);
+<<<<<<< HEAD
 
 			stmt.setInt(13,15);
 			stmt.setInt(14,1);
@@ -256,10 +258,14 @@ public class Registration extends HttpServlet {
 
 			stmt.setInt(13, pk_authentication_id);
 
+=======
+			stmt.setInt(13, pk_authentication_id);
+>>>>>>> origin/main
 			
 			int res = stmt.executeUpdate();
 			System.out.println(stmt);
 			
+<<<<<<< HEAD
 			
 			
 
@@ -274,6 +280,9 @@ public class Registration extends HttpServlet {
 
 			
 			if(res>0 && res2>0 && res4>0)
+=======
+			if(res>0 && res2>0 && res3>0)
+>>>>>>> origin/main
 			{
 				out.println("<html><body><script>alert('Data Inserted');</script></body></html>");
 				request.setAttribute("status","Successfully Registered");

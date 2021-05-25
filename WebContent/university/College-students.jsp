@@ -24,7 +24,7 @@ Statement stmt=con.createStatement();
                     </div>
                     <ul class="nav nav-tabs page-header-tab">
                         <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Student-all">List View</a></li>
-                        <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Student-add">Add</a></li>
+                        
                     </ul>
                 </div>
             </div>
@@ -105,112 +105,7 @@ Statement stmt=con.createStatement();
                             </table>
                         </div>
                     </div>
-                    <div class="tab-pane" id="Student-add">
-                        <div class="row clearfix">
-                            <div class="col-md-12 col-lg-12">
-                                <div class="card">
-                                    <div class="card-header">
-                                        <h3 class="card-title">Basic Information</h3>
-                                        <div class="card-options ">
-                                            <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
-                                            <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
-                                        </div>
-                                    </div>
-                                    <form class="card-body">
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">First Name <span class="text-danger">*</span></label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control" placeholder="Enter First name">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Last Name <span class="text-danger">*</span></label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control" placeholder="Enter Last name">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Roll No <span class="text-danger">*</span></label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Email</label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Registration Date <span class="text-danger">*</span></label>
-                                            <div class="col-md-9">
-                                                <input data-provide="datepicker" data-date-autoclose="true" class="form-control" placeholder="">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Class <span class="text-danger">*</span></label>
-                                            <div class="col-md-9">
-                                                <select class="form-control input-height" name="department">
-                                                    <option value="">Select...</option>
-                                                    <option value="Category 1">Computer</option>
-                                                    <option value="Category 2">Mechanical</option>
-                                                    <option value="Category 3">Mathematics</option>
-                                                    <option value="Category 3">Commerce</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Gender <span class="text-danger">*</span></label>
-                                            <div class="col-md-9">
-                                                <select class="form-control input-height" name="gender">
-                                                    <option value="">Select...</option>
-                                                    <option value="Category 1">Male</option>
-                                                    <option value="Category 2">Female</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Mobile No. <span class="text-danger">*</span></label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Parents Name <span class="text-danger">*</span></label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Parents Mobile No. <span class="text-danger">*</span></label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Date Of Birth  <span class="text-danger">*</span></label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Address <span class="text-danger">*</span></label>
-                                            <div class="col-md-9">
-                                                <input type="text" class="form-control">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label class="col-md-3 col-form-label">Profile Picture</label>
-                                            <div class="col-md-9">
-                                                <input type="file" class="dropify">
-                                                <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    
                 </div>
             </div>
         </div>

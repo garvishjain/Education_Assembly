@@ -48,10 +48,7 @@ $(document).ready(function() {
 			<ul class="nav nav-tabs page-header-tab">
 				<li class="nav-item"><a class="nav-link active"
 					data-toggle="tab" href="#Dep-all">All</a></li>
-				<li class="nav-item"><a class="nav-link" data-toggle="tab"
-					href="#Dep-active">Active</a></li>
-				<li class="nav-item"><a class="nav-link" data-toggle="tab"
-					href="#Dep-nonactive">Non Active</a></li>
+				
 				<li class="nav-item"><a class="nav-link" data-toggle="tab"
 					href="#Dep-add">Add</a></li>
 			</ul>
@@ -116,102 +113,8 @@ $(document).ready(function() {
 					</div>
 				</div>
 			</div>
-			<div class="tab-pane" id="Dep-active">
-				<div class="table-responsive">
-					<div class="table-responsive card">
-						<table
-							class="table table-hover table-striped table-vcenter text-nowrap mb-0">
-							<thead>
-								<tr>
-									<th>#</th>
-									<th>Dept. Name</th>
-									<th>Head OF Dept.</th>
-									<th>Phone</th>
-									<th>Email</th>
-									<th>Std. Capacity</th>
-									<th>seat</th>
-									<th>duration</th>
-									<th>degree_name</th>
-									
-								</tr>
-							</thead>
-							<%
-								try {
-									String query = "select * from college_department INNER JOIN course_name ON college_department.fk_department_id=course_name.pk_id INNER JOIN college_registration ON college_department.fk_college_id=college_registration.pk_id where college_name='"+name+"' AND isActive= '0' ";	//get Table data
-										//get Table data
-									ResultSet rs = stmt.executeQuery(query);
-									while (rs.next()) {
-							%>
-							<tr>
-								<td><%=rs.getInt(1)%></td>
-								<td><%=rs.getString("course")%></td>
-								<td><%=rs.getString("hod_name")%></td>
-								<td><%=rs.getString("phone_no")%></td>
-								<td><%=rs.getString("email")%></td>
-								<td><%=rs.getString("std_capacity")%></td>
-								<td><%=rs.getString("seat_avaliable")%></td>
-								<td><%=rs.getString("duration")%></td>
-								<td><%=rs.getString("degree_name")%></td>
-								
-							</tr>
-							<%
-								}
-								} catch (Exception e) {
-									e.printStackTrace();
-								}
-							%>
-						
-						</table>
-					</div>
-				</div>
-			</div>
-			<div class="tab-pane" id="Dep-nonactive">
-				<div class="table-responsive">
-					<div class="table-responsive card">
-						<table
-							class="table table-hover table-striped table-vcenter text-nowrap mb-0">
-							<thead>
-								<tr>
-									<th>#</th>
-									<th>Dept. Name</th>
-									<th>Head OF Dept.</th>
-									<th>Phone</th>
-									<th>Email</th>
-									<th>Std. Capacity</th>
-									<th>seat</th>
-									<th>duration</th>
-									<th>degree_name</th>
-								</tr>
-							</thead>
-							<%
-								try {
-									String query = "select * from college_department INNER JOIN course_name ON college_department.fk_department_id=course_name.pk_id INNER JOIN college_registration ON college_department.fk_college_id=college_registration.pk_id where college_name='"+name+"' AND isActive= '1' ";	//get Table data
-										//get Table data
-									ResultSet rs = stmt.executeQuery(query);
-									while (rs.next()) {
-							%>
-							<tr>
-								<td><%=rs.getInt(1)%></td>
-								<td><%=rs.getString("course")%></td>
-								<td><%=rs.getString("hod_name")%></td>
-								<td><%=rs.getString("phone_no")%></td>
-								<td><%=rs.getString("email")%></td>
-								<td><%=rs.getString("std_capacity")%></td>
-								<td><%=rs.getString("seat_avaliable")%></td>
-								<td><%=rs.getString("duration")%></td>
-								<td><%=rs.getString("degree_name")%></td>
-							</tr>
-							<%
-								}
-								} catch (Exception e) {
-									e.printStackTrace();
-								}
-							%>
-							
-						</table>
-					</div>
-				</div>
-			</div>
+			
+			
 			<div class="tab-pane" id="Dep-add">
 				<div class="col-lg-12 col-md-12">
 					<div class="card">
