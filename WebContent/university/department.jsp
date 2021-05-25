@@ -1,7 +1,13 @@
  <!-- Import package -->
+<%@page import="in.common.GetName"%>
 <%@page import="in.common.GetConnection"%>
 <%@ include file="inc/stdimport.jsp" %>  
 <%@ include file="inc/header.jsp" %>  
+<%
+
+String uname = session.getAttribute("nameUser") != null ? (String) session.getAttribute("nameUser") : "";
+%>
+
 <!-- <script>
 
 $(document).ready(function() {
@@ -72,24 +78,31 @@ Statement stmt=con.createStatement();
 	                                            <th>Edit</th>
 	                                        </tr>
 	                                    </thead>
+	                                     <tbody>
 	                                    <%
 											try {
-												String query = "select * from university_department INNER JOIN department_name ON university_department.fk_department_id=department_name.pk_id";
+												String query = "select * from university_department INNER JOIN course_name ON university_department.fk_department_id=course_name.pk_id INNER JOIN university ON university_department.fk_university_id=university.pk_id where u_name='"+name+"'";
 												//get Table data
 												ResultSet rs = stmt.executeQuery(query);
 												while (rs.next()) {
 										%>
 	                                    <tr>
 		                                    <td><%=rs.getInt("pk_id")%></td>
-		                                    <td><%=rs.getString("Details") %></td>
+		                                    <td><%=rs.getString("course") %></td>
 		                                    <td><%=rs.getString("hod_name") %></td>
 		                                    <td><%=rs.getString("phone_no") %></td>
 		                                    <td><%=rs.getString("email") %></td>
 		                                    <td><%=rs.getString("std_capacity") %></td>
 		                                    <td>
 	                                            <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-	                                            <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-	                                            <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" name="delete" id="delete" data-type="confirm" value="<%=rs.getString("pk_id") %>"><i class="fa fa-trash-o text-danger"></i></button>
+	                                            <form action="../" method="post" id='university_info'>
+	                                            	<input type="hidden" name="uid" value="<%=rs.getString(1)%>">
+	                                            	<button type="submit" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
+	                                            </form>
+	                                            <form action="../DeleteDepartment" method="post" id='university_info'>
+	                                            	<input type="hidden" name="uid" value="<%=rs.getString(1)%>">
+	                                            	<button type="submit" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+	                                            </form>
 	                                        </td>
 	                                    </tr>
 	                                   <%
@@ -99,7 +112,7 @@ Statement stmt=con.createStatement();
 											e.printStackTrace();	
 	                                    }
 	                                   %>
-	                                    <tbody>
+	                                   
 	                                       
 	                                    </tbody>
 	                                </table>
@@ -121,16 +134,17 @@ Statement stmt=con.createStatement();
 	                                            <th>Edit</th>
 	                                        </tr>
 	                                    </thead>
+	                                     <tbody>
 	                                    <%
 											try {
-												String query = "select * from university_department INNER JOIN department_name ON university_department.fk_department_name=department_name.pk_id where isActive=1";
+												String query = "select * from university_department INNER JOIN course_name ON university_department.fk_department_id=course_name.pk_id where isActive=1 INNER JOIN university ON university_department.fk_university_id=university.pk_id where u_name='"+name+"'";
 												//get Table data
 												ResultSet rs = stmt.executeQuery(query);
 												while (rs.next()) {
 										%>
 	                                    <tr>
 		                                    <td><%=rs.getInt("pk_id")%></td>
-		                                    <td><%=rs.getString("Details") %></td>
+		                                    <td><%=rs.getString("course") %></td>
 		                                    <td><%=rs.getString("hod_name") %></td>
 		                                    <td><%=rs.getString("phone_no") %></td>
 		                                    <td><%=rs.getString("email") %></td>
@@ -138,7 +152,10 @@ Statement stmt=con.createStatement();
 		                                    <td>
 	                                            <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
 	                                            <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-	                                            <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+	                                            <form action="../DeleteDepartment" method="post" id='university_info'>
+	                                            	<input type="hidden" name="uid" value="<%=rs.getInt(1)%>">
+	                                            	<button type="submit" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+	                                            </form>
 	                                        </td>
 	                                    </tr>
 	                                   <%
@@ -148,33 +165,8 @@ Statement stmt=con.createStatement();
 											e.printStackTrace();	
 	                                    }
 	                                   %>
-	                                    <tbody>
-	                                        <tr>
-	                                            <td>1</td>
-	                                            <td>Mechanical Engg.</td>
-	                                            <td>Garvish Jain</td>
-	                                            <td>+123 4567890</td>
-	                                            <td>test@example.com</td>
-	                                            <td>150</td>
-	                                            <td>
-	                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-	                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-	                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-	                                            </td>
-	                                        </tr>
-	                                        <tr>
-	                                            <td>2</td>
-	                                            <td>Computer Engg.</td>
-	                                            <td>Corrine M Johnson</td>
-	                                            <td>+123 4567890</td>
-	                                            <td>test@example.com</td>
-	                                            <td>205</td>
-	                                            <td>
-	                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-	                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-	                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-	                                            </td>
-	                                        </tr>
+	                                   
+	                                        
 	                                    </tbody>
 	                                </table>
 	                            </div>        
@@ -195,16 +187,17 @@ Statement stmt=con.createStatement();
 	                                            <th>Edit</th>
 	                                        </tr>
 	                                    </thead>
+	                                     <tbody>
 	                                    <%
 											try {
-												String query = "select * from university_department INNER JOIN department_name ON university_department.fk_department_name=department_name.pk_id where isActive=0";
+												String query = "select * from university_department INNER JOIN course_name ON university_department.fk_department_id=course_name.pk_id as isActive=0 INNER JOIN university ON university_department.fk_university_id=university.pk_id where u_name='"+name+"'";
 												//get Table data
 												ResultSet rs = stmt.executeQuery(query);
 												while (rs.next()) {
 										%>
 	                                    <tr>
 		                                    <td><%=rs.getInt("pk_id")%></td>
-		                                    <td><%=rs.getString("Details") %></td>
+		                                    <td><%=rs.getString("course") %></td>
 		                                    <td><%=rs.getString("hod_name") %></td>
 		                                    <td><%=rs.getString("phone_no") %></td>
 		                                    <td><%=rs.getString("email") %></td>
@@ -212,7 +205,10 @@ Statement stmt=con.createStatement();
 		                                    <td>
 	                                            <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
 	                                            <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-	                                            <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+	                                            <form action="../DeleteDepartment2" method="post" id='university_info'>
+	                                            	<input type="hidden" name="uid" value="<%=rs.getString(1)%>">
+	                                            	<button type="submit" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
+	                                            </form>
 	                                        </td>
 	                                    </tr>
 	                                   <%
@@ -222,43 +218,18 @@ Statement stmt=con.createStatement();
 											e.printStackTrace();	
 	                                    }
 	                                   %>
-	                                    <tbody>
-	                                        <tr>
-	                                            <td>1</td>
-	                                            <td>Mechanical Engg.</td>
-	                                            <td>Shadab Quershi</td>
-	                                            <td>+123 4567890</td>
-	                                            <td>test@example.com</td>
-	                                            <td>150</td>
-	                                            <td>
-	                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-	                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-	                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-	                                            </td>
-	                                        </tr>
-	                                        <tr>
-	                                            <td>2</td>
-	                                            <td>Computer Engg.</td>
-	                                            <td>Corrine M Johnson</td>
-	                                            <td>+123 4567890</td>
-	                                            <td>test@example.com</td>
-	                                            <td>205</td>
-	                                            <td>
-	                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-	                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-	                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-	                                            </td>
-	                                        </tr>
 	                                    </tbody>
 	                                </table>
 	                            </div>        
 	                        </div>
 	                    </div>
+	                    <%%>
                     <div class="tab-pane" id="Dep-add">
                         <div class="col-lg-12 col-md-12">                
                             <div class="card">
                                 <div class="card-header">
                                     <h3 class="card-title">Department Basic Info</h3>
+                                    
                                     <div class="card-options ">
                                         <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
                                         <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
@@ -269,17 +240,18 @@ Statement stmt=con.createStatement();
 	                                    <div class="row clearfix">
 	                                        <div class="col-sm-6 col-sm-12">
 	                                            <div class="form-group">
+	                                            <input type="hidden" name="uni_name" value="<%=uname%>">
 	                                            <label>Department Name</label>
 	                                                <select name="department" class="form-control">
                                                     <option>---Please Select Department---</option>
                                                     <%
 	                                                    try {
-	            											String query = "select * from department_name";
+	            											String query = "select * from course_name";
 	            											//get Table data
 	            											ResultSet rs = stmt.executeQuery(query);
 	            											while (rs.next()) {
                                                     %>
-                                                    	<option><%=rs.getString("Details") %></option>
+                                                    	<option><%=rs.getString("course") %></option>
                                                    	<%
 	            										}
 	                                                    }catch(Exception e)
