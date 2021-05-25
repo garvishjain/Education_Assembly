@@ -190,7 +190,7 @@ Statement stmt=con.createStatement();
 	                                     <tbody>
 	                                    <%
 											try {
-												String query = "select * from university_department INNER JOIN course_name ON university_department.fk_department_id=course_name.pk_id as isActive=0 INNER JOIN university ON university_department.fk_university_id=university.pk_id where u_name='"+name+"'";
+												String query = "select * from university_department INNER JOIN course_name ON university_department.fk_department_id=course_name.pk_id where isActive=0 INNER JOIN university ON university_department.fk_university_id=university.pk_id where u_name='"+name+"'";
 												//get Table data
 												ResultSet rs = stmt.executeQuery(query);
 												while (rs.next()) {

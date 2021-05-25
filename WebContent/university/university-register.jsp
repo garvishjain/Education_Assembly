@@ -229,14 +229,14 @@
 												<div class="form-group">
 													<label>Email <span class="text-danger">*</span></label>
 														<input type="email" name="uemail" class="form-control"
-															placeholder="abc@example.com">
+															placeholder="abc@example.com" required="required">
 												</div>
 											</div>
 											<div class="col-md-6 col-sm-12">
 												<div class="form-group">
 													<label>Establish Year</label> <select id="year" name="year"
 														class="form-control" required>
-														<option>---Select Year---</option>
+														<option>---Select Establish Year---</option>
 														<%
 															try {
 																String query = "select * from Establish_years";
@@ -349,7 +349,7 @@
 											</div>
 											
 											<div class="col-sm-12 text-right m-t-20">
-												<button type="submit" class="button">SAVE</button>
+												<button type="submit" class="button">SUBMIT</button>
 											</div>
 										</div>
 									</form>

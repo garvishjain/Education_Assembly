@@ -33,7 +33,7 @@ Statement stmt=con.createStatement();
             <div class="container-fluid">
                 <div class="tab-content">
                     <div class="tab-pane active" id="Student-all">
-                        <div class="card">
+                        <!-- <div class="card">
                             <div class="card-body">
                                 <div class="row">
                                     
@@ -44,7 +44,7 @@ Statement stmt=con.createStatement();
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <div class="table-responsive card">
                             <table class="table table-hover table-vcenter table-striped mb-0 text-nowrap">
                                 <thead>
@@ -118,24 +118,24 @@ Statement stmt=con.createStatement();
                                             <div class="col-md-6 col-sm-12">
                                                 <div class="form-group">
                                                     <label>First Name</label>
-                                                    <input type="text" name="fname" class="form-control">
+                                                    <input type="text" name="fname" class="form-control" required="required">
                                                 </div>
                                             </div>
                                             <div class="col-md-6 col-sm-12">
                                                 <div class="form-group">
                                                     <label>Last Name</label>
-                                                    <input type="text" name="lname" class="form-control">
+                                                    <input type="text" name="lname" class="form-control" required="required">
                                                 </div>
                                             </div>
                                             <div class="col-md-3 col-sm-12">
                                                 <div class="form-group">
                                                     <label>Date of Birth</label>
-                                                    <input data-provide="datepicker" type="date" data-date-autoclose="true" name="dob" class="form-control" placeholder="Date of Birth">
+                                                    <input  type="date" data-date-autoclose="true" name="dob" class="form-control" placeholder="Date of Birth" required="required">
                                                 </div>
                                             </div>
                                             <div class="col-md-3 col-sm-12">
                                                 <label>Gender</label>
-                                                <select name="gender" class="form-control show-tick">
+                                                <select name="gender" class="form-control show-tick" required="required">
                                                     <option value="">-- Gender --</option>
                                                     <option value="Male">Male</option>
                                                     <option value="Female">Female</option>
@@ -144,7 +144,7 @@ Statement stmt=con.createStatement();
                                             <div class="col-md-3 col-sm-12">
                                                 <div class="form-group">
                                                     <label>Department</label>
-                                                    <select name="department" class="form-control">
+                                                    <select name="department" class="form-control" required="required">
                                                     <option></option>
                                                     <%
 	                                                    try {
@@ -167,7 +167,7 @@ Statement stmt=con.createStatement();
                                             <div class="col-md-3 col-sm-12">
                                                 <div class="form-group">
                                                     <label>Position</label>
-                                                    <select name="position" class="form-control">
+                                                    <select name="position" class="form-control" required="required">
                                                     <option></option>
                                                     <%
 	                                                    try {
@@ -191,13 +191,13 @@ Statement stmt=con.createStatement();
                                             <div class="col-md-4 col-sm-12">
                                                 <div class="form-group">
                                                     <label>Phone</label>
-                                                    <input type="text" name="phone" class="form-control">
+                                                    <input type="text" name="phone" class="form-control" required="required">
                                                 </div>
                                             </div>
                                             <div class="col-md-4 col-sm-12">
                                                 <div class="form-group">
                                                     <label>Enter Your Email</label>
-                                                    <input type="email" name="email" class="form-control">
+                                                    <input type="email" name="email" class="form-control" required="required">
                                                 </div>
                                             </div>
                                             <div class="col-sm-12">

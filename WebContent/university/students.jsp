@@ -67,19 +67,18 @@ Statement stmt=con.createStatement();
                                 <thead>
                                     <tr>
                                         <th>Roll No.</th>
-                                      <!--   <th></th> -->
                                         <th>Name</th>
                                         <th>Department</th>
                                         <th>Email</th>
                                         <th>Phone</th>
-                                        <th>Admission Date</th>
+                                        <th>Date of Birth</th>
                                         <th>Action</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                 	<%
 	                                      try {
-										String query = "select * from university_student";
+										String query = "select * from university_student INNER JOIN course_name ON university_student.department=course_name.pk_id";
 										//get Table data
 										ResultSet rs = stmt.executeQuery(query);
 										while (rs.next()) {
@@ -90,10 +89,10 @@ Statement stmt=con.createStatement();
                                             <img class="avatar" src="../assets/images/xs/avatar1.jpg" alt="">
                                         </td> -->
                                         <td><span class="font-16"><%=rs.getString("student_name") %></span></td>
-                                        <td><%=rs.getString("department") %></td>
+                                        <td><%=rs.getString("course") %></td>
                                         <td><%=rs.getString("email") %></td>
                                         <td><%=rs.getString("phone") %></td>
-                                        <td></td>
+                                        <td><%=rs.getString("dob") %></td>
                                         <td>
                                             <button type="button" class="btn btn-icon btn-sm" title="View Profile" ><a href="student-profile.jsp"><i class="fa fa-eye"></i></a></button>
                                             <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>

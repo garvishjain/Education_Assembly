@@ -58,7 +58,6 @@ Statement stmt=con.createStatement();
                                         </div>
                                     </div>
 									<div class="card-body">
-										<p>Hello I am Celena Anderson a Clerk in Xyz College USA. I love to work with all my college staff and seniour professors.</p>
 										<ul class="list-group">
 											<li class="list-group-item">
                                                 <strong>Father Name </strong>

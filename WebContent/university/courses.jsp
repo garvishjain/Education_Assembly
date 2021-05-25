@@ -10,7 +10,10 @@ Connection con=getConObj.getCon();
 Statement stmt=con.createStatement();
 
 %> 
+<%
 
+String uname = session.getAttribute("nameUser") != null ? (String) session.getAttribute("nameUser") : "";
+%>
 
         <!-- Start Page title and tab -->
         <div class="section-body">
@@ -40,7 +43,7 @@ Statement stmt=con.createStatement();
                         <div class="row row-deck">
                         <%
                                        try {
-										String query = "select * from university_courses INNER JOIN course_name ON university_courses.course_id=course_name.pk_id where degree_name='"+"Bachelor Degree"+"' ";
+										String query = "select * from university_courses INNER JOIN course_name ON university_courses.course_id=course_name.pk_id where degree_name='"+"Bachelor Degree"+"' INNER JOIN univesity ON university_courses.fk_univesity_id=university.pk_id where u_name='"+uname+"' ";
 										//get Table data
 										ResultSet rs = stmt.executeQuery(query);
 										while (rs.next()) {
@@ -88,7 +91,8 @@ Statement stmt=con.createStatement();
                         <div class="row row-deck">
                         <%
                                        try {
-										String query = "select * from university_courses INNER JOIN course_name ON university_courses.course_id=course_name.pk_id where degree_name='"+"Master Degree"+"' ";
+										String query = "select * from university_courses INNER JOIN course_name ON university_courses.course_id=course_name.pk_id where degree_name='"+"Master Degree"+"'"
+												+"university_courses INNER JOIN university ON university_courses.fk_university_id=university.pk_id where u_name='"+uname+"' ";
 										//get Table data
 										ResultSet rs = stmt.executeQuery(query);
 										while (rs.next()) {
@@ -134,7 +138,7 @@ Statement stmt=con.createStatement();
                         <div class="row row-deck">
                         <%
                                        try {
-										String query = "select * from university_courses INNER JOIN course_name ON university_courses.course_id=course_name.pk_id where degree_name='"+"Diploma Degree"+"'";
+										String query = "select * from university_courses INNER JOIN course_name ON university_courses.course_id=course_name.pk_id where degree_name='"+"Diploma Course"+"'";
 										//get Table data
 										ResultSet rs = stmt.executeQuery(query);
 										while (rs.next()) {
@@ -182,7 +186,7 @@ Statement stmt=con.createStatement();
                         <div class="card">
                             <div class="card-header">
                                 <h3 class="card-title">Courses Basic Info</h3>
-                                <input type="hidden" name="u_id">
+                                <input type="hidden" name="u_id" value="<%=uname%>">
                                 <!-- <div class="card-options "> 
                                     <a href="#" class="card-options-collapse" data-toggle="card-collapse"><i class="fe fe-chevron-up"></i></a>
                                     <a href="#" class="card-options-remove" data-toggle="card-remove"><i class="fe fe-x"></i></a>
@@ -193,7 +197,7 @@ Statement stmt=con.createStatement();
                                 <div class="col-sm-6">
                                        <div class="form-group">
                                         <label>Course Name</label>
-                                             <select  name="name" class="form-control" >
+                                             <select  name="name" class="form-control" required="required" >
 		                                       <option>--Select Course</option>
 		                                       <%
 		                                           try {
@@ -215,9 +219,10 @@ Statement stmt=con.createStatement();
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                         	<label>Course Type</label>
-                                            <select  name="name" class="form-control" >
+                                            <select  name="name" class="form-control" required="required">
 		                                       	<option>--Select Course</option>
 		                                       	<option>Engineering</option>
+		                                       	<option>Arts</option>
 		                                       	<option>Management</option>
 		                                       	<option>Medical</option>
 		                                       	<option>Design</option>	
@@ -228,13 +233,13 @@ Statement stmt=con.createStatement();
                                     <div class="col-sm-6">
                                         <div class="form-group">
                                         <label>Fees</label>
-                                            <input type="number" name="fees" class="form-control" placeholder="Course Fees">
+                                            <input type="number" name="fees" class="form-control" placeholder="Course Fees" required="required">
                                         </div>
                                     </div>
                                      <div class="col-sm-6">
                                         <div class="form-group">
                                         <label>Seats</label>
-                                            <input type="number" name="seat" class="form-control" placeholder="Course Student Seats">
+                                            <input type="number" name="seat" class="form-control" placeholder="Course Student Seats" required="required">
                                         </div>
                                     </div>
                                     <div class="col-sm-12">
@@ -258,13 +263,13 @@ Statement stmt=con.createStatement();
                        		<div class="col-sm-12">
                                     <div class="form-group">
                                     <label>About Course</label>
-                                        <textarea rows="3" class="form-control no-resize" name="course" placeholder="Write About Course Brief"></textarea>
+                                        <textarea rows="3" class="form-control no-resize" name="course" placeholder="Write About Course Brief" required="required"></textarea>
                                     </div>
                              </div> 
                              <div class="col-sm-12">
                                     <div class="form-group">
                                     <lable>Eligible Criteria</lable>
-                                        <textarea rows="3" class="form-control no-resize" name="eligible" placeholder="Write About Eligible Criteria"></textarea>
+                                        <textarea rows="3" class="form-control no-resize" name="eligible" placeholder="Write About Eligible Criteria" required="required"></textarea>
                                     </div>
                              </div> 
                              <div class="col-sm-12">
@@ -276,7 +281,7 @@ Statement stmt=con.createStatement();
                               <div class="col-sm-6">
                                    <div class="form-group">
                                    <label>Semester</label>
-                                       <select  name="sem" class="form-control" >
+                                       <select  name="sem" class="form-control" required="required">
                                        <option>--Select Semester</option>
                                        <%
                                            try {
@@ -298,7 +303,7 @@ Statement stmt=con.createStatement();
                                <div class="col-sm-12">
                                     <div class="form-group">
                                     	<lable>Minimum Percentage</lable>
-                                        <textarea rows="3" class="form-control no-resize" name="perc" placeholder="Write About Minimum Percentage"></textarea>
+                                        <textarea rows="3" class="form-control no-resize" name="perc" placeholder="Write About Minimum Percentage" required="required"></textarea>
                                     </div>
                              </div> 
                              <div class="col-sm-12">
