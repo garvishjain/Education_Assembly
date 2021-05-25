@@ -18,26 +18,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 
+import in.common.GetConnection;
+
 @WebServlet("/department")
 public class department extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private Connection con;
 	private PreparedStatement stmt;
 	private String detail;
+	private int id;
 	
 
 	public void init(ServletConfig config) throws ServletException {
-		try {
-			InitialContext cxt = new InitialContext();
-			DataSource ds = (DataSource) cxt.lookup("java:comp/env/myCon");
-			con = ds.getConnection();
-		} catch (NamingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		GetConnection getcon = new GetConnection();
+		con = getcon.getCon();
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
@@ -45,6 +39,8 @@ public class department extends HttpServlet {
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
 		try {
+			String uniname = request.getParameter("uni_name");
+			System.out.println("unianme"+uniname);
 			String department = request.getParameter("department") != null ? request.getParameter("department") : "";
 			String headname = request.getParameter("headname") != null ? request.getParameter("headname") : "";
 			/*String uname = request.getParameter("uname") != null ? request.getParameter("uname") : "";*/
@@ -53,13 +49,19 @@ public class department extends HttpServlet {
 			String stdcapacity = request.getParameter("stdCapacity") != null ? request.getParameter("stdCapacity") : "";
 			int u_id = 123;
 			int dpartment = 12345;
+			/*String query2="select * from university where u_name='"+uniname+"'";
+			ResultSet rrs = stmt.executeQuery(query2);
+			if(rrs.next())
+			{
+			id = rrs.getInt(1);				
+			}*/
 			// <--- foreign key convert start --->
-			String sqll = "select pk_id from university  ";
+			String sqll = "select pk_id from university where u_name='"+uniname+"' ";
 			System.out.println(sqll);
 			stmt = con.prepareStatement(sqll);
 			ResultSet rs = stmt.executeQuery(sqll);
 			if (rs.next()) {
-				u_id = rs.getInt(1);
+				id = rs.getInt(1);
 			} else {
 
 				out.println("<body><html><script>alert('No Data Found');</script></html></body>");
@@ -80,11 +82,10 @@ public class department extends HttpServlet {
 			// <--- foreign key convert end --->
 
 			// <--- department data start--->
-				
 			
 			String sql = "insert into university_department(fk_university_id,fk_department_id,hod_name,phone_no,email,std_capacity)value(?,?,?,?,?,?)";
 			stmt = con.prepareStatement(sql);
-			stmt.setInt(1, u_id);
+			stmt.setInt(1, id);
 			stmt.setString(2, detail);
 			stmt.setString(3, headname);
 			stmt.setString(4, phone);

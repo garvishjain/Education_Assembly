@@ -22,10 +22,10 @@ Statement stmt=con.createStatement();
 								String cname = request.getParameter("cname");
 								if(sid != null)
 								{
-									GetName collegename= new GetName();
-									collegename.getNameData(cname, sid);
-									session.setAttribute("nameUser", collegename.getName());
-									session.setAttribute("EmailUser", collegename.getEmail());
+									GetName universityname= new GetName();
+									universityname.getNameData(cname, sid);
+									session.setAttribute("nameUser", universityname.getName());
+									session.setAttribute("EmailUser", universityname.getEmail());
 								}
 							}
 						 }

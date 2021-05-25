@@ -6,26 +6,23 @@
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <link rel="icon" href="favicon.ico" type="image/x-icon"/>
 
-
 <%
-
 String name = session.getAttribute("nameUser") != null ? (String) session.getAttribute("nameUser") : "";
-String Email = session.getAttribute("EmailUser") != null ? (String) session.getAttribute("EmailUser") : "";
+String ureg = session.getAttribute("EmailUser") != null ? (String) session.getAttribute("EmailUser") : "";
 
 
-	StringBuffer url = request.getRequestURL();
-	int start = url.lastIndexOf("/");
-	int end = url.lastIndexOf(".jsp");
-	String pageName="::Education Assembly:: Index";
-	
-	if(start>0 && end > 0)
-	{
-		pageName="::Education Assembly:: "+ url.substring(start+1,end).toUpperCase();
-	}
-	
-	
-	
-%> 
+StringBuffer url = request.getRequestURL();
+int start = url.lastIndexOf("/");
+int end = url.lastIndexOf(".jsp");
+String pageName="::Education Assembly:: Index";
+
+if(start>0 && end > 0)
+{
+pageName="::Education Assembly:: "+ url.substring(start+1,end).toUpperCase();
+}
+
+%>
+
 <title><%=pageName %> </title>
 
 <!-- Bootstrap Core and vandor -->
@@ -294,7 +291,6 @@ String Email = session.getAttribute("EmailUser") != null ? (String) session.getA
                     <ul class="metismenu">
                     	<li><a href="affilated-college.jsp"><i class="fa fa-bed"></i><span>College List</span></a></li>
                        <li><a href="Request-college.jsp"><i class="fa fa-dashboard"></i><span>College Request</span></a></li>
-                        
                     </ul>
                 </nav>
             </div>
@@ -305,6 +301,12 @@ String Email = session.getAttribute("EmailUser") != null ? (String) session.getA
         <!-- Start Page header -->
         <div class="section-body" id="page_top">
             <div class="container-fluid">
+            <div class="header-action">
+            	<ol class="breadcrumb page-breadcrumb">
+                    <li><a href="javascript:void(0)" class="brand-name"><%=name%> /</a></li>
+            		<li><a href="javascript:void(0)" class="brand-name"><%=ureg%></a></li>
+               </ol>
+               </div>
                 <div class="page-header">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="What you want to find">
