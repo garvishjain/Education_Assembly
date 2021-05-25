@@ -40,6 +40,7 @@ Statement stmt=con.createStatement();
 	                                            <th>Edit</th>
 	                                        </tr>
 	                                    </thead>
+	                                     <tbody>
 	                                    <%
 											try {
 												/* String query = "select * from college_registration INNER JOIN department_name ON university_department.fk_department_name=department_name.pk_id"; */
@@ -69,33 +70,6 @@ Statement stmt=con.createStatement();
 											e.printStackTrace();	
 	                                    }
 	                                   %>
-	                                    <tbody>
-	                                        <tr>
-	                                            <td>1</td>
-	                                            <td>Mechanical Engg.</td>
-	                                            <td>Emmett L Johnson</td>
-	                                            <td>+123 4567890</td>
-	                                            <td>test@example.com</td>
-	                                            <td>150</td>
-	                                            <td>
-	                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-	                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-	                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-	                                            </td>
-	                                        </tr>
-	                                        <tr>
-	                                            <td>2</td>
-	                                            <td>Computer Engg.</td>
-	                                            <td>Corrine M Johnson</td>
-	                                            <td>+123 4567890</td>
-	                                            <td>test@example.com</td>
-	                                            <td>205</td>
-	                                            <td>
-	                                                <button type="button" class="btn btn-icon btn-sm" title="View"><i class="fa fa-eye"></i></button>
-	                                                <button type="button" class="btn btn-icon btn-sm" title="Edit"><i class="fa fa-edit"></i></button>
-	                                                <button type="button" class="btn btn-icon btn-sm js-sweetalert" title="Delete" data-type="confirm"><i class="fa fa-trash-o text-danger"></i></button>
-	                                            </td>
-	                                        </tr>
 	                                    </tbody>
 	                                </table>
 	                            </div>        

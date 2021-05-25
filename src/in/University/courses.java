@@ -20,6 +20,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.Part;
 
 import in.common.GetConnection;
+import in.common.img;
 /*import in.common.img;*/
 
 @WebServlet("/courses")
@@ -35,7 +36,7 @@ public class courses extends HttpServlet {
 			con = getConObj.getCon();
 	}
 	
-	public  String getImageDesination()
+	/*public  String getImageDesination()
 	{
 		try 
 		{
@@ -50,7 +51,7 @@ public class courses extends HttpServlet {
 		{
 			throw new RuntimeException();
 		}
-	}
+	}*/
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
@@ -71,33 +72,33 @@ public class courses extends HttpServlet {
 			String sub = request.getParameter("sub")!=null?request.getParameter("sub") : "";
 			String place = request.getParameter("place")!=null?request.getParameter("place") : "";
 			String opportunity = request.getParameter("opportunity")!=null?request.getParameter("opportunity") : "";
-			/*Part part = request.getPart("image");
+			Part part = request.getPart("image");
 			String filename = part.getSubmittedFileName();
 			
 			img img = new img();
-			String image = img.image(filename, part)!=null?img.image(filename,part) : "";*/
-			Part filePart = request.getPart("image");
+			String image = img.image(filename, part)!=null?img.image(filename,part) : "";
+			/*Part filePart = request.getPart("image");
 			String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString();
 			
 			String desPath=getImageDesination();
 			
 			System.out.println(desPath);
-			/*For Image name, making unqiue Name*/
+			For Image name, making unqiue Name
 			int lastIndex = fileName.lastIndexOf(".");
 			String imgName=fileName.substring(0,lastIndex);
 			String imgExt=fileName.substring(lastIndex, fileName.length());
 			
 			
-			/*Setting the path to store the Image*/
+			Setting the path to store the Image
 			File destination = new File(desPath);
 			File file = File.createTempFile(imgName, imgExt, destination);
 			
-			/*Copying Image on destination, If exists Will replace*/
+			Copying Image on destination, If exists Will replace
 			
 			
-			/*This imageName will stored in db*/
+			This imageName will stored in db
 			String imageNameForDb=file.toString().substring(file.toString().lastIndexOf(File.separator)+1);
-			
+			*/
 			String sql1="select pk_id from semester where sem='"+sem+"'";
 			stmt = con.prepareStatement(sql1);
 			ResultSet rs = stmt.executeQuery(sql1);
@@ -107,7 +108,7 @@ public class courses extends HttpServlet {
 				out.println("<body><html><script>alert('No Data Found');</script></html></body>");
 			}
 			
-			String sql2="select pk_id from university";
+			String sql2="select pk_id from university where u_name='"+u_id+"'";
 			stmt = con.prepareStatement(sql2);
 			ResultSet rs2 = stmt.executeQuery(sql2);
 			if (rs2.next()) {
@@ -136,25 +137,35 @@ public class courses extends HttpServlet {
 				out.println("<body><html><script>alert('No Data Found');</script></html></body>");
 			}
 			
+			String sql5="select pk_id from course_name";
+			stmt = con.prepareStatement(sql5);
+			ResultSet rs5 = stmt.executeQuery(sql5);
+			int id=123;
+			if (rs5.next()) {
+					id = rs5.getInt(1);
+			} else {
+				out.println("<body><html><script>alert('No Data Found');</script></html></body>");
+			}
+			
 			String query="insert into university_courses(course_id,course_fees,course_seat,course_brief,fk_university_id)values(?,?,?,?,?)";
 		
 			stmt = con.prepareStatement(query);
-			stmt.setString(1, name);
+			stmt.setInt(1, id);
 			stmt.setString(2, fees);
 			stmt.setString(3, seat);
 			stmt.setInt(4, brief);
 			stmt.setInt(5, university);			
 			int res1 = stmt.executeUpdate();
 			
-			String query1="insert into course_details(about_course,eligible_criteria,image,fk_course_highlight)values(?,?,?,?)";
+			String query1="insert into course_details(about_course,eligible_criteria,images,fk_course_highlights)values(?,?,?,?)";
 			stmt = con.prepareStatement(query1);
 			stmt.setString(1, course);
 			stmt.setString(2, eligible);
-			stmt.setString(3, imageNameForDb);
+			stmt.setString(3, image);
 			stmt.setInt(4, highlight);
 			int res2 = stmt.executeUpdate();
 			
-			String query2="isert into course_highlights(scholarship,fk_semseter,min_perc,sub_required,semester_fees,placement_package,placement_opportunity)values(?,?,?,?,?,?,?)";
+			String query2="insert into course_highlights(scholarship,fk_semester,min_perc,sub_required,semester_fees,placement_package,placement_opportunity)values(?,?,?,?,?,?,?)";
 			stmt = con.prepareStatement(query2);
 			stmt.setString(1, scholar);
 			stmt.setString(2, sem);

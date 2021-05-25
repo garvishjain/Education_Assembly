@@ -68,7 +68,7 @@ public class department extends HttpServlet {
 			}
 			
 			
-			String sql2="Select pk_id from department_name where Details='"+department+"'";
+			String sql2="Select pk_id from course_name where course='"+department+"'";
 			System.out.println(sql2);
 			stmt= con.prepareStatement(sql2);
 			ResultSet rs6 = stmt.executeQuery();

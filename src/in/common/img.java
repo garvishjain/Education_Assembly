@@ -16,9 +16,9 @@ public class img {
 	public String image(String filename, Part part)
 	{   
 			try {	
-				pathname = "F:\\lastproject\\Education_Assembly\\WebContent\\university\\images"+" col";
-				name =filename+""+(LocalDateTime.now().toString().replace(":","")) ;
-                String finallocation = pathname +""+name;
+				pathname = "F:\\Education_Assembly\\WebContent\\university\\img"+" uni";
+				name =filename+(LocalDateTime.now().toString().replace(":","")) ;
+                String finallocation = pathname+name;
 	            part.write(finallocation );
 } catch (IOException e) {
 	// TODO Auto-generated catch block
