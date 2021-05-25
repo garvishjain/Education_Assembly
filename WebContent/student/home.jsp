@@ -203,7 +203,7 @@ a.button, .button {
 }
 .list_courses_tabs ul li {
     position: relative;
-    padding: 15px 5px 10px 70px;
+    padding: 15px 5px 10px 86px;
     min-height: 65px;
     width: 100%;
     border-bottom: 1px solid #ededed;
@@ -482,7 +482,7 @@ a.link_normal {
 					<div class="content">
 						<div class="row list_courses_tabs">
 							<div class="col-md-4 col-sm-4">
-								<h2 class="diploma_heading" style="margin: 15px 0px 0px 32px;">Diploma Courses</h2>
+								<h2 class="diploma_heading" style="margin: 15px 0px 0px 12px;">Diploma Courses</h2>
 								<ul>
 									<%
 										try{String sql1="Select * from course_name where degree_name='"+"Diploma Course"+"' Limit 4"; 
@@ -516,7 +516,7 @@ a.link_normal {
 							</div>
 <!--  Show Bachelor Courses -->						
 							<div class="col-md-4 col-sm-4">
-								<h2 class="diploma_heading" style="margin: 15px 0px 0px 32px;">Graduate Courses</h2>
+								<h2 class="diploma_heading" style="margin: 15px 0px 0px 12px;">Graduate Courses</h2>
 								<ul>
 								<%
 							try{String sql2="Select * from course_name where degree_name='"+"Bachelor Degree"+"' Limit 4"; 
@@ -555,7 +555,7 @@ a.link_normal {
 							
 	<!--  Show Master  Courses -->						
 							<div class="col-md-4 col-sm-4">
-								<h2 class="diploma_heading" style="margin: 15px 0px 0px 32px;">Master Courses</h2>
+								<h2 class="diploma_heading" style="margin: 15px 0px 0px 12px;">Master Courses</h2>
 								<ul>
 								<%
 							try{String sql2="Select * from course_name where degree_name='"+"Master Degree"+"' Limit 4"; 
